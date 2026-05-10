@@ -62,127 +62,38 @@ jobs:
           echo "OLD_PACKAGE=$OLD_PACKAGE" >> $GITHUB_ENV
           echo "Detected old package: $OLD_PACKAGE"
 
-      - name: Fix Invalid Smali Directives
-        run: |
-          DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
-          echo "Fixing invalid smali directives"
-          
-          # Create Python fix script
-          cat > /tmp/fix_smali.py << 'PYEOF'
-import re
-import os
-import sys
-
-def fix_smali_file(file_path):
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        original_content = content
-        changes_made = False
-        
-        # Fix 1: Remove invalid .bKash and .customerapp as directives (lines starting with .)
-        lines = content.split('\n')
-        fixed_lines = []
-        for line in lines:
-            stripped = line.strip()
-            # If line starts with .bKash or .customerapp (invalid smali directive)
-            if stripped.startswith('.bKash') or stripped.startswith('.customerapp'):
-                line = '# ' + line  # Comment it out
-                changes_made = True
-            fixed_lines.append(line)
-        
-        content = '\n'.join(fixed_lines)
-        
-        # Fix 2: Fix const-string lines that have unquoted .bKash or .customerapp
-        def fix_const_strings(match):
-            full_line = match.group(0)
-            # Fix unquoted .bKash
-            if '.bKash' in full_line and not re.search(r'"[^"]*\.bKash[^"]*"', full_line):
-                full_line = full_line.replace('.bKash', '".bKash"')
-            # Fix unquoted .customerapp
-            if '.customerapp' in full_line and not re.search(r'"[^"]*\.customerapp[^"]*"', full_line):
-                full_line = full_line.replace('.customerapp', '".customerapp"')
-            return full_line
-        
-        content = re.sub(r'const-string\s+[^,]+,\s*[^"\n]+', fix_const_strings, content)
-        
-        # Fix 3: Fix Lcom.uc.browser.e.bKash pattern
-        content = re.sub(r'Lcom/uc/browser/e\.bKash', 'Lcom/uc/browser/e', content)
-        content = re.sub(r'Lcom/uc/browser/e\.customerapp', 'Lcom/uc/browser/e', content)
-        
-        # Fix 4: Remove any invalid characters in class names
-        content = re.sub(r'L([a-zA-Z0-9_/]+)\.(bKash|customerapp);', r'L\1;', content)
-        
-        if content != original_content:
-            with open(file_path, 'w', encoding='utf-8') as f:
-                f.write(content)
-            return True
-        return False
-    except Exception as e:
-        print(f"Error fixing {file_path}: {e}")
-        return False
-
-# Find and fix all smali files
-smali_dirs = ['decompiled_app/smali', 'decompiled_app/smali_classes2']
-fixed_count = 0
-
-for smali_dir in smali_dirs:
-    if os.path.exists(smali_dir):
-        for root, dirs, files in os.walk(smali_dir):
-            for file in files:
-                if file.endswith('.smali'):
-                    file_path = os.path.join(root, file)
-                    if fix_smali_file(file_path):
-                        fixed_count += 1
-                        print(f"Fixed: {file_path}")
-
-print(f"Fixed {fixed_count} smali files")
-PYEOF
-          
-          python3 /tmp/fix_smali.py
-
       - name: Rename Package in AndroidManifest.xml
         run: |
           MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
           OLD="${{ env.OLD_PACKAGE }}"
-          NEW="com.bkash.customerapp"
+          NEW="com.bKash.customerapp"
           cp "$MANIFEST" "$MANIFEST.bak"
-          cat > /tmp/fix_manifest.py << 'PYEOF'
-import re
-import sys
-import xml.etree.ElementTree as ET
-
-old = sys.argv[1]
-new = sys.argv[2]
-path = sys.argv[3]
-
-with open(path, "r", encoding="utf-8") as f:
-    content = f.read()
-
-escaped = re.escape(old)
-if new.startswith(old):
-    suffix = re.escape(new[len(old):])
-    pattern = escaped + r'(?!' + suffix + r')'
-else:
-    pattern = escaped
-
-count = len(re.findall(pattern, content))
-result = re.sub(pattern, new, content)
-
-with open(path, "w", encoding="utf-8") as f:
-    f.write(result)
-
-print(f"Replaced {count} occurrences: {old} -> {new}")
-
-try:
-    ET.parse(path)
-    print("XML validation: OK")
-except ET.ParseError as e:
-    print(f"XML ERROR: {e}")
-    sys.exit(1)
-PYEOF
-          python3 /tmp/fix_manifest.py "$OLD" "$NEW" "$MANIFEST"
+          cat > /tmp/fix.py << 'PYEOF'
+          import re, sys, xml.etree.ElementTree as ET
+          old = sys.argv[1]
+          new = sys.argv[2]
+          path = sys.argv[3]
+          with open(path, "r", encoding="utf-8") as f:
+              content = f.read()
+          escaped = re.escape(old)
+          if new.startswith(old):
+              suffix = re.escape(new[len(old):])
+              pattern = escaped + r'(?!' + suffix + r')'
+          else:
+              pattern = escaped
+          count = len(re.findall(pattern, content))
+          result = re.sub(pattern, new, content)
+          with open(path, "w", encoding="utf-8") as f:
+              f.write(result)
+          print(f"Replaced {count} occurrences: {old} -> {new}")
+          try:
+              ET.parse(path)
+              print("XML validation: OK")
+          except ET.ParseError as e:
+              print(f"XML ERROR: {e}")
+              sys.exit(1)
+          PYEOF
+          python3 /tmp/fix.py "$OLD" "$NEW" "$MANIFEST"
           echo "=== First 5 lines after rename ==="
           head -5 "$MANIFEST"
 
@@ -190,67 +101,19 @@ PYEOF
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
-          NEW="com.bkash.customerapp"
+          NEW="com.bKash.customerapp"
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW" | tr '.' '/')
-          
           echo "Replacing smali references: $OLD -> $NEW"
-          
           # Replace dotted package references in smali/xml/properties files
-          find "$DECOMPILED_DIR" -type f \( -name "*.smali" -o -name "*.xml" -o -name "*.properties" \) | while read file; do
-            sed -i "s|${OLD}|${NEW}|g" "$file"
-          done
-          
+          find "$DECOMPILED_DIR" \
+            -type f \( -name "*.smali" -o -name "*.xml" -o -name "*.properties" \) \
+            -exec sed -i "s|${OLD}|${NEW}|g" {} +
           # Replace slash-separated path references in smali
-          find "$DECOMPILED_DIR" -type f -name "*.smali" | while read file; do
-            sed -i "s|${OLD_PATH}|${NEW_PATH}|g" "$file"
-          done
-          
+          find "$DECOMPILED_DIR" \
+            -type f -name "*.smali" \
+            -exec sed -i "s|${OLD_PATH}|${NEW_PATH}|g" {} +
           echo "Smali rename done"
-
-      - name: Rename Package Directories
-        run: |
-          DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
-          OLD_PATH=$(echo "${{ env.OLD_PACKAGE }}" | tr '.' '/')
-          NEW_PATH="com/bkash/customerapp"
-          
-          # Rename directories in smali folders
-          for smali_dir in "$DECOMPILED_DIR/smali" "$DECOMPILED_DIR/smali_classes2"; do
-            if [ -d "$smali_dir" ]; then
-              old_full_path="$smali_dir/$OLD_PATH"
-              new_full_path="$smali_dir/$NEW_PATH"
-              
-              # Create new directory structure
-              mkdir -p "$(dirname "$new_full_path")"
-              
-              # Move if old directory exists
-              if [ -d "$old_full_path" ]; then
-                mv "$old_full_path" "$new_full_path" 2>/dev/null || true
-                echo "Moved $old_full_path to $new_full_path"
-              fi
-            fi
-          done
-          
-          echo "Directory rename done"
-
-      - name: Clean Smali Files
-        run: |
-          DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
-          echo "Cleaning smali files..."
-          
-          # Remove lines that start with .bKash or .customerapp (invalid directives)
-          find "$DECOMPILED_DIR" -type f -name "*.smali" | while read file; do
-            sed -i '/^[[:space:]]*\.bKash/d' "$file"
-            sed -i '/^[[:space:]]*\.customerapp/d' "$file"
-          done
-          
-          # Fix common smali syntax errors
-          find "$DECOMPILED_DIR" -type f -name "*.smali" | while read file; do
-            sed -i 's/;->->/;->/g' "$file"
-            sed -i 's/const-string \([^,]*\), \([^"]*\)$/const-string \1, "\2"/g' "$file"
-          done
-          
-          echo "Smali cleaning done"
 
       - name: Recompile APK
         run: |
@@ -264,19 +127,18 @@ PYEOF
               echo "Build success (attempt 2)"
             else
               echo "=== Attempt 3: aapt2 + no-crunch ==="
-              apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --no-crunch || true
+              apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --no-crunch 2>&1 || true
             fi
           fi
-          
           if [ ! -f recompiled_unsigned.apk ]; then
             echo "ERROR: APK not created!"
             exit 1
           fi
-          
           ls -lh recompiled_unsigned.apk
 
       - name: Verify APK structure
         run: |
+          # Basic check — aapt2 dump should not error
           aapt2 dump badging recompiled_unsigned.apk | head -5 || \
             echo "Warning: aapt2 dump failed (may still be installable)"
 
@@ -284,53 +146,56 @@ PYEOF
         run: |
           keytool -genkey -v \
             -keystore my.keystore \
-            -alias w4b \
+            -alias bkash \
             -keyalg RSA \
             -keysize 2048 \
             -validity 10000 \
-            -storepass w4b123 \
-            -keypass w4b123 \
-            -dname "CN=W4B,OU=Dev,O=W4B,L=Dhaka,ST=Dhaka,C=BD" \
+            -storepass bkash123 \
+            -keypass bkash123 \
+            -dname "CN=bKash,OU=Dev,O=bKash,L=Dhaka,ST=Dhaka,C=BD" \
             -noprompt
           echo "Keystore generated"
 
       - name: Zipalign APK
         run: |
+          # Must zipalign BEFORE signing
           zipalign -v -p 4 recompiled_unsigned.apk aligned.apk
           echo "Zipalign done"
+          # Verify alignment
           zipalign -c -v 4 aligned.apk && echo "Alignment check: PASSED" || echo "Alignment check: FAILED"
 
       - name: Sign APK with apksigner
         run: |
+          # apksigner must be used AFTER zipalign (correct order)
           apksigner sign \
             --ks my.keystore \
-            --ks-pass pass:w4b123 \
-            --key-pass pass:w4b123 \
-            --ks-key-alias w4b \
+            --ks-pass pass:bkash123 \
+            --key-pass pass:bkash123 \
+            --ks-key-alias bkash \
             --out signed_app.apk \
             aligned.apk
           echo "Signing done"
+          # Verify signature
           apksigner verify --verbose signed_app.apk && echo "Signature verify: PASSED" || echo "Signature verify: FAILED"
           ls -lh signed_app.apk
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: w4b-apk
+          name: bkash-apk
           path: signed_app.apk
           retention-days: 90
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: w4b-v1.0.${{ github.run_number }}
-          name: W4B v1.0.${{ github.run_number }}
+          tag_name: bkash-v1.0.${{ github.run_number }}
+          name: bKash v1.0.${{ github.run_number }}
           body: |
-            ✅ New Package: com.bkash.customerapp
-            📦 Original Package: ${{ env.OLD_PACKAGE }}
-            🔧 Build Number: #${{ github.run_number }}
+            ✅ Package: com.bKash.customerapp
+            📦 Original: ${{ env.OLD_PACKAGE }}
+            🔧 Build: #${{ github.run_number }}
             🔑 Signed with apksigner (v2/v3 scheme)
-            🛠️ Fixed smali directive errors
           files: signed_app.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
