@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.uc.browser.en" platformBuildVersionCode="155" platformBuildVersionName="12.9.7.1158">
+    <uses-feature android:name="android.hardware.location" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.network" android:required="false"/>
+    <uses-feature android:name="android.hardware.location.gps" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-feature android:name="android.hardware.wifi" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-feature android:name="android.hardware.telephony" android:required="false"/>
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.landscape" android:required="false"/>
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.PERSISTENT_ACTIVITY"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <uses-permission-sdk-23 android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.sec.android.app.twlauncher.READ_SETTINGS"/>
+    <uses-permission android:name="org.adw.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="org.adwfreak.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.gau.go.launcherex.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.fede.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.nd.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.mylauncher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.mx.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.google.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="net.qihoo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.qihoo360.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="org.adw.launcher_donut.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.tencent.qqlauncher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.mylauncher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.READ_SYNC_STATS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <permission android:name="com.uc.browser.en.permission.C2D_MESSAGE" android:protectionLevel="signature"/>
+    <uses-permission android:name="com.uc.browser.en.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <application android:allowBackup="false" android:debuggable="false" android:hardwareAccelerated="false" android:hasCode="true" android:icon="@mipmap/icon" android:label="@string/app_name" android:largeHeap="true" android:name="com.uc.browser.UCAerieApplication" android:resizeableActivity="false" android:supportsRtl="false">
+        <meta-data android:name="CRYSTAL_ID" android:value="c9e2329be7bd441a92b9b5d6ce88937d"/>
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="d34aa327a79f02a87f94dc224883fdbc"/>
+        <meta-data android:name="android.max_aspect" android:value="2.17"/>
+        <meta-data android:name="android.notch_support" android:value="true"/>
+        <activity android:alwaysRetainTaskState="true" android:configChanges="fontScale|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:finishOnTaskLaunch="true" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.UCMobile.main.UCMobile" android:noHistory="false" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/Translucent" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="ucdownload"/>
+            </intent-filter>
+            <intent-filter android:label="@string/open_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:scheme="about"/>
+                <data android:scheme="ucweb"/>
+            </intent-filter>
+            <intent-filter android:label="@string/open_name">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:scheme="ucweb"/>
+                <data android:mimeType="text/html"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="text/xml"/>
+                <data android:mimeType="application/xhtml+xml"/>
+                <data android:mimeType="application/vnd.wap.xhtml+xml"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.UCMobile.intent.action.LOADURL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.uc.browser.intent.action.LOADURL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.UCMobile.intent.action.WEBSEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.UCMobile.intent.action.LOADBUFFER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.UCMobile.intent.action.INVOKE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.http.NETWORK_STATE"/>
+                <action android:name="android.intent.action.PROXY_CHANGE"/>
+            </intent-filter>
+            <intent-filter android:label="@string/open_name">
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:scheme="file"/>
+                <data android:scheme="content"/>
+                <data android:scheme="ucweb"/>
+                <data android:mimeType="text/html"/>
+                <data android:mimeType="text/xml"/>
+                <data android:mimeType="application/xhtml+xml"/>
+                <data android:mimeType="application/vnd.wap.xhtml+xml"/>
+                <data android:mimeType="text/css"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="@string/ut_app_id"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:enabled="@bool/uc_websearch_switch" android:exported="true" android:name="com.UCMobile.main.UCMobile.alias.websearch" android:targetActivity="com.UCMobile.main.UCMobile">
+            <intent-filter>
+                <action android:name="android.intent.action.WEB_SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme=""/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:scheme="ucweb"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.WEB_SEARCH"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:enabled="false" android:exported="true" android:icon="@drawable/fast_download" android:label="@string/fast_download" android:name="com.UCMobile.main.UCMobile.alias.download" android:targetActivity="com.UCMobile.main.UCMobile">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:mimeType="application/vnd.android.package-archive"/>
+                <data android:mimeType="application/pdf"/>
+                <data android:mimeType="video/3gpp"/>
+                <data android:mimeType="video/mp4"/>
+                <data android:mimeType="audio/mp3"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:enabled="@bool/uc_video_switch" android:icon="@drawable/myvideo_icon" android:label="@string/my_video" android:name="com.UCMobile.main.UCMobile.alias.video" android:targetActivity="com.UCMobile.main.UCMobile">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="file"/>
+                <data android:scheme="content"/>
+                <data android:scheme="ucweb"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="*"/>
+                <data android:pathPattern=".*\\.mp4"/>
+                <data android:pathPattern=".*\\.MP4"/>
+                <data android:pathPattern=".*\\.mkv"/>
+                <data android:pathPattern=".*\\.MKV"/>
+                <data android:pathPattern=".*\\.avi"/>
+                <data android:pathPattern=".*\\.AVI"/>
+                <data android:pathPattern=".*\\.asf"/>
+                <data android:pathPattern=".*\\.ASF"/>
+                <data android:pathPattern=".*\\.f4v"/>
+                <data android:pathPattern=".*\\.F4V"/>
+                <data android:pathPattern=".*\\.flv"/>
+                <data android:pathPattern=".*\\.FLV"/>
+                <data android:pathPattern=".*\\.mpeg"/>
+                <data android:pathPattern=".*\\.MPEG"/>
+                <data android:pathPattern=".*\\.mpg"/>
+                <data android:pathPattern=".*\\.MPG"/>
+                <data android:pathPattern=".*\\.mov"/>
+                <data android:pathPattern=".*\\.MOV"/>
+                <data android:pathPattern=".*\\.m3u8"/>
+                <data android:pathPattern=".*\\.M3U8"/>
+                <data android:pathPattern=".*\\.m3u"/>
+                <data android:pathPattern=".*\\.M3U"/>
+                <data android:pathPattern=".*\\.rm"/>
+                <data android:pathPattern=".*\\.RM"/>
+                <data android:pathPattern=".*\\.rmvb"/>
+                <data android:pathPattern=".*\\.RMVB"/>
+                <data android:pathPattern=".*\\.ts"/>
+                <data android:pathPattern=".*\\.TS"/>
+                <data android:pathPattern=".*\\.wmv"/>
+                <data android:pathPattern=".*\\.WMV"/>
+                <data android:pathPattern=".*\\.3gp"/>
+                <data android:pathPattern=".*\\.3GP"/>
+                <data android:pathPattern=".*\\.vdat"/>
+                <data android:pathPattern=".*\\.VDAT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="file"/>
+                <data android:scheme="content"/>
+                <data android:scheme="ucweb"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:host="*"/>
+                <data android:pathPattern=".*\\.m3u8"/>
+                <data android:pathPattern=".*\\.M3U8"/>
+                <data android:pathPattern=".*\\.m3u"/>
+                <data android:pathPattern=".*\\.M3U"/>
+                <data android:mimeType="*/*"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:scheme="file"/>
+                <data android:scheme="content"/>
+                <data android:scheme="ucweb"/>
+                <data android:mimeType="video/*"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:enabled="@bool/uc_image_viewer_switch" android:icon="@drawable/image_viewer" android:label="@string/image_viewer" android:name="com.UCMobile.main.UCMobile.alias.image" android:targetActivity="com.UCMobile.main.UCMobile">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="file"/>
+                <data android:scheme="content"/>
+                <data android:scheme="ucweb"/>
+                <data android:mimeType="image/jpeg"/>
+                <data android:mimeType="image/png"/>
+                <data android:mimeType="image/bmp"/>
+            </intent-filter>
+        </activity-alias>
+        <activity-alias android:enabled="@bool/uc_text_viewer_switch" android:icon="@drawable/text_viewer" android:label="@string/text_viewer" android:name="com.UCMobile.main.UCMobile.alias.text" android:targetActivity="com.UCMobile.main.UCMobile">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="file"/>
+                <data android:scheme="content"/>
+                <data android:scheme="ucweb"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:configChanges="fontScale|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.uc.browser.InnerUCMobile" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/BackgroundTheme" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.uc.browser.core.skinmgmt.CropImage"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.uc.application.ScreenshotsGraffiti.SGActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@style/SGActivityTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:label="ProxyActivity" android:name="com.uc.browser.ProxyActivity" android:resizeableActivity="false" android:screenOrientation="user">
+            <intent-filter>
+                <action android:name="com.uc.browser.action.CALL_PROXY_VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.uc.application.searchIntl.SearchActivity" android:noHistory="true" android:taskAffinity="com.uc.search" android:theme="@style/SearchActivityTheme">
+            <intent-filter>
+                <action android:name="com.uc.search.action.INPUT"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity-alias android:enabled="@bool/uc_assist_search_switch" android:name="com.uc.application.searchIntl.SearchActivity.alias.assist" android:targetActivity="com.uc.application.searchIntl.SearchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.ASSIST"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity-alias>
+        <activity android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.uc.application.searchIntl.QuickAccessSettingActivity" android:noHistory="true" android:taskAffinity="com.uc.quickaccesssetting" android:theme="@style/SearchActivityTheme"/>
+        <activity android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.uc.browser.business.shortcut.ShortcutFolderActivity" android:noHistory="true" android:taskAffinity="com.uc.ucfolder" android:theme="@style/ShortcutFolderActivityTheme">
+            <intent-filter>
+                <action android:name="com.uc.shortcut.folder.action.OPEN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.uc.browser.business.defaultbrowser.DefaultBrowserClearGuideActivity" android:noHistory="true" android:taskAffinity="com.uc.defaultclearguide" android:theme="@style/DefaultBrowserClearGuideActivityTheme"/>
+        <activity android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.uc.browser.business.defaultbrowser.DefaultBrowserTopGuideTaskActivity" android:noHistory="true" android:taskAffinity="com.uc.defaultsetmaskguide" android:theme="@style/default_browser_guide_dialog"/>
+        <activity android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.uc.browser.business.defaultbrowser.DefaultBrowserSetMaskGuideActivity" android:noHistory="true" android:taskAffinity="com.uc.defaultsetmaskguide" android:theme="@style/DefaultBrowserSetMaskGuideActivityTheme"/>
+        <receiver android:label="@string/app_name" android:name="com.uc.base.system.receivers.SysReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="true" android:name="com.uc.browser.googleanalytics.GoogleAnalyticsReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.uc.base.push.gcm.GCMPushBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND" android:process=":resident">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+                <category android:name="com.uc.browser.en"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.uc.base.push.gcm.GCMPushDispatcherService" android:process=":resident"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.uc.base.push.core.PushProxyReceiver" android:process=":resident">
+            <intent-filter>
+                <action android:name="com.uc.base.push.ACTION_WAKEUP_ALARM"/>
+                <action android:name="com.UCMobile.push.DELETE"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.taobao.accs.ChannelService" android:process=":resident">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.taobao.accs.ChannelService$KernelService" android:process=":resident"/>
+        <service android:exported="true" android:name="com.taobao.accs.data.MsgDistributeService">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.ELECTION"/>
+            </intent-filter>
+        </service>
+        <receiver android:name="com.taobao.accs.EventReceiver" android:process=":resident">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.taobao.accs.ServiceReceiver" android:process=":resident">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.COMMAND"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.START_FROM_AGOO"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.taobao.accs.internal.AccsJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":resident"/>
+        <service android:exported="true" android:name="org.android.agoo.accs.AgooService" android:process=":resident">
+            <intent-filter>
+                <action android:name="com.taobao.accs.intent.action.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="true" android:name="com.UCMobile.intl.TaobaoIntentService" android:process=":resident">
+            <intent-filter>
+                <action android:name="org.agoo.android.intent.action.RECEIVE"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="true" android:name="com.taobao.agoo.AgooCommondReceiver" android:process=":resident">
+            <intent-filter>
+                <action android:name="com.uc.browser.en.intent.action.COMMAND"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="true" android:name="com.taobao.agoo.TaobaoMessageIntentReceiverService" android:process=":resident">
+            <intent-filter>
+                <action android:name="org.android.agoo.client.MessageReceiverService"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="false" android:name="com.uc.base.push.agoo.TaobaoRebindReceiver">
+            <intent-filter>
+                <action android:name="com.uc.base.push.TRIGGER_AGOO_BIND"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.UCMobile.main.NotificationService"/>
+        <service android:name="com.uc.base.system.oomadj.ForegroundAssistServiceMain"/>
+        <service android:name="com.uc.browser.core.download.service.RemoteDownloadService" android:process=":DownloadService"/>
+        <service android:name="com.uc.base.system.oomadj.ForegroundAssistServiceDownload" android:process=":DownloadService"/>
+        <service android:name="com.UCMobile.Apollo.download.DownloaderService" android:process=":DownloadService"/>
+        <service android:name="com.uc.crashsdk.CrashLogFilesUploader" android:process=":TProcess"/>
+        <receiver android:label="@string/uc_widget_title" android:name="com.uc.application.desktopwidget.model.UCWidgetProvider">
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/appwidget_provider"/>
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="com.UCMobile.appwidget"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="@bool/uc_wallpaper_service_switch" android:label="@string/app_name" android:name="com.uc.base.system.wallpaper.UCWallPaperService" android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+            </intent-filter>
+        </service>
+        <receiver android:exported="false" android:name="com.uc.application.facebook.push.FacebookPushBroadcastReceiver">
+            <intent-filter>
+                <action android:name="com.uc.action.push.gcm.dispatch"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.uc.browser.bgprocess.IntlRemoteBackgroundProcess" android:process=":RemoteBackgroundProcess"/>
+        <receiver android:name="com.uc.browser.bgprocess.BackgroundProcessBroadcastReveiver" android:process=":RemoteBackgroundProcess">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+                <action android:name="com.uc.browser.bgprocess.lockscreen.alarm"/>
+                <action android:name="com.uc.browser.bgprocess.widget.alarm"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.uc.browser.webwindow.gprating.animationwideget.GPRateAnimationGuideService" android:process=":RemoteBackgroundProcess"/>
+        <service android:name="com.ucmusic.notindex.YoloIntentServiceShell" android:process=":music"/>
+        <service android:exported="false" android:name="com.ucmusic.notindex.HeadsetMonitorServiceShell" android:process=":music"/>
+        <receiver android:name="com.ucmusic.notindex.RemoteControlEventReceiver" android:process=":music">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:enabled="false" android:name="com.ucmusic.notindex.NewAddCheckReceiverShell" android:process=":music">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:exported="false" android:name="com.uc.browser.business.warmboot.WarmbootReceiver">
+            <intent-filter>
+                <action android:name="com.uc.intent.action.WARM_BOOT"/>
+            </intent-filter>
+        </receiver>
+        <activity android:enabled="false" android:hardwareAccelerated="true" android:icon="@drawable/ucmusic_ic_launcher" android:label="UC Music" android:launchMode="singleTask" android:name="com.ucmusic.notindex.MainActivityShell" android:process=":music" android:resizeableActivity="false" android:screenOrientation="portrait" android:taskAffinity="com.UCMobile.music" android:theme="@style/YoloProxyActivityTheme" android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="content"/>
+                <data android:scheme="file"/>
+                <data android:mimeType="audio/mpeg"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="false" android:name="com.ucmusic.notindex.PlaybackServiceShell" android:process=":PlaybackService"/>
+        <service android:exported="false" android:name="com.uc.browser.business.ucmusic.UCMusicOnlineService"/>
+        <provider android:authorities="com.uc.browser.en.com.ucmusic.yolo" android:exported="false" android:name="com.ucmusic.notindex.MusicContentProvider" android:process=":music"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:label="@string/app_name" android:name="com.facebook.FacebookActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <service android:name="com.uc.browser.notification.service.NotificationService" android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" android:process=":RemoteBackgroundProcess">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService"/>
+            </intent-filter>
+        </service>
+        <activity android:alwaysRetainTaskState="true" android:clearTaskOnLaunch="true" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.uc.browser.notification.guid.NotificationRequestActivity" android:noHistory="true" android:taskAffinity="com.uc.NotificationRequestActivity" android:theme="@style/LockScreenTheme"/>
+        <service android:name="com.uc.browser.core.media.MediaPlayerService" android:process=":MediaPlayerService"/>
+        <service android:exported="false" android:name="com.uc.base.crash.RemoteCrashMonitorService" android:process=":CrashDaemon"/>
+        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:multiprocess="true" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent"/>
+        <receiver android:name="com.uc.base.active.NotificationEventReceiver">
+            <intent-filter>
+                <action android:name="com.uc.base.active.NOTIFICATION_CLICK"/>
+                <action android:name="com.uc.base.active.NOTIFICATION_DELETE"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.uc.browser.multiprocess.resident.ResidentJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":resident"/>
+        <service android:name="com.uc.browser.multiprocess.resident.ResidentIpcService" android:process=":resident">
+            <intent-filter>
+                <action android:name="com.uc.processdaemon.PULL"/>
+                <action android:name="com.ud.foreground.ntf"/>
+            </intent-filter>
+        </service>
+        <service android:name="com.uc.browser.multiprocess.bgwork.CollapsedJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":RemoteBackgroundProcess"/>
+        <service android:name="com.uc.browser.multiprocess.bgwork.CollapsedIpcService" android:process=":RemoteBackgroundProcess"/>
+        <service android:name="com.uc.browser.multiprocess.main.MainIpcService"/>
+        <service android:name="com.amap.api.location.APSService" android:process=":RemoteBackgroundProcess"/>
+        <service android:name="com.uc.ud.ploys.doubleprocess.DpReceiverService" android:process=":resident"/>
+        <provider android:authorities="com.uc.browser.en.udrcv" android:name="com.uc.ud.ploys.doubleprocess.DpReceiverProvider" android:process=":resident"/>
+        <service android:name="com.uc.ud.ploys.jobscheduler.UdJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":resident"/>
+        <service android:enabled="true" android:exported="true" android:name="com.uc.ud.ploys.friend.FriendAcceptorService" android:process=":resident">
+            <intent-filter>
+                <action android:name="com.uc.browser.intent.FRIEND"/>
+                <action android:name="com.uc.action.pull.friend"/>
+                <action android:name="com.uc.action.push.bus.command"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+        <activity android:excludeFromRecents="true" android:exported="true" android:finishOnTaskLaunch="true" android:launchMode="singleInstance" android:name="com.uc.ud.ploys.friend.FriendAcceptorActivity" android:noHistory="true" android:process=":resident" android:theme="@style/trans">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:host="com.dm.friends" android:scheme="uds"/>
+            </intent-filter>
+        </activity>
+        <service android:enabled="@bool/account_authenticator_switch" android:name="com.uc.ud.ploys.sync.AuthenticatorService" android:process=":resident">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator"/>
+        </service>
+        <service android:exported="true" android:name="com.uc.ud.ploys.sync.SyncService" android:process=":resident">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter"/>
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter" android:resource="@xml/syncadapter"/>
+        </service>
+        <provider android:authorities="com.uc.browser.en.datasync.provider" android:exported="false" android:name="com.uc.ud.ploys.sync.SyncContentProvider" android:process=":resident" android:syncable="true"/>
+        <receiver android:name="com.uc.ud.UdReceiver" android:process=":resident">
+            <intent-filter>
+                <action android:name="process.daemon.receiver.alarm"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED"/>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
+            </intent-filter>
+        </receiver>
+        <activity android:excludeFromRecents="true" android:exported="true" android:finishOnTaskLaunch="true" android:launchMode="singleInstance" android:name="com.uc.browser.multiprocess.resident.ResidentActivity" android:noHistory="true" android:process=":resident" android:theme="@style/trans">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <data android:host="com.uc.browser.en.ud.activity" android:scheme="uds"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="false" android:name="com.uc.deployment.UpgradeDeployService" android:process=":deploy"/>
+        <service android:exported="false" android:name="com.uc.deployment.PatchInstallIntentService" android:process=":deploy"/>
+        <service android:exported="false" android:name="com.uc.deployment.PatchInstallIntentService$InnerService" android:process=":deploy"/>
+        <service android:exported="false" android:name="com.uc.deployment.PatchInstallJobService" android:permission="android.permission.BIND_JOB_SERVICE" android:process=":deploy"/>
+        <activity android:configChanges="fontScale|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:label="WebappLauncherActivity" android:name="com.uc.application.pwa.webapps.WebappLauncherActivity" android:resizeableActivity="false" android:taskAffinity="" android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="com.uc.browser.en.webapps.ACTION_START_WEBAPP"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="false" android:launchMode="singleInstance" android:name="com.uc.devconfig.view.DevConfigActivity"/>
+        <service android:exported="false" android:name="com.uc.application.pwa.push.WebPushNotificationListenerService"/>
+        <receiver android:exported="false" android:name="com.uc.application.pwa.push.WebPushNotificationListenerService$Receiver">
+            <intent-filter>
+                <action android:name="com.uc.web.notifications.CLICK_NOTIFICATION"/>
+                <action android:name="com.uc.web.notifications.CLOSE_NOTIFICATION"/>
+                <data android:scheme="https"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.uc.action.push.gcm.dispatch"/>
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.alibaba.analytics.AnalyticsService" android:process=":RemoteBackgroundProcess"/>
+        <provider android:authorities="com.uc.browser.en.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="android.support.v4.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_provider_paths"/>
+        </provider>
+        <activity android:name="com.uc.module.barcode.CaptureActivity" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="screenLayout|screenSize" android:launchMode="singleInstance" android:name="com.swof.u4_ui.home.ui.search.SearchActivity" android:screenOrientation="portrait" android:theme="@style/SwofTheme" android:windowSoftInputMode="adjustResize|stateUnchanged"/>
+        <activity android:configChanges="screenLayout|screenSize" android:launchMode="singleInstance" android:name="com.swof.u4_ui.home.ui.SessionActivity" android:screenOrientation="portrait" android:theme="@style/SwofTheme"/>
+        <activity android:configChanges="screenLayout|screenSize" android:launchMode="singleInstance" android:name="com.swof.u4_ui.filemanager.FileManagerActivity" android:screenOrientation="portrait" android:theme="@style/SwofTheme"/>
+        <activity android:configChanges="screenLayout|screenSize" android:launchMode="singleInstance" android:name="com.swof.u4_ui.home.ui.SwofConnectActivity" android:theme="@style/Transparent"/>
+        <activity android:configChanges="screenLayout|screenSize" android:launchMode="singleInstance" android:name="com.swof.u4_ui.home.ui.SwofConnectEntryActivity" android:theme="@style/Transparent"/>
+        <activity android:configChanges="screenLayout|screenSize" android:launchMode="singleInstance" android:name="com.swof.u4_ui.pc.HttpShareActivity" android:screenOrientation="portrait" android:theme="@style/SwofTheme"/>
+        <service android:name="com.swof.transport.ReceiveService"/>
+        <service android:name="com.swof.transport.TransferService"/>
+        <provider android:authorities="com.uc.browser.en.swof_provider" android:exported="false" android:grantUriPermissions="true" android:name="com.swof.u4_ui.utils.utils.SwofProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <activity android:configChanges="screenLayout|screenSize" android:launchMode="singleInstance" android:name="com.swof.permission.PermissionActivity" android:theme="@style/TotalTransparent"/>
+        <activity android:configChanges="screenLayout|screenSize" android:launchMode="singleInstance" android:name="com.swof.u4_ui.home.ui.SwofActivity" android:screenOrientation="portrait" android:theme="@style/SwofTheme"/>
+        <activity android:configChanges="screenLayout|screenSize" android:launchMode="singleInstance" android:name="com.swof.u4_ui.filemanager.FolderActivity" android:screenOrientation="portrait" android:theme="@style/SwofTheme"/>
+        <activity android:configChanges="screenLayout|screenSize" android:launchMode="singleInstance" android:name="com.swof.u4_ui.home.ui.ApShareActivity" android:screenOrientation="portrait" android:theme="@style/SwofTheme"/>
+        <activity android:configChanges="screenLayout|screenSize" android:launchMode="singleInstance" android:name="com.swof.u4_ui.home.ui.ShareActivity" android:screenOrientation="portrait" android:theme="@style/SwofTheme"/>
+        <activity android:configChanges="screenLayout|screenSize" android:launchMode="singleInstance" android:name="com.swof.u4_ui.home.ui.FileDetailsActivity" android:screenOrientation="portrait" android:theme="@style/SwofTheme"/>
+        <provider android:authorities="com.uc.browser.en.arkprovider" android:exported="false" android:grantUriPermissions="true" android:name="com.uc.ark.extend.mediapicker.ArkFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/ark_provider_paths"/>
+        </provider>
+        <service android:exported="false" android:name="com.uc.ark.base.bgprocess.service.BgprocessService" android:process=":RemoteBackgroundProcess"/>
+        <meta-data android:name="android.support.VERSION" android:value="26.0.2"/>
+        <activity android:exported="false" android:label="AerieDeployment" android:launchMode="singleTask" android:name="com.uc.aerie.updater.test.AerieUpdaterTestActivity" android:process=":aerie_updater" android:resizeableActivity="false" android:screenOrientation="portrait" android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen"/>
+        <meta-data android:name="com.uc.base.image.core.ImageModule" android:value="GlideModule"/>
+        <service android:name="com.uc.ud.ploys.doubleprocess.DpSenderService" android:process=":ud"/>
+        <provider android:authorities="com.uc.browser.en.udsnd" android:name="com.uc.ud.ploys.doubleprocess.DpSenderProvider" android:process=":ud"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.uc.sdk.safemode.component.SafeModeActivity" android:process=":safemode" android:screenOrientation="portrait" android:theme="@style/SafeModeTransparent" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <service android:exported="false" android:name="com.uc.sdk.safemode.component.SafeModeService" android:process=":safemode"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.alibaba.android.multidex.LoadDexesActivity" android:process=":dexwelcome" android:screenOrientation="portrait" android:theme="@style/LoadDexTransparent" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <activity android:excludeFromRecents="true" android:launchMode="singleTask" android:name="com.alibaba.android.multidex.LoadDexesDialogActivity" android:process=":dexwelcome" android:screenOrientation="portrait" android:theme="@android:style/Theme.Translucent.NoTitleBar" android:windowSoftInputMode="adjustPan|stateHidden"/>
+        <service android:name="com.taobao.android.runtime.Dex2OatService" android:process=":dex2oat"/>
+    </application>
+</manifest>

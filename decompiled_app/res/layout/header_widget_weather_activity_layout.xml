@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:paddingLeft="@dimen/home_page_widget_margin_left" android:paddingRight="@dimen/home_page_widget_margin_right" android:layout_width="fill_parent" android:layout_height="@dimen/home_page_weather_activity_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="bottom|center|right" android:id="@id/right_background" android:layout_width="@dimen/home_page_right_background_width" android:layout_height="fill_parent" android:scaleType="fitCenter" />
+    <com.airbnb.lottie.LottieAnimationView android:layout_gravity="bottom|center|right" android:id="@id/lottie_icon" android:layout_width="@dimen/home_page_widget_activity_max_width" android:layout_height="wrap_content" android:scaleType="fitEnd" />
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="left" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="@dimen/home_page_widget_title_size" android:textStyle="bold" android:textColor="#ff404040" android:ellipsize="end" android:id="@id/activity_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxWidth="@dimen/home_page_widget_weather_max_width" android:singleLine="true" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/temp_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/home_page_widget_decs_size" android:textStyle="bold" android:textColor="#ff404040" android:id="@id/temp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+            <TextView android:textSize="@dimen/home_page_widget_decs_size" android:textStyle="bold" android:textColor="#ffff9c38" android:id="@id/line" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="/ " />
+            <TextView android:textSize="@dimen/home_page_widget_decs_size" android:textColor="#ff404040" android:id="@id/desc" android:layout_width="wrap_content" android:layout_height="fill_parent" android:singleLine="true" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/home_page_widget_decs_size" android:textColor="#ffff9c38" android:id="@id/alert_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</FrameLayout>

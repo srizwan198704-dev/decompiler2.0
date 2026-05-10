@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="launcher_celllayout_paddingbottom_portrait">58.669983dip</dimen>
+    <dimen name="launcher_celllayout_paddingtop_portrait">53.339996dip</dimen>
+    <dimen name="titlebar_height">44.0dip</dimen>
+</resources>

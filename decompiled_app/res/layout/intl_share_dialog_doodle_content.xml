@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/intl_doodle_enter_img" android:layout_width="@dimen/intl_share_doodle_enter_img_width" android:layout_height="@dimen/intl_share_doodle_enter_img_height" android:layout_centerHorizontal="true" />
+    <ImageView android:id="@id/intl_doodle_enter_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/intl_share_doodle_enter_arrow_right_gap" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="@dimen/intl_share_doodle_enter_text_size" android:textColor="#ff4e4c59" android:gravity="center" android:id="@id/intl_doodle_enter_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/intl_share_doodle_enter_img_btn_gap" android:text="Sticker Share" android:layout_below="@id/intl_doodle_enter_img" />
+</RelativeLayout>

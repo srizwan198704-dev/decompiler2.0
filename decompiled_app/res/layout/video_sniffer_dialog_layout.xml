@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center|right|top" android:id="@id/close" android:padding="@dimen/video_sniffer_dialog_close_button_margin" android:layout_width="@dimen/video_sniffer_dialog_close_button_size" android:layout_height="@dimen/video_sniffer_dialog_close_button_size" />
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/video_sniffer_dialog_content_left_margin" android:layout_marginRight="@dimen/video_sniffer_dialog_content_left_margin">
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="@dimen/video_sniffer_dialog_title_text_size" android:textStyle="bold" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" />
+            <TextView android:textSize="@dimen/video_sniffer_dialog_content_text_size" android:ellipsize="middle" android:id="@id/content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/video_sniffer_dialog_content_top_margin" android:singleLine="true" />
+        </LinearLayout>
+        <ImageView android:id="@id/btn_play" android:layout_width="@dimen/video_sniffer_dialog_button_icon_size" android:layout_height="@dimen/video_sniffer_dialog_button_icon_size" android:layout_marginLeft="@dimen/video_sniffer_dialog_content_left_margin" />
+        <ImageView android:id="@id/btn_download" android:layout_width="@dimen/video_sniffer_dialog_button_icon_size" android:layout_height="@dimen/video_sniffer_dialog_button_icon_size" android:layout_marginLeft="@dimen/video_sniffer_dialog_content_left_margin" />
+    </LinearLayout>
+</merge>

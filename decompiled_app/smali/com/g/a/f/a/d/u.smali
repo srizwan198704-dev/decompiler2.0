@@ -1,0 +1,48 @@
+.class final Lcom/g/a/f/a/d/u;
+.super Lcom/g/a/f/a/d/n;
+.source "ProGuard"
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    .line 125
+    invoke-direct {p0}, Lcom/g/a/f/a/d/n;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final JJ()I
+    .locals 1
+
+    .line 138
+    sget v0, Lcom/g/a/f/a/d/a;->dVN:I
+
+    return v0
+.end method
+
+.method public final h(IIII)F
+    .locals 0
+
+    int-to-float p3, p3
+
+    int-to-float p1, p1
+
+    div-float/2addr p3, p1
+
+    int-to-float p1, p4
+
+    int-to-float p2, p2
+
+    div-float/2addr p1, p2
+
+    .line 132
+    invoke-static {p3, p1}, Ljava/lang/Math;->max(FF)F
+
+    move-result p1
+
+    return p1
+.end method

@@ -1,0 +1,48 @@
+.class final Lcom/g/a/f/b/bm;
+.super Ljava/lang/Object;
+.source "ProGuard"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<Model:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
+
+
+# instance fields
+.field final dXs:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lcom/g/a/f/b/i<",
+            "TModel;*>;>;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(Ljava/util/List;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/g/a/f/b/i<",
+            "TModel;*>;>;)V"
+        }
+    .end annotation
+
+    .line 120
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 121
+    iput-object p1, p0, Lcom/g/a/f/b/bm;->dXs:Ljava/util/List;
+
+    return-void
+.end method

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/download_ad_card_layout" android:layout_width="fill_parent" android:layout_height="@dimen/download_new_ad_layout_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/download_ad_cover_icon" android:layout_width="@dimen/download_new_ad_cover_icon_size" android:layout_height="@dimen/download_new_ad_cover_icon_size" android:layout_marginLeft="@dimen/download_new_ad_cover_icon_mar_left" android:layout_marginRight="@dimen/download_new_ad_cover_icon_mar_right" android:layout_centerVertical="true" />
+    <Button android:textSize="12.0dip" android:id="@id/download_ad_arrow" android:layout_width="@dimen/download_new_ad_btn_width" android:layout_height="@dimen/download_new_ad_btn_height" android:layout_marginLeft="@dimen/download_new_ad_arrow_icon_mar_left" android:layout_marginRight="@dimen/download_new_ad_arrow_icon_mar_right" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/download_ad_text_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toLeftOf="@id/download_ad_arrow" android:layout_toRightOf="@id/download_ad_cover_icon" android:layout_alignParentTop="true">
+        <TextView android:textSize="@dimen/download_new_ad_title_textsize" android:textStyle="bold" android:ellipsize="end" android:gravity="left" android:id="@id/download_ad_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        <TextView android:textSize="@dimen/download_new_ad_tip_textsize" android:ellipsize="end" android:gravity="left" android:id="@id/download_ad_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" android:layout_below="@id/download_ad_title" />
+    </LinearLayout>
+</RelativeLayout>

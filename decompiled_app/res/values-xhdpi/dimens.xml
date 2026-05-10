@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_browser_clear_guide_above_first_tab_text_height">58.0dip</dimen>
+    <dimen name="default_browser_clear_guide_above_second_tab_im_height">172.0dip</dimen>
+    <dimen name="info_flow_fake_layer_trans_anim_offset">3.0dip</dimen>
+    <dimen name="language_preload_txt_title">19.0dip</dimen>
+    <dimen name="launcher_celllayout_paddingbottom_portrait">71.0dip</dimen>
+    <dimen name="launcher_celllayout_paddingtop_portrait">60.0dip</dimen>
+    <dimen name="search_input_keyword_text_size">18.0dip</dimen>
+    <dimen name="tips_window_content_btn_margin_left_and_right">23.0dip</dimen>
+    <dimen name="tips_window_content_step_one_left_margin">13.0dip</dimen>
+    <dimen name="tips_window_content_step_two_bottom_margin">0.0dip</dimen>
+    <dimen name="tips_window_content_step_two_right_margin">13.0dip</dimen>
+    <dimen name="tips_window_content_title_left_margin">50.0dip</dimen>
+    <dimen name="tips_window_content_title_top_margin">16.0dip</dimen>
+    <dimen name="titlebar_height">49.5dip</dimen>
+    <dimen name="ucaccount_signin_avatar_size">80.0dip</dimen>
+    <dimen name="ucaccount_signin_container_margin_bottom">82.0dip</dimen>
+    <dimen name="ucaccount_signin_title_height">60.0dip</dimen>
+    <dimen name="ucaccount_signin_with_margin_bottom">55.0dip</dimen>
+    <dimen name="ucaccount_window_center_signin_button_tp_margin">32.0dip</dimen>
+</resources>

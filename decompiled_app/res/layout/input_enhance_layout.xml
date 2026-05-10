@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@id/enhance_main_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/prefix_button_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <Button android:textSize="@dimen/inputenhance_prefix_textsize" android:id="@id/prefix1_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="1.0dip" android:minHeight="1.0dip" />
+        <ImageView android:id="@id/imageview_split1" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="center" />
+        <Button android:textSize="@dimen/inputenhance_prefix_textsize" android:id="@id/prefix2_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="1.0dip" android:minHeight="1.0dip" />
+        <ImageView android:id="@id/imageview_split2" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="center" />
+        <Button android:textSize="@dimen/inputenhance_prefix_textsize" android:id="@id/prefix3_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="1.0dip" android:minHeight="1.0dip" />
+        <ImageView android:id="@id/imageview_split3" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="center" />
+        <Button android:textSize="@dimen/inputenhance_prefix_textsize" android:id="@id/prefix4_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="1.0dip" android:minHeight="1.0dip" />
+        <ImageView android:id="@id/imageview_split4" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="center" />
+        <Button android:textSize="@dimen/inputenhance_prefix_textsize" android:id="@id/prefix5_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="1.0dip" android:minHeight="1.0dip" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="center_vertical" android:id="@id/web_button_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/inputenhance_layout_margin">
+        <Button android:textSize="@dimen/inputenhance_textsize" android:id="@id/previous_cursor_button" android:paddingLeft="@dimen/inputenhance_button_padding" android:paddingRight="@dimen/inputenhance_button_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="1.0dip" android:minHeight="1.0dip" />
+        <ImageView android:id="@id/cursor_imageview_split" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="center" />
+        <Button android:textSize="@dimen/inputenhance_textsize" android:id="@id/next_cursor_button" android:paddingLeft="@dimen/inputenhance_button_padding" android:paddingRight="@dimen/inputenhance_button_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="1.0dip" android:minHeight="1.0dip" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/cursor_button_layout" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ImageView android:id="@id/cursor_left" android:layout_width="@dimen/inputenhance_short_alpha_wight" android:layout_height="wrap_content" android:scaleType="center" />
+        <ImageView android:id="@id/cursor_imageview_split1" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="center" />
+        <ImageView android:id="@id/cursor_right" android:layout_width="@dimen/inputenhance_short_alpha_wight" android:layout_height="wrap_content" android:scaleType="center" />
+    </LinearLayout>
+    <LinearLayout android:gravity="right" android:layout_gravity="center_vertical" android:orientation="horizontal" android:id="@id/fun_button_layout" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="@dimen/inputenhance_layout_margin" android:layout_weight="1.0">
+        <Button android:textSize="@dimen/inputenhance_textsize" android:id="@id/cliboard_button" android:paddingLeft="@dimen/inputenhance_button_padding" android:paddingRight="@dimen/inputenhance_button_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/inputenhance_button_rightmargin" android:minWidth="1.0dip" android:minHeight="1.0dip" />
+        <Button android:textSize="@dimen/inputenhance_textsize" android:id="@id/longtext_button" android:paddingLeft="@dimen/inputenhance_button_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="1.0dip" android:minHeight="1.0dip" />
+    </LinearLayout>
+</LinearLayout>

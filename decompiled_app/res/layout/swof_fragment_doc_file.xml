@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.swof.u4_ui.home.ui.view.PinnedSectionListView android:id="@id/format_cate_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="46.0dip" android:cacheColorHint="#00000000" android:divider="@null" android:dividerHeight="0.0px" android:overScrollMode="never"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <com.swof.u4_ui.home.ui.view.PinnedSectionListView android:id="@id/folder_cate_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="46.0dip" android:cacheColorHint="#00000000" android:divider="@null" android:dividerHeight="0.0px" android:overScrollMode="never"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/cate_title_container" style="@style/swof_tab_category_title_style">
+        <TextView android:id="@id/type_text" android:background="@drawable/swof_bg_category_title_item" android:layout_marginLeft="0.0dip" android:layout_weight="1.0" style="@style/SwofCategoryTitleItem" />
+        <TextView android:id="@id/size_text" android:background="@drawable/swof_bg_category_title_item" android:layout_marginLeft="0.0dip" android:layout_weight="1.0" style="@style/SwofCategoryTitleItem" />
+    </LinearLayout>
+</FrameLayout>

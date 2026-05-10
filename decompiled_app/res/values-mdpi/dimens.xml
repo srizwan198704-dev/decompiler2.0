@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="launcher_celllayout_paddingbottom_portrait">60.0dip</dimen>
+    <dimen name="launcher_celllayout_paddingtop_portrait">54.0dip</dimen>
+    <dimen name="launcher_mgmt_button_container_landscape_height">44.0dip</dimen>
+    <dimen name="licenseview_font_size">12.0dip</dimen>
+    <dimen name="licenseview_return_button_font_size">14.669983dip</dimen>
+    <dimen name="skin_tab_web_page_content_padding_top">8.0dip</dimen>
+    <dimen name="skin_tab_web_page_theme_item_view_height_intl">40.0dip</dimen>
+    <dimen name="skin_tab_web_page_theme_item_view_min_horizontal_space">8.0dip</dimen>
+    <dimen name="skin_tab_web_page_theme_item_view_vertical_space">4.0dip</dimen>
+    <dimen name="skin_tab_web_page_theme_item_view_width">40.0dip</dimen>
+    <dimen name="skin_tab_web_page_theme_preview_item_width">200.0dip</dimen>
+    <dimen name="skin_tab_web_page_theme_space_view_marrgin">6.0dip</dimen>
+    <dimen name="theme_online_preview_new_tips_text_size">12.0dip</dimen>
+</resources>

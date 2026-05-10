@@ -1,0 +1,28 @@
+version: 2.9.3
+apkFileName: input_app.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+  tag: null
+sdkInfo:
+  minSdkVersion: 21
+  targetSdkVersion: 26
+packageInfo:
+  forcedPackageId: 127
+  renameManifestPackage: null
+versionInfo:
+  versionCode: 155
+  versionName: 12.9.7.1158
+resourcesAreCompressed: false
+sharedLibrary: false
+sparseResources: false
+doNotCompress:
+- png
+- assets/UCMobile/usdata7/en-in/ucm_def_home.dat
+- assets/UCMobile/usdata7/en-us/ucm_def_home.dat
+- assets/UCMobile/usdata7/es-la/ucm_def_home.dat
+- assets/UCMobile/usdata7/ru/ucm_def_home.dat
+- assets/UCMobile/usdata7/vi/ucm_def_home.dat
+- lib/armeabi/libuc_keep.so
+- webp

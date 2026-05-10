@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_gravity="center" android:id="@id/traffic_icon" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <com.uc.browser.business.traffic.TrafficRoundProgressBar android:layout_gravity="center" android:id="@id/traffic_panel_round_progress" android:layout_width="135.0dip" android:layout_height="135.0dip" android:layout_marginLeft="33.0dip" android:layout_marginTop="33.0dip" android:layout_marginRight="33.0dip" android:layout_marginBottom="33.0dip" />
+        <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/traffic_description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lineSpacingExtra="4.0dip" />
+    </FrameLayout>
+    <TextView android:textSize="12.0dip" android:gravity="center" android:id="@id/traffic_save_status" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="16.0dip" android:text="Data Saving Premium Mode: ON" />
+    <View android:id="@id/divider_1" android:layout_width="fill_parent" android:layout_height="9.0dip" />
+    <TextView android:textSize="14.0dip" android:id="@id/traffic_type_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="16.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="20.0dip" android:text="The data was saved by following technologies" android:singleLine="true" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/traffic_details_item_container" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="32.0dip" android:layout_marginRight="32.0dip" />
+    <View android:id="@id/divider_2" android:layout_width="fill_parent" android:layout_height="9.0dip" />
+    <TextView android:textSize="14.0dip" android:id="@id/traffic_month_data_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="16.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="28.0dip" android:text="Monthly data saved records" />
+    <com.uc.browser.business.traffic.widget.BarChartView android:id="@id/monthly_chart_view" android:layout_width="fill_parent" android:layout_height="150.0dip" android:layout_marginLeft="16.0dip" android:layout_marginRight="16.0dip" android:layout_marginBottom="16.0dip" />
+</LinearLayout>

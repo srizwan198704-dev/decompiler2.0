@@ -1,0 +1,38 @@
+.class final Lcom/uc/ark/sdk/components/card/c/f;
+.super Ljava/lang/Object;
+.source "ProGuard"
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# instance fields
+.field final synthetic bfL:Lcom/uc/ark/sdk/components/card/c/j;
+
+
+# direct methods
+.method constructor <init>(Lcom/uc/ark/sdk/components/card/c/j;)V
+    .locals 0
+
+    .line 48
+    iput-object p1, p0, Lcom/uc/ark/sdk/components/card/c/f;->bfL:Lcom/uc/ark/sdk/components/card/c/j;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onClick(Landroid/view/View;)V
+    .locals 1
+
+    .line 51
+    iget-object p1, p0, Lcom/uc/ark/sdk/components/card/c/f;->bfL:Lcom/uc/ark/sdk/components/card/c/j;
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Lcom/uc/ark/sdk/components/card/c/j;->onTopicClick(I)V
+
+    return-void
+.end method

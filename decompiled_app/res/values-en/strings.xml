@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">UC Mini</string>
+    <string name="hour">hour</string>
+    <string name="minute">min</string>
+    <string name="open_name">UC Mini</string>
+    <string name="second">s</string>
+    <string name="uc_widget_title">UC Mini</string>
+</resources>

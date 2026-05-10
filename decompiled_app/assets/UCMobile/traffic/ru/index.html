@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>Использование данных</title>
+    <style type="text/css">
+    html,
+    body,
+    div,
+    span,
+    img,
+    p,
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        list-style: none
+    }
+    
+    body {
+        font-family: "Myriad Set Pro", "Lucida Grande", "Helvetica Neue", "Helvetica", "Arial", "Verdana", "sans-serif";
+        -webkit-text-size-adjust: 100%;
+        background: #2d99ea;
+        color: #666;
+        -webkit-font-smoothing: antialiased;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    
+    .meter {
+        width: 100%;
+        height: 310px;
+        background: #2d99ea;
+        position: relative;
+        overflow: hidden
+    }
+    
+    .meter-clear {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 10px;
+        height: 26px;
+        background: #56b0f3;
+        color: #fff;
+        text-align: center;
+        line-height: 26px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        font-size: 15px;
+        padding-left: 6px;
+        text-decoration: none;
+        z-index: 99
+    }
+    
+    .meter-balls {
+        height: 78px;
+        width: 230px;
+        margin: auto;
+        margin-top: 24px;
+        position: relative;
+    }
+    
+    .left-ball {
+        display: block;
+        width: 78px;
+        height: 78px;
+        float: left
+    }
+    
+    .right-ball {
+        display: block;
+        width: 100px;
+        height: 78px;
+        float: right;
+    }
+    
+    .right-ball div {
+        width: 100px;
+        height: 78px;
+    }
+    
+    .meter-char {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        color: #fff;
+        font-size: 38px;
+        margin-left: -12px;
+        margin-top: -21px;
+    }
+    
+    .meter-middle-text {
+        width: 300px;
+        height: 50px;
+        margin: auto;
+        margin-top: 6px;
+        position: relative;
+        text-align: center
+    }
+    
+    .meter-middle-text p {
+        font-size: 12px;
+        color: #c0ddf8;
+        margin-bottom: 5px;
+    }
+    
+    .meter-middle-text span {
+        font-size: 18px;
+        color: #d7ecfb
+    }
+    
+    .meter-middle-text-left {
+        width: 150px;
+        float: left;
+    }
+    
+    .meter-middle-text-right {
+        width: 150px;
+        float: right;
+    }
+    
+    .meter-bottom-text {
+        margin: 4px auto 0;
+        width: 300px;
+        height: 41px;
+        color: #eaf5fd;
+        font-size: 12px;
+        text-align: center;
+    }
+    
+    .meter-bottom-text p {
+        line-height: 18px;
+        letter-spacing: .3px;
+        margin: 0;
+    }
+    
+    .meter-buttons {
+        width: 310px;
+        height: 42px;
+        margin: 14px auto 0;
+        text-align: center;
+    }
+    
+    .meter-buttons li,
+    .meter-buttons a{
+        display: none;
+        margin: 0 4px;
+        width: 118px;
+        height: 100%;
+        background: #33d6ff;
+        border-radius: 3px;
+        line-height: 42px;
+        font-size: 13px;
+        color: #fff;
+        text-align: center;
+        padding-left: 20px;
+        position: relative;
+        text-decoration: none;
+    }
+    
+    .meter-buttons li.btn-share {
+        display: inline-block;
+    }
+    
+    .btn-star:before,
+    .btn-share:before{
+        display: block;
+        position: absolute;
+        top: 50%;
+        margin-top: -10px;
+        left: 20px;
+        content: "";
+        height: 18px;
+        width: 18px;
+        background-image: url(http://image.uc.cn/s/uae/g/01/uc_sll/icons.png);
+        
+    }
+    .btn-star:before{
+        background-position:0 0;
+        background-size: cover;
+    }
+    
+    .btn-share:before {
+        background-position:-19px 0;
+        background-size: cover;
+        
+    }
+    
+    .bolang {
+        margin-top: 10px;
+        width: 100%;
+        height: 38px;
+        background: url(http://image.uc.cn/s/uae/g/01/uc_sll/bolang.png) no-repeat 50% 0;
+        background-size: 100% 38px;
+    }
+    
+    .left-ball {
+        background: url(http://image.uc.cn/s/uae/g/01/uc_sll/liuliang.png) no-repeat 50%;
+        background-size: 78px auto;
+    }
+    
+    .icon-web {
+        background: url(http://image.uc.cn/s/uae/g/01/uc_sll/web.png) no-repeat 100% 50%;
+        background-size: auto 78px;
+    }
+    
+    .icon-music {
+        background: url(http://image.uc.cn/s/uae/g/01/uc_sll/music.png) no-repeat 100% 50%;
+        background-size: auto 78px;
+    }
+    
+    .icon-video {
+        background: url(http://image.uc.cn/s/uae/g/01/uc_sll/video.png) no-repeat 100% 50%;
+        background-size: auto 78px;
+    }
+    </style>
+</head>
+
+<body>
+    <section class="meter">
+        <span class="meter-clear" id="meter_clear">Очистить</span>
+        <section class="meter-balls">
+            <div class="left-ball"></div>
+            <div class="meter-char">=</div>
+            <div class="right-ball">
+                <div id="right_ball"></div>
+            </div>
+        </section>
+        <section class="meter-middle-text">
+            <div class="meter-middle-text-left">
+                <p>Всего сэкономлено </p>
+                <span id="total_saved"></span>
+            </div>
+            <div class="meter-middle-text-right">
+                <p id="right_text"></p>
+                <span id="save_time"></span>
+            </div>
+        </section>
+        <section class="meter-bottom-text">
+            <p>Сегодня использовано: <span id="today_used"></span></p>
+            <p>Сегодня сэкономлено: <span id="today_saved"></span></p>
+        </section>
+        <ul class="meter-buttons">
+            <li id="btn_star" class="btn-star">звезд</li>
+            <li id="btn_share" class="btn-share">Поделиться</li>
+        </ul>
+        <div class="bolang"></div>
+    </section>
+    <script>
+    'use strict';
+
+    var conf = {
+
+        onlineClass: 'music', //上网类型
+
+        dataByte: {
+            totalSave: 1000000000000, //总共节省流量
+            todayUse: 12345678997, //今天使用流量
+            todaySave: 200000, //今天节省流量
+        },
+        dataGroup: {
+            totalSave: 'Нет данных', //总共节省流量
+            todayUse: 'Данных еще нет', //今天使用流量
+            todaySave: 'Данных еще нет', //今天节省流量
+            saveTime: 'Недоступно',
+            unitTime: ['мин', 'час'],
+            unitNet: ['Байт', 'Кб', 'Мб', 'Гб', 'Тб']
+        },
+
+        onlineType: {
+            web: {
+                cls: 'icon-web',
+                txt: 'Серфинг',
+                share: 'UC Browser сэкономил для меня XXX трафика, позволяя просматривать интернет на YYY часа дольше. Удивительно, вы пробовали?'
+            },
+            music: {
+                cls: 'icon-music',
+                txt: 'Слушать музыку онлайн',
+                share: 'UC Browser сэкономил XXX трафика, позволяя мне слушать музыку онлайн на YYY часа дольше. Удивительно, вы пробовали?'
+            },
+            video: {
+                cls: 'icon-video',
+                txt: 'Смотреть видео онлайн',
+                share: 'UC Browser сэкономил XXX трафика, позволяя мне смотреть видео онлайн на YYY часа дольше. Удивительно, вы пробовали?'
+            }
+        },
+        share: 'Лучшая экономия трафика с UC Browser ждет вас!'
+
+    };
+
+
+    var meterClear = $('meter_clear');
+    var rBall = $('right_ball'); //右边图形
+    var rText = $('right_text'); //右边文字
+    var bStar = $('btn_star'); //评星按钮
+    var bShare = $('btn_share'); //分享按钮
+
+    function changeIcon(s) {
+        conf.onlineClass = s;
+        rBall.className = conf.onlineType[s].cls;
+		rText.innerText = conf.onlineType[s].txt;
+    }
+
+    try {
+        //是否支持GP评分,1为支持，0为不支持
+        var gpJudge = parseInt(UCShellJava.invoke("", "google", "isSupportRating", "", ""));
+        if (gpJudge) {
+            showStar();
+        }
+
+        //流量统计-总共节省流量,单位都为B
+        conf.dataByte.totalSave = parseInt(UCShellJava.invoke("", "traffic", "getTotalSave", "", ""));
+
+        //流量统计-今天使用流量
+        conf.dataByte.todayUse = parseInt(UCShellJava.invoke("", "traffic", "getTodayUse", "", ""));
+
+        //流量统计-今天节省流量
+        conf.dataByte.todaySave = parseInt(UCShellJava.invoke("", "traffic", "getTodaySave", "", ""));
+
+
+        //添加单位用于页面展示
+        if (conf.dataByte.totalSave) {
+            conf.dataGroup.totalSave = conversion(conf.dataByte.totalSave);
+            conf.dataGroup.todayUse = conversion(conf.dataByte.todayUse);
+            conf.dataGroup.todaySave = conversion(conf.dataByte.todaySave);
+        }
+
+        //计算网友类型
+        countType(conf.dataByte.totalSave);
+
+
+    } catch (e) {
+        console.log(e);
+    }
+
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    //各种数字展示
+    function showTxt(o) {
+        $('total_saved').innerText = o.totalSave;
+        $('save_time').innerText = o.saveTime;
+        $('today_used').innerText = o.todayUse;
+        $('today_saved').innerText = o.todaySave;
+    }
+
+    //控制页面数字展示
+    function countType(totalSave) {
+
+        var random = Math.random(),
+            cls = 'web',
+            st = 1;
+
+        if (totalSave <= 0) {
+
+            cls = 'web';
+            st = 0;
+
+        } else if (totalSave < 20 * 1024 * 1024) {
+
+            cls = 'web';
+
+        } else if (totalSave < 100 * 1024 * 1024) {
+            if (random < 0.5) {
+                cls = 'web';
+            } else {
+                cls = 'music';
+            }
+        } else {
+            if (random <= 0.3) {
+                cls = 'web';
+            } else if (random > 0.3 && random <= 0.6) {
+                cls = 'music';
+            } else {
+                cls = 'video';
+
+            }
+        }
+
+        changeIcon(cls);
+
+        countTime(totalSave, cls, st);
+        showTxt(conf.dataGroup);
+
+    }
+
+    function conversion(n) {
+        var data;
+
+        if (n < 1024) {
+            data = new Number(n).toFixed(2) + conf.dataGroup.unitNet[0];
+            return data;
+        } else if (n < Math.pow(1024, 2)) {
+            data = new Number(n / 1024).toFixed(2) + conf.dataGroup.unitNet[1];
+            return data;
+        } else if (n < Math.pow(1024, 3)) {
+            data = new Number(n / 1024 / 1024).toFixed(2) + conf.dataGroup.unitNet[2];
+            return data;
+        } else {
+            data = new Number(n / 1024 / 1024 / 1024).toFixed(2) + conf.dataGroup.unitNet[3];
+            return data;
+        }
+
+    }
+
+    function countTime(totalSave, cls, st) {
+        var time;
+        if (st) {
+            switch (cls) {
+                case 'web':
+                    time = totalSave / 1024 / 20 * 3;
+                    break;
+                case 'music':
+                    time = totalSave / 1024 / 2048 * 3;
+                    break;
+                case 'video':
+                    time = totalSave / 1024 / 10240 * 10;
+                    break;
+            }
+
+            if (time >= 60) {
+                conf.dataGroup.saveTime = (time / 60).toFixed(2) + conf.dataGroup.unitTime[1];
+            } else {
+                conf.dataGroup.saveTime = time.toFixed(2) + conf.dataGroup.unitTime[0];
+            }
+        }
+    }
+
+
+
+    //显示分享按钮
+    function showStar() {
+        bStar.style.display = 'inline-block';
+    }
+
+    //分享按钮事件
+    bShare.addEventListener('click', function() {
+        var s = conf.onlineType[conf.onlineClass].share.replace('XXX', conf.dataGroup.totalSave).replace('YYY', conf.dataGroup.saveTime);
+        if (!conf.dataByte.totalSave) {
+            s = conf.share;
+        }
+
+        UCShellJava.invoke('', 'traffic', 'shareTrafficSave', ['', s], '');
+    });
+
+    bStar.addEventListener('click',function(){
+        UCShellJava.invoke('', 'google', 'rateWithGuide', '', '1'); 
+    });
+
+
+    meterClear.addEventListener('click',function(){
+        UCShellJava.invoke('', 'traffic', 'clearData', '', ''); 
+    });
+    </script>
+</body>
+
+</html>

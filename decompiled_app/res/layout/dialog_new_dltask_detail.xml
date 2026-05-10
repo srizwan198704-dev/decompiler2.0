@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:layout_gravity="center_vertical" android:id="@id/new_dltask_size_label" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:layout_gravity="center_vertical" android:id="@id/new_dltask_size_value" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:layout_weight="1.0" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/new_dltask_security_llayout" android:layout_width="wrap_content" android:layout_height="22.669983dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/new_dltask_security_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:layout_marginRight="1.0dip" android:src="@drawable/security_type_safe" android:scaleType="center" />
+            <TextView android:layout_gravity="center_vertical" android:id="@id/new_dltask_security_level" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:layout_marginRight="10.0dip" android:text="安全" />
+            <TextView android:layout_gravity="center_vertical" android:id="@id/new_dltask_security_show_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="-6.0dip" android:layout_marginRight="2.0dip" />
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/new_dltask_security_detail_status" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:layout_marginRight="1.0dip" android:scaleType="center" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/new_dltask_securitytips" android:paddingTop="4.5999756dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.299988dip">
+        <TextView android:layout_gravity="center_vertical" android:id="@id/new_dltask_securitytips_line1" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <TextView android:layout_gravity="center_vertical" android:id="@id/new_dltask_securitytips_line2" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

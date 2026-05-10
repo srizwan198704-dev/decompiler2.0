@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/bubble_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/default_icon" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/bubble_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/bubble_arrow">
+        <TextView android:textSize="11.0sp" android:gravity="center_vertical" android:id="@id/bubble_content" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+        <ImageView android:id="@id/bubble_close" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/default_icon" />
+    </LinearLayout>
+</RelativeLayout>

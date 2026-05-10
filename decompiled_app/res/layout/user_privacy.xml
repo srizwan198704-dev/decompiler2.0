@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:background="#fff1f1f2" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/licenseview_return_button_font_size" android:textColor="@color/licenseview_return_button_font" android:gravity="center_vertical" android:id="@id/license_back" android:paddingLeft="@dimen/licenseview_return_button_horizontal_padding" android:layout_width="wrap_content" android:layout_height="@dimen/titlebar_height" android:drawableLeft="@drawable/license_title_back" />
+    <LinearLayout android:orientation="vertical" android:id="@id/licenseview_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/license_accept" android:layout_below="@id/license_back" />
+    <Button android:textSize="17.0dip" android:textColor="@color/privacy_button_text" android:id="@id/license_accept" android:background="@drawable/userprivacy_button" android:layout_width="270.0dip" android:layout_height="37.0dip" android:layout_marginTop="10.5dip" android:layout_marginBottom="9.5dip" android:minHeight="37.0dip" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+</RelativeLayout>

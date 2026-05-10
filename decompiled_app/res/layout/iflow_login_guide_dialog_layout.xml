@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="left" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.uc.module.iflow.business.usercenter.LottieWithMaskAnimationView android:id="@id/lottie_guide" android:layout_width="fill_parent" android:layout_height="141.5dip" />
+        <TextView android:textSize="18.0sp" android:textStyle="bold" android:gravity="center_horizontal" android:id="@id/tv_login_guide_tips" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="18.5dip" android:layout_marginRight="20.0dip" />
+        <FrameLayout android:id="@id/ll_login_facebook" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="20.0dip">
+            <ImageView android:layout_gravity="center|left" android:id="@id/iv_icon_facebook" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginLeft="12.0dip" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center" android:id="@id/tv_login_facebook" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/ll_login_google" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="20.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="20.0dip">
+            <ImageView android:layout_gravity="center|left" android:id="@id/iv_icon_google" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginLeft="12.0dip" />
+            <TextView android:textSize="16.0sp" android:layout_gravity="center" android:id="@id/tv_login_google" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        </FrameLayout>
+        <TextView android:textSize="13.0sp" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/tv_login_skip_login" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="13.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="14.5dip" android:maxLines="2" />
+    </LinearLayout>
+    <ImageView android:layout_gravity="center|right|top" android:id="@id/btn_cancel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_marginRight="12.0dip" />
+</FrameLayout>

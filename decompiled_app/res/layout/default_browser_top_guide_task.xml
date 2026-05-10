@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout android:gravity="center" android:orientation="vertical" android:id="@id/default_browser_top_guide_mask_container" android:paddingLeft="@dimen/default_browser_top_guide_mar" android:paddingTop="@dimen/default_browser_top_guide_padding" android:paddingRight="@dimen/default_browser_top_guide_mar" android:paddingBottom="@dimen/default_browser_top_guide_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/default_browser_top_guide_mar" android:layout_marginTop="@dimen/default_browser_top_guide_padding" android:layout_marginRight="@dimen/default_browser_top_guide_mar" android:stretchColumns="1"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableRow android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/default_browser_top_guide_text_size" android:textStyle="bold" android:id="@id/default_browser_top_guide_mask_step_one_title" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="@dimen/default_browser_top_guide_text_size" android:id="@id/default_browser_top_guide_mask_step_one_text" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </TableRow>
+    <TableRow android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/default_browser_top_guide_text_size" android:textStyle="bold" android:id="@id/default_browser_top_guide_mask_step_two_title" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="@dimen/default_browser_top_guide_text_size" android:id="@id/default_browser_top_guide_mask_step_two_text" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </TableRow>
+</TableLayout>

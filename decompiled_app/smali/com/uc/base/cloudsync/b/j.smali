@@ -1,0 +1,220 @@
+.class public final Lcom/uc/base/cloudsync/b/j;
+.super Lcom/uc/base/c/a/b/b;
+.source "ProGuard"
+
+
+# instance fields
+.field public hXF:[B
+
+.field public hXG:I
+
+.field public hXH:I
+
+.field public hXI:I
+
+.field public hXi:I
+
+.field public hXk:[B
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 39
+    invoke-direct {p0}, Lcom/uc/base/c/a/b/b;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected final createQuake(I)Lcom/uc/base/c/a/l;
+    .locals 0
+
+    .line 138
+    new-instance p1, Lcom/uc/base/cloudsync/b/j;
+
+    invoke-direct {p1}, Lcom/uc/base/cloudsync/b/j;-><init>()V
+
+    return-object p1
+.end method
+
+.method protected final createStruct()Lcom/uc/base/c/a/d;
+    .locals 6
+
+    .line 95
+    new-instance v0, Lcom/uc/base/c/a/d;
+
+    const-string v1, "ResContentHead"
+
+    const/16 v2, 0x32
+
+    invoke-direct {v0, v1, v2}, Lcom/uc/base/c/a/d;-><init>(Ljava/lang/Object;I)V
+
+    const-string v1, "session"
+
+    const/16 v2, 0xd
+
+    const/4 v3, 0x2
+
+    const/4 v4, 0x1
+
+    .line 97
+    invoke-virtual {v0, v4, v1, v3, v2}, Lcom/uc/base/c/a/d;->b(ILjava/lang/String;II)V
+
+    const-string v1, "anchor"
+
+    .line 98
+    invoke-virtual {v0, v3, v1, v3, v4}, Lcom/uc/base/c/a/d;->b(ILjava/lang/String;II)V
+
+    const-string v1, "data_type"
+
+    const/4 v5, 0x3
+
+    .line 99
+    invoke-virtual {v0, v5, v1, v3, v4}, Lcom/uc/base/c/a/d;->b(ILjava/lang/String;II)V
+
+    const-string v1, "sync_type"
+
+    const/4 v5, 0x4
+
+    .line 100
+    invoke-virtual {v0, v5, v1, v3, v4}, Lcom/uc/base/c/a/d;->b(ILjava/lang/String;II)V
+
+    const-string v1, "ret_code"
+
+    const/4 v5, 0x5
+
+    .line 101
+    invoke-virtual {v0, v5, v1, v3, v4}, Lcom/uc/base/c/a/d;->b(ILjava/lang/String;II)V
+
+    const-string v1, "ret_msg"
+
+    const/4 v3, 0x6
+
+    .line 102
+    invoke-virtual {v0, v3, v1, v4, v2}, Lcom/uc/base/c/a/d;->b(ILjava/lang/String;II)V
+
+    return-object v0
+.end method
+
+.method protected final parseFrom(Lcom/uc/base/c/a/d;)Z
+    .locals 2
+
+    const/4 v0, 0x1
+
+    .line 126
+    invoke-virtual {p1, v0}, Lcom/uc/base/c/a/d;->getBytes(I)[B
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/uc/base/cloudsync/b/j;->hXF:[B
+
+    const/4 v1, 0x2
+
+    .line 127
+    invoke-virtual {p1, v1}, Lcom/uc/base/c/a/d;->getInt(I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/uc/base/cloudsync/b/j;->hXG:I
+
+    const/4 v1, 0x3
+
+    .line 128
+    invoke-virtual {p1, v1}, Lcom/uc/base/c/a/d;->getInt(I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/uc/base/cloudsync/b/j;->hXH:I
+
+    const/4 v1, 0x4
+
+    .line 129
+    invoke-virtual {p1, v1}, Lcom/uc/base/c/a/d;->getInt(I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/uc/base/cloudsync/b/j;->hXI:I
+
+    const/4 v1, 0x5
+
+    .line 130
+    invoke-virtual {p1, v1}, Lcom/uc/base/c/a/d;->getInt(I)I
+
+    move-result v1
+
+    iput v1, p0, Lcom/uc/base/cloudsync/b/j;->hXi:I
+
+    const/4 v1, 0x6
+
+    .line 131
+    invoke-virtual {p1, v1}, Lcom/uc/base/c/a/d;->getBytes(I)[B
+
+    move-result-object p1
+
+    iput-object p1, p0, Lcom/uc/base/cloudsync/b/j;->hXk:[B
+
+    return v0
+.end method
+
+.method protected final serializeTo(Lcom/uc/base/c/a/d;)Z
+    .locals 3
+
+    .line 110
+    iget-object v0, p0, Lcom/uc/base/cloudsync/b/j;->hXF:[B
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_0
+
+    .line 111
+    iget-object v0, p0, Lcom/uc/base/cloudsync/b/j;->hXF:[B
+
+    invoke-virtual {p1, v1, v0}, Lcom/uc/base/c/a/d;->setBytes(I[B)V
+
+    :cond_0
+    const/4 v0, 0x2
+
+    .line 113
+    iget v2, p0, Lcom/uc/base/cloudsync/b/j;->hXG:I
+
+    invoke-virtual {p1, v0, v2}, Lcom/uc/base/c/a/d;->setInt(II)V
+
+    const/4 v0, 0x3
+
+    .line 114
+    iget v2, p0, Lcom/uc/base/cloudsync/b/j;->hXH:I
+
+    invoke-virtual {p1, v0, v2}, Lcom/uc/base/c/a/d;->setInt(II)V
+
+    const/4 v0, 0x4
+
+    .line 115
+    iget v2, p0, Lcom/uc/base/cloudsync/b/j;->hXI:I
+
+    invoke-virtual {p1, v0, v2}, Lcom/uc/base/c/a/d;->setInt(II)V
+
+    const/4 v0, 0x5
+
+    .line 116
+    iget v2, p0, Lcom/uc/base/cloudsync/b/j;->hXi:I
+
+    invoke-virtual {p1, v0, v2}, Lcom/uc/base/c/a/d;->setInt(II)V
+
+    .line 117
+    iget-object v0, p0, Lcom/uc/base/cloudsync/b/j;->hXk:[B
+
+    if-eqz v0, :cond_1
+
+    const/4 v0, 0x6
+
+    .line 118
+    iget-object v2, p0, Lcom/uc/base/cloudsync/b/j;->hXk:[B
+
+    invoke-virtual {p1, v0, v2}, Lcom/uc/base/c/a/d;->setBytes(I[B)V
+
+    :cond_1
+    return v1
+.end method

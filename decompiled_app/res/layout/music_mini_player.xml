@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/llay_music_player_container" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/llay_music_player_title_container" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/music_mini_player_title_height">
+        <ImageView android:id="@id/iv_music_player_icon" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/music_mini_player_title_icon_margin_left" android:layout_marginRight="@dimen/music_mini_player_title_icon_margin_right" />
+        <TextView android:textSize="@dimen/music_mini_player_title_size" android:gravity="center|left" android:id="@id/tv_music_player_title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <ImageView android:gravity="center_vertical" android:id="@id/iv_music_player_download" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/music_mini_player_title_arrow_margin_right" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/llay_music_player_content_container" android:paddingLeft="@dimen/music_mini_player_content_music_title_marigin_left" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/music_mini_player_margin_bottom">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/music_mini_player_content_music_title_height">
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textSize="@dimen/music_mini_player_content_music_title_size" android:ellipsize="end" android:id="@id/tv_music_player_content_music_title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="@dimen/music_mini_player_content_music_title_marigin_top" android:layout_marginBottom="@dimen/music_mini_player_content_music_title_marigin_bottom" android:text="Welcome to UC Player" android:singleLine="true" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/music_mini_player_content_music_subtitle_size" android:id="@id/tv_music_player_content_music_subtitle_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:05/11:05" />
+                    <TextView android:textSize="@dimen/music_mini_player_content_music_subtitle_size" android:id="@id/tv_music_player_content_music_subtitle_seprator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/music_mini_player_title_icon_margin_right" android:layout_marginRight="@dimen/music_mini_player_title_icon_margin_right" android:text="|" />
+                    <TextView android:textSize="@dimen/music_mini_player_content_music_subtitle_size" android:id="@id/tv_music_player_content_music_subtitle_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Loading" />
+                </LinearLayout>
+            </LinearLayout>
+            <ImageView android:gravity="center_vertical" android:id="@id/iv_music_player_control" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/music_mini_player_content_music_button_marigin_right" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/llay_music_player_progress_container" android:paddingRight="@dimen/music_mini_player_content_music_progress_margin_right" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/mainmenu_item_text_margin_top_intl" android:layout_marginBottom="@dimen/music_mini_player_content_music_progress_margin_bottom" />
+    </LinearLayout>
+</LinearLayout>

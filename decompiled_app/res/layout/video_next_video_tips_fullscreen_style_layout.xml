@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/top" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <FrameLayout android:id="@id/video_icon" android:layout_width="160.0dip" android:layout_height="90.0dip" android:layout_marginRight="7.0dip" android:layout_alignParentLeft="true">
+            <ImageView android:id="@id/video_thumbnail" android:layout_width="160.0dip" android:layout_height="90.0dip" android:scaleType="fitXY" />
+            <ImageView android:layout_gravity="center" android:id="@id/video_play" android:layout_width="30.0dip" android:layout_height="30.0dip" />
+            <View android:layout_gravity="bottom" android:id="@id/loading_view" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+        </FrameLayout>
+        <TextView android:textSize="16.0dip" android:ellipsize="end" android:id="@id/video_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:maxLines="1" android:maxEms="15" android:layout_toRightOf="@id/video_icon" android:layout_alignBottom="@id/video_icon" />
+        <TextView android:textSize="25.0dip" android:id="@id/video_next" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/video_icon" android:layout_above="@id/video_title" android:layout_alignLeft="@id/video_title" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="58.0dip" android:layout_below="@id/top" android:layout_centerHorizontal="true">
+        <TextView android:textSize="15.0dip" android:id="@id/video_more" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="More" />
+        <View android:id="@id/divider" android:layout_width="0.5dip" android:layout_height="12.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" />
+        <TextView android:textSize="15.0dip" android:id="@id/video_replay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Replay" />
+    </LinearLayout>
+</RelativeLayout>

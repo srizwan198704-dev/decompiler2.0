@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/intl_info_group" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/banner_padding_top">
+        <ViewStub android:id="@id/iconStub" android:visibility="gone" android:layout="@layout/banner_viewstub_imageview" android:layout_width="@dimen/banner_icon_width" android:layout_height="@dimen/banner_icon_height" android:layout_marginLeft="@dimen/banner_padding_horiontal" android:layout_marginRight="@dimen/banner_icon_margin_right" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/icon">
+            <TextView android:textSize="@dimen/banner_text_field_textsize" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/msg" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/banner_inter_custom_padding_horiontal" android:layout_marginRight="@dimen/banner_inter_custom_padding_horiontal_right" android:minHeight="@dimen/banner_message_min_height" android:maxLines="2" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <LinearLayout android:gravity="right" android:id="@id/buttonGroup" android:paddingLeft="@dimen/banner_inter_custom_padding_horiontal" android:paddingTop="@dimen/banner_button_group_padding_top" android:paddingRight="@dimen/banner_inter_custom_padding_horiontal" android:paddingBottom="@dimen/banner_button_group_padding_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/intl_info_group">
+        <Button android:textSize="@dimen/banner_button_textsize" android:id="@id/rightButton" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/banner_button_group_space" android:singleLine="true" />
+        <Button android:textSize="@dimen/banner_button_textsize" android:id="@id/leftButton" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    </LinearLayout>
+</RelativeLayout>

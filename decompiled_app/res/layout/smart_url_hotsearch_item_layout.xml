@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.uc.framework.ui.widget.titlebar.SmartUrlHeadLineSearchItemView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/smart_url_news_item_text_index_size" android:id="@id/smart_url_hotsearch_item_index" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+    <TextView android:textSize="@dimen/smart_url_news_item_text_title_size" android:ellipsize="end" android:id="@id/smart_url_hotsearch_item_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/smart_url_hot_search_item_margin" android:singleLine="true" android:layout_toRightOf="@id/smart_url_hotsearch_item_index" android:layout_centerVertical="true" />
+</com.uc.framework.ui.widget.titlebar.SmartUrlHeadLineSearchItemView>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="arch_download_btn">Descargar</string>
+    <string name="arch_mismatch_msg">El UC Browser instalado no se puede usar en este teléfono. Por favor, vaya a ucweb.com para descargar la versión apropiada.</string>
+    <string name="arch_unsupport_mips_msg">La versión de UC Browser instalada no soporta la arquitectura de la CPU del teléfono.</string>
+    <string name="hour">hora</string>
+    <string name="image_viewer">Visualizador de Imágenes UC</string>
+    <string name="init_error_title">Error al inicializar</string>
+    <string name="lib_invalid_msg">UC Browser no se instaló de forma apropiada. Por favor, desinstálalo e instálalo de nuevo.</string>
+    <string name="lib_invalid_uninstall">Desinstalar</string>
+    <string name="minute">min</string>
+    <string name="my_video">Video UC</string>
+    <string name="openwifi_auth_url">http://openwifi.ucweb.com/wifi/es/wifi.html</string>
+    <string name="openwifi_connected_tip">Inicia sesión para Wi-Fi</string>
+    <string name="openwifi_login_tip" />
+    <string name="safemode_cancel">Cancelar</string>
+    <string name="safemode_download_new_version">Por favor, ¡descarga y actualiza la última versión del UC Browser!</string>
+    <string name="safemode_ok">OK</string>
+    <string name="safemode_title">Consejos UC Browser</string>
+    <string name="second">s</string>
+    <string name="text_viewer">Visualizador de texto UC</string>
+    <string name="uceso_cancel_btn">Cancelar</string>
+    <string name="uceso_confirm_btn">OK</string>
+    <string name="unzip_app_manage">Gestionar aplicaciones</string>
+    <string name="unzip_rom_cleanup">La memoria de su teléfono es insuficiente. Puede eliminar algunas aplicaciones para liberar espacio.</string>
+</resources>

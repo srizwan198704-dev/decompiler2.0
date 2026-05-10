@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/dlg_deeplink_left_padding" android:paddingTop="@dimen/dlg_deeplink_top_padding" android:paddingRight="@dimen/dlg_deeplink_left_padding" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/dlg_deeplink_title" android:id="@id/tv_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dlg_deeplink_title_bottom_margin" />
+    <TextView android:textSize="@dimen/dlg_deeplink_btn_text" android:id="@id/tv_message" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <Button android:textSize="@dimen/dlg_deeplink_btn_text" android:id="@id/btn_once" android:layout_width="fill_parent" android:layout_height="@dimen/dlg_deeplink_btn_height" android:layout_marginTop="@dimen/dlg_deeplink_btn_top_margin" android:layout_marginBottom="@dimen/dlg_deeplink_btn_margin" />
+    <Button android:textSize="@dimen/dlg_deeplink_btn_text" android:id="@id/btn_alway" android:layout_width="fill_parent" android:layout_height="@dimen/dlg_deeplink_btn_height" android:layout_marginBottom="@dimen/dlg_deeplink_btn_margin" />
+    <Button android:textSize="@dimen/dlg_deeplink_btn_text" android:id="@id/btn_cancel" android:layout_width="fill_parent" android:layout_height="@dimen/dlg_deeplink_btn_height" />
+</LinearLayout>

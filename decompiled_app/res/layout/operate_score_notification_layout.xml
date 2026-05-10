@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:gravity="center" android:id="@id/left_image_layout" android:paddingLeft="@dimen/notification_content_padding_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/left_image" android:layout_width="@dimen/operate_score_notify_image_width" android:layout_height="@dimen/operate_score_notify_image_height" android:scaleType="fitXY" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:paddingLeft="@dimen/operate_score_notify_content_padding_horizontal" android:paddingRight="@dimen/operate_score_notify_content_padding_horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toLeftOf="@id/right_image_layout" android:layout_toRightOf="@id/left_image_layout">
+        <TextView android:textSize="@dimen/operate_score_notify_score_text_size" android:textColor="#ffb1b1b1" android:ellipsize="end" android:gravity="center" android:id="@id/score" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+        <TextView android:textSize="@dimen/operate_tip_notify_content_text_size" android:textColor="#ffb1b1b1" android:ellipsize="end" android:gravity="center" android:id="@id/detail" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+        <TextView android:textSize="@dimen/operate_tip_notify_content_text_size" android:textColor="#ffb1b1b1" android:ellipsize="end" android:gravity="center" android:id="@id/summary" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+    </LinearLayout>
+    <FrameLayout android:gravity="center" android:id="@id/right_image_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/setting" android:layout_centerVertical="true">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/right_image" android:layout_width="@dimen/operate_score_notify_image_width" android:layout_height="@dimen/operate_score_notify_image_height" android:scaleType="fitXY" />
+    </FrameLayout>
+    <FrameLayout android:gravity="center" android:id="@id/setting" android:paddingLeft="@dimen/operate_tip_notify_setting_padding_horizontal" android:paddingRight="@dimen/operate_tip_notify_setting_padding_horizontal" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+        <ImageView android:layout_gravity="center_vertical" android:layout_width="@dimen/operate_tip_notify_setting_size" android:layout_height="@dimen/operate_tip_notify_setting_size" android:src="@drawable/notification_search_setting" />
+    </FrameLayout>
+</RelativeLayout>

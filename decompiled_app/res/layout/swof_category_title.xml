@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/swof_category_title_container" style="@style/swof_tab_category_title_style"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/swof_category_left_lv" android:background="@drawable/swof_bg_category_title_item" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:id="@id/swof_category_left_name" style="@style/SwofCategoryTitleItem" />
+        <TextView android:id="@id/swof_category_left_num" android:visibility="gone" style="@style/SwofCategoryTitleItem" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/swof_category_right_lv" android:background="@drawable/swof_bg_category_title_item" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:id="@id/swof_category_right_name" style="@style/SwofCategoryTitleItem" />
+        <TextView android:id="@id/swof_category_right_num" style="@style/SwofCategoryTitleItem" />
+    </LinearLayout>
+</LinearLayout>

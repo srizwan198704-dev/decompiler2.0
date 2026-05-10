@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="contextmenu_icon_height">20.0dip</dimen>
+    <dimen name="contextmenu_icon_padding">10.0dip</dimen>
+    <dimen name="contextmenu_icon_width">20.0dip</dimen>
+    <dimen name="contextmenu_item_height">40.0dip</dimen>
+    <dimen name="contextmenu_item_text_padding_left">13.299988dip</dimen>
+    <dimen name="contextmenu_item_textsize">16.0dip</dimen>
+    <dimen name="contextmenu_item_width">120.0dip</dimen>
+    <dimen name="contextmenu_item_width_max">150.0dip</dimen>
+    <dimen name="contextmenu_margin_left">5.0dip</dimen>
+    <dimen name="contextmenu_margin_top">15.0dip</dimen>
+    <dimen name="contextmenu_tips_point_radius">3.0dip</dimen>
+</resources>

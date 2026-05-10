@@ -1,0 +1,326 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no;">
+<title>Help</title>
+<style type="text/css">
+body {
+    background: #fff;
+    color: #4c4c4c;
+    font: 16px/1.4em "\5FAE\8F6F\96C5\9ED1", "Gotham-Medium", Helvetica, Arial;
+}
+
+body, p, div, form, ul, li, h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    border: 0;
+}
+
+a {
+    color: #FF9C38;
+    text-decoration: none;
+}
+
+a:link {
+    color: #FF9C38;
+}
+
+a:visited {
+    color: #FF9C38;
+}
+
+a:hover {
+    color: #FF9C38;
+}
+
+/* 清理浮动 */
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: "";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.noline {
+    border: none !important;
+}
+
+.orange {
+    color: #f60;
+}
+
+.header {
+    height: 30px;
+    background: #FF9C38;
+    color: #fff;
+    overflow: hidden;
+    padding-top: 10px;
+}
+
+.nav {
+    position: absolute;
+    top: 12px;
+    right: 8px;
+}
+
+.nav li {
+    margin-bottom: 6px;
+}
+
+.nav li img {
+    width: 24px;
+    height: 24px;
+}
+
+.logo {
+    padding-top: 50px;
+    text-align: center;
+}
+
+.logo img {
+    width: 218px;
+    height: 42px;
+}
+
+.text {
+    font-size: 15px;
+    text-align: center;
+}
+
+.text span {
+    margin: 0 5px;
+}
+
+.text em {
+    margin: 0 5px;
+    display: inline-block;
+    width: 21px;
+    border-top: 1px #FCC79A solid;
+    vertical-align: 4px;
+}
+
+.module {
+    margin: 0 12px;
+    padding-top: 15px;
+}
+
+.title {
+    height: 24px;
+    font-size: 13px;
+    color: #FF9C38;
+    border-bottom: 2px #FF9C38 solid;
+}
+
+.list1 {
+    padding-top: 15px;
+}
+
+.list1 li {
+    padding-bottom: 30px;
+}
+
+.list1 .num {
+    padding-bottom: 8px;
+    font-size: 16px;
+}
+
+.list1 .num b {
+    font-size: 18px;
+    color: #FF9C38;
+    vertical-align: -1px;
+}
+
+.list1 .cont p {
+    line-height: 1.4em;
+    font-size: 13px;
+    color: #7b7b7b;
+}
+
+.list2 {
+    padding-top: 15px;
+}
+
+.list2 li {
+    padding-bottom: 30px;
+}
+
+.list2 .ico {
+    padding-bottom: 8px;
+    font-size: 16px;
+}
+
+.list2 .ico img {
+    width: 18px;
+    height: 18px;
+    vertical-align: -3px;
+}
+
+.list2 .cont {
+}
+
+.list2 .cont p {
+    line-height: 1.4em;
+    font-size: 13px;
+    color: #7b7b7b;
+}
+
+.list3 {
+    margin-bottom: 30px;
+}
+
+.list3 li {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+
+.list3 li h2 {
+    font-size: 16px;
+    font-weight: normal;
+    padding-bottom: 2px;
+}
+
+.list4 {
+    margin-top: 5px;
+}
+
+.list4 li {
+    margin: 0;
+    padding: 3px 0;
+    font-size: 14px;
+}
+
+.pl {
+    padding-top: 6px;
+    font-size: 14px;
+}
+
+.con6 {
+    display: none;
+    padding: 5px 5px 5px 1em;
+    font-size: 13px;
+    color: #a3a3a3;
+}
+
+.bgray {
+    padding: 12px 0;
+    height: 14px;
+    background: #f6f6f6;
+    margin-bottom: 1px;
+}
+
+.bgray h3 {
+    float: left;
+    width: 85px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    color: #FF9C38;
+    font-size: 14px;
+    font-weight: normal;
+    border-right: 1px #ddd solid;
+}
+
+.bgray p {
+    margin-left: 95px;
+    height: 14px;
+    line-height: 14px;
+    color: #3c3d48;
+    font-size: 13px;
+}
+
+.contact {
+    padding: 30px 0 10px;
+    line-height: 1.6em;
+    font-size: 15px;
+}
+
+.ver {
+    padding: 15px 15px 30px;
+    font-size: 15px;
+}
+
+.engine {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #9b9b9b;
+}
+
+a.update {
+    display: inline-block;
+    margin: 15px 0 20px;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    background: #52ade7;
+    border: 1px #FF9C38 solid;
+    -webkit-border-radius: 4px;
+}
+</style>
+</head>
+<body>
+<div class="header">
+    <div class="text"><em></em><span>Preview Page</span><em></em></div>
+</div>
+<div class="module">
+    <div class="title">What's New</div>
+    <ul class="list1">
+        <li>
+            <div class="cont">
+                <p>Advanced rendering technology UC Browser allows users to switch background colors for webpages. Hurry up and try this powerful feature Now!</p>
+            </div>
+        </li>
+    </ul>
+    <div class="title">Features</div>
+    <ul class="list2">
+        <li>
+            <div class="ico"><img src="UCMobile/help/images/gn_speed.png" /> Browsing Acceleration</div>
+            <div class="cont">
+                <p>Faster delivery and presentation of web pages by compressing web pages on the server, and pre-loading pages in the background.</p>
+            </div>
+        </li>
+
+
+        <li>
+            <div class="ico"><img src="UCMobile/help/images/gn_safe.png" /> Download Management</div>
+            <div class="cont">
+                <p>Powerful download management, supports multi-tasking downloading and UDisk (Permanent storage space on UCweb's server).</p>
+            </div>
+        </li>
+
+        <li>
+            <div class="ico"><img src="UCMobile/help/images/gn_novel.png" /> Customized Themes</div>
+            <div class="cont">
+                <p>You can change the way your UC Browser looks by downloading themes and wallpapers from the UC Theme Center.</p>
+            </div>
+        </li>
+
+        <li>
+            <div class="ico"><img src="UCMobile/help/images/gn_night.png" /> Cloud Services</div>
+            <div class="cont">
+                <p>Provide powerful cloud services based on UCWeb's Cloud server, such as cloud download, cloud sync and cloud acceleration.</p>
+            </div>
+        </li>
+
+    </ul>
+</div>
+</body>
+</html>
