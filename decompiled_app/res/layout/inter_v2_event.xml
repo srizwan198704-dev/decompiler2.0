@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.yfanads.android.libs.thirdpart.lottie.LottieAnimationView android:id="@id/bar_lottie_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" app:c_lottie_autoPlay="true" app:c_lottie_loop="true" />
+    <View android:id="@id/bar_click_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignTop="@id/bar_lottie_view" android:layout_alignBottom="@id/bar_lottie_view" android:layout_alignStart="@id/bar_lottie_view" android:layout_alignEnd="@id/bar_lottie_view" />
+    <com.yfanads.android.libs.thirdpart.lottie.LottieAnimationView android:id="@id/action_lottie_view" android:layout_width="125.0dip" android:layout_height="125.0dip" android:layout_centerHorizontal="true" app:c_lottie_autoPlay="true" app:c_lottie_loop="true" />
+    <View android:id="@id/action_click_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignBottom="@id/action_lottie_view" android:layout_alignStart="@id/action_lottie_view" android:layout_alignEnd="@id/action_lottie_view" />
+</RelativeLayout>

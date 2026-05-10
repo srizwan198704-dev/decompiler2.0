@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <stroke android:width="@dimen/player_relevance_item_stroke_width" android:color="@color/video_relate_playing_stroke" />
-    <corners android:radius="@dimen/player_relevance_item_corner" />
-</shape>

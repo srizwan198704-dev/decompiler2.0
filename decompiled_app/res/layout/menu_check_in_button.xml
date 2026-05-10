@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="horizontal" android:id="@id/menu_check_background" android:layout_width="108.0dip" android:layout_height="38.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip">
-        <ImageView android:id="@id/icon" android:layout_width="15.0dip" android:layout_height="14.0dip" android:layout_marginLeft="17.0dip" android:layout_marginTop="12.0dip" android:layout_marginBottom="12.0dip" />
-        <TextView android:textSize="14.0dip" android:textColor="@color/white" android:id="@id/tips_in_button" android:layout_width="54.0dip" android:layout_height="19.0dip" android:layout_marginLeft="6.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="Check in" />
-    </LinearLayout>
-    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/tips_under_button" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="16.0dip" android:layout_marginTop="2.0dip" android:text="Draw Prizes" />
-</LinearLayout>

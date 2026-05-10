@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextView android:textSize="@dimen/contextmenu_item_textsize" android:gravity="center_vertical" android:id="@android:id/text1" android:paddingLeft="@dimen/contextmenu_item_text_padding_left" android:layout_width="fill_parent" android:layout_height="@dimen/contextmenu_item_height" android:singleLine="true"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

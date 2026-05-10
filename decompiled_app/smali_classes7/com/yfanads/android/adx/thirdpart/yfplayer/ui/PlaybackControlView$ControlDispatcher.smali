@@ -1,0 +1,19 @@
+.class public interface abstract Lcom/yfanads/android/adx/thirdpart/yfplayer/ui/PlaybackControlView$ControlDispatcher;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/yfanads/android/adx/thirdpart/yfplayer/core/ControlDispatcher;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/yfanads/android/adx/thirdpart/yfplayer/ui/PlaybackControlView;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "ControlDispatcher"
+.end annotation
+
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation

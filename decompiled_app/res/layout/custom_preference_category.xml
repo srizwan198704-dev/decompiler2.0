@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="@dimen/dp_12" android:textColor="@color/setting_content_category_text" android:id="@android:id/title" android:paddingLeft="@dimen/dp_20" android:paddingTop="@dimen/dp_16" android:paddingRight="@dimen/dp_20" android:paddingBottom="@dimen/dp_8" android:layout_width="fill_parent" android:layout_height="wrap_content" android:selectable="false" android:shouldDisableView="false"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="je_x_text_replaced">
+        <item quantity="other">%1$d -টি বিষয় প্রতিস্থাপন হয়েছে</item>
+        <item quantity="one">0 মিল</item>
+    </plurals>
+</resources>

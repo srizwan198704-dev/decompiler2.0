@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:id="@id/recommended_picture_container" android:layout_width="wrap_content" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_gravity="center" android:layout_width="@dimen/durec_add_bg_picture_item_width" android:layout_height="@dimen/durec_add_bg_picture_item_height" android:layout_marginLeft="7.0dip" android:layout_marginRight="7.0dip">
+        <FrameLayout android:id="@id/add_icon" android:background="@drawable/durec_picture_add_bg_selector" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/durec_picture_add_icon_selector" />
+        </FrameLayout>
+        <ImageView android:id="@id/recommended_picture" android:layout_width="@dimen/durec_add_bg_picture_item_width" android:layout_height="@dimen/durec_add_bg_picture_item_height" android:scaleType="centerCrop" />
+        <ImageView android:layout_gravity="bottom|center|right" android:id="@id/select_icon" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="3.0dip" android:layout_marginBottom="3.0dip" android:src="@drawable/durec_video_picture_select_icon_selector" />
+    </FrameLayout>
+</FrameLayout>

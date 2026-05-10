@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ListView android:scrollbarAlwaysDrawVerticalTrack="true" android:scrollbarStyle="outsideInset" android:id="@id/list" android:paddingTop="0.0dip" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="0.0px" android:drawSelectorOnTop="false" android:cacheColorHint="@android:color/transparent" android:divider="#ffdcdcdc" android:dividerHeight="1.0dip" android:layout_weight="1.0"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

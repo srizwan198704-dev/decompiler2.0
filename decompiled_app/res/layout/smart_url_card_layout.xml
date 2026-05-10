@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.uc.framework.ui.widget.titlebar.SmartUrlCardGroupItemView android:gravity="center_vertical" android:id="@id/address_card_item_layout" android:paddingLeft="@dimen/address_card_item_pad_left" android:paddingRight="@dimen/address_card_item_pad_left" android:layout_width="fill_parent" android:layout_height="@dimen/address_card_height"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.uc.framework.ui.widget.titlebar.SearchBarItemShapedImageView android:id="@id/address_card_item_im" android:layout_width="@dimen/address_card_item_im_width" android:layout_height="@dimen/address_card_item_im_width" android:layout_marginRight="@dimen/address_card_item_im_mar_right" android:scaleType="centerCrop" android:layout_centerVertical="true" />
-    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/address_card_item_im" android:layout_centerVertical="true">
-        <TextView android:textSize="@dimen/address_card_item_title_textsize" android:ellipsize="end" android:id="@id/address_card_item_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
-        <TextView android:textSize="@dimen/address_card_item_url_textsize" android:ellipsize="end" android:id="@id/address_card_item_url" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
-    </LinearLayout>
-</com.uc.framework.ui.widget.titlebar.SmartUrlCardGroupItemView>

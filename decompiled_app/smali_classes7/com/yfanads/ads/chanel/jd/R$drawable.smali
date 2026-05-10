@@ -1,0 +1,357 @@
+.class public final Lcom/yfanads/ads/chanel/jd/R$drawable;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/yfanads/ads/chanel/jd/R;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "drawable"
+.end annotation
+
+
+# static fields
+.field public static final abc_ab_share_pack_mtrl_alpha:I = 0x7f080037
+
+.field public static final abc_action_bar_item_background_material:I = 0x7f080038
+
+.field public static final abc_btn_borderless_material:I = 0x7f080039
+
+.field public static final abc_btn_check_material:I = 0x7f08003a
+
+.field public static final abc_btn_check_to_on_mtrl_000:I = 0x7f08003c
+
+.field public static final abc_btn_check_to_on_mtrl_015:I = 0x7f08003d
+
+.field public static final abc_btn_colored_material:I = 0x7f08003e
+
+.field public static final abc_btn_default_mtrl_shape:I = 0x7f08003f
+
+.field public static final abc_btn_radio_material:I = 0x7f080040
+
+.field public static final abc_btn_radio_to_on_mtrl_000:I = 0x7f080042
+
+.field public static final abc_btn_radio_to_on_mtrl_015:I = 0x7f080043
+
+.field public static final abc_btn_switch_to_on_mtrl_00001:I = 0x7f080044
+
+.field public static final abc_btn_switch_to_on_mtrl_00012:I = 0x7f080045
+
+.field public static final abc_cab_background_internal_bg:I = 0x7f080046
+
+.field public static final abc_cab_background_top_material:I = 0x7f080047
+
+.field public static final abc_cab_background_top_mtrl_alpha:I = 0x7f080048
+
+.field public static final abc_control_background_material:I = 0x7f080049
+
+.field public static final abc_dialog_material_background:I = 0x7f08004a
+
+.field public static final abc_edit_text_material:I = 0x7f08004b
+
+.field public static final abc_ic_ab_back_material:I = 0x7f08004c
+
+.field public static final abc_ic_arrow_drop_right_black_24dp:I = 0x7f08004d
+
+.field public static final abc_ic_clear_material:I = 0x7f08004e
+
+.field public static final abc_ic_commit_search_api_mtrl_alpha:I = 0x7f080050
+
+.field public static final abc_ic_go_search_api_material:I = 0x7f080051
+
+.field public static final abc_ic_menu_copy_mtrl_am_alpha:I = 0x7f080052
+
+.field public static final abc_ic_menu_cut_mtrl_alpha:I = 0x7f080053
+
+.field public static final abc_ic_menu_overflow_material:I = 0x7f080055
+
+.field public static final abc_ic_menu_paste_mtrl_am_alpha:I = 0x7f080056
+
+.field public static final abc_ic_menu_selectall_mtrl_alpha:I = 0x7f080057
+
+.field public static final abc_ic_menu_share_mtrl_alpha:I = 0x7f080058
+
+.field public static final abc_ic_search_api_material:I = 0x7f080059
+
+.field public static final abc_ic_voice_search_api_material:I = 0x7f08005a
+
+.field public static final abc_item_background_holo_dark:I = 0x7f08005b
+
+.field public static final abc_item_background_holo_light:I = 0x7f08005c
+
+.field public static final abc_list_divider_material:I = 0x7f08005d
+
+.field public static final abc_list_divider_mtrl_alpha:I = 0x7f08005e
+
+.field public static final abc_list_focused_holo:I = 0x7f08005f
+
+.field public static final abc_list_longpressed_holo:I = 0x7f080060
+
+.field public static final abc_list_pressed_holo_dark:I = 0x7f080061
+
+.field public static final abc_list_pressed_holo_light:I = 0x7f080062
+
+.field public static final abc_list_selector_background_transition_holo_dark:I = 0x7f080063
+
+.field public static final abc_list_selector_background_transition_holo_light:I = 0x7f080064
+
+.field public static final abc_list_selector_disabled_holo_dark:I = 0x7f080065
+
+.field public static final abc_list_selector_disabled_holo_light:I = 0x7f080066
+
+.field public static final abc_list_selector_holo_dark:I = 0x7f080067
+
+.field public static final abc_list_selector_holo_light:I = 0x7f080068
+
+.field public static final abc_menu_hardkey_panel_mtrl_mult:I = 0x7f080069
+
+.field public static final abc_popup_background_mtrl_mult:I = 0x7f08006a
+
+.field public static final abc_ratingbar_indicator_material:I = 0x7f08006b
+
+.field public static final abc_ratingbar_material:I = 0x7f08006c
+
+.field public static final abc_ratingbar_small_material:I = 0x7f08006d
+
+.field public static final abc_scrubber_control_off_mtrl_alpha:I = 0x7f08006e
+
+.field public static final abc_scrubber_control_to_pressed_mtrl_000:I = 0x7f08006f
+
+.field public static final abc_scrubber_control_to_pressed_mtrl_005:I = 0x7f080070
+
+.field public static final abc_scrubber_primary_mtrl_alpha:I = 0x7f080071
+
+.field public static final abc_scrubber_track_mtrl_alpha:I = 0x7f080072
+
+.field public static final abc_seekbar_thumb_material:I = 0x7f080073
+
+.field public static final abc_seekbar_tick_mark_material:I = 0x7f080074
+
+.field public static final abc_seekbar_track_material:I = 0x7f080075
+
+.field public static final abc_spinner_mtrl_am_alpha:I = 0x7f080076
+
+.field public static final abc_spinner_textfield_background_material:I = 0x7f080077
+
+.field public static final abc_switch_thumb_material:I = 0x7f08007a
+
+.field public static final abc_switch_track_mtrl_alpha:I = 0x7f08007b
+
+.field public static final abc_tab_indicator_material:I = 0x7f08007c
+
+.field public static final abc_tab_indicator_mtrl_alpha:I = 0x7f08007d
+
+.field public static final abc_text_cursor_material:I = 0x7f08007e
+
+.field public static final abc_textfield_activated_mtrl_alpha:I = 0x7f080082
+
+.field public static final abc_textfield_default_mtrl_alpha:I = 0x7f080083
+
+.field public static final abc_textfield_search_activated_mtrl_alpha:I = 0x7f080084
+
+.field public static final abc_textfield_search_default_mtrl_alpha:I = 0x7f080085
+
+.field public static final abc_textfield_search_material:I = 0x7f080086
+
+.field public static final abc_vector_test:I = 0x7f080087
+
+.field public static final action_bottom_bg:I = 0x7f080093
+
+.field public static final ad_logo_bg:I = 0x7f0800a0
+
+.field public static final ad_logo_transparent_bg:I = 0x7f0800a1
+
+.field public static final adx_exo_controls_fastforward:I = 0x7f0800ab
+
+.field public static final adx_exo_controls_fullscreen_enter:I = 0x7f0800ac
+
+.field public static final adx_exo_controls_fullscreen_exit:I = 0x7f0800ad
+
+.field public static final adx_exo_controls_next:I = 0x7f0800ae
+
+.field public static final adx_exo_controls_pause:I = 0x7f0800af
+
+.field public static final adx_exo_controls_play:I = 0x7f0800b0
+
+.field public static final adx_exo_controls_previous:I = 0x7f0800b1
+
+.field public static final adx_exo_controls_repeat_all:I = 0x7f0800b2
+
+.field public static final adx_exo_controls_repeat_off:I = 0x7f0800b3
+
+.field public static final adx_exo_controls_repeat_one:I = 0x7f0800b4
+
+.field public static final adx_exo_controls_rewind:I = 0x7f0800b5
+
+.field public static final adx_exo_controls_shuffle:I = 0x7f0800b6
+
+.field public static final adx_exo_edit_mode_logo:I = 0x7f0800b7
+
+.field public static final adx_exo_icon_fastforward:I = 0x7f0800b8
+
+.field public static final adx_exo_icon_next:I = 0x7f0800b9
+
+.field public static final adx_exo_icon_pause:I = 0x7f0800ba
+
+.field public static final adx_exo_icon_play:I = 0x7f0800bb
+
+.field public static final adx_exo_icon_previous:I = 0x7f0800bc
+
+.field public static final adx_exo_icon_rewind:I = 0x7f0800bd
+
+.field public static final adx_exo_icon_stop:I = 0x7f0800be
+
+.field public static final adx_exo_notification_fastforward:I = 0x7f0800bf
+
+.field public static final adx_exo_notification_next:I = 0x7f0800c0
+
+.field public static final adx_exo_notification_pause:I = 0x7f0800c1
+
+.field public static final adx_exo_notification_play:I = 0x7f0800c2
+
+.field public static final adx_exo_notification_previous:I = 0x7f0800c3
+
+.field public static final adx_exo_notification_rewind:I = 0x7f0800c4
+
+.field public static final adx_exo_notification_small_icon:I = 0x7f0800c5
+
+.field public static final adx_exo_notification_stop:I = 0x7f0800c6
+
+.field public static final avd_hide_password:I = 0x7f080122
+
+.field public static final avd_show_password:I = 0x7f080123
+
+.field public static final circle_bg:I = 0x7f0802df
+
+.field public static final circle_bottom_bg:I = 0x7f0802e0
+
+.field public static final circle_dialog_bg:I = 0x7f0802e1
+
+.field public static final corners_15_color_7f000000:I = 0x7f08031a
+
+.field public static final corners_close_bg:I = 0x7f08031b
+
+.field public static final count_down_bg:I = 0x7f08031c
+
+.field public static final design_fab_background:I = 0x7f080340
+
+.field public static final design_ic_visibility:I = 0x7f080341
+
+.field public static final design_ic_visibility_off:I = 0x7f080342
+
+.field public static final design_password_eye:I = 0x7f080343
+
+.field public static final design_snackbar_background:I = 0x7f080344
+
+.field public static final download:I = 0x7f080358
+
+.field public static final download_blue:I = 0x7f080359
+
+.field public static final download_blue_all:I = 0x7f08035a
+
+.field public static final floating_icon_bg:I = 0x7f080559
+
+.field public static final floating_icon_long_bg:I = 0x7f08055a
+
+.field public static final ic_mtrl_chip_checked_black:I = 0x7f08070b
+
+.field public static final ic_mtrl_chip_checked_circle:I = 0x7f08070c
+
+.field public static final ic_mtrl_chip_close_circle:I = 0x7f08070d
+
+.field public static final inter_v2_fill_bg:I = 0x7f08084d
+
+.field public static final inter_v3_bg:I = 0x7f08084e
+
+.field public static final jad_back_close:I = 0x7f080850
+
+.field public static final jad_back_ic:I = 0x7f080851
+
+.field public static final jad_banner_logo_default:I = 0x7f080852
+
+.field public static final jad_btn_skip_background:I = 0x7f080853
+
+.field public static final jad_feed_border_download_btn:I = 0x7f080854
+
+.field public static final jad_feed_border_view:I = 0x7f080855
+
+.field public static final jad_feed_group_image_ad_bg:I = 0x7f080856
+
+.field public static final jad_feed_group_image_close_bg:I = 0x7f080857
+
+.field public static final jad_feed_logo_default:I = 0x7f080858
+
+.field public static final jad_interstitial_close_view:I = 0x7f080859
+
+.field public static final jad_interstitial_logo_default:I = 0x7f08085a
+
+.field public static final jad_logo:I = 0x7f08085b
+
+.field public static final jad_logo_no_ic:I = 0x7f08085c
+
+.field public static final jad_logo_normal:I = 0x7f08085d
+
+.field public static final jad_shake_background:I = 0x7f08085e
+
+.field public static final jad_shake_template:I = 0x7f08085f
+
+.field public static final jad_splash_click_area_arrow:I = 0x7f080860
+
+.field public static final jad_splash_logo_default:I = 0x7f080861
+
+.field public static final jad_swipe:I = 0x7f080862
+
+.field public static final jad_swipe_background:I = 0x7f080863
+
+.field public static final jad_video_btn_skip_background:I = 0x7f080864
+
+.field public static final jad_video_logo_default:I = 0x7f080865
+
+.field public static final jd_corners_15_color_7f000000:I = 0x7f080866
+
+.field public static final mtrl_tabs_default_indicator:I = 0x7f080af2
+
+.field public static final navigation_empty_icon:I = 0x7f080b03
+
+.field public static final notification_action_background:I = 0x7f080b36
+
+.field public static final notification_bg:I = 0x7f080b38
+
+.field public static final notification_bg_low:I = 0x7f080b3a
+
+.field public static final notification_bg_low_normal:I = 0x7f080b3b
+
+.field public static final notification_bg_low_pressed:I = 0x7f080b3c
+
+.field public static final notification_bg_normal:I = 0x7f080b3d
+
+.field public static final notification_bg_normal_pressed:I = 0x7f080b3e
+
+.field public static final notification_icon_background:I = 0x7f080b48
+
+.field public static final notification_template_icon_bg:I = 0x7f080b5a
+
+.field public static final notification_template_icon_low_bg:I = 0x7f080b5b
+
+.field public static final notification_tile_bg:I = 0x7f080b5c
+
+.field public static final notify_panel_notification_icon_bg:I = 0x7f080b60
+
+.field public static final tooltip_frame_dark:I = 0x7f080e3b
+
+.field public static final tooltip_frame_light:I = 0x7f080e3c
+
+.field public static final tp_notification_background:I = 0x7f080e3d
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

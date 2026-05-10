@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include android:id="@id/swof_record_progress_view" layout="@layout/swof_transfer_progress_layout" />
-    <View style="@style/swof_content_line_style" />
-    <ListView android:id="@id/swof_fragment_record_listview" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="#00000000" android:divider="@null" android:overScrollMode="never" />
-</LinearLayout>

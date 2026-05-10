@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="diskusage_sort_entries">
+        <item>Vardą</item>
+        <item>Tipą</item>
+        <item>Dydį</item>
+    </string-array>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0,25 k.</item>
+        <item>0,5 k.</item>
+        <item>0,75 k.</item>
+        <item>Įprasta</item>
+        <item>1,25 k.</item>
+        <item>1,5 k.</item>
+        <item>2 k.</item>
+    </string-array>
+    <string-array name="image_slide_interval">
+        <item>1 с</item>
+        <item>3 с</item>
+        <item>5 с</item>
+        <item>10 с</item>
+        <item>15 с</item>
+    </string-array>
+    <string-array name="new_navi_groups">
+        <item>Nuorodos</item>
+        <item>Įrenginyje</item>
+        <item>Bibliotekos</item>
+        <item>Tinklas</item>
+        <item>Priemonės</item>
+    </string-array>
+    <string-array name="pick_and_return_file_entries">
+        <item>"Standartinis
+(dėl MMS,Gmail ir kt.)"</item>
+        <item>"Pagal failus
+(jei nepavyko pirmas)"</item>
+    </string-array>
+    <string-array name="search_condition_date">
+        <item>Visi</item>
+        <item>Šiandien</item>
+        <item>Vakar</item>
+        <item>Savaitė</item>
+        <item>Mėnuo</item>
+        <item>Metai</item>
+        <item>Daugiau nei metai</item>
+        <item>Nurodyti</item>
+    </string-array>
+    <string-array name="search_condition_size">
+        <item>Visi</item>
+        <item>0 – 100 KB</item>
+        <item>100KB - 1 MB</item>
+        <item>1 MB - 16 MB</item>
+        <item>16 MB - 128 MB</item>
+        <item>> 128 MB</item>
+        <item>Įvedimas</item>
+    </string-array>
+    <string-array name="theme_folders">
+        <item>Standartinė</item>
+        <item>Geltoni</item>
+        <item>Žali</item>
+        <item>Raudoni</item>
+        <item>Rožiniai</item>
+        <item>Juodi</item>
+    </string-array>
+    <string-array name="view_item_names">
+        <item>Dideli, ženklai</item>
+        <item>Vidutiniai, ženklai</item>
+        <item>Smulkūs, ženklai</item>
+        <item>Dideli, sąrašas</item>
+        <item>Vidutiniai, sąrašas</item>
+        <item>Smulkūs, sąrašas</item>
+        <item>Dideli, detaliai</item>
+        <item>Vidutiniai, detaliai</item>
+        <item>Smulkūs, detaliai</item>
+    </string-array>
+    <string-array name="wifi_signal">
+        <item>Blogas</item>
+        <item>Vidutinis</item>
+        <item>Geras</item>
+        <item>Puikus</item>
+    </string-array>
+    <string-array name="wifi_status_with_ssid">
+        <item></item>
+        <item>Ieškau…</item>
+        <item>Prisijungimas prie %1$s…</item>
+        <item>Prisistatymas %1$s…</item>
+        <item>Gaunu IP аdresą iš %1$s…</item>
+        <item>Prisijungiau prie %1$s</item>
+        <item>Sustabdyta</item>
+        <item>Atsijungiame nuo %1$s…</item>
+        <item>Atsijungta</item>
+        <item>Klaida prisijungiant</item>
+    </string-array>
+    <string-array name="wifi_statuses">
+        <item></item>
+        <item>Ieškau…</item>
+        <item>Prisijungimas…</item>
+        <item>Prisistatymas…</item>
+        <item>Gaunu IP adresą…</item>
+        <item>Prisijungiau</item>
+        <item>Sustabdyta</item>
+        <item>Atsijungiu…</item>
+        <item>Atsijungta</item>
+        <item>Klaida prisijungiant</item>
+    </string-array>
+    <string-array name="zip_levels">
+        <item>Nespausti</item>
+        <item>Greitas</item>
+        <item>Normalus</item>
+        <item>Maksimalus</item>
+    </string-array>
+</resources>

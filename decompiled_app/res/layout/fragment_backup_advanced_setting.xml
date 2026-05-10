@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/autobackup_switch_layout" style="@style/auto_backup_main_setting_item_style">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_20" android:layout_toLeftOf="@id/switchWidget" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:layout_marginEnd="@dimen/dp_20" android:layout_toStartOf="@id/switchWidget" android:layout_alignParentStart="true">
+            <TextView android:id="@id/switch_title_tv" android:text="@string/backup_only_wifi" style="@style/auto_backup_main_setting_title_style" />
+            <TextView android:textSize="@dimen/dp_11" android:textColor="@color/c_66000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_20" android:text="@string/tip_backup_only_wifi" android:layout_marginStart="@dimen/dp_20" />
+        </LinearLayout>
+        <CheckBox android:gravity="center" android:layout_gravity="center" android:id="@id/switchWidget" android:background="@drawable/preference_checkbox_drawable" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_20" android:button="@null" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_marginEnd="@dimen/dp_20" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <View android:background="#1a000000" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="@dimen/dp_14" android:layout_marginStart="@dimen/dp_14" />
+    <RelativeLayout android:id="@id/rl_backup_interval" style="@style/auto_backup_main_setting_item_style">
+        <TextView android:text="@string/backup_interval" android:layout_marginEnd="4.0dip" android:layout_alignParentStart="true" style="@style/auto_backup_main_setting_title_style" />
+        <TextView android:id="@id/tv_interval" style="@style/auto_backup_main_setting_state_text_style" />
+    </RelativeLayout>
+</LinearLayout>

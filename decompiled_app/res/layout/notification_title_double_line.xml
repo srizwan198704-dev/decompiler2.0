@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="@android:color/white" android:paddingRight="@dimen/notification_padding_right" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/notification_large_icon_height"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/icon" android:layout_marginLeft="@dimen/notification_content_padding_left" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:contentDescription="@string/null_string" style="@style/NotificationLargeIcon" />
-    <TextView android:ellipsize="end" android:gravity="center_vertical" android:id="@id/title" android:paddingLeft="@dimen/notification_content_padding_left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="2" android:layout_toRightOf="@id/icon" android:layout_centerVertical="true" style="@style/NotificationTitle" />
-</RelativeLayout>

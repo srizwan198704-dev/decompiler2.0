@@ -1,0 +1,55 @@
+.class public final Lcom/opos/exoplayer/core/h/q$d;
+.super Lcom/opos/exoplayer/core/h/q$c;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/opos/exoplayer/core/h/q;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "d"
+.end annotation
+
+
+# instance fields
+.field public final c:Ljava/lang/String;
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/String;Lcom/opos/exoplayer/core/h/i;)V
+    .locals 2
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "Invalid content type: "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-direct {p0, v0, p2, v1}, Lcom/opos/exoplayer/core/h/q$c;-><init>(Ljava/lang/String;Lcom/opos/exoplayer/core/h/i;I)V
+
+    iput-object p1, p0, Lcom/opos/exoplayer/core/h/q$d;->c:Ljava/lang/String;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "InvalidContentTypeException"
+
+    return-object v0
+.end method

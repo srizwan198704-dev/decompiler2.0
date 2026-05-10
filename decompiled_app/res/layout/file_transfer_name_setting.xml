@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:paddingLeft="@dimen/common_alert_dialog_padding_hori" android:paddingRight="@dimen/common_alert_dialog_padding_hori" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:id="@id/edit_text_account" android:paddingTop="@dimen/dp_8" android:paddingBottom="@dimen/dp_8" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/dp_0" android:paddingEnd="@dimen/dp_30" style="@style/editInputText" />
+    <ImageView android:layout_gravity="end|center" android:id="@id/close_btn" android:layout_width="@dimen/dp_30" android:layout_height="@dimen/dp_30" android:src="@drawable/sender_delete" android:scaleType="centerInside" />
+</FrameLayout>

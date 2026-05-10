@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.esfile.screen.recorder.videos.edit.timepicker.wheel.WheelView android:id="@id/time_hour" android:layout_width="@dimen/durec_time_pick_width" android:layout_height="fill_parent" />
+        <TextView android:textSize="26.0dip" android:textColor="#80555555" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="@dimen/durec_time_pick_height" android:text=":" />
+        <com.esfile.screen.recorder.videos.edit.timepicker.wheel.WheelView android:id="@id/time_minute" android:layout_width="@dimen/durec_time_pick_width" android:layout_height="fill_parent" />
+        <TextView android:textSize="26.0dip" android:textColor="#80555555" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="@dimen/durec_time_pick_height" android:text=":" />
+        <com.esfile.screen.recorder.videos.edit.timepicker.wheel.WheelView android:id="@id/time_second" android:layout_width="@dimen/durec_time_pick_width" android:layout_height="fill_parent" />
+        <TextView android:textSize="26.0dip" android:textColor="#80555555" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="@dimen/durec_time_pick_height" android:text="." />
+        <com.esfile.screen.recorder.videos.edit.timepicker.wheel.WheelView android:id="@id/time_100ms" android:layout_width="@dimen/durec_time_pick_width" android:layout_height="fill_parent" />
+    </LinearLayout>
+</FrameLayout>

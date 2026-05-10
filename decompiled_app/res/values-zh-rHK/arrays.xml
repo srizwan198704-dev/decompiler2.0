@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0.25x</item>
+        <item>0.5x</item>
+        <item>0.75x</item>
+        <item>正常</item>
+        <item>1.25x</item>
+        <item>1.5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="je_screen_orientation">
+        <item>自動</item>
+        <item>橫向</item>
+        <item>直向</item>
+    </string-array>
+    <string-array name="je_wrap_char_list">
+        <item>轉換成 \\n(Linux/OSX)</item>
+        <item>轉換成 \\r\\n(Windows)</item>
+    </string-array>
+</resources>

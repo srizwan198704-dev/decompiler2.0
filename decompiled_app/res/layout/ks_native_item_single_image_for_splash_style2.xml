@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0dip" android:textColor="@color/white" android:ellipsize="end" android:id="@id/ad_desc" android:paddingTop="@dimen/dp_80" android:paddingBottom="@dimen/dp_25" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:paddingStart="@dimen/dp_35" android:paddingEnd="@dimen/dp_35" />
+    <ImageView android:id="@id/ad_image" android:layout_width="fill_parent" android:layout_height="200.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:src="@drawable/ad_default_content" android:scaleType="centerCrop" />
+    <FrameLayout android:layout_gravity="end" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:paddingStart="8.0dip" android:paddingEnd="8.0dip">
+        <ImageView android:layout_width="35.0dip" android:layout_height="12.0dip" android:src="@drawable/ks_ad_label_gray" />
+        <ImageView android:id="@id/ad_dislike" android:visibility="gone" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ks_dislike_gray" />
+    </FrameLayout>
+    <Space android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <include android:id="@id/ad_download_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp_26" android:layout_marginStart="@dimen/dp_26" android:layout_marginEnd="@dimen/dp_26" layout="@layout/ks_native_item_app_download_single_image_for_splash_style2" />
+    <include android:id="@id/ad_h5_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/dp_26" android:layout_marginStart="@dimen/dp_26" android:layout_marginEnd="@dimen/dp_26" layout="@layout/ks_native_item_h5_open_single_image_for_splash_style2" />
+</LinearLayout>

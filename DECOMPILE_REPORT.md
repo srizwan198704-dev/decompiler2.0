@@ -1,21 +1,23 @@
 # APK Decompilation Report
 
 ## Decompilation Date
-Sun May 10 22:22:19 UTC 2026
+Sun May 10 23:26:41 UTC 2026
 
 ## Original APK
 - **File Name**: input_app.apk
-- **File Size**: 12M
+- **File Size**: 83M
 
 ## Decompilation Results
 - **Output Directory**: decompiled_app/
-- **Total Files**: 18488
-- **Total Directories**: 1900
+- **Total Files**: 76741
+- **Total Directories**: 4643
 
 ## Main Directories
 - .
 - ..
+- META-INF
 - assets
+- kotlin
 - lib
 - original
 - res

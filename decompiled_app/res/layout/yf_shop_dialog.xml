@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/ad_container" android:background="@color/color_transparent" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/red_pocket_area" android:background="@mipmap/yf_shopmall_money" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/red_pocket_coupon" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="35.0dip" android:layout_centerHorizontal="true">
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="22.0sp" android:textColor="#ffffffff" android:id="@id/coupon_number0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/yf_coupon_text0" />
+                <TextView android:textSize="40.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/coupon_number" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                <TextView android:textSize="22.0sp" android:textColor="#ffffffff" android:id="@id/coupon_number1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/yf_coupon_text1" />
+            </LinearLayout>
+            <TextView android:textSize="22.0sp" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/yf_coupon_text2" />
+        </LinearLayout>
+    </RelativeLayout>
+    <ImageView android:id="@id/ad_close" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="98.0dip" android:src="@mipmap/yf_ad_close_black_2" android:layout_marginStart="28.0dip" android:layout_alignStart="@id/red_pocket_area" />
+</RelativeLayout>

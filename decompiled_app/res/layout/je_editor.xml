@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jecelyin.editor.v2.view.EditorView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.jecelyin.editor.v2.widget.text.EditAreaView android:enabled="false" android:scrollbarThumbVertical="@android:color/transparent" android:scrollbarTrackVertical="@null" android:scrollbarAlwaysDrawVerticalTrack="false" android:gravity="start|center|top" android:id="@id/edit_text" android:background="?android:windowBackground" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ProgressBar android:id="@id/progress_view" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" android:indeterminate="true" android:layout_centerInParent="true" />
+</com.jecelyin.editor.v2.view.EditorView>

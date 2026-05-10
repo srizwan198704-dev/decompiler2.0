@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/item_file_layout" android:background="@drawable/file_select_list_selector" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/item_file_wrapper" android:paddingLeft="@dimen/dp_15" android:layout_width="fill_parent" android:layout_height="@dimen/dp_68">
+        <LinearLayout android:layout_gravity="center_vertical" android:layout_width="@dimen/dp_0" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <com.estrongs.android.pop.esclasses.ESImageView android:layout_gravity="center_vertical" android:id="@id/item_file_icon" android:layout_width="@dimen/dp_48" android:layout_height="@dimen/dp_48" android:src="@drawable/format_folder" />
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:paddingLeft="@dimen/dp_10" android:layout_width="@dimen/dp_0" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <TextView android:textSize="@dimen/dp_15" android:textColor="@color/popupbox_content_text" android:ellipsize="end" android:id="@id/item_file_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1111" android:singleLine="true" android:textDirection="ltr" />
+                <TextView android:textSize="@dimen/dp_10" android:textColor="@color/c_66000000" android:ellipsize="end" android:id="@id/item_file_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="222" android:singleLine="true" android:textDirection="ltr" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:textSize="@dimen/dp_13" android:textColor="@color/c_66000000" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/item_file_stamp" android:paddingRight="@dimen/dp_18" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="time" />
+        <LinearLayout android:layout_gravity="center_vertical" android:id="@id/checkbox_wrapper" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <CheckBox android:layout_gravity="center" android:id="@id/item_file_checkbox" android:paddingTop="@dimen/dp_20" android:paddingRight="@dimen/dp_14" android:paddingBottom="@dimen/dp_20" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/popupbox_checkbox_drawable" style="@style/check_box_style" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

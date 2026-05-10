@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <bool name="account_authenticator_switch">true</bool>
-    <bool name="pdf_reader_switch">true</bool>
-    <bool name="spb_default_mirror_mode">false</bool>
-    <bool name="spb_default_progressiveStart_activated">false</bool>
-    <bool name="spb_default_reversed">false</bool>
-    <bool name="uc_assist_search_switch">true</bool>
-    <bool name="uc_image_viewer_switch">true</bool>
-    <bool name="uc_text_viewer_switch">true</bool>
-    <bool name="uc_video_switch">true</bool>
-    <bool name="uc_wallpaper_service_switch">true</bool>
-    <bool name="uc_websearch_switch">true</bool>
+    <bool name="abc_action_bar_embed_tabs">true</bool>
+    <bool name="abc_config_actionMenuItemAllCaps">true</bool>
+    <bool name="config_materialPreferenceIconSpaceReserved">false</bool>
+    <bool name="is_tablet">false</bool>
+    <bool name="mtrl_btn_textappearance_all_caps">true</bool>
+    <bool name="support_video_editor">false</bool>
 </resources>

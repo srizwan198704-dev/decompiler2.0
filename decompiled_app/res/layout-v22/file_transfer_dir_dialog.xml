@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/common_alert_dialog_padding_hori" android:paddingTop="@dimen/dp_12" android:paddingRight="@dimen/common_alert_dialog_padding_hori" android:paddingBottom="@dimen/dp_12" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/common_alert_dialog_padding_hori" android:paddingVertical="@dimen/dp_12">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/dp_15" android:textColor="@color/c_99000000" android:id="@id/tv_default_dir" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sender_default_path" />
+            <TextView android:textSize="@dimen/dp_15" android:textColor="@color/c_99000000" android:id="@id/tv_dir_path" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/dp_15" android:textColor="@color/c_99000000" android:id="@id/message_ext" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_15" android:text="@string/sender_default_path_dialog_hint" />
+        <androidx.appcompat.widget.AppCompatCheckBox android:textSize="@dimen/dp_12" android:textColor="@color/c_99000000" android:gravity="center" android:id="@id/recycle_prompt_checkbox" android:paddingLeft="10.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_20" android:checked="false" android:button="@drawable/checkbox_grid_file_drawable" android:text="@string/sender_default_path_dialog_checkbox_txt" android:layout_centerVertical="true" android:lineSpacingExtra="5.0dip" />
+    </LinearLayout>
+</ScrollView>

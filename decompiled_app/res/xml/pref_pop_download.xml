@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/app_download_manager"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:layout="@layout/custom_preference_no_space" app:allowDividerAbove="false" app:allowDividerBelow="false">
+        <CheckBoxPreference android:persistent="true" android:layout="@layout/custom_preference_top_radius" android:title="@string/browser_downloader_disabled" android:key="browser_downloader_disabled" android:widgetLayout="@layout/custom_preference_widget_checkbox" android:defaultValue="false" />
+        <CheckBoxPreference android:persistent="true" android:layout="@layout/custom_preference_bottom_radius" android:title="@string/multithread_copy_enabled" android:key="multithread_copy_enabled" android:widgetLayout="@layout/custom_preference_widget_checkbox" android:defaultValue="false" />
+    </PreferenceCategory>
+</PreferenceScreen>

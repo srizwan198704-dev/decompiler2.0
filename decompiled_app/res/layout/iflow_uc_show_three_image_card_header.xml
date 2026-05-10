@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/iflow_v_feed_header_height"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.uc.ark.base.netimage.AsyncImageView android:id="@id/iv_card_header_icon" android:layout_width="@dimen/iflow_v_feed_header_reco_width" android:layout_height="@dimen/iflow_v_feed_header_reco_height" android:layout_centerVertical="true" />
-    <TextView android:textSize="12.0sp" android:textStyle="bold" android:id="@id/tv_card_header_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/iv_card_header_icon" android:layout_centerVertical="true" android:textAllCaps="true" />
-    <TextView android:textSize="12.0sp" android:textStyle="bold" android:gravity="center" android:id="@id/tv_card_header_more" android:paddingLeft="14.0dip" android:paddingRight="14.0dip" android:layout_width="wrap_content" android:layout_height="@dimen/iflow_v_feed_header_height" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-</RelativeLayout>

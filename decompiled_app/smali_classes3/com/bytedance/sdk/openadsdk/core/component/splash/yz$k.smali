@@ -1,0 +1,27 @@
+.class public interface abstract Lcom/bytedance/sdk/openadsdk/core/component/splash/yz$k;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/bytedance/sdk/openadsdk/core/component/splash/yz;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "k"
+.end annotation
+
+
+# virtual methods
+.method public abstract getActivity()Landroid/content/Context;
+.end method
+
+.method public abstract k()V
+.end method
+
+.method public abstract k(J)V
+.end method
+
+.method public abstract p()V
+.end method

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="dialog_panel_width">330.0dip</dimen>
-    <dimen name="dialog_vertical_panel_width">340.0dip</dimen>
-    <dimen name="launcher_celllayout_paddingbottom_portrait">55.0dip</dimen>
-    <dimen name="launcher_celllayout_paddingtop_portrait">55.0dip</dimen>
-    <dimen name="titlebar_height">49.5dip</dimen>
-</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="horizontal" android:id="@id/m3_triangle_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/m3_icon_1" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@drawable/exo_styled_controls_play" />
+        <ImageView android:id="@id/m3_icon_2" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@drawable/exo_styled_controls_play" />
+        <ImageView android:id="@id/m3_icon_3" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@drawable/exo_styled_controls_play" />
+    </LinearLayout>
+    <TextView android:gravity="center" android:id="@id/m3_tv_seconds" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

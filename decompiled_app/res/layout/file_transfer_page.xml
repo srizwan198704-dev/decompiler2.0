@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/transfer_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/mtd_content_tripple_view_layout" />
+    <RelativeLayout android:id="@id/file_send_home_view" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/file_transfer_recyclerview" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/progress_layout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+            <ProgressBar android:id="@id/pb_loading" android:layout_width="@dimen/dp_16" android:layout_height="@dimen/dp_16" style="@style/ProgressBar" />
+            <TextView android:textColor="@color/c_66000000" android:gravity="center" android:id="@id/tv_filetransfer_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/progress_loading" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/file_transfer_lin_arrow" android:background="@color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="@dimen/dp_42">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_downarrow" />
+            </LinearLayout>
+            <View android:id="@id/divider_tag" android:background="@color/es_base_divider_color" android:layout_width="fill_parent" android:layout_height="@dimen/dp_1" />
+        </LinearLayout>
+        <ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/file_transfer_lin_tip" android:paddingTop="@dimen/dp_55" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/sender_home_empty" />
+                <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/dp_18" android:textStyle="bold" android:textColor="@color/window_txt_color_bcc" android:gravity="center_horizontal" android:id="@id/sender_tips_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_18" android:text="@string/cross_platform_transfer" />
+                    <TextView android:textSize="@dimen/dp_13" android:textColor="@color/window_txt_color_b99" android:gravity="center_horizontal" android:id="@id/sender_tips_summary" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_4" android:text="@string/fast_transfer" />
+                </LinearLayout>
+                <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_40" android:layout_marginBottom="@dimen/dp_15">
+                    <Button android:textSize="@dimen/dp_18" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/btn_send" android:background="@drawable/btn_100_03_selector" android:layout_width="@dimen/dp_300" android:layout_height="wrap_content" android:text="@string/action_send" />
+                    <Button android:textSize="@dimen/dp_18" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/btn_receive" android:background="@drawable/btn_100_03_selector" android:layout_width="@dimen/dp_300" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_30" android:text="@string/action_receive" />
+                    <TextView android:textColor="@color/window_txt_color_b99" android:gravity="center_horizontal" android:id="@id/tv_no_install_es" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_30" android:text="@string/sender_noinstall_es" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/file_send_classify_view" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:gravity="center_vertical" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="@dimen/addressbar_height">
+            <com.estrongs.android.pop.esclasses.ESHorizontalScrollView android:id="@id/scrollView" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="@dimen/addressbar_height">
+                <com.estrongs.android.ui.addressbar.AdvancedAddressBar android:id="@id/address_bar" android:layout_width="wrap_content" android:layout_height="@dimen/addressbar_height" android:layout_marginLeft="@dimen/addressbar_margin_horizontal" android:layout_marginRight="@dimen/addressbar_margin_horizontal" />
+            </com.estrongs.android.pop.esclasses.ESHorizontalScrollView>
+            <include layout="@layout/mtd_content_tripple_view_layout" />
+        </RelativeLayout>
+        <View android:background="@color/c_d9d9d9" android:layout_width="fill_parent" android:layout_height="@dimen/dp_1" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <androidx.recyclerview.widget.RecyclerView android:gravity="center" android:id="@id/recyclerview_classify" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/mtd_content_empty_view_layout" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

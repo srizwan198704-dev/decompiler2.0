@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/c_es_base_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/transfer_select_address_bar_top_divider" android:background="@color/c_d9d9d9" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/dp_1" />
+    <com.estrongs.android.pop.esclasses.ESHorizontalScrollView android:id="@id/transfer_select_address_bar_parent_scrollview" android:background="@color/c_f5f6f8" android:visibility="gone" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="@dimen/addressbar_height" android:layout_below="@id/transfer_select_address_bar_top_divider">
+        <com.estrongs.android.ui.addressbar.AdvancedAddressBar android:id="@id/transfer_select_address_bar" android:background="@color/c_f5f6f8" android:layout_width="wrap_content" android:layout_height="@dimen/addressbar_height" android:layout_marginLeft="@dimen/addressbar_margin_horizontal" android:layout_marginRight="@dimen/addressbar_margin_horizontal" />
+    </com.estrongs.android.pop.esclasses.ESHorizontalScrollView>
+    <View android:id="@id/transfer_select_address_bar_bottom_divider" android:background="@color/c_d9d9d9" android:layout_width="fill_parent" android:layout_height="@dimen/dp_1" android:layout_below="@id/transfer_select_address_bar_parent_scrollview" />
+    <androidx.recyclerview.widget.RecyclerView android:gravity="center" android:id="@id/transfer_select_recycler_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/transfer_select_address_bar_bottom_divider" />
+    <com.estrongs.android.ui.fastscroller.vertical.VerticalRecyclerViewFastScroller android:id="@id/transfer_select_fast_scroller" android:layout_width="24.0dip" android:layout_height="fill_parent" android:layout_alignParentRight="true" app:rfs_handleBackground="@drawable/icon_handle" xmlns:app="http://schemas.android.com/apk/res-auto" />
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/transfer_select_address_bar_bottom_divider" layout="@layout/mtd_content_empty_view_layout" />
+    <RelativeLayout android:id="@id/view_select_loading_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ProgressBar android:id="@id/view_select_loading_pb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" style="@style/ProgressBar" />
+        <TextView android:textColor="@color/main_content_detail_text" android:gravity="center" android:id="@id/view_select_loading_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10" android:text="@string/progress_loading" android:layout_below="@id/view_select_loading_pb" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</RelativeLayout>

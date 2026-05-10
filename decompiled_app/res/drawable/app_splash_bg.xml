@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <solid android:color="@color/c_f5f6f7" />
+            <size android:height="@dimen/app_splash_bg_h" android:width="@dimen/app_splash_bg_w" />
+        </shape>
+    </item>
+    <item android:left="@dimen/dp_20" android:right="@dimen/dp_20" android:bottom="@dimen/dp_20">
+        <layer-list>
+            <item android:right="@dimen/dp_140">
+                <bitmap android:gravity="bottom" android:src="@mipmap/fex" />
+            </item>
+            <item android:left="@dimen/dp_58" android:bottom="@dimen/dp_5">
+                <bitmap android:gravity="bottom" android:src="@drawable/es_name" />
+            </item>
+        </layer-list>
+    </item>
+</layer-list>

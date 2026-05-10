@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/customDialogPadding" android:paddingRight="@dimen/customDialogPadding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layoutDirection="ltr" android:paddingStart="@dimen/customDialogPadding" android:paddingEnd="@dimen/customDialogPadding">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <EditText android:id="@id/find_edit_text" android:hint="@string/je_find_label" style="@style/CustomDialogEditStyle" />
+            <ImageView android:layout_gravity="end|center" android:id="@id/find_edit_text_spinner_view" android:background="@drawable/je_btn_edit_spinner_bg" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+        </FrameLayout>
+        <CheckBox android:id="@id/replace_check_box" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/je_dp_15" android:text="@string/je_replace" style="@style/CustomDialogCheckBoxStyle" />
+        <FrameLayout android:id="@id/replace_edit_text_fl" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/je_dp_15">
+            <EditText android:id="@id/replace_edit_text" android:hint="@string/je_replace_label" style="@style/CustomDialogEditStyle" />
+            <ImageView android:layout_gravity="end|center" android:id="@id/replace_edit_text_spinner_view" android:background="@drawable/je_btn_edit_spinner_bg" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+        </FrameLayout>
+        <CheckBox android:id="@id/case_sensitive_check_box" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/je_dp_15" android:text="@string/je_case_sensitive" style="@style/CustomDialogCheckBoxStyle" />
+        <CheckBox android:id="@id/whole_words_only_check_box" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/je_dp_15" android:text="@string/je_whole_words_only" style="@style/CustomDialogCheckBoxStyle" />
+        <CheckBox android:id="@id/regex_check_box" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/je_dp_15" android:text="@string/je_regex" style="@style/CustomDialogCheckBoxStyle" />
+        <CheckBox android:id="@id/in_path_check_box" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/je_dp_15" android:text="@string/je_in_path" style="@style/CustomDialogCheckBoxStyle" />
+        <FrameLayout android:id="@id/pathLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/je_dp_15">
+            <EditText android:id="@id/path_edit_text" android:paddingRight="42.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/je_directory" style="@style/CustomDialogEditStyle" />
+            <ImageView android:layout_gravity="end|center" android:id="@id/browserBtn" android:layout_width="@dimen/je_dp_30" android:layout_height="@dimen/je_dp_30" android:src="@drawable/je_ic_more_horiz_grey600_24dp" android:scaleType="center" />
+        </FrameLayout>
+        <CheckBox android:id="@id/recursively_check_box" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/je_dp_15" android:layout_marginBottom="@dimen/je_dp_5" android:checked="true" android:text="@string/je_recursively" style="@style/CustomDialogCheckBoxStyle" />
+    </LinearLayout>
+</ScrollView>

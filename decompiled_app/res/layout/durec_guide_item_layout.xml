@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.esfile.screen.recorder.ui.FontTextView android:textSize="15.299988dip" android:textColor="#e5ffffff" android:gravity="center|left" android:id="@id/guide_item_text" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

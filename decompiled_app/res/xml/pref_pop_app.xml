@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/category_apk"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:layout="@layout/custom_preference_no_space" app:allowDividerAbove="false" app:allowDividerBelow="false">
+        <CheckBoxPreference android:persistent="true" android:layout="@layout/custom_preference_top_radius" android:title="@string/preference_auto_backup_text" android:key="auto_app_backup" android:widgetLayout="@layout/custom_preference_widget_checkbox" android:defaultValue="false" android:shouldDisableView="true" />
+        <com.estrongs.android.ui.preference.DirChoosePreference android:persistent="false" android:layout="@layout/custom_preference_none_radius" android:singleLine="true" android:title="@string/preference_app_backup_dir" android:key="app_backup_dir" android:widgetLayout="@layout/custom_preference_widget_dialog" android:dialogTitle="@string/preference_app_backup_dir" app:sdcardOnly="true" />
+        <CheckBoxPreference android:persistent="true" android:layout="@layout/custom_preference_bottom_radius" android:title="@string/clean_associated_folders_setting_text" android:key="clear_associate_folders_after_uninstall" android:summary="@string/clean_associated_folders_setting_summary" android:widgetLayout="@layout/custom_preference_widget_checkbox" android:defaultValue="true" android:shouldDisableView="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:layout="@layout/custom_preference_category" android:title="@string/app_update" android:key="app_check_update" app:allowDividerAbove="false" app:allowDividerBelow="false">
+        <Preference android:persistent="false" android:layout="@layout/custom_preference_top_radius" android:title="@string/app_update_setttings_title" android:key="auto_check_list" android:summary="@string/app_update_setttings_title_summary" />
+        <CheckBoxPreference android:persistent="true" android:layout="@layout/custom_preference_bottom_radius" android:title="@string/preference_ignore_inconsistent_sign_app" android:key="ignore_inconsistent_sign_app" android:widgetLayout="@layout/custom_preference_widget_checkbox" android:defaultValue="true" android:shouldDisableView="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:layout="@layout/custom_preference_category" android:title="@string/preference_root_enhancement" android:key="app_root_enhancement" app:allowDividerAbove="false" app:allowDividerBelow="false">
+        <CheckBoxPreference android:persistent="true" android:layout="@layout/custom_preference_top_radius" android:title="@string/preference_backup_app_cache_text" android:key="backup_app_cache" android:summary="@string/preference_backup_app_cache_summary" android:widgetLayout="@layout/custom_preference_widget_checkbox" android:defaultValue="false" android:shouldDisableView="true" />
+        <CheckBoxPreference android:persistent="true" android:layout="@layout/custom_preference_bottom_radius" android:title="@string/preference_auto_install_text" android:key="root_auto_install" android:summary="@string/preference_auto_install_summary" android:widgetLayout="@layout/custom_preference_widget_checkbox" android:defaultValue="false" android:shouldDisableView="true" />
+    </PreferenceCategory>
+</PreferenceScreen>

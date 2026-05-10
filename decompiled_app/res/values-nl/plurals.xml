@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">%d seconden vooruitspoelen</item>
+        <item quantity="one">%d seconde vooruitspoelen</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">%d seconden terugspoelen</item>
+        <item quantity="one">%d seconde terugspoelen</item>
+    </plurals>
+    <plurals name="hiad_dismiss_dilaog">
+        <item quantity="other">Venster sluit over %1$s seconden.</item>
+        <item quantity="one">Venster sluit over %1$s seconde.</item>
+    </plurals>
+    <plurals name="hiad_no_prompt_in_days">
+        <item quantity="other">Keuze opslaan voor %1$s dagen</item>
+        <item quantity="one">Keuze opslaan voor %1$s dag</item>
+    </plurals>
+    <plurals name="hiad_reward_countdown">
+        <item quantity="other">%1$d sec</item>
+        <item quantity="one">%1$d sec</item>
+    </plurals>
+    <plurals name="je_x_text_replaced">
+        <item quantity="other">%1$d item(s) vervangen</item>
+        <item quantity="one">0 overeenkomsten</item>
+    </plurals>
+    <plurals name="log_new_count">
+        <item quantity="other">%1$d nieuw bestand toegevoegd</item>
+        <item quantity="one">%1$d nieuwe bestanden toegevoegd</item>
+    </plurals>
+    <plurals name="log_time_title_day">
+        <item quantity="other">%1$d dag geleden</item>
+        <item quantity="one">%1$d dagen geleden</item>
+    </plurals>
+    <plurals name="log_time_title_hour">
+        <item quantity="other">%1$d uur geleden</item>
+        <item quantity="one">%1$d uur geleden</item>
+    </plurals>
+    <plurals name="log_time_title_minute">
+        <item quantity="other">%1$d min geleden</item>
+        <item quantity="one">%1$d min geleden</item>
+    </plurals>
+    <plurals name="log_title_apk">
+        <item quantity="other">%1$d APK van %2$s</item>
+        <item quantity="one">%1$d APKs van %2$s</item>
+    </plurals>
+    <plurals name="log_title_audio">
+        <item quantity="other">%1$d nummer van %2$s</item>
+        <item quantity="one">%1$d nummers van %2$s</item>
+    </plurals>
+    <plurals name="log_title_doc">
+        <item quantity="other">%1$d document van %2$s</item>
+        <item quantity="one">%1$d documenten van %2$s</item>
+    </plurals>
+    <plurals name="log_title_folder">
+        <item quantity="other">%1$d map van %2$s</item>
+        <item quantity="one">%1$d mappen van %2$s</item>
+    </plurals>
+    <plurals name="log_title_image">
+        <item quantity="other">%1$d afbeelding van %2$s</item>
+        <item quantity="one">%1$d afbeeldingen van %2$s</item>
+    </plurals>
+    <plurals name="log_title_netdisk">
+        <item quantity="other">Mijn cloudaccount</item>
+        <item quantity="one">Mijn cloudaccounts</item>
+    </plurals>
+    <plurals name="log_title_video">
+        <item quantity="other">%1$d video van %2$s</item>
+        <item quantity="one">"%1$d video's van %2$s"</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d nieuwe meldingen</item>
+        <item quantity="one">%d nieuwe melding</item>
+    </plurals>
+</resources>

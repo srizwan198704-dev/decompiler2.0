@@ -1,0 +1,144 @@
+.class public Lorg/teleal/cling/binding/xml/UDA10ServiceDescriptorBinderSAXImpl$StateVariableListHandler;
+.super Lorg/teleal/cling/binding/xml/UDA10ServiceDescriptorBinderSAXImpl$ServiceDescriptorHandler;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/teleal/cling/binding/xml/UDA10ServiceDescriptorBinderSAXImpl;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "StateVariableListHandler"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lorg/teleal/cling/binding/xml/UDA10ServiceDescriptorBinderSAXImpl$ServiceDescriptorHandler<",
+        "Ljava/util/List<",
+        "Lorg/teleal/cling/binding/staging/MutableStateVariable;",
+        ">;>;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final EL:Lorg/teleal/cling/binding/xml/Descriptor$Service$ELEMENT;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    sget-object v0, Lorg/teleal/cling/binding/xml/Descriptor$Service$ELEMENT;->serviceStateTable:Lorg/teleal/cling/binding/xml/Descriptor$Service$ELEMENT;
+
+    sput-object v0, Lorg/teleal/cling/binding/xml/UDA10ServiceDescriptorBinderSAXImpl$StateVariableListHandler;->EL:Lorg/teleal/cling/binding/xml/Descriptor$Service$ELEMENT;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/List;Lorg/teleal/cling/binding/xml/UDA10ServiceDescriptorBinderSAXImpl$ServiceDescriptorHandler;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lorg/teleal/cling/binding/staging/MutableStateVariable;",
+            ">;",
+            "Lorg/teleal/cling/binding/xml/UDA10ServiceDescriptorBinderSAXImpl$ServiceDescriptorHandler;",
+            ")V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1, p2}, Lorg/teleal/cling/binding/xml/UDA10ServiceDescriptorBinderSAXImpl$ServiceDescriptorHandler;-><init>(Ljava/lang/Object;Lorg/teleal/cling/binding/xml/UDA10ServiceDescriptorBinderSAXImpl$ServiceDescriptorHandler;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public isLastElement(Lorg/teleal/cling/binding/xml/Descriptor$Service$ELEMENT;)Z
+    .locals 1
+
+    sget-object v0, Lorg/teleal/cling/binding/xml/UDA10ServiceDescriptorBinderSAXImpl$StateVariableListHandler;->EL:Lorg/teleal/cling/binding/xml/Descriptor$Service$ELEMENT;
+
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public startElement(Lorg/teleal/cling/binding/xml/Descriptor$Service$ELEMENT;Lorg/xml/sax/Attributes;)V
+    .locals 2
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/xml/sax/SAXException;
+        }
+    .end annotation
+
+    sget-object v0, Lorg/teleal/cling/binding/xml/UDA10ServiceDescriptorBinderSAXImpl$StateVariableHandler;->EL:Lorg/teleal/cling/binding/xml/Descriptor$Service$ELEMENT;
+
+    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    new-instance p1, Lorg/teleal/cling/binding/staging/MutableStateVariable;
+
+    invoke-direct {p1}, Lorg/teleal/cling/binding/staging/MutableStateVariable;-><init>()V
+
+    sget-object v0, Lorg/teleal/cling/binding/xml/Descriptor$Service$ATTRIBUTE;->sendEvents:Lorg/teleal/cling/binding/xml/Descriptor$Service$ATTRIBUTE;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {p2, v0}, Lorg/xml/sax/Attributes;->getValue(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p2
+
+    new-instance v0, Lorg/teleal/cling/model/meta/StateVariableEventDetails;
+
+    if-eqz p2, :cond_0
+
+    invoke-virtual {p2}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+
+    move-result-object p2
+
+    const-string v1, "YES"
+
+    invoke-virtual {p2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    const/4 p2, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p2, 0x0
+
+    :goto_0
+    invoke-direct {v0, p2}, Lorg/teleal/cling/model/meta/StateVariableEventDetails;-><init>(Z)V
+
+    iput-object v0, p1, Lorg/teleal/cling/binding/staging/MutableStateVariable;->eventDetails:Lorg/teleal/cling/model/meta/StateVariableEventDetails;
+
+    invoke-virtual {p0}, Lorg/teleal/common/xml/SAXParser$Handler;->getInstance()Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Ljava/util/List;
+
+    invoke-interface {p2, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    new-instance p2, Lorg/teleal/cling/binding/xml/UDA10ServiceDescriptorBinderSAXImpl$StateVariableHandler;
+
+    invoke-direct {p2, p1, p0}, Lorg/teleal/cling/binding/xml/UDA10ServiceDescriptorBinderSAXImpl$StateVariableHandler;-><init>(Lorg/teleal/cling/binding/staging/MutableStateVariable;Lorg/teleal/cling/binding/xml/UDA10ServiceDescriptorBinderSAXImpl$ServiceDescriptorHandler;)V
+
+    :cond_1
+    return-void
+.end method

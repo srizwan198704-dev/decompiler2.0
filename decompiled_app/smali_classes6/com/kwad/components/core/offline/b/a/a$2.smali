@@ -1,0 +1,46 @@
+.class final Lcom/kwad/components/core/offline/b/a/a$2;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/kwad/components/offline/api/core/adInnerEc/ExternalExitListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/kwad/components/core/offline/b/a/a;->h(Landroid/content/Context;Ljava/lang/String;)Z
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic Tq:Lcom/kwad/components/core/page/widget/a/d;
+
+
+# direct methods
+.method public constructor <init>(Lcom/kwad/components/core/page/widget/a/d;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/kwad/components/core/offline/b/a/a$2;->Tq:Lcom/kwad/components/core/page/widget/a/d;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final exitWebView()Z
+    .locals 1
+
+    iget-object v0, p0, Lcom/kwad/components/core/offline/b/a/a$2;->Tq:Lcom/kwad/components/core/page/widget/a/d;
+
+    invoke-virtual {v0}, Lcom/kwad/components/core/page/widget/a/d;->dismiss()V
+
+    const/4 v0, 0x1
+
+    return v0
+.end method

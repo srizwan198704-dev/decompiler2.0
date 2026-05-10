@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.appcompat.widget.Toolbar android:id="@id/toolbar_top" android:layout_width="fill_parent" android:layout_height="@dimen/dp_48" />
+        <RelativeLayout android:id="@id/rl_change_avatar" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="14.0dip" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:layout_marginBottom="14.0dip" android:text="@string/avatar" android:layout_marginStart="20.0dip" />
+            <ImageView android:id="@id/iv_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/arrow_gray" android:layout_centerVertical="true" android:rotation="@integer/rtl_compat_rotation" android:layout_marginEnd="20.0dip" android:layout_alignParentEnd="true" />
+            <com.estrongs.android.ui.view.CircleImageView android:id="@id/iv_avatar" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/avatar_default" android:layout_centerVertical="true" android:layout_marginEnd="35.0dip" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <View android:background="@color/c_e5e5e5" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginStart="20.0dip" />
+        <RelativeLayout android:id="@id/rl_change_name" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="14.0dip" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:layout_marginBottom="14.0dip" android:text="@string/nick_name" android:layout_marginStart="20.0dip" />
+            <ImageView android:id="@id/iv_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/arrow_gray" android:layout_centerVertical="true" android:rotation="@integer/rtl_compat_rotation" android:layout_marginEnd="20.0dip" android:layout_alignParentEnd="true" />
+            <TextView android:textSize="11.0dip" android:textColor="@color/c_ff999999" android:id="@id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginEnd="35.0dip" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <View android:background="@color/c_e5e5e5" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginStart="20.0dip" />
+    </LinearLayout>
+    <TextView android:textStyle="bold" android:textColor="@color/black" android:gravity="center" android:id="@id/permission_explain" android:background="@color/white" android:paddingTop="@dimen/dp_20" android:paddingBottom="@dimen/dp_20" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</FrameLayout>

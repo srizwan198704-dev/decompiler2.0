@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:id="@id/bookmarkcloud_sync_guide_pic" android:layout_width="@dimen/cloudsync_bookmark_helppic_w" android:layout_height="@dimen/cloudsync_bookmark_helppic_h" android:layout_marginTop="@dimen/cloudsync_bookmark_helppic_margintop" android:layout_centerHorizontal="true" />
-    <TextView android:textSize="14.599976dip" android:textColor="#ff4f4f4f" android:id="@id/bookmarkcloud_sync_guide_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/cloudsync_bookmark_guide_text_margintop" android:layout_below="@id/bookmarkcloud_sync_guide_pic" android:layout_centerHorizontal="true" />
-    <TextView android:textSize="14.599976dip" android:textColor="#ff4f4f4f" android:gravity="top" android:id="@id/bookmarkcloud_sync_guide_text2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/bookmarkcloud_sync_guide_text" android:layout_centerHorizontal="true" />
-    <TextView android:textSize="14.599976dip" android:gravity="bottom" android:id="@id/bookmarkcloud_sync_guide_help" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/cloudsync_bookmark_guide_text_margintop" android:layout_below="@id/bookmarkcloud_sync_guide_text2" android:layout_centerHorizontal="true" />
-</RelativeLayout>

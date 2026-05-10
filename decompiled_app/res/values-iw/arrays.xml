@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="diskusage_sort_entries">
+        <item>שם</item>
+        <item>סוג</item>
+        <item>גודל</item>
+    </string-array>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0.25x</item>
+        <item>0.5x</item>
+        <item>0.75x</item>
+        <item>רגילה</item>
+        <item>1.25x</item>
+        <item>1.5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="image_slide_interval">
+        <item>"1 שנ'"</item>
+        <item>"3 שנ'"</item>
+        <item>"5 שנ'"</item>
+        <item>"10 שנ'"</item>
+        <item>"15 שנ'"</item>
+    </string-array>
+    <string-array name="new_navi_groups">
+        <item>מועדפים</item>
+        <item>מקומי</item>
+        <item>תיקיות</item>
+        <item>רשת</item>
+        <item>כלים</item>
+    </string-array>
+    <string-array name="pick_and_return_file_entries">
+        <item>"דרך האנדרואיד הרגיל
+(בשביל MMS,Gmail,…)"</item>
+        <item>"דרך קובץ
+(נסה את זה אם זה שמעל נכשל)"</item>
+    </string-array>
+    <string-array name="search_condition_date">
+        <item>הכל</item>
+        <item>היום</item>
+        <item>אתמול</item>
+        <item>השבוע הזה</item>
+        <item>החודש הזה</item>
+        <item>השנה הזאת</item>
+        <item>> 1 שנה</item>
+        <item>הזן</item>
+    </string-array>
+    <string-array name="search_condition_size">
+        <item>הכל</item>
+        <item>0 – 100 KB</item>
+        <item>100KB - 1 MB</item>
+        <item>1 MB - 16 MB</item>
+        <item>16 MB - 128 MB</item>
+        <item>> 128 MB</item>
+        <item>הזן</item>
+    </string-array>
+    <string-array name="theme_folders">
+        <item>ברירת מחדל</item>
+        <item>צהוב</item>
+        <item>ירוק</item>
+        <item>אדום</item>
+        <item>ורוד</item>
+        <item>שחור</item>
+    </string-array>
+    <string-array name="view_item_names">
+        <item>אייקון גדול</item>
+        <item>אייקון בינוני</item>
+        <item>אייקון קטן</item>
+        <item>רשימה גדולה</item>
+        <item>רשימה בינונית</item>
+        <item>רשימה קטנה</item>
+        <item>מפורט גדול</item>
+        <item>מפורט בינוני</item>
+        <item>מפורט קטן</item>
+    </string-array>
+    <string-array name="wifi_signal">
+        <item>ירוד</item>
+        <item>בינוני</item>
+        <item>טוב</item>
+        <item>מעולה</item>
+    </string-array>
+    <string-array name="wifi_status_with_ssid">
+        <item></item>
+        <item>סורק…</item>
+        <item>מתחבר אל%1$s…</item>
+        <item>מאמת עם%1$s…</item>
+        <item>משיג גתובת IP מ%1$s…</item>
+        <item>מחובר אל%1$s</item>
+        <item>מושהה</item>
+        <item>מתנתק מ%1$s…</item>
+        <item>מנותק</item>
+        <item>לא הצליח</item>
+    </string-array>
+    <string-array name="wifi_statuses">
+        <item></item>
+        <item>סורק…</item>
+        <item>מתחבר…</item>
+        <item>מאמת…</item>
+        <item>משיג כתובת IP…</item>
+        <item>מחובר</item>
+        <item>מושהה</item>
+        <item>מתנתק…</item>
+        <item>מנותק</item>
+        <item>לא הצליח</item>
+    </string-array>
+    <string-array name="zip_levels">
+        <item>אחסון</item>
+        <item>מהיר</item>
+        <item>רגיל</item>
+        <item>טוב</item>
+    </string-array>
+</resources>

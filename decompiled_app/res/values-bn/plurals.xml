@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">%d সেকেন্ড ফাস্ট ফরওয়ার্ড করুন</item>
+        <item quantity="one">%d সেকেন্ড ফাস্ট ফরওয়ার্ড করুন</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">%d সেকেন্ড রিওয়াইন্ড করুন</item>
+        <item quantity="one">%d সেকেন্ড রিওয়াইন্ড করুন</item>
+    </plurals>
+    <plurals name="hiad_dismiss_dilaog">
+        <item quantity="other">%1$s সেকেন্ডের মধ্যে উইন্ডো বন্ধ হয়ে যাবে।</item>
+        <item quantity="one">%1$s সেকেন্ডের মধ্যে উইন্ডো বন্ধ হয়ে যাবে।</item>
+    </plurals>
+    <plurals name="hiad_no_prompt_in_days">
+        <item quantity="other">%1$s দিনের জন্য পছন্দ মনে রাখুন</item>
+        <item quantity="one">%1$s দিনের জন্য পছন্দ মনে রাখুন</item>
+    </plurals>
+    <plurals name="hiad_reward_countdown">
+        <item quantity="other">%1$d সেকেন্ড</item>
+        <item quantity="one">%1$d সেকেন্ড</item>
+    </plurals>
+    <plurals name="log_new_count">
+        <item quantity="other">%1$d-টি নতুন ফাইল যুক্ত হয়েছে</item>
+        <item quantity="one">%1$d-টি নতুন ফাইল যুক্ত হয়েছে</item>
+    </plurals>
+    <plurals name="log_time_title_day">
+        <item quantity="other">%1$d দিন আগে</item>
+        <item quantity="one">%1$d দিন আগে</item>
+    </plurals>
+    <plurals name="log_time_title_hour">
+        <item quantity="other">%1$d ঘণ্টা আগে</item>
+        <item quantity="one">%1$d ঘণ্টা আগে</item>
+    </plurals>
+    <plurals name="log_time_title_minute">
+        <item quantity="other">%1$d মিনিট আগে</item>
+        <item quantity="one">%1$d মিনিট আগে</item>
+    </plurals>
+    <plurals name="log_title_apk">
+        <item quantity="other">%1$d থেকে পাওয়া APK %2$s</item>
+        <item quantity="one">%1$d থেকে পাওয়া APKসমূহ %2$s</item>
+    </plurals>
+    <plurals name="log_title_audio">
+        <item quantity="other">%1$d থেকে পাওয়া গান %2$s</item>
+        <item quantity="one">%1$d থেকে পাওয়া গানসমূহ %2$s</item>
+    </plurals>
+    <plurals name="log_title_doc">
+        <item quantity="other">%1$d থেকে পাওয়া ডকুমেন্ট %2$s</item>
+        <item quantity="one">%1$d থেকে পাওয়া ডকুমেন্টসমূহ %2$s</item>
+    </plurals>
+    <plurals name="log_title_folder">
+        <item quantity="other">%1$d থেকে পাওয়া ফোল্ডার %2$s</item>
+        <item quantity="one">%1$d থেকে পাওয়া ফোল্ডারসমূহ %2$s</item>
+    </plurals>
+    <plurals name="log_title_image">
+        <item quantity="other">%1$d থেকে পাওয়া চিত্র %2$s</item>
+        <item quantity="one">%1$d থেকে পাওয়া চিত্রসমূহ %2$s</item>
+    </plurals>
+    <plurals name="log_title_netdisk">
+        <item quantity="other">My Cloud অ্যাকাউন্ট</item>
+        <item quantity="one">My Cloud অ্যাকাউন্টসমূহ</item>
+    </plurals>
+    <plurals name="log_title_video">
+        <item quantity="other">%1$d থেকে পাওয়া ভিডিও %2$s</item>
+        <item quantity="one">%1$d থেকে পাওয়া ভিডিওসমূহ %2$s</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%dটি নতুন বিজ্ঞপ্তি</item>
+        <item quantity="one">%dটি নতুন বিজ্ঞপ্তি</item>
+    </plurals>
+</resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="diskusage_sort_entries">
+        <item>Nimi</item>
+        <item>Tyyppi</item>
+        <item>Koko</item>
+    </string-array>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0,25x</item>
+        <item>0,5x</item>
+        <item>0,75x</item>
+        <item>Normaali</item>
+        <item>1,25x</item>
+        <item>1,5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="new_navi_groups">
+        <item>Suosikki</item>
+        <item>Paikallinen</item>
+        <item>Kirjasto</item>
+        <item>Verkko</item>
+        <item>Työkalut</item>
+    </string-array>
+    <string-array name="pick_and_return_file_entries">
+        <item>"Androidin normaali tapa
+(MMS,Gmail,…)"</item>
+        <item>"File Way
+(Try this if above fails)"</item>
+    </string-array>
+    <string-array name="search_condition_date">
+        <item>Kaikki</item>
+        <item>Tänään</item>
+        <item>Eilen</item>
+        <item>Tällä viikolla</item>
+        <item>Tässä kuussa</item>
+        <item>Tänä vuonna</item>
+        <item>> 1 vuosi</item>
+        <item>Syötä</item>
+    </string-array>
+    <string-array name="search_condition_size">
+        <item>Kaikki</item>
+        <item>0 – 100 kt</item>
+        <item>100 kt - 1 Mt</item>
+        <item>1 Mt- 16 Mt</item>
+        <item>16 Mt - 128 Mt</item>
+        <item>> 128 Mt</item>
+        <item>Syötä</item>
+    </string-array>
+    <string-array name="theme_folders">
+        <item>Oletus</item>
+        <item>Keltainen</item>
+        <item>Vihreä</item>
+        <item>Punainen</item>
+        <item>Pinkki</item>
+        <item>Musta</item>
+    </string-array>
+    <string-array name="view_item_names">
+        <item>Suuret ikonit</item>
+        <item>Keskikokoiset ikonit</item>
+        <item>Pienet ikonit</item>
+        <item>Suuri luettelo</item>
+        <item>Keskikokoinen luettelo</item>
+        <item>Pieni lista</item>
+        <item>Suuri (tiedot)</item>
+        <item>Keskikokoinen (tiedot)</item>
+        <item>Pieni (tiedot)</item>
+    </string-array>
+    <string-array name="wifi_signal">
+        <item>Heikko</item>
+        <item>Kohtalainen</item>
+        <item>Hyvä</item>
+        <item>Erinomainen</item>
+    </string-array>
+    <string-array name="wifi_status_with_ssid">
+        <item></item>
+        <item>Skannataan...</item>
+        <item>Yhdistetään: %1$s…</item>
+        <item>Tarkistetaan käyttöoikeudet: %1$s…</item>
+        <item>Heataan IP-osoite: %1$s…</item>
+        <item>Yhdistetään: %1$s</item>
+        <item>Keskeytetty</item>
+        <item>Katkaistaan yhteys: %1$s…</item>
+        <item>Yhteys katkaistu</item>
+        <item>Epäonnistunut</item>
+    </string-array>
+    <string-array name="wifi_statuses">
+        <item></item>
+        <item>Skannataan...</item>
+        <item>Yhdistetään...</item>
+        <item>Varmennetaan...</item>
+        <item>Heataan IP-osoitetta...</item>
+        <item>Yhdistetty</item>
+        <item>Keskeytetty</item>
+        <item>Katkaistaan yhteys...</item>
+        <item>Yhteys katkaistu</item>
+        <item>Epäonnistunut</item>
+    </string-array>
+    <string-array name="zip_levels">
+        <item>Kauppa</item>
+        <item>Nopea</item>
+        <item>Standardi</item>
+        <item>Paras</item>
+    </string-array>
+</resources>

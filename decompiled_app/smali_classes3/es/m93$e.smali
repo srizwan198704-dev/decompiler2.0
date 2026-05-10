@@ -1,0 +1,91 @@
+.class public Les/m93$e;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/widget/CompoundButton$OnCheckedChangeListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Les/m93;->n()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field public final synthetic a:Les/m93;
+
+
+# direct methods
+.method public constructor <init>(Les/m93;)V
+    .locals 0
+
+    iput-object p1, p0, Les/m93$e;->a:Les/m93;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onCheckedChanged(Landroid/widget/CompoundButton;Z)V
+    .locals 1
+
+    if-eqz p2, :cond_0
+
+    iget-object p1, p0, Les/m93$e;->a:Les/m93;
+
+    invoke-static {p1}, Les/m93;->f(Les/m93;)Landroid/widget/CheckBox;
+
+    move-result-object p1
+
+    const v0, 0x7f0809f9
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setBackgroundResource(I)V
+
+    goto :goto_0
+
+    :cond_0
+    iget-object p1, p0, Les/m93$e;->a:Les/m93;
+
+    invoke-static {p1}, Les/m93;->f(Les/m93;)Landroid/widget/CheckBox;
+
+    move-result-object p1
+
+    const v0, 0x7f0809f8
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setBackgroundResource(I)V
+
+    :goto_0
+    iget-object p1, p0, Les/m93$e;->a:Les/m93;
+
+    invoke-static {p1}, Les/m93;->a(Les/m93;)Lcom/estrongs/android/pop/app/log/adapter/LogSettingApkFromAdapter;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Les/m93$e;->a:Les/m93;
+
+    invoke-static {p1}, Les/m93;->a(Les/m93;)Lcom/estrongs/android/pop/app/log/adapter/LogSettingApkFromAdapter;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Lcom/estrongs/android/pop/app/log/adapter/LogSettingApkFromAdapter;->o(Z)V
+
+    iget-object p1, p0, Les/m93$e;->a:Les/m93;
+
+    invoke-static {p1}, Les/m93;->a(Les/m93;)Lcom/estrongs/android/pop/app/log/adapter/LogSettingApkFromAdapter;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
+
+    :cond_1
+    return-void
+.end method

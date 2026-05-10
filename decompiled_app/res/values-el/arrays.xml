@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="backup_intervals">
+        <item>30 λεπτά</item>
+        <item>1 ώρα</item>
+        <item>2 ώρες</item>
+        <item>6 ώρες</item>
+        <item>1 ημέρα</item>
+        <item>7 ημέρες</item>
+    </string-array>
+    <string-array name="diskusage_sort_entries">
+        <item>Όνομα</item>
+        <item>Τύπος</item>
+        <item>Μέγεθος</item>
+    </string-array>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0,25x</item>
+        <item>0,5x</item>
+        <item>0,75x</item>
+        <item>Κανονική</item>
+        <item>1,25x</item>
+        <item>1,5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="image_slide_interval">
+        <item>1 δευτ/πτο</item>
+        <item>3 δευτ/πτα</item>
+        <item>5 δευτ/πτα</item>
+        <item>10 δευτ/πτα</item>
+        <item>15 δευτ/πτα</item>
+    </string-array>
+    <string-array name="new_navi_groups">
+        <item>Αγαπημένο</item>
+        <item>Τοπικός</item>
+        <item>Βιβλιοθήκη</item>
+        <item>Δίκτυο</item>
+        <item>Εργαλεία</item>
+    </string-array>
+    <string-array name="pick_and_return_file_entries">
+        <item>"Κλασική μέθοδος Android
+(για MMS, Gmail,...)"</item>
+        <item>"Μέθοδος αρχείου
+(Δοκιμάστε τη αν η παραπάνω αποτύχει)"</item>
+    </string-array>
+    <string-array name="search_condition_date">
+        <item>Όλες</item>
+        <item>Σήμερα</item>
+        <item>Χθες</item>
+        <item>Αυτή την εβδομάδα</item>
+        <item>Αυτό το μήνα</item>
+        <item>Αυτό το έτος</item>
+        <item>>1 χρόνο</item>
+        <item>Εισαγωγή</item>
+    </string-array>
+    <string-array name="search_condition_size">
+        <item>Όλες</item>
+        <item>0 – 100 KB</item>
+        <item>100KB - 1 MB</item>
+        <item>1 MB - 16 MB</item>
+        <item>16 MB - 128 MB</item>
+        <item>> 128 MB</item>
+        <item>Εισαγωγή</item>
+    </string-array>
+    <string-array name="theme_folders">
+        <item>Προεπιλογή</item>
+        <item>Κίτρινο</item>
+        <item>Πράσινο</item>
+        <item>Κόκκινο</item>
+        <item>Ροζ</item>
+        <item>Μαύρο</item>
+    </string-array>
+    <string-array name="view_item_names">
+        <item>Μεγάλο εικονίδιο</item>
+        <item>Μεσαίο εικονίδιο</item>
+        <item>Μικρό εικονίδιο</item>
+        <item>Μεγάλη λίστα</item>
+        <item>Μεσαία λίστα</item>
+        <item>Μικρή λίστα</item>
+        <item>Μεγάλη λεπτομέρεια</item>
+        <item>Μεσαία λεπτομέρεια</item>
+        <item>Μικρή λεπτομέρεια</item>
+    </string-array>
+    <string-array name="wifi_signal">
+        <item>Φτωχό</item>
+        <item>Ανεκτό</item>
+        <item>Καλό</item>
+        <item>Άριστο</item>
+    </string-array>
+    <string-array name="wifi_status_with_ssid">
+        <item></item>
+        <item>Ανίχνευση...</item>
+        <item>Σύνδεση σε %1$s...</item>
+        <item>Πιστοποίηση με %1$s...</item>
+        <item>Λήψη διεύθυνσης IP από %1$s...</item>
+        <item>Συνδέθηκε στο %1$s...</item>
+        <item>Σε αναστολή</item>
+        <item>Αποσυνδέθηκε από %1$s...</item>
+        <item>Αποσυνδεδεμένο</item>
+        <item>Ανεπιτυχές</item>
+    </string-array>
+    <string-array name="wifi_statuses">
+        <item></item>
+        <item>Ανίχνευση...</item>
+        <item>Σύνδεση...</item>
+        <item>Πιστοποίηση...</item>
+        <item>Λήψη διεύθυνσης IP...</item>
+        <item>Συνδεδεμένο</item>
+        <item>Σε αναστολή</item>
+        <item>Αποσυνδέεται...</item>
+        <item>Αποσυνδέθηκε</item>
+        <item>Ανεπιτυχές</item>
+    </string-array>
+    <string-array name="zip_levels">
+        <item>Χώρος αποθήκευσης</item>
+        <item>Γρήγορο</item>
+        <item>Κανονικό</item>
+        <item>Καλύτερη επιλογή</item>
+    </string-array>
+</resources>

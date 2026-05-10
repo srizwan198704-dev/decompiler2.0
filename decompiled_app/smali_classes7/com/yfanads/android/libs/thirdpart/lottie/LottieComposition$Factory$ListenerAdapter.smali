@@ -1,0 +1,96 @@
+.class final Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition$Factory$ListenerAdapter;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lcom/yfanads/android/libs/thirdpart/lottie/LottieListener;
+.implements Lcom/yfanads/android/libs/thirdpart/lottie/Cancellable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition$Factory;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "ListenerAdapter"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lcom/yfanads/android/libs/thirdpart/lottie/LottieListener<",
+        "Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition;",
+        ">;",
+        "Lcom/yfanads/android/libs/thirdpart/lottie/Cancellable;"
+    }
+.end annotation
+
+
+# instance fields
+.field private cancelled:Z
+
+.field private final listener:Lcom/yfanads/android/libs/thirdpart/lottie/OnCompositionLoadedListener;
+
+
+# direct methods
+.method private constructor <init>(Lcom/yfanads/android/libs/thirdpart/lottie/OnCompositionLoadedListener;)V
+    .locals 1
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition$Factory$ListenerAdapter;->cancelled:Z
+
+    iput-object p1, p0, Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition$Factory$ListenerAdapter;->listener:Lcom/yfanads/android/libs/thirdpart/lottie/OnCompositionLoadedListener;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lcom/yfanads/android/libs/thirdpart/lottie/OnCompositionLoadedListener;Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition$1;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition$Factory$ListenerAdapter;-><init>(Lcom/yfanads/android/libs/thirdpart/lottie/OnCompositionLoadedListener;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public cancel()V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition$Factory$ListenerAdapter;->cancelled:Z
+
+    return-void
+.end method
+
+.method public onResult(Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition;)V
+    .locals 1
+
+    iget-boolean v0, p0, Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition$Factory$ListenerAdapter;->cancelled:Z
+
+    if-eqz v0, :cond_0
+
+    return-void
+
+    :cond_0
+    iget-object v0, p0, Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition$Factory$ListenerAdapter;->listener:Lcom/yfanads/android/libs/thirdpart/lottie/OnCompositionLoadedListener;
+
+    invoke-interface {v0, p1}, Lcom/yfanads/android/libs/thirdpart/lottie/OnCompositionLoadedListener;->onCompositionLoaded(Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition;)V
+
+    return-void
+.end method
+
+.method public bridge synthetic onResult(Ljava/lang/Object;)V
+    .locals 0
+
+    check-cast p1, Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition;
+
+    invoke-virtual {p0, p1}, Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition$Factory$ListenerAdapter;->onResult(Lcom/yfanads/android/libs/thirdpart/lottie/LottieComposition;)V
+
+    return-void
+.end method

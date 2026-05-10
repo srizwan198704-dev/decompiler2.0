@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/preference_window_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:layout="@layout/custom_preference_no_space" app:allowDividerAbove="false" app:allowDividerBelow="false">
+        <Preference android:layout="@layout/custom_preference_full_radius" android:title="@string/open_default_window" android:key="default_window" android:summary="@string/preference_default_window_summary" />
+    </PreferenceCategory>
+</PreferenceScreen>

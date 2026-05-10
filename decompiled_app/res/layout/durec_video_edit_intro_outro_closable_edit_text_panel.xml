@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/frame_layout" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:textColor="@android:color/white" android:gravity="center" android:id="@id/closable_edittext" android:background="@drawable/durec_intro_outro_edittext_bg_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginEnd="@dimen/durec_edit_video_intro_outro_element_margin_right" />
+    <ImageButton android:id="@id/closable_close_button" android:background="@drawable/durec_edit_player_intro_outro_element_delete_icon_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:layout_alignParentEnd="true" />
+</RelativeLayout>

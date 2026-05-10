@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="horizontal" android:id="@id/swof_storage_select_container" style="@style/swof_tab_category_title_style">
-        <TextView android:id="@id/swof_storage_tv" android:background="@drawable/swof_bg_category_title_item" android:layout_marginLeft="0.0dip" android:layout_weight="1.0" style="@style/SwofCategoryTitleItem" />
-        <TextView android:id="@id/swof_sdcard_tv" android:background="@drawable/swof_bg_category_title_item" android:layout_marginLeft="0.0dip" android:layout_weight="1.0" style="@style/SwofCategoryTitleItem" />
-    </LinearLayout>
-    <FrameLayout android:id="@id/fragment_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-</LinearLayout>

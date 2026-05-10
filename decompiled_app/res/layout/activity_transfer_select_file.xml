@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar_top" android:layout_width="fill_parent" android:layout_height="@dimen/dp_48" />
+    <com.google.android.material.appbar.AppBarLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="@dimen/dp_40" app:elevation="@dimen/dp_0">
+        <com.google.android.material.tabs.TabLayout android:id="@id/activity_file_tabLayout" android:background="@color/c_f5f6f8" android:layout_width="fill_parent" android:layout_height="@dimen/dp_40" app:tabIndicatorColor="@color/c_2274e6" app:tabIndicatorHeight="@dimen/dp_3" app:tabMinWidth="@dimen/dp_80" app:tabSelectedTextColor="@color/c_2274e6" app:tabTextColor="@color/c_2274e6" style="@style/sender_tablayout_style" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.viewpager.widget.ViewPager android:id="@id/activity_file_viewpager" android:layout_width="fill_parent" android:layout_height="@dimen/dp_0" android:layout_weight="1.0" />
+    <TextView android:textSize="@dimen/dp_17" android:textColor="@color/color_sender_btn_text_selector" android:gravity="center" android:id="@id/confirm_btn" android:background="@drawable/bg_file_sender" android:focusable="true" android:layout_width="fill_parent" android:layout_height="@dimen/dp_50" android:text="@string/action_send" />
+</LinearLayout>
