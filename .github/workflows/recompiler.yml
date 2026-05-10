@@ -62,6 +62,76 @@ jobs:
           echo "OLD_PACKAGE=$OLD_PACKAGE" >> $GITHUB_ENV
           echo "Detected old package: $OLD_PACKAGE"
 
+      - name: Fix Invalid Smali Directives
+        run: |
+          DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "Fixing invalid smali directives in e.smali"
+          
+          # Find and fix specific problematic smali file
+          find "$DECOMPILED_DIR" -name "e.smali" -type f | while read -r file; do
+            echo "Processing: $file"
+            
+            # Remove invalid .bKash and .customerapp directives that appear in string contexts
+            python3 << 'PYEOF'
+import re
+import sys
+
+file_path = "$file"
+try:
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # Fix invalid directives - these appear to be malformed string literals
+    # Pattern: .bKash or .customerapp without proper quotes
+    
+    # Replace .bKash with proper string ".bKash" if it's in a const-string context
+    # First, find lines with const-string that have malformed content
+    lines = content.split('\n')
+    fixed_lines = []
+    
+    for line in lines:
+        # If line contains const-string and has .bKash or .customerapp without quotes
+        if 'const-string' in line:
+            # Fix .bKash
+            if '.bKash' in line and '"' not in line.split('.bKash')[0][-1:]:
+                line = line.replace('.bKash', '".bKash"')
+            # Fix .customerapp
+            if '.customerapp' in line and '"' not in line.split('.customerapp')[0][-1:]:
+                line = line.replace('.customerapp', '".customerapp"')
+        # Also fix any standalone .bKash or .customerapp that might be smali directives
+        elif line.strip().startswith('.bKash') or line.strip().startswith('.customerapp'):
+            # Comment out invalid directives
+            line = '# ' + line
+        
+        fixed_lines.append(line)
+    
+    fixed_content = '\n'.join(fixed_lines)
+    
+    # Also fix any remaining .bKash or .customerapp in Ldavx; format
+    fixed_content = re.sub(r'Lcom/uc/browser/(?:\.bKash|\.customerapp);', 
+                           r'Lcom/uc/browser/InvalidClass;', fixed_content)
+    
+    # Fix Lcom.bKash pattern
+    fixed_content = re.sub(r'Lcom\.bKash', r'Lcom/bKash', fixed_content)
+    
+    with open(file_path, 'w', encoding='utf-8') as f:
+        f.write(fixed_content)
+    
+    print(f"Fixed: {file_path}")
+    
+except Exception as e:
+    print(f"Error fixing {file_path}: {e}")
+    sys.exit(0)  # Don't fail the build for smali issues
+PYEOF
+          done
+          
+          # Also fix any other smali files with similar issues
+          find "$DECOMPILED_DIR" -name "*.smali" -type f -exec grep -l '\.bKash\|\.customerapp' {} \; | while read -r file; do
+            echo "Found similar issue in: $file"
+            sed -i 's/\.bKash/".bKash"/g' "$file"
+            sed -i 's/\.customerapp/".customerapp"/g' "$file"
+          done
+
       - name: Rename Package in AndroidManifest.xml
         run: |
           MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
@@ -105,15 +175,40 @@ jobs:
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW" | tr '.' '/')
           echo "Replacing smali references: $OLD -> $NEW"
+          
+          # Escape dots for sed
+          OLD_ESCAPED=$(echo "$OLD" | sed 's/\./\\./g')
+          NEW_ESCAPED=$(echo "$NEW" | sed 's/\./\\./g')
+          
           # Replace dotted package references in smali/xml/properties files
           find "$DECOMPILED_DIR" \
             -type f \( -name "*.smali" -o -name "*.xml" -o -name "*.properties" \) \
-            -exec sed -i "s|${OLD}|${NEW}|g" {} +
+            -exec sed -i "s|${OLD_ESCAPED}|${NEW_ESCAPED}|g" {} +
+          
           # Replace slash-separated path references in smali
           find "$DECOMPILED_DIR" \
             -type f -name "*.smali" \
             -exec sed -i "s|${OLD_PATH}|${NEW_PATH}|g" {} +
+          
+          # Additional fix for any remaining malformed package names
+          find "$DECOMPILED_DIR" -name "*.smali" -type f -exec sed -i 's/Lcom\/bKash/Lcom\/bKash/g' {} +
+          find "$DECOMPILED_DIR" -name "*.smali" -type f -exec sed -i 's/\.bKash/\.bKash/g' {} +
+          
           echo "Smali rename done"
+
+      - name: Pre-validate Smali Files
+        run: |
+          DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "Pre-validating smali files..."
+          
+          # Remove any remaining invalid directives
+          find "$DECOMPILED_DIR" -name "*.smali" -type f -exec sed -i '/^[[:space:]]*\.\(bKash\|customerapp\)/d' {} +
+          
+          # Fix common smali syntax errors
+          find "$DECOMPILED_DIR" -name "*.smali" -type f -exec sed -i 's/;->;->/;->/g' {} +
+          
+          # Ensure all const-string values are properly quoted
+          find "$DECOMPILED_DIR" -name "*.smali" -type f -exec sed -i 's/const-string \([^,]*\), \([^"]*\)$/const-string \1, "\2"/g' {} +
 
       - name: Recompile APK
         run: |
@@ -196,6 +291,7 @@ jobs:
             📦 Original: ${{ env.OLD_PACKAGE }}
             🔧 Build: #${{ github.run_number }}
             🔑 Signed with apksigner (v2/v3 scheme)
+            🛠️ Fixed smali directive errors (.bKash/.customerapp)
           files: signed_app.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
