@@ -1,0 +1,137 @@
+name: Decompile from URL
+
+on:
+  workflow_dispatch:
+    inputs:
+      apk_url:
+        description: 'Google Drive Link or Any APK URL'
+        required: true
+        default: 'https://www.dropbox.com/scl/fi/m0o5dientxi4bj0170n3v/ES_File_Explorer_v4.apk?rlkey=kw4hh09pq6z7ieozhmzwh1cwt&st=9fy3uq7r&dl=1'
+
+jobs:
+  decompile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Download APK
+        run: |
+          pip install gdown
+          URL="${{ github.event.inputs.apk_url }}"
+          
+          if [[ "$URL" == *"drive.google.com"* ]]; then
+            # Extract Google Drive file ID and download
+            FILE_ID=$(echo "$URL" | grep -oP '(?<=id=)[^&]+' || echo "$URL" | grep -oP '(?<=/d/)[^/]+')
+            if [[ -n "$FILE_ID" ]]; then
+              echo "Downloading from Google Drive with ID: $FILE_ID"
+              gdown "https://drive.google.com/uc?id=$FILE_ID" -O input_app.apk
+            else
+              # Direct download link format
+              gdown "$URL" -O input_app.apk
+            fi
+          else
+            # Direct link - use curl
+            echo "Downloading from direct URL"
+            curl -L "$URL" -o input_app.apk
+          fi
+
+      - name: Check File
+        run: |
+          echo "=== File Information ==="
+          ls -lh input_app.apk
+          file input_app.apk
+          echo "=== File Size ==="
+          du -sh input_app.apk
+
+      - name: Setup Java & APKTool
+        run: |
+          # Install Java if not present
+          sudo apt-get update
+          sudo apt-get install -y openjdk-11-jre-headless
+          
+          # Download and setup APKTool
+          sudo wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool -O /usr/local/bin/apktool
+          sudo wget https://github.com/iBotPeaches/Apktool/releases/download/v2.9.3/apktool_2.9.3.jar -O /usr/local/bin/apktool.jar
+          sudo chmod +x /usr/local/bin/apktool /usr/local/bin/apktool.jar
+          
+          # Verify APKTool installation
+          apktool --version
+
+      - name: Decompile APK
+        run: |
+          # Remove previous decompiled folder if exists
+          rm -rf decompiled_app
+          
+          # Decompile the APK
+          echo "Starting decompilation..."
+          apktool d input_app.apk -o decompiled_app -f
+          
+          echo "Decompilation completed successfully!"
+
+      - name: Verify Decompilation
+        run: |
+          echo "=== Decompiled Files Structure ==="
+          ls -la decompiled_app/
+          echo "=== Total Files Count ==="
+          find decompiled_app -type f | wc -l
+          echo "=== Decompiled Directories ==="
+          find decompiled_app -type d | head -20
+
+      - name: Create Summary Report
+        run: |
+          cat > DECOMPILE_REPORT.md << EOF
+          # APK Decompilation Report
+          
+          ## Decompilation Date
+          $(date)
+          
+          ## Original APK
+          - **File Name**: input_app.apk
+          - **File Size**: $(du -sh input_app.apk | cut -f1)
+          
+          ## Decompilation Results
+          - **Output Directory**: decompiled_app/
+          - **Total Files**: $(find decompiled_app -type f | wc -l)
+          - **Total Directories**: $(find decompiled_app -type d | wc -l)
+          
+          ## Main Directories
+          $(ls -la decompiled_app/ | grep '^d' | awk '{print "- " $9}' | head -10)
+          
+          ## Notes
+          - Decompiled using APKTool v2.9.3
+          - Source code is in smali format
+          - Resources are fully extracted
+          EOF
+          
+          cat DECOMPILE_REPORT.md
+
+      - name: Commit Decompiled Files
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Add all decompiled files and report
+          git add decompiled_app/
+          git add DECOMPILE_REPORT.md
+          
+          # Commit changes
+          git commit -m "Decompiled APK from URL: ${{ github.event.inputs.apk_url }}" || echo "No changes to commit"
+          
+          # Push to repository
+          git push || echo "Push failed or no changes"
+
+      - name: Upload Artifact (Optional)
+        uses: actions/upload-artifact@v4
+        with:
+          name: decompiled-apk-source
+          path: decompiled_app/
+          compression-level: 9
+          retention-days: 30
