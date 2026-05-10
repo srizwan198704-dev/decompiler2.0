@@ -106,24 +106,28 @@ jobs:
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW_SMALI" | tr '.' '/')
           echo "Manifest package: $NEW_MANIFEST"
-          echo "Smali package: $NEW_SMALI"
+          echo "Smali package dotted: $NEW_SMALI"
+          echo "Smali package path: $NEW_PATH"
           
-          # 1. xml/properties এ Manifest এর Capital ভার্সন ইউজ করব
+          # 1. xml/properties এ Manifest এর Capital ভার্সন
           find "$DECOMPILED_DIR" \
             -type f \( -name "*.xml" -o -name "*.properties" \) \
             -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
           
-          # 2. smali তে সব জায়গায় small ভার্সন ইউজ করব
-          find "$DECOMPILED_DIR" \
-            -type f -name "*.smali" \
-            -exec sed -i "s|${OLD}|${NEW_SMALI}|g" {} +
+          # 2. smali তে const-string এর ভেতরে dotted নাম - Capital রাখা যাবে না, small দিতে হবে
+          find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"${OLD}\"|\"${NEW_SMALI}\"|g" {} +
           
-          # 3. smali তে slash পাথও small ভার্সন
-          find "$DECOMPILED_DIR" \
-            -type f -name "*.smali" \
-            -exec sed -i "s|${OLD_PATH}|${NEW_PATH}|g" {} +
+          # 3. smali তে content:// URI - small ভার্সন
+          find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"content://${OLD}|\"content://${NEW_SMALI}|g" {} +
           
-          echo "Smali rename done with small letters for compatibility"
+          # 4. smali তে ক্লাস পাথ - L...; এর ভেতরে স্ল্যাশ দিয়ে, ডট না
+          # এটাই আসল ফিক্স: Lcom/whatsapp/ -> Lcom/bkash/customerapp/
+          find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|L${OLD_PATH}/|L${NEW_PATH}/|g" {} +
+          
+          # 5. smali তে const-class - L...; এর ভেতরে স্ল্যাশ
+          find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|const-class [vp][0-9]\+, L${OLD_PATH}/|const-class v0, L${NEW_PATH}/|g" {} +
+          
+          echo "Smali rename done with proper slash paths"
 
       - name: Deep clean old package references
         run: |
@@ -139,7 +143,6 @@ jobs:
           
           echo "Checking assets - using smali small version..."
           find "$DECOMPILED_DIR/assets" -type f -exec sed -i "s|${OLD}|${NEW_SMALI}|g" {} + 2>/dev/null || true
-          find "$DECOMPILED_DIR/assets" -type f -exec sed -i "s|${OLD_PATH}|${NEW_PATH}|g" {} + 2>/dev/null || true
           
           echo "Checking apktool.yml - using Manifest capital version..."
           if [ -f "$DECOMPILED_DIR/apktool.yml" ]; then
@@ -148,7 +151,8 @@ jobs:
           fi
           
           echo "Searching for leftover references..."
-          grep -r "${OLD}" "$DECOMPILED_DIR" --exclude-dir=original --exclude="*.dex" || echo "No leftovers found"
+          grep -r "L${OLD_PATH}/" "$DECOMPILED_DIR" --exclude-dir=original || echo "No class path leftovers"
+          grep -r "\"${OLD}\"" "$DECOMPILED_DIR" --exclude-dir=original || echo "No string leftovers"
 
       - name: Recompile APK
         run: |
