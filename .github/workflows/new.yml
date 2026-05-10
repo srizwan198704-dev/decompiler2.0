@@ -101,46 +101,50 @@ jobs:
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
-          NEW="com.bKash.customerapp"
+          NEW_SMALI="com.bkash.customerapp"
+          NEW_MANIFEST="com.bKash.customerapp"
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
-          NEW_PATH=$(echo "$NEW" | tr '.' '/')
-          echo "Replacing smali references: $OLD -> $NEW"
-          echo "WARNING: Capital K in package will break smali class paths"
+          NEW_PATH=$(echo "$NEW_SMALI" | tr '.' '/')
+          echo "Manifest package: $NEW_MANIFEST"
+          echo "Smali package: $NEW_SMALI"
           
-          # 1. xml/properties এ ডিরেক্ট রিপ্লেস - এগুলো সেফ
+          # 1. xml/properties এ Manifest এর Capital ভার্সন ইউজ করব
           find "$DECOMPILED_DIR" \
             -type f \( -name "*.xml" -o -name "*.properties" \) \
-            -exec sed -i "s|${OLD}|${NEW}|g" {} +
+            -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
           
-          # 2. smali তে শুধু const-string এ রিপ্লেস, class path এ না
-          # class path এ capital letter থাকলে smali ভাঙে তাই এটা স্কিপ করছি
+          # 2. smali তে সব জায়গায় small ভার্সন ইউজ করব
           find "$DECOMPILED_DIR" \
             -type f -name "*.smali" \
-            -exec sed -i "s|const-string\([[:space:]]\+[vp][0-9]\+,[[:space:]]\+\)\"${OLD}\"|const-string\1\"${NEW}\"|g" {} +
+            -exec sed -i "s|${OLD}|${NEW_SMALI}|g" {} +
           
-          # 3. Uri.parse, authorities এর মতো জায়গায় রিপ্লেস
+          # 3. smali তে slash পাথও small ভার্সন
           find "$DECOMPILED_DIR" \
             -type f -name "*.smali" \
-            -exec sed -i "s|\"content://${OLD}|\"content://${NEW}|g" {} +
+            -exec sed -i "s|${OLD_PATH}|${NEW_PATH}|g" {} +
           
-          echo "Smali rename done - class paths NOT renamed due to capital K"
+          echo "Smali rename done with small letters for compatibility"
 
       - name: Deep clean old package references
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
-          NEW="com.bKash.customerapp"
+          NEW_MANIFEST="com.bKash.customerapp"
+          NEW_SMALI="com.bkash.customerapp"
+          OLD_PATH=$(echo "$OLD" | tr '.' '/')
+          NEW_PATH=$(echo "$NEW_SMALI" | tr '.' '/')
           
-          echo "Checking res/values files..."
-          find "$DECOMPILED_DIR/res" -type f -name "*.xml" -exec sed -i "s|${OLD}|${NEW}|g" {} +
+          echo "Checking res/values files - using Manifest capital version..."
+          find "$DECOMPILED_DIR/res" -type f -name "*.xml" -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
           
-          echo "Checking assets..."
-          find "$DECOMPILED_DIR/assets" -type f -exec sed -i "s|${OLD}|${NEW}|g" {} + 2>/dev/null || true
+          echo "Checking assets - using smali small version..."
+          find "$DECOMPILED_DIR/assets" -type f -exec sed -i "s|${OLD}|${NEW_SMALI}|g" {} + 2>/dev/null || true
+          find "$DECOMPILED_DIR/assets" -type f -exec sed -i "s|${OLD_PATH}|${NEW_PATH}|g" {} + 2>/dev/null || true
           
-          echo "Checking apktool.yml..."
+          echo "Checking apktool.yml - using Manifest capital version..."
           if [ -f "$DECOMPILED_DIR/apktool.yml" ]; then
-            sed -i "s|renameManifestPackage: null|renameManifestPackage: ${NEW}|g" "$DECOMPILED_DIR/apktool.yml"
-            sed -i "s|renameManifestPackage: ${OLD}|renameManifestPackage: ${NEW}|g" "$DECOMPILED_DIR/apktool.yml"
+            sed -i "s|renameManifestPackage: null|renameManifestPackage: ${NEW_MANIFEST}|g" "$DECOMPILED_DIR/apktool.yml"
+            sed -i "s|renameManifestPackage: ${OLD}|renameManifestPackage: ${NEW_MANIFEST}|g" "$DECOMPILED_DIR/apktool.yml"
           fi
           
           echo "Searching for leftover references..."
@@ -163,16 +167,14 @@ jobs:
           fi
           if [ ! -f recompiled_unsigned.apk ]; then
             echo "ERROR: APK not created!"
-            echo "Likely cause: Capital K in com.bKash.customerapp breaks smali"
             exit 1
           fi
           ls -lh recompiled_unsigned.apk
 
       - name: Verify APK structure
         run: |
-          # Basic check — aapt2 dump should not error
           aapt2 dump badging recompiled_unsigned.apk | head -5 || \
-            echo "Warning: aapt2 dump failed (may still be installable)"
+            echo "Warning: aapt2 dump failed"
 
       - name: Generate Keystore
         run: |
@@ -190,15 +192,12 @@ jobs:
 
       - name: Zipalign APK
         run: |
-          # Must zipalign BEFORE signing
           zipalign -v -p 4 recompiled_unsigned.apk aligned.apk
           echo "Zipalign done"
-          # Verify alignment
           zipalign -c -v 4 aligned.apk && echo "Alignment check: PASSED" || echo "Alignment check: FAILED"
 
       - name: Sign APK with apksigner
         run: |
-          # apksigner must be used AFTER zipalign (correct order)
           apksigner sign \
             --ks my.keystore \
             --ks-pass pass:bkash123 \
@@ -207,7 +206,6 @@ jobs:
             --out signed_app.apk \
             aligned.apk
           echo "Signing done"
-          # Verify signature
           apksigner verify --verbose signed_app.apk && echo "Signature verify: PASSED" || echo "Signature verify: FAILED"
           ls -lh signed_app.apk
 
@@ -224,7 +222,8 @@ jobs:
           tag_name: bkash-v1.0.${{ github.run_number }}
           name: bKash v1.0.${{ github.run_number }}
           body: |
-            ✅ Package: com.bKash.customerapp
+            ✅ Manifest Package: com.bKash.customerapp
+            ✅ Smali Package: com.bkash.customerapp
             📦 Original: ${{ env.OLD_PACKAGE }}
             🔧 Build: #${{ github.run_number }}
             🔑 Signed with apksigner (v2/v3 scheme)
