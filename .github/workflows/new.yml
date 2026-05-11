@@ -37,8 +37,6 @@ jobs:
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/zipalign /usr/local/bin/zipalign
           echo "/opt/android-sdk/build-tools/34.0.0" >> $GITHUB_PATH
           echo "ANDROID_SDK_ROOT=/opt/android-sdk" >> $GITHUB_ENV
-          aapt2 version
-          apksigner version
 
       - name: Setup APKTool
         run: |
@@ -47,7 +45,6 @@ jobs:
           sudo wget -q https://github.com/iBotPeaches/Apktool/releases/download/v2.10.0/apktool_2.10.0.jar \
             -O /usr/local/bin/apktool.jar
           sudo chmod +x /usr/local/bin/apktool /usr/local/bin/apktool.jar
-          apktool --version
 
       - name: Detect Old Package Name
         run: |
@@ -75,26 +72,34 @@ jobs:
           path = sys.argv[3]
           with open(path, "r", encoding="utf-8") as f:
               content = f.read()
-          
-          # 1. Package name replace
+
+          # 1. Package name replace - Capital K রাখলাম
           escaped = re.escape(old)
           if new.startswith(old):
               suffix = re.escape(new[len(old):])
               pattern = escaped + r'(?!' + suffix + r')'
           else:
               pattern = escaped
-          count = len(re.findall(pattern, content))
-          result = re.sub(pattern, new, content)
-          
-          # 2. Remove requiredSplitTypes and splitTypes to fix aapt2 validation
-          result = re.sub(r'\s+android:requiredSplitTypes="[^"]*"', '', result)
-          result = re.sub(r'\s+android:splitTypes="[^"]*"', '', result)
-          result = re.sub(r'\s+android:isSplitRequired="[^"]*"', '', result)
-          
+          content = re.sub(pattern, new, content)
+
+          # 2. Remove split attributes that cause "parsing package" error
+          content = re.sub(r'\s+android:requiredSplitTypes="[^"]*"', '', content)
+          content = re.sub(r'\s+android:splitTypes="[^"]*"', '', content)
+          content = re.sub(r'\s+android:isSplitRequired="[^"]*"', '', content)
+          content = re.sub(r'\s+android:extractNativeLibs="[^"]*"', '', content)
+          content = re.sub(r'\s+android:useEmbeddedDex="[^"]*"', '', content)
+          content = re.sub(r'\s+android:isFeatureSplit="[^"]*"', '', content)
+
+          # 3. Fix versionCode for install
+          content = re.sub(r'android:versionCode="\d+"', 'android:versionCode="999999"', content)
+
+          # 4. Fix install location
+          content = re.sub(r'android:installLocation="[^"]*"', 'android:installLocation="auto"', content)
+
           with open(path, "w", encoding="utf-8") as f:
-              f.write(result)
-          print(f"Replaced {count} occurrences: {old} -> {new}")
-          print("Removed split-related attributes")
+              f.write(content)
+          print(f"Manifest package: {new}")
+          print("Removed split attributes + fixed versionCode")
           try:
               ET.parse(path)
               print("XML validation: OK")
@@ -103,39 +108,36 @@ jobs:
               sys.exit(1)
           PYEOF
           python3 /tmp/fix.py "$OLD" "$NEW" "$MANIFEST"
-          echo "=== First 5 lines after rename ==="
           head -5 "$MANIFEST"
 
       - name: Rename Package in smali files
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
-          NEW_SMALI="com.bkash.customerapp"
           NEW_MANIFEST="com.bKash.customerapp"
+          NEW_SMALI="com.bkash.customerapp"
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW_SMALI" | tr '.' '/')
-          echo "Manifest package: $NEW_MANIFEST"
-          echo "Smali package dotted: $NEW_SMALI"
-          echo "Smali package path: $NEW_PATH"
-          
-          # 1. xml/properties এ Manifest এর Capital ভার্সন
-          find "$DECOMPILED_DIR" \
-            -type f \( -name "*.xml" -o -name "*.properties" \) \
-            -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
-          
-          # 2. smali তে const-string এর ভেতরে dotted নাম - small
+
+          echo "Manifest uses: $NEW_MANIFEST with Capital K"
+          echo "Smali uses: $NEW_SMALI with small k for compatibility"
+
+          # 1. xml/properties এ Manifest এর Capital K ভার্সন
+          find "$DECOMPILED_DIR" -type f \( -name "*.xml" -o -name "*.properties" \) -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
+
+          # 2. smali তে const-string - Capital K দিলে রানটাইম ক্র্যাশ, তাই small
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"${OLD}\"|\"${NEW_SMALI}\"|g" {} +
-          
-          # 3. smali তে content:// URI - small ভার্সন
+
+          # 3. smali তে content:// URI - small
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"content://${OLD}|\"content://${NEW_SMALI}|g" {} +
-          
-          # 4. smali তে ক্লাস পাথ - L...; এর ভেতরে স্ল্যাশ দিয়ে
+
+          # 4. smali তে ক্লাস পাথ - স্ল্যাশ দিয়ে small k, নাইলে Invalid directive
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|L${OLD_PATH}/|L${NEW_PATH}/|g" {} +
-          
-          # 5. smali তে const-class - L...; এর ভেতরে স্ল্যাশ
+
+          # 5. smali তে const-class
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|const-class [vp][0-9]\+, L${OLD_PATH}/|const-class v0, L${NEW_PATH}/|g" {} +
-          
-          echo "Smali rename done with proper slash paths"
+
+          echo "Smali rename done - Capital K only in Manifest"
 
       - name: Deep clean old package references
         run: |
@@ -143,50 +145,24 @@ jobs:
           OLD="${{ env.OLD_PACKAGE }}"
           NEW_MANIFEST="com.bKash.customerapp"
           NEW_SMALI="com.bkash.customerapp"
-          OLD_PATH=$(echo "$OLD" | tr '.' '/')
-          NEW_PATH=$(echo "$NEW_SMALI" | tr '.' '/')
-          
-          echo "Checking res/values files - using Manifest capital version..."
+
           find "$DECOMPILED_DIR/res" -type f -name "*.xml" -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
-          
-          echo "Checking assets - using smali small version..."
           find "$DECOMPILED_DIR/assets" -type f -exec sed -i "s|${OLD}|${NEW_SMALI}|g" {} + 2>/dev/null || true
-          
-          echo "Checking apktool.yml - using Manifest capital version..."
+
           if [ -f "$DECOMPILED_DIR/apktool.yml" ]; then
             sed -i "s|renameManifestPackage: null|renameManifestPackage: ${NEW_MANIFEST}|g" "$DECOMPILED_DIR/apktool.yml"
             sed -i "s|renameManifestPackage: ${OLD}|renameManifestPackage: ${NEW_MANIFEST}|g" "$DECOMPILED_DIR/apktool.yml"
           fi
-          
-          echo "Searching for leftover references..."
-          grep -r "L${OLD_PATH}/" "$DECOMPILED_DIR" --exclude-dir=original || echo "No class path leftovers"
-          grep -r "\"${OLD}\"" "$DECOMPILED_DIR" --exclude-dir=original || echo "No string leftovers"
 
       - name: Recompile APK
         run: |
           DIR="${{ github.event.inputs.decompiled_folder }}"
-          echo "=== Attempt 1: default ==="
-          if apktool b "$DIR" -o recompiled_unsigned.apk -f 2>&1; then
-            echo "Build success (attempt 1)"
-          else
-            echo "=== Attempt 2: with aapt2 ==="
-            if apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 2>&1; then
-              echo "Build success (attempt 2)"
-            else
-              echo "=== Attempt 3: aapt2 + no-crunch ==="
-              apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --no-crunch 2>&1 || true
-            fi
-          fi
-          if [ ! -f recompiled_unsigned.apk ]; then
+          apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2
+          if [! -f recompiled_unsigned.apk ]; then
             echo "ERROR: APK not created!"
             exit 1
           fi
           ls -lh recompiled_unsigned.apk
-
-      - name: Verify APK structure
-        run: |
-          aapt2 dump badging recompiled_unsigned.apk | head -5 || \
-            echo "Warning: aapt2 dump failed"
 
       - name: Generate Keystore
         run: |
@@ -200,13 +176,10 @@ jobs:
             -keypass bkash123 \
             -dname "CN=bKash,OU=Dev,O=bKash,L=Dhaka,ST=Dhaka,C=BD" \
             -noprompt
-          echo "Keystore generated"
 
       - name: Zipalign APK
         run: |
           zipalign -v -p 4 recompiled_unsigned.apk aligned.apk
-          echo "Zipalign done"
-          zipalign -c -v 4 aligned.apk && echo "Alignment check: PASSED" || echo "Alignment check: FAILED"
 
       - name: Sign APK with apksigner
         run: |
@@ -215,10 +188,10 @@ jobs:
             --ks-pass pass:bkash123 \
             --key-pass pass:bkash123 \
             --ks-key-alias bkash \
+            --v4-signing-enabled false \
             --out signed_app.apk \
             aligned.apk
-          echo "Signing done"
-          apksigner verify --verbose signed_app.apk && echo "Signature verify: PASSED" || echo "Signature verify: FAILED"
+          apksigner verify --verbose signed_app.apk
           ls -lh signed_app.apk
 
       - name: Upload Artifact
@@ -237,8 +210,7 @@ jobs:
             ✅ Manifest Package: com.bKash.customerapp
             ✅ Smali Package: com.bkash.customerapp
             📦 Original: ${{ env.OLD_PACKAGE }}
-            🔧 Build: #${{ github.run_number }}
-            🔑 Signed with apksigner (v2/v3 scheme)
+            🔧 Fixed parsing package error
           files: signed_app.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
