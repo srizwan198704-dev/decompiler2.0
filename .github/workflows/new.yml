@@ -21,7 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Java
+      - name: Setup Java and Tools
         run: |
           sudo apt-get update
           sudo apt-get install -y openjdk-17-jre-headless zipalign wget unzip python3
@@ -68,10 +68,10 @@ jobs:
           with open(manifest_path, "r") as f:
               c = f.read()
           
-          # 1. Package name change to com.whatsapp.w4b
+          # 1. Package name change
           c = re.sub(r'package="[^"]*"', f'package="{new_pkg}"', c)
           
-          # 2. Remove ALL split attributes - fixes parsing errors
+          # 2. Remove split attributes to prevent installation errors
           c = re.sub(r'\s+android:requiredSplitTypes="[^"]*"', '', c)
           c = re.sub(r'\s+android:splitTypes="[^"]*"', '', c)
           c = re.sub(r'\s+android:isSplitRequired="[^"]*"', '', c)
@@ -79,11 +79,11 @@ jobs:
           c = re.sub(r'\s+android:extractNativeLibs="[^"]*"', '', c)
           c = re.sub(r'\s+android:useEmbeddedDex="[^"]*"', '', c)
           
-          # 3. Fix install issues
+          # 3. Versioning and Install Location
           c = re.sub(r'android:versionCode="\d+"', 'android:versionCode="999999"', c)
           c = re.sub(r'android:installLocation="[^"]*"', 'android:installLocation="auto"', c)
           
-          # 4. Add tools:replace to force override
+          # 4. Inject Tools Namespace and Replace Rules
           if 'xmlns:tools=' not in c:
               c = c.replace('<manifest', '<manifest xmlns:tools="http://schemas.android.com/tools"', 1)
           if '<application' in c and 'tools:replace' not in c:
@@ -92,9 +92,8 @@ jobs:
           with open(manifest_path, "w") as f:
               f.write(c)
           EOF
-          echo "Manifest: Package changed to com.whatsapp.w4b, splits removed"
 
-      - name: Rename Smali Directories
+      - name: Rename Smali Directories and References
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
@@ -102,49 +101,58 @@ jobs:
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW" | tr '.' '/')
           
-          echo "Renaming from $OLD to $NEW"
-          
-          # Update all XML files
-          find "$DECOMPILED_DIR" -type f -name "*.xml" -exec sed -i "s|${OLD}|${NEW}|g" {} +
-          
-          # Update all smali files
-          find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"${OLD}\"|\"${NEW}\"|g" {} +
+          # Update references in XML and Smali
+          find "$DECOMPILED_DIR" -type f \( -name "*.xml" -o -name "*.smali" \) -exec sed -i "s|${OLD}|${NEW}|g" {} +
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|L${OLD_PATH}/|L${NEW_PATH}/|g" {} +
           
-          # Rename smali directories
-          for d in smali smali_classes2 smali_classes3 smali_classes4 smali_classes5 smali_classes6 smali_classes7; do
-            if [ -d "$DECOMPILED_DIR/$d/$OLD_PATH" ]; then
-              mkdir -p "$DECOMPILED_DIR/$d/$(dirname $NEW_PATH)"
-              mv "$DECOMPILED_DIR/$d/$OLD_PATH" "$DECOMPILED_DIR/$d/$NEW_PATH"
-              echo "Renamed $d/$OLD_PATH -> $d/$NEW_PATH"
+          # Physical directory renaming
+          for d in $(find "$DECOMPILED_DIR" -maxdepth 1 -type d -name "smali*"); do
+            if [ -d "$d/$OLD_PATH" ]; then
+              mkdir -p "$d/$(dirname $NEW_PATH)"
+              mv "$d/$OLD_PATH" "$d/$NEW_PATH"
+              echo "Moved smali in $d"
             fi
           done
 
       - name: Update apktool.yml
         run: |
-          if [ -f "${{ github.event.inputs.decompiled_folder }}/apktool.yml" ]; then
-            sed -i "s|renameManifestPackage: .*|renameManifestPackage: com.whatsapp.w4b|g" "${{ github.event.inputs.decompiled_folder }}/apktool.yml"
-            sed -i "s|cur_package: .*|cur_package: com.whatsapp.w4b|g" "${{ github.event.inputs.decompiled_folder }}/apktool.yml"
+          YML="${{ github.event.inputs.decompiled_folder }}/apktool.yml"
+          if [ -f "$YML" ]; then
+            sed -i "s|renameManifestPackage: .*|renameManifestPackage: com.whatsapp.w4b|g" "$YML"
+            sed -i "s|cur_package: .*|cur_package: com.whatsapp.w4b|g" "$YML"
           fi
 
       - name: Recompile APK
         run: |
           apktool b "${{ github.event.inputs.decompiled_folder }}" -o recompiled_unsigned.apk -f --use-aapt2
 
-      - name: Sign APK
+      - name: Zipalign and Sign APK
         run: |
+          # Generate Keystore
           keytool -genkey -v -keystore my.keystore -alias whatsapp -keyalg RSA -keysize 2048 -validity 10000 \
             -storepass whatsapp123 -keypass whatsapp123 -dname "CN=WhatsApp,OU=Dev,O=WhatsApp,L=Menlo Park,ST=California,C=US" -noprompt
-          zipalign -v -p 4 recompiled_unsigned.apk aligned.apk
-          apksigner sign --ks my.keystore --ks-pass pass:whatsapp123 --key-pass pass:whatsapp123 \
-            --ks-key-alias whatsapp --v4-signing-enabled false --out WhatsApp_W4B_Signed.apk aligned.apk
+          
+          # Zipalign
+          zipalign -v -p 4 recompiled_unsigned.apk recompiled_aligned.apk
+          
+          # Sign using apksigner
+          apksigner sign --ks my.keystore \
+            --ks-pass pass:whatsapp123 \
+            --key-pass pass:whatsapp123 \
+            --ks-key-alias whatsapp \
+            --v4-signing-enabled false \
+            --out WhatsApp_W4B_Final.apk \
+            recompiled_aligned.apk
+            
+          # Verify signature
+          apksigner verify --verbose WhatsApp_W4B_Final.apk
 
-      - name: Create Release
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.event.inputs.tag_name }}
-          name: Release ${{ github.event.inputs.tag_name }}
-          files: WhatsApp_W4B_Signed.apk
+          name: Build ${{ github.event.inputs.tag_name }}
+          files: WhatsApp_W4B_Final.apk
           draft: false
           prerelease: false
         env:
@@ -153,5 +161,5 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: whatsapp-w4b-recompiled
-          path: WhatsApp_W4B_Signed.apk
+          name: signed-recompiled-apk
+          path: WhatsApp_W4B_Final.apk
