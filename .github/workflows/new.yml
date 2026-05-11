@@ -75,6 +75,8 @@ jobs:
           path = sys.argv[3]
           with open(path, "r", encoding="utf-8") as f:
               content = f.read()
+          
+          # 1. Package name replace
           escaped = re.escape(old)
           if new.startswith(old):
               suffix = re.escape(new[len(old):])
@@ -83,9 +85,16 @@ jobs:
               pattern = escaped
           count = len(re.findall(pattern, content))
           result = re.sub(pattern, new, content)
+          
+          # 2. Remove requiredSplitTypes and splitTypes to fix aapt2 validation
+          result = re.sub(r'\s+android:requiredSplitTypes="[^"]*"', '', result)
+          result = re.sub(r'\s+android:splitTypes="[^"]*"', '', result)
+          result = re.sub(r'\s+android:isSplitRequired="[^"]*"', '', result)
+          
           with open(path, "w", encoding="utf-8") as f:
               f.write(result)
           print(f"Replaced {count} occurrences: {old} -> {new}")
+          print("Removed split-related attributes")
           try:
               ET.parse(path)
               print("XML validation: OK")
@@ -114,14 +123,13 @@ jobs:
             -type f \( -name "*.xml" -o -name "*.properties" \) \
             -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
           
-          # 2. smali তে const-string এর ভেতরে dotted নাম - Capital রাখা যাবে না, small দিতে হবে
+          # 2. smali তে const-string এর ভেতরে dotted নাম - small
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"${OLD}\"|\"${NEW_SMALI}\"|g" {} +
           
           # 3. smali তে content:// URI - small ভার্সন
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"content://${OLD}|\"content://${NEW_SMALI}|g" {} +
           
-          # 4. smali তে ক্লাস পাথ - L...; এর ভেতরে স্ল্যাশ দিয়ে, ডট না
-          # এটাই আসল ফিক্স: Lcom/whatsapp/ -> Lcom/bkash/customerapp/
+          # 4. smali তে ক্লাস পাথ - L...; এর ভেতরে স্ল্যাশ দিয়ে
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|L${OLD_PATH}/|L${NEW_PATH}/|g" {} +
           
           # 5. smali তে const-class - L...; এর ভেতরে স্ল্যাশ
