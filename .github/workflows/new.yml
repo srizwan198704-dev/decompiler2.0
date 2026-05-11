@@ -15,7 +15,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Java
         run: |
@@ -55,11 +55,17 @@ jobs:
           NEW="com.whatsapp.w4b"
           python3 << EOF
           import re
-          with open("$MANIFEST", "r") as f:
+          import os
+          
+          manifest_path = "$MANIFEST"
+          old_pkg = "$OLD"
+          new_pkg = "$NEW"
+          
+          with open(manifest_path, "r") as f:
               c = f.read()
           
           # 1. Package name change to com.whatsapp.w4b
-          c = re.sub(r'package="[^"]*"', f'package="{NEW}"', c)
+          c = re.sub(r'package="[^"]*"', f'package="{new_pkg}"', c)
           
           # 2. Remove ALL split attributes - fixes parsing errors
           c = re.sub(r'\s+android:requiredSplitTypes="[^"]*"', '', c)
@@ -76,9 +82,10 @@ jobs:
           # 4. Add tools:replace to force override
           if 'xmlns:tools=' not in c:
               c = c.replace('<manifest', '<manifest xmlns:tools="http://schemas.android.com/tools"', 1)
-          c = c.replace('<application', '<application tools:replace="android:label,android:icon"', 1)
+          if '<application' in c and 'tools:replace' not in c:
+              c = c.replace('<application', '<application tools:replace="android:label,android:icon"', 1)
           
-          with open("$MANIFEST", "w") as f:
+          with open(manifest_path, "w") as f:
               f.write(c)
           EOF
           echo "Manifest: Package changed to com.whatsapp.w4b, splits removed"
@@ -91,6 +98,9 @@ jobs:
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW" | tr '.' '/')
           
+          echo "Renaming from $OLD to $NEW"
+          echo "Path: $OLD_PATH -> $NEW_PATH"
+          
           # Update all XML files with package reference
           find "$DECOMPILED_DIR" -type f -name "*.xml" -exec sed -i "s|${OLD}|${NEW}|g" {} +
           
@@ -99,10 +109,11 @@ jobs:
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|L${OLD_PATH}/|L${NEW_PATH}/|g" {} +
           
           # Rename smali directories
-          for d in smali smali_classes2 smali_classes3 smali_classes4 smali_classes5; do
+          for d in smali smali_classes2 smali_classes3 smali_classes4 smali_classes5 smali_classes6 smali_classes7; do
             if [ -d "$DECOMPILED_DIR/$d/$OLD_PATH" ]; then
               mkdir -p "$DECOMPILED_DIR/$d/$(dirname $NEW_PATH)"
               mv "$DECOMPILED_DIR/$d/$OLD_PATH" "$DECOMPILED_DIR/$d/$NEW_PATH"
+              echo "Renamed $d/$OLD_PATH -> $d/$NEW_PATH"
             fi
           done
           echo "Smali directories renamed to com/whatsapp/w4b"
@@ -111,6 +122,7 @@ jobs:
         run: |
           if [ -f "${{ github.event.inputs.decompiled_folder }}/apktool.yml" ]; then
             sed -i "s|renameManifestPackage: .*|renameManifestPackage: com.whatsapp.w4b|g" "${{ github.event.inputs.decompiled_folder }}/apktool.yml"
+            sed -i "s|cur_package: .*|cur_package: com.whatsapp.w4b|g" "${{ github.event.inputs.decompiled_folder }}/apktool.yml"
           fi
 
       - name: Recompile APK
