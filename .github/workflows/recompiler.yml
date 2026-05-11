@@ -66,7 +66,7 @@ jobs:
         run: |
           MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
           OLD="${{ env.OLD_PACKAGE }}"
-          NEW="com.bkash.customerapp"
+          NEW="com.whatsapp.w4b"
           cp "$MANIFEST" "$MANIFEST.bak"
           cat > /tmp/fix.py << 'PYEOF'
           import re, sys, xml.etree.ElementTree as ET
@@ -101,49 +101,19 @@ jobs:
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
-          NEW="com.bkash.customerapp"
+          NEW="com.whatsapp.w4b"
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW" | tr '.' '/')
           echo "Replacing smali references: $OLD -> $NEW"
-          
-          # 1. xml/properties এ ডিরেক্ট রিপ্লেস - এগুলো সেফ
+          # Replace dotted package references in smali/xml/properties files
           find "$DECOMPILED_DIR" \
-            -type f \( -name "*.xml" -o -name "*.properties" \) \
+            -type f \( -name "*.smali" -o -name "*.xml" -o -name "*.properties" \) \
             -exec sed -i "s|${OLD}|${NEW}|g" {} +
-          
-          # 2. smali তে শুধু const-string এ রিপ্লেস, class path এ না
-          # class path এ capital letter থাকলে smali ভাঙে
+          # Replace slash-separated path references in smali
           find "$DECOMPILED_DIR" \
             -type f -name "*.smali" \
-            -exec sed -i "s|const-string\([[:space:]]\+[vp][0-9]\+,[[:space:]]\+\)\"${OLD}\"|const-string\1\"${NEW}\"|g" {} +
-          
-          # 3. Uri.parse, authorities এর মতো জায়গায় রিপ্লেস
-          find "$DECOMPILED_DIR" \
-            -type f -name "*.smali" \
-            -exec sed -i "s|\"content://${OLD}|\"content://${NEW}|g" {} +
-          
-          echo "Smali rename done safely"
-
-      - name: Deep clean old package references
-        run: |
-          DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
-          OLD="${{ env.OLD_PACKAGE }}"
-          NEW="com.bkash.customerapp"
-          
-          echo "Checking res/values files..."
-          find "$DECOMPILED_DIR/res" -type f -name "*.xml" -exec sed -i "s|${OLD}|${NEW}|g" {} +
-          
-          echo "Checking assets..."
-          find "$DECOMPILED_DIR/assets" -type f -exec sed -i "s|${OLD}|${NEW}|g" {} + 2>/dev/null || true
-          
-          echo "Checking apktool.yml..."
-          if [ -f "$DECOMPILED_DIR/apktool.yml" ]; then
-            sed -i "s|renameManifestPackage: null|renameManifestPackage: ${NEW}|g" "$DECOMPILED_DIR/apktool.yml"
-            sed -i "s|renameManifestPackage: ${OLD}|renameManifestPackage: ${NEW}|g" "$DECOMPILED_DIR/apktool.yml"
-          fi
-          
-          echo "Searching for leftover references..."
-          grep -r "${OLD}" "$DECOMPILED_DIR" --exclude-dir=original --exclude="*.dex" || echo "No leftovers found"
+            -exec sed -i "s|${OLD_PATH}|${NEW_PATH}|g" {} +
+          echo "Smali rename done"
 
       - name: Recompile APK
         run: |
@@ -176,13 +146,13 @@ jobs:
         run: |
           keytool -genkey -v \
             -keystore my.keystore \
-            -alias bkash \
+            -alias w4b \
             -keyalg RSA \
             -keysize 2048 \
             -validity 10000 \
-            -storepass bkash123 \
-            -keypass bkash123 \
-            -dname "CN=bKash,OU=Dev,O=bKash,L=Dhaka,ST=Dhaka,C=BD" \
+            -storepass w4b123 \
+            -keypass w4b123 \
+            -dname "CN=W4B,OU=Dev,O=W4B,L=Dhaka,ST=Dhaka,C=BD" \
             -noprompt
           echo "Keystore generated"
 
@@ -199,9 +169,9 @@ jobs:
           # apksigner must be used AFTER zipalign (correct order)
           apksigner sign \
             --ks my.keystore \
-            --ks-pass pass:bkash123 \
-            --key-pass pass:bkash123 \
-            --ks-key-alias bkash \
+            --ks-pass pass:w4b123 \
+            --key-pass pass:w4b123 \
+            --ks-key-alias w4b \
             --out signed_app.apk \
             aligned.apk
           echo "Signing done"
@@ -212,17 +182,17 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: bkash-apk
+          name: w4b-apk
           path: signed_app.apk
           retention-days: 90
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: bkash-v1.0.${{ github.run_number }}
-          name: bKash v1.0.${{ github.run_number }}
+          tag_name: w4b-v1.0.${{ github.run_number }}
+          name: W4B v1.0.${{ github.run_number }}
           body: |
-            ✅ Package: com.bkash.customerapp
+            ✅ Package: com.whatsapp.w4b
             📦 Original: ${{ env.OLD_PACKAGE }}
             🔧 Build: #${{ github.run_number }}
             🔑 Signed with apksigner (v2/v3 scheme)
