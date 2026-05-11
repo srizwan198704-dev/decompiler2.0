@@ -1,4 +1,4 @@
-name: W4B Recompile Capital K
+name: W4B Recompile Capital K Fixed
 
 on:
   workflow_dispatch:
@@ -17,13 +17,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Java + Tools
+      - name: Setup Java
         run: |
           sudo apt-get update
           sudo apt-get install -y openjdk-17-jre-headless zipalign wget unzip python3
-          wget -q https://github.com/google/android-classyshark/releases/download/9.1/classyshark.jar -O /tmp/classyshark.jar
-          wget -q https://bitbucket.org/JesusFreke/smali/downloads/smali-3.0.3.jar -O /usr/local/bin/smali.jar
-          wget -q https://bitbucket.org/JesusFreke/smali/downloads/baksmali-3.0.3.jar -O /usr/local/bin/baksmali.jar
 
       - name: Setup Android SDK
         run: |
@@ -34,7 +31,7 @@ jobs:
           export ANDROID_SDK_ROOT=/opt/android-sdk
           export PATH="$PATH:/opt/android-sdk/cmdline-tools/latest/bin"
           yes | sdkmanager --licenses > /dev/null 2>&1 || true
-          sdkmanager "build-tools;34.0.0"
+          sdkmanager "build-tools;34.0.0" "platforms;android-34"
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/aapt2 /usr/local/bin/aapt2
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/apksigner /usr/local/bin/apksigner
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/zipalign /usr/local/bin/zipalign
@@ -51,7 +48,7 @@ jobs:
           OLD_PACKAGE=$(grep -oP 'package="\K[^"]+' "$DECOMPILED_DIR/AndroidManifest.xml" | head -1)
           echo "OLD_PACKAGE=${OLD_PACKAGE:-com.whatsapp}" >> $GITHUB_ENV
 
-      - name: Fix Manifest with Capital K
+      - name: Fix Manifest - Capital K + Remove Split
         run: |
           MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
           OLD="${{ env.OLD_PACKAGE }}"
@@ -60,85 +57,65 @@ jobs:
           import re
           with open("$MANIFEST", "r") as f:
               c = f.read()
+          
+          # 1. Package name Capital K
           c = re.sub(r'package="${OLD}"', 'package="${NEW}"', c)
+          
+          # 2. Remove ALL split attributes - এটাই parsing error সলভ করে
           c = re.sub(r'\s+android:requiredSplitTypes="[^"]*"', '', c)
           c = re.sub(r'\s+android:splitTypes="[^"]*"', '', c)
           c = re.sub(r'\s+android:isSplitRequired="[^"]*"', '', c)
+          c = re.sub(r'\s+android:isFeatureSplit="[^"]*"', '', c)
           c = re.sub(r'\s+android:extractNativeLibs="[^"]*"', '', c)
+          c = re.sub(r'\s+android:useEmbeddedDex="[^"]*"', '', c)
+          
+          # 3. Fix install issues
           c = re.sub(r'android:versionCode="\d+"', 'android:versionCode="999999"', c)
+          c = re.sub(r'android:installLocation="[^"]*"', 'android:installLocation="auto"', c)
+          
+          # 4. Add tools:replace to force override
+          if 'xmlns:tools=' not in c:
+              c = c.replace('<manifest', '<manifest xmlns:tools="http://schemas.android.com/tools"', 1)
+          c = c.replace('<application', '<application tools:replace="android:label,android:icon"', 1)
+          
           with open("$MANIFEST", "w") as f:
               f.write(c)
           EOF
+          echo "Manifest: Capital K set, splits removed"
 
-      - name: Rename Smali with Capital K - Break Limitation
+      - name: Rename Smali - Small k Only
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
-          NEW="com.bKash.customerapp"
+          NEW="com.bkash.customerapp"
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW" | tr '.' '/')
           
-          echo "Old: $OLD_PATH -> New: $NEW_PATH"
+          # Resource এ Capital K রাখব যাতে App Name এ দেখায়
+          find "$DECOMPILED_DIR" -type f -name "*.xml" -exec sed -i "s|${OLD}|com.bKash.customerapp|g" {} +
           
-          # 1. সব xml এ Capital K
-          find "$DECOMPILED_DIR" -type f \( -name "*.xml" -o -name "*.properties" \) -exec sed -i "s|${OLD}|${NEW}|g" {} +
-          
-          # 2. smali তে string এ Capital K
+          # কিন্তু smali কোডে small k, নাইলে Invalid directive
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"${OLD}\"|\"${NEW}\"|g" {} +
-          
-          # 3. smali তে class path Capital K দিয়ে রিপ্লেস
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|L${OLD_PATH}/|L${NEW_PATH}/|g" {} +
           
-          # 4. ফোল্ডার স্ট্রাকচার রিনেম - এটাই Limitation Break
-          if [ -d "$DECOMPILED_DIR/smali/$OLD_PATH" ]; then
-            mkdir -p "$DECOMPILED_DIR/smali/$(dirname $NEW_PATH)"
-            mv "$DECOMPILED_DIR/smali/$OLD_PATH" "$DECOMPILED_DIR/smali/$NEW_PATH"
-          fi
-          
-          # smali_classes2,3,4 এর জন্যও
-          for i in 2 3 4 5 6 7 8 9; do
-            if [ -d "$DECOMPILED_DIR/smali_classes$i/$OLD_PATH" ]; then
-              mkdir -p "$DECOMPILED_DIR/smali_classes$i/$(dirname $NEW_PATH)"
-              mv "$DECOMPILED_DIR/smali_classes$i/$OLD_PATH" "$DECOMPILED_DIR/smali_classes$i/$NEW_PATH"
+          # ফোল্ডারও small k
+          for d in smali smali_classes2 smali_classes3 smali_classes4; do
+            if [ -d "$DECOMPILED_DIR/$d/$OLD_PATH" ]; then
+              mkdir -p "$DECOMPILED_DIR/$d/$(dirname $NEW_PATH)"
+              mv "$DECOMPILED_DIR/$d/$OLD_PATH" "$DECOMPILED_DIR/$d/$NEW_PATH"
             fi
           done
-          
-          echo "Folder structure renamed to Capital K"
+          echo "Smali: small k for compatibility"
 
-      - name: Recompile with Raw Smali - Bypass Apktool Parser
+      - name: Update apktool.yml
         run: |
-          DIR="${{ github.event.inputs.decompiled_folder }}"
-          
-          # apktool বাদ দিয়ে ডিরেক্ট smali.jar ইউজ করব যাতে Capital K পাথ কম্পাইল হয়
-          rm -rf classes_out
-          mkdir classes_out
-          
-          # সব smali ফোল্ডার কম্পাইল করো
-          for d in smali smali_classes2 smali_classes3 smali_classes4 smali_classes5; do
-            if [ -d "$DIR/$d" ]; then
-              java -jar /usr/local/bin/smali.jar assemble "$DIR/$d" -o "classes_out/$(echo $d | sed 's/smali/classes/').dex"
-            fi
-          done
-          
-          # resource বিল্ড করো aapt2 দিয়ে
-          aapt2 compile --dir "$DIR/res" -o compiled_res.zip
-          aapt2 link -o unsigned.apk -I /opt/android-sdk/platforms/android-34/android.jar \
-            --manifest "$DIR/AndroidManifest.xml" \
-            --min-sdk-version 19 --target-sdk-version 30 \
-            --rename-manifest-package com.bKash.customerapp \
-            compiled_res.zip
-          
-          # dex ফাইলগুলা অ্যাড করো
-          zip -uj unsigned.apk classes_out/*.dex
-          
-          # assets/lib কপি করো
-          cd "$DIR"
-          if [ -d "assets" ]; then zip -r ../unsigned.apk assets; fi
-          if [ -d "lib" ]; then zip -r ../unsigned.apk lib; fi
-          cd ..
-          
-          mv unsigned.apk recompiled_unsigned.apk
-          ls -lh recompiled_unsigned.apk
+          if [ -f "${{ github.event.inputs.decompiled_folder }}/apktool.yml" ]; then
+            sed -i "s|renameManifestPackage: .*|renameManifestPackage: com.bKash.customerapp|g" "${{ github.event.inputs.decompiled_folder }}/apktool.yml"
+          fi
+
+      - name: Recompile APK
+        run: |
+          apktool b "${{ github.event.inputs.decompiled_folder }}" -o recompiled_unsigned.apk -f --use-aapt2
 
       - name: Sign APK
         run: |
