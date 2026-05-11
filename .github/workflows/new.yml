@@ -52,16 +52,16 @@ jobs:
         run: |
           MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
           OLD="${{ env.OLD_PACKAGE }}"
-          NEW="com.bKash.customerapp"
+          NEW="com.whatsapp.w4b"
           python3 << EOF
           import re
           with open("$MANIFEST", "r") as f:
               c = f.read()
           
-          # 1. Package name Capital K
-          c = re.sub(r'package="${OLD}"', 'package="${NEW}"', c)
+          # 1. Package name change to com.whatsapp.w4b
+          c = re.sub(r'package="[^"]*"', f'package="{NEW}"', c)
           
-          # 2. Remove ALL split attributes - এটাই parsing error সলভ করে
+          # 2. Remove ALL split attributes - fixes parsing errors
           c = re.sub(r'\s+android:requiredSplitTypes="[^"]*"', '', c)
           c = re.sub(r'\s+android:splitTypes="[^"]*"', '', c)
           c = re.sub(r'\s+android:isSplitRequired="[^"]*"', '', c)
@@ -81,36 +81,36 @@ jobs:
           with open("$MANIFEST", "w") as f:
               f.write(c)
           EOF
-          echo "Manifest: Capital K set, splits removed"
+          echo "Manifest: Package changed to com.whatsapp.w4b, splits removed"
 
-      - name: Rename Smali - Small k Only
+      - name: Rename Smali Directories
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
-          NEW="com.bkash.customerapp"
+          NEW="com.whatsapp.w4b"
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW" | tr '.' '/')
           
-          # Resource এ Capital K রাখব যাতে App Name এ দেখায়
-          find "$DECOMPILED_DIR" -type f -name "*.xml" -exec sed -i "s|${OLD}|com.bKash.customerapp|g" {} +
+          # Update all XML files with package reference
+          find "$DECOMPILED_DIR" -type f -name "*.xml" -exec sed -i "s|${OLD}|${NEW}|g" {} +
           
-          # কিন্তু smali কোডে small k, নাইলে Invalid directive
+          # Update all smali files with package reference
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"${OLD}\"|\"${NEW}\"|g" {} +
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|L${OLD_PATH}/|L${NEW_PATH}/|g" {} +
           
-          # ফোল্ডারও small k
-          for d in smali smali_classes2 smali_classes3 smali_classes4; do
+          # Rename smali directories
+          for d in smali smali_classes2 smali_classes3 smali_classes4 smali_classes5; do
             if [ -d "$DECOMPILED_DIR/$d/$OLD_PATH" ]; then
               mkdir -p "$DECOMPILED_DIR/$d/$(dirname $NEW_PATH)"
               mv "$DECOMPILED_DIR/$d/$OLD_PATH" "$DECOMPILED_DIR/$d/$NEW_PATH"
             fi
           done
-          echo "Smali: small k for compatibility"
+          echo "Smali directories renamed to com/whatsapp/w4b"
 
       - name: Update apktool.yml
         run: |
           if [ -f "${{ github.event.inputs.decompiled_folder }}/apktool.yml" ]; then
-            sed -i "s|renameManifestPackage: .*|renameManifestPackage: com.bKash.customerapp|g" "${{ github.event.inputs.decompiled_folder }}/apktool.yml"
+            sed -i "s|renameManifestPackage: .*|renameManifestPackage: com.whatsapp.w4b|g" "${{ github.event.inputs.decompiled_folder }}/apktool.yml"
           fi
 
       - name: Recompile APK
@@ -119,15 +119,15 @@ jobs:
 
       - name: Sign APK
         run: |
-          keytool -genkey -v -keystore my.keystore -alias bkash -keyalg RSA -keysize 2048 -validity 10000 \
-            -storepass bkash123 -keypass bkash123 -dname "CN=bKash,OU=Dev,O=bKash,L=Dhaka,ST=Dhaka,C=BD" -noprompt
+          keytool -genkey -v -keystore my.keystore -alias whatsapp -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass whatsapp123 -keypass whatsapp123 -dname "CN=WhatsApp,OU=Dev,O=WhatsApp,L=Menlo Park,ST=California,C=US" -noprompt
           zipalign -v -p 4 recompiled_unsigned.apk aligned.apk
-          apksigner sign --ks my.keystore --ks-pass pass:bkash123 --key-pass pass:bkash123 \
-            --ks-key-alias bkash --v4-signing-enabled false --out signed_app.apk aligned.apk
+          apksigner sign --ks my.keystore --ks-pass pass:whatsapp123 --key-pass pass:whatsapp123 \
+            --ks-key-alias whatsapp --v4-signing-enabled false --out signed_app.apk aligned.apk
           apksigner verify --verbose signed_app.apk
 
       - name: Upload
         uses: actions/upload-artifact@v4
         with:
-          name: bkash-capital-k
+          name: whatsapp-w4b-recompiled
           path: signed_app.apk
