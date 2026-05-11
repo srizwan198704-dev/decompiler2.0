@@ -7,6 +7,10 @@ on:
         description: 'Decompiled folder name'
         required: true
         default: 'decompiled_app'
+      tag_name:
+        description: 'Release Tag Name (e.g., v1.0.0)'
+        required: true
+        default: 'v1.0.0'
 
 jobs:
   recompile:
@@ -99,12 +103,11 @@ jobs:
           NEW_PATH=$(echo "$NEW" | tr '.' '/')
           
           echo "Renaming from $OLD to $NEW"
-          echo "Path: $OLD_PATH -> $NEW_PATH"
           
-          # Update all XML files with package reference
+          # Update all XML files
           find "$DECOMPILED_DIR" -type f -name "*.xml" -exec sed -i "s|${OLD}|${NEW}|g" {} +
           
-          # Update all smali files with package reference
+          # Update all smali files
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"${OLD}\"|\"${NEW}\"|g" {} +
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|L${OLD_PATH}/|L${NEW_PATH}/|g" {} +
           
@@ -116,7 +119,6 @@ jobs:
               echo "Renamed $d/$OLD_PATH -> $d/$NEW_PATH"
             fi
           done
-          echo "Smali directories renamed to com/whatsapp/w4b"
 
       - name: Update apktool.yml
         run: |
@@ -135,11 +137,21 @@ jobs:
             -storepass whatsapp123 -keypass whatsapp123 -dname "CN=WhatsApp,OU=Dev,O=WhatsApp,L=Menlo Park,ST=California,C=US" -noprompt
           zipalign -v -p 4 recompiled_unsigned.apk aligned.apk
           apksigner sign --ks my.keystore --ks-pass pass:whatsapp123 --key-pass pass:whatsapp123 \
-            --ks-key-alias whatsapp --v4-signing-enabled false --out signed_app.apk aligned.apk
-          apksigner verify --verbose signed_app.apk
+            --ks-key-alias whatsapp --v4-signing-enabled false --out WhatsApp_W4B_Signed.apk aligned.apk
 
-      - name: Upload
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.tag_name }}
+          name: Release ${{ github.event.inputs.tag_name }}
+          files: WhatsApp_W4B_Signed.apk
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: whatsapp-w4b-recompiled
-          path: signed_app.apk
+          path: WhatsApp_W4B_Signed.apk
