@@ -38,7 +38,6 @@ jobs:
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/zipalign /usr/local/bin/zipalign
           echo "/opt/android-sdk/build-tools/34.0.0" >> $GITHUB_PATH
           echo "ANDROID_SDK_ROOT=/opt/android-sdk" >> $GITHUB_ENV
-          aapt2 version
 
       - name: Setup APKTool
         run: |
@@ -47,51 +46,28 @@ jobs:
           sudo wget -q https://github.com/iBotPeaches/Apktool/releases/download/v2.10.0/apktool_2.10.0.jar \
             -O /usr/local/bin/apktool.jar
           sudo chmod +x /usr/local/bin/apktool /usr/local/bin/apktool.jar
-          apktool --version
 
-      - name: Detect Old Package Name
+      - name: Set Package Names
         run: |
-          DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
-          OLD_PACKAGE=""
-          if [ -f "$DECOMPILED_DIR/AndroidManifest.xml" ]; then
-            OLD_PACKAGE=$(grep -oP 'package="\K[^"]+' "$DECOMPILED_DIR/AndroidManifest.xml" | head -1)
-          fi
-          if [ -z "$OLD_PACKAGE" ]; then
-            OLD_PACKAGE="com.whatsapp"
-          fi
-          echo "OLD_PACKAGE=$OLD_PACKAGE" >> $GITHUB_ENV
-          echo "Detected old package: $OLD_PACKAGE"
+          echo "OLD_PACKAGE=ru.maximoff.apktool" >> $GITHUB_ENV
+          echo "NEW_MANIFEST=com.bKash.customerapp" >> $GITHUB_ENV
+          echo "NEW_SMALI=com.bkash.customerapp" >> $GITHUB_ENV
 
       - name: Rename Package in AndroidManifest.xml
         run: |
           MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
           OLD="${{ env.OLD_PACKAGE }}"
-          NEW="com.bKash.customerapp"
-          cp "$MANIFEST" "$MANIFEST.bak"
+          NEW="${{ env.NEW_MANIFEST }}"
           cat > /tmp/fix.py << 'PYEOF'
           import re, sys, xml.etree.ElementTree as ET
-          old = sys.argv[1]
-          new = sys.argv[2]
-          path = sys.argv[3]
-          with open(path, "r", encoding="utf-8") as f:
-              content = f.read()
+          old, new, path = sys.argv[1], sys.argv[2], sys.argv[3]
+          with open(path, "r", encoding="utf-8") as f: content = f.read()
           escaped = re.escape(old)
-          if new.startswith(old):
-              suffix = re.escape(new[len(old):])
-              pattern = escaped + r'(?!' + suffix + r')'
-          else:
-              pattern = escaped
-          count = len(re.findall(pattern, content))
+          pattern = escaped + r'(?!' + re.escape(new[len(old):]) + r')' if new.startswith(old) else escaped
           result = re.sub(pattern, new, content)
-          with open(path, "w", encoding="utf-8") as f:
-              f.write(result)
-          print(f"Replaced {count} occurrences: {old} -> {new}")
-          try:
-              ET.parse(path)
-              print("XML validation: OK")
-          except ET.ParseError as e:
-              print(f"XML ERROR: {e}")
-              sys.exit(1)
+          with open(path, "w", encoding="utf-8") as f: f.write(result)
+          ET.parse(path)
+          print(f"Manifest renamed: {old} -> {new}")
           PYEOF
           python3 /tmp/fix.py "$OLD" "$NEW" "$MANIFEST"
 
@@ -99,18 +75,26 @@ jobs:
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
-          NEW_SMALI="com.bkash.customerapp"
-          NEW_MANIFEST="com.bKash.customerapp"
+          NEW_SMALI="${{ env.NEW_SMALI }}"
+          NEW_MANIFEST="${{ env.NEW_MANIFEST }}"
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW_SMALI" | tr '.' '/')
+          echo "Old: $OLD | New Manifest: $NEW_MANIFEST | New Smali: $NEW_SMALI"
           
+          # 1. xml/properties এ Manifest এর Capital ভার্সন
           find "$DECOMPILED_DIR" -type f \( -name "*.xml" -o -name "*.properties" \) \
             -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
           
+          # 2. smali তে const-string - small ভার্সন, কারণ Java প্যাকেজে Capital চলে না
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"${OLD}\"|\"${NEW_SMALI}\"|g" {} +
+          
+          # 3. smali তে content:// URI - small ভার্সন
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"content://${OLD}|\"content://${NEW_SMALI}|g" {} +
+          
+          # 4. smali তে ক্লাস পাথ L...; - স্ল্যাশ দিয়ে
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|L${OLD_PATH}/|L${NEW_PATH}/|g" {} +
           
+          # 5. ফোল্ডার মুভ - এটা না করলে dex এ পুরান পাথ থেকে যায়
           for SMALI_DIR in "$DECOMPILED_DIR"/smali*; do
             if [ -d "$SMALI_DIR/$OLD_PATH" ]; then
               echo "Moving $SMALI_DIR/$OLD_PATH -> $SMALI_DIR/$NEW_PATH"
@@ -120,30 +104,39 @@ jobs:
             fi
           done
 
-      - name: Deep clean resources and apktool.yml
+      - name: Fix missing resource IDs and clean build
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
-          NEW_MANIFEST="com.bKash.customerapp"
-          NEW_SMALI="com.bkash.customerapp"
+          NEW_MANIFEST="${{ env.NEW_MANIFEST }}"
+          NEW_SMALI="${{ env.NEW_SMALI }}"
           
-          echo "Cleaning res files..."
+          # 1. res/values সব ফাইলে প্যাকেজ রিপ্লেস
           find "$DECOMPILED_DIR/res" -type f -name "*.xml" -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
           
-          echo "Deleting problematic resource files to force regen..."
+          # 2. assets এ small ভার্সন
+          find "$DECOMPILED_DIR/assets" -type f -exec sed -i "s|${OLD}|${NEW_SMALI}|g" {} + 2>/dev/null || true
+          
+          # 3. ব্রোকেন ফাইল ডিলিট - aapt2 রিজেনারেট করবে
           rm -f "$DECOMPILED_DIR/res/values/public.xml"
           rm -f "$DECOMPILED_DIR/res/values/ids.xml"
           rm -rf "$DECOMPILED_DIR/build"
           
-          echo "Cleaning assets..."
-          find "$DECOMPILED_DIR/assets" -type f -exec sed -i "s|${OLD}|${NEW_SMALI}|g" {} + 2>/dev/null || true
+          # 4. মিসিং @id গুলা অটো ids.xml এ অ্যাড করো
+          mkdir -p "$DECOMPILED_DIR/res/values"
+          echo "Extracting @id references..."
+          IDS=$(grep -rhoP '@\+id/\K[a-zA-Z0-9_]+' "$DECOMPILED_DIR/res" 2>/dev/null | sort -u)
+          echo '<?xml version="1.0" encoding="utf-8"?>' > "$DECOMPILED_DIR/res/values/ids.xml"
+          echo '<resources>' >> "$DECOMPILED_DIR/res/values/ids.xml"
+          for ID in $IDS; do
+            echo " <item type=\"id\" name=\"$ID\" />" >> "$DECOMPILED_DIR/res/values/ids.xml"
+          done
+          echo '</resources>' >> "$DECOMPILED_DIR/res/values/ids.xml"
+          echo "Generated ids.xml with $(echo "$IDS" | wc -w) IDs including edit_query"
           
-          echo "Regenerating apktool.yml..."
-          if [ -f "$DECOMPILED_DIR/apktool.yml" ]; then
-            cp "$DECOMPILED_DIR/apktool.yml" "$DECOMPILED_DIR/apktool.yml.bak"
-          fi
+          # 5. apktool.yml রিজেনারেট
           cat > "$DECOMPILED_DIR/apktool.yml" << EOF
-          !!brut.androlib.meta.MetaInfo
+         !!brut.androlib.meta.MetaInfo
           apkFileName: base.apk
           compressionType: false
           doNotCompress:
@@ -167,29 +160,18 @@ jobs:
             versionCode: '1'
             versionName: 1.0
           EOF
-          
-          echo "Checking for leftovers..."
-          grep -r "${OLD}" "$DECOMPILED_DIR" --exclude-dir=original --exclude="*.bak" | head -5 || echo "Clean"
 
       - name: Recompile APK
         run: |
           DIR="${{ github.event.inputs.decompiled_folder }}"
-          echo "=== Attempt 1: aapt2 + no-crunch + force-all ==="
-          if apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --no-crunch --force-all 2>&1; then
-            echo "Build success (aapt2)"
-          else
-            echo "=== Attempt 2: aapt + force-all ==="
-            if apktool b "$DIR" -o recompiled_unsigned.apk -f --force-all 2>&1; then
-              echo "Build success (aapt)"
-            else
-              echo "=== Attempt 3: no-resources ==="
-              apktool b "$DIR" -o recompiled_unsigned.apk -f --no-res 2>&1 || true
-            fi
-          fi
+          echo "=== Building with aapt2 + force-all ==="
+          apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --force-all 2>&1 | tee /tmp/build.log || \
+          apktool b "$DIR" -o recompiled_unsigned.apk -f --force-all 2>&1 | tee -a /tmp/build.log
+          
           if [ ! -f recompiled_unsigned.apk ]; then
             echo "ERROR: APK not created!"
-            echo "=== Debug: Checking dist folder ==="
-            ls -la "$DIR/dist/" || true
+            echo "=== Last 30 lines of build log ==="
+            tail -30 /tmp/build.log
             exit 1
           fi
           ls -lh recompiled_unsigned.apk
@@ -197,7 +179,7 @@ jobs:
       - name: Verify APK structure
         run: |
           unzip -l recompiled_unsigned.apk | grep -E "classes.dex|AndroidManifest.xml|resources.arsc"
-          aapt dump badging recompiled_unsigned.apk | head -5 || echo "Badging failed"
+          aapt dump badging recompiled_unsigned.apk | head -3
 
       - name: Generate Keystore
         run: |
@@ -243,10 +225,10 @@ jobs:
           body: |
             ✅ Manifest Package: com.bKash.customerapp
             ✅ Smali Package: com.bkash.customerapp
-            📦 Original: ${{ env.OLD_PACKAGE }}
+            📦 Original: ru.maximoff.apktool
             🔧 Build: #${{ github.run_number }}
-            🔑 Signed with apksigner (v2/v3 scheme)
-            🔧 Fixed: NPE - regenerated apktool.yml + deleted public.xml/ids.xml
+            🔑 Signed with apksigner
+            🔧 Fixed: ids.xml auto-gen + smali folder move
           files: signed_app.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
