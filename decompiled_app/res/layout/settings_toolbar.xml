@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar android:id="@id/toolbar" android:background="?colorPrimary" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?actionBarSize" app:title="@string/settings" app:navigationIcon="?homeAsUpIndicator" app:navigationContentDescription="@string/abc_action_bar_up_description" app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" />

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/editdialogLinearLayout1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip">
+                <ImageView android:id="@id/editdialogImageView1" android:layout_width="64.0dip" android:layout_height="64.0dip" android:scaleType="fitCenter" android:adjustViewBounds="true" />
+                <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/editdialogTextView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" />
+            </LinearLayout>
+            <CheckBox android:id="@id/editdialogCheckBox2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:checked="true" android:text="@string/replace_adaptive" />
+            <CheckBox android:id="@id/editdialogCheckBox5" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:checked="true" android:text="@string/qualicon" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/editdialogTextView2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/aicon_size" />
+        </LinearLayout>
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mapp_label" />
+        <EditText android:id="@id/editdialogEditText1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:ems="10" android:singleLine="true" android:inputType="text" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mapp_pn" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip">
+            <EditText android:id="@id/editdialogEditText2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:ems="10" android:singleLine="true" android:layout_weight="1.0" />
+            <ImageButton android:id="@id/editdialogImageButton1" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/ic_reload" android:scaleType="centerInside" android:adjustViewBounds="true" android:contentDescription="@string/kill_sign_rand" />
+        </LinearLayout>
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mapp_vn" />
+        <EditText android:id="@id/editdialogEditText3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:ems="10" android:singleLine="true" android:inputType="text" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mapp_cn" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip">
+            <EditText android:id="@id/editdialogEditText4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:ems="10" android:singleLine="true" android:layout_weight="1.0" android:inputType="number" />
+            <ImageButton android:id="@id/editdialogImageButton2" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/ic_top" android:scaleType="centerInside" android:adjustViewBounds="true" android:contentDescription="@string/max_value" />
+        </LinearLayout>
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mapp_minsdk" />
+        <Spinner android:id="@id/editdialogSpinner1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:singleLine="true" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mapp_targetsdk" />
+        <Spinner android:id="@id/editdialogSpinner2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:singleLine="true" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mapp_inLocation" />
+        <Spinner android:id="@id/editdialogSpinner4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+        <LinearLayout android:orientation="vertical" android:id="@id/editdialogLinearLayout2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/sel_signature_file" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <Spinner android:id="@id/editdialogSpinner3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                <ImageView android:id="@id/editdialogImageView2" android:background="?android:selectableItemBackground" android:padding="5.0dip" android:focusable="true" android:clickable="true" android:layout_width="30.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_settings_light" android:scaleType="centerInside" android:adjustViewBounds="true" />
+            </LinearLayout>
+        </LinearLayout>
+        <CheckBox android:id="@id/editdialogCheckBox1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/msplit_rm" />
+        <CheckBox android:id="@id/editdialogCheckBox3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/debug_mode" />
+        <CheckBox android:id="@id/editdialogCheckBox4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/mtest_rm" />
+        <CheckBox android:id="@id/editdialogCheckBox7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/msui_rm" />
+        <CheckBox android:id="@id/editdialogCheckBox6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/madapt_tv" />
+        <Button android:textAppearance="?android:textAppearanceSmall" android:id="@id/editdialogButton1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/permissions" />
+    </LinearLayout>
+</ScrollView>

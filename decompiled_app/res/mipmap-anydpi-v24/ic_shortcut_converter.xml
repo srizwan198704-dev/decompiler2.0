@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="108.0dip" android:width="108.0dip" android:viewportWidth="108.0" android:viewportHeight="108.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:name="Background" android:fillColor="@color/ic_shortcut_background" android:pathData="M54,54m-48.6,0a48.6,48.6 0,1 1,97.2 0a48.6,48.6 0,1 1,-97.2 0z" />
+    <path android:name="Foreground" android:fillColor="@color/ic_shortcut_foreground" android:pathData="M74.3,62.3l-5.3,-5.3l-5.3,5.3l2.12,2.12l1.68,-1.68l0,4.76l-10.5,0l0,3l13.5,0l0,-7.76l1.68,1.68z M46,62v14H32V62H46M48.5,57h-19c-1.38,0 -2.5,1.12 -2.5,2.5v19c0,1.38 1.12,2.5 2.5,2.5h19c1.38,0 2.5,-1.12 2.5,-2.5v-19C51,58.12 49.88,57 48.5,57L48.5,57z M69,32c3.86,0 7,3.14 7,7s-3.14,7 -7,7s-7,-3.14 -7,-7S65.14,32 69,32M69,27c-6.63,0 -12,5.37 -12,12s5.37,12 12,12s12,-5.37 12,-12S75.63,27 69,27L69,27z M33.7,45.7l5.3,5.3l5.3,-5.3l-2.12,-2.12l-1.68,1.68l0,-4.76l10.5,0l0,-3l-13.5,0l0,7.76l-1.68,-1.68z" />
+</vector>

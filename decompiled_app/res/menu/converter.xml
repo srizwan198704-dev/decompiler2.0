@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_palette_black" android:id="@id/color_picker" android:visible="false" android:title="@string/select_color" android:showAsAction="always" app:showAsAction="always" />
+    <item android:icon="@drawable/ic_hexd" android:id="@id/hex" android:visible="false" android:title="HEX" android:showAsAction="always" app:showAsAction="always" />
+    <item android:icon="@drawable/ic_reload" android:id="@id/reset" android:title="@string/search_reset" android:showAsAction="always" app:showAsAction="always" />
+    <group android:checkableBehavior="all">
+        <item android:id="@id/smali" android:visible="false" android:title="@string/smali" />
+    </group>
+    <item android:id="@id/date_fmt" android:visible="false" android:title="@string/date_format" />
+    <item android:id="@id/cur_date" android:visible="false" android:title="..." />
+</menu>

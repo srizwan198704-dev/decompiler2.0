@@ -1,0 +1,40 @@
+version: 2.9.3
+apkFileName: input_app.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+  tag: null
+sdkInfo:
+  minSdkVersion: 14
+  targetSdkVersion: 28
+packageInfo:
+  forcedPackageId: 127
+  renameManifestPackage: null
+versionInfo:
+  versionCode: 2026050101
+  versionName: 2.4.0-260501
+resourcesAreCompressed: false
+sharedLibrary: false
+sparseResources: false
+unknownFiles:
+  org/objectweb/asm/package.html: 8
+  org/objectweb/asm/xml/asm-xml.dtd: 8
+  org/objectweb/asm/xml/package.html: 8
+  org/objectweb/asm/tree/package.html: 8
+  org/objectweb/asm/tree/analysis/package.html: 8
+  org/objectweb/asm/util/package.html: 8
+  org/objectweb/asm/signature/package.html: 8
+  org/objectweb/asm/commons/package.html: 8
+  jadx/core/clsp/core.jcst: 8
+doNotCompress:
+- resources.arsc
+- png
+- mp3
+- assets/key/testkey.pk8
+- assets/key/editorkey.pk8
+- assets/key/platform.pk8
+- assets/key/media.pk8
+- assets/key/shared.pk8
+- gif
+- jpg

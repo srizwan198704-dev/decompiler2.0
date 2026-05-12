@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_dark_material_light">#ff757575</color>
+    <color name="notification_action_color_filter">@color/androidx_core_secondary_text_default_material_light</color>
+    <color name="primary_dark_material">#ff222222</color>
+</resources>

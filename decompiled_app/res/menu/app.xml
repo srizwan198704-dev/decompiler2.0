@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/app_details" android:title="@string/details" />
+    <item android:id="@id/decompile" android:visible="true" android:title="@string/decompile" />
+    <item android:id="@id/decompile_full" android:visible="false" android:title="@string/decompile" />
+    <item android:id="@id/decompile_res" android:visible="false" android:title="@string/decompile_res" />
+    <item android:id="@id/quick_edit" android:title="@string/mapp_quickedit" />
+    <item android:id="@id/antisplit" android:visible="false" android:title="@string/mantisplit" />
+    <item android:id="@id/launchApp" android:title="@string/launch_app" />
+    <item android:id="@id/deleteApp" android:title="@string/delete" />
+    <item android:id="@id/open_settings" android:title="@string/about" />
+    <item android:id="@id/open_market" android:title="@string/gplay" />
+    <item android:id="@id/extract_app" android:title="@string/extract" />
+    <item android:id="@id/verify" android:title="@string/verify" />
+    <item android:id="@id/open_zip" android:title="@string/view_content" />
+    <item android:id="@id/sharing_file" android:title="@string/sharing_file" />
+    <item android:id="@id/import_framework" android:title="@string/import_framework" />
+</menu>

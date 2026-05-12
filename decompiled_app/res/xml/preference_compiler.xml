@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ru.maximoff.apktool.preference.SelectPreference android:title="@string/output_directory" android:key="output_directory" android:summary="@string/output_directory_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/use_aapt2" android:key="use_aapt2" android:summary="@string/use_aapt2_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/mBakdeb" android:key="mBakdeb" android:summary="@string/mBakdeb_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/debug_mode" android:key="debug_mode" android:summary="@string/debug_mode_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/baksmali_registers" android:key="baksmali_registers" android:summary="@string/baksmali_registers_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/verbose_mode" android:key="verbose_mode" android:summary="@string/verbose_mode_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.DualPreference android:title="@string/copyOriginalFiles" android:key="copyOriginalFiles" android:summary="@string/copyOriginalFiles_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/keep_structure" android:key="keep_structure" android:summary="@string/keep_structure_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/add_dummy" android:key="add_dummy" android:summary="@string/add_dummy_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/keep_broken" android:key="keep_broken_res" android:summary="@string/keep_broken_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/clear_split" android:key="clear_split" android:summary="@string/clear_split_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/remove_property" android:key="remove_property" android:summary="@string/remove_property_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/try_merge_res" android:key="try_merge_res" android:summary="@string/try_merge_res_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.DualPreference android:title="@string/perm_description" android:key="perm_description" android:summary="@string/perm_description_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/add_nsc" android:key="add_nsc" android:summary="@string/add_nsc_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/add_nsc_ex" android:key="add_nsc_ex" android:summary="@string/add_nsc_ex_summary" android:dependency="add_nsc" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/ongoing_notification" android:key="ongoing_notification" android:summary="@string/ongoing_notification_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/build_notification" android:key="build_notification" android:summary="@string/build_notification_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/dont_notify" android:key="dont_notification_isrun" android:summary="@string/dont_notify_summary" android:dependency="build_notification" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.EditTextPreference android:title="@string/suffix" android:key="suffix_apk" android:summary="@string/suffix_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/delete_build" android:key="delete_build" android:summary="@string/delete_build_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/atod_set" android:key="all_to_out_dir" android:summary="@string/atod_set_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/build_toout" android:key="build_toout" android:summary="@string/build_toout_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/analysis_all_smali" android:key="analysis_all_smali" android:summary="@string/analysis_all_smali_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/custom_frame" android:key="user_frameworks" android:summary="@string/custom_frame_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.ChangeToolsPreference android:title="@string/mtool_repl" android:key="tools_replace" android:summary="@string/mtool_repl_summary" />
+    <ru.maximoff.apktool.preference.Frameworks android:title="@string/man_frame" android:key="man_frame" android:summary="@string/man_frame_summary" />
+</PreferenceScreen>
