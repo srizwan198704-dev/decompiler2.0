@@ -31,7 +31,7 @@ jobs:
           export ANDROID_SDK_ROOT=/opt/android-sdk
           export PATH="$PATH:/opt/android-sdk/cmdline-tools/latest/bin"
           yes | sdkmanager --licenses > /dev/null 2>&1 || true
-          sdkmanager "build-tools;34.0.0" "platform-tools"
+          sdkmanager "build-tools;34.0.0" "platforms;android-34" "platform-tools"
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/aapt2 /usr/local/bin/aapt2
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/aapt /usr/local/bin/aapt
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/apksigner /usr/local/bin/apksigner
@@ -39,8 +39,6 @@ jobs:
           echo "/opt/android-sdk/build-tools/34.0.0" >> $GITHUB_PATH
           echo "ANDROID_SDK_ROOT=/opt/android-sdk" >> $GITHUB_ENV
           aapt2 version
-          aapt version
-          apksigner version
 
       - name: Setup APKTool
         run: |
@@ -96,8 +94,6 @@ jobs:
               sys.exit(1)
           PYEOF
           python3 /tmp/fix.py "$OLD" "$NEW" "$MANIFEST"
-          echo "=== First 5 lines after rename ==="
-          head -5 "$MANIFEST"
 
       - name: Rename Package in smali files and move folders
         run: |
@@ -107,25 +103,14 @@ jobs:
           NEW_MANIFEST="com.bKash.customerapp"
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW_SMALI" | tr '.' '/')
-          echo "Manifest package: $NEW_MANIFEST"
-          echo "Smali package dotted: $NEW_SMALI"
-          echo "Old smali path: $OLD_PATH"
-          echo "New smali path: $NEW_PATH"
           
-          # 1. xml/properties এ Manifest এর Capital ভার্সন
           find "$DECOMPILED_DIR" -type f \( -name "*.xml" -o -name "*.properties" \) \
             -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
           
-          # 2. smali তে const-string - small ভার্সন
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"${OLD}\"|\"${NEW_SMALI}\"|g" {} +
-          
-          # 3. smali তে content:// URI - small ভার্সন  
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"content://${OLD}|\"content://${NEW_SMALI}|g" {} +
-          
-          # 4. smali তে ক্লাস পাথ L...; - স্ল্যাশ দিয়ে
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|L${OLD_PATH}/|L${NEW_PATH}/|g" {} +
           
-          # 5. আসল ফিক্স: Smali ফোল্ডার মুভ করা লাগবে, নইলে dex এ পুরান পাথ থেকে যাবে
           for SMALI_DIR in "$DECOMPILED_DIR"/smali*; do
             if [ -d "$SMALI_DIR/$OLD_PATH" ]; then
               echo "Moving $SMALI_DIR/$OLD_PATH -> $SMALI_DIR/$NEW_PATH"
@@ -134,67 +119,85 @@ jobs:
               rm -rf "$SMALI_DIR/$OLD_PATH"
             fi
           done
-          
-          echo "Smali rename + folder move done"
 
-      - name: Deep clean old package references
+      - name: Deep clean resources and apktool.yml
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
           NEW_MANIFEST="com.bKash.customerapp"
           NEW_SMALI="com.bkash.customerapp"
-          OLD_PATH=$(echo "$OLD" | tr '.' '/')
           
-          echo "Cleaning res/values..."
+          echo "Cleaning res files..."
           find "$DECOMPILED_DIR/res" -type f -name "*.xml" -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
+          
+          echo "Deleting problematic resource files to force regen..."
+          rm -f "$DECOMPILED_DIR/res/values/public.xml"
+          rm -f "$DECOMPILED_DIR/res/values/ids.xml"
+          rm -rf "$DECOMPILED_DIR/build"
           
           echo "Cleaning assets..."
           find "$DECOMPILED_DIR/assets" -type f -exec sed -i "s|${OLD}|${NEW_SMALI}|g" {} + 2>/dev/null || true
           
-          echo "Fixing apktool.yml..."
+          echo "Regenerating apktool.yml..."
           if [ -f "$DECOMPILED_DIR/apktool.yml" ]; then
-            sed -i "s|renameManifestPackage: null|renameManifestPackage: ${NEW_MANIFEST}|g" "$DECOMPILED_DIR/apktool.yml"
-            sed -i "s|renameManifestPackage: ${OLD}|renameManifestPackage: ${NEW_MANIFEST}|g" "$DECOMPILED_DIR/apktool.yml"
-            # doNotCompress fix
-            sed -i '/^doNotCompress:/d' "$DECOMPILED_DIR/apktool.yml"
-            echo "doNotCompress: [\"resources.arsc\"]" >> "$DECOMPILED_DIR/apktool.yml"
+            cp "$DECOMPILED_DIR/apktool.yml" "$DECOMPILED_DIR/apktool.yml.bak"
           fi
+          cat > "$DECOMPILED_DIR/apktool.yml" << EOF
+          !!brut.androlib.meta.MetaInfo
+          apkFileName: base.apk
+          compressionType: false
+          doNotCompress:
+          - resources.arsc
+          isFrameworkApk: false
+          packageInfo:
+            forcedPackageId: '127'
+            renameManifestPackage: ${NEW_MANIFEST}
+          sdkInfo:
+            minSdkVersion: '21'
+            targetSdkVersion: '34'
+          sharedLibrary: false
+          sparseResources: false
+          unknownFiles: {}
+          usesFramework:
+            ids:
+            - 1
+            tag: null
+          version: 2.10.0
+          versionInfo:
+            versionCode: '1'
+            versionName: 1.0
+          EOF
           
-          echo "Removing public.xml to force regen..."
-          rm -f "$DECOMPILED_DIR/res/values/public.xml"
-          
-          echo "Leftover check..."
-          grep -r "L${OLD_PATH}/" "$DECOMPILED_DIR" --exclude-dir=original || echo "No class path leftovers"
-          grep -r "\"${OLD}\"" "$DECOMPILED_DIR" --exclude-dir=original || echo "No string leftovers"
+          echo "Checking for leftovers..."
+          grep -r "${OLD}" "$DECOMPILED_DIR" --exclude-dir=original --exclude="*.bak" | head -5 || echo "Clean"
 
       - name: Recompile APK
         run: |
           DIR="${{ github.event.inputs.decompiled_folder }}"
-          echo "=== Attempt 1: aapt2 + no-crunch ==="
-          if apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --no-crunch 2>&1; then
+          echo "=== Attempt 1: aapt2 + no-crunch + force-all ==="
+          if apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --no-crunch --force-all 2>&1; then
             echo "Build success (aapt2)"
           else
-            echo "=== Attempt 2: aapt fallback ==="
-            if apktool b "$DIR" -o recompiled_unsigned.apk -f 2>&1; then
+            echo "=== Attempt 2: aapt + force-all ==="
+            if apktool b "$DIR" -o recompiled_unsigned.apk -f --force-all 2>&1; then
               echo "Build success (aapt)"
             else
-              echo "=== Attempt 3: aapt + no-crunch ==="
-              apktool b "$DIR" -o recompiled_unsigned.apk -f --no-crunch 2>&1 || true
+              echo "=== Attempt 3: no-resources ==="
+              apktool b "$DIR" -o recompiled_unsigned.apk -f --no-res 2>&1 || true
             fi
           fi
           if [ ! -f recompiled_unsigned.apk ]; then
             echo "ERROR: APK not created!"
+            echo "=== Debug: Checking dist folder ==="
+            ls -la "$DIR/dist/" || true
             exit 1
           fi
           ls -lh recompiled_unsigned.apk
 
       - name: Verify APK structure
         run: |
-          echo "Checking APK contents..."
           unzip -l recompiled_unsigned.apk | grep -E "classes.dex|AndroidManifest.xml|resources.arsc"
-          aapt dump badging recompiled_unsigned.apk | head -5 || \
-            aapt2 dump badging recompiled_unsigned.apk | head -5 || \
-            echo "Warning: badging dump failed"
+          aapt dump badging recompiled_unsigned.apk | head -5 || echo "Badging failed"
 
       - name: Generate Keystore
         run: |
@@ -208,13 +211,11 @@ jobs:
             -keypass bkash123 \
             -dname "CN=bKash,OU=Dev,O=bKash,L=Dhaka,ST=Dhaka,C=BD" \
             -noprompt
-          echo "Keystore generated"
 
       - name: Zipalign APK
         run: |
           zipalign -v -p 4 recompiled_unsigned.apk aligned.apk
-          echo "Zipalign done"
-          zipalign -c -v 4 aligned.apk && echo "Alignment check: PASSED" || echo "Alignment check: FAILED"
+          zipalign -c -v 4 aligned.apk
 
       - name: Sign APK with apksigner
         run: |
@@ -225,9 +226,7 @@ jobs:
             --ks-key-alias bkash \
             --out signed_app.apk \
             aligned.apk
-          echo "Signing done"
-          apksigner verify --verbose signed_app.apk && echo "Signature verify: PASSED" || echo "Signature verify: FAILED"
-          ls -lh signed_app.apk
+          apksigner verify --verbose signed_app.apk
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
@@ -247,7 +246,7 @@ jobs:
             📦 Original: ${{ env.OLD_PACKAGE }}
             🔧 Build: #${{ github.run_number }}
             🔑 Signed with apksigner (v2/v3 scheme)
-            🔧 Fixed: Smali folder move + public.xml regen + aapt fallback
+            🔧 Fixed: NPE - regenerated apktool.yml + deleted public.xml/ids.xml
           files: signed_app.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
