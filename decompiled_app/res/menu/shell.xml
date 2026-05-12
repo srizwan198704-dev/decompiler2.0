@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@id/open_in_editor" android:title="@string/open_in_editor" />
-    <item android:id="@id/shell_run" android:title="@string/shell_run" />
-    <item android:id="@id/shell_run_root" android:title="@string/shell_run_root" />
-</menu>

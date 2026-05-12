@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="horizontal" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/toastImageView1" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="5.0dip" android:src="@drawable/ic_toast_round" android:scaleType="centerInside" android:adjustViewBounds="true" />
-    <TextView android:textColor="@color/toast_text" android:id="@id/toastTextView1" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-</LinearLayout>

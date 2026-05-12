@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout android:id="@id/drawer" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:id="@id/editor" android:background="?color_app_background" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <FrameLayout android:layout_gravity="left" android:id="@id/leftView" android:background="?android:windowBackground" android:layout_width="320.0dip" android:layout_height="fill_parent" />
-</androidx.drawerlayout.widget.DrawerLayout>

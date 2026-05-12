@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
-        <TextView android:ellipsize="middle" android:gravity="center_vertical" android:id="@id/historyitemTextView1" android:background="?android:selectableItemBackground" android:paddingLeft="5.0dip" android:paddingTop="5.0dip" android:paddingRight="5.0dip" android:paddingBottom="5.0dip" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
-        <TextView android:ellipsize="middle" android:gravity="center_vertical" android:id="@id/historyitemTextView3" android:background="?android:selectableItemBackground" android:paddingLeft="5.0dip" android:paddingTop="0.0dip" android:paddingRight="5.0dip" android:paddingBottom="5.0dip" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
-    </LinearLayout>
-    <TextView android:gravity="center" android:id="@id/historyitemTextView2" android:background="?android:selectableItemBackground" android:padding="10.0dip" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="fill_parent" android:minWidth="32.0dip" android:minHeight="24.0dip" android:text="×" />
-</LinearLayout>

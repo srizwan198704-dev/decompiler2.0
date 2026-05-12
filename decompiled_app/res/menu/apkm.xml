@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@id/open_in" android:title="@string/open_in" />
-    <item android:id="@id/sharing_file" android:title="@string/sharing_file" />
-    <item android:id="@id/to_apks" android:title="@string/to_apks" />
-</menu>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@id/edit_axml" android:title="@string/strings_edit" />
-    <item android:id="@id/prev_vector" android:visible="false" android:title="@string/preview" />
-    <item android:id="@id/open_in" android:title="@string/open_in" />
-</menu>
