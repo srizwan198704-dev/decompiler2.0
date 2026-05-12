@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/music_player_root" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/music_player_shadow" android:layout_width="fill_parent" android:layout_height="@dimen/music_mini_player_shadow_height" />
+    <View android:id="@id/music_player_divider" android:layout_width="fill_parent" android:layout_height="@dimen/music_mini_player_divider" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/music_player_content_container" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/music_mini_player_container_height">
+        <FrameLayout android:layout_gravity="center_vertical" android:id="@id/music_player_play_btn_container" android:layout_width="@dimen/music_mini_player_play_btn_bg_size" android:layout_height="@dimen/music_mini_player_play_btn_bg_size" android:layout_marginLeft="@dimen/music_mini_player_btn_margin" android:layout_marginRight="@dimen/music_mini_player_btn_margin">
+            <ImageView android:layout_gravity="center" android:id="@id/music_player_play_btn" android:layout_width="@dimen/music_mini_player_btn_size" android:layout_height="@dimen/music_mini_player_btn_size" />
+            <ImageView android:layout_gravity="center" android:id="@id/music_player_loading_btn" android:visibility="gone" android:layout_width="@dimen/music_mini_player_btn_size" android:layout_height="@dimen/music_mini_player_btn_size" />
+        </FrameLayout>
+        <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginRight="@dimen/music_mini_player_btn_margin" android:layout_weight="1.0">
+            <FrameLayout android:orientation="horizontal" android:id="@id/music_player_title_contaner" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/music_mini_player_btn_margin_top" android:layout_marginBottom="1.0dip">
+                <TextView android:textSize="14.0dip" android:textStyle="bold" android:ellipsize="end" android:id="@id/music_player_title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="26.0dip" android:singleLine="true" />
+                <ImageView android:layout_gravity="right" android:id="@id/music_player_download_btn" android:layout_width="@dimen/music_mini_player_btn_size" android:layout_height="@dimen/music_mini_player_btn_size" />
+            </FrameLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/music_player_title_contaner">
+                <TextView android:textSize="@dimen/music_mini_player_content_music_subtitle_size" android:id="@id/music_player_current_pos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0:05" />
+                <TextView android:textSize="@dimen/music_mini_player_content_music_subtitle_size" android:id="@id/music_player_duration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="/8:05" />
+            </LinearLayout>
+            <com.uc.browser.business.ucmusic.MusicPlayerSeekBar android:id="@id/music_player_seek_bar" android:layout_width="fill_parent" android:layout_height="@dimen/music_mini_player_seek_bar_height" android:layout_marginBottom="13.0dip" android:maxHeight="3.0dip" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+        <ImageView android:id="@id/music_player_close_btn" android:layout_width="@dimen/music_mini_player_btn_size" android:layout_height="@dimen/music_mini_player_btn_size" android:layout_marginTop="@dimen/music_mini_player_btn_margin_top" android:layout_marginRight="@dimen/music_mini_player_btn_margin" />
+    </LinearLayout>
+</LinearLayout>

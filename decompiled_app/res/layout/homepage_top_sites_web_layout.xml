@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/homepage_loading_content" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <View android:layout_gravity="center" android:id="@id/homepage_loading_title" android:layout_width="110.0dip" android:layout_height="15.0dip" android:layout_marginTop="10.0dip" />
+        <View android:id="@id/homepage_loading_search" android:layout_width="fill_parent" android:layout_height="38.0dip" android:layout_marginLeft="14.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="14.0dip" />
+        <GridLayout android:id="@id/homepage_loading_grid" android:paddingLeft="@dimen/inter_top_sites_loading_container_margin" android:paddingRight="@dimen/inter_top_sites_loading_container_margin" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:layout_marginBottom="@dimen/inter_top_sites_footer_height" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/homepage_top_sites_animation" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <View android:id="@id/homepage_top_sites_animation_top" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <View android:id="@id/homepage_top_sites_animation_bottom" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <FrameLayout android:layout_gravity="bottom" android:id="@id/homepage_top_sites_close_btn_bg" android:layout_width="fill_parent" android:layout_height="@dimen/inter_top_sites_footer_height">
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/homepage_top_sites_close_btn" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginTop="10.0dip" />
+    </FrameLayout>
+</FrameLayout>

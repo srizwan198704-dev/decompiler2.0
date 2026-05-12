@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingTop="@dimen/secmtp_debug_dp_12" android:paddingBottom="@dimen/secmtp_debug_dp_12" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/secmtp_debug_sp_12" android:textColor="@color/secmtp_debug_666666" android:ellipsize="end" android:id="@id/secmtp_debug_tv_item_fold_title" android:paddingTop="@dimen/secmtp_debug_dp_5" android:paddingBottom="@dimen/secmtp_debug_dp_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/secmtp_debug_dp_12" android:maxLines="1" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:textSize="@dimen/secmtp_debug_sp_12" android:textColor="@color/secmtp_debug_666666" android:ellipsize="end" android:id="@id/secmtp_debug_tv_item_fold_sub_title" android:paddingBottom="@dimen/secmtp_debug_dp_5" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_below="@id/secmtp_debug_tv_item_fold_title" android:layout_alignLeft="@id/secmtp_debug_tv_item_fold_title" />
+</RelativeLayout>

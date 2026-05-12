@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/title_container" android:background="@color/equalizer_title_bg" android:layout_width="fill_parent" android:layout_height="@dimen/playlist_layout_titlebar_height">
+        <ImageView android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/slide_window_layout_titlebar_margin_left" android:src="@drawable/icon_lyric_report" />
+        <TextView android:textSize="@dimen/equalizer_title_text_size" android:textColor="@color/equalizer_title_text_color" android:gravity="center_vertical" android:id="@id/lyric_report_title_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/slide_window_layout_titlebar_margin_left" android:text="@string/lyric_report_title" />
+    </LinearLayout>
+    <ListView android:id="@id/lyric_report_listview" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="#fff0f0f0" android:dividerHeight="1.0px" />
+    <View android:background="#fff0f0f0" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <Button android:textSize="13.0sp" android:textColor="#ff444444" android:id="@id/lyric_report_close_tv" android:background="@drawable/wtf_btn_dialog_close_bg" android:layout_width="fill_parent" android:layout_height="@dimen/playlist_layout_btn_playlist_cancel_height" android:text="@string/close" />
+</LinearLayout>

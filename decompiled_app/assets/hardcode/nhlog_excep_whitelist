@@ -1,0 +1,308 @@
+[
+    {
+        "mode": "3",
+        "contains": "com.noah",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "ms.bz.bd.c.Pgl",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.bytedance",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.ss.android",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.qq.e",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.tencent.ams",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.tencent.turingfd.sdk.ams.au",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.tencent.gatherer",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.kuaishou",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.kwad",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.kwai",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "yxcorp.kuaishou.addfp",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.jd.ad.sdk",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.baidu",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.alimm.tanx",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.tanx",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.huawei.hms.ads",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.huawei.openalliance.ad",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.huawei.appmarket",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.leyou.fusionsdk",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.tencent.klevin",
+        "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.tencent.tgpa.lite",
+        "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.mcto.sspsdk",
+         "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.shu.priory",
+        "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.miui.zeus.mimo.sdk",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.miui.zeus.landingpage.sdk",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.miui.zeus.safe.sdk",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "vivo.util",
+         "elements": []
+    },
+    {
+        "mode": "3",
+        "contains": "com.ae.i.k",
+        "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.vivo.ad",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.vivo.advv",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.vivo.mobilead",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.zk.adengine",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.wrapper",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.cdo.oaps.ad",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.heytap.lib.a",
+         "elements": []
+    },
+    {
+          "mode": "3",
+          "contains": "com.heytap.msp.mobad.api",
+          "elements": []
+    },
+    {
+           "mode": "3",
+           "contains": "com.heytap.nearx",
+           "elements": []
+    },
+    {
+            "mode": "3",
+            "contains": "com.heytap.pictorial.a",
+            "elements": []
+    },
+    {
+             "mode": "3",
+             "contains": "com.omes.scorpion",
+             "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.oplus.instant.router",
+         "elements": []
+    },
+    {
+          "mode": "3",
+          "contains": "com.oplus.log",
+          "elements": []
+    },
+    {
+           "mode": "3",
+           "contains": "com.oplus.stdid.sdk",
+           "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.opos.acs.st",
+         "elements": []
+    },
+    {
+          "mode": "3",
+          "contains": "com.opos.cmn",
+          "elements": []
+    },
+    {
+          "mode": "3",
+          "contains": "com.opos.exoplayer",
+          "elements": []
+    },
+    {
+          "mode": "3",
+          "contains": "com.opos.libs.a",
+          "elements": []
+    },
+    {
+          "mode": "3",
+          "contains": "com.opos.mobad",
+          "elements": []
+    },
+    {
+          "mode": "3",
+          "contains": "com.opos.process.bridge",
+          "elements": []
+    },
+    {
+          "mode": "3",
+          "contains": "com.opos.videocache",
+          "elements": []
+    },
+    {
+          "mode": "3",
+          "contains": "com.wrapper_oaction",
+          "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.zk_oaction.adengine",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.inno.innosdk",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.inno.innosecure",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.jifen.open.lib.relinkerx",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.qumeng.advlib",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "qm.qm.qm",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "qm.qm.qma",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.domob.sdk",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.meishu.sdk",
+         "elements": []
+    },
+    {
+         "mode": "3",
+         "contains": "com.ptg",
+         "elements": []
+    }
+
+]

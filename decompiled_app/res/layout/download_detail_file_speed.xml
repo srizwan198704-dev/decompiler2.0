@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center|left" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/property_big_text_size" android:textColor="#ff666666" android:id="@id/label_speed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+    <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="53.599976dip">
+        <ImageView android:id="@id/download_speed_img" android:layout_width="9.199982dip" android:layout_height="16.0dip" android:baselineAlignBottom="true" />
+        <TextView android:textSize="18.0dip" android:textStyle="bold" android:textColor="#ff333333" android:id="@id/download_speed_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.5999756dip" />
+        <TextView android:textSize="10.0dip" android:textStyle="bold" android:textColor="#ff333333" android:id="@id/download_speed_union_text" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:gravity="bottom" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.099976dip">
+        <ImageView android:id="@id/upload_speed_img" android:layout_width="9.199982dip" android:layout_height="16.0dip" android:baselineAlignBottom="true" />
+        <TextView android:textSize="18.0dip" android:textStyle="bold" android:textColor="#ff333333" android:id="@id/upload_speed_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.5999756dip" />
+        <TextView android:textSize="10.0dip" android:textStyle="bold" android:textColor="#ff333333" android:id="@id/upload_speed_union_text" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

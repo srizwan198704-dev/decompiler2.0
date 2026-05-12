@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/play_list_container" android:background="@drawable/btn_mini_controler_bar_pressed_selector" android:paddingLeft="8.0dip" android:paddingRight="2.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/playlist_popup_item_height">
+        <com.yolo.framework.widget.PlayingIndicator android:layout_gravity="center" android:id="@id/playlist_playing_indicator" android:layout_width="@dimen/local_item_indicator_width" android:layout_height="@dimen/local_item_indicator_height" android:layout_marginLeft="3.0dip" android:layout_marginRight="6.0dip" />
+        <TextView android:textSize="@dimen/playlist_index_text_size" android:textColor="#ffc2c2c2" android:id="@id/playlist_index" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="6.0dip" android:text="01" />
+        <TextView android:textSize="@dimen/playlist_title_text_size" android:textColor="@color/equalizer_item_title_color" android:ellipsize="end" android:id="@id/playlist_title" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="As long as you love me" android:singleLine="true" android:layout_weight="1.0" />
+        <ImageButton android:id="@id/playlist_btn_download" android:background="@null" android:visibility="gone" android:layout_width="@dimen/playlist_btn_download_width" android:layout_height="@dimen/playlist_btn_download_height" android:layout_marginRight="@dimen/playlist_btn_download_margin_right" android:src="@drawable/btn_playlist_download" android:scaleType="fitCenter" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.yolo.framework.widget.bounce.BounceFrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.yolo.music.view.mine.SideSelector android:id="@id/selector" android:layout_width="16.0dip" android:layout_height="fill_parent" android:layout_alignParentRight="true" />
+            <ListView android:scrollbarSize="4.0dip" android:scrollbarThumbVertical="@drawable/scrollbar_vertical_thumb" android:scrollbarStyle="insideOverlay" android:id="@id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="?android:listSelector" android:divider="@color/local_listview_divide_color" android:dividerHeight="1.0dip" android:layout_toLeftOf="@id/selector" android:layout_alignParentLeft="true" android:overScrollMode="never" />
+        </RelativeLayout>
+    </com.yolo.framework.widget.bounce.BounceFrameLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/shadow" android:background="@drawable/above_shadow" android:layout_width="fill_parent" android:layout_height="@dimen/download_header_shadow_height" />
+    </FrameLayout>
+    <ViewStub android:id="@id/manage_bottom_viewstub" android:layout_width="fill_parent" android:layout_height="@dimen/manege_bottom_height" />
+</LinearLayout>

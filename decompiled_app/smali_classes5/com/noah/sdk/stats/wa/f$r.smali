@@ -1,0 +1,92 @@
+.class public Lcom/noah/sdk/stats/wa/f$r;
+.super Ljava/lang/Object;
+.source "ProGuard"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/noah/sdk/stats/wa/f;->b(Lcom/noah/sdk/business/engine/c;Lcom/noah/sdk/business/config/server/a;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field public final synthetic a:Lcom/noah/sdk/business/config/server/a;
+
+.field public final synthetic b:Lcom/noah/sdk/business/engine/c;
+
+
+# direct methods
+.method public constructor <init>(Lcom/noah/sdk/business/config/server/a;Lcom/noah/sdk/business/engine/c;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lcom/noah/sdk/stats/wa/f$r;->a:Lcom/noah/sdk/business/config/server/a;
+
+    .line 2
+    .line 3
+    iput-object p2, p0, Lcom/noah/sdk/stats/wa/f$r;->b:Lcom/noah/sdk/business/engine/c;
+
+    .line 4
+    .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
+    .locals 4
+
+    .line 1
+    iget-object v0, p0, Lcom/noah/sdk/stats/wa/f$r;->a:Lcom/noah/sdk/business/config/server/a;
+
+    .line 2
+    .line 3
+    iget-object v1, p0, Lcom/noah/sdk/stats/wa/f$r;->b:Lcom/noah/sdk/business/engine/c;
+
+    .line 4
+    .line 5
+    const-string v2, "fetchad"
+
+    .line 6
+    .line 7
+    const-string v3, "retry_ad_send"
+
+    .line 8
+    .line 9
+    invoke-static {v2, v3, v0, v1}, Lcom/noah/sdk/stats/wa/f;->a(Ljava/lang/String;Ljava/lang/String;Lcom/noah/sdk/business/config/server/a;Lcom/noah/sdk/business/engine/c;)Lcom/noah/sdk/common/model/c;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v0
+
+    .line 13
+    iget-object v1, p0, Lcom/noah/sdk/stats/wa/f$r;->b:Lcom/noah/sdk/business/engine/c;
+
+    .line 14
+    .line 15
+    invoke-static {v1, v0}, Lcom/mbridge/msdk/advanced/manager/e;->w(Lcom/noah/sdk/business/engine/c;Lcom/noah/sdk/common/model/c;)V
+
+    .line 16
+    .line 17
+    .line 18
+    return-void
+.end method

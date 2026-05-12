@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:tag="layout/udrive_home_group_card_0" android:paddingLeft="@dimen/udrive_homepage_group_card_padding" android:paddingRight="@dimen/udrive_homepage_group_card_padding" android:paddingBottom="@dimen/udrive_homepage_group_card_padding" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button android:textSize="@dimen/udrive_homepage_group_title_text_size" android:textStyle="bold" android:gravity="center|left" android:id="@id/udrive_home_group_card_title" android:tag="binding_1" android:background="@android:color/transparent" android:paddingLeft="@dimen/udrive_homepage_group_card_padding_horizontal" android:paddingRight="@dimen/udrive_homepage_group_card_padding_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/udrive_homepage_group_title_min_height" android:text="@string/udrive_group_home_title" android:textAllCaps="false" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/udrive_home_group_card_content" android:tag="binding_2" android:paddingLeft="@dimen/udrive_homepage_group_card_padding_horizontal" android:paddingRight="@dimen/udrive_homepage_group_card_padding_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@drawable/udrive_group_item_vertical_divider" android:showDividers="middle">
+        <include android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/udrive_home_group_card_item" />
+        <include android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/udrive_home_group_card_item" />
+        <include android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/udrive_home_group_card_item" />
+        <include android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" layout="@layout/udrive_home_group_card_item" />
+    </LinearLayout>
+</LinearLayout>

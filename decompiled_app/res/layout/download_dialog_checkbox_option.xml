@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/download_new_task_dialog_space" android:paddingRight="@dimen/download_new_task_dialog_space" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.uc.framework.ui.widget.CheckBox android:id="@id/check_box" android:layout_width="@dimen/download_new_task_dialog_checkbox_size" android:layout_height="@dimen/download_new_task_dialog_checkbox_size" android:layout_marginRight="@dimen/download_new_task_dialog_add_fav_checkbox_right_space" />
+    <TextView android:textSize="@dimen/download_new_task_dialog_main_view_text_size" android:textColor="@color/download_finish_dialog_add_fav_color" android:id="@id/check_box_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>

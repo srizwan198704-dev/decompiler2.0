@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.noah.adn.huichuan.view.ui.widget.HCRoundedNetImageView android:id="@id/noah_interstitial_app_logo" android:layout_width="60.0dip" android:layout_height="60.0dip" />
+    <TextView android:textSize="18.0dip" android:textColor="#ff333333" android:ellipsize="end" android:gravity="center" android:id="@id/noah_interstitial_ad_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:singleLine="true" />
+    <TextView android:textSize="13.0dip" android:textColor="#cc666666" android:ellipsize="end" android:gravity="center" android:id="@id/noah_interstitial_ad_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:lines="2" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip">
+        <ProgressBar android:id="@id/noah_interstitial_progressbar" android:layout_width="fill_parent" android:layout_height="40.0dip" android:max="100" android:progress="100" android:progressDrawable="@drawable/noah_intersitital_progressbar_bg_new" style="?android:progressBarStyleHorizontal" />
+        <FrameLayout android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/noah_interstitial_download_tips" android:background="@drawable/noah_interstitial_btn_blue_bg" android:layout_width="fill_parent" android:layout_height="40.0dip" android:text="@string/noah_adn_btn_expire" />
+            <com.noah.adn.huichuan.view.interstital.LightingAnimationView android:id="@id/noah_hc_interstitial_dy_light" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="40.0dip" />
+        </FrameLayout>
+    </FrameLayout>
+</merge>

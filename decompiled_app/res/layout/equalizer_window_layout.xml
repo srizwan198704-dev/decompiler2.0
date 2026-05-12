@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/play_list_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/equalizer_title_container" android:background="@color/play_list_panel" android:layout_width="fill_parent" android:layout_height="@dimen/equalizer_title_height">
+        <ImageView android:id="@id/equalizer_title_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/equalizer_title_img_margin_left" android:src="@drawable/equalizer" />
+        <TextView android:textSize="@dimen/equalizer_title_text_size" android:textColor="@color/equalizer_title_text_color" android:gravity="center_vertical" android:id="@id/equalizer_title_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/slide_window_layout_titlebar_margin_left" android:text="@string/equalizer_slide_window_title" />
+    </LinearLayout>
+    <ListView android:id="@id/equalizer_list" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <Button android:textSize="@dimen/equalizer_cancle_text_size" android:textColor="@color/equalizer_title_text_color" android:id="@id/equalizer_btn_cancel" android:background="@drawable/wtf_btn_dialog_close_bg" android:layout_width="fill_parent" android:layout_height="@dimen/equalizer_bottom_bar_height" android:text="@string/close" />
+</LinearLayout>

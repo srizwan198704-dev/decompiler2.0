@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center|right|top" android:id="@id/close" android:padding="@dimen/video_sniffer_dialog_close_button_margin" android:layout_width="@dimen/video_sniffer_dialog_close_button_size" android:layout_height="@dimen/video_sniffer_dialog_close_button_size" />
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="16.0dip" android:textStyle="bold" android:id="@id/video_err_tip_1" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <View android:id="@id/divider_1" android:layout_width="58.0dip" android:layout_height="0.5dip" android:layout_marginRight="6.0dip" />
+            <TextView android:textSize="10.0dip" android:textStyle="italic" android:id="@id/video_err_tip_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginBottom="8.0dip" />
+            <View android:id="@id/divider_2" android:layout_width="58.0dip" android:layout_height="0.5dip" android:layout_marginLeft="6.0dip" />
+        </LinearLayout>
+        <com.uc.browser.media.player.business.recommend.RelatedVideoListViewItem android:id="@id/video_item_1" android:layout_width="295.0dip" android:layout_height="70.0dip" android:layout_marginBottom="18.0dip" />
+        <com.uc.browser.media.player.business.recommend.RelatedVideoListViewItem android:id="@id/video_item_2" android:layout_width="295.0dip" android:layout_height="70.0dip" />
+        <TextView android:id="@id/more_videos" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:drawablePadding="8.0dip" />
+    </LinearLayout>
+</FrameLayout>

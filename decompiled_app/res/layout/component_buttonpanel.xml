@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/shalog_horizontal_sep" android:background="@color/shalog_sep_color" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/shalog_bottombar_height" android:measureWithLargestChild="true" style="@style/_buttonBar">
+        <com.yolo.music.view.RippleButton android:textSize="@dimen/shalog_button_textsize" android:textColor="@color/shalog_main_textcolor" android:layout_gravity="center_vertical" android:id="@id/shalog_btn_negative" android:background="@null" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="negative" android:layout_weight="1.0" />
+        <View android:id="@id/shalog_positive_button_sep" android:background="@color/shalog_sep_color" android:visibility="gone" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <com.yolo.music.view.RippleButton android:textSize="@dimen/shalog_button_textsize" android:textColor="@color/shalog_main_textcolor" android:layout_gravity="center_vertical" android:id="@id/shalog_btn_neutral" android:background="@null" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="neutral" android:layout_weight="1.0" />
+        <View android:id="@id/shalog_neutral_button_sep" android:background="@color/shalog_sep_color" android:visibility="gone" android:layout_width="1.0px" android:layout_height="fill_parent" />
+        <com.yolo.music.view.RippleButton android:textSize="@dimen/shalog_button_textsize" android:textColor="@color/shalog_main_textcolor" android:layout_gravity="center_vertical" android:id="@id/shalog_btn_positive" android:background="@null" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="positive" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

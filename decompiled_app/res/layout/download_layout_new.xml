@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar android:id="@id/download_toolbar" android:layout_width="fill_parent" android:layout_height="@dimen/download_title_bar_height" android:minWidth="@dimen/download_title_bar_height" app:layout_collapseMode="pin">
+        <View android:gravity="center" android:layout_gravity="center|left" android:id="@id/download_back_icon" android:layout_width="@dimen/download_title_bar_icon_size" android:layout_height="@dimen/download_title_bar_icon_size" android:layout_marginLeft="@dimen/download_title_bar_margin_h" />
+        <View android:gravity="center" android:layout_gravity="center|right" android:id="@id/download_more_action_icon" android:layout_width="@dimen/download_title_bar_icon_size" android:layout_height="@dimen/download_title_bar_icon_size" android:layout_marginRight="@dimen/download_title_bar_margin_h" />
+        <ImageView android:gravity="center" android:layout_gravity="center|right" android:id="@id/download_helper" android:padding="2.0dip" android:layout_width="@dimen/download_title_bar_icon_size" android:layout_height="@dimen/download_title_bar_icon_size" android:layout_marginRight="@dimen/download_title_bar_margin_h" />
+        <TextView android:textSize="@dimen/download_edit_title_bar_txt_size" android:textStyle="bold" android:gravity="center" android:layout_gravity="left" android:id="@id/download_cancel" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/download_title_bar_margin_h" />
+        <TextView android:textSize="@dimen/download_edit_title_bar_txt_size" android:textStyle="bold" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/download_select_count" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" />
+        <TextView android:textSize="@dimen/download_edit_title_bar_txt_size" android:textStyle="bold" android:gravity="center" android:layout_gravity="right" android:id="@id/download_select_all" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="@dimen/download_title_bar_margin_h" />
+    </androidx.appcompat.widget.Toolbar>
+    <ScrollView android:id="@id/download_scroll_view" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+    <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/delete_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <View android:id="@id/delete_divider" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingVertical="14.0dip">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/delete_icon" android:layout_width="20.0dip" android:layout_height="20.0dip" />
+            <TextView android:textSize="14.0sp" android:layout_gravity="center_vertical" android:id="@id/delete_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

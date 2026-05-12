@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/my_video_empty_view_text_size" android:gravity="center" android:id="@id/my_video_empty_view_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/my_video_empty_view_text_margin_top" android:layout_marginBottom="@dimen/my_video_empty_view_text_margin_bottom" />
+    <ImageView android:gravity="center" android:id="@id/my_video_empty_view_image" android:focusable="false" android:clickable="false" android:layout_width="@dimen/my_video_empty_view_image_size" android:layout_height="@dimen/my_video_empty_view_image_size" />
+    <Button android:textSize="@dimen/my_video_empty_view_button_text_size" android:id="@id/my_video_empty_button" android:layout_width="@dimen/my_video_empty_view_button_width" android:layout_height="@dimen/my_video_empty_view_button_height" android:layout_marginTop="@dimen/my_video_empty_view_button_margin_top" android:visible="false" />
+</merge>

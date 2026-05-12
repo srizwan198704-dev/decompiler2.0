@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/32/excel@3x</title>
+    <defs>
+        <polygon id="path-1" points="3.49883415 7.30285714 3.49883415 5.28428571 6.70771407 5.28428571 6.70771407 3.61285714 3.49883415 3.61285714 3.49883415 1.69714286 7.76724989 1.69714286 7.76724989 0 1.8277948 0 1.8277948 9 7.8277948 9 7.8277948 7.30285714"></polygon>
+        <filter x="-41.7%" y="-27.8%" width="183.3%" height="155.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="2.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="图标/32/excel" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-2" transform="translate(4, 5)">
+            <path d="M14.6794872,1.11022302e-16 C15.1857482,1.80236617e-17 15.5961538,0.410405646 15.5961538,0.916666667 L15.596,3.323 L6.07692308,3.32347826 C5.60682356,3.32347826 5.21937485,3.67734844 5.1664235,4.13324223 L5.16025641,4.24014493 L5.16,14.462 L1.91666667,14.4626087 C1.41040565,14.4626087 1,14.052203 1,13.545942 L1,0.916666667 C1,0.410405646 1.41040565,-1.29045964e-16 1.91666667,-2.22044605e-16 L14.6794872,1.11022302e-16 Z" id="矩形备份-2" fill="#364047" opacity="0.118339902"></path>
+            <rect id="矩形" stroke="#364047" stroke-width="2" stroke-linejoin="round" x="6" y="4" width="16" height="16" rx="0.916666687"></rect>
+            <g id="E" transform="translate(9.1722, 7.5)" fill-rule="nonzero">
+                <g id="路径">
+                    <use fill="#364047" xlink:href="#path-1"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                </g>
+            </g>
+            <path d="M1.70135618,16.8020343 L3.24917503,19.1237625 C3.32331232,19.2349685 3.29326225,19.3852189 3.1820563,19.4593562 C3.14230356,19.485858 3.09559569,19.5 3.04781885,19.5 L-0.0478188458,19.5 C-0.181471761,19.5 -0.289818855,19.3916529 -0.289818855,19.258 C-0.289818855,19.2102231 -0.275676852,19.1635153 -0.249175025,19.1237625 L1.29864382,16.8020343 C1.37278112,16.6908283 1.52303151,16.6607782 1.63423745,16.7349155 C1.66082171,16.7526384 1.68363334,16.77545 1.70135618,16.8020343 Z" id="三角形" fill="#364047" transform="translate(1.5, 18) rotate(90) translate(-1.5, -18)"></path>
+        </g>
+    </g>
+</svg>

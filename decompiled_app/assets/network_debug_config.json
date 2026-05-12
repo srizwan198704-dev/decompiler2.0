@@ -1,0 +1,251 @@
+{
+  "china_firmid_network": {
+    "6": "Mintegral",
+    "8": "腾讯广告",
+    "15": "穿山甲",
+    "22": "百度",
+    "28": "快手",
+    "29": "Sigmob",
+    "39": "华为",
+    "49": "米盟",
+    "51": "游可赢",
+    "66": "Adx",
+    "69": "TapTap",
+    "72": "京媒",
+    "74": "趣盟",
+    "79": "Vivo广告联盟"
+  },
+  "china_firmid_network_en": {
+    "6": "Mintegral",
+    "8": "Tencent",
+    "15": "CSJ",
+    "22": "Baidu",
+    "28": "KuaiShou",
+    "29": "Sigmob",
+    "39": "Huawei",
+    "49": "Mi Union",
+    "51": "Klevin",
+    "66": "Adx",
+    "69": "TapTap",
+    "72": "JD",
+    "74": "QuMeng",
+    "79": "Vivo"
+  },
+  "nonchina_firmid_network": {
+    "1": "Facebook",
+    "2": "Admob",
+    "3": "Inmobi",
+    "5": "Applovin",
+    "6": "Mintegral",
+    "9": "Chartboost",
+    "11": "Ironsource",
+    "12": "UnityAds",
+    "13": "Vungle",
+    "14": "Adcolony",
+    "21": "Appnext",
+    "23": "Nend",
+    "24": "Maio",
+    "25": "Start.io",
+    "32": "Mytarget",
+    "34": "Yandex",
+    "36": "Ogury",
+    "37": "Fyber",
+    "39": "Huawei",
+    "45": "Kidoz",
+    "50": "Pangle",
+    "58": "Verve",
+    "59": "Bigo",
+    "66": "Adx",
+    "75": "Amazon",
+    "77": "Kwai"
+  },
+  "network_sdk_class_check": {
+    "china": {
+      "6": {
+        "sdk_class": "com.mbridge.msdk.MBridgeSDK",
+        "adapter_class": "com.anythink.network.mintegral.MintegralATInitManager"
+      },
+      "8": {
+        "sdk_class": "com.qq.e.comm.managers.GDTAdSdk",
+        "adapter_class": "com.anythink.network.gdt.GDTATInitManager"
+      },
+      "15": {
+        "sdk_class": "com.bytedance.sdk.openadsdk.TTAdSdk",
+        "adapter_class": "com.anythink.network.toutiao.TTATInitManager"
+      },
+      "22": {
+        "sdk_class": "com.baidu.mobads.sdk.api.BDAdConfig",
+        "adapter_class": "com.anythink.network.baidu.BaiduATInitManager"
+      },
+      "28": {
+        "sdk_class": "com.kwad.sdk.api.KsAdSDK",
+        "adapter_class": "com.anythink.network.ks.KSATInitManager"
+      },
+      "29": {
+        "sdk_class": "com.sigmob.windad.WindAds",
+        "adapter_class": "com.anythink.network.sigmob.SigmobATInitManager"
+      },
+      "39": {
+        "sdk_class": "com.huawei.hms.ads.HwAds",
+        "adapter_class": "com.anythink.network.huawei.HuaweiATInitManager"
+      },
+      "49": {
+        "sdk_class": "com.miui.zeus.mimo.sdk.MimoSdk",
+        "adapter_class": "com.anythink.network.mimo.MimoATInitManager"
+      },
+      "51": {
+        "sdk_class": "com.tencent.klevin.KlevinManager",
+        "adapter_class": "com.anythink.network.klevin.KlevinATInitManager"
+      },
+      "66": {
+        "sdk_class": "com.anythink.core.api.ATSDK",
+        "adapter_class": "com.anythink.network.adx.AdxATInitManager"
+      },
+      "69": {
+        "sdk_class": "com.tapsdk.tapad.TapAdSdk",
+        "adapter_class": "com.anythink.network.tap.TapATInitManager"
+      },
+      "72": {
+        "sdk_class": "com.jd.ad.sdk.bl.initsdk.JADYunSdk",
+        "adapter_class": "com.anythink.network.jingdong.JADATInitManager"
+      },
+      "74": {
+        "sdk_class": "com.qumeng.advlib.api.AiClkAdManager",
+        "adapter_class": "com.anythink.network.qumeng.QMATInitManager"
+      },
+      "79": {
+        "sdk_class": "com.vivo.mobilead.manager.VivoAdManager",
+        "adapter_class": "com.anythink.network.vivo.VivoATInitManager"
+      }
+    },
+    "nonchina": {
+      "1": {
+        "sdk_class": "com.facebook.ads.AudienceNetworkAds",
+        "adapter_class": "com.anythink.network.facebook.FacebookATInitManager"
+      },
+      "2": {
+        "sdk_class": "com.google.android.gms.ads.MobileAds",
+        "adapter_class": "com.anythink.network.admob.AdMobATInitManager"
+      },
+      "3": {
+        "sdk_class": "com.inmobi.sdk.InMobiSdk",
+        "adapter_class": "com.anythink.network.inmobi.InmobiATInitManager"
+      },
+      "5": {
+        "sdk_class": "com.applovin.sdk.AppLovinSdk",
+        "adapter_class": "com.anythink.network.applovin.ApplovinATInitManager"
+      },
+      "6": {
+        "sdk_class": "com.mbridge.msdk.MBridgeSDK",
+        "adapter_class": "com.anythink.network.mintegral.MintegralATInitManager"
+      },
+      "9": {
+        "sdk_class": "com.chartboost.sdk.Chartboost",
+        "adapter_class": "com.anythink.network.chartboost.ChartboostATInitManager"
+      },
+      "11": {
+        "sdk_class": "com.ironsource.mediationsdk.IronSource",
+        "adapter_class": "com.anythink.network.ironsource.IronsourceATInitManager"
+      },
+      "12": {
+        "sdk_class": "com.unity3d.ads.UnityAds",
+        "adapter_class": "com.anythink.network.unityads.UnityAdsATInitManager"
+      },
+      "13": {
+        "sdk_class": "com.vungle.warren.Vungle",
+        "adapter_class": "com.anythink.network.vungle.VungleATInitManager"
+      },
+      "14": {
+        "sdk_class": "com.adcolony.sdk.AdColony",
+        "adapter_class": "com.anythink.network.adcolony.AdColonyATInitManager"
+      },
+      "21": {
+        "sdk_class": "com.appnext.base.Appnext",
+        "adapter_class": "com.anythink.network.appnext.AppnextATInitManager"
+      },
+      "23": {
+        "sdk_class": "net.nend.android.NendAdView",
+        "adapter_class": "com.anythink.network.nend.NendATInitManager"
+      },
+      "24": {
+        "sdk_class": "jp.maio.sdk.android.MaioAds",
+        "adapter_class": "com.anythink.network.maio.MaioATInitManager"
+      },
+      "25": {
+        "sdk_class": "com.startapp.sdk.adsbase.StartAppSDK",
+        "adapter_class": "com.anythink.network.startapp.StartAppATInitManager"
+      },
+      "32": {
+        "sdk_class": "com.my.target.common.MyTargetActivity",
+        "adapter_class": "com.anythink.network.mytarget.MyTargetATInitManager"
+      },
+      "34": {
+        "sdk_class": "com.yandex.mobile.ads.common.MobileAds",
+        "adapter_class": "com.anythink.network.yandex.YandexATInitManager"
+      },
+      "36": {
+        "sdk_class": "com.ogury.sdk.Ogury",
+        "adapter_class": "com.anythink.network.ogury.OguryATInitManager"
+      },
+      "37": {
+        "sdk_class": "com.fyber.inneractive.sdk.external.InneractiveAdManager",
+        "adapter_class": "com.anythink.network.fyber.FyberATInitManager"
+      },
+      "39": {
+        "sdk_class": "com.huawei.hms.ads.HwAds",
+        "adapter_class": "com.anythink.network.huawei.HuaweiATInitManager"
+      },
+      "45": {
+        "sdk_class": "com.kidoz.sdk.api.KidozSDK",
+        "adapter_class": "com.anythink.network.kidoz.KidozATInitManager"
+      },
+      "50": {
+        "sdk_class": "com.bytedance.sdk.openadsdk.api.init.PAGSdk",
+        "adapter_class": "com.anythink.network.pangle.PangleATInitManager"
+      },
+      "58": {
+        "sdk_class": "net.pubnative.lite.sdk.HyBid",
+        "adapter_class": "com.anythink.network.pubnative.PubNativeATInitManager"
+      },
+      "59": {
+        "sdk_class": "sg.bigo.ads.BigoAdSdk",
+        "adapter_class": "com.anythink.network.bigo.BigoATInitManager"
+      },
+      "66": {
+        "sdk_class": "com.anythink.core.api.ATSDK",
+        "adapter_class": "com.anythink.network.adx.AdxATInitManager"
+      },
+      "75": {
+        "sdk_class": "com.amazon.device.ads.AdRegistration",
+        "adapter_class": "com.anythink.network.amazon.AmazonATInitManager"
+      },
+      "77": {
+        "sdk_class": "com.kwai.network.sdk.KwaiAdSDK",
+        "adapter_class": "com.anythink.network.kwai.KwaiATInitManager"
+      }
+    }
+  },
+  "network_sdk_class_check_new": {
+    "13": {
+      "sdk_class_array": [
+        "com.vungle.ads.VungleAds"
+      ]
+    },
+    "6": {
+      "adapter_class_array": [
+        "com.anythink.network.gtm.GTMATInitManager"
+      ]
+    }
+  },
+  "debug_mode_disable_network_firmid": [
+    21,
+    36,
+    45,
+    49,
+    51,
+    72,
+    74,
+    75,
+    79
+  ]
+}

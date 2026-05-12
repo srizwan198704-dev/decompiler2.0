@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>图标/32/TV版@1x</title>
+    <g id="图标/32/TV版" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组-2" transform="translate(7, 5)">
+            <rect id="矩形" stroke="#364047" stroke-width="2" x="0" y="5" width="18" height="15" rx="1"></rect>
+            <path d="M7.99,9.06 L2.7,9.06 L2.7,10.8 L4.35,10.8 L4.35,16 L6.33,16 L6.33,10.8 L7.99,10.8 L7.99,9.06 Z M10.71,16 L13.18,16 L15.67,9.06 L13.57,9.06 L12.03,13.88 L11.97,13.88 L10.51,9.06 L8.29,9.06 L10.71,16 Z" id="形状结合" fill="#364047" fill-rule="nonzero"></path>
+            <polyline id="路径-12" stroke="#364047" stroke-width="2" stroke-linejoin="round" points="4.42486097 9.08364293e-14 9 4.54545455 13.575139 9.08364293e-14"></polyline>
+        </g>
+    </g>
+</svg>

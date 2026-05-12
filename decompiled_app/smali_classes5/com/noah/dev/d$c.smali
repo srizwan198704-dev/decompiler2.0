@@ -1,0 +1,26 @@
+.class public interface abstract Lcom/noah/dev/d$c;
+.super Ljava/lang/Object;
+.source "ProGuard"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/noah/dev/d;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "c"
+.end annotation
+
+
+# virtual methods
+.method public abstract a(Lcom/noah/oss/model/d;)V
+    .param p1    # Lcom/noah/oss/model/d;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+.end method
+
+.method public abstract a(Ljava/lang/Exception;)V
+.end method

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/whole" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ViewStub android:id="@id/music_main_stub" android:layout="@layout/music_main" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ViewStub android:id="@id/splash_main" android:layout="@layout/splash_main" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/anythink_debug_rl_root" android:paddingTop="@dimen/anythink_debug_dp_12" android:paddingBottom="@dimen/anythink_debug_dp_12" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/anythink_debug_dp_18" android:layout_marginRight="@dimen/anythink_debug_dp_12" android:layout_toLeftOf="@id/anythink_debug_tv_third_column_middle" android:layout_toRightOf="@id/anythink_debug_tv_left_middle" android:layout_centerVertical="true">
+        <TextView android:ellipsize="marquee" android:id="@id/anythink_debug_tv_second_column_top" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/anythink_debug_tv_item_content" />
+        <TextView android:ellipsize="marquee" android:id="@id/anythink_debug_tv_second_column_middle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/anythink_debug_tv_item_content" />
+        <TextView android:ellipsize="marquee" android:id="@id/anythink_debug_tv_second_column_bottom" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/anythink_debug_tv_item_content" />
+    </LinearLayout>
+    <LinearLayout android:gravity="right" android:orientation="vertical" android:layout_width="@dimen/anythink_debug_dp_80" android:layout_height="wrap_content" android:layout_marginRight="@dimen/anythink_debug_dp_12" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+        <TextView android:ellipsize="marquee" android:id="@id/anythink_debug_tv_right_top" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/anythink_debug_tv_item_content" />
+        <TextView android:id="@id/anythink_debug_tv_right_bottom" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/anythink_debug_tv_item_content" />
+    </LinearLayout>
+    <TextView android:id="@id/anythink_debug_tv_third_column_middle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/anythink_debug_dp_95" android:layout_alignParentRight="true" android:layout_centerVertical="true" style="@style/anythink_debug_tv_item_content" />
+    <TextView android:id="@id/anythink_debug_tv_left_middle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/anythink_debug_dp_10" android:layout_toRightOf="@id/anythink_debug_fl_ad_source_switch" android:layout_centerVertical="true" style="@style/anythink_debug_tv_item_content" />
+    <com.anythink.debug.view.InterceptTouchEventFrameLayout android:id="@id/anythink_debug_fl_ad_source_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/anythink_debug_dp_10" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+        <CheckBox android:id="@id/anythink_debug_cb_ad_source_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/anythink_debug_selector_checkbox" />
+    </com.anythink.debug.view.InterceptTouchEventFrameLayout>
+</RelativeLayout>

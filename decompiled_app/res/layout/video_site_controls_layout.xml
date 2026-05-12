@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/video_ctl_audio_view_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.uc.browser.media.player.plugins.audiocontrol.AudioView android:layout_gravity="center" android:id="@id/video_ctl_audio_view" android:layout_width="@dimen/music_audio_view_mini_w" android:layout_height="@dimen/music_audio_view_mini_h" />
+    </FrameLayout>
+    <LinearLayout android:layout_gravity="right" android:orientation="horizontal" android:id="@id/video_ctl_top_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/site_controls_margin_top" android:layout_marginRight="@dimen/site_controls_margin_right">
+        <com.uc.browser.media.player.plugins.littlewin.LittleWindowView android:id="@id/video_ctl_little_win" android:visibility="gone" android:layout_width="@dimen/site_controls_icon_size" android:layout_height="@dimen/site_controls_icon_size" android:layout_marginRight="@dimen/site_controls_icon_margin" />
+        <com.uc.browser.media.player.plugins.watchlater.WatchLaterButton android:id="@id/video_ctl_watch_later" android:visibility="gone" android:layout_width="@dimen/site_controls_icon_size" android:layout_height="@dimen/site_controls_icon_size" android:layout_marginRight="@dimen/site_controls_icon_margin" />
+        <com.uc.browser.media.player.plugins.audioswitch.AudioSwitchView android:id="@id/video_ctl_audio_switch" android:layout_width="@dimen/site_controls_icon_size" android:layout_height="@dimen/site_controls_icon_size" />
+    </LinearLayout>
+</FrameLayout>

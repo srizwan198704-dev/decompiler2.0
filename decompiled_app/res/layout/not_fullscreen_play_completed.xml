@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="#ff444444" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0dip" android:textStyle="bold" android:id="@id/share_view_label" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Share with friends" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/share_itemview_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/bottom_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="34.0dip" android:layout_centerHorizontal="true">
+        <com.uc.browser.media.player.plugins.relatedvideo.completed.PlayNextRelatedView android:id="@id/relatedView" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="14.0dip" android:id="@id/video_next" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Next Video" />
+        </com.uc.browser.media.player.plugins.relatedvideo.completed.PlayNextRelatedView>
+        <View android:id="@id/divider" android:layout_width="0.5dip" android:layout_height="12.0dip" android:layout_marginLeft="18.0dip" android:layout_marginRight="18.0dip" />
+        <TextView android:textSize="14.0dip" android:id="@id/video_replay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Replay" />
+    </LinearLayout>
+</LinearLayout>

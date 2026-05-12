@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#cc000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="right" android:id="@id/close_view" android:background="@drawable/traffic_save_close_btn_bg" android:layout_width="32.0dip" android:layout_height="20.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true">
+        <ImageView android:id="@id/close_img" android:layout_width="13.399994dip" android:layout_height="13.399994dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <LinearLayout android:gravity="center" android:id="@id/size_saved_container" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="20.0dip" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/origin_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="9.299988dip" />
+            <ImageView android:id="@id/arrows" android:layout_width="8.899994dip" android:layout_height="8.899994dip" />
+            <TextView android:textSize="20.0dip" android:id="@id/transcoding_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="9.299988dip" />
+        </LinearLayout>
+        <TextView android:textSize="12.0dip" android:id="@id/label_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" />
+        <com.uc.browser.core.download.DownloadProgressBar android:id="@id/progress_bar" android:layout_width="160.0dip" android:layout_height="10.0dip" android:layout_marginTop="16.0dip" />
+    </LinearLayout>
+</RelativeLayout>

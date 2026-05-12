@@ -1,0 +1,73 @@
+.class public Lbp0/b$e;
+.super Lbp0/b;
+.source "ProGuard"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lbp0/b;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "e"
+.end annotation
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    .line 2
+    invoke-direct {p0, v0}, Lbp0/b;-><init>(I)V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(I)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Lbp0/b$e;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(II)Z
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    ushr-int/2addr p1, v0
+
+    .line 3
+    div-int/lit8 p2, p2, 0x3
+
+    .line 4
+    .line 5
+    add-int/2addr p2, p1
+
+    .line 6
+    and-int/lit8 p1, p2, 0x1
+
+    .line 7
+    .line 8
+    if-nez p1, :cond_0
+
+    .line 9
+    .line 10
+    return v0
+
+    .line 11
+    :cond_0
+    const/4 p1, 0x0
+
+    .line 12
+    return p1
+.end method

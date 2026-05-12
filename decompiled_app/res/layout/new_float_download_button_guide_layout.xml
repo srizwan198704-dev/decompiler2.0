@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/download_guide_container" android:visibility="gone" android:layout_width="@dimen/new_float_download_button_guide_left_width" android:layout_height="@dimen/new_float_download_button_guide_height"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/download_guide_icon" android:layout_width="@dimen/new_float_download_button_guide_icon_size" android:layout_height="@dimen/new_float_download_button_guide_icon_size" />
+    <TextView android:textSize="12.0dip" android:ellipsize="end" android:gravity="center|left" android:id="@id/download_guide_txt" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/new_float_download_button_guide_txt_margin" android:layout_marginRight="@dimen/new_float_download_button_guide_txt_margin" android:maxLines="2" />
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center" android:layout_gravity="center" android:id="@id/noah_component_102" android:background="@drawable/noah_component_102_bg" android:layout_width="71.0dip" android:layout_height="95.0dip" android:layout_marginBottom="3.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="bottom|center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="3.0dip">
+        <ProgressBar android:layout_gravity="center" android:id="@id/noah_component_102_progressbar" android:layout_width="fill_parent" android:layout_height="8.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:max="100" android:progress="100" android:progressDrawable="@drawable/noah_component_102_progressbar" style="?android:progressBarStyleHorizontal" />
+        <TextView android:textSize="9.0dip" android:textColor="#ff792907" android:gravity="center" android:id="@id/noah_component_102_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="滑动浏览" />
+        <TextView android:textSize="9.0dip" android:typeface="monospace" android:textStyle="bold" android:textColor="#fffa6425" android:gravity="center" android:id="@id/noah_component_102_text_reward" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="得奖励" android:drawableRight="@drawable/noah_component_102_arrow" android:drawablePadding="3.0dip" />
+    </LinearLayout>
+</FrameLayout>

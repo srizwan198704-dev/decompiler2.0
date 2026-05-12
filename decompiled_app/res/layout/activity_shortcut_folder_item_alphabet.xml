@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/shortcut_folder_item_selector" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="40.0dip" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/tv_shortcut_folder_item_text" android:layout_width="@dimen/shortcut_folder_activity_gridview_item_image_size" android:layout_height="@dimen/shortcut_folder_activity_gridview_item_image_size" android:layout_marginTop="@dimen/shortcut_folder_activity_gridview_item_image_margin_top" android:layout_marginBottom="@dimen/shortcut_folder_activity_gridview_item_image_margin_bottom" />
+    <TextView android:textSize="@dimen/shortcut_folder_activity_gridview_item_text_size" android:textColor="@color/shortcut_folder_activity_text_color" android:ellipsize="end" android:gravity="center_horizontal" android:id="@id/tv_shortcut_folder_item_title" android:layout_width="fill_parent" android:layout_height="@dimen/shortcut_folder_activity_gridview_item_text_height" android:maxLines="2" />
+</LinearLayout>

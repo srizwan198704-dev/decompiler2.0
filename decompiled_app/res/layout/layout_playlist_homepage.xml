@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ripple="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:id="@id/hp_playlist_item_root" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.yolo.music.view.RippleView android:id="@id/hp_playlist_middle_ripple" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" ripple:rv_canLongClick="true" ripple:rv_place="top">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.5999756dip" android:layout_marginBottom="6.5999756dip">
+                    <FrameLayout android:id="@id/hp_playlist_item_image_container" android:layout_width="@dimen/main_playlist_width" android:layout_height="@dimen/main_playlist_width" android:layout_marginLeft="@dimen/main_playlist_margin_left" android:layout_marginRight="8.0dip">
+                        <ImageView android:id="@id/hp_playlist_item_image" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+                        <ImageView android:id="@id/hp_playlist_item_image_mask" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+                    </FrameLayout>
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <RelativeLayout android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/new_mine_block_title_text" android:textColor="@color/new_mine_block_title_text_color" android:id="@id/hp_playlist_item_line1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Fasdasda" android:singleLine="true" />
+                        <TextView android:textSize="@dimen/new_mine_block_num_text" android:textColor="@color/new_mine_block_num_text_color" android:id="@id/hp_playlist_item_line2" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="18 songs" android:singleLine="true" android:layout_below="@id/hp_playlist_item_line1" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.yolo.music.view.RippleView>
+        <com.yolo.music.view.RippleView android:id="@id/hp_playlist_arrow_ripple" android:layout_width="wrap_content" android:layout_height="fill_parent" ripple:rv_type="circle">
+            <com.yolo.framework.widget.GradientImageView android:id="@id/hp_playlist_item_arrow" android:paddingLeft="@dimen/main_playlist_margin_left" android:paddingRight="@dimen/main_playlist_margin_left" android:layout_width="46.0dip" android:layout_height="fill_parent" android:src="@drawable/playlist_more" android:scaleType="centerInside" />
+        </com.yolo.music.view.RippleView>
+    </LinearLayout>
+    <View android:id="@id/hp_playlist_divider" android:background="@color/homepage_group_divider" android:layout_width="fill_parent" android:layout_height="@dimen/divider_height" android:layout_marginLeft="@dimen/main_playlist_divide_margin_left" />
+    <ViewStub android:id="@id/smart_drawer_viewstub" android:layout_width="fill_parent" android:layout_height="@dimen/local_item_drawer_height" />
+</LinearLayout>

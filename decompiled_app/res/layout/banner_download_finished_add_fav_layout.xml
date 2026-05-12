@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/banner_padding_horiontal" android:layout_marginTop="@dimen/download_complete_banner_add_fav_mar_top" android:layout_marginRight="@dimen/banner_padding_horiontal"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.uc.framework.ui.widget.CheckBox android:id="@id/heart" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <TextView android:textSize="@dimen/download_finish_task_dialog_add_fav_text_size" android:id="@id/add_fav_description" android:paddingLeft="@dimen/download_new_task_dialog_add_fav_checkbox_right_space" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ImageView android:id="@id/add_to_fav_descipt_icon" android:paddingLeft="@dimen/download_new_task_dialog_add_fav_text_right_space" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</LinearLayout>

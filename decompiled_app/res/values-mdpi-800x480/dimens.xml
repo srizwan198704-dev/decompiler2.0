@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="inter_foldingbar_item_corner_icon_height">33.0dip</dimen>
+    <dimen name="inter_foldingbar_item_corner_icon_width">33.0dip</dimen>
+</resources>

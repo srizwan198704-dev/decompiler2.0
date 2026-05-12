@@ -1,0 +1,85 @@
+.class public Lcom/noah/sdk/dg/adapter/e$a;
+.super Ljava/lang/Object;
+.source "ProGuard"
+
+# interfaces
+.implements Landroid/view/View$OnTouchListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/noah/sdk/dg/adapter/e;->onBindViewHolder(ILjava/lang/Object;Lcom/noah/sdk/dg/adapter/e$c;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field public final synthetic a:Lcom/noah/sdk/dg/adapter/e;
+
+
+# direct methods
+.method public constructor <init>(Lcom/noah/sdk/dg/adapter/e;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lcom/noah/sdk/dg/adapter/e$a;->a:Lcom/noah/sdk/dg/adapter/e;
+
+    .line 2
+    .line 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 0
+
+    .line 1
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p2
+
+    .line 5
+    if-nez p2, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p2
+
+    .line 11
+    invoke-virtual {p1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p1
+
+    .line 15
+    invoke-static {p2, p1}, Lcom/noah/sdk/dg/util/KeyboardUtil;->hideKeyboard(Landroid/content/Context;Landroid/os/IBinder;)V
+
+    .line 16
+    .line 17
+    .line 18
+    :cond_0
+    const/4 p1, 0x0
+
+    .line 19
+    return p1
+.end method

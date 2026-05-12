@@ -1,0 +1,36 @@
+.class public final Lcom/kwai/network/sdk/impl/R;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/kwai/network/sdk/impl/R$anim;,
+        Lcom/kwai/network/sdk/impl/R$attr;,
+        Lcom/kwai/network/sdk/impl/R$bool;,
+        Lcom/kwai/network/sdk/impl/R$color;,
+        Lcom/kwai/network/sdk/impl/R$dimen;,
+        Lcom/kwai/network/sdk/impl/R$drawable;,
+        Lcom/kwai/network/sdk/impl/R$id;,
+        Lcom/kwai/network/sdk/impl/R$integer;,
+        Lcom/kwai/network/sdk/impl/R$interpolator;,
+        Lcom/kwai/network/sdk/impl/R$layout;,
+        Lcom/kwai/network/sdk/impl/R$string;,
+        Lcom/kwai/network/sdk/impl/R$style;,
+        Lcom/kwai/network/sdk/impl/R$styleable;
+    }
+.end annotation
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method

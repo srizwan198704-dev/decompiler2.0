@@ -1,0 +1,312 @@
+{
+  "dns": {
+    "servers": [
+      {
+        "domains": [
+          "domain:alibaba-inc.com",
+          "domain:alibaba.net",
+          "domain:ucweb.com",
+          "domain:vnetfly.com",
+          "domain:uc.ucweb.com",
+          "domain:u.uc123.com",
+          "domain:u.ucfly.com",
+          "domain:px-intl.ucweb.com",
+          "domain:user-api.vnetfly.com",
+          "domain:user-api-vnet.yolicart.com",
+          "domain:vnet.ude.alibaba.net",
+          "domain:pre-vnet-user.alibaba-inc.com",
+          "domain:intl-clouddrive.daily.ude.alibaba.net",
+          "domain:pre-intldrive.ucweb.com",
+          "domain:m-intldrive.ucweb.com",
+          "domain:intl-tourist-service.ude.alibaba.net",
+          "domain:pre-intl-tourist-service.alibaba-inc.com",
+          "domain:intl-touritst.ucweb.com",
+          "domain:clouddrive.daily.ude.alibaba.net",
+          "domain:clouddrive-daily.uc.alibaba-inc.com",
+          "domain:coralnew.uc.alibaba-inc.com",
+          "domain:coral2.ucweb.com",
+          "domain:adtrack-intl.ucweb.com",
+          "domain:unet-intl.uc.alibaba-inc.com",
+          "domain:broccoli-sgp.ucweb.com",
+          "domain:img.ucweb.com",
+          "domain:pds-sg363-sg-1689313224.oss-ap-southeast-1.aliyuncs.com",
+          "domain:play-ap.pds.yolicart.com",
+          "domain:play-me.pds.yolicart.com",
+          "domain:yolicart.com",
+          "domain:dl-me.pds.yolicart.com",
+          "domain:dl-ap.pds.yolicart.com",
+          "domain:play-ap.drive.yolicart.com",
+          "domain:g.alicdn.com",
+          "domain:broccoli-static.ucweb.com",
+          "domain:user-center-pre.ucweb.com",
+          "domain:user-center.ucweb.com",
+          "domain:user-api.ucweb.com",
+          "domain:laucenter.ucweb.com",
+          "domain:access-api.ucweb.com",
+          "domain:access-pre.ucweb.com",
+          "domain:apiuccenter.ucweb.com",
+          "domain:thumb-ap.pds.yolicart.com",
+          "domain:gjapplog.ucweb.com",
+          "domain:uc-pay-gateway-i18n.uc.alibaba-inc.com",
+          "domain:acs.maribacaberita.com",
+          "domain:jmacs.maribacaberita.com",
+          "domain:bts-la.ucweb.com",
+          "domain:attr.union.ucweb.com",
+          "domain:holmeshelp.ucweb.com",
+          "domain:vs11.bj2.u3.ucweb.com",
+          "domain:openwifi.ucweb.com",
+          "domain:sgp-unpm-upaas.ucweb.com",
+          "domain:intlsucus.ucweb.com",
+          "domain:insight.ucweb.com",
+          "domain:sdkupgrade.insight.ucweb.com",
+          "domain:adn.insight.ucweb.com",
+          "domain:musa.ucweb.com",
+          "domain:accounts.google.com",
+          "domain:cs-center.uc.cn",
+          "domain:cs-center.ucbrowser.app",
+          "domain:ucscores.com"
+        ],
+        "address": "https://8.8.8.8/dns-query",
+        "queryStrategy": "UseIPv4",
+        "skipFallback": true
+      },
+      {
+        "address": "8.8.8.8",
+        "queryStrategy": "UseIPv4",
+        "skipFallback": false
+      }
+    ],
+    "tag": "dns-in",
+    "queryStrategy": "UseIPv4"
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true,
+        "userLevel": 8
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "enabled": true,
+        "routeOnly": false
+      },
+      "tag": "socks-in"
+    }
+  ],
+  "log": {
+    "loglevel": "debug"
+  },
+  "outbounds": [
+    {
+      "mux": {
+        "concurrency": -1,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "shadowsocks",
+      "settings": {
+        "servers": [
+          {
+            "address": "47.238.7.167",
+            "port": 20674,
+            "method": "chacha20-ietf-poly1305",
+            "password": "VDJBdnlVZXZzR29oUGdwK0Q9a1JbIyNYP2podVRuKCM=",
+            "level": 8,
+            "ota": false
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": ""
+      },
+      "tag": "proxy"
+    },
+    {
+      "mux": {
+        "concurrency": 8,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP",
+        "userLevel": 8
+      },
+      "tag": "direct"
+    },
+    {
+      "mux": {
+        "concurrency": 8,
+        "enabled": false,
+        "xudpConcurrency": 8,
+        "xudpProxyUDP443": ""
+      },
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        },
+        "userLevel": 8
+      },
+      "tag": "block"
+    },
+    {
+      "protocol": "dns",
+      "tag": "识别DNS请求",
+      "settings": {
+        "userLevel": 8
+      }
+    }
+  ],
+  "policy": {
+    "levels": {
+      "8": {
+        "connIdle": 300,
+        "downlinkOnly": 1,
+        "handshake": 5,
+        "uplinkOnly": 1
+      }
+    },
+    "system": {
+      "statsOutboundUplink": true,
+      "statsOutboundDownlink": true
+    }
+  },
+  "remarks": "",
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "inboundTag": [
+          "dns-in"
+        ],
+        "ip": [
+          "8.8.8.8"
+        ],
+        "port": "443",
+        "network": "tcp",
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "dns-in"
+        ],
+        "ip": [
+          "8.8.8.8"
+        ],
+        "port": "53",
+        "network": "udp",
+        "outboundTag": "proxy"
+      },
+      {
+        "type": "field",
+        "ip": [
+          "8.8.8.8"
+        ],
+        "port": "53",
+        "network": "udp",
+        "outboundTag": "识别DNS请求"
+      },
+      {
+        "domain": [
+          "domain:googleapis.cn",
+          "domain:gstatic.com"
+        ],
+        "outboundTag": "proxy",
+        "type": "field"
+      },
+      {
+        "network": "udp",
+        "outboundTag": "block",
+        "port": "443",
+        "type": "field"
+      },
+      {
+        "domain": [
+          "domain:alibaba-inc.com",
+          "domain:alibaba.net",
+          "domain:ucweb.com",
+          "domain:vnetfly.com",
+          "domain:uc.ucweb.com",
+          "domain:u.uc123.com",
+          "domain:u.ucfly.com",
+          "domain:px-intl.ucweb.com",
+          "domain:user-api.vnetfly.com",
+          "domain:user-api-vnet.yolicart.com",
+          "domain:vnet.ude.alibaba.net",
+          "domain:pre-vnet-user.alibaba-inc.com",
+          "domain:intl-clouddrive.daily.ude.alibaba.net",
+          "domain:pre-intldrive.ucweb.com",
+          "domain:m-intldrive.ucweb.com",
+          "domain:intl-tourist-service.ude.alibaba.net",
+          "domain:pre-intl-tourist-service.alibaba-inc.com",
+          "domain:intl-touritst.ucweb.com",
+          "domain:clouddrive.daily.ude.alibaba.net",
+          "domain:clouddrive-daily.uc.alibaba-inc.com",
+          "domain:coralnew.uc.alibaba-inc.com",
+          "domain:coral2.ucweb.com",
+          "domain:adtrack-intl.ucweb.com",
+          "domain:unet-intl.uc.alibaba-inc.com",
+          "domain:broccoli-sgp.ucweb.com",
+          "domain:img.ucweb.com",
+          "domain:pds-sg363-sg-1689313224.oss-ap-southeast-1.aliyuncs.com",
+          "domain:play-ap.pds.yolicart.com",
+          "domain:play-me.pds.yolicart.com",
+          "domain:dl-me.pds.yolicart.com",
+          "domain:dl-ap.pds.yolicart.com",
+          "domain:play-ap.drive.yolicart.com",
+          "domain:yolicart.com",
+          "domain:g.alicdn.com",
+          "domain:broccoli-static.ucweb.com",
+          "domain:user-center-pre.ucweb.com",
+          "domain:user-center.ucweb.com",
+          "domain:user-api.ucweb.com",
+          "domain:laucenter.ucweb.com",
+          "domain:access-api.ucweb.com",
+          "domain:access-pre.ucweb.com",
+          "domain:apiuccenter.ucweb.com",
+          "domain:thumb-ap.pds.yolicart.com",
+          "domain:gjapplog.ucweb.com",
+          "domain:uc-pay-gateway-i18n.uc.alibaba-inc.com",
+          "domain:acs.maribacaberita.com",
+          "domain:jmacs.maribacaberita.com",
+          "domain:bts-la.ucweb.com",
+          "domain:attr.union.ucweb.com",
+          "domain:holmeshelp.ucweb.com",
+          "domain:vs11.bj2.u3.ucweb.com",
+          "domain:openwifi.ucweb.com",
+          "domain:sgp-unpm-upaas.ucweb.com",
+          "domain:intlsucus.ucweb.com",
+          "domain:insight.ucweb.com",
+          "domain:sdkupgrade.insight.ucweb.com",
+          "domain:adn.insight.ucweb.com",
+          "domain:musa.ucweb.com",
+          "domain:accounts.google.com",
+          "domain:cs-center.uc.cn",
+          "domain:cs-center.ucbrowser.app",
+          "domain:ucscores.com"
+        ],
+        "outboundTag": "direct",
+        "type": "field"
+      },
+      {
+        "outboundTag": "proxy",
+        "port": "0-65535",
+        "type": "field"
+      }
+    ]
+  },
+  "stats": {}
+}

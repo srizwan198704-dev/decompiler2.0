@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/anythink_debug_ll_root" android:background="@color/anythink_debug_E0E0E0" android:paddingTop="@dimen/anythink_debug_dp_12" android:paddingBottom="@dimen/anythink_debug_dp_12" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="right" android:orientation="vertical" android:id="@id/anythink_debug_ll_item_fold_title_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:layout_alignParentRight="true">
+        <TextView android:textSize="@dimen/anythink_debug_sp_12" android:textColor="@android:color/black" android:id="@id/anythink_debug_tv_item_fold_title_right_top" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="@dimen/anythink_debug_sp_12" android:textColor="@android:color/black" android:id="@id/anythink_debug_tv_item_fold_title_right_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView android:textSize="@dimen/anythink_debug_sp_16" android:textStyle="bold" android:textColor="@android:color/black" android:id="@id/anythink_debug_tv_item_fold_title_left" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/anythink_debug_dp_12" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+</RelativeLayout>

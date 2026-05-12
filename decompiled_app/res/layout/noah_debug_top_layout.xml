@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/layoutIsNeedEncrypt" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:background="@drawable/bg_card" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_small" android:elevation="@dimen/card_elevation">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_10dp" android:layout_weight="1.0">
+            <TextView android:textSize="@dimen/text_size_normal" android:textColor="@color/text_primary" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="总开关" android:layout_weight="1.0" />
+            <CheckBox android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:textSize="12.0sp" android:textColor="@android:color/black" android:layout_gravity="center|left" android:id="@id/noah_cbDebugSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_10dp" android:layout_weight="1.0">
+            <TextView android:textSize="@dimen/text_size_normal" android:textColor="@color/text_primary" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="加密开关" android:layout_weight="1.0" />
+            <CheckBox android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:textSize="12.0sp" android:textColor="@android:color/black" android:layout_gravity="center|left" android:id="@id/noah_cbIsNeedEncrypt" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center" android:id="@id/noah_hc_rewardvideo_speed_container" android:background="@drawable/noah_reward_black_shape_bg" android:focusable="true" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_gravity="center" android:id="@id/noah_hc_rewardvideo_speed_click_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingHorizontal="40.0dip" android:paddingVertical="30.0dip">
+        <FrameLayout android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:id="@id/noah_hc_rewardvideo_speed_play_1" android:layout_width="36.0dip" android:layout_height="36.0dip" android:src="@drawable/noah_hc_rewardvideo_speed_play" android:alpha="0.0" />
+            <ImageView android:id="@id/noah_hc_rewardvideo_speed_play_2" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginLeft="36.0dip" android:src="@drawable/noah_hc_rewardvideo_speed_play" android:alpha="0.0" />
+            <ImageView android:id="@id/noah_hc_rewardvideo_speed_play_3" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginLeft="72.0dip" android:src="@drawable/noah_hc_rewardvideo_speed_play" android:alpha="0.0" />
+        </FrameLayout>
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/noah_hc_rewardvideo_speed_circle" android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_marginTop="43.0dip" android:src="@drawable/noah_hc_rewardvideo_speed_circle" />
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/noah_hc_rewardvideo_speed_hand" android:layout_width="90.0dip" android:layout_height="90.0dip" android:layout_marginLeft="28.0dip" android:layout_marginTop="52.0dip" android:src="@drawable/noah_hc_rewardvideo_speed_hand" />
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/noah_hc_rewardvideo_speed_tips" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="132.0dip" android:src="@drawable/noah_hc_rewardvideo_speed_tips" />
+    </FrameLayout>
+</FrameLayout>

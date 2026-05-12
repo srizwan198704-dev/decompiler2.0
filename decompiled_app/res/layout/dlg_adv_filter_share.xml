@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/adv_filter_report_content" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/adv_dlg_medal_im" android:layout_width="@dimen/dialog_adv_filter_share_icon_width" android:layout_height="@dimen/dialog_adv_filter_share_icon_height" android:scaleType="centerCrop" />
+        <TextView android:textSize="@dimen/dialog_adv_filter_title_textsize" android:gravity="center" android:id="@id/adv_filter_title_textview" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dialog_adv_filter_title_mar_top" android:singleLine="true" />
+        <TextView android:textSize="@dimen/dialog_adv_filter_des_textsize" android:gravity="center" android:id="@id/adv_filter_description_textview" android:paddingLeft="@dimen/dialog_adv_filter_des_padding_left" android:paddingRight="@dimen/dialog_adv_filter_des_padding_left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dialog_adv_filter_des_mar_top" />
+        <View android:layout_width="fill_parent" android:layout_height="@dimen/dialog_adv_filter_button_layout_height" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:paddingTop="@dimen/dialog_adv_filter_button_layout_pad_top" android:layout_width="fill_parent" android:layout_height="@dimen/dialog_adv_filter_button_layout_height">
+        <TextView android:textSize="@dimen/dialog_adv_filter_summary_textsize" android:gravity="center" android:id="@id/adv_filter_summary_textview" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+        <LinearLayout android:gravity="center_horizontal" android:paddingLeft="@dimen/dialog_adv_filter_des_padding_left" android:paddingRight="@dimen/dialog_adv_filter_des_padding_left" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dialog_adv_filter_button_layout_mar_top">
+            <TextView android:textSize="@dimen/dialog_adv_filter_button_textsize" android:gravity="center" android:id="@id/adv_filter_report_share_btn" android:layout_width="fill_parent" android:layout_height="@dimen/dialog_adv_filter_button_height" android:maxWidth="10.0dip" android:layout_weight="1.0" />
+            <View android:layout_width="@dimen/dialog_adv_filter_button_space" android:layout_height="wrap_content" />
+            <TextView android:textSize="@dimen/dialog_adv_filter_button_textsize" android:gravity="center" android:id="@id/adv_filter_report_ok_btn" android:layout_width="fill_parent" android:layout_height="@dimen/dialog_adv_filter_button_height" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

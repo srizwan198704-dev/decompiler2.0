@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="@dimen/player_seekbar_progress_padding" android:bottom="@dimen/player_seekbar_progress_padding">
+        <shape>
+            <solid android:color="@color/video_player_primary_color_blue_style" />
+            <corners android:radius="@dimen/player_seekbar_progress_radius" />
+            <size android:height="@dimen/player_seekbar_progress_height" />
+        </shape>
+    </item>
+</layer-list>

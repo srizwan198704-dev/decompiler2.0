@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:paddingTop="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingHorizontal="15.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.uc.ui.widget.RoundImageView android:id="@id/placeholder" android:layout_width="90.0dip" android:layout_height="58.0dip" android:scaleType="centerCrop" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <com.uc.ui.widget.RoundImageView android:id="@id/poster_iv" android:layout_width="90.0dip" android:layout_height="58.0dip" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <ImageView android:id="@id/play_icon" android:layout_width="18.0dip" android:layout_height="18.0dip" app:layout_constraintBottom_toBottomOf="@id/poster_iv" app:layout_constraintEnd_toEndOf="@id/poster_iv" app:layout_constraintStart_toStartOf="@id/poster_iv" app:layout_constraintTop_toTopOf="@id/poster_iv" />
+    <ImageView android:id="@id/poster_mask" android:layout_width="90.0dip" android:layout_height="58.0dip" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="20.0dip" app:layout_constraintEnd_toStartOf="@id/select_cb" app:layout_constraintStart_toEndOf="@id/poster_iv" app:layout_constraintTop_toTopOf="parent">
+        <TextView android:textSize="13.0dip" android:ellipsize="end" android:id="@id/file_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" app:layout_constraintEnd_toStartOf="@id/select_cb" app:layout_constraintStart_toEndOf="@id/poster_iv" app:layout_constraintTop_toTopOf="parent" />
+        <ImageView android:id="@id/edit_icon" android:visibility="invisible" android:layout_width="16.0dip" android:layout_height="16.0dip" />
+    </FrameLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/info_ll" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginBottom="2.0dip" app:layout_constraintBottom_toBottomOf="@id/poster_iv" app:layout_constraintStart_toEndOf="@id/poster_iv">
+        <TextView android:textSize="11.0dip" android:id="@id/resolution" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" />
+        <TextView android:textSize="11.0dip" android:id="@id/duration" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="11.0dip" android:id="@id/size" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" />
+    </LinearLayout>
+    <ImageView android:id="@id/select_cb" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginTop="13.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <com.uc.browser.download.dialog.view.NestedHorizontalRecyclerView android:id="@id/tag_list" android:paddingTop="10.0dip" android:paddingBottom="14.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@id/poster_iv" />
+    <View android:id="@id/line" android:layout_width="fill_parent" android:layout_height="0.5dip" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tag_list" />
+</androidx.constraintlayout.widget.ConstraintLayout>

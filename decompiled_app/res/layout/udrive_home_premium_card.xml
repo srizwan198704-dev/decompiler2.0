@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.uc.udrive.business.homepage.ui.card.member.VipCard android:id="@id/vip_card" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <com.uc.udrive.business.homepage.ui.card.member.NormalCard android:id="@id/normal_card" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</FrameLayout>

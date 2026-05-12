@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.secmtp.sdk.debug.view.FoldListView android:id="@id/secmtp_debug_fold_list" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <TextView android:textSize="@dimen/secmtp_debug_sp_16" android:textColor="@android:color/holo_red_light" android:id="@id/secmtp_debug_tv_advice" android:padding="@dimen/secmtp_debug_dp_10" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/secmtp_debug_test_operate" style="@style/secmtp_debug_tv_title_style" />
+    <TextView android:id="@id/secmtp_debug_tv_debug_mode_test" android:layout_marginLeft="@dimen/secmtp_debug_dp_10" android:layout_marginTop="@dimen/secmtp_debug_dp_10" android:layout_marginRight="@dimen/secmtp_debug_dp_10" android:text="@string/secmtp_debug_debugger_mode_test" style="@style/secmtp_debug_btn_style" />
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/noah_element_layout_2" android:background="@drawable/noah_hc_banner_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.noah.sdk.download.manager.view.roundimageview.RoundedImageView android:layout_gravity="center_vertical" android:id="@id/noah_reward_app_icon" android:layout_width="56.0dip" android:layout_height="56.0dip" />
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_toRightOf="@id/noah_reward_app_icon">
+        <TextView android:textSize="16.0dip" android:textColor="#ff555555" android:ellipsize="end" android:gravity="center|left" android:id="@id/noah_reward_app_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+        <TextView android:textSize="12.0dip" android:textColor="#ff999999" android:ellipsize="end" android:gravity="center|left" android:id="@id/noah_reward_title" android:paddingTop="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" />
+    </LinearLayout>
+</RelativeLayout>

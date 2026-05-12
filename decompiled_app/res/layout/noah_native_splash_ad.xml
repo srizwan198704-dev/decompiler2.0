@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/noah_native_splash_ad" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@id/noah_native_splash_intercept" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="center|right|top" android:orientation="horizontal" android:id="@id/noah_native_splash_skip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:layout_marginRight="14.0dip">
+        <TextView android:textSize="12.0dip" android:textColor="@android:color/white" android:id="@id/noah_native_splash_countdown" android:background="@drawable/tanx_splash_skip_bg" android:paddingLeft="6.0dip" android:paddingTop="2.5dip" android:paddingRight="6.0dip" android:paddingBottom="2.5dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+    </LinearLayout>
+    <FrameLayout android:layout_gravity="bottom" android:id="@id/noah_splash_ad_bottom_container" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="35.0dip" />
+</merge>

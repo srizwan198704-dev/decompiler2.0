@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:paddingTop="@dimen/anythink_debug_dp_10" android:paddingBottom="@dimen/anythink_debug_dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/anythink_debug_load_ad" android:paddingLeft="@dimen/anythink_debug_dp_10" android:paddingRight="@dimen/anythink_debug_dp_10" android:layout_width="0.0dip" android:layout_marginLeft="@dimen/anythink_debug_dp_15" android:text="@string/anythink_debug_load_ad" android:layout_weight="1.0" style="@style/anythink_debug_btn_style" />
+    <TextView android:id="@id/anythink_debug_is_ready" android:paddingLeft="@dimen/anythink_debug_dp_10" android:paddingRight="@dimen/anythink_debug_dp_10" android:layout_width="0.0dip" android:layout_marginLeft="@dimen/anythink_debug_dp_15" android:layout_marginRight="@dimen/anythink_debug_dp_15" android:text="@string/anythink_debug_is_ready" android:layout_weight="1.0" style="@style/anythink_debug_btn_style" />
+    <TextView android:id="@id/anythink_debug_show_ad" android:paddingLeft="@dimen/anythink_debug_dp_10" android:paddingRight="@dimen/anythink_debug_dp_10" android:layout_width="0.0dip" android:layout_marginRight="@dimen/anythink_debug_dp_15" android:text="@string/anythink_debug_show_ad" android:layout_weight="1.0" style="@style/anythink_debug_btn_style" />
+</LinearLayout>

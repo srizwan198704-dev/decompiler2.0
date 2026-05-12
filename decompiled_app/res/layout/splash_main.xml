@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yolo.music.view.splash.SplashView android:id="@id/splash_container" android:background="@drawable/splash_gradient_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/splash_center_container" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/splash_icon" android:layout_width="@dimen/splash_icon_size" android:layout_height="@dimen/splash_icon_size" android:src="@drawable/splash_logo" android:layout_above="@id/splash_title" android:layout_centerHorizontal="true" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/splash_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/splash_title_margin_top" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+            <TextView android:textSize="@dimen/splash_title_text_size" android:textStyle="bold" android:textColor="@color/yolo_yellow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:text="@string/splash_title_1" />
+            <TextView android:textSize="@dimen/splash_title_text_size" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/splash_title_2" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/splash_sub_title_margin_top" android:layout_below="@id/splash_title" android:layout_centerHorizontal="true">
+            <View android:layout_gravity="end|center" android:background="@color/splash_title_text_color" android:layout_width="@dimen/splash_title_divider_width" android:layout_height="@dimen/divider_height" android:layout_marginRight="5.0dip" />
+            <TextView android:textSize="@dimen/splash_sub_title_text_size" android:textColor="@color/splash_title_text_color" android:id="@id/splash_sub_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/splash_sub_title" />
+            <View android:layout_gravity="end|center" android:background="@color/splash_title_text_color" android:layout_width="@dimen/splash_title_divider_width" android:layout_height="@dimen/divider_height" android:layout_marginLeft="5.0dip" />
+        </LinearLayout>
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/splash_bottom_text_size" android:textColor="@color/splash_bottom_text_color" android:id="@id/splash_copyright" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/splash_copyright_margin_bottom" android:text="@string/splash_copyright" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="@dimen/splash_bottom_text_size" android:textColor="@color/splash_bottom_text_color" android:id="@id/splash_version" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@id/splash_copyright" android:layout_centerHorizontal="true" />
+</com.yolo.music.view.splash.SplashView>

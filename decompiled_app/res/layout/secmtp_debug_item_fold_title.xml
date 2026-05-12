@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/secmtp_debug_ll_item_fold_title" android:background="@color/secmtp_debug_F5F5F5" android:paddingTop="@dimen/secmtp_debug_dp_10" android:paddingBottom="@dimen/secmtp_debug_dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/secmtp_debug_sp_18" android:textStyle="bold" android:textColor="@color/secmtp_debug_1E2231" android:id="@id/secmtp_debug_tv_item_fold_title" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/secmtp_debug_dp_10" android:layout_weight="1.0" />
+    <ImageView android:id="@id/secmtp_debug_iv_arrow" android:layout_width="@dimen/secmtp_debug_dp_20" android:layout_height="@dimen/secmtp_debug_dp_20" android:layout_marginRight="@dimen/secmtp_debug_dp_5" android:src="@drawable/secmtp_debug_icon_arrow" />
+</LinearLayout>

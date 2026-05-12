@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/rb_clickablebtn" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioButton android:layout_gravity="center_vertical" android:id="@id/shalog_radiobutton" android:background="@drawable/checkbox_selector" android:clickable="false" android:layout_width="@dimen/shalog_checkbox_icon_width" android:layout_height="@dimen/shalog_checkbox_icon_height" android:layout_marginRight="@dimen/shalog_checkbox_icon_margin_left" android:button="@null" />
+    <TextView android:textSize="@dimen/shalog_desc_textsize" android:textColor="@color/shalog_desc_textcolor" android:layout_gravity="center_vertical" android:id="@id/cb_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="不再提示" />
+</LinearLayout>

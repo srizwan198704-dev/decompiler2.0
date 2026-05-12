@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yolo.framework.widget.SwipeBackFather android:id="@id/layout_swipe_back" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="#ffffffff" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include layout="@layout/status_placeholder" />
+        <include layout="@layout/local_secondary_navi_bar" />
+        <FrameLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.yolo.music.view.SecondWebView android:id="@id/webView1" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <include layout="@layout/empty_view" />
+        </FrameLayout>
+    </LinearLayout>
+</com.yolo.framework.widget.SwipeBackFather>

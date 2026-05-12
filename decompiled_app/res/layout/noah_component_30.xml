@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingLeft="22.0dip" android:paddingRight="22.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="2.0">
+        <TextView android:textSize="25.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center" android:id="@id/noah_multi_task_progress_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dip" />
+        <LinearLayout android:gravity="bottom|center" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/noah_component_30_task_finish" android:visibility="gone" android:layout_width="294.0dip" android:layout_height="96.0dip" android:src="@drawable/noah_component_30_task_finish" android:scaleType="fitXY" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/noah_multi_task_ad1_layout" android:background="@drawable/noah_component_30_bg" android:padding="6.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="12.0dip" android:layout_weight="1.0">
+        <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="#ff3d3d3d" android:gravity="center" android:id="@id/noah_multi_task_ad1_task_hint" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="6.0dip">
+            <FrameLayout android:id="@id/noah_multi_task_ad1_video_container" android:layout_width="fill_parent" android:layout_height="165.0dip" android:layout_marginTop="9.0dip">
+                <ImageView android:id="@id/noah_multi_task_ad1_video_mask" android:background="#33000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+                <com.noah.sdk.player.SdkVideoView android:id="@id/noah_multi_task_ad1_video_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <com.noah.sdk.player.HCNetImageView android:id="@id/noah_multi_task_ad1_cover" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <com.noah.sdk.render.element.NoahSoundSwitchButton android:layout_gravity="center|left|top" android:id="@id/noah_multi_task_ad1_sound_switch" android:visibility="gone" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_margin="8.0dip" />
+            </FrameLayout>
+            <RelativeLayout android:background="@drawable/noah_component_30_info_bg" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <com.noah.sdk.download.manager.view.roundimageview.RoundedImageView android:id="@id/noah_multi_task_ad1_icon" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_centerVertical="true" />
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="70.0dip" android:layout_toRightOf="@id/noah_multi_task_ad1_icon" android:layout_centerVertical="true">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:ellipsize="end" android:id="@id/noah_multi_task_ad1_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:fontFamily="sans-serif-medium" />
+                </LinearLayout>
+                <TextView android:textSize="12.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/noah_multi_task_ad1_cta" android:background="@drawable/noah_component_30_cta_bg" android:layout_width="76.0dip" android:layout_height="30.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/noah_multi_task_ad2_layout" android:background="@drawable/noah_component_30_bg" android:padding="6.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="#ff3d3d3d" android:gravity="center" android:id="@id/noah_multi_task_ad2_task_hint" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="4.0dip" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" android:layout_marginBottom="6.0dip">
+            <FrameLayout android:id="@id/noah_multi_task_ad2_video_container" android:layout_width="fill_parent" android:layout_height="165.0dip" android:layout_marginTop="9.0dip">
+                <ImageView android:id="@id/noah_multi_task_ad2_video_mask" android:background="#33000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+                <com.noah.sdk.player.SdkVideoView android:id="@id/noah_multi_task_ad2_video_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <com.noah.sdk.player.HCNetImageView android:id="@id/noah_multi_task_ad2_cover" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <com.noah.sdk.render.element.NoahSoundSwitchButton android:layout_gravity="center|left|top" android:id="@id/noah_multi_task_ad2_sound_switch" android:visibility="gone" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_margin="8.0dip" />
+            </FrameLayout>
+            <RelativeLayout android:background="@drawable/noah_component_30_info_bg" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <com.noah.sdk.download.manager.view.roundimageview.RoundedImageView android:id="@id/noah_multi_task_ad2_icon" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_centerVertical="true" />
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="70.0dip" android:layout_toRightOf="@id/noah_multi_task_ad2_icon" android:layout_centerVertical="true">
+                    <TextView android:textSize="16.0dip" android:textColor="#ff333333" android:ellipsize="end" android:id="@id/noah_multi_task_ad2_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:fontFamily="sans-serif-medium" />
+                </LinearLayout>
+                <TextView android:textSize="12.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/noah_multi_task_ad2_cta" android:background="@drawable/noah_component_30_cta_bg" android:layout_width="76.0dip" android:layout_height="30.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="2.0" />
+</LinearLayout>

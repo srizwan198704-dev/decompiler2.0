@@ -1,0 +1,180 @@
+.class Landroidx/constraintlayout/motion/widget/SplineSet$ProgressSet;
+.super Landroidx/constraintlayout/motion/widget/SplineSet;
+.source "ProGuard"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/constraintlayout/motion/widget/SplineSet;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "ProgressSet"
+.end annotation
+
+
+# instance fields
+.field mNoMethod:Z
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    .line 1
+    invoke-direct {p0}, Landroidx/constraintlayout/motion/widget/SplineSet;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    const/4 v0, 0x0
+
+    .line 5
+    iput-boolean v0, p0, Landroidx/constraintlayout/motion/widget/SplineSet$ProgressSet;->mNoMethod:Z
+
+    .line 6
+    .line 7
+    return-void
+.end method
+
+
+# virtual methods
+.method public setProperty(Landroid/view/View;F)V
+    .locals 3
+
+    .line 1
+    instance-of v0, p1, Landroidx/constraintlayout/motion/widget/MotionLayout;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    check-cast p1, Landroidx/constraintlayout/motion/widget/MotionLayout;
+
+    .line 6
+    .line 7
+    invoke-virtual {p0, p2}, Landroidx/constraintlayout/motion/widget/SplineSet;->get(F)F
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p2
+
+    .line 11
+    invoke-virtual {p1, p2}, Landroidx/constraintlayout/motion/widget/MotionLayout;->setProgress(F)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
+
+    .line 15
+    :cond_0
+    iget-boolean v0, p0, Landroidx/constraintlayout/motion/widget/SplineSet$ProgressSet;->mNoMethod:Z
+
+    .line 16
+    .line 17
+    if-eqz v0, :cond_1
+
+    .line 18
+    .line 19
+    goto :goto_1
+
+    .line 20
+    :cond_1
+    :try_start_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object v0
+
+    .line 24
+    const-string/jumbo v1, "setProgress"
+
+    .line 25
+    .line 26
+    .line 27
+    sget-object v2, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+
+    .line 28
+    .line 29
+    filled-new-array {v2}, [Ljava/lang/Class;
+
+    .line 30
+    .line 31
+    .line 32
+    move-result-object v2
+
+    .line 33
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    .line 34
+    .line 35
+    .line 36
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 37
+    goto :goto_0
+
+    .line 38
+    :catch_0
+    const/4 v0, 0x1
+
+    .line 39
+    iput-boolean v0, p0, Landroidx/constraintlayout/motion/widget/SplineSet$ProgressSet;->mNoMethod:Z
+
+    .line 40
+    .line 41
+    const/4 v0, 0x0
+
+    .line 42
+    :goto_0
+    if-eqz v0, :cond_2
+
+    .line 43
+    .line 44
+    :try_start_1
+    invoke-virtual {p0, p2}, Landroidx/constraintlayout/motion/widget/SplineSet;->get(F)F
+
+    .line 45
+    .line 46
+    .line 47
+    move-result p2
+
+    .line 48
+    invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    .line 49
+    .line 50
+    .line 51
+    move-result-object p2
+
+    .line 52
+    filled-new-array {p2}, [Ljava/lang/Object;
+
+    .line 53
+    .line 54
+    .line 55
+    move-result-object p2
+
+    .line 56
+    invoke-virtual {v0, p1, p2}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_1
+    .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 57
+    .line 58
+    .line 59
+    :catch_1
+    :cond_2
+    :goto_1
+    return-void
+.end method

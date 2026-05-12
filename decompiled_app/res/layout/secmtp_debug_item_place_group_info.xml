@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="@dimen/secmtp_debug_dp_12" android:paddingBottom="@dimen/secmtp_debug_dp_12" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="right" android:orientation="horizontal" android:id="@id/secmtp_debug_ll_item_spinner" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/secmtp_debug_dp_12" android:layout_alignParentRight="true">
+        <TextView android:ellipsize="marquee" android:id="@id/secmtp_debug_tv_item_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" style="@style/secmtp_debug_tv_item_content" />
+        <ImageView android:id="@id/secmtp_debug_iv_item_spinner" android:layout_width="@dimen/secmtp_debug_dp_16" android:layout_height="@dimen/secmtp_debug_dp_16" />
+    </LinearLayout>
+    <TextView android:ellipsize="marquee" android:id="@id/secmtp_debug_tv_item_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/secmtp_debug_dp_12" android:layout_marginRight="@dimen/secmtp_debug_dp_12" android:singleLine="true" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" style="@style/secmtp_debug_tv_item_content" />
+    <View android:id="@id/secmtp_debug_view_spinner_show_anchor" android:layout_width="@dimen/secmtp_debug_dp_165" android:layout_height="wrap_content" android:layout_alignTop="@id/secmtp_debug_ll_item_spinner" android:layout_alignBottom="@id/secmtp_debug_ll_item_spinner" android:layout_alignParentRight="true" />
+</RelativeLayout>

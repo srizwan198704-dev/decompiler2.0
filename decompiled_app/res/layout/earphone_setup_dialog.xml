@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ripple="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dip">
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/icon_check" android:layout_width="64.0dip" android:layout_height="64.0dip" android:src="@drawable/earphone_setup_ok" />
+        </FrameLayout>
+        <TextView android:textSize="18.0dip" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/text_line_1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/your_setup_is_complete" />
+        <TextView android:textSize="18.0dip" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/text_line_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/enjoy_the_music" />
+        <TextView android:textSize="13.0dip" android:textColor="#66ffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/text_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/change_the_type_via_the_setting_menu" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#ff444444" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="14.5dip" android:layout_marginRight="3.0dip" />
+        <TextView android:textSize="16.0dip" android:ellipsize="end" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.5dip" android:maxWidth="361.5dip" android:text="TextView" android:maxLines="1" />
+    </LinearLayout>
+    <com.uc.browser.media.player.plugins.relatedvideo.completed.PlayNextRelatedView android:gravity="center|left" android:id="@id/relatedView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <FrameLayout android:id="@id/video_icon" android:layout_width="160.0dip" android:layout_height="90.0dip" android:layout_alignParentLeft="true">
+            <ImageView android:id="@id/video_thumbnail" android:layout_width="160.0dip" android:layout_height="90.0dip" android:scaleType="fitXY" />
+            <ImageView android:layout_gravity="center" android:id="@id/video_play" android:layout_width="30.0dip" android:layout_height="30.0dip" />
+            <View android:layout_gravity="bottom" android:id="@id/loading_view" android:layout_width="fill_parent" android:layout_height="2.0dip" />
+        </FrameLayout>
+        <TextView android:textSize="14.0dip" android:ellipsize="end" android:gravity="center|left" android:id="@id/video_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="7.5dip" android:maxWidth="281.5dip" android:layout_toRightOf="@id/video_icon" android:layout_alignBottom="@id/video_icon" />
+        <TextView android:textSize="25.0dip" android:textStyle="bold" android:id="@id/video_next" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_toRightOf="@id/video_icon" android:layout_above="@id/video_title" />
+    </com.uc.browser.media.player.plugins.relatedvideo.completed.PlayNextRelatedView>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/bottom_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="56.5dip" android:layout_below="@id/relatedView" android:layout_centerHorizontal="true">
+        <TextView android:textSize="16.0dip" android:id="@id/video_replay" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Replay" />
+        <View android:id="@id/divider2" android:visibility="gone" android:layout_width="0.5dip" android:layout_height="12.0dip" android:layout_marginLeft="18.0dip" android:layout_marginRight="18.0dip" />
+        <TextView android:textSize="16.0dip" android:id="@id/video_share" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Share with" />
+    </LinearLayout>
+</RelativeLayout>

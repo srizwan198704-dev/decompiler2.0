@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yolo.music.view.player.PlayerView android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/player_view" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:yolo="http://schemas.android.com/apk/res-auto" xmlns:ripple="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/player_bg_album" android:background="@drawable/gradient_playerview_pink_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <LinearLayout android:orientation="vertical" android:background="#8f000000" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <com.yolo.framework.widget.SimpleViewPager android:id="@id/player_viewpager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <com.yolo.music.view.guide.CirclePageIndicator android:layout_gravity="bottom" android:id="@id/player_indicator" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/player_button_layout_margin_top" ripple:circleMargin="@dimen/player_indicator_circle_margin" ripple:fillColor="@color/white" ripple:pageColor="#33ffffff" ripple:radius="@dimen/player_indicator_circle_radius" ripple:strokeWidth="0.0dip" />
+        </FrameLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/player_bottom" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="12.0sp" android:textColor="#67ffffff" android:id="@id/player_now_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/player_time_margin_left" android:text="00:00" android:layout_alignParentLeft="true" />
+                <SeekBar android:id="@id/player_progress_bar" android:paddingLeft="@dimen/player_seekbar_padding_left" android:paddingRight="@dimen/player_seekbar_padding_left" android:layout_width="0.0dip" android:layout_height="@dimen/player_seekbar_height" android:progressDrawable="@drawable/seekbar" android:thumb="@drawable/thumb" android:layout_weight="1.0" />
+                <TextView android:textSize="12.0sp" android:textColor="#67ffffff" android:id="@id/player_whole_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/player_time_margin_left" android:text="05:00" android:layout_alignParentRight="true" />
+            </LinearLayout>
+            <RelativeLayout android:id="@id/player_button_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/player_button_layout_margin_top" android:layout_marginBottom="@dimen/player_button_layout_margin_bottom">
+                <com.yolo.music.view.RippleView android:id="@id/player_play_button" android:background="@drawable/btn_playback_play" android:layout_width="@dimen/player_play_button_width" android:layout_height="@dimen/player_play_button_width" android:scaleType="fitCenter" android:layout_centerHorizontal="true" android:layout_centerVertical="true" ripple:rv_sendClickBeforeEnd="true" ripple:rv_type="circle" />
+                <com.yolo.music.view.RippleView android:id="@id/player_next_button" android:background="@drawable/btn_playback_next" android:layout_width="@dimen/player_next_button_width" android:layout_height="@dimen/player_next_button_width" android:layout_marginLeft="@dimen/player_next_button_margin_left" android:scaleType="fitCenter" android:layout_toRightOf="@id/player_play_button" android:layout_centerVertical="true" ripple:rv_sendClickBeforeEnd="true" ripple:rv_type="circle" />
+                <com.yolo.music.view.RippleView android:id="@id/player_pre_button" android:background="@drawable/btn_playback_previous" android:layout_width="@dimen/player_next_button_width" android:layout_height="@dimen/player_next_button_width" android:layout_marginRight="@dimen/player_next_button_margin_left" android:scaleType="fitCenter" android:layout_toLeftOf="@id/player_play_button" android:layout_centerVertical="true" ripple:rv_sendClickBeforeEnd="true" ripple:rv_type="circle" />
+            </RelativeLayout>
+            <View android:background="#10ffffff" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/player_toolbar" android:layout_width="fill_parent" android:layout_height="@dimen/player_toolbar_height">
+                <com.yolo.framework.widget.MultistateButton android:id="@id/player_mode_switch_button" android:background="@drawable/playmode_loop" android:layout_weight="1.0" style="@style/playerBottomAction" />
+                <com.yolo.music.view.RippleImageButton android:id="@id/player_download_button" android:visibility="gone" android:src="@drawable/btn_play_download" android:layout_weight="1.0" style="@style/playerBottomAction" />
+                <com.yolo.music.view.RippleImageButton android:id="@id/player_favorite" android:background="#00ffffff" android:src="@drawable/btn_fav_add" android:layout_weight="1.0" style="@style/playerBottomAction" />
+                <com.yolo.music.view.RippleImageButton android:id="@id/player_list_button" android:background="@drawable/palyer_btn_pressed_selector" android:src="@drawable/btn_play_list" android:layout_weight="1.0" style="@style/playerBottomAction" />
+                <com.yolo.music.view.RippleImageButton android:id="@id/player_lyrics" android:background="@drawable/palyer_btn_pressed_selector" android:src="@drawable/lyric_gray" android:layout_weight="1.0" style="@style/playerBottomAction" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</com.yolo.music.view.player.PlayerView>

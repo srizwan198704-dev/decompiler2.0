@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingTop="@dimen/anythink_debug_dp_5" android:paddingBottom="@dimen/anythink_debug_dp_5" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/anythink_debug_network_icon" android:layout_width="@dimen/anythink_debug_dp_30" android:layout_height="@dimen/anythink_debug_dp_30" android:layout_marginLeft="@dimen/anythink_debug_dp_10" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/anythink_debug_jump_page" android:layout_width="@dimen/anythink_debug_dp_18" android:layout_height="@dimen/anythink_debug_dp_18" android:layout_marginRight="@dimen/anythink_debug_dp_5" android:src="@drawable/anythink_debug_arrow_right" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/anythink_debug_integrate_error" android:visibility="gone" android:layout_width="@dimen/anythink_debug_dp_20" android:layout_height="@dimen/anythink_debug_dp_20" android:layout_marginRight="@dimen/anythink_debug_dp_5" android:layout_toLeftOf="@id/anythink_debug_jump_page" android:layout_centerVertical="true" />
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/anythink_debug_dp_10" android:layout_marginRight="@dimen/anythink_debug_dp_10" android:layout_toLeftOf="@id/anythink_debug_integrate_error" android:layout_toRightOf="@id/anythink_debug_network_icon" android:layout_centerVertical="true">
+        <TextView android:textSize="@dimen/anythink_debug_sp_18" android:textStyle="bold" android:textColor="@android:color/black" android:id="@id/anythink_debug_network_name" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="@dimen/anythink_debug_sp_14" android:textColor="@color/anythink_debug_666666" android:id="@id/anythink_debug_sdk_version" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="@dimen/anythink_debug_sp_14" android:textColor="@color/anythink_debug_666666" android:id="@id/anythink_debug_network_adapter_version" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="@dimen/anythink_debug_sp_14" android:textColor="@android:color/holo_red_light" android:id="@id/anythink_debug_network_mediated_msg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

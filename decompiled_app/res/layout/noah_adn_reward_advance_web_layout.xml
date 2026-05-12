@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/noah_webview_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@id/noah_reward_click_tips_v5" android:background="@drawable/noah_hc_reward_web_mask" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/noah_reward_click_tips_icon" android:layout_width="127.0dip" android:layout_height="127.0dip" android:layout_marginLeft="102.0dip" android:layout_marginTop="273.0dip" android:scaleType="centerInside" />
+        <ImageView android:layout_width="192.0dip" android:layout_height="42.0dip" android:layout_marginLeft="119.0dip" android:layout_marginTop="397.0dip" android:src="@drawable/noah_hc_reward_web_tips" />
+    </FrameLayout>
+    <include layout="@layout/noah_adn_rewardvideo_topbar" />
+</merge>

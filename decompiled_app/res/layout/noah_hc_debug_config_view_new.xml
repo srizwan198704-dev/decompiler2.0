@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/noah_hc_svMockLayout" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@android:color/white" android:paddingLeft="20.0dip" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/noah_hc_spAdTypeScene" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_marginTop="@dimen/spacing_small">
+            <TextView android:textSize="@dimen/text_size_medium" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_2dp" android:text="场景配置" android:layout_weight="1.0" />
+            <Spinner android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:id="@id/noah_hc_spAdActionFirstScene" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="40.0dip" android:layout_marginLeft="4.0dip" android:layout_weight="1.0" />
+            <Spinner android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:id="@id/noah_hc_spAdScene" android:layout_width="wrap_content" android:layout_height="40.0dip" android:layout_marginLeft="4.0dip" android:layout_weight="1.0" />
+        </LinearLayout>
+        <View android:id="@id/noah_hc_belowAdSceneDriver" android:background="#ffeaeded" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_below="@id/noah_hc_spAdTypeScene" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/noah_hc_llAdScene" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/noah_hc_belowAdSceneDriver">
+            <RadioButton android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:textSize="14.0dip" android:textColor="@drawable/noah_text_color_selector" android:id="@id/noah_hc_rbAdScene" android:layout_width="wrap_content" android:layout_height="45.0dip" android:text="广告场景" />
+            <Spinner android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:id="@id/noah_hc_spAdCategory" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_marginLeft="@dimen/spacing_small" android:layout_weight="1.0" />
+            <Spinner android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:id="@id/noah_hc_spAdFilter" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_marginLeft="@dimen/spacing_small" android:layout_weight="1.0" />
+        </LinearLayout>
+        <View android:id="@id/noah_hc_spAdSceneDivider" android:background="#ffeaeded" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_below="@id/noah_hc_llAdScene" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/noah_hc_spCustomAdIdScene_layout" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/noah_hc_spAdSceneDivider">
+            <RadioButton android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:textSize="14.0dip" android:textColor="@drawable/noah_text_color_selector" android:id="@id/noah_hc_rbCustomAdId" android:layout_width="160.0dip" android:layout_height="45.0dip" android:text="自定义ad_id" />
+            <Spinner android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:layout_gravity="center_vertical" android:id="@id/noah_hc_spCustomAdIdScene" android:visibility="gone" android:layout_width="110.0dip" android:layout_height="40.0dip" />
+            <EditText android:textSize="@dimen/text_size_small" android:textColor="@color/text_primary" android:textColorHint="@color/text_hint" android:id="@id/noah_hc_etCustomAdId" android:background="@drawable/bg_input" android:padding="@dimen/input_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="请输入ad_id" android:layout_weight="1.0" android:inputType="text" />
+        </LinearLayout>
+        <View android:id="@id/noah_hc_spCustomAdIdDivider" android:background="#ffeaeded" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_below="@id/noah_hc_spCustomAdIdScene_layout" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/noah_hc_llAdActionFirst" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/noah_hc_spCustomAdIdDivider">
+            <RadioButton android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:textSize="14.0dip" android:textColor="@drawable/noah_text_color_selector" android:id="@id/noah_hc_rbAdActionFirst" android:layout_width="160.0dip" android:layout_height="45.0dip" android:text="交互行为轮询" />
+            <Spinner android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:id="@id/noah_hc_spAdActionFirstAction" android:layout_width="wrap_content" android:layout_height="40.0dip" android:layout_weight="1.0" />
+        </LinearLayout>
+        <View android:id="@id/noah_hc_spAdActionFirstDivider" android:background="#ffeaeded" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_below="@id/noah_hc_llAdActionFirst" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/noah_hc_llAdLoop" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/noah_hc_spAdActionFirstDivider">
+            <RadioButton android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:textSize="14.0dip" android:textColor="@drawable/noah_text_color_selector" android:id="@id/noah_hc_rbAdLoop" android:layout_width="wrap_content" android:layout_height="45.0dip" android:text="广告场景轮询" android:layout_weight="0.8" />
+            <Spinner android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:id="@id/noah_hc_spAdSceneLoop" android:visibility="gone" android:layout_width="110.0dip" android:layout_height="40.0dip" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/noah_hc_rbAdLoop" android:layout_alignTop="@id/noah_hc_rbAdLoop" android:layout_alignBottom="@id/noah_hc_rbAdLoop" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>

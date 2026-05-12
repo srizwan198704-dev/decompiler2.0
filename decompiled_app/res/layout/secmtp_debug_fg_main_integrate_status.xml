@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.secmtp.sdk.debug.view.DebuggerModeSwitchFoldItemView android:id="@id/secmtp_debug_view_debug_mode" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <com.secmtp.sdk.debug.view.FoldDividerView android:layout_width="fill_parent" android:layout_height="@dimen/secmtp_debug_dp_1" />
+    <ListView android:id="@id/secmtp_debug_list_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

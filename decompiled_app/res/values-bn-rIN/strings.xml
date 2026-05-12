@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bigo_ad_lose_reward">আপনার পুরস্কার হারাবেন।</string>
+    <string name="bigo_ad_resume">আবার চালান</string>
+    <string name="bigo_ad_skip">এড়িয়ে যান</string>
+    <string name="bigo_ad_skip_video">ভিডিও বাদ দিবেন?</string>
+    <string name="file_not_exist">ফাইলের অস্তিত্ব নেই</string>
+    <string name="swof_cant_open_app">অ্যাপ খোলা যাচ্ছে না</string>
+    <string name="swof_internal_card">ইনার কার্ড</string>
+    <string name="swof_no_bluetooth_app">দুঃখিত, আপনার ফোনে ব্লুটুথ নেই।</string>
+    <string name="swof_photo_category_camera">ক্যামেরা</string>
+    <string name="swof_sd_card">এসডি কার্ড</string>
+    <string name="swof_time_hour">ঘন্টা</string>
+    <string name="swof_time_minute">সর্বনিম্ন</string>
+    <string name="swof_time_second">সেকেন্ড</string>
+    <string name="swof_top_title">UC শেয়ার</string>
+    <string name="swof_transport_error_cant_rename">ফাইল রিনেম করতে ত্রুটি ঘটেছে</string>
+    <string name="swof_transport_error_connect_break">সংযোগ বন্ধ করা হয়েছে</string>
+    <string name="swof_transport_error_create_file">ফাইল তৈরি করতে ব্যর্থ</string>
+    <string name="swof_transport_error_file_incomplete">ফাইল অসম্পূর্ণ রয়েছে</string>
+    <string name="swof_transport_error_name_content_empty">ফাইলের নাম বা বিষয়বস্তু খালি রয়েছে</string>
+    <string name="swof_transport_error_no_enough_space">ডিভাইসের যথেষ্ট স্পেস নেই</string>
+    <string name="swof_transport_error_offset_wrong">ফাইল অফসেট ত্রুটি</string>
+    <string name="swof_transport_error_open_file">ফাইল খুলতে ব্যর্থ</string>
+    <string name="swof_transport_error_server_no_response">সার্ভারের কোনও প্রতিক্রিয়া নেই</string>
+    <string name="swof_transport_error_unknown">অজানা ত্রুটি</string>
+    <string name="swof_transport_error_writing_file">ফাইল রাইট করতে ব্যর্থ</string>
+</resources>

@@ -1,0 +1,22 @@
+.class public interface abstract Lcom/uc/webview/export/devtools/InfoSource$Observer;
+.super Ljava/lang/Object;
+.source "ProGuard"
+
+
+# annotations
+.annotation build Lcom/uc/webview/base/annotations/Api;
+.end annotation
+
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/uc/webview/export/devtools/InfoSource;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "Observer"
+.end annotation
+
+
+# virtual methods
+.method public abstract onMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.end method

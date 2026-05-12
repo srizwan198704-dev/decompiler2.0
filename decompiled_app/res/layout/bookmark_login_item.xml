@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingTop="@dimen/bookmark_login_item_padding_top" android:paddingBottom="@dimen/bookmark_login_item_padding_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/bookmark_login_item_button_textsize" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/login_button" android:paddingLeft="@dimen/bookmark_login_item_button_padding_left" android:paddingRight="@dimen/bookmark_login_item_button_padding_right" android:layout_width="wrap_content" android:layout_height="@dimen/return_item_button_height" android:singleLine="true" />
+    <TextView android:textSize="@dimen/bookmark_login_item_tip_textsize" android:layout_gravity="center_horizontal" android:id="@id/login_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/bookmark_login_item_tip_margin_top" android:singleLine="true" />
+</LinearLayout>

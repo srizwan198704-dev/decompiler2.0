@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/noah_hc_loading_container" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ProgressBar android:id="@id/noah_hc_loading_progress" android:layout_width="48.0dip" android:layout_height="48.0dip" android:indeterminate="true" android:indeterminateTint="#ff3b82f6" android:indeterminateTintMode="src_in" style="?android:progressBarStyle" />
+        <TextView android:textSize="14.0dip" android:textColor="#ff4b5563" android:id="@id/noah_hc_loading_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="32.0dip" android:text="正在加载激励视频..." />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/noah_hc_error_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff000000" android:id="@id/noah_hc_error_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="激励视频加载失败" />
+        <TextView android:textSize="14.0dip" android:textColor="#ff4b5563" android:gravity="center" android:id="@id/noah_hc_error_desc_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="网络连接不稳定或服务器无响应\n请稍后再试" />
+    </LinearLayout>
+    <ImageView android:layout_gravity="end" android:id="@id/noah_hc_top_close_button" android:layout_width="22.0dip" android:layout_height="22.0dip" android:layout_marginTop="18.0dip" android:layout_marginRight="18.0dip" android:src="@drawable/noah_hc_btn_close" android:tint="#ff4b5563" android:tintMode="src_in" />
+</FrameLayout>

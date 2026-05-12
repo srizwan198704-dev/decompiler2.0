@@ -1,0 +1,164 @@
+{
+  "tcf_vendor": [
+    {
+      "firm_id": 2,
+      "vendor_id": 755,
+      "sdk_name": "Admob",
+      "google_name": "Google"
+    },
+    {
+      "firm_id": 3,
+      "vendor_id": 333,
+      "sdk_name": "Inmobi",
+      "google_name": "Inmobi"
+    },
+    {
+      "firm_id": 6,
+      "vendor_id": 867,
+      "sdk_name": "Mintegral",
+      "google_name": "Mobvista/Mintegral"
+    },
+    {
+      "firm_id": 13,
+      "vendor_id": 667,
+      "sdk_name": "Vungle",
+      "google_name": "Liftoff"
+    },
+    {
+      "firm_id": 33,
+      "vendor_id": 755,
+      "sdk_name": "Google Ad Manager",
+      "google_name": "Google Ad Manager"
+    },
+    {
+      "firm_id": 36,
+      "vendor_id": 31,
+      "sdk_name": "Ogury",
+      "google_name": "Ogury Ltd"
+    },
+    {
+      "firm_id": 37,
+      "vendor_id": 262,
+      "sdk_name": "Fyber",
+      "google_name": "Fyber"
+    },
+    {
+      "firm_id": 58,
+      "vendor_id": 512,
+      "sdk_name": "PubNative/Verve",
+      "google_name": "Verve Group"
+    }
+  ],
+  "atp_vendor": [
+    {
+      "firm_id": 1,
+      "vendor_id": 89,
+      "sdk_name": "Meta",
+      "google_name": "Facebook"
+    },
+    {
+      "firm_id": 5,
+      "vendor_id": 1301,
+      "sdk_name": "Applovin",
+      "google_name": "AppLovin Corp"
+    },
+    {
+      "firm_id": 9,
+      "vendor_id": 2898,
+      "sdk_name": "Chartboost",
+      "google_name": "Chartboost"
+    },
+    {
+      "firm_id": 10,
+      "vendor_id": 1985,
+      "sdk_name": "Tapjoy",
+      "google_name": "Tapjoy"
+    },
+    {
+      "firm_id": 11,
+      "vendor_id": 2878,
+      "sdk_name": "IronSource",
+      "google_name": "ironSource Mobile"
+    },
+    {
+      "firm_id": 12,
+      "vendor_id": 3234,
+      "sdk_name": "UnityAds",
+      "google_name": "UnityAds"
+    },
+    {
+      "firm_id": 14,
+      "vendor_id": 2710,
+      "sdk_name": "AdColony",
+      "google_name": "AdColony"
+    },
+    {
+      "firm_id": 23,
+      "vendor_id": 1782,
+      "sdk_name": "Nend",
+      "google_name": "F@N communications"
+    },
+    {
+      "firm_id": 25,
+      "vendor_id": 2312,
+      "sdk_name": "Start.io/StartApp",
+      "google_name": "StartApp"
+    },
+    {
+      "firm_id": 45,
+      "vendor_id": 3183,
+      "sdk_name": "Kidoz",
+      "google_name": "Kidoz"
+    },
+    {
+      "firm_id": 59,
+      "vendor_id": 16831,
+      "sdk_name": "Bigo",
+      "google_name": "BIGOAds"
+    }
+  ],
+  "not_support_vendor": [
+    {
+      "firm_id": 50,
+      "vendor_id": 0,
+      "sdk_name": "Pangle",
+      "google_name": "Pangle"
+    },
+    {
+      "firm_id": 39,
+      "vendor_id": 0,
+      "sdk_name": "Huawei",
+      "google_name": "Huawei"
+    },
+    {
+      "firm_id": 24,
+      "vendor_id": 0,
+      "sdk_name": "Maio",
+      "google_name": "Maio"
+    },
+    {
+      "firm_id": 21,
+      "vendor_id": 0,
+      "sdk_name": "Appnext",
+      "google_name": "Appnext"
+    },
+    {
+      "firm_id": 32,
+      "vendor_id": 0,
+      "sdk_name": "MyTarget",
+      "google_name": "MyTarget"
+    },
+    {
+      "firm_id": 34,
+      "vendor_id": 0,
+      "sdk_name": "Yandex",
+      "google_name": "Yandex"
+    },
+    {
+      "firm_id": 40,
+      "vendor_id": 0,
+      "sdk_name": "Helium",
+      "google_name": "Helium"
+    }
+  ]
+}

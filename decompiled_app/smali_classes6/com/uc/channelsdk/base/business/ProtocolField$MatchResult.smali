@@ -1,0 +1,60 @@
+.class public final Lcom/uc/channelsdk/base/business/ProtocolField$MatchResult;
+.super Ljava/lang/Object;
+.source "ProGuard"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/uc/channelsdk/base/business/ProtocolField;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "MatchResult"
+.end annotation
+
+
+# instance fields
+.field public bid:Ljava/lang/String;
+    .annotation runtime Lcom/uc/channelsdk/base/util/json/JsonName;
+        value = "bid"
+    .end annotation
+.end field
+
+.field public btype:Ljava/lang/String;
+    .annotation runtime Lcom/uc/channelsdk/base/util/json/JsonName;
+        value = "btype"
+    .end annotation
+.end field
+
+.field public ch:Ljava/lang/String;
+    .annotation runtime Lcom/uc/channelsdk/base/util/json/JsonName;
+        value = "ch"
+    .end annotation
+.end field
+
+.field public matchType:Ljava/lang/String;
+    .annotation runtime Lcom/uc/channelsdk/base/util/json/JsonName;
+        value = "matchType"
+    .end annotation
+.end field
+
+.field public result:I
+    .annotation runtime Lcom/uc/channelsdk/base/util/json/JsonName;
+        value = "result"
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method

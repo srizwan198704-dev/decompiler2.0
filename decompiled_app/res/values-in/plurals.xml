@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d notifikasi baru</item>
+        <item quantity="one">%d notifikasi baru</item>
+    </plurals>
+    <plurals name="quantity_folder_caps">
+        <item quantity="other">%d DOKUMEN</item>
+        <item quantity="one">%d DOKUMEN</item>
+    </plurals>
+    <plurals name="quantity_song">
+        <item quantity="other">%d lagu</item>
+        <item quantity="one">%d lagu</item>
+    </plurals>
+    <plurals name="quantity_song_caps">
+        <item quantity="other">%d LAGU</item>
+        <item quantity="one">%d LAGU</item>
+    </plurals>
+</resources>

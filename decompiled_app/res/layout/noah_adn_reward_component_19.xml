@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="32.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center" android:layout_gravity="center" android:id="@id/noah_reward_render_style_19_container" android:background="@drawable/noah_render_style_19_bg" android:layout_width="372.0dip" android:layout_height="492.0dip">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginStart="40.0dip" android:layout_marginEnd="40.0dip">
+            <LinearLayout android:gravity="bottom|center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="3.0">
+                <TextView android:textSize="24.0dip" android:typeface="monospace" android:textStyle="bold" android:textColor="#ffff3934" android:gravity="center" android:id="@id/noah_render_style_19_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="获得限时大奖机会" android:maxLines="1" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="3.0">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+                    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/noah_render_style_19_1_container" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:layout_weight="1.0">
+                        <LinearLayout android:orientation="vertical" android:id="@id/noah_render_style_19_1_bg" android:background="@drawable/noah_render_style_19_1" android:layout_width="110.0dip" android:layout_height="118.0dip">
+                            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                                <TextView android:textSize="22.0dip" android:typeface="monospace" android:textStyle="bold" android:textColor="#ffff1311" android:ellipsize="marquee" android:gravity="center" android:id="@id/noah_render_style_19_1_count" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="2000" android:singleLine="true" />
+                                <TextView android:textSize="13.0dip" android:textColor="#ffff1311" android:ellipsize="marquee" android:gravity="center|top" android:id="@id/noah_render_19_1_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="元宝" android:singleLine="true" />
+                            </LinearLayout>
+                            <TextView android:textSize="12.0dip" android:typeface="monospace" android:textColor="#ff000000" android:ellipsize="end" android:gravity="center" android:id="@id/noah_render_style_19_1_desc" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:maxLines="2" android:maxEms="9" android:layout_weight="1.0" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/noah_render_style_19_2_container" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:layout_weight="1.0">
+                        <LinearLayout android:orientation="vertical" android:id="@id/noah_render_style_19_2_bg" android:background="@drawable/noah_render_style_19_2" android:layout_width="127.0dip" android:layout_height="147.0dip">
+                            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                                <TextView android:textSize="27.0dip" android:typeface="monospace" android:textStyle="bold" android:textColor="#ffffffff" android:ellipsize="marquee" android:gravity="center" android:id="@id/noah_render_style_19_2_count" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+                                <TextView android:textSize="14.0dip" android:typeface="monospace" android:textColor="#ffffffff" android:ellipsize="marquee" android:gravity="center|top" android:id="@id/noah_render_19_2_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+                            </LinearLayout>
+                            <TextView android:textSize="14.0dip" android:typeface="monospace" android:textColor="#ffffffff" android:ellipsize="end" android:gravity="center" android:id="@id/noah_render_style_19_2_desc" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="下单成功可获得" android:maxLines="2" android:minLines="2" android:maxEms="9" android:layout_weight="1.0" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="top" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="2.0">
+                <RelativeLayout android:id="@id/noah_render_style_18_app_info_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip">
+                    <com.noah.sdk.download.manager.view.roundimageview.RoundedImageView android:layout_gravity="center" android:id="@id/noah_reward_click_tips_app_icon" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginLeft="10.0dip" android:layout_marginTop="8.0dip" />
+                    <TextView android:textSize="16.0dip" android:textColor="#d1000000" android:gravity="center" android:layout_gravity="center" android:id="@id/noah_reward_click_tips_app_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginTop="10.0dip" android:text="应用名称" android:layout_toRightOf="@id/noah_reward_click_tips_app_icon" />
+                    <TextView android:textSize="12.0dip" android:textColor="#a6000000" android:ellipsize="marquee" android:gravity="center" android:id="@id/noah_render_style_18_app_description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginTop="4.0dip" android:layout_marginBottom="8.0dip" android:text="应用描述" android:singleLine="true" android:layout_toRightOf="@id/noah_reward_click_tips_app_icon" android:layout_below="@id/noah_reward_click_tips_app_name" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="2.0">
+                <TextView android:textSize="15.0dip" android:textStyle="bold" android:textColor="#ffff0000" android:ellipsize="end" android:gravity="center" android:layout_gravity="center" android:id="@id/noah_reward_cta_tip_tv" android:background="@drawable/noah_render_style_19_cta_bg" android:layout_width="144.0dip" android:layout_height="42.0dip" android:text="@string/noah_reward_cta_tips" android:maxEms="8" android:singleLine="true" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="top" android:id="@id/noah_render_style_19_plus_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="96.0dip" android:layout_centerInParent="true">
+            <ImageView android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/noah_render_style_19_plus" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/noah_render_style_19_left_container" android:layout_width="35.0dip" android:layout_height="fill_parent" android:layout_alignParentLeft="true" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/noah_render_style_19_right_container" android:layout_width="35.0dip" android:layout_height="fill_parent" android:layout_alignParentRight="true" />
+        <include android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" layout="@layout/noah_adn_rewardvideo_hc_querying" />
+    </RelativeLayout>
+    <TextView android:textSize="13.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/noah_render_style_18_count_down_tips" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/noah_render_style_18_count_down" android:layout_below="@id/noah_reward_render_style_19_container" />
+    <ImageView android:layout_gravity="center" android:id="@id/noah_reward_click_tips_close" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginTop="20.0dip" android:layout_below="@id/noah_render_style_18_count_down_tips" android:layout_centerInParent="true" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/noah_render_style_18_small_container" android:background="@drawable/noah_render_style_18_tips_bg" android:layout_width="192.0dip" android:layout_height="64.0dip" android:layout_marginLeft="24.0dip" android:layout_below="@id/noah_reward_render_style_19_container">
+        <FrameLayout android:gravity="center|left" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip">
+            <ImageView android:layout_gravity="center" android:id="@id/noah_render_style_18_red" android:layout_width="44.0dip" android:layout_height="44.0dip" android:layout_marginBottom="5.0dip" android:src="@drawable/noah_render_style_18_red" />
+            <ImageView android:layout_gravity="bottom" android:layout_width="44.0dip" android:layout_height="16.0dip" android:layout_marginBottom="5.0dip" android:src="@drawable/noah_render_style_18_tips" />
+            <com.noah.sdk.render.View.NoahLightingAnimationView android:layout_gravity="bottom" android:id="@id/noah_reward_dy_light" android:visibility="gone" android:layout_width="44.0dip" android:layout_height="16.0dip" android:layout_marginBottom="5.0dip" />
+        </FrameLayout>
+        <TextView android:textSize="14.0dip" android:textColor="#ff333333" android:ellipsize="end" android:gravity="center" android:layout_gravity="center" android:id="@id/noah_render_style_19_small_title" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="5.0dip" android:maxLines="3" />
+    </LinearLayout>
+</RelativeLayout>

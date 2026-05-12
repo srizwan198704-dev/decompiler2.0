@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="296.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/language_preset_dialog_top" android:layout_width="fill_parent" android:layout_height="@dimen/language_preselect_dialog_top_h">
+        <TextView android:textSize="20.0dip" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="13.0dip" android:text="@string/language_preselect_title" />
+        <TextView android:textSize="10.0dip" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_subtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="48.0dip" android:layout_marginRight="48.0dip" android:text="@string/language_preselect_subtitle" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:background="@drawable/language_preselect_white_round_bg" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_languages" android:layout_width="fill_parent" android:layout_height="@dimen/language_preselect_dialog_content_h" />
+        <View android:background="#ffececec" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+        <TextView android:textSize="16.0dip" android:textStyle="bold" android:textColor="#ff999999" android:gravity="center" android:id="@id/tv_confirm" android:background="@drawable/language_preselect_gery_round" android:layout_width="fill_parent" android:layout_height="@dimen/language_preselect_dialog_confirm_h" android:layout_margin="@dimen/language_preselect_dialog_confirm_margin" android:text="@string/language_preselect_select" />
+    </LinearLayout>
+</LinearLayout>

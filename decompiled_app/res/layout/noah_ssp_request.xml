@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@android:color/white" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/title_bar_height" android:paddingStart="8.0dip" android:paddingEnd="8.0dip" android:elevation="4.0dip">
+        <LinearLayout android:id="@id/noah_back" android:padding="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="@dimen/text_size_24sp" android:textColor="@color/text_primary" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="40.0dip" android:minHeight="40.0dip" android:text="&lt;" android:contentDescription="返回" />
+        </LinearLayout>
+        <TextView android:textSize="@dimen/text_size_large" android:textStyle="bold" android:textColor="@color/text_primary" android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_xlarge" android:text="SSP参数设置" android:layout_weight="1.0" android:layout_marginStart="@dimen/spacing_xlarge" />
+        <View android:layout_width="@dimen/spacing_24dp" android:layout_height="@dimen/spacing_24dp" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@android:color/white" android:padding="@dimen/spacing_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/spacing_medium">
+        <Button android:textSize="@dimen/text_size_13sp" android:textColor="@color/text_primary" android:id="@id/noah_tv1" android:background="@drawable/bg_button" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="@dimen/spacing_small" android:minHeight="40.0dip" android:text="🔄 重置" android:layout_weight="1.0" android:textAllCaps="false" android:layout_marginEnd="@dimen/spacing_small" />
+        <Button android:textSize="@dimen/text_size_13sp" android:textColor="@color/text_primary" android:id="@id/noah_tv2" android:background="@drawable/bg_button" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_small" android:layout_marginRight="@dimen/spacing_small" android:minHeight="40.0dip" android:text="+ GC参数" android:layout_weight="1.0" android:textAllCaps="false" android:layout_marginStart="@dimen/spacing_small" android:layout_marginEnd="@dimen/spacing_small" />
+        <Button android:textSize="@dimen/text_size_13sp" android:textColor="@color/text_primary" android:id="@id/noah_tv3" android:background="@drawable/bg_button" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_small" android:minHeight="40.0dip" android:text="+ SC参数" android:layout_weight="1.0" android:textAllCaps="false" android:layout_marginStart="@dimen/spacing_small" />
+    </LinearLayout>
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:fillViewport="true" android:layout_weight="1.0">
+        <LinearLayout android:orientation="vertical" android:padding="@dimen/spacing_medium" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:background="@drawable/bg_card" android:padding="@dimen/spacing_medium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/spacing_medium">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/spacing_medium">
+                    <TextView android:textSize="@dimen/text_size_large" android:layout_width="24.0dip" android:layout_height="24.0dip" android:text="🌐" />
+                    <TextView android:textSize="@dimen/text_size_large" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_medium" android:text="global_config" android:layout_marginStart="@dimen/spacing_medium" />
+                </LinearLayout>
+                <View android:background="@color/divider" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginBottom="@dimen/spacing_medium" />
+                <ListView android:id="@id/noah_list_global_config" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="120.0dip" android:nestedScrollingEnabled="true" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:background="@drawable/bg_card" android:padding="@dimen/spacing_medium" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/spacing_medium">
+                    <TextView android:textSize="@dimen/text_size_large" android:layout_width="24.0dip" android:layout_height="24.0dip" android:text="⚙️" />
+                    <TextView android:textSize="@dimen/text_size_large" android:textStyle="bold" android:textColor="@color/text_primary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/spacing_medium" android:text="sdk_configs" android:layout_marginStart="@dimen/spacing_medium" />
+                </LinearLayout>
+                <View android:background="@color/divider" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginBottom="@dimen/spacing_medium" />
+                <ListView android:id="@id/noah_list_sdk_configs" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="120.0dip" android:nestedScrollingEnabled="true" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

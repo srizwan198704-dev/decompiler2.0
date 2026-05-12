@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kwai.network.feature.reward.kwai.view.AdGestureLayout android:id="@id/kwai_network_reward_gesture_layout" android:background="@color/ad_i18n_background_black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.kwai.network.feature.reward.kwai.view.KwaiRewardBrowserCanvas android:id="@id/kwai_network_reward_canvas" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.kwai.network.framework.adCommon.view.DefaultEmptyView android:id="@id/kwai_network_reward_empty" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</com.kwai.network.feature.reward.kwai.view.AdGestureLayout>

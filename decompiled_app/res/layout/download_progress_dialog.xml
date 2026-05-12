@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:orientation="vertical" android:id="@id/background" android:layout_width="fill_parent" android:layout_height="70.0dip" android:paddingHorizontal="15.0dip" android:paddingVertical="10.0dip">
+        <com.uc.framework.ui.roundedimageview.RoundedImageView android:id="@id/ivPoster" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginTop="5.0dip" android:scaleType="centerCrop" app:status_riv_corner_radius="8.0dip" app:status_riv_oval="false" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/app_black" android:gravity="center" android:id="@id/tvPreparing" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_toRightOf="@id/ivPoster" />
+        <ProgressBar android:id="@id/progressBar1" android:layout_width="fill_parent" android:layout_height="3.0dip" android:layout_marginTop="5.0dip" android:max="100" android:layout_toLeftOf="@id/shareCancle" android:layout_toRightOf="@id/ivPoster" android:layout_below="@id/tvPreparing" android:layout_alignLeft="@id/tvPreparing" style="@style/progressbar_share" />
+        <TextView android:textSize="12.0dip" android:textColor="@color/app_black" android:gravity="center" android:id="@id/tvProgressText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/ivPoster" android:layout_alignLeft="@id/tvPreparing" android:layout_alignParentBottom="true" />
+        <TextView android:textSize="10.0dip" android:textStyle="bold" android:textColor="@color/app_black" android:gravity="center" android:id="@id/shareCancle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="8.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:paddingHorizontal="15.0dip" android:paddingVertical="8.0dip" />
+    </RelativeLayout>
+</FrameLayout>

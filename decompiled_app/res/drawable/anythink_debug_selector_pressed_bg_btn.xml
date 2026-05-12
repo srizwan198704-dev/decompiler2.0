@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape>
+            <corners android:radius="@dimen/anythink_debug_dp_4" />
+            <solid android:color="@android:color/darker_gray" />
+        </shape>
+    </item>
+    <item android:state_pressed="false">
+        <shape>
+            <corners android:radius="@dimen/anythink_debug_dp_4" />
+            <solid android:color="@android:color/white" />
+            <stroke android:width="@dimen/anythink_debug_dp_1" android:color="@color/anythink_debug_0042DF" />
+        </shape>
+    </item>
+    <item android:state_pressed="true">
+        <shape>
+            <corners android:radius="@dimen/anythink_debug_dp_4" />
+            <solid android:color="@color/anythink_debug_0042DF" />
+        </shape>
+    </item>
+</selector>

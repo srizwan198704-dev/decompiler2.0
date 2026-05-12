@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/eq_layout_container" android:background="@color/equalizer_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/eq_layout_dot" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="21.0dip" android:src="@drawable/bg_eqa_top_dot" android:layout_centerHorizontal="true" />
+    <RelativeLayout android:id="@id/eq_layout_bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="36.0dip" android:layout_alignParentBottom="true">
+        <ImageView android:id="@id/eq_layout_reset_img" android:background="@drawable/palyer_btn_pressed_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="21.0dip" android:src="@drawable/btn_equalizer_refresh" android:layout_alignParentRight="true" />
+        <TextView android:textSize="@dimen/equalizer_sound_type" android:textColor="@color/equalizer_sound_type" android:ellipsize="end" android:gravity="center" android:id="@id/eq_type_txt" android:background="@drawable/bg_equaliuzer_type" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="15.0dip" android:cursorVisible="false" android:singleLine="true" android:maxLength="15" android:drawableRight="@drawable/icon_equalizer_type" android:drawablePadding="5.0dip" android:layout_toLeftOf="@id/eq_layout_reset_img" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="21.0dip" android:layout_marginRight="21.0dip" android:layout_marginBottom="45.0dip" android:layout_above="@id/eq_layout_bottom" android:layout_below="@id/eq_layout_dot">
+        <RelativeLayout android:gravity="right" android:id="@id/eq_layout_txt_view" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="21.0dip" android:layout_weight="1.0">
+            <TextView android:id="@id/eq_layout_max_txt" android:layout_marginTop="40.0dip" style="@style/TextView_Equalizer_Frequence" />
+            <TextView android:text="@string/equalizer_frequence_value_0db" android:layout_centerVertical="true" style="@style/TextView_Equalizer_Frequence" />
+            <TextView android:id="@id/eq_layout_min_txt" android:layout_marginBottom="40.0dip" android:layout_alignParentBottom="true" style="@style/TextView_Equalizer_Frequence" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toRightOf="@id/eq_layout_txt_view">
+            <com.yolo.music.view.mystyle.EqualizerBar android:id="@id/eq_layout_first_bar" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+            <com.yolo.music.view.mystyle.EqualizerBar android:id="@id/eq_layout_second_bar" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+            <com.yolo.music.view.mystyle.EqualizerBar android:id="@id/eq_layout_third_bar" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+            <com.yolo.music.view.mystyle.EqualizerBar android:id="@id/eq_layout_fourth_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <com.yolo.music.view.mystyle.EqualizerBar android:id="@id/eq_layout_fifth_bar" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
