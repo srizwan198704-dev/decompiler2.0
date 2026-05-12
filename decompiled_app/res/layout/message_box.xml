@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.Toolbar android:id="@id/message_box_toolbar" android:background="@color/c_es_actionbar_bg" android:layout_width="fill_parent" android:layout_height="@dimen/abc_action_bar_default_height_material" />
+    <RelativeLayout android:id="@id/message_box_rl_bg" android:background="@drawable/message_box_bg" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <androidx.recyclerview.widget.RecyclerView android:scrollbarThumbVertical="@drawable/dark_bkg_scrollbar_thum" android:id="@id/message_box_list" android:paddingTop="@dimen/dp_2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:divider="@null" android:fadeScrollbars="true" android:splitMotionEvents="false" />
+        <ViewStub android:id="@id/message_box_empty_stub" android:layout="@layout/message_box_empty" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true" />
+        <RelativeLayout android:id="@id/message_box_loading_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <ProgressBar android:id="@id/message_box_loading_view_pb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" style="@style/ProgressBar" />
+            <TextView android:textColor="@color/white" android:id="@id/message_box_loading_view_tv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/progress_loading" android:layout_below="@id/message_box_loading_view_pb" />
+        </RelativeLayout>
+        <include layout="@layout/mtd_content_tripple_view_layout" />
+    </RelativeLayout>
+</LinearLayout>

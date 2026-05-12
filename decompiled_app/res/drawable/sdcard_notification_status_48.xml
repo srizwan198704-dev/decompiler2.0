@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <bitmap android:src="@drawable/image_nt_sd_40" />
+    </item>
+    <item android:left="7.0dip" android:top="5.0dip" android:right="13.0dip" android:bottom="5.0dip">
+        <bitmap android:src="@drawable/image_nt_black_4" />
+    </item>
+    <item android:left="13.0dip" android:top="5.0dip" android:right="7.0dip" android:bottom="5.0dip">
+        <bitmap android:src="@drawable/image_nt_black_8" />
+    </item>
+</layer-list>

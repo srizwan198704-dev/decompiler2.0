@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:layout_gravity="center" android:id="@id/pic_item_layout" android:background="@drawable/file_select_list_selector" android:padding="@dimen/dp_1" android:descendantFocusability="blocksDescendants" android:layout_width="120.0dip" android:layout_height="120.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/imageview" android:layout_width="120.0dip" android:layout_height="120.0dip" android:scaleType="fitXY" android:adjustViewBounds="true" android:layout_centerInParent="true" />
+    <CheckBox android:layout_gravity="center" android:id="@id/item_image_checkbox" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0px" android:layout_marginRight="2.0dip" android:checked="true" android:button="@drawable/popupbox_checkbox_drawable" android:layout_alignParentTop="true" android:layout_alignParentRight="true" style="@style/check_box_style" />
+</RelativeLayout>

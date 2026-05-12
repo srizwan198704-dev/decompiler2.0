@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:background="@color/durec_black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/container" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <include android:layout_gravity="top" android:id="@id/durec_preview_toolbar" android:layout_width="fill_parent" android:layout_height="55.0dip" layout="@layout/__picker_toolbar" />
+    <LinearLayout android:layout_gravity="bottom" android:orientation="horizontal" android:id="@id/durec_option_layout" android:background="#b2000000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="56.0dip">
+        <TextView android:textColor="#e5ffffff" android:gravity="center" android:id="@id/durec_picture_share" android:padding="7.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/durec_common_share" android:drawableTop="@drawable/durec_preview_share_selector" android:layout_weight="1.0" />
+        <TextView android:textColor="#e5ffffff" android:gravity="center" android:id="@id/durec_picture_delete" android:padding="7.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/durec_common_delete" android:drawableTop="@drawable/durec_preview_delete_selector" android:layout_weight="1.0" />
+        <TextView android:textColor="#e5ffffff" android:gravity="center" android:id="@id/durec_picture_edit" android:padding="7.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/durec_common_edit" android:drawableTop="@drawable/durec_preview_edit_selector" android:layout_weight="1.0" />
+    </LinearLayout>
+</FrameLayout>

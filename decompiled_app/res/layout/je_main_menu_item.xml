@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layoutDirection="ltr"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:background="?MainMenuItemBackground" android:focusable="true" android:layout_width="fill_parent" android:layout_height="40.0dip">
+        <TextView android:textSize="13.0dip" android:textColor="?Alpha60TextColor" android:gravity="center|left" android:id="@id/textView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:text="menu" android:maxLines="1" android:drawablePadding="10.0dip" android:layout_centerVertical="true" />
+        <View android:id="@id/newflagTv" android:background="@drawable/je_new_flag" android:layout_width="4.0dip" android:layout_height="4.0dip" android:layout_marginLeft="@dimen/je_dp_8" android:layout_alignTop="@id/textView" android:layout_alignParentLeft="true" />
+    </RelativeLayout>
+</LinearLayout>

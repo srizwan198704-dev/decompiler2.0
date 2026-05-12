@@ -1,0 +1,24 @@
+.class public interface abstract Lcom/estrongs/android/pop/app/filetransfer/f$c;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/estrongs/android/pop/app/filetransfer/f;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "c"
+.end annotation
+
+
+# virtual methods
+.method public abstract a(Les/ps1;)V
+.end method
+
+.method public abstract b(Les/ps1;JJI)V
+.end method
+
+.method public abstract c(Les/ps1;)V
+.end method

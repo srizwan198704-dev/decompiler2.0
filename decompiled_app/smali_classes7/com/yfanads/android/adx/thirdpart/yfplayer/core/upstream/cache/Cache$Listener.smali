@@ -1,0 +1,24 @@
+.class public interface abstract Lcom/yfanads/android/adx/thirdpart/yfplayer/core/upstream/cache/Cache$Listener;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/yfanads/android/adx/thirdpart/yfplayer/core/upstream/cache/Cache;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "Listener"
+.end annotation
+
+
+# virtual methods
+.method public abstract onSpanAdded(Lcom/yfanads/android/adx/thirdpart/yfplayer/core/upstream/cache/Cache;Lcom/yfanads/android/adx/thirdpart/yfplayer/core/upstream/cache/CacheSpan;)V
+.end method
+
+.method public abstract onSpanRemoved(Lcom/yfanads/android/adx/thirdpart/yfplayer/core/upstream/cache/Cache;Lcom/yfanads/android/adx/thirdpart/yfplayer/core/upstream/cache/CacheSpan;)V
+.end method
+
+.method public abstract onSpanTouched(Lcom/yfanads/android/adx/thirdpart/yfplayer/core/upstream/cache/Cache;Lcom/yfanads/android/adx/thirdpart/yfplayer/core/upstream/cache/CacheSpan;Lcom/yfanads/android/adx/thirdpart/yfplayer/core/upstream/cache/CacheSpan;)V
+.end method

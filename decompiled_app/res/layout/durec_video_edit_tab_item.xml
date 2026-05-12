@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="88.0dip" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="3.0" />
+    <RelativeLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="10.0">
+        <ImageView android:id="@id/icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18.0dip" android:src="@drawable/durec_edit_video_trim_selector" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@id/icon_premium_mark" android:visibility="visible" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginTop="7.0dip" android:layout_marginRight="-9.0dip" android:src="@drawable/durec_premium_features_mark" android:layout_alignRight="@id/icon" />
+        <View android:id="@id/red_dot" android:background="@drawable/durec_small_red_dot" android:visibility="gone" android:layout_width="6.0dip" android:layout_height="6.0dip" android:layout_marginTop="6.0dip" android:layout_toRightOf="@id/icon" />
+        <com.esfile.screen.recorder.ui.FontTextView android:textSize="12.0dip" android:textColor="@color/durec_edit_video_tool_text_color" android:gravity="center" android:id="@id/title" android:layout_width="60.0dip" android:layout_height="30.0dip" android:layout_marginTop="8.0dip" android:text="@string/durec_common_trim" android:maxLines="2" android:layout_below="@id/icon" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>

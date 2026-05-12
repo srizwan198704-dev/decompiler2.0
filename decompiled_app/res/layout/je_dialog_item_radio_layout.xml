@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/je_dialog_item_selector" android:paddingLeft="@dimen/je_dp_25" android:paddingTop="@dimen/je_dp_10" android:paddingRight="@dimen/je_dp_25" android:paddingBottom="@dimen/je_dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioButton android:id="@id/item_radio_btn" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/CustomDialogRadioStyle" />
+    <ImageView android:id="@id/pay_flag_img" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/je_icon_pay" android:layout_marginStart="@dimen/je_dp_10" />
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:padding="@dimen/dp_15" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/iv_gps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_location" android:layout_centerVertical="true" />
+            <TextView android:textSize="@dimen/dp_15" android:textColor="@color/c_333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_15" android:text="@string/open_gps" android:layout_toRightOf="@id/iv_gps" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/iv_gps_opened" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_10" android:src="@drawable/ic_permission_checked" android:layout_alignParentRight="true" />
+            <TextView android:textSize="@dimen/dp_13" android:textColor="@color/c_2e85ff" android:id="@id/tv_open_gps" android:background="@drawable/bg_round18_border_2e85ff" android:paddingLeft="@dimen/dp_15" android:paddingTop="@dimen/dp_4" android:paddingRight="@dimen/dp_15" android:paddingBottom="@dimen/dp_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/action_open" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <TextView android:textSize="@dimen/dp_13" android:textColor="@color/c_989898" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_28" android:layout_marginTop="@dimen/dp_10" android:text="@string/you_need_open_gps_service" android:lineSpacingMultiplier="1.2" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_20">
+            <ImageView android:id="@id/iv_permission" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_location" android:layout_centerVertical="true" />
+            <TextView android:textSize="@dimen/dp_15" android:textColor="@color/c_333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_15" android:text="@string/grant_location_permission" android:layout_toRightOf="@id/iv_permission" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/iv_permission_granted" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_10" android:src="@drawable/ic_permission_checked" android:layout_alignParentRight="true" />
+            <TextView android:textSize="@dimen/dp_13" android:textColor="@color/c_2e85ff" android:id="@id/tv_open_permission" android:background="@drawable/bg_round18_border_2e85ff" android:paddingLeft="@dimen/dp_15" android:paddingTop="@dimen/dp_4" android:paddingRight="@dimen/dp_15" android:paddingBottom="@dimen/dp_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/action_open" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <TextView android:textSize="@dimen/dp_13" android:textColor="@color/c_989898" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_28" android:layout_marginTop="@dimen/dp_10" android:text="@string/you_need_grant_location_permission" android:lineSpacingMultiplier="1.2" />
+    </LinearLayout>
+</ScrollView>

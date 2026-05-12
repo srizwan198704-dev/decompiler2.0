@@ -1,0 +1,69 @@
+.class public final Les/om0$p;
+.super Les/jw6;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Les/om0;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = null
+.end annotation
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Les/jw6;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()Les/iw6;
+    .locals 7
+
+    const-string v0, "74D59FF07F6B413D0EA14B344B20A2DB049B50C3"
+
+    invoke-static {v0}, Les/eg2;->a(Ljava/lang/String;)[B
+
+    move-result-object v6
+
+    new-instance v0, Les/an5;
+
+    invoke-direct {v0}, Les/an5;-><init>()V
+
+    invoke-static {v0}, Les/om0;->a(Les/ja1;)Les/ja1;
+
+    move-result-object v2
+
+    new-instance v3, Les/kw6;
+
+    const-string v0, "0400FAC9DFCBAC8313BB2139F1BB755FEF65BC391F8B36F8F8EB7371FD558B01006A08A41903350678E58528BEBF8A0BEFF867A7CA36716F7E01F81052"
+
+    invoke-static {v0}, Les/eg2;->a(Ljava/lang/String;)[B
+
+    move-result-object v0
+
+    invoke-direct {v3, v2, v0}, Les/kw6;-><init>(Les/ja1;[B)V
+
+    new-instance v0, Les/iw6;
+
+    invoke-virtual {v2}, Les/ja1;->v()Ljava/math/BigInteger;
+
+    move-result-object v4
+
+    invoke-virtual {v2}, Les/ja1;->p()Ljava/math/BigInteger;
+
+    move-result-object v5
+
+    move-object v1, v0
+
+    invoke-direct/range {v1 .. v6}, Les/iw6;-><init>(Les/ja1;Les/kw6;Ljava/math/BigInteger;Ljava/math/BigInteger;[B)V
+
+    return-object v0
+.end method

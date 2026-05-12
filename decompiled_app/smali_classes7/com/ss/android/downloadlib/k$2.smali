@@ -1,0 +1,52 @@
+.class Lcom/ss/android/downloadlib/k$2;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/ss/android/downloadlib/k;->k(JI)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic k:J
+
+.field final synthetic p:Lcom/ss/android/downloadlib/k;
+
+
+# direct methods
+.method public constructor <init>(Lcom/ss/android/downloadlib/k;J)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/ss/android/downloadlib/k$2;->p:Lcom/ss/android/downloadlib/k;
+
+    iput-wide p2, p0, Lcom/ss/android/downloadlib/k$2;->k:J
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
+    .locals 3
+
+    invoke-static {}, Lcom/ss/android/downloadlib/k;->k()Lcom/ss/android/downloadlib/k;
+
+    move-result-object v0
+
+    iget-wide v1, p0, Lcom/ss/android/downloadlib/k$2;->k:J
+
+    invoke-virtual {v0, v1, v2}, Lcom/ss/android/downloadlib/k;->k(J)V
+
+    return-void
+.end method

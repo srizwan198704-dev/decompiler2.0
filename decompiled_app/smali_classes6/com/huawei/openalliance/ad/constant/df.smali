@@ -1,0 +1,8 @@
+.class public interface abstract Lcom/huawei/openalliance/ad/constant/df;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static final Code:I = 0x1
+
+.field public static final V:I = 0x2

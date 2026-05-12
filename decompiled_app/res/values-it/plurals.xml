@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">Avanti di %d secondi</item>
+        <item quantity="one">Avanti di %d secondo</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">Indietro di %d secondi</item>
+        <item quantity="one">Indietro di %d secondo</item>
+    </plurals>
+    <plurals name="hiad_dismiss_dilaog">
+        <item quantity="other">La finestra verrà chiusa tra %1$s secondi.</item>
+        <item quantity="one">La finestra verrà chiusa tra %1$s secondo.</item>
+    </plurals>
+    <plurals name="hiad_no_prompt_in_days">
+        <item quantity="other">Ricorda questa scelta per %1$s giorni</item>
+        <item quantity="one">Ricorda questa scelta per %1$s giorno</item>
+    </plurals>
+    <plurals name="hiad_reward_countdown">
+        <item quantity="other">%1$d sec</item>
+        <item quantity="one">%1$d sec</item>
+    </plurals>
+    <plurals name="je_x_text_replaced">
+        <item quantity="other">%1$d elementi sostituiti</item>
+        <item quantity="one">0 corrispondenze</item>
+    </plurals>
+    <plurals name="log_new_count">
+        <item quantity="other">Aggiunto %1$d nuovo file</item>
+        <item quantity="one">Aggiunti %1$d nuovi file</item>
+    </plurals>
+    <plurals name="log_time_title_day">
+        <item quantity="other">%1$d giorno fa</item>
+        <item quantity="one">%1$d giorni fa</item>
+    </plurals>
+    <plurals name="log_time_title_hour">
+        <item quantity="other">%1$d ora fa</item>
+        <item quantity="one">%1$d ore fa</item>
+    </plurals>
+    <plurals name="log_time_title_minute">
+        <item quantity="other">%1$d minuto fa</item>
+        <item quantity="one">%1$d minuti fa</item>
+    </plurals>
+    <plurals name="log_title_apk">
+        <item quantity="other">%1$d APK da %2$s</item>
+        <item quantity="one">%1$d APK da %2$s</item>
+    </plurals>
+    <plurals name="log_title_audio">
+        <item quantity="other">%1$d brano da %2$s</item>
+        <item quantity="one">%1$d brani da %2$s</item>
+    </plurals>
+    <plurals name="log_title_doc">
+        <item quantity="other">%1$d documento da %2$s</item>
+        <item quantity="one">%1$d documenti da %2$s</item>
+    </plurals>
+    <plurals name="log_title_folder">
+        <item quantity="other">%1$d cartella da %2$s</item>
+        <item quantity="one">%1$d cartelle da %2$s</item>
+    </plurals>
+    <plurals name="log_title_image">
+        <item quantity="other">%1$d immagine da %2$s</item>
+        <item quantity="one">%1$d immagini da %2$s</item>
+    </plurals>
+    <plurals name="log_title_netdisk">
+        <item quantity="other">Account Cloud personale</item>
+        <item quantity="one">Account Cloud personale</item>
+    </plurals>
+    <plurals name="log_title_video">
+        <item quantity="other">%1$d video da %2$s</item>
+        <item quantity="one">%1$d video da %2$s</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d nuove notifiche</item>
+        <item quantity="one">%d nuova notifica</item>
+    </plurals>
+</resources>

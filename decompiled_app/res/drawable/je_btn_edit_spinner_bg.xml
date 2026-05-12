@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:height="@dimen/je_dp_30" android:width="@dimen/je_dp_30">
+        <color android:color="@android:color/transparent" />
+    </item>
+    <item android:drawable="?customDialogEditSpinner" android:left="@dimen/je_dp_18" android:top="@dimen/je_dp_18" android:right="@dimen/je_dp_5" android:bottom="@dimen/je_dp_5" />
+</layer-list>

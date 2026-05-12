@@ -1,0 +1,93 @@
+.class public final Lcom/kwad/library/solder/a/a;
+.super Ljava/lang/Object;
+
+
+# direct methods
+.method public static a(Landroid/content/Context;Lcom/kwad/library/solder/lib/c/b;Lcom/kwad/library/solder/lib/ext/b$a;)V
+    .locals 1
+    .param p1    # Lcom/kwad/library/solder/lib/c/b;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    new-instance v0, Lcom/kwad/library/solder/lib/b/a;
+
+    invoke-direct {v0, p1}, Lcom/kwad/library/solder/lib/b/a;-><init>(Lcom/kwad/library/solder/lib/c/b;)V
+
+    invoke-static {}, Lcom/kwad/library/solder/lib/i;->BQ()Lcom/kwad/library/solder/lib/i;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0, v0, p2}, Lcom/kwad/library/solder/lib/i;->a(Landroid/content/Context;Lcom/kwad/library/solder/lib/a/e;Lcom/kwad/library/solder/lib/ext/b;)V
+
+    return-void
+.end method
+
+.method public static a(Landroid/content/Context;Lcom/kwad/library/solder/lib/c/b;Lcom/kwad/library/solder/lib/ext/b$c;)V
+    .locals 1
+    .param p1    # Lcom/kwad/library/solder/lib/c/b;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+
+    new-instance v0, Lcom/kwad/library/solder/lib/b/c;
+
+    invoke-direct {v0, p1}, Lcom/kwad/library/solder/lib/b/c;-><init>(Lcom/kwad/library/solder/lib/c/b;)V
+
+    invoke-static {}, Lcom/kwad/library/solder/lib/i;->BQ()Lcom/kwad/library/solder/lib/i;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p0, v0, p2}, Lcom/kwad/library/solder/lib/i;->a(Landroid/content/Context;Lcom/kwad/library/solder/lib/a/e;Lcom/kwad/library/solder/lib/ext/b;)V
+
+    return-void
+.end method
+
+.method public static n(Landroid/content/Context;Ljava/lang/String;)Lcom/kwad/library/b/a;
+    .locals 1
+
+    invoke-static {}, Lcom/kwad/library/solder/lib/i;->BQ()Lcom/kwad/library/solder/lib/i;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0, p1}, Lcom/kwad/library/solder/lib/i;->p(Landroid/content/Context;Ljava/lang/String;)Lcom/kwad/library/solder/lib/a/a;
+
+    move-result-object p0
+
+    if-eqz p0, :cond_1
+
+    invoke-virtual {p0}, Lcom/kwad/library/solder/lib/a/a;->isLoaded()Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    instance-of p1, p0, Lcom/kwad/library/b/a;
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    check-cast p0, Lcom/kwad/library/b/a;
+
+    return-object p0
+
+    :cond_1
+    :goto_0
+    const/4 p0, 0x0
+
+    return-object p0
+.end method
+
+.method public static o(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 1
+
+    invoke-static {}, Lcom/kwad/library/solder/lib/i;->BQ()Lcom/kwad/library/solder/lib/i;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p0, p1}, Lcom/kwad/library/solder/lib/i;->o(Landroid/content/Context;Ljava/lang/String;)V
+
+    return-void
+.end method

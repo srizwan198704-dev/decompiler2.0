@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText android:id="@id/dialog_edit_text" android:layout_marginLeft="@dimen/je_dp_25" android:layout_marginTop="@dimen/je_dp_6" android:layout_marginRight="@dimen/je_dp_25" style="@style/CustomDialogEditStyle" />
+</FrameLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0,25x</item>
+        <item>0,5x</item>
+        <item>0,75x</item>
+        <item>Normal</item>
+        <item>1,25x</item>
+        <item>1,5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="je_screen_orientation">
+        <item>Automático</item>
+        <item>Horizontal</item>
+        <item>Vertical</item>
+    </string-array>
+    <string-array name="je_wrap_char_list">
+        <item>Converter para \\n(Linux/OSX)</item>
+        <item>Converter para \\r\\n(Windows)</item>
+    </string-array>
+</resources>

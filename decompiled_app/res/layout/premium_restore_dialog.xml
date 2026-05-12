@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="@dimen/dp_15" android:textColor="@color/c_99000000" android:gravity="center_vertical" android:id="@id/tv_content" android:paddingLeft="@dimen/dp_15" android:paddingTop="@dimen/dp_20" android:paddingRight="@dimen/dp_15" android:paddingBottom="@dimen/dp_20" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/premium_restore_message" style="?android:textAppearanceMedium" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/btnLayout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/dp_16" android:textStyle="bold" android:textColor="@color/c_2274e6" android:gravity="center" android:id="@id/tv_cancel" android:background="@drawable/custom_dialog_left_btn_bg" android:focusable="true" android:layout_width="@dimen/dp_0" android:layout_height="@dimen/dp_48" android:text="@string/confirm_cancel" android:maxLines="1" android:layout_weight="1.0" />
+        <androidx.appcompat.widget.AppCompatTextView android:textSize="@dimen/dp_16" android:textStyle="bold" android:textColor="@color/c_2274e6" android:gravity="center" android:id="@id/tv_restore" android:background="@drawable/custom_dialog_right_btn_bg" android:focusable="true" android:layout_width="@dimen/dp_0" android:layout_height="@dimen/dp_48" android:text="@string/premium_restore" android:maxLines="1" android:layout_weight="1.0" app:autoSizeMaxTextSize="@dimen/dp_16" app:autoSizeMinTextSize="@dimen/dp_6" app:autoSizeStepGranularity="@dimen/dp_1" app:autoSizeTextType="uniform" />
+    </LinearLayout>
+</LinearLayout>

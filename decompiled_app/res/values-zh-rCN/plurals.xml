@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">快进 %d 秒</item>
+        <item quantity="one">快进 %d 秒</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">快退 %d 秒</item>
+        <item quantity="one">快退 %d 秒</item>
+    </plurals>
+    <plurals name="hiad_dismiss_dilaog">
+        <item quantity="other">%1$s 秒后自动忽略</item>
+    </plurals>
+    <plurals name="hiad_no_prompt_in_days">
+        <item quantity="other">%1$s 天内不再提示</item>
+    </plurals>
+    <plurals name="hiad_reward_countdown">
+        <item quantity="other">%1$d秒</item>
+    </plurals>
+    <plurals name="je_x_text_replaced">
+        <item quantity="other">%1$d 处文本已经替换</item>
+        <item quantity="one">0 个匹配</item>
+    </plurals>
+    <plurals name="log_new_count">
+        <item quantity="other">新增%1$d个文件</item>
+        <item quantity="one">新增%1$d个文件</item>
+    </plurals>
+    <plurals name="log_time_title_day">
+        <item quantity="other">%1$d天前</item>
+        <item quantity="one">%1$d天前</item>
+    </plurals>
+    <plurals name="log_time_title_hour">
+        <item quantity="other">%1$d小时前</item>
+        <item quantity="one">%1$d小时前</item>
+    </plurals>
+    <plurals name="log_time_title_minute">
+        <item quantity="other">%1$d分钟前</item>
+        <item quantity="one">%1$d分钟前</item>
+    </plurals>
+    <plurals name="log_title_apk">
+        <item quantity="other">来自%2$s的APK%1$d个</item>
+        <item quantity="one">来自%2$s的APK%1$d个</item>
+    </plurals>
+    <plurals name="log_title_audio">
+        <item quantity="other">来自%2$s的音乐%1$d首</item>
+        <item quantity="one">来自%2$s的音乐%1$d首</item>
+    </plurals>
+    <plurals name="log_title_doc">
+        <item quantity="other">来自%2$s的文档%1$d个</item>
+        <item quantity="one">来自%2$s的文档%1$d个</item>
+    </plurals>
+    <plurals name="log_title_folder">
+        <item quantity="other">来自%2$s的文件夹%1$d个</item>
+        <item quantity="one">来自%2$s的文件夹%1$d个</item>
+    </plurals>
+    <plurals name="log_title_image">
+        <item quantity="other">来自%2$s的图片%1$d张</item>
+        <item quantity="one">来自%2$s的图片%1$d张</item>
+    </plurals>
+    <plurals name="log_title_netdisk">
+        <item quantity="other">创建的网盘</item>
+        <item quantity="one">创建的网盘</item>
+    </plurals>
+    <plurals name="log_title_video">
+        <item quantity="other">来自%2$s的视频%1$d个</item>
+        <item quantity="one">来自%2$s的视频%1$d个</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d 条新通知</item>
+        <item quantity="one">%d 条新通知</item>
+    </plurals>
+</resources>

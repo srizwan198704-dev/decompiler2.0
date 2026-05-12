@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/ad_close_area" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.0sp" android:textColor="@android:color/white" android:gravity="center" android:id="@id/tev_countdown" android:background="@drawable/corners_close_bg" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:paddingStart="6.5dip" android:paddingEnd="6.5dip" android:layout_marginStart="15.0dip" />
+    <ImageView android:id="@id/ad_close" android:layout_width="11.0dip" android:layout_height="11.0dip" android:src="@mipmap/yf_ad_close" android:contentDescription="@string/yf_ad_close" android:layout_marginStart="5.0dip" android:layout_marginEnd="5.0dip" />
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/list_navi_header" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/header_background" android:layout_width="fill_parent" android:layout_height="@dimen/dp_82">
+        <androidx.appcompat.widget.LinearLayoutCompat android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/header_layout" android:paddingTop="@dimen/dp_20" android:paddingBottom="@dimen/dp_20" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.estrongs.android.ui.view.CircleImageView android:id="@id/head_img" android:layout_width="@dimen/dp_42" android:layout_height="@dimen/dp_42" android:layout_marginLeft="@dimen/dp_16" android:layout_marginRight="@dimen/dp_16" android:layout_centerVertical="true" app:civ_border_color="@color/white" app:civ_border_overlay="true" app:civ_border_width="2.0dip" />
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="@dimen/dp_12" android:textStyle="bold" android:textColor="@color/c_account_title_color" android:id="@id/tv_login_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/login_immediately" />
+                    <TextView android:textSize="9.0dip" android:textColor="#ff333333" android:gravity="center" android:id="@id/vip_flag_tv" android:background="@drawable/bg_vip_flag" android:paddingLeft="5.0dip" android:paddingTop="1.0dip" android:paddingRight="5.0dip" android:paddingBottom="1.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.5dip" android:text="VIP" />
+                </LinearLayout>
+                <TextView android:textSize="@dimen/dp_10" android:textColor="@color/c_account_sub_title_color" android:ellipsize="end" android:id="@id/tv_open_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="@string/open_vip_get_all_benefits" android:singleLine="true" />
+            </LinearLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>
+    <FrameLayout android:id="@id/premium_hint_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.appcompat.widget.LinearLayoutCompat android:gravity="center_vertical" android:id="@id/premium_hint_layout" android:background="@drawable/bg_vip_navi" android:paddingTop="@dimen/dp_19" android:paddingBottom="@dimen/dp_17" android:focusable="true" android:clickable="true" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_16" android:layout_marginRight="@dimen/dp_16">
+            <com.estrongs.android.pop.esclasses.ESImageView android:id="@id/vip_img" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginLeft="@dimen/dp_10" android:layout_marginRight="@dimen/dp_10" android:scaleType="centerInside" android:scaleX="1.1" android:scaleY="1.1" />
+            <TextView android:textSize="@dimen/dp_14" android:textStyle="bold" android:textColor="@color/white" android:id="@id/hint_title" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/premium_vip_privilege" android:layout_weight="1.0" android:layout_alignTop="@id/vip_img" android:layout_toEndOf="@id/vip_img" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <ImageView android:layout_gravity="end|bottom|center" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/icon_left_nav_vip_bg" android:scaleType="centerCrop" android:layout_marginEnd="@dimen/dp_60" />
+        <TextView android:textSize="@dimen/dp_12" android:textStyle="bold" android:textColor="@color/c_e38b0e" android:gravity="center" android:layout_gravity="end|center" android:id="@id/tv_action_open" android:background="@drawable/bg_vip_navi_action_open" android:paddingLeft="@dimen/dp_16" android:paddingTop="@dimen/dp_3" android:paddingRight="@dimen/dp_16" android:paddingBottom="@dimen/dp_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/activate_vip" android:layout_marginEnd="@dimen/dp_32" android:layout_toEndOf="@id/vip_img" />
+    </FrameLayout>
+</LinearLayout>

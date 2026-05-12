@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingLeft="20.0dip" android:paddingTop="15.0dip" android:paddingRight="20.0dip" android:paddingBottom="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="?je_netLoadingDrawable" />
+    <TextView android:textSize="12.0sp" android:textColor="@android:color/white" android:layout_gravity="center" android:id="@id/messageTextView" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <com.jecelyin.common.view.ProgressIndicatorView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="30.0dip" />
+</LinearLayout>

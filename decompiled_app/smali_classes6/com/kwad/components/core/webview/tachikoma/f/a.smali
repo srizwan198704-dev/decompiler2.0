@@ -1,0 +1,7 @@
+.class public interface abstract Lcom/kwad/components/core/webview/tachikoma/f/a;
+.super Ljava/lang/Object;
+
+
+# virtual methods
+.method public abstract kq()V
+.end method

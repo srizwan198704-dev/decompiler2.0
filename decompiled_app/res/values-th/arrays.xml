@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="backup_intervals">
+        <item>30 นาที</item>
+        <item>1 ชั่วโมง</item>
+        <item>2 ชั่วโมง</item>
+        <item>6 ชั่วโมง</item>
+        <item>1 วัน</item>
+        <item>7 วัน</item>
+    </string-array>
+    <string-array name="diskusage_sort_entries">
+        <item>ชื่อ</item>
+        <item>ชนิด</item>
+        <item>ขนาด</item>
+    </string-array>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0.25x</item>
+        <item>0.5x</item>
+        <item>0.75x</item>
+        <item>ปกติ</item>
+        <item>1.25x</item>
+        <item>1.5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="image_slide_interval">
+        <item>1 s</item>
+        <item>3 s</item>
+        <item>5 s</item>
+        <item>10 s</item>
+        <item>15 s</item>
+    </string-array>
+    <string-array name="je_screen_orientation">
+        <item>อัตโนมัติ</item>
+        <item>แนวนอน</item>
+        <item>แนวตั้ง</item>
+    </string-array>
+    <string-array name="je_wrap_char_list">
+        <item>แปลงเป็น \\n(Linux/OSX)</item>
+        <item>แปลงเป็น \\r\\n(Windows)</item>
+    </string-array>
+    <string-array name="new_navi_groups">
+        <item>ที่ชื่นชอบ</item>
+        <item>ตำแหน่ง</item>
+        <item>คลังเก็บ</item>
+        <item>เครือข่าย</item>
+        <item>เครื่องมือ</item>
+    </string-array>
+    <string-array name="pick_and_return_file_entries">
+        <item>"ทางปกติแอนดรอยด์
+(สำหรับ MMS,Gmail,…)"</item>
+        <item>"ทาง ไฟล์
+(ลองทางนี้ถ้าข้างต้น ล้มเหลว)"</item>
+    </string-array>
+    <string-array name="search_condition_date">
+        <item>ทั้งหมด</item>
+        <item>วันนี้</item>
+        <item>เมื่อวาน</item>
+        <item>สัปดาห์นี้</item>
+        <item>เดือนนี้</item>
+        <item>ปีนี้</item>
+        <item>> 1 ปี</item>
+        <item>นำเข้า</item>
+    </string-array>
+    <string-array name="search_condition_size">
+        <item>All</item>
+        <item>0 – 100 KB</item>
+        <item>100KB - 1 MB</item>
+        <item>1 MB - 16 MB</item>
+        <item>16 MB - 128 MB</item>
+        <item>> 128 MB</item>
+        <item>นำเข้า</item>
+    </string-array>
+    <string-array name="theme_folders">
+        <item>ค่าเริ่ิ่มต้น</item>
+        <item>เหลือง</item>
+        <item>เขียว</item>
+        <item>แดง</item>
+        <item>ชมพู</item>
+        <item>ดำ</item>
+    </string-array>
+    <string-array name="view_item_names">
+        <item>ไอคอนใหญ่</item>
+        <item>ไอคอนกลาง</item>
+        <item>ไอคอนเล็ก</item>
+        <item>รายการใหญ่</item>
+        <item>รายการกลาง</item>
+        <item>รายการเล็ก</item>
+        <item>รายละเอียดใหญ่</item>
+        <item>รายละเอียดกลาง</item>
+        <item>รายละเอียดเล็ก</item>
+    </string-array>
+    <string-array name="wifi_signal">
+        <item>แย่</item>
+        <item>ปานกลาง</item>
+        <item>ดี</item>
+        <item>ดีเยี่ยม</item>
+    </string-array>
+    <string-array name="wifi_status_with_ssid">
+        <item></item>
+        <item>กำลังสแกน…</item>
+        <item>กำลังเชื่อมต่อที่ %1$s…</item>
+        <item>กำลังตรวจสอบด้วย…</item>
+        <item>ได้รับที่อยู่ IP จาก %1$s…</item>
+        <item>เชื่อมต่อแล้วที่ %1$s</item>
+        <item>ระงับ</item>
+        <item>กำลังตัดการเชื่อมต่อ จาก%1$s…</item>
+        <item>ตัดการเชื่อมต่อแล้ว</item>
+        <item>ไม่สำเร็จ</item>
+    </string-array>
+    <string-array name="wifi_statuses">
+        <item></item>
+        <item>กำลังสแกน…</item>
+        <item>กำลังเชื่อมต่อ…</item>
+        <item>กำลังตรวจสอบ…</item>
+        <item>กำลังรับที่อยู่ IP…</item>
+        <item>เชื่อมต่อแล้ว</item>
+        <item>ระงับ</item>
+        <item>กำลังตัดการเชื่อมต่อ…</item>
+        <item>ตัดการเชื่อมต่อแล้ว</item>
+        <item>ไม่สำเร็จ</item>
+    </string-array>
+    <string-array name="zip_levels">
+        <item>ที่จัดเก็บ</item>
+        <item>เร็ว</item>
+        <item>มาตราฐาน</item>
+        <item>ดีที่สุด</item>
+    </string-array>
+</resources>

@@ -1,0 +1,39 @@
+.class Lcom/yfanads/android/adx/thirdpart/yfplayer/core/util/SlidingPercentile$Sample;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/yfanads/android/adx/thirdpart/yfplayer/core/util/SlidingPercentile;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "Sample"
+.end annotation
+
+
+# instance fields
+.field public index:I
+
+.field public value:F
+
+.field public weight:I
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lcom/yfanads/android/adx/thirdpart/yfplayer/core/util/SlidingPercentile$1;)V
+    .locals 0
+
+    invoke-direct {p0}, Lcom/yfanads/android/adx/thirdpart/yfplayer/core/util/SlidingPercentile$Sample;-><init>()V
+
+    return-void
+.end method

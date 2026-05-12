@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">Перемотати вперед на %d секунди</item>
+        <item quantity="one">Перемотати вперед на %d секунду</item>
+        <item quantity="few">Перемотати вперед на %d секунди</item>
+        <item quantity="many">Перемотати вперед на %d секунд</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">Перемотати назад на %d секунди</item>
+        <item quantity="one">Перемотати назад на %d секунду</item>
+        <item quantity="few">Перемотати назад на %d секунди</item>
+        <item quantity="many">Перемотати назад на %d секунд</item>
+    </plurals>
+    <plurals name="hiad_dismiss_dilaog">
+        <item quantity="other">Вікно закриється через %1$s секунди.</item>
+        <item quantity="one">Вікно закриється через %1$s секунду.</item>
+        <item quantity="few">Вікно закриється через %1$s секунди.</item>
+        <item quantity="many">Вікно закриється через %1$s секунд.</item>
+    </plurals>
+    <plurals name="hiad_no_prompt_in_days">
+        <item quantity="other">Запам’ятати вибір на %1$s днів</item>
+        <item quantity="one">Запам’ятати вибір на %1$s день</item>
+        <item quantity="few">Запам’ятати вибір на %1$s дні</item>
+        <item quantity="many">Запам’ятати вибір на %1$s дн.</item>
+    </plurals>
+    <plurals name="hiad_reward_countdown">
+        <item quantity="other">%1$d секунди</item>
+        <item quantity="one">%1$d секунда</item>
+        <item quantity="few">%1$d секунди</item>
+        <item quantity="many">%1$d секунд</item>
+    </plurals>
+    <plurals name="je_x_text_replaced">
+        <item quantity="other">Замінено елементів: %1$d</item>
+        <item quantity="one">0 збігів</item>
+    </plurals>
+    <plurals name="log_new_count">
+        <item quantity="other">Додано %1$d новий файл</item>
+        <item quantity="one">Додано нових файлів: %1$d</item>
+    </plurals>
+    <plurals name="log_time_title_day">
+        <item quantity="other">%1$d дн. тому</item>
+        <item quantity="one">%1$d дн. тому</item>
+    </plurals>
+    <plurals name="log_time_title_hour">
+        <item quantity="other">%1$d год тому</item>
+        <item quantity="one">%1$d год тому</item>
+    </plurals>
+    <plurals name="log_time_title_minute">
+        <item quantity="other">%1$d хв тому</item>
+        <item quantity="one">%1$d хв тому</item>
+    </plurals>
+    <plurals name="log_title_apk">
+        <item quantity="other">%2$s: APK (%1$d)</item>
+        <item quantity="one">%2$s: APK (%1$d)</item>
+    </plurals>
+    <plurals name="log_title_audio">
+        <item quantity="other">%2$s: пісня (%1$d)</item>
+        <item quantity="one">%2$s: пісні (%1$d)</item>
+    </plurals>
+    <plurals name="log_title_doc">
+        <item quantity="other">%2$s: документ (%1$d)</item>
+        <item quantity="one">%2$s: документи (%1$d)</item>
+    </plurals>
+    <plurals name="log_title_folder">
+        <item quantity="other">%2$s: папка (%1$d)</item>
+        <item quantity="one">%2$s: папки (%1$d)</item>
+    </plurals>
+    <plurals name="log_title_image">
+        <item quantity="other">%2$s: зображення (%1$d)</item>
+        <item quantity="one">%2$s: зображення (%1$d)</item>
+    </plurals>
+    <plurals name="log_title_netdisk">
+        <item quantity="other">Обл. запис My Cloud</item>
+        <item quantity="one">Обл. записи My Cloud</item>
+    </plurals>
+    <plurals name="log_title_video">
+        <item quantity="other">%2$s: відео (%1$d)</item>
+        <item quantity="one">%2$s: відео (%1$d)</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d нового сповіщення</item>
+        <item quantity="one">%d нове сповіщення</item>
+        <item quantity="few">%d нові сповіщення</item>
+        <item quantity="many">%d нових сповіщень</item>
+    </plurals>
+</resources>

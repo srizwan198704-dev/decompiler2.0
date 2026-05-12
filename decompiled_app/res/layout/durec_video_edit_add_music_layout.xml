@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:layout_marginRight="13.0dip">
+                <com.esfile.screen.recorder.ui.FontTextView android:textSize="15.0dip" android:textColor="#ff777777" android:layout_gravity="center|left" android:id="@id/durec_music_snippetbar_left_time" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0:00.0" />
+                <com.esfile.screen.recorder.ui.FontTextView android:textSize="15.0dip" android:textColor="#ff777777" android:layout_gravity="center_horizontal" android:id="@id/durec_music_snippetbar_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0:00.0" />
+                <com.esfile.screen.recorder.ui.FontTextView android:textSize="15.0dip" android:textColor="#ff777777" android:layout_gravity="center|right" android:id="@id/durec_music_snippetbar_right_time" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0:00.0" />
+            </FrameLayout>
+            <com.esfile.screen.recorder.videos.edit.ui.SnippetSeekBarContainer android:id="@id/durec_music_snippetbar_container" android:layout_width="fill_parent" android:layout_height="@dimen/durec_edit_video_snippet_container_height" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/add_music_info_container" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip">
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/durec_edit_video_music_icon" />
+            <com.esfile.screen.recorder.ui.FontTextView android:textSize="12.0dip" android:textColor="#ff626262" android:ellipsize="end" android:id="@id/add_music_mp3_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:maxLines="1" android:layout_weight="1.0" />
+            <ImageView android:id="@id/add_music_delete_mp3" android:paddingLeft="23.0dip" android:paddingRight="23.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/durec_edit_video_delete_music_selector" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:paddingTop="16.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.esfile.screen.recorder.ui.ConfirmTextView android:textSize="@dimen/durec_edit_video_tab_view_btn_text_size" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/add_music_left_btn" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_marginLeft="13.0dip" android:layout_marginRight="13.0dip" android:text="@string/durec_add_music" android:layout_weight="1.0" app:isSolid="false" />
+        <com.esfile.screen.recorder.ui.ConfirmTextView android:textSize="@dimen/durec_edit_video_tab_view_btn_text_size" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/add_music_preview_btn" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_marginLeft="13.0dip" android:layout_marginRight="13.0dip" android:text="@string/durec_common_preview" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

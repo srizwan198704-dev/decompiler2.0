@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/auth_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.estrongs.android.pop.esclasses.ESWebView android:id="@id/login_page" android:visibility="invisible" android:layout_width="0.0dip" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <FrameLayout android:orientation="vertical" android:id="@id/load_view" android:background="@drawable/loading_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <ProgressBar android:layout_gravity="center" android:id="@id/auth_page_load_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/ProgressBar" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

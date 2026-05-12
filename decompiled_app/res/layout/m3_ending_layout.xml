@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="#4d000000" android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/m3_replay_group" android:background="?android:selectableItemBackground" android:padding="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/m3_replay_icon" android:layout_width="27.0dip" android:layout_height="27.0dip" android:src="@drawable/icon_video_controller_replay" app:layout_constraintBottom_toTopOf="@id/m3_replay_text" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/m3_white" android:layout_gravity="center_horizontal" android:id="@id/m3_replay_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/m3_video_replay" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/m3_replay_icon" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

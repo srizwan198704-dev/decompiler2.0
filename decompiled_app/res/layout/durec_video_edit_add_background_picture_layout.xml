@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.esfile.screen.recorder.ui.DuTabLayout android:id="@id/durec_add_picture_tab_layout" android:layout_width="fill_parent" android:layout_height="45.0dip" app:tabIndicatorColor="@color/durec_colorPrimary" app:tabIndicatorHeight="2.0dip" app:tabMode="fixed" app:tabSelectedTextColor="@color/durec_colorPrimary" app:tabTextAppearance="@style/LowercaseTabStyle" app:tabTextColor="#ff535353" xmlns:app="http://schemas.android.com/apk/res-auto" />
+    <com.esfile.screen.recorder.ui.ConfirmTextView android:textSize="@dimen/durec_edit_video_tab_view_btn_text_size" android:gravity="center" android:id="@id/durec_add_picture_preview_btn" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="13.0dip" android:layout_marginRight="13.0dip" android:layout_marginBottom="16.0dip" android:text="@string/durec_common_preview" android:layout_alignParentBottom="true" />
+    <com.esfile.screen.recorder.ui.DuRecorderViewPager android:id="@id/durec_add_picture_view_pager" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/durec_add_picture_preview_btn" android:layout_below="@id/durec_add_picture_tab_layout" />
+</RelativeLayout>

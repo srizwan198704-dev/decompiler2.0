@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="w_dp_10">10.0dip</dimen>
+    <dimen name="w_dp_102">102.0dip</dimen>
+    <dimen name="w_dp_12">12.0dip</dimen>
+    <dimen name="w_dp_124">124.0dip</dimen>
+    <dimen name="w_dp_13">13.0dip</dimen>
+    <dimen name="w_dp_14">14.0dip</dimen>
+    <dimen name="w_dp_15">15.0dip</dimen>
+    <dimen name="w_dp_18">18.0dip</dimen>
+    <dimen name="w_dp_20">20.0dip</dimen>
+    <dimen name="w_dp_24">24.0dip</dimen>
+    <dimen name="w_dp_28">28.0dip</dimen>
+    <dimen name="w_dp_30">30.0dip</dimen>
+    <dimen name="w_dp_34">34.0dip</dimen>
+    <dimen name="w_dp_36">36.0dip</dimen>
+    <dimen name="w_dp_46">46.0dip</dimen>
+    <dimen name="w_dp_48">48.0dip</dimen>
+    <dimen name="w_dp_50">50.0dip</dimen>
+    <dimen name="w_dp_64">64.0dip</dimen>
+    <dimen name="w_dp_7">7.0dip</dimen>
+    <dimen name="w_dp_8">8.0dip</dimen>
+    <dimen name="w_dp_80">80.0dip</dimen>
+</resources>

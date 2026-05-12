@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/multi_window_page" android:background="@color/left_navi_bg_color" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/mtd_content_tripple_view_layout" />
+    <FrameLayout android:id="@id/container_window" android:layout_width="fill_parent" android:layout_height="@dimen/dp_0" android:layout_weight="1.0" />
+    <View android:id="@id/paste_ll_divider_one" android:background="@color/es_base_divider_color" android:layout_width="fill_parent" android:layout_height="@dimen/dp_1" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/container_buttons" android:background="@color/right_bg_color_btn_layout" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/dp_50">
+        <TextView android:textSize="@dimen/dp_17" android:textColor="@color/window_txt_color_o1" android:gravity="center" android:id="@id/multiwindow_new" android:background="@drawable/selector_txtbtn_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/action_new" android:layout_weight="1.0" />
+        <View android:id="@id/paste_divider_one" android:background="@color/es_base_divider_color" android:layout_width="@dimen/dp_1" android:layout_height="fill_parent" />
+        <TextView android:textSize="@dimen/dp_17" android:textColor="@color/window_txt_color_o1" android:gravity="center" android:id="@id/multiwindow_default" android:background="@drawable/selector_txtbtn_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/action_default" android:layout_weight="1.0" />
+        <View android:id="@id/paste_divider_two" android:background="@color/es_base_divider_color" android:layout_width="@dimen/dp_1" android:layout_height="fill_parent" />
+        <TextView android:textSize="@dimen/dp_17" android:textColor="@color/window_txt_color_o1" android:gravity="center" android:id="@id/multiwindow_closeall" android:background="@drawable/selector_txtbtn_bg" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/action_clear_all" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/je_editor">
+        <com.jecelyin.editor.v2.preference.FontSizePreference android:title="@string/je_font_size" android:key="pref_font_size" android:summary="@string/je_default_value" />
+        <com.jecelyin.editor.v2.preference.CursorWidthPreference android:title="@string/je_cursor_width" android:key="pref_cursor_width" android:summary="@string/je_default_value" />
+        <CheckBoxPreference android:title="@string/je_touch_to_adjust_text_size" android:key="pref_touch_to_adjust_text_size" />
+        <CheckBoxPreference android:title="@string/je_word_wrap_in_editor" android:key="pref_word_wrap" />
+        <CheckBoxPreference android:title="@string/je_show_linenumber" android:key="pref_show_linenumber" />
+        <CheckBoxPreference android:title="@string/je_show_whitespace" android:key="pref_show_whitespace" />
+        <CheckBoxPreference android:title="@string/je_auto_indent" android:key="pref_auto_indent" />
+        <CheckBoxPreference android:title="@string/je_insert_space_for_tab" android:key="pref_insert_space_for_tab" />
+        <com.jecelyin.editor.v2.preference.CustomEditTextPreference android:singleLine="true" android:maxLength="1" android:title="@string/je_tab_size" android:key="pref_tab_size" android:summary="4" android:inputType="number" />
+        <CheckBoxPreference android:title="@string/je_auto_capitalize" android:key="pref_auto_capitalize" />
+        <com.jecelyin.editor.v2.preference.SymbolBarPreference android:scrollbars="vertical" android:maxLines="7" android:title="@string/je_custom_symbol_list" android:key="pref_symbol" android:summary="" android:negativeButtonText="@string/je_reset" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/je_highlight_and_theme">
+        <CheckBoxPreference android:title="@string/je_enable_highlight" android:key="pref_enable_highlight" />
+        <com.jecelyin.editor.v2.preference.CustomEditTextPreference android:singleLine="true" android:title="@string/je_highlight_the_file_size_limit" android:key="pref_highlight_file_size_limit" android:summary="500 KB" android:inputType="number" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/je_other">
+        <CheckBoxPreference android:title="@string/je_auto_save" android:key="pref_auto_save" />
+        <CheckBoxPreference android:title="@string/je_remember_last_opened_files" android:key="pref_remember_last_opened_files" android:summary="@string/je_remember_last_opened_files_summary" />
+        <com.jecelyin.editor.v2.preference.CustomListPreference android:entries="@array/je_screen_orientation" android:title="@string/je_screen_orientation" android:key="pref_screen_orientation" android:entryValues="@array/screen_orientation_values" />
+    </PreferenceCategory>
+</PreferenceScreen>

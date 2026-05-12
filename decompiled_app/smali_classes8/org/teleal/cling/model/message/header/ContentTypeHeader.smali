@@ -1,0 +1,198 @@
+.class public Lorg/teleal/cling/model/message/header/ContentTypeHeader;
+.super Lorg/teleal/cling/model/message/header/UpnpHeader;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lorg/teleal/cling/model/message/header/UpnpHeader<",
+        "Lorg/teleal/common/util/MimeType;",
+        ">;"
+    }
+.end annotation
+
+
+# static fields
+.field public static final DEFAULT_CONTENT_TYPE:Lorg/teleal/common/util/MimeType;
+
+.field public static final DEFAULT_CONTENT_TYPE_UTF8:Lorg/teleal/common/util/MimeType;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    const-string v0, "text/xml"
+
+    invoke-static {v0}, Lorg/teleal/common/util/MimeType;->valueOf(Ljava/lang/String;)Lorg/teleal/common/util/MimeType;
+
+    move-result-object v0
+
+    sput-object v0, Lorg/teleal/cling/model/message/header/ContentTypeHeader;->DEFAULT_CONTENT_TYPE:Lorg/teleal/common/util/MimeType;
+
+    const-string v0, "text/xml;charset=\"utf-8\""
+
+    invoke-static {v0}, Lorg/teleal/common/util/MimeType;->valueOf(Ljava/lang/String;)Lorg/teleal/common/util/MimeType;
+
+    move-result-object v0
+
+    sput-object v0, Lorg/teleal/cling/model/message/header/ContentTypeHeader;->DEFAULT_CONTENT_TYPE_UTF8:Lorg/teleal/common/util/MimeType;
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    invoke-direct {p0}, Lorg/teleal/cling/model/message/header/UpnpHeader;-><init>()V
+
+    sget-object v0, Lorg/teleal/cling/model/message/header/ContentTypeHeader;->DEFAULT_CONTENT_TYPE:Lorg/teleal/common/util/MimeType;
+
+    invoke-virtual {p0, v0}, Lorg/teleal/cling/model/message/header/UpnpHeader;->setValue(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/teleal/cling/model/message/header/InvalidHeaderException;
+        }
+    .end annotation
+
+    invoke-direct {p0}, Lorg/teleal/cling/model/message/header/UpnpHeader;-><init>()V
+
+    invoke-virtual {p0, p1}, Lorg/teleal/cling/model/message/header/ContentTypeHeader;->setString(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Lorg/teleal/common/util/MimeType;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/teleal/cling/model/message/header/UpnpHeader;-><init>()V
+
+    invoke-virtual {p0, p1}, Lorg/teleal/cling/model/message/header/UpnpHeader;->setValue(Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public getString()Ljava/lang/String;
+    .locals 1
+
+    invoke-virtual {p0}, Lorg/teleal/cling/model/message/header/UpnpHeader;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/teleal/common/util/MimeType;
+
+    invoke-virtual {v0}, Lorg/teleal/common/util/MimeType;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public isText()Z
+    .locals 2
+
+    invoke-virtual {p0}, Lorg/teleal/cling/model/message/header/UpnpHeader;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lorg/teleal/cling/model/message/header/UpnpHeader;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/teleal/common/util/MimeType;
+
+    invoke-virtual {v0}, Lorg/teleal/common/util/MimeType;->getType()Ljava/lang/String;
+
+    move-result-object v0
+
+    sget-object v1, Lorg/teleal/cling/model/message/header/ContentTypeHeader;->DEFAULT_CONTENT_TYPE:Lorg/teleal/common/util/MimeType;
+
+    invoke-virtual {v1}, Lorg/teleal/common/util/MimeType;->getType()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
+.method public isUDACompliantXML()Z
+    .locals 2
+
+    invoke-virtual {p0}, Lorg/teleal/cling/model/message/header/ContentTypeHeader;->isText()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p0}, Lorg/teleal/cling/model/message/header/UpnpHeader;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/teleal/common/util/MimeType;
+
+    invoke-virtual {v0}, Lorg/teleal/common/util/MimeType;->getSubtype()Ljava/lang/String;
+
+    move-result-object v0
+
+    sget-object v1, Lorg/teleal/cling/model/message/header/ContentTypeHeader;->DEFAULT_CONTENT_TYPE:Lorg/teleal/common/util/MimeType;
+
+    invoke-virtual {v1}, Lorg/teleal/common/util/MimeType;->getSubtype()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method
+
+.method public setString(Ljava/lang/String;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Lorg/teleal/cling/model/message/header/InvalidHeaderException;
+        }
+    .end annotation
+
+    invoke-static {p1}, Lorg/teleal/common/util/MimeType;->valueOf(Ljava/lang/String;)Lorg/teleal/common/util/MimeType;
+
+    move-result-object p1
+
+    invoke-virtual {p0, p1}, Lorg/teleal/cling/model/message/header/UpnpHeader;->setValue(Ljava/lang/Object;)V
+
+    return-void
+.end method

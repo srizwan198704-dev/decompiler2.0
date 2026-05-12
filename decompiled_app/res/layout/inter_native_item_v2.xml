@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/ad_container" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/other_animator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignTop="@id/action_lottie_view" android:layout_alignBottom="@id/action_lottie_view" android:layout_centerInParent="true" android:layout_alignStart="@id/action_lottie_view" android:layout_alignEnd="@id/action_lottie_view" />
+    <include layout="@layout/inter_item_fill" />
+    <RelativeLayout android:id="@id/ad_fill_bg" android:background="@drawable/inter_v2_fill_bg" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <View android:id="@id/ad_image_click" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/item_compliance_content" />
+    <View android:id="@id/dy_click_view" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/item_compliance_content" android:layout_centerInParent="true" />
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/inter_v2_big_style" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" layout="@layout/inter_v2_event" />
+    <include android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/compliance_content_area" android:layout_centerHorizontal="true" android:layout_marginStart="15.0dip" android:layout_marginEnd="15.0dip" layout="@layout/inter_item_v2_big_style" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" layout="@layout/inter_item_v2_small_style" />
+    <include layout="@layout/yf_item_new_close" />
+    <include layout="@layout/yf_item_feed_v3" />
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_alignParentBottom="true" layout="@layout/item_compliance_content" />
+    <View android:id="@id/no_click_view" android:layout_width="1.0dip" android:layout_height="1.0dip" />
+</RelativeLayout>

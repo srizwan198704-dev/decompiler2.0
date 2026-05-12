@@ -1,0 +1,13 @@
+.class public interface abstract Lorg/teleal/cling/support/model/DIDLObject$Property$NAMESPACE;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/teleal/cling/support/model/DIDLObject$Property;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "NAMESPACE"
+.end annotation

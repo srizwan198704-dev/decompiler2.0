@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="diskusage_sort_entries">
+        <item>Názov</item>
+        <item>Typ</item>
+        <item>Veľkosť</item>
+    </string-array>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0,25 ×</item>
+        <item>0,5 ×</item>
+        <item>0,75 ×</item>
+        <item>Normálne</item>
+        <item>1,25 ×</item>
+        <item>1,5 ×</item>
+        <item>2 ×</item>
+    </string-array>
+    <string-array name="image_slide_interval">
+        <item>1 sekunda</item>
+        <item>3 sekundy</item>
+        <item>5 sekundy</item>
+        <item>10 sekundy</item>
+        <item>15 sekundy</item>
+    </string-array>
+    <string-array name="new_navi_groups">
+        <item>Obľúbené</item>
+        <item>Miestne</item>
+        <item>Knižnica</item>
+        <item>Sieť</item>
+        <item>Nástroje</item>
+    </string-array>
+    <string-array name="pick_and_return_file_entries">
+        <item>"Normálny spôsob OS Android
+(pre MMS,Gmail,…)"</item>
+        <item>"Spôsob podľa súboru
+(Vyskúšajte ak vyššie uvedená možnosť nefunguje)"</item>
+    </string-array>
+    <string-array name="search_condition_date">
+        <item>Všetko</item>
+        <item>Dnes</item>
+        <item>Včera</item>
+        <item>Tento týždeň</item>
+        <item>Tento mesiac</item>
+        <item>Tento rok</item>
+        <item>> 1 rok</item>
+        <item>Vlastný rozsah</item>
+    </string-array>
+    <string-array name="search_condition_size">
+        <item>Všetko</item>
+        <item>0 – 100 KB</item>
+        <item>100KB - 1 MB</item>
+        <item>1 MB - 16 MB</item>
+        <item>16 MB - 128 MB</item>
+        <item>> 128 MB</item>
+        <item>Vlastný rozsah</item>
+    </string-array>
+    <string-array name="theme_folders">
+        <item>Predvolený</item>
+        <item>Žltý</item>
+        <item>Zelený</item>
+        <item>Červený</item>
+        <item>Ružový</item>
+        <item>Čierny</item>
+    </string-array>
+    <string-array name="view_item_names">
+        <item>Veľké ikony</item>
+        <item>Stredné ikony</item>
+        <item>Malé ikony</item>
+        <item>Veľký zoznam</item>
+        <item>Stredný zoznam</item>
+        <item>Malý zoznam</item>
+        <item>Veľké detaily</item>
+        <item>Stredné detaily</item>
+        <item>Malé detaily</item>
+    </string-array>
+    <string-array name="wifi_signal">
+        <item>Slabý</item>
+        <item>Dostatočný</item>
+        <item>Dobrý</item>
+        <item>Výborný</item>
+    </string-array>
+    <string-array name="wifi_status_with_ssid">
+        <item></item>
+        <item>Vyhľadávanie…</item>
+        <item>Pripájanie k %1$s…</item>
+        <item>Overovanie s %1$s…</item>
+        <item>Získavanie IP adresy od %1$s…</item>
+        <item>Pripojené k %1$s</item>
+        <item>Pozastavené</item>
+        <item>Odpojené od %1$s…</item>
+        <item>Odpojené</item>
+        <item>Neúspešné</item>
+    </string-array>
+    <string-array name="wifi_statuses">
+        <item></item>
+        <item>Vyhľadávanie…</item>
+        <item>Pripájanie…</item>
+        <item>Autorizácia…</item>
+        <item>Získavanie IP adresy…</item>
+        <item>Pripojené</item>
+        <item>Pozastavené</item>
+        <item>Odpájanie…</item>
+        <item>Odpojené</item>
+        <item>Neúspešné</item>
+    </string-array>
+    <string-array name="zip_levels">
+        <item>Žiadna kompresia</item>
+        <item>Rýchla kompresia</item>
+        <item>Štandardná kompresia</item>
+        <item>Najvyššia kompresia</item>
+    </string-array>
+</resources>

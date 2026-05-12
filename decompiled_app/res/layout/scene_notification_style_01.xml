@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/scene_notifi_root" android:background="@drawable/notification_bg" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="64.0dip" android:layout_centerVertical="true">
+        <ImageView android:id="@id/scene_notifi_img" android:layout_width="45.0dip" android:layout_height="45.0dip" android:src="@drawable/ic_launcher" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:layout_alignParentStart="true" />
+        <Button android:textSize="13.0dip" android:textColor="@color/white" android:id="@id/scene_notifi_btn" android:background="@drawable/btn_60_02_selector" android:clickable="false" android:layout_width="60.0dip" android:layout_height="30.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="15.0dip" android:layout_toLeftOf="@id/scene_notifi_btn" android:layout_toRightOf="@id/scene_notifi_img" android:layout_centerVertical="true" android:layout_toStartOf="@id/scene_notifi_btn" android:layout_toEndOf="@id/scene_notifi_img">
+            <TextView android:textSize="15.0dip" android:textStyle="bold" android:textColor="@color/c_cc000000" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/scene_notifi_txt_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Content Title" android:singleLine="true" />
+            <TextView android:textSize="13.0dip" android:textColor="@color/c_99000000" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/scene_notifi_txt_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:text="Content Title" android:maxLines="2" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

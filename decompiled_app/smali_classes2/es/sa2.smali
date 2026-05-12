@@ -1,0 +1,12 @@
+.class public final synthetic Les/sa2;
+.super Ljava/lang/Object;
+
+
+# direct methods
+.method public static bridge synthetic a(Landroidx/fragment/app/FragmentActivity;Landroid/app/ActivityManager$TaskDescription;)V
+    .locals 0
+
+    invoke-virtual {p0, p1}, Landroid/app/Activity;->setTaskDescription(Landroid/app/ActivityManager$TaskDescription;)V
+
+    return-void
+.end method

@@ -1,0 +1,22 @@
+.class public Lcom/yfanads/android/adx/webview/client/b;
+.super Landroid/webkit/WebChromeClient;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onProgressChanged(Landroid/webkit/WebView;I)V
+    .locals 0
+
+    invoke-super {p0, p1, p2}, Landroid/webkit/WebChromeClient;->onProgressChanged(Landroid/webkit/WebView;I)V
+
+    return-void
+.end method

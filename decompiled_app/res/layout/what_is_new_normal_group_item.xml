@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:background="@color/c_f2fbff" android:focusableInTouchMode="false" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/what_is_new_group_img" android:layout_width="@dimen/dp_45" android:layout_height="@dimen/dp_45" android:layout_marginLeft="@dimen/dp_10" android:layout_marginTop="@dimen/dp_10" android:layout_marginRight="@dimen/dp_6" android:src="@drawable/what_is_new_feature" android:scaleType="centerCrop" android:layout_centerVertical="true" android:layout_marginStart="@dimen/dp_10" android:layout_marginEnd="@dimen/dp_6" />
+    <TextView android:textSize="@dimen/dp_17" android:textColor="@color/c_cc000000" android:id="@id/what_is_new_group_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/what_is_new_second_group" android:layout_toRightOf="@id/what_is_new_group_img" android:layout_centerVertical="true" android:layout_toEndOf="@id/what_is_new_group_img" />
+</RelativeLayout>

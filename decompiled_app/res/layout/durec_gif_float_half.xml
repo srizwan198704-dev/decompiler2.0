@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/gif_half_view" android:layout_width="@dimen/durec_gif_float_half_size" android:layout_height="@dimen/durec_function_float_window_size"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_width="@dimen/durec_gif_float_half_size" android:layout_height="@dimen/durec_function_float_window_size" android:src="@drawable/durec_gif_float_record_on_half" />
+    <com.esfile.screen.recorder.ui.FontTextView android:textSize="@dimen/durec_gif_float_half_text_size" android:textColor="@color/durec_white" android:layout_gravity="center|left" android:id="@id/gif_float_half_textview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/durec_gif" />
+</FrameLayout>

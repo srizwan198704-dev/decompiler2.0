@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/bottom_area" android:background="@drawable/circle_bottom_bg" android:padding="9.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="12.0sp" android:textColor="#ffffffff" android:id="@id/download" android:background="@drawable/download" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="1" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+    <TextView android:textSize="15.0sp" android:textColor="#ffffffff" android:ellipsize="end" android:id="@id/ad_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:layout_centerVertical="true" android:layout_marginEnd="10.0dip" android:layout_toStartOf="@id/download" />
+</RelativeLayout>
