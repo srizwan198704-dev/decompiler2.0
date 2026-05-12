@@ -1,4 +1,4 @@
-name: W4B Recompile
+name: W4B RecompileUCMINIP
 
 on:
   workflow_dispatch:
@@ -37,8 +37,6 @@ jobs:
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/zipalign /usr/local/bin/zipalign
           echo "/opt/android-sdk/build-tools/34.0.0" >> $GITHUB_PATH
           echo "ANDROID_SDK_ROOT=/opt/android-sdk" >> $GITHUB_ENV
-          aapt2 version
-          apksigner version
 
       - name: Setup APKTool
         run: |
@@ -47,18 +45,11 @@ jobs:
           sudo wget -q https://github.com/iBotPeaches/Apktool/releases/download/v2.10.0/apktool_2.10.0.jar \
             -O /usr/local/bin/apktool.jar
           sudo chmod +x /usr/local/bin/apktool /usr/local/bin/apktool.jar
-          apktool --version
 
       - name: Detect Old Package Name
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
-          OLD_PACKAGE=""
-          if [ -f "$DECOMPILED_DIR/AndroidManifest.xml" ]; then
-            OLD_PACKAGE=$(grep -oP 'package="\K[^"]+' "$DECOMPILED_DIR/AndroidManifest.xml" | head -1)
-          fi
-          if [ -z "$OLD_PACKAGE" ]; then
-            OLD_PACKAGE="com.whatsapp"
-          fi
+          OLD_PACKAGE=$(grep -oP 'package="\K[^"]+' "$DECOMPILED_DIR/AndroidManifest.xml" | head -1)
           echo "OLD_PACKAGE=$OLD_PACKAGE" >> $GITHUB_ENV
           echo "Detected old package: $OLD_PACKAGE"
 
@@ -81,92 +72,62 @@ jobs:
               pattern = escaped + r'(?!' + suffix + r')'
           else:
               pattern = escaped
-          count = len(re.findall(pattern, content))
           result = re.sub(pattern, new, content)
           with open(path, "w", encoding="utf-8") as f:
               f.write(result)
-          print(f"Replaced {count} occurrences: {old} -> {new}")
-          try:
-              ET.parse(path)
-              print("XML validation: OK")
-          except ET.ParseError as e:
-              print(f"XML ERROR: {e}")
-              sys.exit(1)
+          ET.parse(path)
+          print("XML validation: OK")
           PYEOF
           python3 /tmp/fix.py "$OLD" "$NEW" "$MANIFEST"
-          echo "=== First 5 lines after rename ==="
-          head -5 "$MANIFEST"
 
-      - name: Rename Package in smali files - SAFE MODE
+      - name: Remove DataBinding + Safe Package Rename
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
           NEW="com.whatsapp.w4b"
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW" | tr '.' '/')
-          echo "Replacing smali references: $OLD -> $NEW"
-          
-          # 1. XML এবং properties এ normal replace
-          find "$DECOMPILED_DIR" \
-            -type f \( -name "*.xml" -o -name "*.properties" \) \
-            -exec sed -i "s|${OLD}|${NEW}|g" {} +
-          
-          # 2. Smali তে শুধু Lpackage/name; format replace করো
-          # .class, .super, .source লাইন বাদ দিয়ে
+
+          # 1. DataBinding পুরা ডিলিট - এটাই parsing error এর মূল কারণ
+          find "$DECOMPILED_DIR" -type d -path "*/androidx/databinding" -exec rm -rf {} + 2>/dev/null || true
+          find "$DECOMPILED_DIR" -type f -name "*DataBinderMapperImpl.smali" -delete
+          find "$DECOMPILED_DIR" -type f -name "*DataBinding*.smali" -delete
+          find "$DECOMPILED_DIR" -type f -name "BR.smali" -delete
+          echo "DataBinding removed"
+
+          # 2. XML এ normal replace
+          find "$DECOMPILED_DIR" -type f -name "*.xml" -exec sed -i "s|${OLD}|${NEW}|g" {} +
+
+          # 3. Smali তে শুধু Lpackage/name; format replace
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i \
             -e "/^\.class /b" \
             -e "/^\.super /b" \
             -e "/^\.source /b" \
-            -e "s|L${OLD_PATH}/|L${NEW_PATH}/|g" \
-            -e "s|${OLD}|${NEW}|g" {} +
-          
-          # 3. Folder structure ও move করতে হবে
-          OLD_SMALI_DIR="$DECOMPILED_DIR/smali/${OLD_PATH}"
-          NEW_SMALI_DIR="$DECOMPILED_DIR/smali/${NEW_PATH}"
-          if [ -d "$OLD_SMALI_DIR" ]; then
-            mkdir -p "$(dirname "$NEW_SMALI_DIR")"
-            mv "$OLD_SMALI_DIR" "$NEW_SMALI_DIR"
-            echo "Moved smali folder: $OLD_PATH -> $NEW_PATH"
-          fi
-          
-          # smali_classes2, classes3 এর জন্যও একই কাজ
-          for i in 2 3; do
-            OLD_SMALI_DIR="$DECOMPILED_DIR/smali_classes${i}/${OLD_PATH}"
-            NEW_SMALI_DIR="$DECOMPILED_DIR/smali_classes${i}/${NEW_PATH}"
+            -e "s|L${OLD_PATH}/|L${NEW_PATH}/|g" {} +
+
+          # 4. Folder move
+          for smali_dir in smali smali_classes2 smali_classes3; do
+            OLD_SMALI_DIR="$DECOMPILED_DIR/$smali_dir/${OLD_PATH}"
+            NEW_SMALI_DIR="$DECOMPILED_DIR/$smali_dir/${NEW_PATH}"
             if [ -d "$OLD_SMALI_DIR" ]; then
               mkdir -p "$(dirname "$NEW_SMALI_DIR")"
               mv "$OLD_SMALI_DIR" "$NEW_SMALI_DIR"
-              echo "Moved smali_classes${i} folder: $OLD_PATH -> $NEW_PATH"
             fi
           done
-          
-          echo "Smali rename done safely"
+          echo "Package rename done"
+
+      - name: Fix apktool.yml
+        run: |
+          APKTOOL_YML="${{ github.event.inputs.decompiled_folder }}/apktool.yml"
+          sed -i 's/doNotCompress:/doNotCompress:\n- resources.arsc/' "$APKTOOL_YML"
+          sed -i 's/forced-package-id:.*/forced-package-id: "127"/' "$APKTOOL_YML" || true
+          echo "apktool.yml fixed"
 
       - name: Recompile APK
         run: |
           DIR="${{ github.event.inputs.decompiled_folder }}"
-          echo "=== Attempt 1: default ==="
-          if apktool b "$DIR" -o recompiled_unsigned.apk -f 2>&1; then
-            echo "Build success (attempt 1)"
-          else
-            echo "=== Attempt 2: with aapt2 ==="
-            if apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 2>&1; then
-              echo "Build success (attempt 2)"
-            else
-              echo "=== Attempt 3: aapt2 + no-crunch ==="
-              apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --no-crunch 2>&1 || true
-            fi
-          fi
-          if [ ! -f recompiled_unsigned.apk ]; then
-            echo "ERROR: APK not created!"
-            exit 1
-          fi
+          apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --no-crunch
           ls -lh recompiled_unsigned.apk
-
-      - name: Verify APK structure
-        run: |
-          aapt2 dump badging recompiled_unsigned.apk | head -5 || \
-            echo "Warning: aapt2 dump failed (may still be installable)"
 
       - name: Generate Keystore
         run: |
@@ -180,26 +141,25 @@ jobs:
             -keypass w4b123 \
             -dname "CN=W4B,OU=Dev,O=W4B,L=Dhaka,ST=Dhaka,C=BD" \
             -noprompt
-          echo "Keystore generated"
 
       - name: Zipalign APK
         run: |
           zipalign -v -p 4 recompiled_unsigned.apk aligned.apk
-          echo "Zipalign done"
-          zipalign -c -v 4 aligned.apk && echo "Alignment check: PASSED" || echo "Alignment check: FAILED"
+          zipalign -c -v 4 aligned.apk
 
-      - name: Sign APK with apksigner
+      - name: Sign APK with apksigner - V1+V2+V3
         run: |
           apksigner sign \
             --ks my.keystore \
             --ks-pass pass:w4b123 \
             --key-pass pass:w4b123 \
             --ks-key-alias w4b \
+            --v1-signing-enabled true \
+            --v2-signing-enabled true \
+            --v3-signing-enabled true \
             --out signed_app.apk \
             aligned.apk
-          echo "Signing done"
-          apksigner verify --verbose signed_app.apk && echo "Signature verify: PASSED" || echo "Signature verify: FAILED"
-          ls -lh signed_app.apk
+          apksigner verify --verbose signed_app.apk
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
@@ -217,7 +177,6 @@ jobs:
             ✅ Package: com.whatsapp.w4b
             📦 Original: ${{ env.OLD_PACKAGE }}
             🔧 Build: #${{ github.run_number }}
-            🔑 Signed with apksigner (v2/v3 scheme)
           files: signed_app.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
