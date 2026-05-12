@@ -14,15 +14,15 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout
+            - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Java
+            - name: Setup Java
         run: |
           sudo apt-get update
           sudo apt-get install -y openjdk-17-jre-headless zipalign wget unzip python3
 
-      - name: Setup Android SDK
+            - name: Setup Android SDK
         run: |
           wget -q https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O cmdline-tools.zip
           sudo mkdir -p /opt/android-sdk/cmdline-tools
@@ -39,7 +39,7 @@ jobs:
           echo "/opt/android-sdk/build-tools/34.0.0" >> $GITHUB_PATH
           echo "ANDROID_SDK_ROOT=/opt/android-sdk" >> $GITHUB_ENV
 
-      - name: Setup APKTool
+            - name: Setup APKTool
         run: |
           sudo wget -q https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool \
             -O /usr/local/bin/apktool
@@ -47,13 +47,13 @@ jobs:
             -O /usr/local/bin/apktool.jar
           sudo chmod +x /usr/local/bin/apktool /usr/local/bin/apktool.jar
 
-      - name: Set Package Names
+            - name: Set Package Names
         run: |
           echo "OLD_PACKAGE=ru.maximoff.apktool" >> $GITHUB_ENV
           echo "NEW_MANIFEST=com.bKash.customerapp" >> $GITHUB_ENV
           echo "NEW_SMALI=com.bkash.customerapp" >> $GITHUB_ENV
 
-      - name: Rename Package in AndroidManifest.xml
+            - name: Rename Package in AndroidManifest.xml
         run: |
           MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
           OLD="${{ env.OLD_PACKAGE }}"
@@ -71,7 +71,7 @@ jobs:
           PYEOF
           python3 /tmp/fix.py "$OLD" "$NEW" "$MANIFEST"
 
-      - name: Rename Package in smali files and move folders
+            - name: Rename Package in smali files and move folders
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
@@ -80,21 +80,14 @@ jobs:
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW_SMALI" | tr '.' '/')
           echo "Old: $OLD | New Manifest: $NEW_MANIFEST | New Smali: $NEW_SMALI"
-          
-          # 1. xml/properties এ Manifest এর Capital ভার্সন
+
           find "$DECOMPILED_DIR" -type f \( -name "*.xml" -o -name "*.properties" \) \
             -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
-          
-          # 2. smali তে const-string - small ভার্সন, কারণ Java প্যাকেজে Capital চলে না
+
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"${OLD}\"|\"${NEW_SMALI}\"|g" {} +
-          
-          # 3. smali তে content:// URI - small ভার্সন
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"content://${OLD}|\"content://${NEW_SMALI}|g" {} +
-          
-          # 4. smali তে ক্লাস পাথ L...; - স্ল্যাশ দিয়ে
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|L${OLD_PATH}/|L${NEW_PATH}/|g" {} +
-          
-          # 5. ফোল্ডার মুভ - এটা না করলে dex এ পুরান পাথ থেকে যায়
+
           for SMALI_DIR in "$DECOMPILED_DIR"/smali*; do
             if [ -d "$SMALI_DIR/$OLD_PATH" ]; then
               echo "Moving $SMALI_DIR/$OLD_PATH -> $SMALI_DIR/$NEW_PATH"
@@ -104,25 +97,20 @@ jobs:
             fi
           done
 
-      - name: Fix missing resource IDs and clean build
+            - name: Fix missing resource IDs and clean build
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
           NEW_MANIFEST="${{ env.NEW_MANIFEST }}"
           NEW_SMALI="${{ env.NEW_SMALI }}"
-          
-          # 1. res/values সব ফাইলে প্যাকেজ রিপ্লেস
+
           find "$DECOMPILED_DIR/res" -type f -name "*.xml" -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
-          
-          # 2. assets এ small ভার্সন
           find "$DECOMPILED_DIR/assets" -type f -exec sed -i "s|${OLD}|${NEW_SMALI}|g" {} + 2>/dev/null || true
-          
-          # 3. ব্রোকেন ফাইল ডিলিট - aapt2 রিজেনারেট করবে
+
           rm -f "$DECOMPILED_DIR/res/values/public.xml"
           rm -f "$DECOMPILED_DIR/res/values/ids.xml"
           rm -rf "$DECOMPILED_DIR/build"
-          
-          # 4. মিসিং @id গুলা অটো ids.xml এ অ্যাড করো
+
           mkdir -p "$DECOMPILED_DIR/res/values"
           echo "Extracting @id references..."
           IDS=$(grep -rhoP '@\+id/\K[a-zA-Z0-9_]+' "$DECOMPILED_DIR/res" 2>/dev/null | sort -u)
@@ -132,43 +120,42 @@ jobs:
             echo " <item type=\"id\" name=\"$ID\" />" >> "$DECOMPILED_DIR/res/values/ids.xml"
           done
           echo '</resources>' >> "$DECOMPILED_DIR/res/values/ids.xml"
-          echo "Generated ids.xml with $(echo "$IDS" | wc -w) IDs including edit_query"
-          
-          # 5. apktool.yml রিজেনারেট
-          cat > "$DECOMPILED_DIR/apktool.yml" << EOF
-         !!brut.androlib.meta.MetaInfo
-          apkFileName: base.apk
-          compressionType: false
-          doNotCompress:
-          - resources.arsc
-          isFrameworkApk: false
-          packageInfo:
-            forcedPackageId: '127'
-            renameManifestPackage: ${NEW_MANIFEST}
-          sdkInfo:
-            minSdkVersion: '21'
-            targetSdkVersion: '34'
-          sharedLibrary: false
-          sparseResources: false
-          unknownFiles: {}
-          usesFramework:
-            ids:
-            - 1
-            tag: null
-          version: 2.10.0
-          versionInfo:
-            versionCode: '1'
-            versionName: 1.0
-          EOF
+          echo "Generated ids.xml with $(echo "$IDS" | wc -w) IDs"
 
-      - name: Recompile APK
+          cat > "$DECOMPILED_DIR/apktool.yml" << 'EOF'
+!!brut.androlib.meta.MetaInfo
+apkFileName: base.apk
+compressionType: false
+doNotCompress:
+- resources.arsc
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: com.bKash.customerapp
+sdkInfo:
+  minSdkVersion: '21'
+  targetSdkVersion: '34'
+sharedLibrary: false
+sparseResources: false
+unknownFiles: {}
+usesFramework:
+  ids:
+    - 1
+  tag: null
+version: 2.10.0
+versionInfo:
+  versionCode: '1'
+  versionName: 1.0
+EOF
+
+            - name: Recompile APK
         run: |
           DIR="${{ github.event.inputs.decompiled_folder }}"
           echo "=== Building with aapt2 + force-all ==="
           apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --force-all 2>&1 | tee /tmp/build.log || \
           apktool b "$DIR" -o recompiled_unsigned.apk -f --force-all 2>&1 | tee -a /tmp/build.log
-          
-          if [ ! -f recompiled_unsigned.apk ]; then
+
+          if [! -f recompiled_unsigned.apk ]; then
             echo "ERROR: APK not created!"
             echo "=== Last 30 lines of build log ==="
             tail -30 /tmp/build.log
@@ -176,12 +163,12 @@ jobs:
           fi
           ls -lh recompiled_unsigned.apk
 
-      - name: Verify APK structure
+            - name: Verify APK structure
         run: |
           unzip -l recompiled_unsigned.apk | grep -E "classes.dex|AndroidManifest.xml|resources.arsc"
           aapt dump badging recompiled_unsigned.apk | head -3
 
-      - name: Generate Keystore
+            - name: Generate Keystore
         run: |
           keytool -genkey -v \
             -keystore my.keystore \
@@ -194,12 +181,12 @@ jobs:
             -dname "CN=bKash,OU=Dev,O=bKash,L=Dhaka,ST=Dhaka,C=BD" \
             -noprompt
 
-      - name: Zipalign APK
+            - name: Zipalign APK
         run: |
           zipalign -v -p 4 recompiled_unsigned.apk aligned.apk
           zipalign -c -v 4 aligned.apk
 
-      - name: Sign APK with apksigner
+            - name: Sign APK with apksigner
         run: |
           apksigner sign \
             --ks my.keystore \
@@ -210,14 +197,14 @@ jobs:
             aligned.apk
           apksigner verify --verbose signed_app.apk
 
-      - name: Upload Artifact
+            - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: bkash-apk
           path: signed_app.apk
           retention-days: 90
 
-      - name: Create Release
+            - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: bkash-v1.0.${{ github.run_number }}
