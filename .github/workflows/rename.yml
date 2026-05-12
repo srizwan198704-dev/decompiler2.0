@@ -1,0 +1,90 @@
+name: W4B Recompile - Manifest Only
+
+on:
+  workflow_dispatch:
+    inputs:
+      decompiled_folder:
+        description: 'Decompiled folder name'
+        required: true
+        default: 'decompiled_app'
+
+jobs:
+  recompile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openjdk-17-jre-headless zipalign wget unzip python3
+
+      - name: Setup Android SDK
+        run: |
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O cmdline-tools.zip
+          sudo mkdir -p /opt/android-sdk/cmdline-tools
+          sudo unzip -q cmdline-tools.zip -d /opt/android-sdk/cmdline-tools
+          sudo mv /opt/android-sdk/cmdline-tools/cmdline-tools /opt/android-sdk/cmdline-tools/latest
+          export ANDROID_SDK_ROOT=/opt/android-sdk
+          export PATH="$PATH:/opt/android-sdk/cmdline-tools/latest/bin"
+          yes | sdkmanager --licenses > /dev/null 2>&1 || true
+          sdkmanager "build-tools;34.0.0"
+          sudo ln -sf /opt/android-sdk/build-tools/34.0.0/aapt2 /usr/local/bin/aapt2
+          sudo ln -sf /opt/android-sdk/build-tools/34.0.0/apksigner /usr/local/bin/apksigner
+          sudo ln -sf /opt/android-sdk/build-tools/34.0.0/zipalign /usr/local/bin/zipalign
+
+      - name: Setup APKTool 2.9.3
+        run: |
+          sudo wget -q https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool -O /usr/local/bin/apktool
+          sudo wget -q https://github.com/iBotPeaches/Apktool/releases/download/v2.9.3/apktool_2.9.3.jar -O /usr/local/bin/apktool.jar
+          sudo chmod +x /usr/local/bin/apktool /usr/local/bin/apktool.jar
+
+      - name: Rename ONLY AndroidManifest.xml
+        run: |
+          MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
+          OLD="com.whatsapp"
+          NEW="com.whatsapp.w4b"
+          
+          echo "=== Before Rename ==="
+          grep -oP 'package="\K[^"]+' "$MANIFEST"
+          
+          # শুধু package attribute চেঞ্জ
+          sed -i "s|package=\"${OLD}\"|package=\"${NEW}\"|g" "$MANIFEST"
+          
+          # android:extractNativeLibs যোগ করো - না হলে Android 6 এ parsing error
+          sed -i 's|<application|<application android:extractNativeLibs="true"|g' "$MANIFEST"
+          
+          echo "=== After Rename ==="
+          grep -oP 'package="\K[^"]+' "$MANIFEST"
+          head -10 "$MANIFEST"
+
+      - name: Recompile APK
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --force-manifest
+          ls -lh recompiled_unsigned.apk
+
+      - name: Generate Keystore
+        run: |
+          keytool -genkey -v -keystore my.keystore -alias w4b -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass w4b123 -keypass w4b123 -dname "CN=W4B" -noprompt
+
+      - name: Zipalign + Sign APK
+        run: |
+          zipalign -v -p 4 recompiled_unsigned.apk aligned.apk
+          apksigner sign --ks my.keystore --ks-pass pass:w4b123 --key-pass pass:w4b123 \
+            --ks-key-alias w4b --v1-signing-enabled true --v2-signing-enabled true \
+            --out signed_app.apk aligned.apk
+          
+          echo "=== APK Info ==="
+          aapt dump badging signed_app.apk | head -3
+          apksigner verify signed_app.apk && echo "Signature: OK"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: w4b-manifest-only
+          path: signed_app.apk
