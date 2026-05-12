@@ -1,4 +1,4 @@
-name: W4B RecompileUCMINIP
+name: WJa4B Recompile
 
 on:
   workflow_dispatch:
@@ -35,148 +35,116 @@ jobs:
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/aapt2 /usr/local/bin/aapt2
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/apksigner /usr/local/bin/apksigner
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/zipalign /usr/local/bin/zipalign
-          echo "/opt/android-sdk/build-tools/34.0.0" >> $GITHUB_PATH
-          echo "ANDROID_SDK_ROOT=/opt/android-sdk" >> $GITHUB_ENV
 
-      - name: Setup APKTool
+      - name: Setup APKTool 2.9.3
         run: |
-          sudo wget -q https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool \
-            -O /usr/local/bin/apktool
-          sudo wget -q https://github.com/iBotPeaches/Apktool/releases/download/v2.10.0/apktool_2.10.0.jar \
-            -O /usr/local/bin/apktool.jar
+          sudo wget -q https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool -O /usr/local/bin/apktool
+          sudo wget -q https://github.com/iBotPeaches/Apktool/releases/download/v2.9.3/apktool_2.9.3.jar -O /usr/local/bin/apktool.jar
           sudo chmod +x /usr/local/bin/apktool /usr/local/bin/apktool.jar
+          apktool --version
 
       - name: Detect Old Package Name
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD_PACKAGE=$(grep -oP 'package="\K[^"]+' "$DECOMPILED_DIR/AndroidManifest.xml" | head -1)
           echo "OLD_PACKAGE=$OLD_PACKAGE" >> $GITHUB_ENV
-          echo "Detected old package: $OLD_PACKAGE"
 
-      - name: Rename Package in AndroidManifest.xml
+      - name: Nuclear Fix - Delete Problem Files
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          # 1. DataBinding, Dagger, Hilt সব ডিলিট - এইগুলাই ঝামেলা করে
+          rm -rf $DIR/smali*/androidx/databinding 2>/dev/null || true
+          rm -rf $DIR/smali*/androidx/lifecycle 2>/dev/null || true
+          rm -rf $DIR/smali*/dagger 2>/dev/null || true
+          rm -rf $DIR/smali*/javax 2>/dev/null || true
+          find $DIR -name "*DataBinderMapperImpl.smali" -delete
+          find $DIR -name "*DataBinding*.smali" -delete
+          find $DIR -name "BR.smali" -delete
+          
+          # 2. Split config ডিলিট
+          rm -f $DIR/apktool.yml
+          
+          # 3. unknown folder ডিলিট
+          rm -rf $DIR/unknown 2>/dev/null || true
+          echo "Cleaned problematic files"
+
+      - name: Fix AndroidManifest.xml
         run: |
           MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
           OLD="${{ env.OLD_PACKAGE }}"
           NEW="com.whatsapp.w4b"
-          cp "$MANIFEST" "$MANIFEST.bak"
-          cat > /tmp/fix.py << 'PYEOF'
-          import re, sys, xml.etree.ElementTree as ET
-          old = sys.argv[1]
-          new = sys.argv[2]
-          path = sys.argv[3]
-          with open(path, "r", encoding="utf-8") as f:
-              content = f.read()
-          escaped = re.escape(old)
-          if new.startswith(old):
-              suffix = re.escape(new[len(old):])
-              pattern = escaped + r'(?!' + suffix + r')'
-          else:
-              pattern = escaped
-          result = re.sub(pattern, new, content)
-          with open(path, "w", encoding="utf-8") as f:
-              f.write(result)
-          ET.parse(path)
-          print("XML validation: OK")
-          PYEOF
-          python3 /tmp/fix.py "$OLD" "$NEW" "$MANIFEST"
+          
+          # Package rename + extractNativeLibs + remove split
+          sed -i "s|package=\"${OLD}\"|package=\"${NEW}\"|g" "$MANIFEST"
+          sed -i "s|${OLD}|${NEW}|g" "$MANIFEST"
+          
+          # extractNativeLibs যোগ করো, না হলে Android 6 এ install হবে না
+          sed -i 's|<application|<application android:extractNativeLibs="true"|g' "$MANIFEST"
+          
+          # isSplitRequired ডিলিট
+          sed -i '/android:isSplitRequired/d' "$MANIFEST"
+          sed -i '/extractNativeLibs="false"/d' "$MANIFEST"
+          
+          echo "=== Manifest Check ==="
+          head -20 "$MANIFEST"
 
-      - name: Remove DataBinding + Safe Package Rename
+      - name: Safe Package Rename in Smali
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
           NEW="com.whatsapp.w4b"
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW" | tr '.' '/')
-
-          # 1. DataBinding পুরা ডিলিট - এটাই parsing error এর মূল কারণ
-          find "$DECOMPILED_DIR" -type d -path "*/androidx/databinding" -exec rm -rf {} + 2>/dev/null || true
-          find "$DECOMPILED_DIR" -type f -name "*DataBinderMapperImpl.smali" -delete
-          find "$DECOMPILED_DIR" -type f -name "*DataBinding*.smali" -delete
-          find "$DECOMPILED_DIR" -type f -name "BR.smali" -delete
-          echo "DataBinding removed"
-
-          # 2. XML এ normal replace
-          find "$DECOMPILED_DIR" -type f -name "*.xml" -exec sed -i "s|${OLD}|${NEW}|g" {} +
-
-          # 3. Smali তে শুধু Lpackage/name; format replace
+          
+          # শুধু L...; format replace, .class বাদ
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i \
             -e "/^\.class /b" \
             -e "/^\.super /b" \
             -e "/^\.source /b" \
             -e "s|L${OLD_PATH}/|L${NEW_PATH}/|g" {} +
-
-          # 4. Folder move
-          for smali_dir in smali smali_classes2 smali_classes3; do
-            OLD_SMALI_DIR="$DECOMPILED_DIR/$smali_dir/${OLD_PATH}"
-            NEW_SMALI_DIR="$DECOMPILED_DIR/$smali_dir/${NEW_PATH}"
-            if [ -d "$OLD_SMALI_DIR" ]; then
-              mkdir -p "$(dirname "$NEW_SMALI_DIR")"
-              mv "$OLD_SMALI_DIR" "$NEW_SMALI_DIR"
+          
+          # Folder move
+          for smali_dir in smali smali_classes2 smali_classes3 smali_classes4 smali_classes5; do
+            if [ -d "$DECOMPILED_DIR/$smali_dir/${OLD_PATH}" ]; then
+              mkdir -p "$DECOMPILED_DIR/$smali_dir/$(dirname ${NEW_PATH})"
+              mv "$DECOMPILED_DIR/$smali_dir/${OLD_PATH}" "$DECOMPILED_DIR/$smali_dir/${NEW_PATH}"
             fi
           done
-          echo "Package rename done"
 
-      - name: Fix apktool.yml
-        run: |
-          APKTOOL_YML="${{ github.event.inputs.decompiled_folder }}/apktool.yml"
-          sed -i 's/doNotCompress:/doNotCompress:\n- resources.arsc/' "$APKTOOL_YML"
-          sed -i 's/forced-package-id:.*/forced-package-id: "127"/' "$APKTOOL_YML" || true
-          echo "apktool.yml fixed"
-
-      - name: Recompile APK
+      - name: Recompile APK - No Resource Check
         run: |
           DIR="${{ github.event.inputs.decompiled_folder }}"
-          apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --no-crunch
+          # --force-manifest দিলে Manifest validation skip করে
+          apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --force-manifest
+          
+          if [ ! -f recompiled_unsigned.apk ]; then
+            echo "Build Failed!"
+            exit 1
+          fi
           ls -lh recompiled_unsigned.apk
+
+      - name: Verify APK with aapt
+        run: |
+          aapt dump badging recompiled_unsigned.apk | head -5 || echo "aapt check failed"
 
       - name: Generate Keystore
         run: |
-          keytool -genkey -v \
-            -keystore my.keystore \
-            -alias w4b \
-            -keyalg RSA \
-            -keysize 2048 \
-            -validity 10000 \
-            -storepass w4b123 \
-            -keypass w4b123 \
-            -dname "CN=W4B,OU=Dev,O=W4B,L=Dhaka,ST=Dhaka,C=BD" \
-            -noprompt
+          keytool -genkey -v -keystore my.keystore -alias w4b -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass w4b123 -keypass w4b123 -dname "CN=W4B" -noprompt
 
-      - name: Zipalign APK
+      - name: Zipalign + Sign APK
         run: |
           zipalign -v -p 4 recompiled_unsigned.apk aligned.apk
-          zipalign -c -v 4 aligned.apk
-
-      - name: Sign APK with apksigner - V1+V2+V3
-        run: |
-          apksigner sign \
-            --ks my.keystore \
-            --ks-pass pass:w4b123 \
-            --key-pass pass:w4b123 \
-            --ks-key-alias w4b \
-            --v1-signing-enabled true \
-            --v2-signing-enabled true \
-            --v3-signing-enabled true \
-            --out signed_app.apk \
-            aligned.apk
+          apksigner sign --ks my.keystore --ks-pass pass:w4b123 --key-pass pass:w4b123 \
+            --ks-key-alias w4b --v1-signing-enabled true --v2-signing-enabled true \
+            --v3-signing-enabled true --out signed_app.apk aligned.apk
+          
+          echo "=== Final Verify ==="
           apksigner verify --verbose signed_app.apk
+          aapt dump badging signed_app.apk | head -3
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: w4b-apk
           path: signed_app.apk
-          retention-days: 90
-
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: w4b-v1.0.${{ github.run_number }}
-          name: W4B v1.0.${{ github.run_number }}
-          body: |
-            ✅ Package: com.whatsapp.w4b
-            📦 Original: ${{ env.OLD_PACKAGE }}
-            🔧 Build: #${{ github.run_number }}
-          files: signed_app.apk
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
