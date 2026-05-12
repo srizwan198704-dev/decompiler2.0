@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/property_apk_recommend_rlt_big" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.estrongs.android.pop.app.unlock.RoundedImageView android:id="@id/property_apk_recommend_img_big" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/ad_default_content" android:scaleType="centerCrop" />
-    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="@drawable/property_big_view_bg" android:padding="@dimen/dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignBottom="@id/property_apk_recommend_img_big" android:layout_alignParentLeft="true" android:layout_alignParentStart="true">
-        <ImageView android:id="@id/property_apk_recommend_img_icon_big" android:layout_width="@dimen/dp_30" android:layout_height="@dimen/dp_30" />
-        <TextView android:textSize="@dimen/dp_15" android:textColor="@color/c_ccffffff" android:gravity="center_vertical" android:id="@id/property_apk_recommend_txt_name_big" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_10" android:layout_marginRight="@dimen/dp_10" android:singleLine="true" />
-    </LinearLayout>
-</RelativeLayout>

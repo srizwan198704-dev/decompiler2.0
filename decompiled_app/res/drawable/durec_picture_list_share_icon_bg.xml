@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_selected="false" android:drawable="@drawable/durec_picture_list_share_enable" />
-    <item android:drawable="@drawable/durec_picture_list_share_normal" />
-</selector>

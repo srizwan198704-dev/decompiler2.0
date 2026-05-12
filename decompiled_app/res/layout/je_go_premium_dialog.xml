@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/dialog_layout" android:background="#ffffffff" android:layout_width="280.0dip" android:layout_height="220.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:layout_width="fill_parent" android:layout_height="64.0dip" android:src="@drawable/je_bg_highlight_dialog_header" android:layout_alignParentTop="true" />
-    <TextView android:textSize="16.0dip" android:textColor="#cc000000" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginRight="40.0dip" android:text="@string/premium_support_highlight_current_lan" android:layout_centerInParent="true" />
-    <TextView android:textSize="16.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/go_btn" android:background="@drawable/je_bg_drak_btn" android:layout_width="230.0dip" android:layout_height="38.0dip" android:layout_marginBottom="16.0dip" android:text="@string/subscription_now" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
-    <ImageView android:id="@id/close" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/je_dialog_closed" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
-</RelativeLayout>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="2.0dip" app:cardCornerRadius="2.0dip" app:cardElevation="2.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ImageView android:layout_gravity="center" android:id="@id/picker_image_thumb" android:layout_width="110.69998dip" android:layout_height="110.69998dip" android:scaleType="centerCrop" android:adjustViewBounds="true" />
-    <com.esfile.screen.recorder.ui.FontTextView android:textSize="15.0dip" android:textColor="@android:color/white" android:gravity="center" android:layout_gravity="center|right|top" android:id="@id/picker_image_select" android:background="@drawable/durec_picture_select_background" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:minWidth="@dimen/__picker_picture_select_icon_size" android:minHeight="@dimen/__picker_picture_select_icon_size" android:includeFontPadding="false" />
-</androidx.cardview.widget.CardView>

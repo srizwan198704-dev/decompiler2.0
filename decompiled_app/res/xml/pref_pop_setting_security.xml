@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:title="@string/preference_security"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <PreferenceCategory android:layout="@layout/custom_preference_no_space" android:title="@string/preference_security" android:key="setting_security" app:allowDividerAbove="false" app:allowDividerBelow="false">
-        <Preference android:layout="@layout/custom_preference_top_radius" android:title="@string/preference_security_setting_text" android:key="preference_net_settings_category" android:widgetLayout="@layout/custom_preference_widget_arrow" android:fragment="com.estrongs.android.ui.preference.fragments.PasswordPreferenceFragment" />
-        <Preference android:layout="@layout/custom_preference_bottom_radius" android:title="@string/preference_backup_settings_text" android:key="preference_backup_settings_category" android:widgetLayout="@layout/custom_preference_widget_arrow" android:fragment="com.estrongs.android.ui.preference.fragments.BackupPreferenceFragment" />
-    </PreferenceCategory>
-</PreferenceScreen>

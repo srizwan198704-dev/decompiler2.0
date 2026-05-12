@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/container" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/durec_video_edit_videoview" />
-    <FrameLayout android:id="@id/edit_preview_player_controller_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-</FrameLayout>

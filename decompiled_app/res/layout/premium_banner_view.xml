@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge android:orientation="vertical"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.estrongs.android.widget.InfiniteViewPager android:layout_gravity="center_horizontal" android:id="@id/pager" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <com.estrongs.android.widget.CircleIndicatorView android:layout_gravity="center_horizontal" android:id="@id/indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" app:indicatorBorderWidth="0.0dip" app:indicatorColor="#66ffffff" app:indicatorLineWidth="10.0dip" app:indicatorRadius="2.0dip" app:indicatorSelectColor="#ccffffff" app:indicatorSpace="10.0dip" />
-</merge>

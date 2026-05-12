@@ -1,7 +1,0 @@
-.class public interface abstract Lcom/kwad/sdk/service/a/a;
-.super Ljava/lang/Object;
-
-
-# virtual methods
-.method public abstract k(Landroid/content/Context;Lcom/kwad/sdk/core/response/model/AdTemplate;)V
-.end method

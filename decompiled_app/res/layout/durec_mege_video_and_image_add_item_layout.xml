@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/merge_media_add_icon" android:background="@drawable/durec_merge_add_bg" android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_margin="7.5dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/durec_picture_add_icon_normal" />
-</FrameLayout>

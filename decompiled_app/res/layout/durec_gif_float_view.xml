@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:id="@id/gif_draggable_view" android:background="@drawable/durec_gif_icon_selector" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-    <include android:id="@id/gif_draggable_halfview" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/durec_gif_float_half" />
-    <ImageView android:id="@id/gif_full_view" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/durec_gif_float_record_on" />
-</merge>

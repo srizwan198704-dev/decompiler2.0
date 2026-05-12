@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:title="@string/layout_manager"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <PreferenceCategory android:layout="@layout/custom_preference_no_space" android:title="@string/layout_manager" android:key="setting_layout" app:allowDividerAbove="false" app:allowDividerBelow="false">
-        <Preference android:layout="@layout/custom_preference_top_radius" android:title="@string/home_manage_title" android:key="preference_home_manage" android:widgetLayout="@layout/custom_preference_widget_arrow" />
-        <Preference android:layout="@layout/custom_preference_none_radius" android:title="@string/title_nav_manage" android:key="preference_left_navi_manage" android:widgetLayout="@layout/custom_preference_widget_arrow" />
-        <Preference android:layout="@layout/custom_preference_bottom_radius" android:title="@string/toolbar_manage_title" android:key="preference_toolbar_manage" android:widgetLayout="@layout/custom_preference_widget_arrow" />
-    </PreferenceCategory>
-</PreferenceScreen>
