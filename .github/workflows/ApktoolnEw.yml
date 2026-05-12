@@ -31,13 +31,15 @@ jobs:
           export ANDROID_SDK_ROOT=/opt/android-sdk
           export PATH="$PATH:/opt/android-sdk/cmdline-tools/latest/bin"
           yes | sdkmanager --licenses > /dev/null 2>&1 || true
-          sdkmanager "build-tools;34.0.0"
+          sdkmanager "build-tools;34.0.0" "platform-tools"
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/aapt2 /usr/local/bin/aapt2
+          sudo ln -sf /opt/android-sdk/build-tools/34.0.0/aapt /usr/local/bin/aapt
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/apksigner /usr/local/bin/apksigner
           sudo ln -sf /opt/android-sdk/build-tools/34.0.0/zipalign /usr/local/bin/zipalign
           echo "/opt/android-sdk/build-tools/34.0.0" >> $GITHUB_PATH
           echo "ANDROID_SDK_ROOT=/opt/android-sdk" >> $GITHUB_ENV
           aapt2 version
+          aapt version
           apksigner version
 
       - name: Setup APKTool
@@ -97,7 +99,7 @@ jobs:
           echo "=== First 5 lines after rename ==="
           head -5 "$MANIFEST"
 
-      - name: Rename Package in smali files
+      - name: Rename Package in smali files and move folders
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
@@ -107,27 +109,33 @@ jobs:
           NEW_PATH=$(echo "$NEW_SMALI" | tr '.' '/')
           echo "Manifest package: $NEW_MANIFEST"
           echo "Smali package dotted: $NEW_SMALI"
-          echo "Smali package path: $NEW_PATH"
+          echo "Old smali path: $OLD_PATH"
+          echo "New smali path: $NEW_PATH"
           
           # 1. xml/properties এ Manifest এর Capital ভার্সন
-          find "$DECOMPILED_DIR" \
-            -type f \( -name "*.xml" -o -name "*.properties" \) \
+          find "$DECOMPILED_DIR" -type f \( -name "*.xml" -o -name "*.properties" \) \
             -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
           
-          # 2. smali তে const-string এর ভেতরে dotted নাম - Capital রাখা যাবে না, small দিতে হবে
+          # 2. smali তে const-string - small ভার্সন
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"${OLD}\"|\"${NEW_SMALI}\"|g" {} +
           
-          # 3. smali তে content:// URI - small ভার্সন
+          # 3. smali তে content:// URI - small ভার্সন  
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|\"content://${OLD}|\"content://${NEW_SMALI}|g" {} +
           
-          # 4. smali তে ক্লাস পাথ - L...; এর ভেতরে স্ল্যাশ দিয়ে, ডট না
-          # এটাই আসল ফিক্স: Lcom/whatsapp/ -> Lcom/bkash/customerapp/
+          # 4. smali তে ক্লাস পাথ L...; - স্ল্যাশ দিয়ে
           find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|L${OLD_PATH}/|L${NEW_PATH}/|g" {} +
           
-          # 5. smali তে const-class - L...; এর ভেতরে স্ল্যাশ
-          find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i "s|const-class [vp][0-9]\+, L${OLD_PATH}/|const-class v0, L${NEW_PATH}/|g" {} +
+          # 5. আসল ফিক্স: Smali ফোল্ডার মুভ করা লাগবে, নইলে dex এ পুরান পাথ থেকে যাবে
+          for SMALI_DIR in "$DECOMPILED_DIR"/smali*; do
+            if [ -d "$SMALI_DIR/$OLD_PATH" ]; then
+              echo "Moving $SMALI_DIR/$OLD_PATH -> $SMALI_DIR/$NEW_PATH"
+              mkdir -p "$SMALI_DIR/$NEW_PATH"
+              mv "$SMALI_DIR/$OLD_PATH"/* "$SMALI_DIR/$NEW_PATH"/ 2>/dev/null || true
+              rm -rf "$SMALI_DIR/$OLD_PATH"
+            fi
+          done
           
-          echo "Smali rename done with proper slash paths"
+          echo "Smali rename + folder move done"
 
       - name: Deep clean old package references
         run: |
@@ -136,37 +144,42 @@ jobs:
           NEW_MANIFEST="com.bKash.customerapp"
           NEW_SMALI="com.bkash.customerapp"
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
-          NEW_PATH=$(echo "$NEW_SMALI" | tr '.' '/')
           
-          echo "Checking res/values files - using Manifest capital version..."
+          echo "Cleaning res/values..."
           find "$DECOMPILED_DIR/res" -type f -name "*.xml" -exec sed -i "s|${OLD}|${NEW_MANIFEST}|g" {} +
           
-          echo "Checking assets - using smali small version..."
+          echo "Cleaning assets..."
           find "$DECOMPILED_DIR/assets" -type f -exec sed -i "s|${OLD}|${NEW_SMALI}|g" {} + 2>/dev/null || true
           
-          echo "Checking apktool.yml - using Manifest capital version..."
+          echo "Fixing apktool.yml..."
           if [ -f "$DECOMPILED_DIR/apktool.yml" ]; then
             sed -i "s|renameManifestPackage: null|renameManifestPackage: ${NEW_MANIFEST}|g" "$DECOMPILED_DIR/apktool.yml"
             sed -i "s|renameManifestPackage: ${OLD}|renameManifestPackage: ${NEW_MANIFEST}|g" "$DECOMPILED_DIR/apktool.yml"
+            # doNotCompress fix
+            sed -i '/^doNotCompress:/d' "$DECOMPILED_DIR/apktool.yml"
+            echo "doNotCompress: [\"resources.arsc\"]" >> "$DECOMPILED_DIR/apktool.yml"
           fi
           
-          echo "Searching for leftover references..."
+          echo "Removing public.xml to force regen..."
+          rm -f "$DECOMPILED_DIR/res/values/public.xml"
+          
+          echo "Leftover check..."
           grep -r "L${OLD_PATH}/" "$DECOMPILED_DIR" --exclude-dir=original || echo "No class path leftovers"
           grep -r "\"${OLD}\"" "$DECOMPILED_DIR" --exclude-dir=original || echo "No string leftovers"
 
       - name: Recompile APK
         run: |
           DIR="${{ github.event.inputs.decompiled_folder }}"
-          echo "=== Attempt 1: default ==="
-          if apktool b "$DIR" -o recompiled_unsigned.apk -f 2>&1; then
-            echo "Build success (attempt 1)"
+          echo "=== Attempt 1: aapt2 + no-crunch ==="
+          if apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --no-crunch 2>&1; then
+            echo "Build success (aapt2)"
           else
-            echo "=== Attempt 2: with aapt2 ==="
-            if apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 2>&1; then
-              echo "Build success (attempt 2)"
+            echo "=== Attempt 2: aapt fallback ==="
+            if apktool b "$DIR" -o recompiled_unsigned.apk -f 2>&1; then
+              echo "Build success (aapt)"
             else
-              echo "=== Attempt 3: aapt2 + no-crunch ==="
-              apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --no-crunch 2>&1 || true
+              echo "=== Attempt 3: aapt + no-crunch ==="
+              apktool b "$DIR" -o recompiled_unsigned.apk -f --no-crunch 2>&1 || true
             fi
           fi
           if [ ! -f recompiled_unsigned.apk ]; then
@@ -177,8 +190,11 @@ jobs:
 
       - name: Verify APK structure
         run: |
-          aapt2 dump badging recompiled_unsigned.apk | head -5 || \
-            echo "Warning: aapt2 dump failed"
+          echo "Checking APK contents..."
+          unzip -l recompiled_unsigned.apk | grep -E "classes.dex|AndroidManifest.xml|resources.arsc"
+          aapt dump badging recompiled_unsigned.apk | head -5 || \
+            aapt2 dump badging recompiled_unsigned.apk | head -5 || \
+            echo "Warning: badging dump failed"
 
       - name: Generate Keystore
         run: |
@@ -231,6 +247,7 @@ jobs:
             📦 Original: ${{ env.OLD_PACKAGE }}
             🔧 Build: #${{ github.run_number }}
             🔑 Signed with apksigner (v2/v3 scheme)
+            🔧 Fixed: Smali folder move + public.xml regen + aapt fallback
           files: signed_app.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
