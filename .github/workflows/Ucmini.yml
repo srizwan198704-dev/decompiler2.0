@@ -97,7 +97,7 @@ jobs:
           echo "=== First 5 lines after rename ==="
           head -5 "$MANIFEST"
 
-      - name: Rename Package in smali files
+      - name: Rename Package in smali files - SAFE MODE
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
@@ -105,15 +105,42 @@ jobs:
           OLD_PATH=$(echo "$OLD" | tr '.' '/')
           NEW_PATH=$(echo "$NEW" | tr '.' '/')
           echo "Replacing smali references: $OLD -> $NEW"
-          # Replace dotted package references in smali/xml/properties files
+          
+          # 1. XML এবং properties এ normal replace
           find "$DECOMPILED_DIR" \
-            -type f \( -name "*.smali" -o -name "*.xml" -o -name "*.properties" \) \
+            -type f \( -name "*.xml" -o -name "*.properties" \) \
             -exec sed -i "s|${OLD}|${NEW}|g" {} +
-          # Replace slash-separated path references in smali
-          find "$DECOMPILED_DIR" \
-            -type f -name "*.smali" \
-            -exec sed -i "s|${OLD_PATH}|${NEW_PATH}|g" {} +
-          echo "Smali rename done"
+          
+          # 2. Smali তে শুধু Lpackage/name; format replace করো
+          # .class, .super, .source লাইন বাদ দিয়ে
+          find "$DECOMPILED_DIR" -type f -name "*.smali" -exec sed -i \
+            -e "/^\.class /b" \
+            -e "/^\.super /b" \
+            -e "/^\.source /b" \
+            -e "s|L${OLD_PATH}/|L${NEW_PATH}/|g" \
+            -e "s|${OLD}|${NEW}|g" {} +
+          
+          # 3. Folder structure ও move করতে হবে
+          OLD_SMALI_DIR="$DECOMPILED_DIR/smali/${OLD_PATH}"
+          NEW_SMALI_DIR="$DECOMPILED_DIR/smali/${NEW_PATH}"
+          if [ -d "$OLD_SMALI_DIR" ]; then
+            mkdir -p "$(dirname "$NEW_SMALI_DIR")"
+            mv "$OLD_SMALI_DIR" "$NEW_SMALI_DIR"
+            echo "Moved smali folder: $OLD_PATH -> $NEW_PATH"
+          fi
+          
+          # smali_classes2, classes3 এর জন্যও একই কাজ
+          for i in 2 3; do
+            OLD_SMALI_DIR="$DECOMPILED_DIR/smali_classes${i}/${OLD_PATH}"
+            NEW_SMALI_DIR="$DECOMPILED_DIR/smali_classes${i}/${NEW_PATH}"
+            if [ -d "$OLD_SMALI_DIR" ]; then
+              mkdir -p "$(dirname "$NEW_SMALI_DIR")"
+              mv "$OLD_SMALI_DIR" "$NEW_SMALI_DIR"
+              echo "Moved smali_classes${i} folder: $OLD_PATH -> $NEW_PATH"
+            fi
+          done
+          
+          echo "Smali rename done safely"
 
       - name: Recompile APK
         run: |
@@ -138,7 +165,6 @@ jobs:
 
       - name: Verify APK structure
         run: |
-          # Basic check — aapt2 dump should not error
           aapt2 dump badging recompiled_unsigned.apk | head -5 || \
             echo "Warning: aapt2 dump failed (may still be installable)"
 
@@ -158,15 +184,12 @@ jobs:
 
       - name: Zipalign APK
         run: |
-          # Must zipalign BEFORE signing
           zipalign -v -p 4 recompiled_unsigned.apk aligned.apk
           echo "Zipalign done"
-          # Verify alignment
           zipalign -c -v 4 aligned.apk && echo "Alignment check: PASSED" || echo "Alignment check: FAILED"
 
       - name: Sign APK with apksigner
         run: |
-          # apksigner must be used AFTER zipalign (correct order)
           apksigner sign \
             --ks my.keystore \
             --ks-pass pass:w4b123 \
@@ -175,7 +198,6 @@ jobs:
             --out signed_app.apk \
             aligned.apk
           echo "Signing done"
-          # Verify signature
           apksigner verify --verbose signed_app.apk && echo "Signature verify: PASSED" || echo "Signature verify: FAILED"
           ls -lh signed_app.apk
 
