@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView android:scrollbarSize="3.0dip" android:id="@id/exo_settings_listview" android:background="@drawable/m3_rounded_controls_background" android:padding="4.0dip" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fadeScrollbars="false"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

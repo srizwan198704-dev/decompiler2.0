@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/ad_close_area" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="7.0sp" android:textColor="@android:color/white" android:gravity="center" android:id="@id/tev_countdown" android:background="@drawable/corners_close_bg" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/close_tips" android:paddingStart="5.0dip" android:paddingEnd="5.0dip" />
-    <com.yfanads.android.custom.view.CenterImageView android:id="@id/ad_close" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/yf_ad_close_black_2" android:contentDescription="@string/yf_ad_close" />
-</RelativeLayout>

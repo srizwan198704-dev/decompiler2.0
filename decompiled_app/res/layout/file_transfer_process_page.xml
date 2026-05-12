@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/filetransfer_finish_bg" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar_top" android:layout_width="fill_parent" android:layout_height="@dimen/dp_48" />
-    <androidx.recyclerview.widget.RecyclerView android:id="@id/file_list_recycleriew" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" app:layoutManager=".app.log.WrapContentLinearLayoutManager" />
-    <Button android:textSize="@dimen/dp_16" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/btn_continue_send" android:background="@drawable/btn_80_03_selector" android:paddingLeft="@dimen/dp_58" android:paddingRight="@dimen/dp_58" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/dp_14" android:minHeight="0.0dip" android:text="@string/action_send" />
-</LinearLayout>

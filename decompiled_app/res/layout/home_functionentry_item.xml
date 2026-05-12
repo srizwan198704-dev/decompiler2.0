@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:clipChildren="false" android:layout_width="40.0dip" android:layout_height="40.0dip">
-        <ImageView android:layout_gravity="bottom|center" android:id="@id/icon_home_interface" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/format_music" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
-        <TextView android:textSize="8.0dip" android:ellipsize="end" android:gravity="center" android:layout_gravity="center|top" android:id="@id/home_fun_item_txt_count" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:singleLine="true" android:includeFontPadding="false" />
-    </FrameLayout>
-    <TextView android:textSize="12.0dip" android:textColor="@color/window_txt_color_bcc" android:ellipsize="end" android:gravity="center" android:id="@id/name_home_interface" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="10.0dip" android:singleLine="true" android:includeFontPadding="false" />
-</LinearLayout>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="@drawable/je_dialog_item_selector" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:background="?customDialogDividerColor" android:layout_width="fill_parent" android:layout_height="0.5dip" />
-    <ImageView android:id="@id/item_icon_iv" android:layout_width="@dimen/je_dp_36" android:layout_height="@dimen/je_dp_36" android:layout_marginLeft="@dimen/je_dp_20" android:layout_marginTop="@dimen/je_dp_10" android:layout_marginRight="@dimen/je_dp_15" android:layout_marginBottom="@dimen/je_dp_10" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:layout_alignParentStart="true" />
-    <TextView android:textSize="@dimen/je_dp_15" android:textColor="?customDialogContentColor" android:id="@id/item_text_tv" android:paddingTop="@dimen/je_dp_15" android:paddingRight="@dimen/je_dp_15" android:paddingBottom="@dimen/je_dp_15" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/item_icon_iv" android:layout_centerVertical="true" />
-</RelativeLayout>

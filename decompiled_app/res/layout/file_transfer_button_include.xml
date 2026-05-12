@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <Button android:textSize="@dimen/dp_18" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/btn_send" android:background="@drawable/btn_100_03_selector" android:layout_width="@dimen/dp_300" android:layout_height="wrap_content" android:text="@string/action_send" />
-    <Button android:textSize="@dimen/dp_18" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/btn_receive" android:background="@drawable/btn_100_03_selector" android:layout_width="@dimen/dp_300" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_30" android:text="@string/action_receive" />
-    <TextView android:textColor="@color/window_txt_color_b99" android:gravity="center_horizontal" android:id="@id/tv_no_install_es" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_30" android:text="@string/sender_noinstall_es" />
-</LinearLayout>

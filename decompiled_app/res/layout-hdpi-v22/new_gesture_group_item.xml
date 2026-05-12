@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/common_alert_dialog_padding_hori" android:paddingTop="17.0dip" android:paddingRight="@dimen/common_alert_dialog_padding_hori" android:paddingBottom="17.0dip" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="48.0dip" android:paddingHorizontal="@dimen/common_alert_dialog_padding_hori" android:paddingVertical="17.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/dp_14" android:textColor="@color/c_cc000000" android:gravity="center_vertical" android:id="@id/label" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:paddingStart="0.0dip" android:paddingEnd="@dimen/dp_34" />
-    <com.estrongs.android.pop.esclasses.ESImageView android:id="@id/indicator" android:layout_width="@dimen/dp_12" android:layout_height="@dimen/dp_12" android:scaleType="centerInside" />
-</LinearLayout>

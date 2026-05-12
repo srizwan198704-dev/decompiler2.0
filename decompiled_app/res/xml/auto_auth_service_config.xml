@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<accessibility-service android:description="@string/auto_auth_desc" android:accessibilityEventTypes="typeContextClicked|typeViewClicked|typeWindowContentChanged|typeWindowStateChanged|typeWindowsChanged" android:packageNames="com.google.android.documentsui" android:accessibilityFeedbackType="feedbackAllMask" android:notificationTimeout="100" android:canRetrieveWindowContent="true"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

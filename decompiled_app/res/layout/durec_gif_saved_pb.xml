@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="fill_parent" android:layout_height="26.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ProgressBar android:id="@id/durec_gif_pb" android:layout_width="fill_parent" android:layout_height="fill_parent" android:max="100" android:indeterminateOnly="false" android:progressDrawable="@drawable/durec_gif_saved_progressbar" style="?android:progressBarStyleHorizontal" />
-    <com.esfile.screen.recorder.ui.FontTextView android:textSize="@dimen/durec_gif_pb_text_size" android:textColor="#ccfdf5da" android:ellipsize="end" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/durec_gif_pb_text_left_margin" android:text="@string/durec_gif_saving" android:maxLines="1" />
-</FrameLayout>

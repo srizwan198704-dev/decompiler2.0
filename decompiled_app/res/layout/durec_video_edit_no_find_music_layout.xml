@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/durec_white" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.esfile.screen.recorder.ui.FontTextView android:textSize="14.0sp" android:textColor="@color/durec_colorPrimary" android:id="@id/text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/durec_choose_music_from_file_manager" android:drawablePadding="10.0dip" android:drawableEnd="@drawable/durec_cannot_find_audio_arrow_selector" android:paddingStart="10.0dip" android:paddingEnd="10.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>

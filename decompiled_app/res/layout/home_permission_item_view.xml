@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:paddingTop="58.0dip" android:paddingBottom="58.0dip" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView android:textColor="@color/window_txt_color_bcc" android:gravity="center" android:id="@id/permission_desc" android:paddingLeft="56.0dip" android:paddingRight="56.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/home_no_permission" app:layout_constraintTop_toTopOf="parent" />
-    <Button android:textColor="@color/white" android:id="@id/grant_permission" android:background="@drawable/btn_60_02_selector" android:paddingLeft="32.0dip" android:paddingRight="32.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="28.0dip" android:minHeight="0.0dip" android:text="@string/home_grant_permission" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/permission_desc" />
-</androidx.constraintlayout.widget.ConstraintLayout>
