@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.yolo.framework.widget.bounce.BounceFrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <GridView android:id="@id/theme_gridview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never" />
-    <View android:orientation="vertical" android:background="@drawable/below_shadow" android:layout_width="fill_parent" android:layout_height="@dimen/download_header_shadow_height" />
-</com.yolo.framework.widget.bounce.BounceFrameLayout>

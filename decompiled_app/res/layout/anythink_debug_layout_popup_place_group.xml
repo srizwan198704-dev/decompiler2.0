@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/anythink_debug_fl_root" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ListView android:id="@id/anythink_debug_lv_group" android:layout_width="@dimen/anythink_debug_dp_150" android:layout_height="wrap_content" />
-</FrameLayout>

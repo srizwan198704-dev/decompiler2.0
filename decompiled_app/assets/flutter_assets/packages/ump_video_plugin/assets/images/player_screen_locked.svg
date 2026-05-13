@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <rect width="36" height="28" x="14" y="24" fill="none" stroke="#FFF" stroke-width="4" rx="6"/>
-  <path fill="none" stroke="#FFF" stroke-width="4" d="M26,24 C26,22.2222222 26,19.5555556 26,16 C26,12.6862915 28.6862915,10 32,10 C35.3137085,10 38,12.6862915 38,16 L38,24"/>
-  <circle cx="32" cy="38" r="4" fill="#FFF" fill-rule="evenodd"/>
-</svg>

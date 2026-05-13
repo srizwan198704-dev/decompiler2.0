@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/content" android:tag="layout/udrive_dark_loading_layout_0" android:paddingLeft="10.0dip" android:paddingTop="16.0dip" android:paddingRight="10.0dip" android:paddingBottom="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ProgressBar android:layout_gravity="center" android:id="@id/icon" android:tag="binding_1" android:layout_width="16.0dip" android:layout_height="16.0dip" android:indeterminate="true" />
-    <TextView android:textSize="12.0dip" android:layout_gravity="center" android:id="@id/text" android:tag="binding_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/udrive_common_loading_3" />
-</LinearLayout>

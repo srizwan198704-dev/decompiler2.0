@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:paddingLeft="@dimen/secmtp_debug_dp_15" android:paddingTop="@dimen/secmtp_debug_dp_10" android:paddingRight="@dimen/secmtp_debug_dp_15" android:paddingBottom="@dimen/secmtp_debug_dp_10" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/secmtp_debug_sp_15" android:textColor="@color/secmtp_debug_1E2231" android:id="@id/secmtp_debug_tv_debug_mode" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
-    <com.secmtp.sdk.debug.view.InterceptTouchEventFrameLayout android:id="@id/secmtp_debug_fl_debug_mode_switch" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <CheckBox android:id="@id/secmtp_debug_cb_debug_mode_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/secmtp_debug_selector_checkbox" />
-    </com.secmtp.sdk.debug.view.InterceptTouchEventFrameLayout>
-</LinearLayout>

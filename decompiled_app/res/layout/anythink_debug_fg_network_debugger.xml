@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.anythink.debug.view.FoldListView android:id="@id/anythink_debug_fold_list" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <TextView android:textSize="@dimen/anythink_debug_sp_16" android:textColor="@android:color/holo_red_light" android:id="@id/anythink_debug_tv_advice" android:padding="@dimen/anythink_debug_dp_10" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/anythink_debug_test_operate" style="@style/anythink_debug_tv_title_style" />
-    <TextView android:id="@id/anythink_debug_tv_debug_mode_test" android:layout_marginLeft="@dimen/anythink_debug_dp_10" android:layout_marginTop="@dimen/anythink_debug_dp_10" android:layout_marginRight="@dimen/anythink_debug_dp_10" android:text="@string/anythink_debug_debugger_mode_test" style="@style/anythink_debug_btn_style" />
-</LinearLayout>

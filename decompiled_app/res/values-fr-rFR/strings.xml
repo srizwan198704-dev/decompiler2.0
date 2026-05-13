@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="openwifi_auth_url">http://openwifi.ucweb.com/wifi/fr/wifi.html</string>
-    <string name="openwifi_connected_tip">Connectez-vous à Wi-Fi</string>
-    <string name="openwifi_login_tip" />
-</resources>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:tag="layout/test_item_platform_selection_0" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="10.0sp" android:gravity="center" android:id="@id/platformName" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    <CheckBox android:layout_gravity="center" android:id="@id/platformCheckBox" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-</LinearLayout>

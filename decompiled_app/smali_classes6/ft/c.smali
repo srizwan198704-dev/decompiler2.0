@@ -1,3 +1,0 @@
-.class public interface abstract Lft/c;
-.super Ljava/lang/Object;
-.source "ProGuard"

@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextView android:textAppearance="?android:textAppearanceListItemSmall" android:textSize="12.0dip" android:ellipsize="start" android:gravity="center" android:id="@android:id/text1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeightSmall" android:paddingStart="0.0dip" android:paddingEnd="0.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

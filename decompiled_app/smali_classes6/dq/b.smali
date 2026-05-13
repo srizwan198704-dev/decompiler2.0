@@ -1,3 +1,0 @@
-.class public interface abstract Ldq/b;
-.super Ljava/lang/Object;
-.source "ProGuard"

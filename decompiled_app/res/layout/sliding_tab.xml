@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.yolo.framework.widget.tab.SlidingTabLayout android:layout_gravity="center_horizontal" android:id="@id/slidingtab" android:background="@color/orangered" android:layout_width="fill_parent" android:layout_height="@dimen/local_header_height"
-  xmlns:android="http://schemas.android.com/apk/res/android" />

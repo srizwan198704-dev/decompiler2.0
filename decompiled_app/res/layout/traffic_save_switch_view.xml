@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/toast_container" android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <com.airbnb.lottie.LottieAnimationView android:id="@id/loading" android:visibility="gone" android:layout_width="12.0dip" android:layout_height="12.0dip" />
-        <TextView android:textSize="10.0dip" android:id="@id/toast_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="4.0dip" android:layout_marginBottom="2.0dip" android:text="speed analysis" android:maxLines="1" android:layout_weight="1.0" />
-    </LinearLayout>
-    <ImageView android:id="@id/switch_icon" android:layout_width="@dimen/player_right_bar_expand_btn_size" android:layout_height="@dimen/player_right_bar_expand_btn_size" />
-</LinearLayout>

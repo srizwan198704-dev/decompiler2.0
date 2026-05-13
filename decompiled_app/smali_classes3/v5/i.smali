@@ -1,3 +1,0 @@
-.class public interface abstract Lv5/i;
-.super Ljava/lang/Object;
-.source "ProGuard"

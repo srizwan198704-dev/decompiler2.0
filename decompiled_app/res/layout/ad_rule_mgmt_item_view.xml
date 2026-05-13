@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="@dimen/adv_filter_sign_item_left_padding" android:paddingTop="@dimen/adv_filter_sign_item_top_padding" android:paddingRight="@dimen/adv_filter_sign_item_left_padding" android:paddingBottom="@dimen/adv_filter_sign_item_top_padding" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
-        <TextView android:textSize="@dimen/adv_filter_sign_item_title_text_size" android:id="@id/signText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/adv_filter_sign_item_title_bottom_margin" />
-        <TextView android:textSize="@dimen/adv_filter_sign_item_content_text_size" android:id="@id/signDetails" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-    </LinearLayout>
-    <ImageView android:id="@id/btnClose" android:layout_width="@dimen/adv_filter_sign_item_delete_icon_size" android:layout_height="@dimen/adv_filter_sign_item_delete_icon_size" />
-</LinearLayout>

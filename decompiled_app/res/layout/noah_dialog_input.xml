@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:padding="@dimen/spacing_24dp" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/text_size_normal" android:textColor="@color/text_secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_20dp" android:text="键名 (Key)" />
-    <EditText android:textSize="@dimen/text_size_medium" android:textColor="@color/text_primary" android:textColorHint="@color/text_hint" android:id="@id/noah_etKey" android:background="@drawable/bg_input" android:padding="@dimen/spacing_xlarge" android:layout_width="fill_parent" android:layout_height="@dimen/button_height_large" android:layout_marginTop="@dimen/spacing_medium" android:hint="请输入Key" android:inputType="text" />
-    <TextView android:textSize="@dimen/text_size_normal" android:textColor="@color/text_secondary" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/spacing_20dp" android:text="键值 (Value)" />
-    <EditText android:textSize="@dimen/text_size_medium" android:textColor="@color/text_primary" android:textColorHint="@color/text_hint" android:id="@id/noah_etValue" android:background="@drawable/bg_input" android:padding="@dimen/spacing_xlarge" android:layout_width="fill_parent" android:layout_height="@dimen/button_height_large" android:layout_marginTop="@dimen/spacing_medium" android:hint="请输入value" android:inputType="text" />
-</LinearLayout>

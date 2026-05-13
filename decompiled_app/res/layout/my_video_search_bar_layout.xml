@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.uc.framework.ui.widget.EditTextCandidate android:id="@id/edittext" android:fadingEdge="none" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginTop="@dimen/address_bar_top_bottom_padding" android:layout_marginBottom="@dimen/address_bar_top_bottom_padding" android:layout_weight="1.0" />
-    <View android:id="@id/button_splitline" android:layout_width="@dimen/address_splitline_width" android:layout_height="@dimen/address_splitline_height" />
-    <TextView android:textSize="@dimen/address_bar_cancel_text_size_intl" android:gravity="center" android:id="@id/cancel" android:layout_width="@dimen/address_cancel_button_width" android:layout_height="fill_parent" />
-</merge>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:tag="layout/traffic_status_bar_placeholder_0" android:background="@color/video_iflow_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:id="@id/traffic_status_bar_content_bg" android:tag="binding_1" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-</FrameLayout>

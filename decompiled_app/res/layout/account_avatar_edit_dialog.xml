@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/avatar_edit_dialog_root" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/avatar_edit_dialog_content" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <TextView android:textSize="16.0sp" android:gravity="center" android:id="@id/avatar_edit_take_photo" android:layout_width="fill_parent" android:layout_height="60.0dip" android:text="Take Photo" />
-        <View android:id="@id/avatar_edit_divider" android:layout_width="fill_parent" android:layout_height="0.5dip" />
-        <TextView android:textSize="16.0sp" android:gravity="center" android:id="@id/avatar_edit_choose_album" android:layout_width="fill_parent" android:layout_height="60.0dip" android:text="Choose from Album" />
-    </LinearLayout>
-</FrameLayout>

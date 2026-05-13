@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="horizontal" android:id="@id/equalizer_item_container" android:background="@drawable/btn_mini_controler_bar_pressed_selector" android:paddingLeft="@dimen/equalizer_item_padding_left" android:paddingTop="@dimen/equalizer_item_padding_top" android:paddingRight="@dimen/equalizer_item_padding_right" android:paddingBottom="@dimen/equalizer_item_padding_bottom" android:layout_width="fill_parent" android:layout_height="@dimen/equalizer_item_height"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textColor="@color/equalizer_item_title_color" android:id="@id/equalizer_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
-    <TextView android:textColor="@color/equalizer_item_sub_title_color" android:id="@id/equalizer_sub_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/equalizer_item_sub_title_margin_top" android:layout_below="@id/equalizer_title" android:layout_alignLeft="@id/equalizer_title" />
-    <ImageView android:id="@id/equalizer_indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-</RelativeLayout>

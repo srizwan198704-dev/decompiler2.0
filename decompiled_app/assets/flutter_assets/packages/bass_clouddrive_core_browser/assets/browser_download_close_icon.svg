@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Icon/16/window-close@3x</title>
-    <g id="Icon/16/window-close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect id="Rectangle-2" opacity="0" x="0" y="0" width="16" height="16"></rect>
-        <line x1="5" y1="5" x2="11" y2="10.9966306" id="路径-11" stroke="#CCCCCC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
-        <line x1="11" y1="5" x2="5" y2="10.9966306" id="路径-11" stroke="#CCCCCC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></line>
-    </g>
-</svg>

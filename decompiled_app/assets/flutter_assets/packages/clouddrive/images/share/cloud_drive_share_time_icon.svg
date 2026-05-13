@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>图标/24/calendar@3x</title>
-    <g id="图标/24/calendar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M4,4 L20,4 C20.5522847,4 21,4.44771525 21,5 L21,19 C21,19.5522847 20.5522847,20 20,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,5 C3,4.44771525 3.44771525,4 4,4 Z M3,10 L21,10 M9,10 L9,20" id="矩形-2" stroke="#12161A" stroke-width="2"></path>
-    </g>
-</svg>

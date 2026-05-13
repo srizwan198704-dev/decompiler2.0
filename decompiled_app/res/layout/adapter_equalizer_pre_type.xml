@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/adapter_equalizer_layout" android:layout_width="fill_parent" android:layout_height="50.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/equalizer_sound_type" android:textColor="@color/equalizer_sound_type" android:gravity="center_vertical" android:id="@id/adapter_equalizer_name" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="14.0dip" />
-    <com.yolo.framework.widget.GradientImageView android:id="@id/adapter_equalizer_graph" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-</RelativeLayout>

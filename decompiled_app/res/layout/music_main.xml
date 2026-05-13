@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.yolo.music.view.music.MusicMainSlidingLayout android:gravity="bottom" android:id="@id/sliding_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" app:umanoDragView="@id/slidinglayout" app:umanoOverlay="true" app:umanoPanelHeight="@dimen/mini_controlbar_height" app:umanoParalaxOffset="0.0dip" app:umanoShadowHeight="4.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ViewStub android:id="@id/main_container" android:layout="@layout/music_homepage" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <FrameLayout android:id="@id/slidinglayout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/main_container">
-        <ViewStub android:id="@id/player_view" android:layout="@layout/player_view" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-        <ViewStub android:id="@id/mini_controll_bar" android:layout="@layout/mini_controll_bar" android:layout_width="fill_parent" android:layout_height="@dimen/mini_controlbar_height" />
-    </FrameLayout>
-</com.yolo.music.view.music.MusicMainSlidingLayout>

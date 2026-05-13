@@ -1,8 +1,0 @@
-.class public interface abstract Lcom/applovin/impl/n4;
-.super Ljava/lang/Object;
-.source "ProGuard"
-
-
-# virtual methods
-.method public abstract a()Lorg/json/JSONObject;
-.end method

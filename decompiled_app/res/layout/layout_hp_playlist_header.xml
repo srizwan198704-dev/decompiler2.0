@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/main_playlist_header_title_textsize" android:textColor="@color/music_drawer_textcolor" android:id="@id/hp_playlist_header_title" android:paddingTop="@dimen/playlist_item_head_textview_paddingtop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/playlist_item_head_textview_marginleft" android:text="Playlist" />
-    <ImageView android:id="@id/hp_playlist_right_btn" android:paddingLeft="@dimen/playlist_item_head_imageview_paddingleft" android:paddingTop="@dimen/playlist_item_head_imageview_paddingtop" android:paddingRight="@dimen/playlist_item_head_imageview_paddingright" android:paddingBottom="@dimen/playlist_item_head_imageview_paddingbottom" android:visibility="gone" android:layout_width="@dimen/playlist_item_head_imageview_width" android:layout_height="@dimen/playlist_item_head_imageview_height" android:src="@drawable/create_playlist_mini" android:scaleType="fitEnd" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
-    <LinearLayout android:orientation="vertical" android:id="@id/importing_ll" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/hp_playlist_header_title" />
-</RelativeLayout>

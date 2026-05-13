@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <corners android:radius="5.0dip" />
-    <solid android:color="#99000000" />
-    <padding android:left="@dimen/muse_video_gesture_control_hint_vertical_padding" android:top="@dimen/muse_video_gesture_control_hint_horizontal_padding" android:right="@dimen/muse_video_gesture_control_hint_vertical_padding" android:bottom="@dimen/muse_video_gesture_control_hint_horizontal_padding" />
-</shape>

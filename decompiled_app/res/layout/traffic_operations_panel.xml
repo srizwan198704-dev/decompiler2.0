@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:id="@id/traffic_operations_panel_layout" android:padding="@dimen/traffic_operations_panel_padding" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:ellipsize="end" android:id="@id/tip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" />
-    <ImageView android:id="@id/divider" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginTop="@dimen/traffic_operations_divider_margin" android:layout_marginBottom="@dimen/traffic_operations_divider_margin" />
-    <TextView android:ellipsize="end" android:gravity="center" android:id="@id/action" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
-</LinearLayout>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:id="@id/account_sign_in_thridparty_container" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.uc.browser.business.account.intl.AccountTPView android:gravity="center" android:orientation="vertical" android:id="@id/account_sign_in_thridparty_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_centerHorizontal="true" />
-    <Button android:textSize="16.0dip" android:ellipsize="end" android:id="@id/account_sign_in_uc_btn" android:paddingLeft="@dimen/ucaccount_window_center_signin_button_padding" android:paddingRight="@dimen/ucaccount_window_center_signin_button_padding" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_marginLeft="@dimen/ucaccount_signin_horizontal_margin" android:layout_marginTop="35.0dip" android:layout_marginRight="@dimen/ucaccount_signin_horizontal_margin" android:maxLines="1" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
-</RelativeLayout>

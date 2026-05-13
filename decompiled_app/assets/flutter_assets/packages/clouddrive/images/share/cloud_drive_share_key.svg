@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>图标/24/keyChain@3x</title>
-    <g id="图标/24/keyChain" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
-        <rect id="矩形" stroke="#12161A" stroke-width="2" stroke-linecap="round" x="2" y="6" width="8" height="12" rx="4"></rect>
-        <polyline id="路径-2" stroke="#12161A" stroke-width="2" points="10 12 21 12 21 17"></polyline>
-        <line x1="17" y1="17" x2="17" y2="12" id="路径-2" stroke="#12161A" stroke-width="2"></line>
-    </g>
-</svg>

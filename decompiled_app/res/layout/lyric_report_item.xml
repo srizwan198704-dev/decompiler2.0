@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/playlist_popup_item_height"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/playlist_title_text_size" android:textColor="#ff444444" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/lyric_report_type_tv" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="15.0dip" android:text="" android:singleLine="true" />
-</LinearLayout>

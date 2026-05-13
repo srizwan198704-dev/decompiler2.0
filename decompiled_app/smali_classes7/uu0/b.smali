@@ -1,3 +1,0 @@
-.class public interface abstract Luu0/b;
-.super Ljava/lang/Object;
-.source "ProGuard"

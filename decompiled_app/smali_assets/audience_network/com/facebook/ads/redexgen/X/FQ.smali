@@ -1,8 +1,0 @@
-.class public interface abstract Lcom/facebook/ads/redexgen/X/FQ;
-.super Ljava/lang/Object;
-.source ""
-
-
-# virtual methods
-.method public abstract AFi(JJLcom/facebook/ads/redexgen/X/or;Landroid/media/MediaFormat;)V
-.end method

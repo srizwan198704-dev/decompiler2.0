@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:background="@drawable/noah_reward_black_shape_bg" android:layout_width="fill_parent" android:layout_height="210.0dip">
-        <ImageView android:layout_gravity="center" android:id="@id/noah_reward_click_tips_icon" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_margin="8.0dip" />
-        <TextView android:textSize="16.0dip" android:textColor="#ffffffff" android:gravity="center" android:layout_gravity="center" android:id="@id/noah_reward_click_tips" android:layout_width="wrap_content" android:layout_height="44.0dip" />
-    </LinearLayout>
-</FrameLayout>

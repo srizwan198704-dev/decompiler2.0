@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>图标/24/refresh@3x</title>
-    <g id="图标/24/refresh" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="round">
-        <g id="color" transform="translate(-1.383905, -1.383905)" stroke="#12161A" stroke-width="2">
-            <path d="M20.2450156,16.5505712 L20.564366,19.6043388 C22.0094228,17.9377112 22.8839045,15.7629309 22.8839045,13.3839045 C22.8839045,8.13719938 18.6306096,3.8839045 13.3839045,3.8839045 C8.13719938,3.8839045 3.8839045,8.13719938 3.8839045,13.3839045 C3.8839045,18.6306096 8.13719938,22.8839045 13.3839045,22.8839045" id="路径" transform="translate(13.383905, 13.383905) rotate(-40.000000) translate(-13.383905, -13.383905) "></path>
-        </g>
-    </g>
-</svg>

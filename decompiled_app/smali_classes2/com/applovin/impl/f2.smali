@@ -1,8 +1,0 @@
-.class public interface abstract Lcom/applovin/impl/f2;
-.super Ljava/lang/Object;
-.source "ProGuard"
-
-
-# virtual methods
-.method public abstract a(Ljava/lang/String;Ljava/util/Map;)Ljava/io/InputStream;
-.end method

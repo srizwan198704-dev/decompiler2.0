@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:gravity="center" android:id="@id/bookmark_local_empty_view" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:gravity="center" android:id="@id/bookmark_empty_view_image" android:focusable="false" android:clickable="false" android:layout_width="@dimen/history_no_record_logo_size" android:layout_height="@dimen/history_no_record_logo_size" android:layout_marginBottom="@dimen/history_no_record_image_2_title_height" android:layout_centerHorizontal="true" />
-    <TextView android:textSize="@dimen/history_no_record_title_size" android:gravity="center" android:id="@id/bookmark_empty_view_no_record" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/history_no_record_title_2_description_height" android:layout_below="@id/bookmark_empty_view_image" android:layout_centerHorizontal="true" />
-</RelativeLayout>

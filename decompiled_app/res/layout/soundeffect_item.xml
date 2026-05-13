@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="horizontal" android:id="@id/local_item_anim_layout" android:layout_width="@dimen/sound_enhance_item_width" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:id="@id/image_whole" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
-        <com.yolo.framework.widget.GradientImageView android:id="@id/image" android:padding="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/setting_box_half_in_ear" />
-        <ImageView android:layout_gravity="bottom|center|right" android:id="@id/selectMark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/box_choose_red" />
-    </FrameLayout>
-    <TextView android:textSize="@dimen/sound_enhance_item__name_text" android:textColor="@color/text_color_line_main" android:ellipsize="end" android:gravity="center" android:id="@id/name" android:layout_width="wrap_content" android:layout_height="@dimen/local_item_line1_height" android:text="Half-in-ear" android:singleLine="true" android:layout_below="@id/image_whole" android:layout_centerHorizontal="true" />
-</RelativeLayout>

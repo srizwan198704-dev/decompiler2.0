@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:paddingBottom="32.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.uc.ui.widget.RoundImageView android:id="@id/cover" android:layout_width="145.0dip" android:layout_height="87.0dip" app:corner_radius="10.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
-    <ImageView android:id="@id/loading" android:layout_width="34.0dip" android:layout_height="34.0dip" app:layout_constraintBottom_toBottomOf="@id/cover" app:layout_constraintEnd_toEndOf="@id/cover" app:layout_constraintStart_toStartOf="@id/cover" app:layout_constraintTop_toTopOf="@id/cover" />
-    <com.uc.ui.widget.RoundImageView android:id="@id/website_logo" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginBottom="8.0dip" android:layout_marginEnd="8.0dip" app:corner_radius="12.0dip" app:layout_constraintBottom_toBottomOf="@id/cover" app:layout_constraintEnd_toEndOf="@id/cover" />
-    <TextView android:textSize="14.0dip" android:gravity="center" android:id="@id/tip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_marginHorizontal="32.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/cover" />
-</androidx.constraintlayout.widget.ConstraintLayout>

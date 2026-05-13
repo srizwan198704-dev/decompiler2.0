@@ -1,7 +1,0 @@
-.class public interface abstract Lcom/anythink/core/common/g/d;
-.super Ljava/lang/Object;
-
-
-# virtual methods
-.method public abstract a(Ljava/lang/String;)V
-.end method

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/intl_uc_share_icon" android:layout_width="@dimen/intl_share_uc_share_icon_size" android:layout_height="@dimen/intl_share_uc_share_icon_size" android:layout_marginLeft="10.0dip" android:layout_centerVertical="true" />
-    <ImageView android:id="@id/intl_uc_share_enter_arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/intl_share_doodle_enter_arrow_right_gap" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
-    <TextView android:textSize="@dimen/intl_share_doodle_enter_text_size" android:id="@id/intl_uc_share_text" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@id/intl_uc_share_enter_arrow" android:layout_toRightOf="@id/intl_uc_share_icon" android:layout_centerVertical="true" />
-</RelativeLayout>

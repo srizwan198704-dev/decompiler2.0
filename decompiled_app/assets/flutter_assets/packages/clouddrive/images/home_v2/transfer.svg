@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>图标/24/transCloud@1x</title>
-    <g id="图标/24/transCloud" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polyline id="Path-5" stroke="#364047" stroke-width="1.8" stroke-linejoin="round" fill-rule="nonzero" transform="translate(10.1569, 9.6569) rotate(-45) translate(-10.1569, -9.6569)" points="6.15685425 10.6568542 14.1568542 10.6568542 12.1568542 8.65685425 12.1272691 10.6389622"></polyline>
-        <polyline id="Path" stroke="#364047" stroke-width="1.8" stroke-linejoin="round" fill-rule="nonzero" transform="translate(14.1288, 13.6288) rotate(-45) translate(-14.1288, -13.6288)" points="12.1578484 12.5891893 12.1288265 14.6684637 10.1288265 12.6684637 18.1288265 12.6684637"></polyline>
-        <circle id="Oval" stroke="#364047" stroke-width="1.8" fill-rule="nonzero" cx="12" cy="12" r="9"></circle>
-    </g>
-</svg>

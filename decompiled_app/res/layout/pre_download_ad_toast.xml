@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:tag="layout/pre_download_ad_toast_0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingStart="20.0dip" android:paddingEnd="20.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/toast_ll_container" android:tag="binding_1" android:layout_width="wrap_content" android:layout_height="40.0dip" android:paddingStart="12.0dip" android:paddingEnd="16.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
-        <FrameLayout android:layout_gravity="center_vertical" android:id="@id/toast_icon" android:layout_width="24.0dip" android:layout_height="24.0dip" />
-        <TextView android:textSize="14.0sp" android:ellipsize="end" android:id="@id/toast_text" android:tag="binding_2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="1.0" android:layout_marginStart="6.0dip" />
-        <TextView android:textSize="14.0sp" android:id="@id/toast_action" android:tag="binding_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="0.0" android:layout_marginStart="12.0dip" />
-    </LinearLayout>
-</FrameLayout>
