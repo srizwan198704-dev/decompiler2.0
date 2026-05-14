@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <header android:icon="@drawable/ic_rebuild_light" android:title="@string/application" android:summary="@string/application_summary" android:fragment="ru.maximoff.apktool.fragment.PreferenceApplicationFragment" />
+    <header android:icon="@drawable/ic_edit_light" android:title="@string/editor" android:summary="@string/editor_summary" android:fragment="ru.maximoff.apktool.fragment.PreferenceEditorFragment" />
+    <header android:icon="@drawable/ic_build_light" android:title="@string/build_and_decode" android:summary="@string/build_and_decode_summary" android:fragment="ru.maximoff.apktool.fragment.PreferenceCompilerFragment" />
+    <header android:icon="@drawable/ic_sign_light" android:title="@string/signature" android:summary="@string/signature_summary" android:fragment="ru.maximoff.apktool.fragment.PreferenceSignatureFragment" />
+    <header android:icon="@drawable/ic_update_light" android:title="@string/mupdate_pref" android:summary="@string/mupdate_pref_summary" android:fragment="ru.maximoff.apktool.fragment.UpdaterFragment" />
+    <header android:icon="@drawable/ic_faq" android:title="@string/faq" android:summary="@string/faq_summary" android:fragment="ru.maximoff.apktool.fragment.FaqFragment" />
+    <header android:icon="@drawable/ic_help_light" android:title="@string/about" android:summary="@string/about_summary" android:fragment="ru.maximoff.apktool.fragment.HelpFragment" />
+</preference-headers>

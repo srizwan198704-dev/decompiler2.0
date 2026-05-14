@@ -1,0 +1,95 @@
+.class Lru/maximoff/apktool/util/a/a$3;
+.super Ljava/lang/Object;
+.source "ASUtils.java"
+
+# interfaces
+.implements Ljava/util/Comparator;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lru/maximoff/apktool/util/a/a;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x20
+    name = "3"
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Ljava/util/Comparator",
+        "<",
+        "Lru/maximoff/apktool/util/av;",
+        ">;"
+    }
+.end annotation
+
+
+# direct methods
+.method constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a(Lru/maximoff/apktool/util/av;Lru/maximoff/apktool/util/av;)I
+    .locals 2
+    .annotation runtime Ljava/lang/Override;
+    .end annotation
+
+    .prologue
+    .line 253
+    invoke-virtual {p1}, Lru/maximoff/apktool/util/av;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2}, Lru/maximoff/apktool/util/av;->a()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+
+    move-result v0
+
+    .line 254
+    if-eqz v0, :cond_0
+
+    .line 257
+    :goto_0
+    return v0
+
+    :cond_0
+    invoke-virtual {p1}, Lru/maximoff/apktool/util/av;->d()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2}, Lru/maximoff/apktool/util/av;->d()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+
+    move-result v0
+
+    goto :goto_0
+.end method
+
+.method public compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .locals 1
+
+    check-cast p1, Lru/maximoff/apktool/util/av;
+
+    check-cast p2, Lru/maximoff/apktool/util/av;
+
+    invoke-virtual {p0, p1, p2}, Lru/maximoff/apktool/util/a/a$3;->a(Lru/maximoff/apktool/util/av;Lru/maximoff/apktool/util/av;)I
+
+    move-result v0
+
+    return v0
+.end method

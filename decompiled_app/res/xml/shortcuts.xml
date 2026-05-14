@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut android:icon="@mipmap/ic_shortcut_converter" android:enabled="true">
+        <intent android:targetPackage="ru.maximoff.apktool" android:action="ru.maximoff.apktool.CONVERTER_SHORTCUT" android:targetClass="ru.maximoff.apktool.Converter" />
+    </shortcut>
+</shortcuts>

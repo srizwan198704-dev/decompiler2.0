@@ -1,0 +1,113 @@
+.class public Lcom/a/a/u$a;
+.super Lorg/a/a/a/v;
+.source "XMLParser.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/a/a/u;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x9
+    name = "a"
+.end annotation
+
+
+# instance fields
+.field public a:Lorg/a/a/a/ac;
+
+.field public b:Lorg/a/a/a/ac;
+
+
+# direct methods
+.method public constructor <init>(Lorg/a/a/a/v;I)V
+    .locals 0
+
+    .prologue
+    .line 542
+    invoke-direct {p0, p1, p2}, Lorg/a/a/a/v;-><init>(Lorg/a/a/a/v;I)V
+
+    .line 543
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()I
+    .locals 1
+
+    .prologue
+    .line 544
+    const/4 v0, 0x5
+
+    return v0
+.end method
+
+.method public a(Lorg/a/a/a/d/f;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lorg/a/a/a/d/f",
+            "<+TT;>;)TT;"
+        }
+    .end annotation
+
+    .prologue
+    .line 547
+    instance-of v0, p1, Lcom/a/a/w;
+
+    if-eqz v0, :cond_0
+
+    check-cast p1, Lcom/a/a/w;
+
+    invoke-interface {p1, p0}, Lcom/a/a/w;->a(Lcom/a/a/u$a;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 548
+    :goto_0
+    return-object v0
+
+    :cond_0
+    invoke-interface {p1, p0}, Lorg/a/a/a/d/f;->a(Lorg/a/a/a/d/g;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
+
+.method public b()Lorg/a/a/a/d/i;
+    .locals 2
+
+    .prologue
+    .line 539
+    const/16 v0, 0x10
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lcom/a/a/u$a;->a(II)Lorg/a/a/a/d/i;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public c()Lorg/a/a/a/d/i;
+    .locals 2
+
+    .prologue
+    .line 540
+    const/16 v0, 0xf
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Lcom/a/a/u$a;->a(II)Lorg/a/a/a/d/i;
+
+    move-result-object v0
+
+    return-object v0
+.end method

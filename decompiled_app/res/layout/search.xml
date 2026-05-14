@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                <EditText android:id="@id/searchEditText1" android:paddingRight="@dimen/clear_ic_size" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/find" android:ems="10" android:inputType="text" />
+                <ImageView android:id="@id/clearText1" android:padding="5.0dip" android:focusable="true" android:clickable="true" android:layout_width="@dimen/clear_ic_size" android:layout_height="@dimen/clear_ic_size" android:src="@drawable/ic_close" android:scaleType="centerInside" android:adjustViewBounds="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@string/clear" />
+            </RelativeLayout>
+            <ImageView android:id="@id/searchImageView1" android:background="?android:selectableItemBackground" android:padding="5.0dip" android:focusable="true" android:clickable="true" android:layout_width="30.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_collapse" android:scaleType="centerInside" android:adjustViewBounds="true" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginBottom="5.0dip">
+            <ImageButton android:id="@id/searchButton2" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_to_uni" android:scaleType="centerInside" android:adjustViewBounds="true" android:layout_weight="1.0" android:contentDescription="@string/to_unicode" />
+            <ImageButton android:id="@id/searchButton3" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_from_uni" android:scaleType="centerInside" android:adjustViewBounds="true" android:layout_weight="1.0" android:contentDescription="@string/from_unicode" />
+            <ImageButton android:id="@id/searchButton1" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_paste_light" android:scaleType="centerInside" android:adjustViewBounds="true" android:layout_weight="1.0" android:contentDescription="@string/paste" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/searchLinearLayout1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <EditText android:id="@id/searchEditText2" android:paddingRight="@dimen/clear_ic_size" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/replace" android:ems="10" android:inputType="text" />
+                    <ImageView android:id="@id/clearText2" android:padding="5.0dip" android:focusable="true" android:clickable="true" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_close" android:scaleType="centerInside" android:adjustViewBounds="true" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@string/clear" />
+                </RelativeLayout>
+                <ImageView android:id="@id/searchImageView2" android:background="?android:selectableItemBackground" android:padding="5.0dip" android:focusable="true" android:clickable="true" android:layout_width="30.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_collapse" android:scaleType="centerInside" android:adjustViewBounds="true" />
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="48.0dip">
+                <ImageButton android:id="@id/searchButton7" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_tswap" android:scaleType="centerInside" android:adjustViewBounds="true" android:layout_weight="1.0" android:contentDescription="@string/swap" />
+                <ImageButton android:id="@id/searchButton5" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_to_uni" android:scaleType="centerInside" android:adjustViewBounds="true" android:layout_weight="1.0" android:contentDescription="@string/to_unicode" />
+                <ImageButton android:id="@id/searchButton6" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_from_uni" android:scaleType="centerInside" android:adjustViewBounds="true" android:layout_weight="1.0" android:contentDescription="@string/from_unicode" />
+                <ImageButton android:id="@id/searchButton4" android:layout_width="0.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_paste_light" android:scaleType="centerInside" android:adjustViewBounds="true" android:layout_weight="1.0" android:contentDescription="@string/paste" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:text="@string/encoding" />
+        <Spinner android:id="@id/searchSpinner1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" />
+        <RadioGroup android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip">
+            <RadioButton android:id="@id/searchRadioButton1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:checked="true" android:text="@string/search_name" />
+            <RadioButton android:id="@id/searchRadioButton2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/search_text" />
+        </RadioGroup>
+        <CheckBox android:id="@id/searchCheckBox5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:text="@string/replace" />
+        <CheckBox android:id="@id/searchCheckBox6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:text="@string/file_filter" />
+        <CheckBox android:id="@id/searchCheckBox4" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:text="@string/search_regexp" />
+        <CheckBox android:id="@id/searchCheckBox1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:text="@string/search_sen" />
+        <CheckBox android:id="@id/searchCheckBox2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/search_rec" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/searchLinearLayout2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip">
+            <CheckBox android:id="@id/searchCheckBox3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/search_inres" android:layout_weight="1.0" />
+            <ImageView android:id="@id/searchImageView3" android:background="?android:selectableItemBackground" android:padding="5.0dip" android:focusable="true" android:clickable="true" android:layout_width="30.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_help_light" android:scaleType="centerInside" android:adjustViewBounds="true" android:contentDescription="@string/search_result" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

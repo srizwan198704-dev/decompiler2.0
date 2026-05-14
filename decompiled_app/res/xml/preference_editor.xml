@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/ext_editor" android:key="ext_editor" android:summary="@string/ext_editor_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.NumberPickerPreference android:title="@string/font_size" android:key="nfont_size" android:summary="@string/font_size_summary" />
+    <ru.maximoff.apktool.preference.RadioGroupPreference android:title="@string/auto_save" android:key="auto_save" android:summary="@string/auto_save_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/use_monospace_font" android:key="use_monospace" android:summary="@string/use_monospace_font_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/keyboard_suggestions" android:key="keyboard_suggestions" android:summary="@string/keyboard_suggestions_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/editor_state" android:key="editor_state" android:summary="@string/editor_state_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/editor_magnifier" android:key="editor_magnifier" android:summary="@string/editor_magnifier_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/mtr_line_num" android:key="editor_line_num" android:summary="@string/show_line_numbers_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/fix_line_numbers" android:key="editor_fix_line_num" android:summary="@string/fix_line_numbers_summary" android:dependency="editor_line_num" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/editor_rem_tabs" android:key="editor_rem_tabs" android:summary="@string/editor_rem_tabs_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/editor_wordwrap" android:key="is_wordwrap" android:summary="@string/editor_wordwrap_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/fast_scroll" android:key="fast_scroll" android:summary="@string/fast_scroll_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/editor_non_printing" android:key="non_printing_chars" android:summary="@string/editor_non_printing_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/editor_colors" android:key="editor_hlcolors" android:summary="@string/editor_colors_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/scaling" android:key="scaling" android:summary="@string/scaling_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/editor_quick_panel" android:key="quick_panel" android:summary="@string/editor_quick_panel_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.EditTextPreference android:title="@string/quick_panel_sym" android:key="quick_panel_symbols" android:summary="@string/quick_panel_sym_summary" />
+    <ru.maximoff.apktool.preference.RadioGroupPreference android:title="@string/editor_xml_format" android:key="xml_format_type" android:summary="@string/editor_xml_format_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/editor_caps" android:key="editor_caps" android:summary="@string/editor_caps_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/disable_syntax" android:key="disable_syntax" android:summary="@string/disable_syntax_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/editor_auto_search" android:key="editor_auto_search" android:summary="@string/editor_auto_search_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.MultiPreference android:title="@string/tooltips" android:key="tooltips" android:summary="@string/tooltips_summary" />
+    <ru.maximoff.apktool.preference.MultiPreference android:title="@string/jadx_settings" android:key="jadx_settings" android:summary="@string/jadx_settings_summary" />
+    <ru.maximoff.apktool.preference.EditTextPreference android:title="@string/custom_exts" android:key="custom_exts" android:summary="@string/custom_exts_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/show_errors" android:key="show_errors" android:summary="@string/show_errors_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.RadioGroupPreference android:title="@string/editor_cs" android:key="editor_theme" android:summary="@string/editor_cs_summary" />
+</PreferenceScreen>

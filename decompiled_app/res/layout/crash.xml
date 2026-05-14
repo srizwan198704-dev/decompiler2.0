@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ru.maximoff.apktool.view.FixScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="5.0dip" android:fillViewport="true" android:layout_weight="1.0">
+        <HorizontalScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/crashTextView1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:textIsSelectable="true" />
+        </HorizontalScrollView>
+    </ru.maximoff.apktool.view.FixScrollView>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="3.0">
+        <Button android:id="@id/crashButton1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/delete" android:layout_weight="1.0" style="?android:attr/buttonStyleSmall" />
+        <Button android:id="@id/crashButton2" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/copy" android:layout_weight="1.0" style="?android:attr/buttonStyleSmall" />
+        <Button android:id="@id/crashButton3" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/send" android:layout_weight="1.0" style="?android:attr/buttonStyleSmall" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,16 +1,16 @@
 # APK Decompilation Report
 
 ## Decompilation Date
-Thu May 14 09:36:14 UTC 2026
+Thu May 14 10:03:47 UTC 2026
 
 ## Original APK
 - **File Name**: input_app.apk
-- **File Size**: 30M
+- **File Size**: 16M
 
 ## Decompilation Results
 - **Output Directory**: decompiled_app/
-- **Total Files**: 2026
-- **Total Directories**: 267
+- **Total Files**: 8990
+- **Total Directories**: 494
 
 ## Main Directories
 - .

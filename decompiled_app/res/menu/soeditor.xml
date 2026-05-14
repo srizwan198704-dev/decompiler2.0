@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/ic_help_dark" android:id="@id/info" android:title="@string/minfo" android:showAsAction="always" app:showAsAction="always" />
+    <item android:id="@id/save" android:orderInCategory="100" android:title="@string/save" />
+    <item android:id="@id/reset" android:visible="false" android:orderInCategory="100" android:title="@string/search_reset" />
+    <item android:id="@id/search" android:orderInCategory="100" android:title="@string/find" />
+    <item android:id="@id/replace" android:orderInCategory="100" android:title="@string/replace" />
+    <group android:checkableBehavior="all">
+        <item android:id="@id/line_num" android:orderInCategory="100" android:title="@string/mtr_line_num" />
+        <item android:id="@id/backup" android:orderInCategory="100" android:title="@string/backup" />
+    </group>
+    <item android:id="@id/prop" android:orderInCategory="100" android:title="@string/properties" />
+    <item android:id="@id/exit" android:orderInCategory="100" android:title="@string/close_cur" />
+</menu>
