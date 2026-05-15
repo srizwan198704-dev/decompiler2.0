@@ -1,4 +1,4 @@
-name: APK Analyzer - WhatsApp Pin Code Finder
+name: APK Analyzer - Screen Share Detection
 
 on:
   workflow_dispatch:
@@ -63,6 +63,165 @@ jobs:
           echo "=========================================="
           grep -oP '<provider[^>]*android:name="\K[^"]+' "$MANIFEST"
 
+      - name: 📱 SCREEN SHARE DETECTION - MediaProjection APIs
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "=========================================="
+          echo "🎬 SCREEN SHARE / SCREEN RECORDING DETECTION"
+          echo "=========================================="
+          
+          echo "▶️ MediaProjection Manager (Main Screen Capture API):"
+          grep -rn 'MediaProjection' "$DIR" --include="*.smali" 2>/dev/null | head -30
+          
+          echo ""
+          echo "▶️ MediaProjectionManager class:"
+          grep -rn 'MediaProjectionManager' "$DIR" --include="*.smali" 2>/dev/null | head -20
+          
+          echo ""
+          echo "▶️ createScreenCaptureIntent:"
+          grep -rn 'createScreenCaptureIntent' "$DIR" --include="*.smali" 2>/dev/null | head -20
+          
+          echo ""
+          echo "▶️ getMediaProjection:"
+          grep -rn 'getMediaProjection' "$DIR" --include="*.smali" 2>/dev/null | head -20
+          
+          echo ""
+          echo "▶️ VirtualDisplay (for screen capture):"
+          grep -rn 'VirtualDisplay' "$DIR" --include="*.smali" 2>/dev/null | head -20
+
+      - name: 🔍 Screen Share Related Classes
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "=========================================="
+          echo "📚 SCREEN SHARE RELATED CLASSES"
+          echo "=========================================="
+          
+          echo "▶️ DisplayManager:"
+          grep -rn 'DisplayManager' "$DIR" --include="*.smali" 2>/dev/null | head -15
+          
+          echo ""
+          echo "▶️ Display.VIRTUAL_DISPLAY:"
+          grep -rn 'VIRTUAL_DISPLAY' "$DIR" --include="*.smali" 2>/dev/null | head -15
+          
+          echo ""
+          echo "▶️ ScreenCapture/Recording:"
+          grep -rn 'ScreenCapture\|ScreenRecording' "$DIR" --include="*.smali" 2>/dev/null | head -20
+          
+          echo ""
+          echo "▶️ Surface (for displaying captured screen):"
+          grep -rn 'Surface\"' "$DIR" --include="*.smali" 2>/dev/null | grep -i 'capture\|record\|share' | head -15
+
+      - name: 🚨 Screen Share Permissions Check
+        run: |
+          MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
+          echo "=========================================="
+          echo "⚠️ SCREEN SHARE PERMISSIONS"
+          echo "=========================================="
+          
+          echo "▶️ BIND_MEDIA_PROJECTION_SERVICE:"
+          grep -n 'BIND_MEDIA_PROJECTION_SERVICE' "$MANIFEST" || echo "Not found"
+          
+          echo ""
+          echo "▶️ FOREGROUND_SERVICE (required for screen recording service):"
+          grep -n 'FOREGROUND_SERVICE' "$MANIFEST" || echo "Not found"
+          
+          echo ""
+          echo "▶️ SYSTEM_ALERT_WINDOW (overlay permission):"
+          grep -n 'SYSTEM_ALERT_WINDOW' "$MANIFEST" || echo "Not found"
+
+      - name: 🎥 Screen Share String Patterns
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "=========================================="
+          echo "📝 SCREEN SHARE STRING PATTERNS"
+          echo "=========================================="
+          
+          echo "▶️ 'screen share' keyword:"
+          grep -rin 'screen share' "$DIR" --include="*.smali" 2>/dev/null | head -20
+          
+          echo ""
+          echo "▶️ 'screen recording' keyword:"
+          grep -rin 'screen recording' "$DIR" --include="*.smali" 2>/dev/null | head -20
+          
+          echo ""
+          echo "▶️ 'screen cast' keyword:"
+          grep -rin 'screen cast\|screencast' "$DIR" --include="*.smali" 2>/dev/null | head -20
+          
+          echo ""
+          echo "▶️ 'share screen' keyword:"
+          grep -rin 'share screen' "$DIR" --include="*.smali" 2>/dev/null | head -20
+          
+          echo ""
+          echo "▶️ 'start capture' keyword:"
+          grep -rin 'start capture' "$DIR" --include="*.smali" 2>/dev/null | head -15
+
+      - name: 📱 Third-Party Screen Share SDKs
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "=========================================="
+          echo "🔧 THIRD-PARTY SCREEN SHARE SDKS"
+          echo "=========================================="
+          
+          echo "▶️ Agora.io (Video/Screen SDK):"
+          grep -rn 'agora' "$DIR" --include="*.smali" 2>/dev/null | grep -i 'screen\|video' | head -10
+          
+          echo ""
+          echo "▶️ Zoom SDK:"
+          grep -rn 'zoom' "$DIR" --include="*.smali" 2>/dev/null | grep -i 'screen\|share' | head -10
+          
+          echo ""
+          echo "▶️ WebRTC (Screen sharing support):"
+          grep -rn 'webrtc\|WebRTC' "$DIR" --include="*.smali" 2>/dev/null | head -15
+          
+          echo ""
+          echo "▶️ Jitsi Meet SDK:"
+          grep -rn 'jitsi' "$DIR" --include="*.smali" 2>/dev/null | head -10
+          
+          echo ""
+          echo "▶️ LiveStream/RTMP (Screen broadcast):"
+          grep -rn 'rtmp\|livestream\|broadcast' "$DIR" --include="*.smali" 2>/dev/null | head -15
+
+      - name: 🎯 Screen Share Service Detection
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "=========================================="
+          echo "⚙️ SCREEN SHARE SERVICES & CALLBACKS"
+          echo "=========================================="
+          
+          echo "▶️ MediaProjection.Callback:"
+          grep -rn 'MediaProjection\$Callback\|onStop\|onStart' "$DIR" --include="*.smali" 2>/dev/null | head -15
+          
+          echo ""
+          echo "▶️ Screen capture intent filter:"
+          grep -rn 'ACTION_MEDIA_PROJECTION\|MediaProjection' "$DIR" --include="*.xml" 2>/dev/null | head -10
+          
+          echo ""
+          echo "▶️ Recording service classes:"
+          grep -rn 'RecordService\|CaptureService\|ScreenService' "$DIR" --include="*.smali" 2>/dev/null | head -20
+
+      - name: 📊 Screen Share Detection Summary
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          
+          MP_COUNT=$(grep -rn 'MediaProjection' "$DIR" --include="*.smali" 2>/dev/null | wc -l)
+          VD_COUNT=$(grep -rn 'VirtualDisplay' "$DIR" --include="*.smali" 2>/dev/null | wc -l)
+          SS_COUNT=$(grep -rin 'screen share\|screen recording\|screencast' "$DIR" --include="*.smali" 2>/dev/null | wc -l)
+          
+          echo "=========================================="
+          echo "📈 SCREEN SHARE DETECTION SUMMARY"
+          echo "=========================================="
+          echo "MediaProjection references: $MP_COUNT"
+          echo "VirtualDisplay references: $VD_COUNT"
+          echo "Screen share string matches: $SS_COUNT"
+          echo ""
+          
+          if [ $MP_COUNT -gt 0 ] || [ $VD_COUNT -gt 0 ]; then
+            echo "🚨 WARNING: Screen capture/recording code detected!"
+            echo "The app has screen share capability."
+          else
+            echo "✅ No screen share code detected."
+          fi
+
       - name: Scan for Package Names in Smali
         run: |
           DIR="${{ github.event.inputs.decompiled_folder }}"
@@ -78,60 +237,6 @@ jobs:
           grep -rho 'io\.[a-zA-Z0-9_\.]\+' "$DIR" --include="*.smali" | \
             sort -u | head -50
 
-      - name: 🔍 SPECIFIC SEARCH - WhatsApp Package Name
-        run: |
-          DIR="${{ github.event.inputs.decompiled_folder }}"
-          echo "=========================================="
-          echo "📱 SEARCHING FOR 'com.whatsapp' PACKAGE NAME"
-          echo "=========================================="
-          
-          echo "▶️ In AndroidManifest.xml:"
-          grep -n 'com.whatsapp' "$DIR/AndroidManifest.xml" 2>/dev/null || echo "Not found"
-          
-          echo ""
-          echo "▶️ In Smali files:"
-          grep -rn 'com\.whatsapp' "$DIR" --include="*.smali" 2>/dev/null | head -50
-          
-          echo ""
-          echo "▶️ In XML files:"
-          grep -rn 'com\.whatsapp' "$DIR" --include="*.xml" 2>/dev/null | head -30
-          
-          echo ""
-          echo "▶️ Total occurrences:"
-          grep -r 'com\.whatsapp' "$DIR" --include="*.smali" --include="*.xml" 2>/dev/null | wc -l
-
-      - name: 🔐 SPECIFIC SEARCH - Pin Code / Password Related Data
-        run: |
-          DIR="${{ github.event.inputs.decompiled_folder }}"
-          echo "=========================================="
-          echo "🔢 SEARCHING FOR PIN CODE / PASSWORD RELATED DATA"
-          echo "=========================================="
-          
-          echo "▶️ Searching for 'pin' keyword:"
-          grep -rin 'pin' "$DIR" --include="*.smali" --include="*.xml" 2>/dev/null | \
-            grep -v '\.png' | grep -v '\.jpg' | head -50
-          
-          echo ""
-          echo "▶️ Searching for 'pincode' keyword:"
-          grep -rin 'pincode' "$DIR" --include="*.smali" --include="*.xml" 2>/dev/null | head -30
-          
-          echo ""
-          echo "▶️ Searching for 'password' keyword:"
-          grep -rin 'password' "$DIR" --include="*.smali" --include="*.xml" 2>/dev/null | head -30
-          
-          echo ""
-          echo "▶️ Searching for 'passcode' keyword:"
-          grep -rin 'passcode' "$DIR" --include="*.smali" --include="*.xml" 2>/dev/null | head -30
-          
-          echo ""
-          echo "▶️ Searching for 4-6 digit numbers (potential pins):"
-          grep -roh '\b[0-9]\{4,6\}\b' "$DIR" --include="*.smali" --include="*.xml" 2>/dev/null | \
-            sort -u | head -50
-          
-          echo ""
-          echo "▶️ Searching for 'key' related strings:"
-          grep -rin 'keystore\|secret\|token\|auth' "$DIR" --include="*.smali" 2>/dev/null | head -30
-
       - name: Scan for URLs and Endpoints
         run: |
           DIR="${{ github.event.inputs.decompiled_folder }}"
@@ -141,26 +246,6 @@ jobs:
           grep -rho 'https\?://[a-zA-Z0-9./?=_%&-]*' "$DIR" \
             --include="*.smali" --include="*.xml" | \
             sort -u | head -100
-
-      - name: Scan for Third-Party SDKs & Libraries
-        run: |
-          DIR="${{ github.event.inputs.decompiled_folder }}"
-          echo "=========================================="
-          echo "📚 THIRD-PARTY SDKS DETECTED"
-          echo "=========================================="
-          SDKS=(
-            "firebase" "google" "facebook" "adjust" "appsflyer"
-            "crashlytics" "amplitude" "segment" "mixpanel" "branch"
-            "onesignal" "intercom" "zendesk" "stripe" "paypal"
-            "okhttp" "retrofit" "glide" "picasso" "gson" "jackson"
-            "rxjava" "coroutine" "dagger" "hilt" "room" "realm"
-          )
-          for sdk in "${SDKS[@]}"; do
-            count=$(grep -rl "$sdk" "$DIR" --include="*.smali" 2>/dev/null | wc -l)
-            if [ "$count" -gt 0 ]; then
-              echo "✅ $sdk ($count files)"
-            fi
-          done
 
       - name: Count DEX & Smali Stats
         run: |
@@ -172,111 +257,44 @@ jobs:
           echo "Total XML files:   $(find "$DIR" -name '*.xml' | wc -l)"
           echo "Total PNG files:   $(find "$DIR" -name '*.png' | wc -l)"
           echo "Smali folders:     $(find "$DIR" -maxdepth 1 -name 'smali*' -type d | sort)"
-          echo ""
-          echo "Top 10 largest smali files:"
-          find "$DIR" -name '*.smali' -exec wc -l {} + 2>/dev/null | \
-            sort -rn | head -11
 
-      - name: Scan for Deep Links & Custom Schemes
-        run: |
-          DIR="${{ github.event.inputs.decompiled_folder }}"
-          echo "=========================================="
-          echo "🔗 DEEP LINKS / CUSTOM URL SCHEMES"
-          echo "=========================================="
-          grep -rn 'android:scheme' "$DIR/AndroidManifest.xml" | \
-            grep -oP 'android:scheme="\K[^"]+' | sort -u
-
-      - name: 📍 EXTRACT PIN CODE LOCATIONS (Detailed)
-        run: |
-          DIR="${{ github.event.inputs.decompiled_folder }}"
-          echo "=========================================="
-          echo "📍 FILE LOCATIONS CONTAINING PIN/CODE DATA"
-          echo "=========================================="
-          
-          echo "▶️ Files containing 'pin' (with line numbers):"
-          grep -rn 'pin' "$DIR" --include="*.smali" 2>/dev/null | \
-            grep -v '\.png' | \
-            awk -F':' '{print $1 " (line: " $2 ")"}' | \
-            sort -u | head -30
-          
-          echo ""
-          echo "▶️ Files containing 'pincode':"
-          grep -rl 'pincode' "$DIR" --include="*.smali" 2>/dev/null | \
-            head -20
-          
-          echo ""
-          echo "▶️ Files with potential hardcoded numbers (4-6 digits):"
-          grep -rl '\b[0-9]\{4,6\}\b' "$DIR" --include="*.smali" 2>/dev/null | \
-            head -20
-
-      - name: Generate Summary Report
-        run: |
-          DIR="${{ github.event.inputs.decompiled_folder }}"
-          MANIFEST="$DIR/AndroidManifest.xml"
-          PKG=$(grep -oP 'package="\K[^"]+' "$MANIFEST" | head -1)
-          VER=$(grep -oP 'android:versionName="\K[^"]+' "$MANIFEST" | head -1)
-          PERM_COUNT=$(grep -c 'uses-permission' "$MANIFEST" || echo 0)
-          SMALI_COUNT=$(find "$DIR" -name '*.smali' | wc -l)
-
-          echo "=========================================="
-          echo "📝 SUMMARY"
-          echo "=========================================="
-          echo "App Package : $PKG"
-          echo "Version     : $VER"
-          echo "Permissions : $PERM_COUNT"
-          echo "Smali Files : $SMALI_COUNT"
-          echo "Analyzed at : $(date)"
-          
-          echo ""
-          echo "WhatsApp Package Found: $(grep -r 'com.whatsapp' "$DIR" --include="*.smali" 2>/dev/null | wc -l) times"
-          echo "Pin-related entries found: $(grep -rin 'pin\|pincode\|passcode' "$DIR" --include="*.smali" 2>/dev/null | wc -l) times"
-
-      - name: Upload Analysis Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: whatsapp-pin-analysis-report
-          path: |
-            analysis_report.txt
-            ${{ github.event.inputs.decompiled_folder }}
-          retention-days: 30
-
-      - name: Create Detailed Report File
+      - name: Generate Complete Report
         run: |
           DIR="${{ github.event.inputs.decompiled_folder }}"
           MANIFEST="$DIR/AndroidManifest.xml"
           
           {
-            echo "# 🔍 WhatsApp Pin Code Analysis Report"
+            echo "# 🎬 Screen Share Detection Report"
             echo "Generated: $(date)"
             echo ""
-            echo "## 📱 WhatsApp Package Detection"
+            echo "## 📊 Detection Summary"
+            echo "- MediaProjection: $(grep -rn 'MediaProjection' "$DIR" --include="*.smali" 2>/dev/null | wc -l) occurrences"
+            echo "- VirtualDisplay: $(grep -rn 'VirtualDisplay' "$DIR" --include="*.smali" 2>/dev/null | wc -l) occurrences"
+            echo "- Screen share strings: $(grep -rin 'screen share\|screen recording' "$DIR" --include="*.smali" 2>/dev/null | wc -l) occurrences"
+            echo ""
+            echo "## 🚨 Critical Screen Share APIs Found"
             echo '```'
-            grep -rn 'com.whatsapp' "$DIR" --include="*.smali" 2>/dev/null | head -100
-            echo '```'
-            echo ""
-            echo "## 🔢 Pin Code Related Findings"
-            echo '```'
-            echo "=== PIN KEYWORD ==="
-            grep -rin 'pin' "$DIR" --include="*.smali" 2>/dev/null | grep -v '\.png' | head -50
-            echo ""
-            echo "=== PINCODE KEYWORD ==="
-            grep -rin 'pincode' "$DIR" --include="*.smali" 2>/dev/null | head -30
-            echo ""
-            echo "=== PASSWORD KEYWORD ==="
-            grep -rin 'password' "$DIR" --include="*.smali" 2>/dev/null | head -30
-            echo ""
-            echo "=== 4-6 DIGIT NUMBERS (Potential Pins) ==="
-            grep -roh '\b[0-9]\{4,6\}\b' "$DIR" --include="*.smali" 2>/dev/null | sort -u | head -50
+            grep -rn 'MediaProjection\|VirtualDisplay\|createScreenCaptureIntent' "$DIR" --include="*.smali" 2>/dev/null | head -50
             echo '```'
             echo ""
-            echo "## 📍 File Locations"
+            echo "## 📝 Screen Share Related Strings"
             echo '```'
-            echo "Files with 'pin':"
-            grep -rl 'pin' "$DIR" --include="*.smali" 2>/dev/null | head -30
+            grep -rin 'screen share\|screencast\|screen recording\|share screen' "$DIR" --include="*.smali" 2>/dev/null | head -30
+            echo '```'
             echo ""
-            echo "Files with numbers (4-6 digits):"
-            grep -rl '\b[0-9]\{4,6\}\b' "$DIR" --include="*.smali" 2>/dev/null | head -20
+            echo "## 🔧 Third-Party SDKs (Video/Screen Share)"
             echo '```'
-          } > analysis_report.txt
+            grep -rn 'agora\|webrtc\|jitsi\|zoom' "$DIR" --include="*.smali" 2>/dev/null | head -30
+            echo '```'
+          } > screen_share_report.txt
           
-          cat analysis_report.txt
+          cat screen_share_report.txt
+
+      - name: Upload Analysis Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: screen-share-detection-report
+          path: |
+            screen_share_report.txt
+            ${{ github.event.inputs.decompiled_folder }}
+          retention-days: 30
