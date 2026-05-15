@@ -1,4 +1,4 @@
-name: telegram
+name: Telegram
 
 on:
   workflow_dispatch:
@@ -251,11 +251,10 @@ jobs:
               pkg_matches = re.findall(r'package="[^"]+"', tag)
               if len(pkg_matches) > 1:
                   # Remove all but first occurrence inside the tag
-                  first = True
+                  seen = [False]
                   def dedup(m):
-                      nonlocal first
-                      if first:
-                          first = False
+                      if not seen[0]:
+                          seen[0] = True
                           return m.group(0)
                       return ''
                   new_tag = re.sub(r'package="[^"]+"', dedup, tag)
