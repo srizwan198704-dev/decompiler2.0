@@ -1,0 +1,178 @@
+name: APK Analyzer
+
+on:
+  workflow_dispatch:
+    inputs:
+      decompiled_folder:
+        description: 'Decompiled folder name'
+        required: true
+        default: 'decompiled_app'
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3 grep findutils
+
+      - name: Analyze AndroidManifest.xml
+        run: |
+          MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
+          echo "=========================================="
+          echo "📦 PACKAGE INFO"
+          echo "=========================================="
+          grep -oP 'package="\K[^"]+' "$MANIFEST" | head -1 | xargs -I{} echo "Package Name: {}"
+          grep -oP 'android:versionName="\K[^"]+' "$MANIFEST" | head -1 | xargs -I{} echo "Version Name: {}"
+          grep -oP 'android:versionCode="\K[^"]+' "$MANIFEST" | head -1 | xargs -I{} echo "Version Code: {}"
+          grep -oP 'android:minSdkVersion="\K[^"]+' "$MANIFEST" | head -1 | xargs -I{} echo "Min SDK: {}"
+          grep -oP 'android:targetSdkVersion="\K[^"]+' "$MANIFEST" | head -1 | xargs -I{} echo "Target SDK: {}"
+
+      - name: List All Permissions
+        run: |
+          MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
+          echo "=========================================="
+          echo "🔐 PERMISSIONS"
+          echo "=========================================="
+          grep -oP 'uses-permission.*?android:name="\K[^"]+' "$MANIFEST" | sort
+
+      - name: List Activities, Services, Receivers
+        run: |
+          MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
+          echo "=========================================="
+          echo "🏃 ACTIVITIES"
+          echo "=========================================="
+          grep -oP '<activity[^>]*android:name="\K[^"]+' "$MANIFEST"
+
+          echo "=========================================="
+          echo "⚙️ SERVICES"
+          echo "=========================================="
+          grep -oP '<service[^>]*android:name="\K[^"]+' "$MANIFEST"
+
+          echo "=========================================="
+          echo "📡 BROADCAST RECEIVERS"
+          echo "=========================================="
+          grep -oP '<receiver[^>]*android:name="\K[^"]+' "$MANIFEST"
+
+          echo "=========================================="
+          echo "🔌 PROVIDERS"
+          echo "=========================================="
+          grep -oP '<provider[^>]*android:name="\K[^"]+' "$MANIFEST"
+
+      - name: Scan for Package Names in Smali
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "=========================================="
+          echo "📋 PACKAGE NAMES FOUND (com.* / org.* / io.*)"
+          echo "=========================================="
+          grep -rho 'com\.[a-zA-Z0-9_\.]\+' "$DIR" --include="*.smali" | \
+            sort -u | grep -v '^\.' | head -100
+          echo "---"
+          grep -rho 'org\.[a-zA-Z0-9_\.]\+' "$DIR" --include="*.smali" | \
+            sort -u | head -50
+          echo "---"
+          grep -rho 'io\.[a-zA-Z0-9_\.]\+' "$DIR" --include="*.smali" | \
+            sort -u | head -50
+
+      - name: Scan for URLs and Endpoints
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "=========================================="
+          echo "🌐 URLS & ENDPOINTS"
+          echo "=========================================="
+          grep -rho 'https\?://[a-zA-Z0-9./?=_%&-]*' "$DIR" \
+            --include="*.smali" --include="*.xml" | \
+            sort -u | head -100
+
+      - name: Scan for Third-Party SDKs & Libraries
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "=========================================="
+          echo "📚 THIRD-PARTY SDKS DETECTED"
+          echo "=========================================="
+          SDKS=(
+            "firebase" "google" "facebook" "adjust" "appsflyer"
+            "crashlytics" "amplitude" "segment" "mixpanel" "branch"
+            "onesignal" "intercom" "zendesk" "stripe" "paypal"
+            "okhttp" "retrofit" "glide" "picasso" "gson" "jackson"
+            "rxjava" "coroutine" "dagger" "hilt" "room" "realm"
+          )
+          for sdk in "${SDKS[@]}"; do
+            count=$(grep -rl "$sdk" "$DIR" --include="*.smali" 2>/dev/null | wc -l)
+            if [ "$count" -gt 0 ]; then
+              echo "✅ $sdk ($count files)"
+            fi
+          done
+
+      - name: Count DEX & Smali Stats
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "=========================================="
+          echo "📊 CODE STATS"
+          echo "=========================================="
+          echo "Total smali files: $(find "$DIR" -name '*.smali' | wc -l)"
+          echo "Total XML files:   $(find "$DIR" -name '*.xml' | wc -l)"
+          echo "Total PNG files:   $(find "$DIR" -name '*.png' | wc -l)"
+          echo "Smali folders:     $(find "$DIR" -maxdepth 1 -name 'smali*' -type d | sort)"
+          echo ""
+          echo "Top 10 largest smali files:"
+          find "$DIR" -name '*.smali' -exec wc -l {} + 2>/dev/null | \
+            sort -rn | head -11
+
+      - name: Scan for Deep Links & Custom Schemes
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "=========================================="
+          echo "🔗 DEEP LINKS / CUSTOM URL SCHEMES"
+          echo "=========================================="
+          grep -rn 'android:scheme' "$DIR/AndroidManifest.xml" | \
+            grep -oP 'android:scheme="\K[^"]+' | sort -u
+
+      - name: Generate Summary Report
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          MANIFEST="$DIR/AndroidManifest.xml"
+          PKG=$(grep -oP 'package="\K[^"]+' "$MANIFEST" | head -1)
+          VER=$(grep -oP 'android:versionName="\K[^"]+' "$MANIFEST" | head -1)
+          PERM_COUNT=$(grep -c 'uses-permission' "$MANIFEST" || echo 0)
+          SMALI_COUNT=$(find "$DIR" -name '*.smali' | wc -l)
+
+          echo "=========================================="
+          echo "📝 SUMMARY"
+          echo "=========================================="
+          echo "App Package : $PKG"
+          echo "Version     : $VER"
+          echo "Permissions : $PERM_COUNT"
+          echo "Smali Files : $SMALI_COUNT"
+          echo "Analyzed at : $(date)"
+
+      - name: Upload Analysis Report
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          MANIFEST="$DIR/AndroidManifest.xml"
+          {
+            echo "# APK Analysis Report"
+            echo "Generated: $(date)"
+            echo ""
+            echo "## Package"
+            grep -oP 'package="\K[^"]+' "$MANIFEST" | head -1
+            echo ""
+            echo "## Permissions"
+            grep -oP 'uses-permission.*?android:name="\K[^"]+' "$MANIFEST"
+            echo ""
+            echo "## URLs"
+            grep -rho 'https\?://[a-zA-Z0-9./?=_%&-]*' "$DIR" \
+              --include="*.smali" --include="*.xml" | sort -u | head -100
+          } > analysis_report.txt
+          cat analysis_report.txt
+
+      - name: Upload Report Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: apk-analysis-report
+          path: analysis_report.txt
+          retention-days: 30
