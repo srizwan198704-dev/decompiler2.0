@@ -1,4 +1,4 @@
-name: APK Analyzer
+name: APK Analyzer - WhatsApp Pin Code Finder
 
 on:
   workflow_dispatch:
@@ -78,6 +78,60 @@ jobs:
           grep -rho 'io\.[a-zA-Z0-9_\.]\+' "$DIR" --include="*.smali" | \
             sort -u | head -50
 
+      - name: 🔍 SPECIFIC SEARCH - WhatsApp Package Name
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "=========================================="
+          echo "📱 SEARCHING FOR 'com.whatsapp' PACKAGE NAME"
+          echo "=========================================="
+          
+          echo "▶️ In AndroidManifest.xml:"
+          grep -n 'com.whatsapp' "$DIR/AndroidManifest.xml" 2>/dev/null || echo "Not found"
+          
+          echo ""
+          echo "▶️ In Smali files:"
+          grep -rn 'com\.whatsapp' "$DIR" --include="*.smali" 2>/dev/null | head -50
+          
+          echo ""
+          echo "▶️ In XML files:"
+          grep -rn 'com\.whatsapp' "$DIR" --include="*.xml" 2>/dev/null | head -30
+          
+          echo ""
+          echo "▶️ Total occurrences:"
+          grep -r 'com\.whatsapp' "$DIR" --include="*.smali" --include="*.xml" 2>/dev/null | wc -l
+
+      - name: 🔐 SPECIFIC SEARCH - Pin Code / Password Related Data
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "=========================================="
+          echo "🔢 SEARCHING FOR PIN CODE / PASSWORD RELATED DATA"
+          echo "=========================================="
+          
+          echo "▶️ Searching for 'pin' keyword:"
+          grep -rin 'pin' "$DIR" --include="*.smali" --include="*.xml" 2>/dev/null | \
+            grep -v '\.png' | grep -v '\.jpg' | head -50
+          
+          echo ""
+          echo "▶️ Searching for 'pincode' keyword:"
+          grep -rin 'pincode' "$DIR" --include="*.smali" --include="*.xml" 2>/dev/null | head -30
+          
+          echo ""
+          echo "▶️ Searching for 'password' keyword:"
+          grep -rin 'password' "$DIR" --include="*.smali" --include="*.xml" 2>/dev/null | head -30
+          
+          echo ""
+          echo "▶️ Searching for 'passcode' keyword:"
+          grep -rin 'passcode' "$DIR" --include="*.smali" --include="*.xml" 2>/dev/null | head -30
+          
+          echo ""
+          echo "▶️ Searching for 4-6 digit numbers (potential pins):"
+          grep -roh '\b[0-9]\{4,6\}\b' "$DIR" --include="*.smali" --include="*.xml" 2>/dev/null | \
+            sort -u | head -50
+          
+          echo ""
+          echo "▶️ Searching for 'key' related strings:"
+          grep -rin 'keystore\|secret\|token\|auth' "$DIR" --include="*.smali" 2>/dev/null | head -30
+
       - name: Scan for URLs and Endpoints
         run: |
           DIR="${{ github.event.inputs.decompiled_folder }}"
@@ -132,6 +186,29 @@ jobs:
           grep -rn 'android:scheme' "$DIR/AndroidManifest.xml" | \
             grep -oP 'android:scheme="\K[^"]+' | sort -u
 
+      - name: 📍 EXTRACT PIN CODE LOCATIONS (Detailed)
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          echo "=========================================="
+          echo "📍 FILE LOCATIONS CONTAINING PIN/CODE DATA"
+          echo "=========================================="
+          
+          echo "▶️ Files containing 'pin' (with line numbers):"
+          grep -rn 'pin' "$DIR" --include="*.smali" 2>/dev/null | \
+            grep -v '\.png' | \
+            awk -F':' '{print $1 " (line: " $2 ")"}' | \
+            sort -u | head -30
+          
+          echo ""
+          echo "▶️ Files containing 'pincode':"
+          grep -rl 'pincode' "$DIR" --include="*.smali" 2>/dev/null | \
+            head -20
+          
+          echo ""
+          echo "▶️ Files with potential hardcoded numbers (4-6 digits):"
+          grep -rl '\b[0-9]\{4,6\}\b' "$DIR" --include="*.smali" 2>/dev/null | \
+            head -20
+
       - name: Generate Summary Report
         run: |
           DIR="${{ github.event.inputs.decompiled_folder }}"
@@ -149,30 +226,57 @@ jobs:
           echo "Permissions : $PERM_COUNT"
           echo "Smali Files : $SMALI_COUNT"
           echo "Analyzed at : $(date)"
+          
+          echo ""
+          echo "WhatsApp Package Found: $(grep -r 'com.whatsapp' "$DIR" --include="*.smali" 2>/dev/null | wc -l) times"
+          echo "Pin-related entries found: $(grep -rin 'pin\|pincode\|passcode' "$DIR" --include="*.smali" 2>/dev/null | wc -l) times"
 
       - name: Upload Analysis Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: whatsapp-pin-analysis-report
+          path: |
+            analysis_report.txt
+            ${{ github.event.inputs.decompiled_folder }}
+          retention-days: 30
+
+      - name: Create Detailed Report File
         run: |
           DIR="${{ github.event.inputs.decompiled_folder }}"
           MANIFEST="$DIR/AndroidManifest.xml"
+          
           {
-            echo "# APK Analysis Report"
+            echo "# 🔍 WhatsApp Pin Code Analysis Report"
             echo "Generated: $(date)"
             echo ""
-            echo "## Package"
-            grep -oP 'package="\K[^"]+' "$MANIFEST" | head -1
+            echo "## 📱 WhatsApp Package Detection"
+            echo '```'
+            grep -rn 'com.whatsapp' "$DIR" --include="*.smali" 2>/dev/null | head -100
+            echo '```'
             echo ""
-            echo "## Permissions"
-            grep -oP 'uses-permission.*?android:name="\K[^"]+' "$MANIFEST"
+            echo "## 🔢 Pin Code Related Findings"
+            echo '```'
+            echo "=== PIN KEYWORD ==="
+            grep -rin 'pin' "$DIR" --include="*.smali" 2>/dev/null | grep -v '\.png' | head -50
             echo ""
-            echo "## URLs"
-            grep -rho 'https\?://[a-zA-Z0-9./?=_%&-]*' "$DIR" \
-              --include="*.smali" --include="*.xml" | sort -u | head -100
+            echo "=== PINCODE KEYWORD ==="
+            grep -rin 'pincode' "$DIR" --include="*.smali" 2>/dev/null | head -30
+            echo ""
+            echo "=== PASSWORD KEYWORD ==="
+            grep -rin 'password' "$DIR" --include="*.smali" 2>/dev/null | head -30
+            echo ""
+            echo "=== 4-6 DIGIT NUMBERS (Potential Pins) ==="
+            grep -roh '\b[0-9]\{4,6\}\b' "$DIR" --include="*.smali" 2>/dev/null | sort -u | head -50
+            echo '```'
+            echo ""
+            echo "## 📍 File Locations"
+            echo '```'
+            echo "Files with 'pin':"
+            grep -rl 'pin' "$DIR" --include="*.smali" 2>/dev/null | head -30
+            echo ""
+            echo "Files with numbers (4-6 digits):"
+            grep -rl '\b[0-9]\{4,6\}\b' "$DIR" --include="*.smali" 2>/dev/null | head -20
+            echo '```'
           } > analysis_report.txt
+          
           cat analysis_report.txt
-
-      - name: Upload Report Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: apk-analysis-report
-          path: analysis_report.txt
-          retention-days: 30
