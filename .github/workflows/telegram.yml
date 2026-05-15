@@ -390,227 +390,202 @@ jobs:
           mkdir -p "$PKG_DIR"
 
           # ── Write CrashReporterActivity.smali via Python ──────────────
-          python3 - "$PKG_DIR" "$NS" << 'PYEOF'
-import sys, os, textwrap
-pkg_dir, ns = sys.argv[1], sys.argv[2]
+          cat > /tmp/write_activity.py << 'PYEOF'
+          import sys, os
+          pkg_dir, ns = sys.argv[1], sys.argv[2]
+          content = (
+            ".class public L" + ns + "/crashreporter/CrashReporterActivity;\n"
+            ".super Landroid/app/Activity;\n"
+            ".source \"CrashReporterActivity.java\"\n"
+            "\n"
+            ".method public constructor <init>()V\n"
+            "    .registers 1\n"
+            "    invoke-direct {p0}, Landroid/app/Activity;-><init>()V\n"
+            "    return-void\n"
+            ".end method\n"
+            "\n"
+            ".method protected onCreate(Landroid/os/Bundle;)V\n"
+            "    .registers 12\n"
+            "\n"
+            "    invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V\n"
+            "\n"
+            "    invoke-virtual {p0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;\n"
+            "    move-result-object v0\n"
+            "\n"
+            "    const-string v1, \"crash_message\"\n"
+            "    invoke-virtual {v0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;\n"
+            "    move-result-object v1\n"
+            "\n"
+            "    const-string v2, \"crash_stacktrace\"\n"
+            "    invoke-virtual {v0, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;\n"
+            "    move-result-object v2\n"
+            "\n"
+            "    const-string v3, \"crash_thread\"\n"
+            "    invoke-virtual {v0, v3}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;\n"
+            "    move-result-object v3\n"
+            "\n"
+            "    new-instance v4, Ljava/lang/StringBuilder;\n"
+            "    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V\n"
+            "    const-string v5, \"====== CRASH REPORT ======\\n\\nERROR:\\n\"\n"
+            "    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;\n"
+            "    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;\n"
+            "    const-string v5, \"\\n\\nTHREAD: \"\n"
+            "    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;\n"
+            "    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;\n"
+            "    const-string v5, \"\\n\\nSTACKTRACE:\\n\"\n"
+            "    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;\n"
+            "    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;\n"
+            "    const-string v5, \"\\n\\n===== \u0995\u09aa\u09bf \u0995\u09b0\u09c7 \u09aa\u09be\u09a0\u09be\u09a8 =====\"\n"
+            "    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;\n"
+            "    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;\n"
+            "    move-result-object v4\n"
+            "\n"
+            "    new-instance v5, Landroid/widget/LinearLayout;\n"
+            "    invoke-direct {v5, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V\n"
+            "    const/4 v6, 0x1\n"
+            "    invoke-virtual {v5, v6}, Landroid/widget/LinearLayout;->setOrientation(I)V\n"
+            "    const v6, 0xFF0D0D0D\n"
+            "    invoke-virtual {v5, v6}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V\n"
+            "    const/16 v6, 0x30\n"
+            "    invoke-virtual {v5, v6, v6, v6, v6}, Landroid/widget/LinearLayout;->setPadding(IIII)V\n"
+            "\n"
+            "    new-instance v6, Landroid/widget/TextView;\n"
+            "    invoke-direct {v6, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V\n"
+            "    const-string v7, \"CRASH REPORT - \u09a8\u09bf\u099a\u09c7\u09b0 \u09b2\u09c7\u0996\u09be \u0995\u09aa\u09bf \u0995\u09b0\u09c1\u09a8\"\n"
+            "    invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V\n"
+            "    const v7, 0xFFFF3333\n"
+            "    invoke-virtual {v6, v7}, Landroid/widget/TextView;->setTextColor(I)V\n"
+            "    const v7, 0x41980000\n"
+            "    invoke-virtual {v6, v7}, Landroid/widget/TextView;->setTextSize(F)V\n"
+            "    const/16 v7, 0x10\n"
+            "    invoke-virtual {v6, v7, v7, v7, v7}, Landroid/widget/TextView;->setPadding(IIII)V\n"
+            "    new-instance v7, Landroid/widget/LinearLayout$LayoutParams;\n"
+            "    const/4 v8, -1\n"
+            "    const/4 v9, -2\n"
+            "    invoke-direct {v7, v8, v9}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V\n"
+            "    invoke-virtual {v5, v6, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V\n"
+            "\n"
+            "    new-instance v7, Landroid/widget/ScrollView;\n"
+            "    invoke-direct {v7, p0}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V\n"
+            "    new-instance v8, Landroid/widget/TextView;\n"
+            "    invoke-direct {v8, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V\n"
+            "    invoke-virtual {v8, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V\n"
+            "    const v9, 0xFFEEEEEE\n"
+            "    invoke-virtual {v8, v9}, Landroid/widget/TextView;->setTextColor(I)V\n"
+            "    const v9, 0x41600000\n"
+            "    invoke-virtual {v8, v9}, Landroid/widget/TextView;->setTextSize(F)V\n"
+            "    const/4 v9, 0x1\n"
+            "    invoke-virtual {v8, v9}, Landroid/widget/TextView;->setTextIsSelectable(Z)V\n"
+            "    invoke-virtual {v7, v8}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V\n"
+            "    new-instance v9, Landroid/widget/LinearLayout$LayoutParams;\n"
+            "    const/4 v10, -1\n"
+            "    const/4 v11, 0\n"
+            "    invoke-direct {v9, v10, v11}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V\n"
+            "    invoke-virtual {v5, v7, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V\n"
+            "    invoke-virtual {p0, v5}, Landroid/app/Activity;->setContentView(Landroid/view/View;)V\n"
+            "    const-string v10, \"CrashReporter\"\n"
+            "    invoke-static {v10, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I\n"
+            "    return-void\n"
+            ".end method\n"
+            "\n"
+            ".method public onBackPressed()V\n"
+            "    .registers 1\n"
+            "    return-void\n"
+            ".end method\n"
+          )
+          with open(os.path.join(pkg_dir, "CrashReporterActivity.smali"), "w", encoding="utf-8") as f:
+              f.write(content)
+          print("OK CrashReporterActivity.smali written")
+          PYEOF
+          python3 /tmp/write_activity.py "$PKG_DIR" "$NS"
 
-activity = textwrap.dedent(f"""\
-.class public L{ns}/crashreporter/CrashReporterActivity;
-.super Landroid/app/Activity;
-.source "CrashReporterActivity.java"
-
-.method public constructor <init>()V
-    .registers 1
-    invoke-direct {{p0}}, Landroid/app/Activity;-><init>()V
-    return-void
-.end method
-
-.method protected onCreate(Landroid/os/Bundle;)V
-    .registers 12
-
-    invoke-super {{p0, p1}}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
-
-    invoke-virtual {{p0}}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
-    move-result-object v0
-
-    const-string v1, "crash_message"
-    invoke-virtual {{v0, v1}}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-    move-result-object v1
-
-    const-string v2, "crash_stacktrace"
-    invoke-virtual {{v0, v2}}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-    move-result-object v2
-
-    const-string v3, "crash_thread"
-    invoke-virtual {{v0, v3}}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-    move-result-object v3
-
-    # Build report string
-    new-instance v4, Ljava/lang/StringBuilder;
-    invoke-direct {{v4}}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "====== CRASH REPORT ======\\n\\nERROR:\\n"
-    invoke-virtual {{v4, v5}}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {{v4, v1}}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    const-string v5, "\\n\\nTHREAD: "
-    invoke-virtual {{v4, v5}}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {{v4, v3}}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    const-string v5, "\\n\\nSTACKTRACE:\\n"
-    invoke-virtual {{v4, v5}}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {{v4, v2}}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    const-string v5, "\\n\\n===== কপি করে পাঠান ====="
-    invoke-virtual {{v4, v5}}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {{v4}}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v4
-
-    # Root layout
-    new-instance v5, Landroid/widget/LinearLayout;
-    invoke-direct {{v5, p0}}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
-    const/4 v6, 0x1
-    invoke-virtual {{v5, v6}}, Landroid/widget/LinearLayout;->setOrientation(I)V
-    const v6, 0xFF0D0D0D
-    invoke-virtual {{v5, v6}}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
-    const/16 v6, 0x30
-    invoke-virtual {{v5, v6, v6, v6, v6}}, Landroid/widget/LinearLayout;->setPadding(IIII)V
-
-    # Header TextView
-    new-instance v6, Landroid/widget/TextView;
-    invoke-direct {{v6, p0}}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
-    const-string v7, "CRASH REPORT - নিচের লেখা কপি করুন"
-    invoke-virtual {{v6, v7}}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    const v7, 0xFFFF3333
-    invoke-virtual {{v6, v7}}, Landroid/widget/TextView;->setTextColor(I)V
-    const v7, 0x41980000
-    invoke-virtual {{v6, v7}}, Landroid/widget/TextView;->setTextSize(F)V
-    const/16 v7, 0x10
-    invoke-virtual {{v6, v7, v7, v7, v7}}, Landroid/widget/TextView;->setPadding(IIII)V
-
-    new-instance v7, Landroid/widget/LinearLayout$LayoutParams;
-    const/4 v8, -1
-    const/4 v9, -2
-    invoke-direct {{v7, v8, v9}}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
-    invoke-virtual {{v5, v6, v7}}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    # ScrollView
-    new-instance v7, Landroid/widget/ScrollView;
-    invoke-direct {{v7, p0}}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
-
-    # Error TextView
-    new-instance v8, Landroid/widget/TextView;
-    invoke-direct {{v8, p0}}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
-    invoke-virtual {{v8, v4}}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-    const v9, 0xFFEEEEEE
-    invoke-virtual {{v8, v9}}, Landroid/widget/TextView;->setTextColor(I)V
-    const v9, 0x41600000
-    invoke-virtual {{v8, v9}}, Landroid/widget/TextView;->setTextSize(F)V
-    const/4 v9, 0x1
-    invoke-virtual {{v8, v9}}, Landroid/widget/TextView;->setTextIsSelectable(Z)V
-
-    invoke-virtual {{v7, v8}}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
-
-    new-instance v9, Landroid/widget/LinearLayout$LayoutParams;
-    const/4 v10, -1
-    const/4 v11, 0
-    invoke-direct {{v9, v10, v11}}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
-    invoke-virtual {{v5, v7, v9}}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    invoke-virtual {{p0, v5}}, Landroid/app/Activity;->setContentView(Landroid/view/View;)V
-
-    const-string v10, "CrashReporter"
-    invoke-static {{v10, v4}}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    return-void
-.end method
-
-.method public onBackPressed()V
-    .registers 1
-    return-void
-.end method
-""")
-
-with open(os.path.join(pkg_dir, "CrashReporterActivity.smali"), "w", encoding="utf-8") as f:
-    f.write(activity)
-print("✅ CrashReporterActivity.smali written")
-PYEOF
 
           # ── Write CrashHandler.smali via Python ────────────────────────
-          python3 - "$PKG_DIR" "$NS" << 'PYEOF'
-import sys, os, textwrap
-pkg_dir, ns = sys.argv[1], sys.argv[2]
+          cat > /tmp/write_handler.py << 'PYEOF'
+          import sys, os
+          pkg_dir, ns = sys.argv[1], sys.argv[2]
+          content = (
+            ".class public L" + ns + "/crashreporter/CrashHandler;\n"
+            ".super Ljava/lang/Object;\n"
+            ".implements Ljava/lang/Thread$UncaughtExceptionHandler;\n"
+            ".source \"CrashHandler.java\"\n"
+            "\n"
+            ".field private context:Landroid/content/Context;\n"
+            "\n"
+            ".method public constructor <init>(Landroid/content/Context;)V\n"
+            "    .registers 2\n"
+            "    invoke-direct {p0}, Ljava/lang/Object;-><init>()V\n"
+            "    iput-object p1, p0, L" + ns + "/crashreporter/CrashHandler;->context:Landroid/content/Context;\n"
+            "    return-void\n"
+            ".end method\n"
+            "\n"
+            ".method public static install(Landroid/content/Context;)V\n"
+            "    .registers 2\n"
+            "    new-instance v0, L" + ns + "/crashreporter/CrashHandler;\n"
+            "    invoke-direct {v0, p0}, L" + ns + "/crashreporter/CrashHandler;-><init>(Landroid/content/Context;)V\n"
+            "    invoke-static {v0}, Ljava/lang/Thread;->setDefaultUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V\n"
+            "    return-void\n"
+            ".end method\n"
+            "\n"
+            ".method public uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V\n"
+            "    .registers 12\n"
+            "\n"
+            "    invoke-virtual {p1}, Ljava/lang/Thread;->getName()Ljava/lang/String;\n"
+            "    move-result-object v0\n"
+            "\n"
+            "    invoke-virtual {p2}, Ljava/lang/Throwable;->toString()Ljava/lang/String;\n"
+            "    move-result-object v1\n"
+            "\n"
+            "    new-instance v2, Ljava/io/StringWriter;\n"
+            "    invoke-direct {v2}, Ljava/io/StringWriter;-><init>()V\n"
+            "    new-instance v3, Ljava/io/PrintWriter;\n"
+            "    invoke-direct {v3, v2}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V\n"
+            "    invoke-virtual {p2, v3}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V\n"
+            "    invoke-virtual {v3}, Ljava/io/PrintWriter;->flush()V\n"
+            "    invoke-virtual {v2}, Ljava/io/StringWriter;->toString()Ljava/lang/String;\n"
+            "    move-result-object v4\n"
+            "\n"
+            "    invoke-virtual {p2}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;\n"
+            "    move-result-object v5\n"
+            "    if-eqz v5, :no_cause\n"
+            "    new-instance v6, Ljava/lang/StringBuilder;\n"
+            "    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V\n"
+            "    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;\n"
+            "    const-string v7, \"\\n\\nCAUSED BY: \"\n"
+            "    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;\n"
+            "    invoke-virtual {v5}, Ljava/lang/Throwable;->toString()Ljava/lang/String;\n"
+            "    move-result-object v7\n"
+            "    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;\n"
+            "    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;\n"
+            "    move-result-object v4\n"
+            "    :no_cause\n"
+            "\n"
+            "    iget-object v6, p0, L" + ns + "/crashreporter/CrashHandler;->context:Landroid/content/Context;\n"
+            "    new-instance v7, Landroid/content/Intent;\n"
+            "    const-class v8, L" + ns + "/crashreporter/CrashReporterActivity;\n"
+            "    invoke-direct {v7, v6, v8}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V\n"
+            "    const v8, 0x10008000\n"
+            "    invoke-virtual {v7, v8}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;\n"
+            "    const-string v8, \"crash_message\"\n"
+            "    invoke-virtual {v7, v8, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;\n"
+            "    const-string v8, \"crash_stacktrace\"\n"
+            "    invoke-virtual {v7, v8, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;\n"
+            "    const-string v8, \"crash_thread\"\n"
+            "    invoke-virtual {v7, v8, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;\n"
+            "    invoke-virtual {v6, v7}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V\n"
+            "    const-string v8, \"CrashReporter\"\n"
+            "    invoke-static {v8, v1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I\n"
+            "    const-wide/16 v9, 0x7D0\n"
+            "    invoke-static {v9, v10}, Ljava/lang/Thread;->sleep(J)V\n"
+            "    return-void\n"
+            ".end method\n"
+          )
+          with open(os.path.join(pkg_dir, "CrashHandler.smali"), "w", encoding="utf-8") as f:
+              f.write(content)
+          print("OK CrashHandler.smali written")
+          PYEOF
+          python3 /tmp/write_handler.py "$PKG_DIR" "$NS"
 
-handler = textwrap.dedent(f"""\
-.class public L{ns}/crashreporter/CrashHandler;
-.super Ljava/lang/Object;
-.implements Ljava/lang/Thread$UncaughtExceptionHandler;
-.source "CrashHandler.java"
-
-.field private context:Landroid/content/Context;
-
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
-    invoke-direct {{p0}}, Ljava/lang/Object;-><init>()V
-    iput-object p1, p0, L{ns}/crashreporter/CrashHandler;->context:Landroid/content/Context;
-    return-void
-.end method
-
-.method public static install(Landroid/content/Context;)V
-    .registers 2
-    new-instance v0, L{ns}/crashreporter/CrashHandler;
-    invoke-direct {{v0, p0}}, L{ns}/crashreporter/CrashHandler;-><init>(Landroid/content/Context;)V
-    invoke-static {{v0}}, Ljava/lang/Thread;->setDefaultUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
-    return-void
-.end method
-
-.method public uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
-    .registers 12
-
-    # Thread name
-    invoke-virtual {{p1}}, Ljava/lang/Thread;->getName()Ljava/lang/String;
-    move-result-object v0
-
-    # Error message
-    invoke-virtual {{p2}}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
-    move-result-object v1
-
-    # Stacktrace via StringWriter + PrintWriter
-    new-instance v2, Ljava/io/StringWriter;
-    invoke-direct {{v2}}, Ljava/io/StringWriter;-><init>()V
-    new-instance v3, Ljava/io/PrintWriter;
-    invoke-direct {{v3, v2}}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
-    invoke-virtual {{p2, v3}}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
-    invoke-virtual {{v3}}, Ljava/io/PrintWriter;->flush()V
-    invoke-virtual {{v2}}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
-    move-result-object v4
-
-    # Caused by chain
-    invoke-virtual {{p2}}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
-    move-result-object v5
-    if-eqz v5, :no_cause
-    new-instance v6, Ljava/lang/StringBuilder;
-    invoke-direct {{v6}}, Ljava/lang/StringBuilder;-><init>()V
-    invoke-virtual {{v6, v4}}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    const-string v7, "\\n\\nCAUSED BY: "
-    invoke-virtual {{v6, v7}}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {{v5}}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
-    move-result-object v7
-    invoke-virtual {{v6, v7}}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    invoke-virtual {{v6}}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    move-result-object v4
-    :no_cause
-
-    iget-object v6, p0, L{ns}/crashreporter/CrashHandler;->context:Landroid/content/Context;
-
-    new-instance v7, Landroid/content/Intent;
-    const-class v8, L{ns}/crashreporter/CrashReporterActivity;
-    invoke-direct {{v7, v6, v8}}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const v8, 0x10008000
-    invoke-virtual {{v7, v8}}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
-
-    const-string v8, "crash_message"
-    invoke-virtual {{v7, v8, v1}}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-    const-string v8, "crash_stacktrace"
-    invoke-virtual {{v7, v8, v4}}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-    const-string v8, "crash_thread"
-    invoke-virtual {{v7, v8, v0}}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    invoke-virtual {{v6, v7}}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-
-    const-string v8, "CrashReporter"
-    invoke-static {{v8, v1, p2}}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    # Small delay so activity can start
-    const-wide/16 v9, 0x7D0
-    invoke-static {{v9, v10}}, Ljava/lang/Thread;->sleep(J)V
-
-    return-void
-.end method
-""")
-
-with open(os.path.join(pkg_dir, "CrashHandler.smali"), "w", encoding="utf-8") as f:
-    f.write(handler)
-print("✅ CrashHandler.smali written")
-PYEOF
 
           echo "✅ CrashReporter smali files written:"
           ls -la "$PKG_DIR/"
