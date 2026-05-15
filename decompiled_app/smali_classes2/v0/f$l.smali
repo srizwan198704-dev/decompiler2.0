@@ -1,0 +1,75 @@
+.class Lv0/f$l;
+.super Lv0/f;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lv0/f;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x8
+    name = "l"
+.end annotation
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+.method constructor <init>()V
+    .locals 1
+
+    const/4 v0, 0x7
+
+    invoke-direct {p0}, Lv0/f;-><init>()V
+
+    const/4 v0, 0x3
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public i(Landroid/view/View;FJLandroidx/constraintlayout/core/motion/utils/d;)Z
+    .locals 7
+
+    move-object v0, p0
+
+    move-object v0, p0
+
+    const-string v6, ""
+
+    move v1, p2
+
+    move-wide v2, p3
+
+    move-object v4, p1
+
+    move-object v4, p1
+
+    move-object v5, p5
+
+    move-object v5, p5
+
+    const/4 v6, 0x4
+
+    invoke-virtual/range {v0 .. v5}, Lv0/f;->f(FJLandroid/view/View;Landroidx/constraintlayout/core/motion/utils/d;)F
+
+    move-result p2
+
+    const/4 v6, 0x6
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setTranslationY(F)V
+
+    const/4 v6, 0x3
+
+    iget-boolean p1, p0, Landroidx/constraintlayout/core/motion/utils/n;->h:Z
+
+    const/4 v6, 0x4
+
+    return p1
+.end method

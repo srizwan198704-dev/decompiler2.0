@@ -1,0 +1,20 @@
+.class public abstract synthetic Lcom/google/android/material/textfield/e0;
+.super Ljava/lang/Object;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+.method public static bridge synthetic a(Landroid/widget/EditText;)Landroid/graphics/drawable/Drawable;
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/widget/EditText;->getTextCursorDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    return-object p0
+.end method

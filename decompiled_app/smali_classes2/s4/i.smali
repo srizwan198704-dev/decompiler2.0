@@ -1,0 +1,97 @@
+.class public Ls4/i;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ls4/o;
+
+
+# instance fields
+.field private final a:Ls4/b;
+
+.field private final b:Ls4/b;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+.method public constructor <init>(Ls4/b;Ls4/b;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ls4/i;->a:Ls4/b;
+
+    iput-object p2, p0, Ls4/i;->b:Ls4/b;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()Lp4/a;
+    .locals 3
+
+    new-instance v0, Lp4/n;
+
+    iget-object v1, p0, Ls4/i;->a:Ls4/b;
+
+    invoke-virtual {v1}, Ls4/b;->d()Lp4/d;
+
+    move-result-object v1
+
+    iget-object v2, p0, Ls4/i;->b:Ls4/b;
+
+    invoke-virtual {v2}, Ls4/b;->d()Lp4/d;
+
+    move-result-object v2
+
+    invoke-direct {v0, v1, v2}, Lp4/n;-><init>(Lp4/a;Lp4/a;)V
+
+    return-object v0
+.end method
+
+.method public b()Ljava/util/List;
+    .locals 2
+
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string v1, "Cannot call getKeyframes on AnimatableSplitDimensionPathValue."
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public c()Z
+    .locals 1
+
+    iget-object v0, p0, Ls4/i;->a:Ls4/b;
+
+    invoke-virtual {v0}, Ls4/b;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Ls4/i;->b:Ls4/b;
+
+    invoke-virtual {v0}, Ls4/b;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+.end method

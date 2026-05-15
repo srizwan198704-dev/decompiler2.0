@@ -1,0 +1,31 @@
+.class abstract Landroidx/appcompat/widget/AppCompatTextHelper$e;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Landroidx/appcompat/widget/AppCompatTextHelper;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x8
+    name = "e"
+.end annotation
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+.method static a(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Landroid/graphics/Typeface;->create(Landroid/graphics/Typeface;IZ)Landroid/graphics/Typeface;
+
+    move-result-object p0
+
+    return-object p0
+.end method

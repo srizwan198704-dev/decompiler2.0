@@ -1,0 +1,29 @@
+.class public interface abstract Landroidx/room/coroutines/ConnectionPool;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/AutoCloseable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroidx/room/coroutines/ConnectionPool$RollbackException;
+    }
+.end annotation
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract close()V
+.end method
+
+.method public abstract e(ZLkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+.end method

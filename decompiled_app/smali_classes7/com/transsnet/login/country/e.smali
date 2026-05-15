@@ -1,0 +1,43 @@
+.class public final synthetic Lcom/transsnet/login/country/e;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function1;
+
+
+# instance fields
+.field public final synthetic a:Lcom/transsnet/login/country/LoginSelectCountryActivity;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lcom/transsnet/login/country/LoginSelectCountryActivity;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lcom/transsnet/login/country/e;->a:Lcom/transsnet/login/country/LoginSelectCountryActivity;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    iget-object v0, p0, Lcom/transsnet/login/country/e;->a:Lcom/transsnet/login/country/LoginSelectCountryActivity;
+
+    check-cast p1, Ljava/lang/Integer;
+
+    invoke-static {v0, p1}, Lcom/transsnet/login/country/LoginSelectCountryActivity;->c0(Lcom/transsnet/login/country/LoginSelectCountryActivity;Ljava/lang/Integer;)Lkotlin/Unit;
+
+    move-result-object p1
+
+    return-object p1
+.end method

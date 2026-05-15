@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/scrollview" android:fitsSystemWindows="true" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:paddingTop="38.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:id="@id/rl_head" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.google.android.material.imageview.ShapeableImageView android:id="@id/user_head" android:layout_width="96.0dip" android:layout_height="96.0dip" android:src="@drawable/ic_user_avatar" android:layout_centerInParent="true" app:shapeAppearanceOverlay="@style/ImgRoundedCornerStyle_48" />
+            <FrameLayout android:id="@id/fl_edit" android:layout_width="96.0dip" android:layout_height="96.0dip" android:layout_centerInParent="true">
+                <ImageView android:layout_gravity="bottom|center|right" android:id="@id/iv_edit" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/ic_edit_camera" android:layout_centerInParent="true" />
+            </FrameLayout>
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/rl_nickname" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_below="@id/fl_edit" android:paddingStart="10.0dip" android:paddingEnd="10.0dip">
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/text_01" android:ellipsize="end" android:gravity="center" android:id="@id/tv_nickname" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="nickName" android:singleLine="true" android:layout_centerHorizontal="true" android:layout_marginEnd="13.0dip" />
+            <androidx.appcompat.widget.AppCompatImageView android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginTop="3.0dip" android:src="@drawable/ic_more_nickname" android:layout_centerHorizontal="true" android:layout_toEndOf="@id/tv_nickname" app:tint="@color/text_01" />
+        </RelativeLayout>
+        <com.transsion.usercenter.edit.widget.ProfileEditBar android:id="@id/gender_profilebar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:left_text="@string/profile_gender" app:line="true" />
+        <com.transsion.usercenter.edit.widget.ProfileEditBar android:id="@id/birth_profilebar" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" app:left_text="@string/profile_date_of_birth" app:line="true" />
+    </LinearLayout>
+    <ProgressBar android:id="@id/load_view" android:visibility="gone" android:layout_width="28.0dip" android:layout_height="28.0dip" android:layout_centerInParent="true" android:indeterminateTint="@color/main" />
+</RelativeLayout>

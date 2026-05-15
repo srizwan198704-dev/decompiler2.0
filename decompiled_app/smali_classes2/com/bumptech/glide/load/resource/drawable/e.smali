@@ -1,0 +1,20 @@
+.class public abstract synthetic Lcom/bumptech/glide/load/resource/drawable/e;
+.super Ljava/lang/Object;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+.method public static bridge synthetic a(Landroid/graphics/drawable/AnimatedImageDrawable;)I
+    .locals 0
+
+    invoke-virtual {p0}, Landroid/graphics/drawable/AnimatedImageDrawable;->getIntrinsicHeight()I
+
+    move-result p0
+
+    return p0
+.end method

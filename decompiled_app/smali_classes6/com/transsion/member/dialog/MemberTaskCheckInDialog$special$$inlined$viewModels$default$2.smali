@@ -1,0 +1,131 @@
+.class public final Lcom/transsion/member/dialog/MemberTaskCheckInDialog$special$$inlined$viewModels$default$2;
+.super Lkotlin/jvm/internal/Lambda;
+
+# interfaces
+.implements Lkotlin/jvm/functions/Function0;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/transsion/member/dialog/MemberTaskCheckInDialog;-><init>()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = null
+.end annotation
+
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lkotlin/jvm/internal/Lambda;",
+        "Lkotlin/jvm/functions/Function0<",
+        "Landroidx/lifecycle/x0;",
+        ">;"
+    }
+.end annotation
+
+.annotation runtime Lkotlin/Metadata;
+    d1 = {
+        "\u0000\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0010\u0003\u001a\u00020\u0002\"\n\u0008\u0000\u0010\u0001\u0018\u0001*\u00020\u0000H\n\u00a2\u0006\u0004\u0008\u0003\u0010\u0004\u00a8\u0006\u0005"
+    }
+    d2 = {
+        "Landroidx/lifecycle/t0;",
+        "VM",
+        "Landroidx/lifecycle/x0;",
+        "<anonymous>",
+        "()Landroidx/lifecycle/x0;",
+        "androidx/fragment/app/FragmentViewModelLazyKt$viewModels$2"
+    }
+    k = 0x3
+    mv = {
+        0x2,
+        0x1,
+        0x0
+    }
+.end annotation
+
+
+# instance fields
+.field final synthetic $ownerProducer:Lkotlin/jvm/functions/Function0;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+.method public constructor <init>(Lkotlin/jvm/functions/Function0;)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput-object p1, p0, Lcom/transsion/member/dialog/MemberTaskCheckInDialog$special$$inlined$viewModels$default$2;->$ownerProducer:Lkotlin/jvm/functions/Function0;
+
+    const/4 v0, 0x5
+
+    const/4 p1, 0x0
+
+    const/4 v0, 0x7
+
+    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
+
+    const/4 v0, 0x0
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Landroidx/lifecycle/x0;
+    .locals 3
+
+    const-string v2, ""
+
+    iget-object v0, p0, Lcom/transsion/member/dialog/MemberTaskCheckInDialog$special$$inlined$viewModels$default$2;->$ownerProducer:Lkotlin/jvm/functions/Function0;
+
+    const/4 v2, 0x0
+
+    invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
+
+    move-result-object v0
+
+    const/4 v2, 0x2
+
+    check-cast v0, Landroidx/lifecycle/y0;
+
+    const/4 v2, 0x2
+
+    invoke-interface {v0}, Landroidx/lifecycle/y0;->getViewModelStore()Landroidx/lifecycle/x0;
+
+    move-result-object v0
+
+    const/4 v2, 0x1
+
+    const-string v1, "ursoe)r.dio(rnvtMPeordelewcewS"
+
+    const-string v1, "ownerProducer().viewModelStore"
+
+    const/4 v2, 0x3
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->g(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v2, 0x1
+
+    return-object v0
+.end method
+
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .locals 2
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0}, Lcom/transsion/member/dialog/MemberTaskCheckInDialog$special$$inlined$viewModels$default$2;->invoke()Landroidx/lifecycle/x0;
+
+    move-result-object v0
+
+    const/4 v1, 0x5
+
+    return-object v0
+.end method

@@ -1,0 +1,39 @@
+.class public final synthetic Lmu/i0;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Lr6/f;
+
+
+# instance fields
+.field public final synthetic a:Lcom/transsion/ugcvideodetail/widget/UGCVideoDetailPlayListView;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lcom/transsion/ugcvideodetail/widget/UGCVideoDetailPlayListView;)V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lmu/i0;->a:Lcom/transsion/ugcvideodetail/widget/UGCVideoDetailPlayListView;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()V
+    .locals 1
+
+    iget-object v0, p0, Lmu/i0;->a:Lcom/transsion/ugcvideodetail/widget/UGCVideoDetailPlayListView;
+
+    invoke-static {v0}, Lcom/transsion/ugcvideodetail/widget/UGCVideoDetailPlayListView;->q(Lcom/transsion/ugcvideodetail/widget/UGCVideoDetailPlayListView;)V
+
+    return-void
+.end method

@@ -1,0 +1,26 @@
+.class public abstract synthetic Landroidx/compose/foundation/e;
+.super Ljava/lang/Object;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+.method public static synthetic a(Z)I
+    .locals 0
+
+    if-eqz p0, :cond_0
+
+    const/16 p0, 0x4cf
+
+    goto :goto_0
+
+    :cond_0
+    const/16 p0, 0x4d5
+
+    :goto_0
+    return p0
+.end method

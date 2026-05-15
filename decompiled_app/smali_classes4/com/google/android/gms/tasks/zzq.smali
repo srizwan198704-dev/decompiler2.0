@@ -1,0 +1,33 @@
+.class interface abstract Lcom/google/android/gms/tasks/zzq;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<TResult:",
+        "Ljava/lang/Object;",
+        ">",
+        "Ljava/lang/Object;"
+    }
+.end annotation
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract zzc()V
+.end method
+
+.method public abstract zzd(Lcom/google/android/gms/tasks/Task;)V
+    .param p1    # Lcom/google/android/gms/tasks/Task;
+        .annotation build Landroidx/annotation/NonNull;
+        .end annotation
+    .end param
+.end method

@@ -1,0 +1,20 @@
+.class public abstract synthetic Landroidx/emoji2/text/b;
+.super Ljava/lang/Object;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+.method public static bridge synthetic a(Landroid/os/Looper;)Landroid/os/Handler;
+    .locals 0
+
+    invoke-static {p0}, Landroid/os/Handler;->createAsync(Landroid/os/Looper;)Landroid/os/Handler;
+
+    move-result-object p0
+
+    return-object p0
+.end method

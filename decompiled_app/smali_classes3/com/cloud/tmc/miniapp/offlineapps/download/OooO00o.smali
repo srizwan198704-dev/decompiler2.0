@@ -1,0 +1,15 @@
+.class public interface abstract Lcom/cloud/tmc/miniapp/offlineapps/download/OooO00o;
+.super Ljava/lang/Object;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract OooO00o(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.end method

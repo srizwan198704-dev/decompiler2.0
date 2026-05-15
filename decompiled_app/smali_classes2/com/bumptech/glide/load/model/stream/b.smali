@@ -1,0 +1,20 @@
+.class public abstract synthetic Lcom/bumptech/glide/load/model/stream/b;
+.super Ljava/lang/Object;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+.method public static bridge synthetic a(Landroid/net/Uri;)Landroid/net/Uri;
+    .locals 0
+
+    invoke-static {p0}, Landroid/provider/MediaStore;->setRequireOriginal(Landroid/net/Uri;)Landroid/net/Uri;
+
+    move-result-object p0
+
+    return-object p0
+.end method

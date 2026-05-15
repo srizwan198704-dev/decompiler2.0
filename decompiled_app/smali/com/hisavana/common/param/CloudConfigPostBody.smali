@@ -1,0 +1,44 @@
+.class public Lcom/hisavana/common/param/CloudConfigPostBody;
+.super Ljava/lang/Object;
+
+
+# instance fields
+.field public application:Lcom/hisavana/common/param/ApplicationDTO;
+
+.field public applicationId:Ljava/lang/String;
+
+.field public codeSeatFilterEnable:Z
+
+.field public codeSeatFilterIds:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field public device:Lcom/hisavana/common/param/DeviceDTO;
+
+.field public ext:Lcom/hisavana/common/param/Ext;
+
+.field public testRequest:Ljava/lang/Boolean;
+
+.field public user:Lcom/hisavana/common/param/UserDTO;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

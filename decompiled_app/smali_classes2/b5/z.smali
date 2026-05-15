@@ -1,0 +1,20 @@
+.class public abstract synthetic Lb5/z;
+.super Ljava/lang/Object;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
+
+    return-void
+.end method
+
+.method public static bridge synthetic a(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/LocalDateTime;
+    .locals 0
+
+    invoke-static {p0, p1}, Ljava/time/LocalDateTime;->ofInstant(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/LocalDateTime;
+
+    move-result-object p0
+
+    return-object p0
+.end method
