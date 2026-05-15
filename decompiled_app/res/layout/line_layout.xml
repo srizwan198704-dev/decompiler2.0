@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:weightSum="2.0"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:id="@id/linelayoutTextView1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="2.0dip" android:singleLine="false" android:layout_weight="1.0" />
-    <TextView android:id="@id/linelayoutTextView2" android:background="?android:selectableItemBackground" android:focusable="true" android:clickable="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:singleLine="false" android:layout_weight="1.0" />
-</LinearLayout>
