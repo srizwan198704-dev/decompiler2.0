@@ -50,7 +50,8 @@ jobs:
             findutils \
             grep \
             sed \
-            coreutils
+            coreutils \
+            patchelf
           java -version
           python3 --version
 
@@ -70,7 +71,6 @@ jobs:
           export PATH="$PATH:/opt/android-sdk/cmdline-tools/latest/bin"
           yes | sdkmanager --licenses > /dev/null 2>&1 || true
           sdkmanager "build-tools;34.0.0"
-          # Create symlinks
           for tool in aapt2 apksigner zipalign aapt d8; do
             sudo ln -sf /opt/android-sdk/build-tools/34.0.0/$tool \
                         /usr/local/bin/$tool 2>/dev/null || true
@@ -81,7 +81,7 @@ jobs:
           apksigner version
 
       # ─────────────────────────────────────────────
-      # 4. APKTOOL (latest stable)
+      # 4. APKTOOL
       # ─────────────────────────────────────────────
       - name: Setup APKTool
         run: |
@@ -108,13 +108,11 @@ jobs:
               "$DECOMPILED_DIR/AndroidManifest.xml" | head -1)
           fi
 
-          # Fallback: check apktool.yml
           if [ -z "$OLD_PACKAGE" ] && [ -f "$DECOMPILED_DIR/apktool.yml" ]; then
             OLD_PACKAGE=$(grep -oP 'packageId:\s*\K\S+' \
               "$DECOMPILED_DIR/apktool.yml" | head -1)
           fi
 
-          # Fallback: detect from smali directory name
           if [ -z "$OLD_PACKAGE" ]; then
             SMALI_DIR=$(find "$DECOMPILED_DIR" -maxdepth 1 -type d -name "smali*" | head -1)
             if [ -n "$SMALI_DIR" ]; then
@@ -124,33 +122,27 @@ jobs:
             fi
           fi
 
-          # Final fallback
           if [ -z "$OLD_PACKAGE" ]; then
-            OLD_PACKAGE="com.whatsapp.w4b"
+            OLD_PACKAGE="org.telegram.messenger"
           fi
 
           echo "OLD_PACKAGE=$OLD_PACKAGE" >> $GITHUB_ENV
           echo "NEW_PACKAGE=$NEW_PKG"     >> $GITHUB_ENV
-          echo "✅ Detected old package : $OLD_PACKAGE"
-          echo "✅ Target new package   : $NEW_PKG"
+          echo "✅ Old package : $OLD_PACKAGE"
+          echo "✅ New package : $NEW_PKG"
 
       # ─────────────────────────────────────────────
-      # 6. FULL PACKAGE RENAME — all file types
+      # 6. FULL PACKAGE RENAME — all text files
       # ─────────────────────────────────────────────
-      - name: Full Package Rename (Python master script)
+      - name: Full Package Rename
         run: |
           cat > /tmp/rename_pkg.py << 'PYEOF'
           #!/usr/bin/env python3
-          """
-          Comprehensive package renamer for decompiled APK directories.
-          Handles: AndroidManifest.xml, apktool.yml, *.xml, *.smali,
-                   *.properties, *.json, *.gradle, *.kt, *.java, *.html
-          """
           import os, sys, re
 
-          old = sys.argv[1]   # e.g. com.whatsapp.w4b
-          new = sys.argv[2]   # e.g. com.konasl.nagad
-          root = sys.argv[3]  # decompiled dir
+          old  = sys.argv[1]
+          new  = sys.argv[2]
+          root = sys.argv[3]
 
           old_slash = old.replace('.', '/')
           new_slash = new.replace('.', '/')
@@ -161,7 +153,13 @@ jobs:
             '.cfg', '.ini', '.conf', '.plist', '.mf', '.sf',
           }
 
-          stats = {'files': 0, 'replacements': 0}
+          if new.startswith(old):
+              sfx     = re.escape(new[len(old):])
+              dot_pat = re.compile(re.escape(old) + r'(?!' + sfx + r')')
+          else:
+              dot_pat = re.compile(re.escape(old))
+
+          stats = {'files': 0}
 
           def replace_in_file(path):
               try:
@@ -169,39 +167,21 @@ jobs:
                       content = f.read()
               except Exception:
                   return
-
               original = content
-
-              # 1. Slash-form (smali class paths, resource paths)
-              content = content.replace(old_slash, new_slash)
-
-              # 2. Dotted form — careful not to double-replace if new starts with old
-              if new.startswith(old):
-                  suffix = re.escape(new[len(old):])
-                  pattern = re.escape(old) + r'(?!' + suffix + r')'
-              else:
-                  pattern = re.escape(old)
-              content = re.sub(pattern, new, content)
-
+              content  = content.replace(old_slash, new_slash)
+              content  = dot_pat.sub(new, content)
               if content != original:
                   with open(path, 'w', encoding='utf-8') as f:
                       f.write(content)
                   stats['files'] += 1
-                  stats['replacements'] += (
-                      content.count(new) - original.count(new)
-                  )
 
           for dirpath, dirnames, filenames in os.walk(root):
-              # Skip binary asset dirs that can't/shouldn't be text-edited
-              dirnames[:] = [d for d in dirnames
-                             if d not in ('META-INF',)]
+              dirnames[:] = [d for d in dirnames if d not in ('META-INF',)]
               for fname in filenames:
-                  ext = os.path.splitext(fname)[1].lower()
-                  if ext in TEXT_EXTS:
+                  if os.path.splitext(fname)[1].lower() in TEXT_EXTS:
                       replace_in_file(os.path.join(dirpath, fname))
 
-          print(f"✅ Renamed in {stats['files']} files "
-                f"({stats['replacements']} extra occurrences added)")
+          print(f"✅ Renamed package in {stats['files']} files")
           PYEOF
           python3 /tmp/rename_pkg.py \
             "${{ env.OLD_PACKAGE }}" \
@@ -209,7 +189,7 @@ jobs:
             "${{ github.event.inputs.decompiled_folder }}"
 
       # ─────────────────────────────────────────────
-      # 7. FIX AndroidManifest.xml — problematic attrs
+      # 7. FIX AndroidManifest.xml
       # ─────────────────────────────────────────────
       - name: Fix AndroidManifest.xml Attributes
         run: |
@@ -224,33 +204,30 @@ jobs:
 
           fixes = []
 
-          # 1. Remove requiredSplitTypes (causes build failure)
+          # Remove requiredSplitTypes
           if 'requiredSplitTypes' in content:
               content = re.sub(r'\s+android:requiredSplitTypes="[^"]*"', '', content)
               content = re.sub(r'\s+requiredSplitTypes="[^"]*"',         '', content)
               fixes.append('removed requiredSplitTypes')
 
-          # 2. Remove isSplitRequired if it would be dangling
+          # Remove dangling isSplitRequired
           if 'isSplitRequired' in content and 'requiredSplitTypes' not in content:
               content = re.sub(r'\s+android:isSplitRequired="[^"]*"', '', content)
               fixes.append('removed dangling isSplitRequired')
 
-          # 3. Remove compileSdkVersion / compileSdkVersionCodename
-          #    (not valid in binary manifest, causes aapt2 errors)
+          # Remove compileSdkVersion / compileSdkVersionCodename
           for attr in ('compileSdkVersion', 'compileSdkVersionCodename'):
               pattern = r'\s+android:' + re.escape(attr) + r'="[^"]*"'
               if re.search(pattern, content):
                   content = re.sub(pattern, '', content)
                   fixes.append(f'removed {attr}')
 
-          # 4. Fix duplicate package attribute (keep only first)
-          # (rare but happens after naive sed replacement)
+          # Deduplicate package attribute
           manifest_tag_match = re.search(r'<manifest\b[^>]*>', content, re.DOTALL)
           if manifest_tag_match:
               tag = manifest_tag_match.group(0)
               pkg_matches = re.findall(r'package="[^"]+"', tag)
               if len(pkg_matches) > 1:
-                  # Remove all but first occurrence inside the tag
                   seen = [False]
                   def dedup(m):
                       if not seen[0]:
@@ -264,10 +241,7 @@ jobs:
           with open(path, 'w', encoding='utf-8') as f:
               f.write(content)
 
-          if fixes:
-              print('✅ Manifest fixes applied:', ', '.join(fixes))
-          else:
-              print('✅ Manifest OK — no fixes needed')
+          print('✅ Manifest fixes:', ', '.join(fixes) if fixes else 'none needed')
           PYEOF
           python3 /tmp/fix_manifest.py "$MANIFEST"
 
@@ -277,41 +251,26 @@ jobs:
       - name: Fix apktool.yml
         run: |
           YML="${{ github.event.inputs.decompiled_folder }}/apktool.yml"
-          if [ ! -f "$YML" ]; then
-            echo "apktool.yml not found, skipping"
-            exit 0
-          fi
+          [ ! -f "$YML" ] && echo "apktool.yml not found, skipping" && exit 0
 
           cat > /tmp/fix_yml.py << 'PYEOF'
           #!/usr/bin/env python3
-          """
-          Patch apktool.yml:
-          - Update package name references
-          - Set renameManifestPackage to new name
-          - Remove doNotCompress entries that cause issues (optional)
-          - Ensure versionInfo is sane
-          """
           import sys, re
 
-          path   = sys.argv[1]
-          old    = sys.argv[2]
-          new    = sys.argv[3]
+          path = sys.argv[1]
+          old  = sys.argv[2]
+          new  = sys.argv[3]
 
           with open(path, 'r', encoding='utf-8') as f:
               content = f.read()
 
-          # Replace old package with new
           content = content.replace(old, new)
 
-          # Ensure renameManifestPackage is set correctly
           if 'renameManifestPackage:' in content:
               content = re.sub(
                   r'renameManifestPackage:\s*\S*',
-                  f'renameManifestPackage: {new}',
-                  content
-              )
+                  f'renameManifestPackage: {new}', content)
           else:
-              # Insert after first line (the !!brut.androlib... header)
               lines = content.split('\n')
               insert_at = 1
               for i, l in enumerate(lines):
@@ -323,33 +282,20 @@ jobs:
 
           with open(path, 'w', encoding='utf-8') as f:
               f.write(content)
-
           print('✅ apktool.yml patched')
           PYEOF
-          python3 /tmp/fix_yml.py \
-            "$YML" \
-            "${{ env.OLD_PACKAGE }}" \
-            "${{ env.NEW_PACKAGE }}"
-
-          echo "=== apktool.yml (relevant lines) ==="
+          python3 /tmp/fix_yml.py "$YML" \
+            "${{ env.OLD_PACKAGE }}" "${{ env.NEW_PACKAGE }}"
           grep -iE "package|rename|version|isFramework" "$YML" || true
 
       # ─────────────────────────────────────────────
-      # 9. FIX PROVIDER AUTHORITIES (critical for crash)
+      # 9. FIX PROVIDER AUTHORITIES
       # ─────────────────────────────────────────────
       - name: Fix Provider Authorities & Intent Filters
         run: |
           MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
-          OLD="${{ env.OLD_PACKAGE }}"
-          NEW="${{ env.NEW_PACKAGE }}"
-
           cat > /tmp/fix_providers.py << 'PYEOF'
           #!/usr/bin/env python3
-          """
-          Fix ContentProvider / FileProvider authorities and
-          intent-filter data authorities that still reference old package.
-          These cause immediate crashes at startup if wrong.
-          """
           import sys, re
 
           path = sys.argv[1]
@@ -359,58 +305,43 @@ jobs:
           with open(path, 'r', encoding='utf-8') as f:
               content = f.read()
 
-          # authorities="com.old.pkg.provider" or authorities="com.old.pkg.fileprovider"
           pattern = r'(android:authorities=")([^"]*' + re.escape(old) + r'[^"]*)(")'
           def fix_auth(m):
-              fixed = m.group(2).replace(old, new)
-              return m.group(1) + fixed + m.group(3)
-
-          new_content, n = re.subn(pattern, fix_auth, content)
+              return m.group(1) + m.group(2).replace(old, new) + m.group(3)
+          content, n = re.subn(pattern, fix_auth, content)
           print(f'✅ Fixed {n} provider authority reference(s)')
 
-          # host="com.old.pkg" in intent-filter data tags
-          host_pattern = r'(android:host=")(' + re.escape(old) + r')(")' 
-          new_content, nh = re.subn(host_pattern,
-              lambda m: m.group(1) + new + m.group(3), new_content)
+          host_pat = r'(android:host=")(' + re.escape(old) + r')(")'
+          content, nh = re.subn(host_pat,
+              lambda m: m.group(1) + new + m.group(3), content)
           if nh:
               print(f'✅ Fixed {nh} intent-filter host reference(s)')
 
           with open(path, 'w', encoding='utf-8') as f:
-              f.write(new_content)
+              f.write(content)
           PYEOF
-          python3 /tmp/fix_providers.py "$MANIFEST" "$OLD" "$NEW"
+          python3 /tmp/fix_providers.py \
+            "$MANIFEST" "${{ env.OLD_PACKAGE }}" "${{ env.NEW_PACKAGE }}"
 
       # ─────────────────────────────────────────────
-      # 10. FIX RES/XML — FileProvider paths file
+      # 10. FIX res/xml
       # ─────────────────────────────────────────────
-      - name: Fix res/xml FileProvider path descriptors
+      - name: Fix res/xml FileProvider descriptors
         run: |
-          DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
+          DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
           NEW="${{ env.NEW_PACKAGE }}"
-          # FileProvider XML files often live in res/xml/
-          find "$DECOMPILED_DIR/res/xml" -name "*.xml" 2>/dev/null | \
+          find "$DIR/res/xml" -name "*.xml" 2>/dev/null | \
             xargs -r sed -i "s|${OLD}|${NEW}|g"
           echo "✅ res/xml fixed"
 
       # ─────────────────────────────────────────────
-      # 11. FIX SHARED PREFERENCES / SQLITE names in smali
-      #     (crash source: hardcoded old pkg in prefs/db names)
+      # 11. DEEP SMALI FIX
       # ─────────────────────────────────────────────
-      - name: Fix Hardcoded Package Strings in Smali
+      - name: Deep Smali Fix
         run: |
           cat > /tmp/fix_smali_deep.py << 'PYEOF'
           #!/usr/bin/env python3
-          """
-          Deep smali string fixer.
-          Replaces ALL occurrences of old package (dotted + slash)
-          in every smali line that contains a string literal or annotation.
-
-          Also fixes:
-          - .class / .super / .implements / .field / .method type descriptors
-            that still carry the old slash-path
-          - const-string / sput-object BuildConfig.APPLICATION_ID patterns
-          """
           import os, sys, re
 
           old  = sys.argv[1]
@@ -420,21 +351,19 @@ jobs:
           old_slash = old.replace('.', '/')
           new_slash = new.replace('.', '/')
 
-          # Build safe patterns
           if new.startswith(old):
-              sfx = re.escape(new[len(old):])
+              sfx       = re.escape(new[len(old):])
               dot_pat   = re.compile(re.escape(old)       + r'(?!' + sfx + r')')
           else:
               dot_pat   = re.compile(re.escape(old))
 
           if new_slash.startswith(old_slash):
-              sfx2 = re.escape(new_slash[len(old_slash):])
+              sfx2      = re.escape(new_slash[len(old_slash):])
               slash_pat = re.compile(re.escape(old_slash) + r'(?!' + sfx2 + r')')
           else:
               slash_pat = re.compile(re.escape(old_slash))
 
           changed_files = 0
-          changed_lines = 0
 
           for dirpath, _, filenames in os.walk(root):
               for fname in filenames:
@@ -446,23 +375,20 @@ jobs:
                           lines = f.readlines()
                   except Exception:
                       continue
-
-                  new_lines = []
-                  file_changed = False
+                  new_lines     = []
+                  file_changed  = False
                   for line in lines:
                       nl = slash_pat.sub(new_slash, line)
-                      nl = dot_pat.sub(new,         nl)
+                      nl = dot_pat.sub(new, nl)
                       if nl != line:
                           file_changed = True
-                          changed_lines += 1
                       new_lines.append(nl)
-
                   if file_changed:
                       changed_files += 1
                       with open(fpath, 'w', encoding='utf-8') as f:
                           f.writelines(new_lines)
 
-          print(f'✅ Smali deep fix: {changed_files} files, {changed_lines} lines updated')
+          print(f'✅ Deep smali fix: {changed_files} files updated')
           PYEOF
           python3 /tmp/fix_smali_deep.py \
             "${{ env.OLD_PACKAGE }}" \
@@ -470,34 +396,23 @@ jobs:
             "${{ github.event.inputs.decompiled_folder }}"
 
       # ─────────────────────────────────────────────
-      # 12. RENAME SMALI DIRECTORY STRUCTURE
-      #     (physical folder rename to match new package path)
+      # 12. RENAME SMALI DIRECTORIES
       # ─────────────────────────────────────────────
       - name: Rename Smali Directory Paths
         run: |
           DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
-          OLD="${{ env.OLD_PACKAGE }}"
-          NEW="${{ env.NEW_PACKAGE }}"
-          OLD_PATH=$(echo "$OLD" | tr '.' '/')
-          NEW_PATH=$(echo "$NEW" | tr '.' '/')
+          OLD_PATH=$(echo "${{ env.OLD_PACKAGE }}" | tr '.' '/')
+          NEW_PATH=$(echo "${{ env.NEW_PACKAGE }}" | tr '.' '/')
 
           cat > /tmp/rename_dirs.py << 'PYEOF'
           #!/usr/bin/env python3
-          """
-          Rename physical smali directory tree to match new package path.
-          e.g. smali/com/whatsapp/w4b -> smali/com/konasl/nagad
-          """
           import os, sys, shutil
 
-          old_path = sys.argv[1]   # com/whatsapp/w4b
-          new_path = sys.argv[2]   # com/konasl/nagad
+          old_path = sys.argv[1]
+          new_path = sys.argv[2]
           root     = sys.argv[3]
 
-          old_parts = old_path.split('/')
-          new_parts = new_path.split('/')
-
           moved = 0
-          # Walk all smali_* directories
           for smali_dir in os.listdir(root):
               if not smali_dir.startswith('smali'):
                   continue
@@ -509,7 +424,6 @@ jobs:
               if os.path.isdir(old_full):
                   os.makedirs(os.path.dirname(new_full), exist_ok=True)
                   if os.path.exists(new_full):
-                      # Merge: move contents
                       for item in os.listdir(old_full):
                           src = os.path.join(old_full, item)
                           dst = os.path.join(new_full, item)
@@ -521,12 +435,10 @@ jobs:
                   moved += 1
                   print(f'  Moved: {old_full} -> {new_full}')
 
-          # Clean up now-empty old package dirs
           for smali_dir in os.listdir(root):
               if not smali_dir.startswith('smali'):
                   continue
               smali_root = os.path.join(root, smali_dir)
-              # Walk bottom-up to remove empty dirs
               for dirpath, dirnames, filenames in os.walk(smali_root, topdown=False):
                   if not filenames and not os.listdir(dirpath):
                       try:
@@ -534,19 +446,298 @@ jobs:
                       except Exception:
                           pass
 
-          print(f'✅ Renamed {moved} smali package director(ies)')
+          print(f'✅ Renamed {moved} smali director(ies)')
           PYEOF
           python3 /tmp/rename_dirs.py \
-            "$OLD_PATH" \
-            "$NEW_PATH" \
-            "$DECOMPILED_DIR"
+            "$OLD_PATH" "$NEW_PATH" "$DECOMPILED_DIR"
 
       # ─────────────────────────────────────────────
-      # 13. VERIFY — no old package should remain
+      # 13. TELEGRAM-SPECIFIC: Fix ApplicationLoader
+      #     & BuildConfig in smali
+      # ─────────────────────────────────────────────
+      - name: Fix Telegram ApplicationLoader & BuildConfig
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          OLD="${{ env.OLD_PACKAGE }}"
+          NEW="${{ env.NEW_PACKAGE }}"
+          OLD_SLASH=$(echo "$OLD" | tr '.' '/')
+          NEW_SLASH=$(echo "$NEW" | tr '.' '/')
+
+          cat > /tmp/fix_telegram_classes.py << 'PYEOF'
+          #!/usr/bin/env python3
+          """
+          Telegram-specific fixes:
+          1. ApplicationLoader.smali  — getPackageName(), APP_PACKAGE constant
+          2. BuildConfig.smali        — APPLICATION_ID field value
+          3. NotificationsController  — package-based notification channel IDs
+          4. FileLoader / FilePathDatabase — package-specific cache paths
+          5. Any smali with getPackageName() that returns old package as literal
+          6. R.smali / R$*.smali      — packageName references
+          """
+          import os, sys, re
+
+          old       = sys.argv[1]
+          new       = sys.argv[2]
+          root      = sys.argv[3]
+          old_slash = old.replace('.', '/')
+          new_slash = new.replace('.', '/')
+
+          TARGET_CLASSES = [
+              'ApplicationLoader',
+              'BuildConfig',
+              'NotificationsController',
+              'FileLoader',
+              'FilePathDatabase',
+              'ApplicationLoaderUtil',
+              'SharedConfig',
+              'UserConfig',
+              'MessagesController',
+          ]
+
+          # Pattern: const-string vX, "com.old.pkg..."
+          str_pat = re.compile(
+              r'(const-string(?:/jumbo)?\s+\w+,\s*")'
+              + re.escape(old) +
+              r'([^"]*")'
+          )
+          str_slash_pat = re.compile(
+              r'(const-string(?:/jumbo)?\s+\w+,\s*")'
+              + re.escape(old_slash) +
+              r'([^"]*")'
+          )
+
+          # Pattern: .field ... = "com.old.pkg"
+          field_pat = re.compile(
+              r'(=\s*")'
+              + re.escape(old) +
+              r'([^"]*")'
+          )
+
+          fixed = 0
+          for dirpath, _, filenames in os.walk(root):
+              for fname in filenames:
+                  if not fname.endswith('.smali'):
+                      continue
+
+                  base = fname.replace('.smali', '')
+                  is_target = any(t.lower() in base.lower() for t in TARGET_CLASSES)
+                  fpath = os.path.join(dirpath, fname)
+
+                  try:
+                      with open(fpath, 'r', encoding='utf-8', errors='replace') as f:
+                          content = f.read()
+                  except Exception:
+                      continue
+
+                  original = content
+
+                  # Always fix slash-form class references
+                  content = content.replace(old_slash, new_slash)
+
+                  # For target classes: fix ALL string literals
+                  if is_target:
+                      content = str_pat.sub(
+                          lambda m: m.group(1) + new + m.group(2), content)
+                      content = str_slash_pat.sub(
+                          lambda m: m.group(1) + new_slash + m.group(2), content)
+                      content = field_pat.sub(
+                          lambda m: m.group(1) + new + m.group(2), content)
+                  else:
+                      # For all other smali: fix dotted string literals too
+                      content = content.replace(old, new)
+
+                  if content != original:
+                      fixed += 1
+                      with open(fpath, 'w', encoding='utf-8') as f:
+                          f.write(content)
+
+          print(f'✅ Telegram class fix: {fixed} files updated')
+          PYEOF
+          python3 /tmp/fix_telegram_classes.py "$OLD" "$NEW" "$DIR"
+
+      # ─────────────────────────────────────────────
+      # 14. TELEGRAM-SPECIFIC: Fix NativeLoader
+      #     (Telegram loads .so by package path)
+      # ─────────────────────────────────────────────
+      - name: Fix Telegram NativeLoader smali
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          OLD="${{ env.OLD_PACKAGE }}"
+          NEW="${{ env.NEW_PACKAGE }}"
+          OLD_SLASH=$(echo "$OLD" | tr '.' '/')
+          NEW_SLASH=$(echo "$NEW" | tr '.' '/')
+
+          # Find NativeLoader.smali (may be in any smali_* dir)
+          find "$DIR" -name "NativeLoader.smali" -o \
+                      -name "NativeLibraryLoader.smali" 2>/dev/null | \
+          while read -r f; do
+            echo "Patching NativeLoader: $f"
+            sed -i "s|${OLD_SLASH}|${NEW_SLASH}|g" "$f"
+            sed -i "s|${OLD}|${NEW}|g" "$f"
+          done
+
+          # Also fix any smali referencing /data/data/OLD_PACKAGE
+          find "$DIR" -name "*.smali" 2>/dev/null | \
+            xargs -r grep -l "data/data/${OLD}" | \
+          while read -r f; do
+            echo "Patching data path in: $f"
+            sed -i "s|data/data/${OLD}|data/data/${NEW}|g" "$f"
+          done
+          echo "✅ NativeLoader fix done"
+
+      # ─────────────────────────────────────────────
+      # 15. TELEGRAM-SPECIFIC: Fix SharedPreferences
+      #     & Database file names in smali strings
+      # ─────────────────────────────────────────────
+      - name: Fix Telegram SharedPrefs & DB names
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          OLD="${{ env.OLD_PACKAGE }}"
+          NEW="${{ env.NEW_PACKAGE }}"
+
+          cat > /tmp/fix_prefs_db.py << 'PYEOF'
+          #!/usr/bin/env python3
+          """
+          Fix hardcoded SharedPreferences file names and SQLite DB names
+          that Telegram derives from package name.
+          Common patterns:
+            - "org.telegram.messenger_preferences"
+            - "org.telegram.messenger.db"
+            - "cache_4_" + package
+            - notification channel IDs containing package
+          """
+          import os, sys, re
+
+          old  = sys.argv[1]
+          new  = sys.argv[2]
+          root = sys.argv[3]
+
+          # Patterns where old package appears inside a larger string literal
+          patterns = [
+              (re.compile(re.escape(old + '_preferences')), new + '_preferences'),
+              (re.compile(re.escape(old + '.db')),          new + '.db'),
+              (re.compile(re.escape(old + '.xml')),         new + '.xml'),
+              (re.compile(re.escape(old)),                  new),  # catch-all last
+          ]
+
+          fixed = 0
+          for dirpath, _, filenames in os.walk(root):
+              for fname in filenames:
+                  if not fname.endswith('.smali'):
+                      continue
+                  fpath = os.path.join(dirpath, fname)
+                  try:
+                      with open(fpath, 'r', encoding='utf-8', errors='replace') as f:
+                          content = f.read()
+                  except Exception:
+                      continue
+                  if old not in content:
+                      continue
+                  original = content
+                  for pat, repl in patterns:
+                      content = pat.sub(repl, content)
+                  if content != original:
+                      fixed += 1
+                      with open(fpath, 'w', encoding='utf-8') as f:
+                          f.write(content)
+
+          print(f'✅ SharedPrefs/DB fix: {fixed} files updated')
+          PYEOF
+          python3 /tmp/fix_prefs_db.py "$OLD" "$NEW" "$DIR"
+
+      # ─────────────────────────────────────────────
+      # 16. TELEGRAM-SPECIFIC: Patch .so native libs
+      #     (binary patch package string in .so files)
+      # ─────────────────────────────────────────────
+      - name: Patch Native Libraries (.so files)
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          OLD="${{ env.OLD_PACKAGE }}"
+          NEW="${{ env.NEW_PACKAGE }}"
+
+          cat > /tmp/patch_so.py << 'PYEOF'
+          #!/usr/bin/env python3
+          """
+          Binary-patch .so files to replace old package name string.
+          IMPORTANT: new package must be <= length of old package.
+          If new is shorter, pad with null bytes.
+          If new is longer, skip (would corrupt offsets).
+          """
+          import os, sys
+
+          old  = sys.argv[1].encode('utf-8')
+          new  = sys.argv[2].encode('utf-8')
+          root = sys.argv[3]
+
+          if len(new) > len(old):
+              print(f'⚠️  New package ({len(new)} bytes) > old ({len(old)} bytes).')
+              print('   Binary .so patch SKIPPED to avoid corruption.')
+              print('   Telegram may still work if JNI uses getPackageName() at runtime.')
+              sys.exit(0)
+
+          # Pad new with null bytes if shorter
+          padded = new + b'\x00' * (len(old) - len(new))
+
+          patched_files = 0
+          for dirpath, _, filenames in os.walk(root):
+              for fname in filenames:
+                  if not fname.endswith('.so'):
+                      continue
+                  fpath = os.path.join(dirpath, fname)
+                  try:
+                      with open(fpath, 'rb') as f:
+                          data = f.read()
+                  except Exception:
+                      continue
+                  if old not in data:
+                      continue
+                  count = data.count(old)
+                  new_data = data.replace(old, padded)
+                  with open(fpath, 'wb') as f:
+                      f.write(new_data)
+                  patched_files += 1
+                  print(f'  Patched {count}x in {fname}')
+
+          print(f'✅ .so binary patch: {patched_files} files patched')
+          PYEOF
+          python3 /tmp/patch_so.py "$OLD" "$NEW" "$DIR"
+
+      # ─────────────────────────────────────────────
+      # 17. TELEGRAM-SPECIFIC: Fix notification
+      #     channel & account manager strings
+      # ─────────────────────────────────────────────
+      - name: Fix Telegram Notification Channels & Account Manager
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+          OLD="${{ env.OLD_PACKAGE }}"
+          NEW="${{ env.NEW_PACKAGE }}"
+
+          # Fix strings.xml and other res values
+          find "$DIR/res" -name "*.xml" 2>/dev/null | \
+            xargs -r grep -l "$OLD" | \
+          while read -r f; do
+            sed -i "s|${OLD}|${NEW}|g" "$f"
+            echo "  Fixed res: $f"
+          done
+
+          # Fix assets if any contain package name
+          find "$DIR/assets" -type f 2>/dev/null | \
+            xargs -r grep -rl "$OLD" 2>/dev/null | \
+          while read -r f; do
+            # Only text files
+            if file "$f" | grep -qiE 'text|json|xml|ascii'; then
+              sed -i "s|${OLD}|${NEW}|g" "$f"
+              echo "  Fixed asset: $f"
+            fi
+          done
+          echo "✅ Notification channels & assets fixed"
+
+      # ─────────────────────────────────────────────
+      # 18. FINAL VERIFICATION
       # ─────────────────────────────────────────────
       - name: Verify Rename Completeness
         run: |
-          DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
+          DIR="${{ github.event.inputs.decompiled_folder }}"
           OLD="${{ env.OLD_PACKAGE }}"
           NEW="${{ env.NEW_PACKAGE }}"
 
@@ -556,44 +747,48 @@ jobs:
 
           echo ""
           echo "── AndroidManifest.xml ──"
-          OLD_COUNT=$(grep -c "$OLD" "$DECOMPILED_DIR/AndroidManifest.xml" 2>/dev/null || echo 0)
+          OLD_COUNT=$(grep -c "$OLD" "$DIR/AndroidManifest.xml" 2>/dev/null || echo 0)
+          NEW_COUNT=$(grep -c "$NEW" "$DIR/AndroidManifest.xml" 2>/dev/null || echo 0)
           echo "  Old pkg occurrences : $OLD_COUNT  (should be 0)"
-          NEW_COUNT=$(grep -c "$NEW" "$DECOMPILED_DIR/AndroidManifest.xml" 2>/dev/null || echo 0)
           echo "  New pkg occurrences : $NEW_COUNT"
-          head -3 "$DECOMPILED_DIR/AndroidManifest.xml"
+          head -3 "$DIR/AndroidManifest.xml"
 
           echo ""
           echo "── apktool.yml ──"
-          grep -iE "package|rename|version" "$DECOMPILED_DIR/apktool.yml" 2>/dev/null || echo "  (not found)"
+          grep -iE "package|rename|version" "$DIR/apktool.yml" 2>/dev/null || echo "  (not found)"
 
           echo ""
           echo "── Provider authorities ──"
-          grep -n "authorities" "$DECOMPILED_DIR/AndroidManifest.xml" || echo "  None found"
+          grep -n "authorities" "$DIR/AndroidManifest.xml" || echo "  None found"
 
           echo ""
-          echo "── requiredSplitTypes check ──"
-          grep -n "requiredSplitTypes" "$DECOMPILED_DIR/AndroidManifest.xml" \
-            && echo "⚠️  WARNING: requiredSplitTypes still present" \
+          echo "── requiredSplitTypes ──"
+          grep -n "requiredSplitTypes" "$DIR/AndroidManifest.xml" \
+            && echo "⚠️  WARNING: still present" \
             || echo "  ✅ Clean"
 
           echo ""
-          echo "── Old pkg in smali (sample, should be 0) ──"
-          SMALI_OLD=$(grep -rl "$OLD" "$DECOMPILED_DIR" --include="*.smali" 2>/dev/null | wc -l)
-          echo "  Smali files still containing old pkg: $SMALI_OLD"
-          if [ "$SMALI_OLD" -gt 0 ]; then
-            echo "  Sample files:"
-            grep -rl "$OLD" "$DECOMPILED_DIR" --include="*.smali" | head -5
-          fi
+          echo "── Old pkg remaining in smali ──"
+          SMALI_OLD=$(grep -rl "$OLD" "$DIR" --include="*.smali" 2>/dev/null | wc -l)
+          echo "  Smali files with old pkg: $SMALI_OLD  (should be 0)"
+          [ "$SMALI_OLD" -gt 0 ] && \
+            grep -rl "$OLD" "$DIR" --include="*.smali" | head -10
 
           echo ""
-          echo "── Smali directory structure ──"
-          find "$DECOMPILED_DIR" -maxdepth 5 -type d -name "$(echo $NEW | tr '.' '/' | cut -d'/' -f3)" \
-            | head -10 || echo "  (check manually)"
+          echo "── Old pkg remaining in .so files ──"
+          SO_OLD=$(find "$DIR" -name "*.so" -exec grep -lc "$OLD" {} \; 2>/dev/null | \
+            awk '{s+=$1} END {print s+0}')
+          echo "  .so files with old pkg: $SO_OLD"
+
+          echo ""
+          echo "── BuildConfig check ──"
+          find "$DIR" -name "BuildConfig.smali" 2>/dev/null | \
+            xargs -r grep -n "APPLICATION_ID\|PACKAGE\|$OLD\|$NEW" | head -10
 
           echo "════════════════════════════════════════"
 
       # ─────────────────────────────────────────────
-      # 14. RECOMPILE APK
+      # 19. RECOMPILE APK
       # ─────────────────────────────────────────────
       - name: Recompile APK
         run: |
@@ -607,46 +802,41 @@ jobs:
             if apktool b "$DIR" -o "$OUT" -f "$@" 2>&1; then
               echo "✅ Build SUCCESS ($label)"
               return 0
-            else
-              echo "⚠️  Build FAILED ($label)"
-              return 1
             fi
+            echo "⚠️  Build FAILED ($label)"
+            return 1
           }
 
           rm -f "$OUT"
-
           build_apk "default" \
-            || build_apk "aapt2" --use-aapt2 \
-            || build_apk "aapt2+no-crunch" --use-aapt2 --no-crunch \
-            || build_apk "aapt2+no-crunch+no-src" --use-aapt2 --no-crunch --no-src \
+            || build_apk "aapt2"              --use-aapt2 \
+            || build_apk "aapt2+no-crunch"    --use-aapt2 --no-crunch \
+            || build_apk "aapt2+no-src"       --use-aapt2 --no-crunch --no-src \
             || { echo "❌ All build attempts failed!"; exit 1; }
 
-          if [ ! -f "$OUT" ]; then
-            echo "❌ APK file not created!"
-            exit 1
-          fi
+          [ ! -f "$OUT" ] && { echo "❌ APK not created!"; exit 1; }
           ls -lh "$OUT"
 
       # ─────────────────────────────────────────────
-      # 15. VERIFY APK STRUCTURE
+      # 20. VERIFY APK STRUCTURE
       # ─────────────────────────────────────────────
       - name: Verify APK Structure
         run: |
           echo "── aapt2 dump badging ──"
           aapt2 dump badging recompiled_unsigned.apk 2>&1 | head -20 \
-            || echo "⚠️  aapt2 dump failed (APK may still be installable)"
+            || echo "⚠️  aapt2 dump warning"
 
           echo ""
-          echo "── APK entries (top 20) ──"
-          unzip -l recompiled_unsigned.apk | head -20
+          echo "── Package name in APK ──"
+          aapt dump badging recompiled_unsigned.apk 2>/dev/null | grep "^package:" \
+            || echo "  (check manually)"
 
           echo ""
-          echo "── Package in APK manifest ──"
-          aapt dump badging recompiled_unsigned.apk 2>/dev/null | \
-            grep "^package:" || echo "  (aapt fallback failed)"
+          echo "── APK contents (top 30) ──"
+          unzip -l recompiled_unsigned.apk | head -30
 
       # ─────────────────────────────────────────────
-      # 16. GENERATE KEYSTORE
+      # 21. GENERATE KEYSTORE
       # ─────────────────────────────────────────────
       - name: Generate Keystore
         run: |
@@ -657,92 +847,92 @@ jobs:
             -keysize 2048 \
             -validity 10000 \
             -storepass w4baes123 \
-            -keypass  w4baes123 \
+            -keypass   w4baes123 \
             -dname "CN=W4BAES,OU=Dev,O=W4BAES,L=Dhaka,ST=Dhaka,C=BD" \
             -noprompt
           echo "✅ Keystore generated"
 
       # ─────────────────────────────────────────────
-      # 17. ZIPALIGN
+      # 22. ZIPALIGN
       # ─────────────────────────────────────────────
       - name: Zipalign APK
         run: |
           zipalign -v -p 4 recompiled_unsigned.apk aligned.apk
           zipalign -c -v 4 aligned.apk \
-            && echo "✅ Alignment check: PASSED" \
-            || echo "⚠️  Alignment check: FAILED (will try anyway)"
+            && echo "✅ Alignment: PASSED" \
+            || echo "⚠️  Alignment: FAILED (continuing anyway)"
 
       # ─────────────────────────────────────────────
-      # 18. SIGN (v1 + v2 + v3)
+      # 23. SIGN (v1 + v2 + v3)
       # ─────────────────────────────────────────────
       - name: Sign APK
         run: |
           apksigner sign \
-            --ks           my.keystore \
-            --ks-pass      pass:w4baes123 \
-            --key-pass     pass:w4baes123 \
-            --ks-key-alias w4baes \
+            --ks             my.keystore \
+            --ks-pass        pass:w4baes123 \
+            --key-pass       pass:w4baes123 \
+            --ks-key-alias   w4baes \
             --v1-signing-enabled true \
             --v2-signing-enabled true \
             --v3-signing-enabled true \
             --out signed_app.apk \
             aligned.apk
 
-          echo ""
           apksigner verify --verbose --print-certs signed_app.apk \
-            && echo "✅ Signature verify: PASSED" \
-            || { echo "❌ Signature verify: FAILED"; exit 1; }
-
-          echo ""
+            && echo "✅ Signature: PASSED" \
+            || { echo "❌ Signature: FAILED"; exit 1; }
           ls -lh signed_app.apk
 
       # ─────────────────────────────────────────────
-      # 19. FINAL PACKAGE NAME CONFIRMATION
+      # 24. FINAL PACKAGE CONFIRMATION
       # ─────────────────────────────────────────────
       - name: Final Package Name Confirmation
         run: |
           echo "── Final APK package name ──"
           aapt2 dump badging signed_app.apk 2>/dev/null | grep "^package:" \
             || aapt  dump badging signed_app.apk 2>/dev/null | grep "^package:" \
-            || unzip -p signed_app.apk AndroidManifest.xml | \
-               strings | grep -oP 'com\.[a-z][a-z0-9.]+' | head -5 \
-            || echo "  (could not extract — check manually)"
+            || echo "  (check manually with aapt)"
 
       # ─────────────────────────────────────────────
-      # 20. UPLOAD ARTIFACT
+      # 25. UPLOAD ARTIFACT
       # ─────────────────────────────────────────────
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: w4baes-apk
+          name: telegram-repackaged-apk
           path: signed_app.apk
           retention-days: 90
 
       # ─────────────────────────────────────────────
-      # 21. CREATE GITHUB RELEASE
+      # 26. CREATE GITHUB RELEASE
       # ─────────────────────────────────────────────
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: w4baes-v1.0.${{ github.run_number }}
-          name: W4BAES v1.0.${{ github.run_number }}
+          tag_name: telegram-v1.0.${{ github.run_number }}
+          name: Telegram Repackaged v1.0.${{ github.run_number }}
           body: |
-            ## W4BAES Build #${{ github.run_number }}
+            ## Telegram Repackaged Build #${{ github.run_number }}
 
-            | Field         | Value                          |
-            |---------------|-------------------------------|
-            | New Package   | `${{ env.NEW_PACKAGE }}`       |
-            | Old Package   | `${{ env.OLD_PACKAGE }}`       |
-            | Build Number  | `#${{ github.run_number }}`    |
-            | Signing       | v1 + v2 + v3 (apksigner)       |
-            | Java          | OpenJDK 17                     |
-            | APKTool       | 2.10.0                         |
-            | Build Tools   | 34.0.0                         |
+            | Field        | Value                            |
+            |--------------|----------------------------------|
+            | New Package  | `${{ env.NEW_PACKAGE }}`         |
+            | Old Package  | `${{ env.OLD_PACKAGE }}`         |
+            | Build        | `#${{ github.run_number }}`      |
+            | Signing      | v1 + v2 + v3 (apksigner)         |
+            | Java         | OpenJDK 17                       |
+            | APKTool      | 2.10.0                           |
+            | Build Tools  | 34.0.0                           |
 
-            ### ✅ Crash fixes applied
-            - Full smali deep rename (dotted + slash form)
+            ### ✅ Telegram-specific crash fixes applied
+            - ApplicationLoader & BuildConfig package fix
+            - NativeLoader .so path fix
+            - Binary `.so` package string patch
+            - SharedPreferences & DB name fix
+            - Notification channel ID fix
+            - Provider authority fix
+            - res/ & assets/ package string fix
             - Physical smali directory rename
-            - Provider/FileProvider authority fix
             - AndroidManifest attribute cleanup
             - apktool.yml `renameManifestPackage` set
 
