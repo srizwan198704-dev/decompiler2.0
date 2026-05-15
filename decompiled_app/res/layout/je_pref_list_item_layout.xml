@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="start|center" android:orientation="horizontal" android:background="@drawable/je_dialog_item_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?listPreferredItemHeightSmall"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="@dimen/je_dp_16" android:textColor="?customDialogContentColor" android:gravity="center_vertical" android:layout_gravity="start" android:id="@id/title" android:paddingTop="@dimen/je_dp_12" android:paddingBottom="@dimen/je_dp_12" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/je_dp_24" android:layout_marginRight="@dimen/je_dp_24" android:layout_marginStart="@dimen/je_dp_24" android:layout_marginEnd="@dimen/je_dp_24" />
-</LinearLayout>

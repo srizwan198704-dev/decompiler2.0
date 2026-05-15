@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/color_F8F9FC" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/title_bar_cl" />
+    <TextView android:textSize="14.0sp" android:textColor="?os_text_primary_hios" android:id="@id/ussd_repayment" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/ussd_repayment" android:layout_marginHorizontal="32.0dip" android:paddingVertical="8.0dip" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/title_bar" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recyclerView" android:paddingBottom="16.0dip" android:clipToPadding="false" android:layout_width="0.0dip" android:layout_height="0.0dip" android:paddingStart="16.0dip" android:paddingEnd="16.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/ussd_repayment" app:layout_goneMarginTop="16.0dip" />
+</androidx.constraintlayout.widget.ConstraintLayout>

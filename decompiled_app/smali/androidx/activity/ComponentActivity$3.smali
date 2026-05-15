@@ -1,8 +1,9 @@
 .class Landroidx/activity/ComponentActivity$3;
 .super Ljava/lang/Object;
+.source "ComponentActivity.java"
 
 # interfaces
-.implements Landroidx/lifecycle/LifecycleEventObserver;
+.implements Landroidx/lifecycle/e;
 
 
 # annotations
@@ -17,66 +18,73 @@
 
 
 # instance fields
-.field final synthetic this$0:Landroidx/activity/ComponentActivity;
+.field public final synthetic a:Landroidx/activity/ComponentActivity;
 
 
 # direct methods
 .method public constructor <init>(Landroidx/activity/ComponentActivity;)V
     .locals 0
 
-    iput-object p1, p0, Landroidx/activity/ComponentActivity$3;->this$0:Landroidx/activity/ComponentActivity;
+    .line 1
+    iput-object p1, p0, Landroidx/activity/ComponentActivity$3;->a:Landroidx/activity/ComponentActivity;
 
+    .line 2
+    .line 3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
+    .line 5
+    .line 6
     return-void
 .end method
 
 
 # virtual methods
-.method public onStateChanged(Landroidx/lifecycle/LifecycleOwner;Landroidx/lifecycle/Lifecycle$Event;)V
+.method public d(Landroidx/lifecycle/g;Landroidx/lifecycle/d$b;)V
     .locals 0
-    .param p1    # Landroidx/lifecycle/LifecycleOwner;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2    # Landroidx/lifecycle/Lifecycle$Event;
-        .annotation build Landroidx/annotation/NonNull;
-        .end annotation
-    .end param
 
-    sget-object p1, Landroidx/lifecycle/Lifecycle$Event;->ON_DESTROY:Landroidx/lifecycle/Lifecycle$Event;
+    .line 1
+    sget-object p1, Landroidx/lifecycle/d$b;->ON_DESTROY:Landroidx/lifecycle/d$b;
 
-    if-ne p2, p1, :cond_1
+    .line 2
+    .line 3
+    if-ne p2, p1, :cond_0
 
-    iget-object p1, p0, Landroidx/activity/ComponentActivity$3;->this$0:Landroidx/activity/ComponentActivity;
+    .line 4
+    .line 5
+    iget-object p1, p0, Landroidx/activity/ComponentActivity$3;->a:Landroidx/activity/ComponentActivity;
 
-    iget-object p1, p1, Landroidx/activity/ComponentActivity;->mContextAwareHelper:Landroidx/activity/contextaware/ContextAwareHelper;
-
-    invoke-virtual {p1}, Landroidx/activity/contextaware/ContextAwareHelper;->clearAvailableContext()V
-
-    iget-object p1, p0, Landroidx/activity/ComponentActivity$3;->this$0:Landroidx/activity/ComponentActivity;
-
+    .line 6
+    .line 7
     invoke-virtual {p1}, Landroid/app/Activity;->isChangingConfigurations()Z
 
+    .line 8
+    .line 9
+    .line 10
     move-result p1
 
+    .line 11
     if-nez p1, :cond_0
 
-    iget-object p1, p0, Landroidx/activity/ComponentActivity$3;->this$0:Landroidx/activity/ComponentActivity;
+    .line 12
+    .line 13
+    iget-object p1, p0, Landroidx/activity/ComponentActivity$3;->a:Landroidx/activity/ComponentActivity;
 
-    invoke-virtual {p1}, Landroidx/activity/ComponentActivity;->getViewModelStore()Landroidx/lifecycle/ViewModelStore;
+    .line 14
+    .line 15
+    invoke-virtual {p1}, Landroidx/activity/ComponentActivity;->o()Landroidx/lifecycle/s;
 
+    .line 16
+    .line 17
+    .line 18
     move-result-object p1
 
-    invoke-virtual {p1}, Landroidx/lifecycle/ViewModelStore;->clear()V
+    .line 19
+    invoke-virtual {p1}, Landroidx/lifecycle/s;->a()V
 
+    .line 20
+    .line 21
+    .line 22
     :cond_0
-    iget-object p1, p0, Landroidx/activity/ComponentActivity$3;->this$0:Landroidx/activity/ComponentActivity;
-
-    iget-object p1, p1, Landroidx/activity/ComponentActivity;->mReportFullyDrawnExecutor:Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutor;
-
-    invoke-interface {p1}, Landroidx/activity/ComponentActivity$ReportFullyDrawnExecutor;->activityDestroyed()V
-
-    :cond_1
     return-void
 .end method

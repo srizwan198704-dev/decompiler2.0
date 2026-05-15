@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Isanwopada</item>
+        <item>Ti kọja</item>
+        <item>Ṣí i</item>
+        <item>Ìrírí Olùmúlò</item>
+        <item>Ẹdun</item>
+        <item>Àwọn yòókù</item>
+    </string-array>
+</resources>

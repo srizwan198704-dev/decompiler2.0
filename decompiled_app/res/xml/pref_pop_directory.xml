@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:title="@string/preference_directory_setting_text"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <PreferenceCategory android:layout="@layout/custom_preference_no_space" app:allowDividerAbove="false" app:allowDividerBelow="false">
-        <com.estrongs.android.ui.preference.DirChoosePreference android:persistent="false" android:layout="@layout/custom_preference_top_radius" android:singleLine="true" android:title="@string/preference_root_dir" android:key="root_dir" android:widgetLayout="@layout/custom_preference_widget_dialog" android:dialogTitle="@string/preference_root_dir" />
-        <com.estrongs.android.ui.preference.DirChoosePreference android:persistent="false" android:layout="@layout/custom_preference_none_radius" android:singleLine="true" android:title="@string/preference_bt_dir" android:key="bt_dir" android:widgetLayout="@layout/custom_preference_widget_dialog" android:dialogTitle="@string/preference_bt_dir" />
-        <com.estrongs.android.ui.preference.DirChoosePreference android:persistent="false" android:layout="@layout/custom_preference_bottom_radius" android:singleLine="true" android:title="@string/preference_download_dir" android:key="download_dir" android:widgetLayout="@layout/custom_preference_widget_dialog" android:dialogTitle="@string/preference_download_dir" />
-    </PreferenceCategory>
-</PreferenceScreen>

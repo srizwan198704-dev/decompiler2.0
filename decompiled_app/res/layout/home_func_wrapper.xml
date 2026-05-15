@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/cl_options" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="40.0dip">
-        <TextView android:textSize="13.0dip" android:textColor="@color/window_txt_color_bcc" android:gravity="center" android:id="@id/tv_cancel" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="20.0dip" android:text="@string/confirm_cancel" app:layout_constraintStart_toStartOf="parent" />
-        <TextView android:textSize="13.0dip" android:textColor="@color/window_txt_color_bcc" android:gravity="center" android:id="@id/tv_sure" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="20.0dip" android:text="@string/confirm_ok" app:layout_constraintEnd_toEndOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_home_func" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-</LinearLayout>

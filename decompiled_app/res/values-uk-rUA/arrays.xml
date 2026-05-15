@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Повернення коштів</item>
+        <item>Прострочені</item>
+        <item>Розблокувати</item>
+        <item>Досвід користувача</item>
+        <item>Поскаржитися</item>
+        <item>Інше</item>
+    </string-array>
+</resources>

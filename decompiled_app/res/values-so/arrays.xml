@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Soo noqnoqda</item>
+        <item>Soodaah</item>
+        <item>Furid</item>
+        <item>Tajriba ee Isticmaalaha</item>
+        <item>Cabasho</item>
+        <item>Kuwo kale</item>
+    </string-array>
+</resources>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/bgm_range_panel" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/play_btn" android:paddingTop="5.0dip" android:paddingRight="10.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/durec_bgm_play_selector" />
-    <com.esfile.screen.recorder.ui.FontTextView android:textSize="12.669983dip" android:textColor="#ff585858" android:id="@id/cur_position" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:00" />
-    <com.esfile.screen.recorder.videos.edit.activities.music.RangeSeekBar android:id="@id/range_seek" android:paddingBottom="16.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" app:labelColor="@color/durec_bgm_rangebar_label_color" app:labelMarginBottom="6.0dip" app:labelSize="10.0dip" app:maskMode="besides" app:needle="@drawable/durec_bgm_rangebar_cursor_needle_selector" app:showLabels="true" app:thumb="@drawable/durec_bgm_rangebar_cursor_thumb_selector" app:trackDisabledDrawable="@drawable/durec_volume_dialog_progressbar_disable" app:trackDrawable="@drawable/durec_volume_dialog_progressbar" app:trackHeight="5.0dip" xmlns:app="http://schemas.android.com/apk/res-auto" />
-    <com.esfile.screen.recorder.ui.FontTextView android:textSize="12.669983dip" android:textColor="#ff585858" android:id="@id/duration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="00:00" />
-</LinearLayout>

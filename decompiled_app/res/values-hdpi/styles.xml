@@ -5,8 +5,4 @@
         <item name="drawableSize">24.0dip</item>
         <item name="gapBetweenBars">3.3299866dip</item>
     </style>
-    <style name="FloatingActionButton" parent="@style/Widget.Design.FloatingActionButton">
-        <item name="backgroundTint">@color/float_action_button</item>
-        <item name="fabSize">normal</item>
-    </style>
 </resources>

@@ -1,10 +1,14 @@
 .class Landroidx/fragment/app/Fragment$2;
-.super Landroidx/fragment/app/Fragment$OnPreAttachedListener;
+.super Ljava/lang/Object;
+.source "Fragment.java"
+
+# interfaces
+.implements Landroidx/lifecycle/e;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroidx/fragment/app/Fragment;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroidx/fragment/app/Fragment;->O()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,36 +18,57 @@
 
 
 # instance fields
-.field final synthetic this$0:Landroidx/fragment/app/Fragment;
+.field public final synthetic a:Landroidx/fragment/app/Fragment;
 
 
 # direct methods
 .method public constructor <init>(Landroidx/fragment/app/Fragment;)V
     .locals 0
 
-    iput-object p1, p0, Landroidx/fragment/app/Fragment$2;->this$0:Landroidx/fragment/app/Fragment;
+    .line 1
+    iput-object p1, p0, Landroidx/fragment/app/Fragment$2;->a:Landroidx/fragment/app/Fragment;
 
-    const/4 p1, 0x0
+    .line 2
+    .line 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0, p1}, Landroidx/fragment/app/Fragment$OnPreAttachedListener;-><init>(Landroidx/fragment/app/Fragment$1;)V
-
+    .line 4
+    .line 5
+    .line 6
     return-void
 .end method
 
 
 # virtual methods
-.method public onPreAttached()V
-    .locals 1
+.method public d(Landroidx/lifecycle/g;Landroidx/lifecycle/d$b;)V
+    .locals 0
 
-    iget-object v0, p0, Landroidx/fragment/app/Fragment$2;->this$0:Landroidx/fragment/app/Fragment;
+    .line 1
+    sget-object p1, Landroidx/lifecycle/d$b;->ON_STOP:Landroidx/lifecycle/d$b;
 
-    iget-object v0, v0, Landroidx/fragment/app/Fragment;->mSavedStateRegistryController:Landroidx/savedstate/SavedStateRegistryController;
+    .line 2
+    .line 3
+    if-ne p2, p1, :cond_0
 
-    invoke-virtual {v0}, Landroidx/savedstate/SavedStateRegistryController;->performAttach()V
+    .line 4
+    .line 5
+    iget-object p1, p0, Landroidx/fragment/app/Fragment$2;->a:Landroidx/fragment/app/Fragment;
 
-    iget-object v0, p0, Landroidx/fragment/app/Fragment$2;->this$0:Landroidx/fragment/app/Fragment;
+    .line 6
+    .line 7
+    iget-object p1, p1, Landroidx/fragment/app/Fragment;->K:Landroid/view/View;
 
-    invoke-static {v0}, Landroidx/lifecycle/SavedStateHandleSupport;->enableSavedStateHandles(Landroidx/savedstate/SavedStateRegistryOwner;)V
+    .line 8
+    .line 9
+    if-eqz p1, :cond_0
 
+    .line 10
+    .line 11
+    invoke-virtual {p1}, Landroid/view/View;->cancelPendingInputEvents()V
+
+    .line 12
+    .line 13
+    .line 14
+    :cond_0
     return-void
 .end method

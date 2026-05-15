@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Pakartotinis mokėjimas</item>
+        <item>Pradelsta</item>
+        <item>Atrakinti</item>
+        <item>Naudotojo patirtis</item>
+        <item>Skundas</item>
+        <item>Kita</item>
+    </string-array>
+</resources>

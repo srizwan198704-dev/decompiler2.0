@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Ripagesa</item>
+        <item>Me vonesë</item>
+        <item>Shkyç</item>
+        <item>Përvoja e përdoruesit</item>
+        <item>Ankesë</item>
+        <item>Të tjera</item>
+    </string-array>
+</resources>

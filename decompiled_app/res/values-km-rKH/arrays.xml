@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>ការទូទាត់ប្រាក់ឡើងវិញ</item>
+        <item>ហួសកាលកំណត់</item>
+        <item>ដោះសោ</item>
+        <item>បទពិសោធអ្នកប្រើប្រាស់</item>
+        <item>ពាក្យបណ្តឹង</item>
+        <item>ផ្សេងៗ</item>
+    </string-array>
+</resources>

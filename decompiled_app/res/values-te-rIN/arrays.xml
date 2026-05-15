@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>తిరిగి చెల్లింపు</item>
+        <item>ఓవర్‌డ్యూ</item>
+        <item>అన్‌లాక్ చేయి</item>
+        <item>యూజర్ అనుభవం</item>
+        <item>ఫిర్యాదు</item>
+        <item>ఇతరులు</item>
+    </string-array>
+</resources>

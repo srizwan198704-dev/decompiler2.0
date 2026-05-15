@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Otplata</item>
+        <item>Prekoračen rok</item>
+        <item>Otključaj</item>
+        <item>Korisničko iskustvo</item>
+        <item>Žalba</item>
+        <item>Ostali</item>
+    </string-array>
+</resources>

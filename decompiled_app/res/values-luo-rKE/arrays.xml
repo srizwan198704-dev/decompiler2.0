@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Chudo Kendo</item>
+        <item>Sa okadho</item>
+        <item>Yawo</item>
+        <item>Winjo Jatiyo</item>
+        <item>Yuagruok</item>
+        <item>Moko</item>
+    </string-array>
+</resources>

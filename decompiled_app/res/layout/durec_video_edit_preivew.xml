@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:orientation="vertical" android:id="@id/root" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.esfile.screen.recorder.videos.edit.player.preview.VideoEditPreviewPlayer android:id="@id/durec_video_edit_preview_player" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <ViewStub android:layout="@layout/durec_share_cutting_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <FrameLayout android:id="@id/preview_video_loading" android:background="#32000000" android:visibility="gone" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <ProgressBar android:layout_gravity="center" android:layout_width="40.0dip" android:layout_height="40.0dip" />
-    </FrameLayout>
-</FrameLayout>

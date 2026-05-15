@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:focusable="true" android:nextFocusDown="@id/web_view" android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <ProgressBar android:layout_gravity="center_vertical" android:id="@id/progress_bar" android:layout_width="fill_parent" android:layout_height="@dimen/dp_2" android:max="100" android:progressDrawable="@drawable/progressbar_recomm" style="?android:progressBarStyleHorizontal" />
-        <com.estrongs.android.view.VideoEnabledWebView android:id="@id/web_view" android:background="@color/c_es_base_bg" android:padding="4.0dip" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    </LinearLayout>
-    <include layout="@layout/mtd_content_tripple_view_layout" />
-</RelativeLayout>

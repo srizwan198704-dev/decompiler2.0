@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Aditịme ñkpe</item>
+        <item>Abọhọ ini</item>
+        <item>Tat</item>
+        <item>Se itịppe inọ andikama</item>
+        <item>Eseeme</item>
+        <item>Mme mfen</item>
+    </string-array>
+</resources>

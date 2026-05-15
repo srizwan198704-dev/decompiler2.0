@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>परतफेड</item>
+        <item>मुदत संपलेले</item>
+        <item>अनलॉक करा</item>
+        <item>वापरकर्ता अनुभव</item>
+        <item>तक्रार</item>
+        <item>इतर</item>
+    </string-array>
+</resources>

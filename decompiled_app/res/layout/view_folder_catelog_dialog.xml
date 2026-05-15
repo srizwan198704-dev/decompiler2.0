@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="15.0sp" android:textColor="@color/c_cc000000" android:paddingLeft="@dimen/dp_15" android:paddingTop="@dimen/dp_15" android:paddingBottom="@dimen/dp_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/video_content_title" />
-    <ListView android:id="@id/rv_folderlist" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-</LinearLayout>

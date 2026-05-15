@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:background="?android:selectableItemBackground" android:paddingLeft="14.0dip" android:paddingRight="14.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.cardview.widget.CardView android:id="@id/m3_card_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:layout_marginBottom="7.0dip" app:cardBackgroundColor="@color/m3_c_transparent" app:cardElevation="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
-        <ImageView android:id="@id/m3_iv_thumbnail" android:layout_width="100.0dip" android:layout_height="75.0dip" android:scaleType="centerCrop" />
-    </androidx.cardview.widget.CardView>
-    <TextView android:textSize="14.0sp" android:textColor="@color/m3_white" android:ellipsize="end" android:id="@id/m3_tv_name" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="1" android:layout_marginStart="12.0dip" app:layout_constraintBottom_toBottomOf="@id/m3_card_view" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@id/m3_card_view" app:layout_constraintTop_toTopOf="@id/m3_card_view" />
-</androidx.constraintlayout.widget.ConstraintLayout>

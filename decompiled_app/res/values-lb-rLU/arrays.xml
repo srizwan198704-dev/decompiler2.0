@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Réckbezuelung</item>
+        <item>Iwwerfälleg</item>
+        <item>Entspären</item>
+        <item>Benotzererfarung</item>
+        <item>Reklamatioun</item>
+        <item>Anerer</item>
+    </string-array>
+</resources>

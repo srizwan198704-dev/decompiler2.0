@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Återbetalning</item>
+        <item>Försenad</item>
+        <item>Lås upp</item>
+        <item>Användarupplevelse</item>
+        <item>Klagomål</item>
+        <item>Annat</item>
+    </string-array>
+</resources>

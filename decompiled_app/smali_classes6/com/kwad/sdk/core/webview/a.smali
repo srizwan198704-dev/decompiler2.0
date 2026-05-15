@@ -1,7 +1,0 @@
-.class public interface abstract Lcom/kwad/sdk/core/webview/a;
-.super Ljava/lang/Object;
-
-
-# virtual methods
-.method public abstract qn()V
-.end method

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@drawable/shape_14dp_f2f2f2" android:paddingTop="10.0dip" android:paddingBottom="5.0dip" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:paddingStart="10.0dip" android:paddingEnd="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="14.0sp" android:textColor="@color/color_66212121" android:id="@id/edit_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintRight_toRightOf="parent" />
+    <EditText android:scrollbarStyle="insideInset" android:textSize="14.0sp" android:textColor="@color/color_212121" android:textColorHint="@color/color_66212121" android:gravity="top" android:id="@id/edit" android:background="@color/color_F2F2F2" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginBottom="18.0dip" android:text="" android:maxLength="500" android:overScrollMode="always" />
+</androidx.constraintlayout.widget.ConstraintLayout>

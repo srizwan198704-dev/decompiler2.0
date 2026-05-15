@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>ေငြျပန္ဆပ္ျခင္း</item>
+        <item>သက္တမ္းကုန္</item>
+        <item>ေသာ့ဖြင့္ရန္</item>
+        <item>အသုံးျပဳသူ အေတြ႕အၾကဳံ</item>
+        <item>တိုင္ၾကားခ်က္</item>
+        <item>အျခား</item>
+    </string-array>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>ಮರುಪಾವತಿ</item>
+        <item>ಅವಧಿ ಮೀರಿದೆ</item>
+        <item>ಅನ್‌ಲಾಕ್</item>
+        <item>ಬಳಕೆದಾರರ ಅನುಭವ</item>
+        <item>ದೂರು</item>
+        <item>ಇತರೆ</item>
+    </string-array>
+</resources>

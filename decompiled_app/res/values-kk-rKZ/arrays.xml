@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Төлем</item>
+        <item>Мерзімнен асып кетті</item>
+        <item>Бекітпесін ашу</item>
+        <item>Пайдаланушы тәжірибесі</item>
+        <item>Шағым</item>
+        <item>Басқалары</item>
+    </string-array>
+</resources>

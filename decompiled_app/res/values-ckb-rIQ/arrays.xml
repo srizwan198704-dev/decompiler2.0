@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>پارەدانەوە</item>
+        <item>دواکەوتوو</item>
+        <item>کردنەوەی قفڵ</item>
+        <item>ئەزموونی بەکارهێنەر</item>
+        <item>سکاڵا</item>
+        <item>ئەوانی دیکە</item>
+    </string-array>
+</resources>

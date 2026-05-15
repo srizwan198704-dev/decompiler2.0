@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Rambursare</item>
+        <item>Termen depășit</item>
+        <item>Deblocare</item>
+        <item>Experiența de utilizare</item>
+        <item>Reclamație</item>
+        <item>Altele</item>
+    </string-array>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Qayta toʻlov</item>
+        <item>Kechikkan</item>
+        <item>Qulfni ochish</item>
+        <item>Foydalanuvchi taassuroti</item>
+        <item>Shikoyat</item>
+        <item>Boshqalar</item>
+    </string-array>
+</resources>

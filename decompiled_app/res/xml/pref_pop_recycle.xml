@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen android:title="@string/recycle_title"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <PreferenceCategory android:layout="@layout/custom_preference_no_space" app:allowDividerAbove="false" app:allowDividerBelow="false">
-        <CheckBoxPreference android:persistent="true" android:layout="@layout/custom_preference_full_radius" android:title="@string/preference_open_recycle_title" android:key="enable_recycle" android:summary="@string/preference_open_recycle_summary" android:widgetLayout="@layout/custom_preference_widget_checkbox" android:defaultValue="true" />
-    </PreferenceCategory>
-</PreferenceScreen>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Endurgreiðsla</item>
+        <item>Tími útrunninn</item>
+        <item>Aflæsa</item>
+        <item>Notendaupplifun</item>
+        <item>Kvörtun</item>
+        <item>Annað</item>
+    </string-array>
+</resources>

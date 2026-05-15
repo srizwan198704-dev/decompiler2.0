@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Изплащане</item>
+        <item>Просрочено</item>
+        <item>Отключване</item>
+        <item>Потребителски опит</item>
+        <item>Оплакване</item>
+        <item>Други</item>
+    </string-array>
+</resources>

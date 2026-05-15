@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/common_alert_dialog_padding_hori" android:paddingTop="@dimen/dp_8" android:paddingRight="@dimen/common_alert_dialog_padding_hori" android:paddingBottom="@dimen/dp_8" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingHorizontal="@dimen/common_alert_dialog_padding_hori" android:paddingVertical="@dimen/dp_8"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:id="@id/url" android:text="@string/property_location" style="@style/CommonAlertDialogInputHint" />
-    <EditText android:id="@id/input_url" android:inputType="textWebEditText" style="@style/CommonAlertDialogInput" />
-    <TextView android:id="@id/name" android:layout_marginTop="@dimen/dp_20" android:text="@string/favorite_label_name" style="@style/CommonAlertDialogInputHint" />
-    <EditText android:id="@id/input_name" android:inputType="textWebEditText" style="@style/CommonAlertDialogInput" />
-</LinearLayout>

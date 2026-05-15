@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Rimborso</item>
+        <item>Scaduto</item>
+        <item>Sblocca</item>
+        <item>Esperienza utente</item>
+        <item>Reclamo</item>
+        <item>Altri</item>
+    </string-array>
+</resources>

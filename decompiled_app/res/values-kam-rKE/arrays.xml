@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>Kũĩva ĩkoani</item>
+        <item>Kũvĩtũkya Matukũ</item>
+        <item>Vingũa</item>
+        <item>Ũtũmĩi wa Mũtũmĩi</item>
+        <item>Malalamĩko</item>
+        <item>Angĩ</item>
+    </string-array>
+</resources>

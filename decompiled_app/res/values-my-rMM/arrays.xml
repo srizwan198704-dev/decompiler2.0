@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="feedback_type">
+        <item>ငွေပြန်ဆပ်ခြင်း</item>
+        <item>သက်တမ်းကုန်</item>
+        <item>သော့ဖွင့်ရန်</item>
+        <item>အသုံးပြုသူ အတွေ့အကြုံ</item>
+        <item>တိုင်ကြားချက်</item>
+        <item>အခြား</item>
+    </string-array>
+</resources>
