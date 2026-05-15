@@ -1,0 +1,74 @@
+.class public Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity$a;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroidx/viewpager/widget/ViewPager$OnPageChangeListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity;->onCreate(Landroid/os/Bundle;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field public final synthetic a:Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity;
+
+
+# direct methods
+.method public constructor <init>(Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity$a;->a:Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onPageScrollStateChanged(I)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onPageScrolled(IFI)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public onPageSelected(I)V
+    .locals 2
+
+    iget-object v0, p0, Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity$a;->a:Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity;
+
+    iget-object v1, v0, Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity;->r:Ljava/util/List;
+
+    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/estrongs/android/pop/app/filetransfer/fragment/AbsSelectFileFragment;
+
+    iput-object p1, v0, Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity;->q:Lcom/estrongs/android/pop/app/filetransfer/fragment/AbsSelectFileFragment;
+
+    iget-object p1, p0, Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity$a;->a:Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity;
+
+    iget-object p1, p1, Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity;->q:Lcom/estrongs/android/pop/app/filetransfer/fragment/AbsSelectFileFragment;
+
+    invoke-virtual {p1}, Lcom/estrongs/android/pop/app/filetransfer/fragment/AbsSelectFileFragment;->c1()V
+
+    iget-object p1, p0, Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity$a;->a:Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity;
+
+    invoke-virtual {p1}, Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity;->V1()V
+
+    return-void
+.end method

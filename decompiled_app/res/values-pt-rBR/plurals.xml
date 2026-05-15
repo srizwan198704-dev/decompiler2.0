@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="je_x_text_replaced">
+        <item quantity="other">%1$d item(s) substituído(s)</item>
+        <item quantity="one">0 correspondências</item>
+    </plurals>
+    <plurals name="log_new_count">
+        <item quantity="other">Novo %1$d arquivo adicionado</item>
+        <item quantity="one">Novos %1$d arquivos adicionados</item>
+    </plurals>
+    <plurals name="log_time_title_day">
+        <item quantity="other">%1$d dia atrás</item>
+        <item quantity="one">%1$d dias atrás</item>
+    </plurals>
+    <plurals name="log_time_title_hour">
+        <item quantity="other">%1$d hora atrás</item>
+        <item quantity="one">%1$d horas atrás</item>
+    </plurals>
+    <plurals name="log_time_title_minute">
+        <item quantity="other">%1$d min atrás</item>
+        <item quantity="one">%1$d mins atrás</item>
+    </plurals>
+    <plurals name="log_title_apk">
+        <item quantity="other">%1$d APK de %2$s</item>
+        <item quantity="one">%1$d APKs de %2$s</item>
+    </plurals>
+    <plurals name="log_title_audio">
+        <item quantity="other">%1$d musica de %2$s</item>
+        <item quantity="one">%1$d musicas de %2$s</item>
+    </plurals>
+    <plurals name="log_title_doc">
+        <item quantity="other">%1$d Documento de %2$s</item>
+        <item quantity="one">%1$d Documentos de %2$s</item>
+    </plurals>
+    <plurals name="log_title_folder">
+        <item quantity="other">%1$d pasta de %2$s</item>
+        <item quantity="one">%1$d pastas de %2$s</item>
+    </plurals>
+    <plurals name="log_title_image">
+        <item quantity="other">%1$d imagem de %2$s</item>
+        <item quantity="one">%1$d imagens de %2$s</item>
+    </plurals>
+    <plurals name="log_title_netdisk">
+        <item quantity="other">Conta do My Cloud</item>
+        <item quantity="one">Contas do My Cloud</item>
+    </plurals>
+    <plurals name="log_title_video">
+        <item quantity="other">%1$d vídeo de %2$s</item>
+        <item quantity="one">%1$d vídeos de %2$s</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d novas notificações</item>
+        <item quantity="one">%d nova notificação</item>
+    </plurals>
+</resources>

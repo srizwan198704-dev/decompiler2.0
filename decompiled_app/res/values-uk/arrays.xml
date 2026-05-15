@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="backup_intervals">
+        <item>30 хвилин</item>
+        <item>1 год</item>
+        <item>2 години</item>
+        <item>6 годин</item>
+        <item>1 день</item>
+        <item>7 днів</item>
+    </string-array>
+    <string-array name="diskusage_sort_entries">
+        <item>Назва</item>
+        <item>Тип</item>
+        <item>Розмір</item>
+    </string-array>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0,25x</item>
+        <item>0,5x</item>
+        <item>0,75x</item>
+        <item>Звичайна</item>
+        <item>1,25x</item>
+        <item>1,5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="image_slide_interval">
+        <item>1 с</item>
+        <item>3 с</item>
+        <item>5 с</item>
+        <item>10 с</item>
+        <item>15 с</item>
+    </string-array>
+    <string-array name="je_screen_orientation">
+        <item>Автоматично</item>
+        <item>Альбомна</item>
+        <item>Книжкова</item>
+    </string-array>
+    <string-array name="je_wrap_char_list">
+        <item>Перетворити на \\n(Linux/OSX)</item>
+        <item>Перетворити на \\r\\n(Windows)</item>
+    </string-array>
+    <string-array name="new_navi_groups">
+        <item>Закладки</item>
+        <item>Локальне сховище</item>
+        <item>Бібліотеки</item>
+        <item>Мережа</item>
+        <item>Інструменти</item>
+    </string-array>
+    <string-array name="pick_and_return_file_entries">
+        <item>"Стандартний
+(Для MMS,Gmail,…)"</item>
+        <item>"Файловий
+(Якщо попередній не вийшов)"</item>
+    </string-array>
+    <string-array name="search_condition_date">
+        <item>Всі</item>
+        <item>Сьогодні</item>
+        <item>Вчора</item>
+        <item>На цьому тижні</item>
+        <item>У цьому місяці</item>
+        <item>У цьому році</item>
+        <item>> 1 рік</item>
+        <item>Вказати</item>
+    </string-array>
+    <string-array name="search_condition_size">
+        <item>Всі</item>
+        <item>0 – 100 КБ</item>
+        <item>100 КБ - 1 МБ</item>
+        <item>1 МБ - 16 МБ</item>
+        <item>16 МБ - 128 МБ</item>
+        <item>> 128 МБ</item>
+        <item>Введення</item>
+    </string-array>
+    <string-array name="theme_folders">
+        <item>Стандартний</item>
+        <item>Жовтий</item>
+        <item>Зелений</item>
+        <item>Червоний</item>
+        <item>Рожевий</item>
+        <item>Чорний</item>
+    </string-array>
+    <string-array name="view_item_names">
+        <item>Великі іконки</item>
+        <item>Середні іконки</item>
+        <item>Малі іконки</item>
+        <item>Великий список/елемент</item>
+        <item>Середній список</item>
+        <item>Малий список</item>
+        <item>Вел. детально</item>
+        <item>Сер. детально</item>
+        <item>Мал. детально</item>
+    </string-array>
+    <string-array name="wifi_signal">
+        <item>Поганий</item>
+        <item>Середній</item>
+        <item>Хороший</item>
+        <item>Відмінний</item>
+    </string-array>
+    <string-array name="wifi_status_with_ssid">
+        <item></item>
+        <item>Сканування…</item>
+        <item>Підключення до %1$s…</item>
+        <item>Авторизація в %1$s…</item>
+        <item>Отримання IP адреси від %1$s…</item>
+        <item>Підключено до %1$s</item>
+        <item>Призупинено</item>
+        <item>Відключення від %1$s…</item>
+        <item>Відключено</item>
+        <item>Невдало</item>
+    </string-array>
+    <string-array name="wifi_statuses">
+        <item></item>
+        <item>Сканування…</item>
+        <item>Підключення…</item>
+        <item>Авторизація…</item>
+        <item>Отримання IP адреси…</item>
+        <item>Підключено</item>
+        <item>Призупинено</item>
+        <item>Відключення…</item>
+        <item>Відключено</item>
+        <item>Невдало</item>
+    </string-array>
+    <string-array name="zip_levels">
+        <item>Без стиснення</item>
+        <item>Швидкий</item>
+        <item>Нормальний</item>
+        <item>Максимальний</item>
+    </string-array>
+</resources>

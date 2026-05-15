@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="diskusage_sort_entries">
+        <item>Nom</item>
+        <item>Tipus</item>
+        <item>Mida</item>
+    </string-array>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0,25x</item>
+        <item>0,5x</item>
+        <item>0,75x</item>
+        <item>Normal</item>
+        <item>1,25x</item>
+        <item>1,5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="new_navi_groups">
+        <item>Preferit</item>
+        <item>Local</item>
+        <item>Biblioteques</item>
+        <item>Xarxa</item>
+        <item>Eines</item>
+    </string-array>
+    <string-array name="pick_and_return_file_entries">
+        <item>"Forma normal de android
+(Per MMS,Gmail,…)"</item>
+        <item>"Forma de fitxers
+(Només si la de dalt falla)"</item>
+    </string-array>
+    <string-array name="search_condition_date">
+        <item>Tots</item>
+        <item>Avui</item>
+        <item>Ahir</item>
+        <item>Aquesta setmana</item>
+        <item>Aquest mes</item>
+        <item>Aquest any</item>
+        <item>> 1 any</item>
+        <item>Introdueix</item>
+    </string-array>
+    <string-array name="search_condition_size">
+        <item>Tot</item>
+        <item>0 – 100 KB</item>
+        <item>100KB - 1 MB</item>
+        <item>1 MB - 16 MB</item>
+        <item>16 MB - 128 MB</item>
+        <item>> 128 MB</item>
+        <item>Introdueix</item>
+    </string-array>
+    <string-array name="theme_folders">
+        <item>Defecte</item>
+        <item>Groc</item>
+        <item>Verd</item>
+        <item>Vermell</item>
+        <item>Rosa</item>
+        <item>Negre</item>
+    </string-array>
+    <string-array name="view_item_names">
+        <item>Icona gran</item>
+        <item>Icona mitjana</item>
+        <item>Icona petita</item>
+        <item>Llista gran</item>
+        <item>Llista mitjana</item>
+        <item>Llista petita</item>
+        <item>Detall llarg</item>
+        <item>Detall mitjà</item>
+        <item>Detall petit</item>
+    </string-array>
+    <string-array name="wifi_signal">
+        <item>Pobre</item>
+        <item>Normal</item>
+        <item>Bo</item>
+        <item>Excel·lent</item>
+    </string-array>
+    <string-array name="wifi_status_with_ssid">
+        <item></item>
+        <item>Cercant…</item>
+        <item>Connectant a %1$s…</item>
+        <item>Autenticant amb %1$s…</item>
+        <item>Obtenint adreça IP de %1$s…</item>
+        <item>Connectat a %1$s</item>
+        <item>Aturat</item>
+        <item>Desconnectant de %1$s…</item>
+        <item>Desconnectat</item>
+        <item>Error</item>
+    </string-array>
+    <string-array name="wifi_statuses">
+        <item></item>
+        <item>Cercant…</item>
+        <item>Connectant…</item>
+        <item>Autenticant…</item>
+        <item>Obtenint adreça IP…</item>
+        <item>Connectat</item>
+        <item>Aturat</item>
+        <item>Desconnectant…</item>
+        <item>Desconnectat</item>
+        <item>Error</item>
+    </string-array>
+    <string-array name="zip_levels">
+        <item>Sense</item>
+        <item>Ràpid</item>
+        <item>Estàndard</item>
+        <item>Millor</item>
+    </string-array>
+</resources>

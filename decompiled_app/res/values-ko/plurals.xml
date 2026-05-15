@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">%d초 빨리 감기</item>
+        <item quantity="one">%d초 빨리 감기</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">%d초 되감기</item>
+        <item quantity="one">%d초 되감기</item>
+    </plurals>
+    <plurals name="hiad_dismiss_dilaog">
+        <item quantity="other">%1$s초 후 창이 닫힙니다.</item>
+    </plurals>
+    <plurals name="hiad_no_prompt_in_days">
+        <item quantity="other">%1$s일간 다시 알리지 않음</item>
+    </plurals>
+    <plurals name="hiad_reward_countdown">
+        <item quantity="other">%1$d초</item>
+    </plurals>
+    <plurals name="je_x_text_replaced">
+        <item quantity="other">%1$d 개 항목을 바꿈</item>
+        <item quantity="one">일치 항목 0개</item>
+    </plurals>
+    <plurals name="log_new_count">
+        <item quantity="other">%1$d개의 새 파일이 추가됨</item>
+        <item quantity="one">%1$d개의 새 파일이 추가됨</item>
+    </plurals>
+    <plurals name="log_time_title_day">
+        <item quantity="other">%1$d일 전</item>
+        <item quantity="one">%1$d일 전</item>
+    </plurals>
+    <plurals name="log_time_title_hour">
+        <item quantity="other">%1$d시간 전</item>
+        <item quantity="one">%1$d시간 전</item>
+    </plurals>
+    <plurals name="log_time_title_minute">
+        <item quantity="other">%1$d분 전</item>
+        <item quantity="one">%1$d분 전</item>
+    </plurals>
+    <plurals name="log_title_apk">
+        <item quantity="other">%2$s에서 %1$d개 APK</item>
+        <item quantity="one">%2$s에서 %1$d개 APK</item>
+    </plurals>
+    <plurals name="log_title_audio">
+        <item quantity="other">%2$s에서 %1$d개 음악</item>
+        <item quantity="one">%2$s에서 %1$d개 음악</item>
+    </plurals>
+    <plurals name="log_title_doc">
+        <item quantity="other">%2$s에서 %1$d개 문서</item>
+        <item quantity="one">%2$s에서 %1$d개 문서</item>
+    </plurals>
+    <plurals name="log_title_folder">
+        <item quantity="other">%2$s에서 %1$d개 폴더</item>
+        <item quantity="one">%2$s에서 %1$d개 폴더</item>
+    </plurals>
+    <plurals name="log_title_image">
+        <item quantity="other">%2$s에서 %1$d개 이미지</item>
+        <item quantity="one">%2$s에서 %1$d개 이미지</item>
+    </plurals>
+    <plurals name="log_title_netdisk">
+        <item quantity="other">내 클라우드 계정</item>
+        <item quantity="one">내 클라우드 계정</item>
+    </plurals>
+    <plurals name="log_title_video">
+        <item quantity="other">%2$s에서 %1$d개 동영상</item>
+        <item quantity="one">%2$s에서 %1$d개 동영상</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">새 알림 %d개</item>
+        <item quantity="one">새 알림 %d개</item>
+    </plurals>
+</resources>

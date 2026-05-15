@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="diskusage_sort_entries">
+        <item>Име</item>
+        <item>Тип</item>
+        <item>Размер</item>
+    </string-array>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0,25x</item>
+        <item>0,5x</item>
+        <item>0,75x</item>
+        <item>Нормално</item>
+        <item>1,25x</item>
+        <item>1,5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="image_slide_interval">
+        <item>1 сек</item>
+        <item>3 сек</item>
+        <item>5 сек</item>
+        <item>10 сек</item>
+        <item>15 сек</item>
+    </string-array>
+    <string-array name="new_navi_groups">
+        <item>Любими</item>
+        <item>Локални</item>
+        <item>Библиотека</item>
+        <item>Мрежа</item>
+        <item>Инструменти</item>
+    </string-array>
+    <string-array name="pick_and_return_file_entries">
+        <item>"Стандартно за Android
+(за MMS, Gmail,…)"</item>
+        <item>"Като файл
+(опитайте това, ако по-горното не работи)"</item>
+    </string-array>
+    <string-array name="search_condition_date">
+        <item>Всички</item>
+        <item>Днес</item>
+        <item>Вчера</item>
+        <item>Тази седмица</item>
+        <item>Този месец</item>
+        <item>Тази година</item>
+        <item>> 1 година</item>
+        <item>Въведете</item>
+    </string-array>
+    <string-array name="search_condition_size">
+        <item>Всички</item>
+        <item>0 - 100 KB</item>
+        <item>100KB - 1 MB</item>
+        <item>1 MB - 16 MB</item>
+        <item>16 MB - 128 MB</item>
+        <item>> 128 MB</item>
+        <item>Въведете</item>
+    </string-array>
+    <string-array name="theme_folders">
+        <item>По подразбиране</item>
+        <item>Жълт</item>
+        <item>Зелен</item>
+        <item>Червен</item>
+        <item>Розов</item>
+        <item>Черен</item>
+    </string-array>
+    <string-array name="view_item_names">
+        <item>Икони, големи</item>
+        <item>Икони, средни</item>
+        <item>Икони, малки</item>
+        <item>Списък, големи</item>
+        <item>Списък, средни</item>
+        <item>Списък, малки</item>
+        <item>Детайли, големи</item>
+        <item>Детайли, средни</item>
+        <item>Детайли, малки</item>
+    </string-array>
+    <string-array name="wifi_signal">
+        <item>Слаб</item>
+        <item>Задоволителен</item>
+        <item>Добър</item>
+        <item>Отличен</item>
+    </string-array>
+    <string-array name="wifi_status_with_ssid">
+        <item></item>
+        <item>Сканиране…</item>
+        <item>Свързване с %1$s…</item>
+        <item>Удостоверяване с %1$s…</item>
+        <item>Получаване на IP адрес от %1$s…</item>
+        <item>Свързан към %1$s</item>
+        <item>Прекратен</item>
+        <item>Прекъсване на връзката с %1$s…</item>
+        <item>Прекъснат</item>
+        <item>Неуспешно</item>
+    </string-array>
+    <string-array name="wifi_statuses">
+        <item></item>
+        <item>Сканиране…</item>
+        <item>Свързване…</item>
+        <item>Удостоверяване…</item>
+        <item>Получаване на IP адрес…</item>
+        <item>Свързан</item>
+        <item>Прекратен</item>
+        <item>Прекъсване на връзката…</item>
+        <item>Изключен</item>
+        <item>Неуспешно</item>
+    </string-array>
+    <string-array name="zip_levels">
+        <item>Без компресия</item>
+        <item>Бързо</item>
+        <item>Стандартно</item>
+        <item>Най-добро</item>
+    </string-array>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="center" android:orientation="vertical" android:id="@id/ad_container" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/bottom_area" android:paddingTop="6.0dip" android:paddingBottom="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/show_area" android:paddingStart="10.0dip" android:paddingEnd="10.0dip">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/ad_icon" android:visibility="gone" android:layout_width="27.5dip" android:layout_height="wrap_content" android:scaleType="fitXY" />
+            <TextView android:textSize="15.0sp" android:textColor="#ff3d3d3d" android:ellipsize="end" android:id="@id/ad_desc" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="1.0" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" />
+            <TextView android:textSize="14.0sp" android:textColor="@android:color/black" android:ellipsize="end" android:id="@id/ad_icon_name" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="1.0" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" />
+            <TextView android:textSize="11.0sp" android:textColor="@android:color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/download" android:background="@drawable/download_blue_all" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="1" />
+            <com.yfanads.android.libs.thirdpart.lottie.LottieAnimationView android:id="@id/download_action" android:visibility="gone" android:layout_width="82.5dip" android:layout_height="25.0dip" app:c_lottie_autoPlay="true" app:c_lottie_fileName="shake/bar_feed_v3.json" app:c_lottie_loop="true" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:orientation="vertical" android:id="@id/show_area" android:layout_width="fill_parent" android:layout_height="210.9dip" android:layout_alignParentBottom="true">
+        <ImageView android:id="@id/ad_image_blur" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+        <RelativeLayout android:id="@id/ad_image_area" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_centerInParent="true">
+            <ImageView android:id="@id/ad_image" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitCenter" />
+        </RelativeLayout>
+        <FrameLayout android:id="@id/media_view_frame" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <View android:id="@id/ad_image_click" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/item_compliance_content" android:layout_below="@id/ad_close_area" />
+    <View android:id="@id/dy_click_view" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_above="@id/item_compliance_content" android:layout_below="@id/ad_close_area" android:layout_centerInParent="true" />
+    <include android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:layout_alignTop="@id/show_area" android:layout_alignParentEnd="true" layout="@layout/yf_item_close_v3" />
+    <View android:id="@id/ad_close_delay_area" android:background="@color/close_delay" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignTop="@id/ad_close_area" android:layout_alignBottom="@id/ad_close_area" android:layout_alignStart="@id/ad_close_area" android:layout_alignEnd="@id/ad_close_area" />
+    <include android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_alignTop="@id/show_area" android:layout_marginStart="5.0dip" layout="@layout/yf_item_feed_v3" />
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" layout="@layout/item_compliance_content" />
+</RelativeLayout>

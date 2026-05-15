@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/setting_content_bg" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar_top" android:layout_width="fill_parent" android:layout_height="?android:actionBarSize" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/setting_rename" android:background="@drawable/preference_background" android:paddingLeft="@dimen/dp_20" android:paddingRight="@dimen/dp_20" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/dp_54">
+        <TextView android:textSize="@dimen/dp_15" android:textColor="@color/color_text_preference" android:id="@id/tv_change_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/sender_setting_change_name" />
+        <TextView android:textSize="@dimen/dp_11" android:textColor="@color/color_preference_summary" android:id="@id/file_transfer_account" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View android:background="@color/c_d9d9d9" android:layout_width="fill_parent" android:layout_height="@dimen/dp_0.5" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/setting_storage_path_modify" android:background="@drawable/preference_background" android:paddingLeft="@dimen/dp_20" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/dp_54">
+        <TextView android:textSize="@dimen/dp_15" android:textColor="@color/color_text_preference" android:id="@id/tv_change_path" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/sender_setting_change_path" />
+        <TextView android:textSize="@dimen/dp_11" android:textColor="@color/color_preference_summary" android:id="@id/transfer_defalt_storage_path" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="/storage/0" />
+    </LinearLayout>
+    <View android:background="@color/c_d9d9d9" android:layout_width="fill_parent" android:layout_height="@dimen/dp_0.5" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/setting_transfer_via_LAN" android:background="@drawable/preference_background" android:paddingLeft="@dimen/dp_20" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/dp_54">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="@dimen/dp_0" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="@dimen/dp_15" android:textColor="@color/color_text_preference" android:id="@id/tv_setting_use_wifi" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/sender_setting_use_wifi" />
+            <TextView android:textSize="@dimen/dp_11" android:textColor="@color/color_preference_summary" android:id="@id/tv_setting_use_wifi_hint" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/sender_setting_use_wifi_hint" />
+        </LinearLayout>
+        <CheckBox android:layout_gravity="center" android:id="@id/switchWidget_transfer_via_LAN" android:background="@null" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_10" android:button="@drawable/preference_checkbox_drawable" />
+    </LinearLayout>
+    <View android:background="@color/c_d9d9d9" android:layout_width="fill_parent" android:layout_height="@dimen/dp_0.5" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/setting_nearby" android:background="@drawable/preference_background" android:paddingLeft="@dimen/dp_20" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/dp_54">
+        <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="@dimen/dp_0" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="@dimen/dp_15" android:textColor="@color/color_text_preference" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/setting_nearby_title" />
+            <TextView android:textSize="@dimen/dp_11" android:textColor="@color/color_preference_summary" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/setting_nearby_summary" />
+        </LinearLayout>
+        <CheckBox android:layout_gravity="center" android:id="@id/nearby_switch" android:background="@null" android:focusable="true" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_10" android:button="@drawable/preference_checkbox_drawable" />
+    </LinearLayout>
+    <View android:background="@color/c_d9d9d9" android:layout_width="fill_parent" android:layout_height="@dimen/dp_0.5" />
+</LinearLayout>

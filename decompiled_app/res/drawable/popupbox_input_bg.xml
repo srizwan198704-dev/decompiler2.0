@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/edit_text_bg" android:left="-4.0dip" android:top="-4.0dip" android:right="-4.0dip">
+        <selector>
+            <item android:state_enabled="false">
+                <shape>
+                    <solid android:color="@color/transparent" />
+                    <stroke android:width="0.5dip" android:color="@color/c_4c000000" />
+                </shape>
+            </item>
+            <item android:state_selected="true">
+                <shape>
+                    <solid android:color="@color/transparent" />
+                    <stroke android:width="2.0dip" android:color="@color/c_2274e6" />
+                </shape>
+            </item>
+            <item android:state_focused="true">
+                <shape>
+                    <solid android:color="@color/transparent" />
+                    <stroke android:width="2.0dip" android:color="@color/c_2274e6" />
+                </shape>
+            </item>
+            <item android:state_pressed="true">
+                <shape>
+                    <solid android:color="@color/transparent" />
+                    <stroke android:width="2.0dip" android:color="@color/c_2274e6" />
+                </shape>
+            </item>
+            <item android:state_checked="true">
+                <shape>
+                    <solid android:color="@color/transparent" />
+                    <stroke android:width="2.0dip" android:color="@color/c_2274e6" />
+                </shape>
+            </item>
+            <item>
+                <shape>
+                    <solid android:color="@color/transparent" />
+                    <stroke android:width="0.8000001dip" android:color="@color/c_4c000000" />
+                </shape>
+            </item>
+        </selector>
+    </item>
+</layer-list>

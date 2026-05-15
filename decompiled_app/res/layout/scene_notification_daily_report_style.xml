@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/scene_notifi_root" android:background="@drawable/daily_report_noti_bg_style01" android:layout_width="fill_parent" android:layout_height="65.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:layout_alignParentStart="true">
+        <RelativeLayout android:layout_width="118.0dip" android:layout_height="65.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:layout_alignParentStart="true">
+            <ImageView android:id="@id/scene_notifi_img" android:layout_width="118.0dip" android:layout_height="65.0dip" android:src="@drawable/image_sunday" android:scaleType="fitStart" />
+            <ImageView android:id="@id/scene_notifi_img_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/image_nt_es" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <Button android:textSize="11.0dip" android:textColor="@color/white" android:id="@id/scene_notifi_btn" android:clickable="false" android:layout_width="62.0dip" android:layout_height="36.0dip" android:layout_marginTop="16.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_marginEnd="10.0dip" android:layout_alignParentEnd="true" />
+        <TextView android:textSize="15.0dip" android:textColor="#66000000" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/scene_notifi_txt_desc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="66.0dip" android:layout_marginRight="23.0dip" android:text="Content Title" android:maxLines="2" android:layout_toLeftOf="@id/scene_notifi_btn" android:layout_centerVertical="true" android:layout_marginStart="66.0dip" android:layout_marginEnd="23.0dip" android:layout_toStartOf="@id/scene_notifi_btn" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="backup_intervals">
+        <item>30 minutos</item>
+        <item>1 hora</item>
+        <item>2 horas</item>
+        <item>6 horas</item>
+        <item>1 día</item>
+        <item>7 días</item>
+    </string-array>
+    <string-array name="diskusage_sort_entries">
+        <item>Nombre</item>
+        <item>Tipo</item>
+        <item>Tamaño</item>
+    </string-array>
+    <string-array name="exo_controls_playback_speeds">
+        <item>0,25x</item>
+        <item>0,5x</item>
+        <item>0,75x</item>
+        <item>Normal</item>
+        <item>1,25x</item>
+        <item>1,5x</item>
+        <item>2x</item>
+    </string-array>
+    <string-array name="je_screen_orientation">
+        <item>Automático</item>
+        <item>Horizontal</item>
+        <item>Vertical</item>
+    </string-array>
+    <string-array name="je_wrap_char_list">
+        <item>Convertir a \\n(Linux/OSX)</item>
+        <item>Convertir a \\r\\n(Windows)</item>
+    </string-array>
+    <string-array name="new_navi_groups">
+        <item>Favorito</item>
+        <item>Local</item>
+        <item>Libreria</item>
+        <item>Red</item>
+        <item>Herramientas</item>
+    </string-array>
+    <string-array name="pick_and_return_file_entries">
+        <item>"Forma normal de android
+(Para MMS,Gmail,…)"</item>
+        <item>"Forma de Archivos
+(Solo si la de arriba falla)"</item>
+    </string-array>
+    <string-array name="search_condition_date">
+        <item>Todos</item>
+        <item>Hoy</item>
+        <item>Ayer</item>
+        <item>Esta Semana</item>
+        <item>Este Mes</item>
+        <item>Este Año</item>
+        <item>> 1 año</item>
+        <item>Introducir</item>
+    </string-array>
+    <string-array name="search_condition_size">
+        <item>Todo</item>
+        <item>0 – 100 KB</item>
+        <item>100KB - 1 MB</item>
+        <item>1 MB - 16 MB</item>
+        <item>16 MB - 128 MB</item>
+        <item>> 128 MB</item>
+        <item>Introducir</item>
+    </string-array>
+    <string-array name="theme_folders">
+        <item>Defecto</item>
+        <item>Amarillo</item>
+        <item>Verde</item>
+        <item>Rojo</item>
+        <item>Rosa</item>
+        <item>Negro</item>
+    </string-array>
+    <string-array name="view_item_names">
+        <item>Icono Grande</item>
+        <item>Icono Medio</item>
+        <item>Icono Pequeño</item>
+        <item>Lista Grande</item>
+        <item>Lista Media</item>
+        <item>Lista Pequeña</item>
+        <item>Detallado Largo</item>
+        <item>Detallado Medio</item>
+        <item>Detallado Pequeño</item>
+    </string-array>
+    <string-array name="wifi_signal">
+        <item>Pobre</item>
+        <item>Normal</item>
+        <item>Buena</item>
+        <item>Excelente</item>
+    </string-array>
+    <string-array name="wifi_status_with_ssid">
+        <item></item>
+        <item>Buscando…</item>
+        <item>Conectando a %1$s…</item>
+        <item>Autenticando con %1$s…</item>
+        <item>Obteniendo Direccion IP de %1$s…</item>
+        <item>Conectado a %1$s</item>
+        <item>Suspendido</item>
+        <item>Desconectando de %1$s…</item>
+        <item>Desconectado</item>
+        <item>Fallido</item>
+    </string-array>
+    <string-array name="wifi_statuses">
+        <item></item>
+        <item>Buscando…</item>
+        <item>Conectando…</item>
+        <item>Autenticando…</item>
+        <item>Obteniendo Direccion IP…</item>
+        <item>Connectado</item>
+        <item>Suspendido</item>
+        <item>Desconectando…</item>
+        <item>Desconectado</item>
+        <item>Fallido</item>
+    </string-array>
+    <string-array name="zip_levels">
+        <item>Sin</item>
+        <item>Rapido</item>
+        <item>Estandart</item>
+        <item>Mejor</item>
+    </string-array>
+</resources>

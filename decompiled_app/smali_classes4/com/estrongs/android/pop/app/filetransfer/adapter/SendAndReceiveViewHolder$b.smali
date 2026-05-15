@@ -1,0 +1,72 @@
+.class public Lcom/estrongs/android/pop/app/filetransfer/adapter/SendAndReceiveViewHolder$b;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Landroid/view/View$OnClickListener;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/estrongs/android/pop/app/filetransfer/adapter/SendAndReceiveViewHolder;->e(Landroid/view/View;)V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field public final synthetic a:Lcom/estrongs/android/pop/app/filetransfer/adapter/SendAndReceiveViewHolder;
+
+
+# direct methods
+.method public constructor <init>(Lcom/estrongs/android/pop/app/filetransfer/adapter/SendAndReceiveViewHolder;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/estrongs/android/pop/app/filetransfer/adapter/SendAndReceiveViewHolder$b;->a:Lcom/estrongs/android/pop/app/filetransfer/adapter/SendAndReceiveViewHolder;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public onClick(Landroid/view/View;)V
+    .locals 2
+
+    new-instance p1, Lcom/estrongs/android/pop/app/filetransfer/adapter/SendAndReceiveViewHolder$b$a;
+
+    invoke-direct {p1, p0}, Lcom/estrongs/android/pop/app/filetransfer/adapter/SendAndReceiveViewHolder$b$a;-><init>(Lcom/estrongs/android/pop/app/filetransfer/adapter/SendAndReceiveViewHolder$b;)V
+
+    invoke-virtual {p1}, Ljava/lang/Thread;->start()V
+
+    new-instance p1, Landroid/content/Intent;
+
+    iget-object v0, p0, Lcom/estrongs/android/pop/app/filetransfer/adapter/SendAndReceiveViewHolder$b;->a:Lcom/estrongs/android/pop/app/filetransfer/adapter/SendAndReceiveViewHolder;
+
+    iget-object v0, v0, Lcom/estrongs/android/pop/app/filetransfer/adapter/FileTransferViewHolder;->e:Landroid/content/Context;
+
+    const-class v1, Lcom/estrongs/android/pop/app/filetransfer/TransferFileSelectActivity;
+
+    invoke-direct {p1, v0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    iget-object v0, p0, Lcom/estrongs/android/pop/app/filetransfer/adapter/SendAndReceiveViewHolder$b;->a:Lcom/estrongs/android/pop/app/filetransfer/adapter/SendAndReceiveViewHolder;
+
+    iget-object v0, v0, Lcom/estrongs/android/pop/app/filetransfer/adapter/FileTransferViewHolder;->e:Landroid/content/Context;
+
+    invoke-virtual {v0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    invoke-static {}, Les/b36;->a()Les/b36;
+
+    move-result-object p1
+
+    const-string v0, "sender"
+
+    const-string v1, "send_click"
+
+    invoke-virtual {p1, v0, v1}, Les/b36;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method

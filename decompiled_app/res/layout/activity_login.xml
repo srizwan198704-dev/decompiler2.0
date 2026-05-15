@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.appcompat.widget.Toolbar android:id="@id/toolbar_top" android:layout_width="fill_parent" android:layout_height="@dimen/dp_48" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="0.0dip" android:fillViewport="true" android:layout_weight="1.0">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingTop="50.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <TextView android:textSize="21.0dip" android:textColor="@color/c_333333" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/file_explorer" android:drawablePadding="4.0dip" android:drawableStart="@drawable/login_logo" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginLeft="30.0dip" android:layout_marginTop="50.0dip" android:layout_marginRight="30.0dip">
+                <ImageView android:id="@id/iv_email" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_email" />
+                <EditText android:textSize="14.0dip" android:textColor="#ff333333" android:gravity="start" android:id="@id/et_email" android:background="@null" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="0.0dip" android:layout_height="wrap_content" android:hint="@string/please_input_email" android:scrollHorizontally="true" android:singleLine="true" android:maxLength="100" android:layout_weight="1.0" android:inputType="textEmailAddress" android:textAlignment="viewStart" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" />
+                <ImageView android:id="@id/iv_clear_email" android:background="@drawable/selector_item_bg_circle" android:focusable="true" android:visibility="gone" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_clear_account" android:scaleType="center" />
+            </LinearLayout>
+            <View android:background="@color/c_e5e5e5" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="30.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="30.0dip" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginLeft="30.0dip" android:layout_marginTop="8.0dip" android:layout_marginRight="30.0dip">
+                <ImageView android:id="@id/iv_pwd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_pwd" />
+                <EditText android:textSize="14.0dip" android:textColor="#ff333333" android:gravity="start" android:id="@id/et_pwd" android:background="@null" android:nextFocusDown="@id/btn_login" android:layout_width="0.0dip" android:layout_height="wrap_content" android:hint="@string/please_input_pwd" android:maxLines="1" android:scrollHorizontally="true" android:maxLength="16" android:layout_weight="1.0" android:inputType="textPassword" android:textAlignment="viewStart" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" />
+                <ImageView android:id="@id/iv_visibility_pwd" android:background="@drawable/selector_item_bg_circle" android:focusable="true" android:visibility="gone" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/ic_invisible" android:scaleType="center" />
+            </LinearLayout>
+            <View android:background="@color/c_e5e5e5" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="30.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="30.0dip" />
+            <TextView android:textSize="15.0dip" android:textStyle="bold" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/btn_login" android:background="@drawable/bg_login_btn" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:focusable="true" android:nextFocusDown="@id/tv_register" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="30.0dip" android:text="@string/action_login" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="30.0dip">
+                <TextView android:textSize="14.0dip" android:textColor="@color/c_2e85ff" android:id="@id/tv_register" android:background="@drawable/selector_item_bg" android:padding="4.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/register" />
+                <Space android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                <TextView android:textSize="14.0dip" android:textColor="@color/c_2e85ff" android:id="@id/tv_forget_pwd" android:background="@drawable/selector_item_bg" android:padding="4.0dip" android:focusable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pcs_login_forget" />
+            </LinearLayout>
+            <Space android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+            <TextView android:textSize="10.0dip" android:textColor="@color/c_888888" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/more_login_type" />
+            <LinearLayout android:orientation="horizontal" android:id="@id/third_part_login_container" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" />
+            <LinearLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="30.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="30.0dip" android:layout_marginBottom="20.0dip">
+                <ImageView android:id="@id/iv_check" android:padding="5.0dip" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@drawable/btn_checkbox_normal" />
+                <TextView android:textSize="12.0dip" android:textColor="@color/c_ff999999" android:id="@id/tv_privacy_tip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/login_privacy_tip" android:lineSpacingMultiplier="1.2" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

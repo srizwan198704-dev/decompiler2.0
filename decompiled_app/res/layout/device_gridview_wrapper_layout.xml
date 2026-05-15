@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/device_grid_view" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+        <RelativeLayout android:layout_gravity="bottom|center" android:id="@id/device_select_file" android:background="@color/white" android:paddingBottom="@dimen/dp_15" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <View android:id="@id/device_divider_tag" android:background="@color/es_base_divider_color" android:layout_width="fill_parent" android:layout_height="@dimen/dp_0.5" android:layout_alignParentTop="true" />
+            <RelativeLayout android:gravity="center_horizontal" android:id="@id/device_select_rl" android:paddingTop="@dimen/dp_20" android:paddingBottom="@dimen/dp_20" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/dp_10" android:layout_marginRight="@dimen/dp_10" android:layout_marginStart="@dimen/dp_10" android:layout_marginEnd="@dimen/dp_10">
+                <ImageView android:id="@id/encrypt_wrapper_top_icon_iv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/dp_10" android:src="@drawable/format_tv" android:layout_marginEnd="@dimen/dp_10" />
+                <TextView android:textSize="@dimen/dp_15" android:textColor="@color/c_cc000000" android:ellipsize="end" android:id="@id/device_playing_on" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_toRightOf="@id/encrypt_wrapper_top_icon_iv" android:layout_toEndOf="@id/encrypt_wrapper_top_icon_iv" />
+                <TextView android:textSize="@dimen/dp_15" android:textColor="@color/c_66000000" android:ellipsize="end" android:id="@id/device_playing_on_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_2" android:text="@string/cast_device_playng_desc" android:singleLine="true" android:layout_below="@id/device_playing_on" android:layout_alignLeft="@id/device_playing_on" android:layout_alignStart="@id/device_playing_on" />
+            </RelativeLayout>
+            <Button android:textSize="@dimen/dp_18" android:textColor="@color/white" android:id="@id/select_device_action" android:background="@drawable/btn_80_06_selector" android:layout_width="fill_parent" android:layout_height="@dimen/dp_40" android:layout_marginLeft="@dimen/dp_10" android:layout_marginRight="@dimen/dp_10" android:text="@string/action_select_file" android:layout_below="@id/device_select_rl" android:layout_marginStart="@dimen/dp_10" android:layout_marginEnd="@dimen/dp_10" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/device_progressBar" android:background="@drawable/loading_bg" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ProgressBar android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/ProgressBar" />
+        <TextView android:textColor="@color/window_txt_color_b66" android:id="@id/progressMessage" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/progress_loading" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/preference_notification_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:layout="@layout/custom_preference_no_space" app:allowDividerAbove="false" app:allowDividerBelow="false">
+        <CheckBoxPreference android:persistent="true" android:layout="@layout/custom_preference_top_radius" android:title="@string/close_notification" android:key="close_notification" android:summary="@string/close_notification_summary" android:widgetLayout="@layout/custom_preference_widget_checkbox" android:defaultValue="false" />
+        <CheckBoxPreference android:persistent="true" android:layout="@layout/custom_preference_none_radius" android:title="@string/open_app_permission_notification_title" android:key="open_app_permission_notification" android:summary="@string/open_app_permission_notification_summary" android:widgetLayout="@layout/custom_preference_widget_checkbox" android:defaultValue="true" />
+        <CheckBoxPreference android:persistent="true" android:layout="@layout/custom_preference_none_radius" android:title="@string/preference_new_file_notificationbar" android:key="new_file_notificationbar_setting" android:summary="@string/preference_new_file_notificationbar_summary" android:widgetLayout="@layout/custom_preference_widget_checkbox" android:defaultValue="true" />
+        <Preference android:persistent="false" android:layout="@layout/custom_preference_none_radius" android:title="@string/preference_new_file_format" android:key="new_file_notificationbar_format" android:defaultValue="-1" />
+        <CheckBoxPreference android:persistent="true" android:layout="@layout/custom_preference_bottom_radius" android:title="@string/preference_new_file_log_ps_apps_title" android:key="new_file_ps_apps" android:summary="@string/preference_new_file_log_ps_apps_summary" android:widgetLayout="@layout/custom_preference_widget_checkbox" android:defaultValue="true" />
+    </PreferenceCategory>
+</PreferenceScreen>

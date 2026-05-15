@@ -1,0 +1,56 @@
+.class Lcom/bytedance/pangle/service/k/k$4;
+.super Ljava/lang/Object;
+
+# interfaces
+.implements Ljava/lang/Runnable;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/bytedance/pangle/service/k/k;->stopService(Landroid/content/Intent;Ljava/lang/String;)Z
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic k:Landroid/content/Intent;
+
+.field final synthetic p:Lcom/bytedance/pangle/service/k/k;
+
+
+# direct methods
+.method public constructor <init>(Lcom/bytedance/pangle/service/k/k;Landroid/content/Intent;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/bytedance/pangle/service/k/k$4;->p:Lcom/bytedance/pangle/service/k/k;
+
+    iput-object p2, p0, Lcom/bytedance/pangle/service/k/k$4;->k:Landroid/content/Intent;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
+    .locals 2
+
+    invoke-static {}, Lcom/bytedance/pangle/service/k/k;->p()Lcom/bytedance/pangle/service/k/k;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/bytedance/pangle/service/k/k$4;->k:Landroid/content/Intent;
+
+    invoke-virtual {v1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/bytedance/pangle/service/k/k;->k(Landroid/content/ComponentName;)Z
+
+    return-void
+.end method

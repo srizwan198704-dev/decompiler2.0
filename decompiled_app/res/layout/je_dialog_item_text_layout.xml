@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/je_dialog_item_selector" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="?customDialogDividerColor" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    <TextView android:id="@id/item_text_tv" style="@style/CustomDialogItemTextStyle" />
+</LinearLayout>

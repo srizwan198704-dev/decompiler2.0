@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">Posunout vpřed o %d sekund</item>
+        <item quantity="one">Posunout vpřed o %d sekundu</item>
+        <item quantity="few">Posunout vpřed o %d sekundy</item>
+        <item quantity="many">Posunout vpřed o %d sekundy</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">Přetočit zpět o %d sekund</item>
+        <item quantity="one">Přetočit zpět o %d sekundu</item>
+        <item quantity="few">Přetočit zpět o %d sekundy</item>
+        <item quantity="many">Přetočit zpět o %d sekundy</item>
+    </plurals>
+    <plurals name="hiad_dismiss_dilaog">
+        <item quantity="other">Okno se zavře za %1$s s.</item>
+        <item quantity="one">Okno se zavře za %1$s s.</item>
+        <item quantity="few">Okno se zavře za %1$s s.</item>
+        <item quantity="many">Okno se zavře za %1$s s.</item>
+    </plurals>
+    <plurals name="hiad_no_prompt_in_days">
+        <item quantity="other">Zapamatovat volbu po dobu %1$s dní</item>
+        <item quantity="one">Zapamatovat volbu po dobu %1$s dne</item>
+        <item quantity="few">Zapamatovat volbu po dobu %1$s dní</item>
+        <item quantity="many">Zapamatovat volbu po dobu %1$s dní</item>
+    </plurals>
+    <plurals name="hiad_reward_countdown">
+        <item quantity="other">%1$d s</item>
+        <item quantity="one">%1$d s</item>
+        <item quantity="few">%1$d s</item>
+        <item quantity="many">%1$d s</item>
+    </plurals>
+    <plurals name="je_x_text_replaced">
+        <item quantity="other">Nahrazeno položek: %1$d</item>
+        <item quantity="one">0 shod</item>
+    </plurals>
+    <plurals name="log_new_count">
+        <item quantity="other">Byl přidán %1$d nový soubor</item>
+        <item quantity="one">Byly přidány nové soubory (počet: %1$d)</item>
+    </plurals>
+    <plurals name="log_time_title_day">
+        <item quantity="other">Před %1$d dnem</item>
+        <item quantity="one">Před %1$d dny</item>
+    </plurals>
+    <plurals name="log_time_title_hour">
+        <item quantity="other">Před %1$d hod.</item>
+        <item quantity="one">Před %1$d hod.</item>
+    </plurals>
+    <plurals name="log_time_title_minute">
+        <item quantity="other">Před %1$d min.</item>
+        <item quantity="one">Před %1$d min.</item>
+    </plurals>
+    <plurals name="log_title_apk">
+        <item quantity="other">%1$d aplikace z %2$s</item>
+        <item quantity="one">%1$d aplikace/í z %2$s</item>
+    </plurals>
+    <plurals name="log_title_audio">
+        <item quantity="other">%1$d skladba z %2$s</item>
+        <item quantity="one">%1$d skladby/skladeb z %2$s</item>
+    </plurals>
+    <plurals name="log_title_doc">
+        <item quantity="other">%1$d dokument z %2$s</item>
+        <item quantity="one">%1$d dokumenty/ů z %2$s</item>
+    </plurals>
+    <plurals name="log_title_folder">
+        <item quantity="other">%1$d složka z %2$s</item>
+        <item quantity="one">%1$d složky/složek z %2$s</item>
+    </plurals>
+    <plurals name="log_title_image">
+        <item quantity="other">%1$d obrázek z %2$s</item>
+        <item quantity="one">%1$d obrázků/y z %2$s</item>
+    </plurals>
+    <plurals name="log_title_netdisk">
+        <item quantity="other">Účet My Cloud</item>
+        <item quantity="one">Účty My Cloud</item>
+    </plurals>
+    <plurals name="log_title_video">
+        <item quantity="other">%1$d video z %2$s</item>
+        <item quantity="one">%1$d videa/í z %2$s</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">%d nových oznámení</item>
+        <item quantity="one">%d nové oznámení</item>
+        <item quantity="few">%d nová oznámení</item>
+        <item quantity="many">%d nového oznámení</item>
+    </plurals>
+</resources>

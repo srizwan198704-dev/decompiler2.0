@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/durec_black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:background="@color/durec_black" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.esfile.screen.recorder.player.exo.DuExoGLVideoView android:layout_gravity="center" android:id="@id/merge_preview_player" android:background="@color/durec_black" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.esfile.screen.recorder.videos.merge.ui.ImageViewPlayer android:id="@id/merge_preview_image" android:background="@color/durec_black" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ImageView android:id="@id/merge_preview_image_cover" android:background="@color/durec_black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <com.esfile.screen.recorder.videos.merge.ui.MergeVideoImagePreviewController android:id="@id/merge_preview_controller" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.esfile.screen.recorder.videos.edit.ui.VideoEditProgressView android:id="@id/merge_preview_progress_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#c0000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.esfile.screen.recorder.videos.edit.ui.CircleProgressView android:id="@id/share_cutting_progress" android:background="#00000000" android:layout_width="@dimen/dugif_saving_progress_circle_edge_size" android:layout_height="@dimen/dugif_saving_progress_circle_edge_size" app:arc_color="@color/durec_30b2f2" app:arc_stroke_width="4.5dip" app:center_text_size="@dimen/dugif_saving_progress_center_text_size" app:circle_color="@color/durec_alpha_60_ffffff" app:circle_radius="@dimen/dugif_saving_progress_circle_radius" app:circle_stroke_width="2.5dip" app:text_color="@color/durec_white" />
+            <com.esfile.screen.recorder.ui.FontTextView android:textSize="16.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/cutting_progress_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="@string/durec_share_saving" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" />
+        </LinearLayout>
+    </FrameLayout>
+    <com.esfile.screen.recorder.ui.FontTextView android:textSize="18.0dip" android:textColor="#ff555555" android:gravity="center" android:id="@id/share_cutting_cancel" android:background="@drawable/durec_video_save_btn_bg" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="13.0dip" android:layout_marginRight="13.0dip" android:layout_marginBottom="12.0dip" android:text="@string/durec_common_cancel" />
+</LinearLayout>

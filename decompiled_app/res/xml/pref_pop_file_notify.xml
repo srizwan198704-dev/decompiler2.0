@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/preference_new_file_notify_title"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:layout="@layout/custom_preference_no_space" app:allowDividerAbove="false" app:allowDividerBelow="false">
+        <CheckBoxPreference android:persistent="true" android:layout="@layout/custom_preference_top_radius" android:title="@string/preference_new_file_notify" android:key="new_file_notify_setting" android:summary="@string/preference_new_file_notify_summary" android:widgetLayout="@layout/custom_preference_widget_checkbox" android:defaultValue="false" />
+        <Preference android:persistent="false" android:layout="@layout/custom_preference_none_radius" android:title="@string/preference_new_file_format" android:key="new_file_format" android:defaultValue="-1" />
+        <Preference android:persistent="false" android:layout="@layout/custom_preference_bottom_radius" android:title="@string/log_setting_choice" android:key="new_apk_format" android:defaultValue="-1" />
+    </PreferenceCategory>
+</PreferenceScreen>

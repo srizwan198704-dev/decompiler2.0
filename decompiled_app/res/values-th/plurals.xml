@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+        <item quantity="other">กรอไปข้างหน้า %d วินาที</item>
+        <item quantity="one">กรอไปข้างหน้า %d วินาที</item>
+    </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+        <item quantity="other">กรอกลับ %d วินาที</item>
+        <item quantity="one">กรอกลับ %d วินาที</item>
+    </plurals>
+    <plurals name="hiad_dismiss_dilaog">
+        <item quantity="other">หน้าต่างจะปิดภายใน %1$s วินาที</item>
+    </plurals>
+    <plurals name="hiad_no_prompt_in_days">
+        <item quantity="other">จำการเลือกไว้เป็นเวลา %1$s วัน</item>
+    </plurals>
+    <plurals name="hiad_reward_countdown">
+        <item quantity="other">%1$d วินาที</item>
+    </plurals>
+    <plurals name="je_x_text_replaced">
+        <item quantity="other">%1$d รายการที่แทนที่แล้ว</item>
+        <item quantity="one">0 รายการที่ตรงกัน</item>
+    </plurals>
+    <plurals name="log_new_count">
+        <item quantity="other">เพิ่ม %1$d ไฟล์ใหม่แล้</item>
+        <item quantity="one">เพิ่ม %1$d ไฟล์ใหม่หลายรายการแล้ว</item>
+    </plurals>
+    <plurals name="log_time_title_day">
+        <item quantity="other">%1$d วันที่แล้ว</item>
+        <item quantity="one">%1$d วันที่แล้ว</item>
+    </plurals>
+    <plurals name="log_time_title_hour">
+        <item quantity="other">%1$d ชั่วโมงที่แล้ว</item>
+        <item quantity="one">%1$d ชั่วโมงที่แล้ว</item>
+    </plurals>
+    <plurals name="log_time_title_minute">
+        <item quantity="other">%1$d นาทีที่แล้ว</item>
+        <item quantity="one">%1$d นาทีที่แล้ว</item>
+    </plurals>
+    <plurals name="log_title_apk">
+        <item quantity="other">%1$d APK จาก %2$s</item>
+        <item quantity="one">%1$d APK จาก %2$s</item>
+    </plurals>
+    <plurals name="log_title_audio">
+        <item quantity="other">%1$d เพลงจาก %2$s</item>
+        <item quantity="one">%1$d เพลงจาก %2$s</item>
+    </plurals>
+    <plurals name="log_title_doc">
+        <item quantity="other">%1$d เอกสารจาก %2$s</item>
+        <item quantity="one">%1$d เอกสารจาก %2$s</item>
+    </plurals>
+    <plurals name="log_title_folder">
+        <item quantity="other">%1$d โฟลเดอร์จาก %2$s</item>
+        <item quantity="one">%1$d โฟลเดอร์จาก %2$s</item>
+    </plurals>
+    <plurals name="log_title_image">
+        <item quantity="other">%1$d รูปภาพจาก %2$s</item>
+        <item quantity="one">%1$d รูปภาพจาก %2$s</item>
+    </plurals>
+    <plurals name="log_title_netdisk">
+        <item quantity="other">บัญชี My Cloud</item>
+        <item quantity="one">บัญชี My Cloud</item>
+    </plurals>
+    <plurals name="log_title_video">
+        <item quantity="other">%1$d วิดีโอจาก %2$s</item>
+        <item quantity="one">%1$d วิดีโอจาก %2$s</item>
+    </plurals>
+    <plurals name="mtrl_badge_content_description">
+        <item quantity="other">การแจ้งเตือนใหม่ %d รายการ</item>
+        <item quantity="one">การแจ้งเตือนใหม่ %d รายการ</item>
+    </plurals>
+</resources>

@@ -1,0 +1,36 @@
+.class public Lcom/umeng/analytics/pro/dn;
+.super Lcom/umeng/analytics/pro/dp;
+
+
+# instance fields
+.field public final a:Ljava/lang/Class;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/Class<",
+            "+",
+            "Lcom/umeng/analytics/pro/dg;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(BLjava/lang/Class;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(B",
+            "Ljava/lang/Class<",
+            "+",
+            "Lcom/umeng/analytics/pro/dg;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-direct {p0, p1}, Lcom/umeng/analytics/pro/dp;-><init>(B)V
+
+    iput-object p2, p0, Lcom/umeng/analytics/pro/dn;->a:Ljava/lang/Class;
+
+    return-void
+.end method

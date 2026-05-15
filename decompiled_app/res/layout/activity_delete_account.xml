@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="@dimen/dp_17" android:clipChildren="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="@color/c_333333" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/delete_account_notice" android:drawableLeft="@drawable/ic_delete_account_warning" android:drawablePadding="@dimen/dp_8" android:fontFamily="sans-serif-medium" />
+    <TextView android:textColor="@color/white" android:background="@drawable/bg_delete_account_warning" android:padding="@dimen/dp_12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_28" android:text="@string/delete_account_notice_1" />
+    <TextView android:padding="@dimen/dp_12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/delete_account_notice_2" />
+    <Space android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <CheckBox android:textSize="@dimen/dp_12" android:textColor="@color/color_text_preference" android:id="@id/btn_agree" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:button="@drawable/checkbox_grid_file_drawable" android:text="@string/agree_delete_account_notice" android:paddingStart="@dimen/dp_8" />
+    <Button android:enabled="false" android:textColor="@color/white" android:gravity="center" android:id="@id/btn_confirm" android:background="@drawable/bg_es_blue_btn" android:padding="@dimen/dp_12" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_16" android:text="@string/confirm_to_delete_account" />
+</LinearLayout>

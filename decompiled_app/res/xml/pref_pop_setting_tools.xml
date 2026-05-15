@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/preference_tools"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:layout="@layout/custom_preference_no_space" android:title="@string/preference_tools" android:key="preference_tools_settings" app:allowDividerAbove="false" app:allowDividerBelow="false">
+        <Preference android:layout="@layout/custom_preference_top_radius" android:title="@string/category_apk" android:key="appmanager_preference" android:widgetLayout="@layout/custom_preference_widget_arrow" android:fragment="com.estrongs.android.ui.preference.fragments.AppPreferenceFragment" />
+        <Preference android:layout="@layout/custom_preference_none_radius" android:title="@string/app_download_manager" android:key="downloader_settings" android:widgetLayout="@layout/custom_preference_widget_arrow" android:fragment="com.estrongs.android.ui.preference.fragments.DownloadPreferenceFragment" />
+        <Preference android:layout="@layout/custom_preference_none_radius" android:title="@string/preference_window_settings" android:key="window_settings" android:widgetLayout="@layout/custom_preference_widget_arrow" android:fragment="com.estrongs.android.ui.preference.fragments.WindowPreferenceFragment" />
+        <Preference android:layout="@layout/custom_preference_none_radius" android:title="@string/recycle_title" android:key="recycle_settings" android:widgetLayout="@layout/custom_preference_widget_arrow" android:fragment="com.estrongs.android.ui.preference.fragments.RecyclePreferenceFragment" />
+        <Preference android:icon="@drawable/toolbar_gesture" android:layout="@layout/custom_preference_bottom_radius" android:title="@string/gesture_setting" android:key="gesture_settings" android:widgetLayout="@layout/custom_preference_widget_arrow" />
+    </PreferenceCategory>
+</PreferenceScreen>

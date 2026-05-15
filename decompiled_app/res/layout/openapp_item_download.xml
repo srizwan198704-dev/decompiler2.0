@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/openapp_item_layout" android:layout_width="fill_parent" android:layout_height="@dimen/dp_60">
+        <ImageView android:id="@id/openapp_item_icon" android:layout_width="@dimen/dp_48" android:layout_height="@dimen/dp_48" android:layout_marginLeft="12.0dip" android:layout_marginRight="10.0dip" android:src="@mipmap/fex" android:scaleType="fitCenter" android:layout_centerVertical="true" />
+        <TextView android:textSize="@dimen/dp_20" android:textColor="@color/popupbox_content_text" android:gravity="center|left" android:id="@id/openapp_item_text" android:layout_width="wrap_content" android:layout_height="@dimen/dp_60" android:text="ffffff" android:singleLine="true" android:layout_toRightOf="@id/openapp_item_icon" />
+        <CheckBox android:id="@id/open_recomm_check" android:focusable="false" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="15.0dip" android:button="@drawable/popupbox_checkbox_drawable" android:drawablePadding="4.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ImageView android:layout_gravity="right" android:id="@id/openapp_item_flag" android:layout_width="16.0dip" android:layout_height="23.0dip" android:layout_marginRight="40.0dip" android:src="@drawable/recommend_flag" />
+</FrameLayout>

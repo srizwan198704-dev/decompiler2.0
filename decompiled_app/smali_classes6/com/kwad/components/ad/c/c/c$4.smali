@@ -1,0 +1,66 @@
+.class final Lcom/kwad/components/ad/c/c/c$4;
+.super Lcom/kwad/sdk/utils/bi;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/kwad/components/ad/c/c/c;->av()V
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x1
+    name = null
+.end annotation
+
+
+# instance fields
+.field final synthetic cQ:Lcom/kwad/components/ad/c/c/c;
+
+
+# direct methods
+.method public constructor <init>(Lcom/kwad/components/ad/c/c/c;)V
+    .locals 0
+
+    iput-object p1, p0, Lcom/kwad/components/ad/c/c/c$4;->cQ:Lcom/kwad/components/ad/c/c/c;
+
+    invoke-direct {p0}, Lcom/kwad/sdk/utils/bi;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final doTask()V
+    .locals 2
+
+    iget-object v0, p0, Lcom/kwad/components/ad/c/c/c$4;->cQ:Lcom/kwad/components/ad/c/c/c;
+
+    invoke-static {v0}, Lcom/kwad/components/ad/c/c/c;->i(Lcom/kwad/components/ad/c/c/c;)Lcom/kwad/components/ad/c/b/a;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lcom/kwad/components/ad/c/c/c$4;->cQ:Lcom/kwad/components/ad/c/c/c;
+
+    invoke-static {v0}, Lcom/kwad/components/ad/c/c/c;->j(Lcom/kwad/components/ad/c/c/c;)Landroid/widget/FrameLayout;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/kwad/components/ad/c/c/c$4;->cQ:Lcom/kwad/components/ad/c/c/c;
+
+    invoke-static {v1}, Lcom/kwad/components/ad/c/c/c;->i(Lcom/kwad/components/ad/c/c/c;)Lcom/kwad/components/ad/c/b/a;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    :cond_0
+    iget-object v0, p0, Lcom/kwad/components/ad/c/c/c$4;->cQ:Lcom/kwad/components/ad/c/c/c;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/kwad/components/ad/c/c/c;->a(Lcom/kwad/components/ad/c/c/c;Z)Z
+
+    return-void
+.end method

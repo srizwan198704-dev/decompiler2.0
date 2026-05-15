@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="backup_as_default_padding_left">5.0dip</dimen>
+    <dimen name="durec_multi_create_live_title_margin_top">65.0dip</dimen>
+    <dimen name="durec_multi_live_channel_margin_top">35.0dip</dimen>
+    <dimen name="durec_multi_live_platform_margin_top">20.0dip</dimen>
+    <dimen name="iap_envelope_b_margin">48.0dip</dimen>
+    <dimen name="iap_envelope_feature_text_size">12.0dip</dimen>
+    <dimen name="iap_envelope_text_f_size">12.0dip</dimen>
+    <dimen name="iap_envelope_text_fo_margin">10.0dip</dimen>
+    <dimen name="iap_envelope_text_fo_size">14.0dip</dimen>
+    <dimen name="iap_envelope_text_s_size">22.0dip</dimen>
+    <dimen name="durec_ytb_ads_revenue_record_income_width">100.0dip</dimen>
+    <dimen name="durec_ytb_ads_revenue_record_item_margin_start">16.0dip</dimen>
+    <dimen name="durec_ytb_ads_revenue_record_video_name_text_size">12.0sp</dimen>
+    <dimen name="durec_ytb_ads_revenue_record_video_name_width">131.0dip</dimen>
+    <dimen name="durec_ytb_ads_revenue_record_view_count_margin_start">10.0dip</dimen>
+    <dimen name="durec_ytb_ads_revenue_record_view_count_text_size">14.0sp</dimen>
+    <dimen name="durec_ytb_ads_revenue_record_view_number_width">100.0dip</dimen>
+</resources>

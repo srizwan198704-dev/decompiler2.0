@@ -1,0 +1,6 @@
+.class public Lcom/fun/report/sdk/c;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field public static a:Z
