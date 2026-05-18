@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip">
+        <EditText android:id="@id/translatesaveEditText1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="values-ru" android:ems="10" android:singleLine="true" android:layout_weight="1.0" android:inputType="text" />
+        <ImageView android:id="@id/translatesaveImageView1" android:background="?android:selectableItemBackground" android:padding="5.0dip" android:focusable="true" android:clickable="true" android:layout_width="30.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_collapse" android:scaleType="centerInside" android:adjustViewBounds="true" />
+    </LinearLayout>
+    <CheckBox android:id="@id/translatesaveCheckBox2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:text="@string/mtr_combine" />
+    <CheckBox android:id="@id/translatesaveCheckBox1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="@string/mtr_only_tr" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/mtr_info" />
+</LinearLayout>

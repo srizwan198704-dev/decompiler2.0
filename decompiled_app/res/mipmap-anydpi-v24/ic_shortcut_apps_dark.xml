@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="108.0dip" android:width="108.0dip" android:viewportWidth="108.0" android:viewportHeight="108.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <path android:fillColor="@color/ic_shortcut_background_dark" android:pathData="M54,54m-48.6,0a48.6,48.6 0,1 1,97.2 0a48.6,48.6 0,1 1,-97.2 0z" />
+    <path android:fillColor="@color/ic_shortcut_foreground_dark" android:pathData="M29.7,41.85h12.15V29.7h-6.07c-3.36,0 -6.08,2.72 -6.08,6.08V41.85zM47.92,78.3h12.15V66.15H47.92V78.3zM35.78,78.3h6.07V66.15H29.7v6.07C29.7,75.58 32.42,78.3 35.78,78.3zM29.7,60.08h12.15V47.92H29.7V60.08zM47.92,60.08h12.15V47.92H47.92V60.08zM66.15,29.7v12.15h12.15v-6.07c0,-3.36 -2.72,-6.08 -6.08,-6.08H66.15zM47.92,41.85h12.15V29.7H47.92V41.85zM66.15,60.08h12.15V47.92H66.15V60.08zM66.15,78.3h6.07c3.36,0 6.08,-2.72 6.08,-6.08v-6.07H66.15V78.3z" />
+</vector>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/checksumLinearLayout1" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/checksumTextView1" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/check_hash" android:labelFor="@id/checksumEditText1" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:id="@id/checksumEditText1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:ems="10" android:singleLine="true" android:layout_weight="1.0" />
+        <Button android:id="@id/checksumButton1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/paste" android:contentDescription="@string/paste" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/use_v1_sign" android:key="use_v1_sign" android:summary="@string/use_v1_sign_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/use_v2_sign" android:key="use_v2_sign" android:summary="@string/use_v2_sign_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/use_v3_sign" android:key="use_v3_sign" android:summary="@string/use_v3_sign_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/use_v4_sign" android:key="use_v4_sign" android:summary="@string/use_v4_sign_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.EditTextPreference android:title="@string/v1_cert_name" android:key="v1_cert_name" android:summary="@string/v1_cert_name_summary" />
+    <ru.maximoff.apktool.preference.EditTextPreference android:title="@string/created_cert_name" android:key="created_cert_name" android:summary="@string/created_cert_name_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/save_sign_data" android:key="save_sign_data" android:summary="@string/save_sign_data_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/sign_priority" android:key="sign_priority" android:summary="@string/sign_priority_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.RadioGroupPreference android:title="@string/default_key" android:key="default_key" android:summary="@string/default_key_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/custom_signature_file" android:key="custom_signature_file" android:summary="@string/custom_signature_file_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.KeystorePreference android:title="@string/signature_file" android:key="keystore" android:summary="@string/signature_file_summary" />
+    <ru.maximoff.apktool.preference.GenKeystorePreference android:title="@string/gen_key_title" android:key="gen_key" android:summary="@string/gen_key_summary" />
+</PreferenceScreen>

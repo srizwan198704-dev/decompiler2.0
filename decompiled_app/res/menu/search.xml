@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="all">
+        <item android:id="@id/search_regexp" android:title="@string/search_regexp" />
+        <item android:id="@id/whole_words" android:title="@string/whole_words" />
+        <item android:id="@id/search_case_sens" android:title="@string/search_sen2" />
+        <item android:id="@id/search_loop" android:title="@string/search_loop" />
+    </group>
+    <item android:id="@id/search_close" android:title="@string/close_cur" />
+</menu>

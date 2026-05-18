@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ru.maximoff.apktool.preference.RadioGroupPreference android:title="@string/LangTitle" android:key="lang" android:summary="@string/LangSummary" />
+    <ru.maximoff.apktool.preference.RadioGroupPreference android:title="@string/app_theme" android:key="app_theme" android:summary="@string/app_theme_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/system_theme" android:key="system_theme" android:summary="@string/system_theme_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.SelectIconPreference android:title="@string/select_icon" android:key="use_dark_icon" android:summary="@string/select_icon_summary" />
+    <ru.maximoff.apktool.preference.NumberPickerPreference android:title="@string/app_fontsz" android:key="napp_fontsz" android:summary="@string/app_fontsz_summary" />
+    <ru.maximoff.apktool.preference.RadioGroupPreference android:title="@string/file_size" android:key="file_size" android:summary="@string/file_size_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/dirs_size" android:key="dirs_size" android:summary="@string/dirs_size_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/hidden_files" android:key="hide_files" android:summary="@string/hidden_files_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/overwrite_apk" android:key="overwrite_apk" android:summary="@string/overwrite_apk_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/rem_path" android:key="remember_path" android:summary="@string/rem_path_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/round_icons" android:key="round_icons" android:summary="@string/round_icons_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/screen_on" android:key="screen_on" android:summary="@string/screen_on_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/check_install" android:key="check_install" android:summary="@string/check_install_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.RadioGroupPreference android:title="@string/install_options" android:key="install_opt" android:summary="@string/install_options_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/detect_protect" android:key="detect_protect" android:summary="@string/detect_protect_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.DualPreference android:title="@string/mapp_inLocation" android:key="installLocation" android:summary="@string/mapp_inLocation_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.EditTempPreference android:title="@string/apk_template" android:key="apk_name_tpl" android:summary="@string/apk_template_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/fix_drawer" android:key="drawer_fixed" android:summary="@string/fix_drawer_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.DualPreference android:title="@string/floating_button" android:key="floating_button" android:summary="@string/floating_button_summary" android:dependency="drawer_fixed" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/drawer_fullscreen" android:key="drawer_full" android:summary="@string/drawer_fullscreen_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.SeekBarPreference android:title="@string/drawer_width" android:key="drawer_width" android:summary="@string/drawer_width_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/share_type" android:key="share_type" android:summary="@string/share_type_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/copy_with_ext" android:key="copy_with_ext" android:summary="@string/copy_with_ext_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/show_exit" android:key="show_exit" android:summary="@string/show_exit_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/dont_reset_cpb" android:key="dont_reset_cpb" android:summary="@string/dont_reset_cpb_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.RadioGroupPreference android:title="@string/menu_position" android:key="menu_position" android:summary="@string/menu_position_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/scrollbar_left" android:key="scrollbar_left" android:summary="@string/scrollbar_left_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/fast_scroll" android:key="scrollbar_files" android:summary="@string/fast_scroll_summary2" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/double_exit" android:key="double_exit" android:summary="@string/double_exit_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/force_exit" android:key="force_exit" android:summary="@string/force_exit_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/keep_modified_time" android:key="keep_modified_time" android:summary="@string/keep_modified_time_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.SeekBarPreference android:title="@string/hl_time" android:key="hl_time" android:summary="@string/hl_time_summary" />
+    <ru.maximoff.apktool.preference.RadioGroupPreference android:title="@string/screen_orientation" android:key="screen_orientation" android:summary="@string/screen_orientation" />
+    <ru.maximoff.apktool.preference.RadioGroupPreference android:title="@string/date_format" android:key="date_format" android:summary="@string/date_format_summary" />
+    <ru.maximoff.apktool.preference.RadioGroupPreference android:title="@string/ds_display" android:key="ds_display" android:summary="@string/ds_display_summary" />
+    <ru.maximoff.apktool.preference.MultiPreference android:title="@string/checksum_format" android:key="checksum_format" android:summary="@string/checksum_format_summary" />
+    <ru.maximoff.apktool.preference.NumberPickerPreference android:title="@string/aicon_size" android:key="aicon_size" android:summary="@string/aicon_size_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/icons_outline" android:key="icons_outline" android:summary="@string/icons_outline_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/refreshing" android:key="refreshing" android:summary="@string/refreshing_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/old_picker" android:key="old_picker" android:summary="@string/old_picker_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/old_search" android:key="old_search_res" android:summary="@string/old_search_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/open_apk" android:key="open_apk" android:summary="@string/open_apk_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/imgs_backup" android:key="imgs_backup" android:summary="@string/imgs_backup_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/ignore_crc" android:key="ignore_crc" android:summary="@string/ignore_crc_summary" android:defaultValue="true" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/disable_crashes" android:key="disable_crashes" android:summary="@string/disable_crashes_summary" android:defaultValue="false" />
+    <ru.maximoff.apktool.preference.NumberPickerPreference android:title="@string/clear_preview" android:key="clear_preview" android:summary="@string/clear_preview_summary" />
+    <ru.maximoff.apktool.preference.TranslatorLangs android:title="@string/trlangs_settings" android:key="trlangs" android:summary="@string/trlangs_settings_summary" />
+    <ru.maximoff.apktool.preference.NumberPickerPreference android:title="@string/buffer_size" android:key="buffer_size" android:summary="@string/buffer_size_summary" />
+    <ru.maximoff.apktool.preference.ThreadsPickerPreference android:title="@string/threads_count" android:key="threads_count" android:summary="@string/threads_count_summary" />
+    <ru.maximoff.apktool.preference.RadioGroupPreference android:title="@string/user_cache" android:key="user_cache" android:summary="@string/user_cache_summary" />
+    <ru.maximoff.apktool.preference.EditTextPreference android:title="@string/shell_cmd" android:key="shell_cmd" android:summary="@string/shell_cmd_summary" />
+    <ru.maximoff.apktool.preference.EditTextPreference android:title="@string/shell_cmd_root" android:key="shell_cmd_root" android:summary="@string/shell_cmd_root_summary" />
+    <ru.maximoff.apktool.preference.CheckBoxPreference android:title="@string/snowfall" android:key="snowfall" android:summary="@string/snowfall_summary" android:defaultValue="true" />
+</PreferenceScreen>

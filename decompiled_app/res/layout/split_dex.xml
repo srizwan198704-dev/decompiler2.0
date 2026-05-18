@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:id="@id/splitdexLinearLayout1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:text="@string/sel_signature_file" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <Spinner android:id="@id/splitdexSpinner2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" />
+                <ImageView android:id="@id/splitdexImageView1" android:background="?android:selectableItemBackground" android:padding="5.0dip" android:focusable="true" android:clickable="true" android:layout_width="30.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_settings_light" android:scaleType="centerInside" android:adjustViewBounds="true" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/split_dex_label" />
+        <Spinner android:id="@id/splitdexSpinner1" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <TextView android:textAppearance="?android:textAppearanceMedium" android:id="@id/splitdexTextView1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <EditText android:id="@id/splitdexEditText1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:ems="10" android:singleLine="true" android:layout_weight="1.0" android:inputType="number" />
+            <ImageButton android:id="@id/splitdexImageButton1" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/ic_top" android:scaleType="centerInside" android:adjustViewBounds="true" android:contentDescription="@string/max_value" />
+        </LinearLayout>
+        <CheckBox android:id="@id/splitdexCheckBox1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/delete_orig" />
+        <TextView android:textAppearance="?android:textAppearanceSmall" android:id="@id/splitdexTextView2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/dex_limit_info" />
+    </LinearLayout>
+</ScrollView>
