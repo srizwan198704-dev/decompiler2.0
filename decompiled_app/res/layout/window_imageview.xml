@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_float_ball_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="@id/iv_float_ball" app:layout_constraintEnd_toEndOf="@id/iv_float_ball" app:layout_constraintStart_toStartOf="@id/iv_float_ball" app:layout_constraintTop_toTopOf="@id/iv_float_ball" />
-    <de.hdodenhof.circleimageview.CircleImageView android:id="@id/iv_float_ball" android:layout_width="fill_parent" android:layout_height="fill_parent" app:civ_border_color="#e6e6e6e6" />
-    <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_float_ball_loading" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>

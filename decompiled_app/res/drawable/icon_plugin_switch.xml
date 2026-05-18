@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<vector android:height="16.0dip" android:width="16.0dip" android:autoMirrored="true" android:viewportWidth="16.0" android:viewportHeight="16.0" xmlns:aapt="http://schemas.android.com/aapt"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <path android:fillColor="@drawable/$icon_plugin_switch__0" android:pathData="M11,3C13.7614,3 16,5.2386 16,8C16,10.7614 13.7614,13 11,13L5,13C2.2386,13 0,10.7614 0,8C-0,5.2386 2.2386,3 5,3L11,3ZM5,5C3.3431,5 2,6.3431 2,8C2,9.6569 3.3431,11 5,11C6.6569,11 8,9.6569 8,8C8,6.3431 6.6569,5 5,5Z" android:strokeColor="#00000000" android:strokeWidth="1.0" android:fillType="evenOdd" />
-</vector>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:background="?android:selectableItemBackground" android:layout_width="wrap_content" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
-        <ImageView android:layout_gravity="center" android:id="@id/item_image" android:background="@color/app_select_1" android:layout_width="120.0dip" android:layout_height="120.0dip" android:scaleType="centerCrop" />
-        <ImageView android:layout_gravity="end" android:id="@id/but_select_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:src="@drawable/ic_select" android:layout_marginEnd="8.0dip" />
-    </FrameLayout>
-</LinearLayout>

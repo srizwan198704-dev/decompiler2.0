@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <include layout="@layout/file_dialog_item_title_layout" />
-    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <com.vmos.filedialog.view.MyViewPager android:id="@id/app_fragment_tab_title_body" android:layout_width="fill_parent" android:layout_height="320.0dip" />
-    </FrameLayout>
-</merge>

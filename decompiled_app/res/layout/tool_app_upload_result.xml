@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/iv_upload_result" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="48.0dip" android:src="@mipmap/upload_app_result_sus" android:layout_marginStart="40.0dip" android:layout_marginEnd="40.0dip" />
-    <TextView android:textSize="16.0sp" android:textColor="#ff5672ff" android:layout_gravity="center_horizontal" android:id="@id/tv_upload_result" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/upload_success" />
-    <TextView android:textSize="12.0sp" android:textColor="#ff8d9199" android:layout_gravity="center_horizontal" android:id="@id/tv_upload_reponse" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_marginBottom="45.0dip" android:text="@string/upload_success_des" android:paddingStart="32.0dip" android:paddingEnd="32.0dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" />
-</merge>

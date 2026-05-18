@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <TextView android:textSize="12.0sp" android:textColor="#ff8d9199" android:id="@id/tv_vm_name" android:layout_width="0.0dip" android:layout_height="wrap_content" app:layout_constraintEnd_toStartOf="@id/tv_progress" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
-    <TextView android:textSize="10.0sp" android:textColor="@color/common_pro_blue" android:id="@id/tv_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="@id/tv_vm_name" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@id/tv_vm_name" />
-    <ProgressBar android:id="@id/pb_download" android:background="@drawable/bg_common_progress_16" android:layout_width="0.0dip" android:layout_height="2.0dip" android:layout_marginTop="8.0dip" android:max="100" android:progress="0" android:progressDrawable="@drawable/gradient_progress_16" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_vm_name" style="?android:progressBarStyleHorizontal" />
-</androidx.constraintlayout.widget.ConstraintLayout>

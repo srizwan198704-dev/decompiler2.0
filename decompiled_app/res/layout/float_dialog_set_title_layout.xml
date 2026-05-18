@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/cl_action_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintTop_toTopOf="parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <ImageView android:id="@id/iv_settings_back" android:background="?selectableItemBackground" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_common_back" android:layout_marginStart="8.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
-    <TextView android:textSize="18.0sp" android:textColor="@android:color/black" android:id="@id/tv_settings_title" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="@id/iv_settings_back" app:layout_constraintStart_toEndOf="@id/iv_settings_back" app:layout_constraintTop_toTopOf="@id/iv_settings_back" />
-    <TextView android:textSize="14.0sp" android:textColor="@color/float_top_bar_reset" android:id="@id/tv_settings_reset" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20.0dip" app:layout_constraintBottom_toBottomOf="@id/iv_settings_back" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@id/iv_settings_back" />
-</androidx.constraintlayout.widget.ConstraintLayout>

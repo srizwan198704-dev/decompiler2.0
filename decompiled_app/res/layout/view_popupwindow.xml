@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="@drawable/work_manager_pop_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="14.0sp" android:textColor="@color/black_1" android:gravity="center" android:id="@id/work_pop_1" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/work_pop_1" />
-    <TextView android:textSize="14.0sp" android:textColor="@color/black_1" android:gravity="center" android:id="@id/work_pop_2" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/work_pop_2" />
-    <TextView android:textSize="14.0sp" android:textColor="@color/black_1" android:gravity="center" android:id="@id/work_pop_3" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/work_pop_3" />
-    <View android:background="#fff3f3f5" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-    <TextView android:textSize="14.0sp" android:textColor="#ff111188" android:gravity="center" android:id="@id/tv_cancel" android:padding="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/cancel_txt" />
-</LinearLayout>

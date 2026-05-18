@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<vector android:height="16.0dip" android:width="16.0dip" android:autoMirrored="true" android:viewportWidth="16.0" android:viewportHeight="16.0" xmlns:aapt="http://schemas.android.com/aapt"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <path android:fillColor="#ff000000" android:pathData="M0,0h15.9844v15.9844h-15.9844z" android:strokeColor="#00000000" android:strokeWidth="1.0" android:strokeAlpha="0.0" android:fillAlpha="0.0" android:fillType="nonZero" />
-    <path android:fillColor="@drawable/$icon_download_vip_rom__0" android:pathData="M13,13C13.5523,13 14,13.4477 14,14C14,14.5523 13.5523,15 13,15L3,15C2.4477,15 2,14.5523 2,14C2,13.4477 2.4477,13 3,13L13,13ZM9,1C9.5523,1 10,1.4477 10,2L9.999,6L13.0343,6C13.2552,6 13.4343,6.1791 13.4343,6.4C13.4343,6.5061 13.3922,6.6078 13.3172,6.6828L8.4243,11.5757C8.1899,11.8101 7.8101,11.8101 7.5757,11.5757L2.6828,6.6828C2.5266,6.5266 2.5266,6.2734 2.6828,6.1172C2.7579,6.0421 2.8596,6 2.9657,6L5.999,6L6,2C6,1.4477 6.4477,1 7,1L9,1Z" android:strokeColor="#00000000" android:strokeWidth="1.0" android:fillType="evenOdd" />
-</vector>

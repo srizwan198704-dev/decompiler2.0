@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/ivSearchLeft" android:visibility="gone" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@mipmap/_ktx_ic_search" />
-    <EditText android:textSize="14.0sp" android:textColor="#ff222222" android:textColorHint="#ff888888" android:id="@id/et_content" android:background="@null" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:singleLine="true" android:layout_weight="1.0" />
-    <ImageView android:id="@id/ivSearchRight" android:visibility="gone" android:layout_width="20.0dip" android:layout_height="28.0dip" android:src="@mipmap/_ktx_ic_search" />
-    <ImageView android:id="@id/ivClear" android:visibility="gone" android:layout_width="20.0dip" android:layout_height="20.0dip" android:src="@mipmap/_ktx_ic_image_del" />
-</merge>

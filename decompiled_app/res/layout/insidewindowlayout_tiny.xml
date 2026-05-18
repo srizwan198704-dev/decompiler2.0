@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:layout_gravity="center" android:id="@id/rl_root" android:background="#80000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <View android:id="@id/id_layout_show_point" android:layout_width="10.0dip" android:layout_height="10.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
-    <androidx.constraintlayout.widget.ConstraintLayout android:orientation="vertical" android:id="@id/rl_content" android:background="@drawable/window_style" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="@id/id_layout_show_point" app:layout_constraintEnd_toEndOf="@id/id_layout_show_point" app:layout_constraintStart_toStartOf="@id/id_layout_show_point" app:layout_constraintTop_toTopOf="@id/id_layout_show_point">
-        <androidx.recyclerview.widget.RecyclerView android:id="@id/rl_menu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:nestedScrollingEnabled="false" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>

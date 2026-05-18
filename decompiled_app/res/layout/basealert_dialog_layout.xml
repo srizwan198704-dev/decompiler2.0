@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:orientation="vertical" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:overScrollMode="never"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout android:orientation="vertical" android:id="@id/parent_view" android:paddingTop="@dimen/dialog_padding_top" android:paddingBottom="@dimen/dialog_padding_bottom" android:layout_width="fill_parent" android:layout_height="wrap_content">
-        <TextView android:textSize="@dimen/sp_16" android:textStyle="bold" android:textColor="@color/base_alert_dialog_title_color" android:gravity="center" android:id="@id/base_alert_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/alert_dialog_title_padding" android:includeFontPadding="false" android:layout_marginStart="@dimen/dialog_txt_margin_start_end" android:layout_marginEnd="@dimen/dialog_txt_margin_start_end" />
-        <LinearLayout android:orientation="vertical" android:id="@id/content_view" android:paddingTop="@dimen/alert_dialog_title_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" />
-    </LinearLayout>
-</ScrollView>

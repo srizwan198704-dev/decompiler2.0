@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:id="@id/rootView" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.vmos.pro.modules.widget.AnimPhotoView android:id="@id/image" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    <com.vmos.pro.widget.longimage.SubsamplingScaleImageView android:id="@id/longImg" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true" />
-    <ProgressBar android:layout_gravity="center" android:id="@id/loading" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
-</FrameLayout>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/translucent_black_50" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
-        <ImageView android:id="@id/iv_first_messag" android:layout_width="wrap_content" android:layout_height="wrap_content" app:srcCompat="@drawable/ic_hint_double_click_start_vm" />
-        <TextView android:textSize="@dimen/text_size_first_message_normal" android:textColor="@color/white" android:id="@id/tv_first_messag" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/click_to_menu_1" />
-        <TextView android:textSize="@dimen/text_size_first_message_normal" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_do_not_show_tip" android:background="@drawable/bg_transparent_rd16" android:paddingTop="@dimen/padding_top_first_message_normal" android:paddingBottom="@dimen/padding_top_first_message_normal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/know" android:paddingStart="@dimen/padding_left_first_message_normal" android:paddingEnd="@dimen/padding_left_first_message_normal" />
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
