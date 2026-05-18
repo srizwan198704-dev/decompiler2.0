@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/circle_radius_bg" android:layout_width="fill_parent" android:layout_height="400.0dip" android:minWidth="230.0dip" android:layout_centerInParent="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/margin_left_vm_layout_normal">
+        <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="@color/black_1" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_left_vm_layout_normal" android:text="@string/select_rom_title" android:layout_centerVertical="true" />
+        <ImageView android:layout_gravity="center" android:id="@id/image_right" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/rom_dialog_icon2" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_market_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:nestedScrollingEnabled="false" />
+        <RelativeLayout android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@id/empty_view" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+            <ImageView android:id="@id/iv_empty" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/ic_download_empty" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="14.0sp" android:textColor="#ff8d9199" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/work_empty_des" android:layout_below="@id/iv_empty" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </FrameLayout>
+</LinearLayout>

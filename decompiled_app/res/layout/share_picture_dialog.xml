@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/image" android:layout_width="220.0dip" android:layout_height="320.0dip" android:scaleType="matrix" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/save" android:background="@drawable/blue_circle_bg" android:layout_width="220.0dip" android:layout_height="44.0dip" android:layout_marginTop="@dimen/margin_left_vm_layout_normal" android:text="@string/save_pic_to_gallery" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/image" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff393c40" android:gravity="center" android:id="@id/cancel" android:background="@drawable/white_circle_bg" android:layout_width="220.0dip" android:layout_height="44.0dip" android:layout_marginTop="8.0dip" android:text="@string/cancel" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/save" />
+</androidx.constraintlayout.widget.ConstraintLayout>

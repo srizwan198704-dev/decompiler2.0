@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/set_colorAccent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/top_bar" app:layout_constraintTop_toTopOf="parent" layout="@layout/set_title_layout" />
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/ll_master_player_adb" android:paddingLeft="27.0dip" android:paddingTop="24.0dip" android:paddingRight="27.0dip" android:paddingBottom="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@id/top_bar">
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="16.0sp" android:textColor="@color/set_dialog_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/set_vmos_network_adb" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/set_dialog_title_detail" android:id="@id/set_switch_network_adb_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/set_vmos_network_adb_detail" />
+        </LinearLayout>
+        <Switch android:textSize="12.0sp" android:textColor="@color/set_dialog_title8" android:id="@id/set_switch_network_adb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:thumb="@drawable/shape_switch_thumb" android:track="@drawable/shape_switch_track_selector" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/ll_master_player_proxy" android:paddingLeft="27.0dip" android:paddingTop="24.0dip" android:paddingRight="27.0dip" android:paddingBottom="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@id/ll_master_player_adb">
+        <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <TextView android:textSize="16.0sp" android:textColor="@color/set_dialog_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/set_vmos_proxy" />
+            <TextView android:textSize="12.0sp" android:textColor="@color/set_dialog_title_detail" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/set_vmos_proxy_detil" />
+        </LinearLayout>
+        <Switch android:textSize="12.0sp" android:textColor="@color/set_dialog_title8" android:id="@id/set_switch_network_proxy" android:layout_width="wrap_content" android:layout_height="wrap_content" android:thumb="@drawable/shape_switch_thumb" android:track="@drawable/shape_switch_track_selector" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/set_colorAccent" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/set_title_layout" />
+    <Switch android:textSize="16.0sp" android:textColor="@color/set_dialog_title" android:id="@id/set_switch_run_virtual_key" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="21.0dip" android:layout_marginBottom="21.0dip" android:thumb="@drawable/shape_switch_thumb" android:text="@string/set_vmos_virtual_key" android:track="@drawable/shape_switch_track_selector" android:layout_marginStart="24.0dip" android:layout_marginEnd="26.0dip" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/but_virtual_key_1" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/image_virtual_key_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_virtual_key_1" android:layout_marginStart="24.0dip" />
+        <ImageView android:id="@id/image_virtual_key_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dip" android:layout_marginRight="32.0dip" android:src="@drawable/ic_virtual_key_2" />
+        <ImageView android:id="@id/image_virtual_key_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_virtual_key_3" />
+        <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+        <RadioButton android:id="@id/image_virtual_radio_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="30.0dip" style="@style/RadioButtonStyles" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/but_virtual_key_2" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/image_virtual_key_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_virtual_key_4" android:layout_marginStart="24.0dip" />
+        <ImageView android:id="@id/image_virtual_key_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dip" android:layout_marginRight="32.0dip" android:src="@drawable/ic_virtual_key_5" />
+        <ImageView android:id="@id/image_virtual_key_6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_virtual_key_6" />
+        <View android:layout_width="0.0dip" android:layout_height="1.0dip" android:layout_weight="1.0" />
+        <RadioButton android:id="@id/image_virtual_radio_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="30.0dip" style="@style/RadioButtonStyles" />
+    </LinearLayout>
+</LinearLayout>

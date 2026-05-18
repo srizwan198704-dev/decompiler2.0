@@ -1,0 +1,1006 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="34" android:compileSdkVersionCodename="14" package="com.vmos.pro" platformBuildVersionCode="34" platformBuildVersionName="14">
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <permission android:name="com.vmos.pro.openadsdk.permission.TT_PANGOLIN" android:protectionLevel="signature"/>
+    <queries package="com.vmos.pro">
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE"/>
+        </intent>
+        <intent>
+            <action android:name="android.media.action.ACTION_VIDEO_CAPTURE"/>
+        </intent>
+        <package android:name="com.vmos.pro"/>
+        <intent>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW"/>
+        </intent>
+    </queries>
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN"/>
+        </intent>
+        <package android:name="com.tencent.mm"/>
+    </queries>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.REORDER_TASKS"/>
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES"/>
+    <uses-permission android:name="android.permission.ACCESS_GPS"/>
+    <uses-permission android:name="android.permission.ACCESS_ASSISTED_GPS"/>
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.miui.home.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.miui.home.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="com.google.android.apps.nexuslauncher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="org.adw.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.qihoo360.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.lge.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="net.qihoo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="org.adwfreak.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="org.adw.launcher_donut.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher3.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.fede.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.sec.android.app.twlauncher.settings.READ_SETTINGS"/>
+    <uses-permission android:name="com.anddoes.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.tencent.qqlauncher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.mylauncher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.ebproductions.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.oppo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.lenovo.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.bbk.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="cn.nubia.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="cn.nubia.launcher.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="cn.nubia.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="cn.nubia.launcher2.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="net.oneplus.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="net.oneplus.launcher.permission.WRITE_SETTINGS"/>
+    <uses-feature android:name="android.hardware.wifi.direct" android:required="true"/>
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true"/>
+    <uses-feature android:name="android.hardware.camera.front" android:required="false"/>
+    <uses-feature android:name="android.hardware.microphone" android:required="false"/>
+    <uses-permission android:name="android.permission.ACCESS_ALL_DOWNLOADS"/>
+    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false"/>
+    <application android:allowBackup="true" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:name="com.vmos.pro.PureApplication" android:networkSecurityConfig="@xml/network_security_config" android:requestLegacyExternalStorage="true" android:resizeableActivity="false" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme">
+        <meta-data android:name="ScopedStorage" android:value="true"/>
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.tencent.tauth.AuthActivity" android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <data android:scheme="tencent1109614118"/>
+            </intent-filter>
+        </activity>
+        <receiver android:enabled="true" android:exported="false" android:name="com.vmos.pro.service.DetectPhantomProcessReceive" android:process=":detectPhantomProcess"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:name="com.tencent.connect.common.AssistActivity" android:screenOrientation="behind" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:name="com.vmos.pro.activities.deepguide.DeepGuideActivity" android:screenOrientation="portrait" android:theme="@style/TranslucentTheme"/>
+        <meta-data android:name="5e952794167edd40870003d2" android:value="UMENG_APPKEY"/>
+        <meta-data android:name="app" android:value="UMENG_CHANNEL"/>
+        <activity android:name="com.vmos.pro.activities.backupsrom.BackupsRomActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.vmos.recoverylib.service.BackupsService"/>
+        <service android:name="com.vmos.recoverylib.service.RecoveryService"/>
+        <activity android:launchMode="singleTask" android:name="com.vmos.pro.modules.post.PostSimpleActivity" android:screenOrientation="portrait"/>
+        <activity android:enabled="true" android:exported="true" android:icon="@mipmap/ic_launcher" android:name="com.vmos.pro.activities.PureSplashActivity" android:screenOrientation="portrait" android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <service android:exported="false" android:name="com.vmos.pro.service.KeepLiveVpnService" android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService"/>
+            </intent-filter>
+        </service>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.vmos.pro.activities.main.MainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <data android:host="com.vmos.pro" android:scheme="rom"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+        <activity android:launchMode="singleTop" android:name="com.vmos.pro.activities.details.RomDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.ui.protocol.WebViewActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.modules.bbs.BbsWebViewActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.vmos.pro.modules.bbs.BbsOutWebViewActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name="com.vmos.pro.activities.activevip.ActiveVipActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.addvm.AddVmActivityKt" android:theme="@style/SwipeBackTheme" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name="com.vmos.pro.activities.recoveryvm.RecoveryVmActivity" android:theme="@style/SwipeBackTheme"/>
+        <activity android:name="com.vmos.pro.activities.addlocalvm.AddLocalVmActivity" android:theme="@style/SwipeBackTheme"/>
+        <activity android:name="com.vmos.pro.activities.addremotevm.AddRemoteVmActivity" android:theme="@style/SwipeBackTheme"/>
+        <activity android:name="com.vmos.pro.activities.activevip.ForeignAcitivtyDetail" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA01" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer01" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA02" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer02" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA03" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer03" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA04" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer04" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA05" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer05" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA06" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer06" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA07" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer07" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA08" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer08" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA09" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer09" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA0a" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer0a" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA0b" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer0b" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA0c" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer0c" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA0d" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer0d" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA0e" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer0e" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA0f" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer0f" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA10" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer10" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA11" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer11" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA12" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer12" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA13" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer13" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA14" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer14" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA15" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer15" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA16" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer16" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA17" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer17" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA18" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer18" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA19" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer19" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA1a" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer1a" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA1b" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer1b" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA1c" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer1c" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA1d" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer1d" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA1e" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer1e" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA1f" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer1f" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA20" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer20" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA21" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer21" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA22" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer22" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA23" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer23" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA24" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer24" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA25" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer25" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA26" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer26" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA27" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer27" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA28" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer28" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA29" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer29" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA2a" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer2a" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA2b" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer2b" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA2c" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer2c" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA2d" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer2d" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA2e" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer2e" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA2f" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer2f" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA30" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer30" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA31" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer31" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA32" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer32" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA33" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer33" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA34" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer34" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA35" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer35" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA36" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer36" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA37" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer37" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA38" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer38" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA39" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer39" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA3a" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer3a" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA3b" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer3b" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA3c" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer3c" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA3d" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer3d" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA3e" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer3e" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA3f" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer3f" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA40" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer40" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA41" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer41" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA42" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer42" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA43" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer43" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA44" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer44" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA45" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer45" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA46" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer46" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA47" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer47" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA48" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer48" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA49" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer49" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA4a" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer4a" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA4b" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer4b" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA4c" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer4c" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA4d" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer4d" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA4e" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer4e" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA4f" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer4f" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA50" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer50" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA51" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer51" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA52" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer52" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA53" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer53" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA54" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer54" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA55" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer55" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA56" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer56" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA57" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer57" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA58" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer58" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA59" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer59" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA5a" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer5a" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA5b" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer5b" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA5c" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer5c" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA5d" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer5d" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA5e" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer5e" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA5f" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer5f" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA60" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer60" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA61" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer61" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA62" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer62" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA63" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer63" android:theme="@style/TranslucentTheme"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleInstance" android:name="com.vmos.pro.vmsupport.MultiVmSupport$RA64" android:resizeableActivity="true" android:screenOrientation="portrait" android:taskAffinity="com.vmos.pro.renderer64" android:theme="@style/TranslucentTheme"/>
+        <activity android:launchMode="singleTop" android:name="com.vmos.pro.activities.permission.ShowFloatTipsActivity" android:theme="@style/TipsDialog"/>
+        <service android:exported="true" android:name="com.vmos.pro.window.WindowService" android:process=":window">
+            <intent-filter>
+                <action android:name="com.vmos.pro.WindowService"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.vmos.pro.updateself" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <provider android:authorities="com.vmos.pro.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="com.vmos.filedialog.VmosFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/provider_paths"/>
+        </provider>
+        <activity android:name="com.vmos.pro.activities.login.LoginActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.login.LoginEmailActivity" android:screenOrientation="portrait"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="true" android:name="com.vmos.pro.wxapi.WXEntryActivity" android:theme="@style/SwipeBackTheme"/>
+        <activity android:name="com.vmos.pro.activities.register.RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.register.RegisterEmailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.updatepwd.UpdatePwdActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.updatepwd.UpdateEmailPwdActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.register.InputCodeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.register.InputEmailCodeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.updatepwd.SettingPwdActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.updatepwd.SetEmailPwdActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.updateuserinfo.UpdateHeadImgActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.updateuserinfo.ShowUserInfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.updateuserinfo.UpdateNameActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.vip.VipDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.main.fragments.vmlist.cloud.RenewDeviceActivity" android:screenOrientation="portrait"/>
+        <activity android:name="cn.vmos.cloudphone.home.rom.ImageUpdateActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.vip.VipEmailDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.WebExchangeActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.modules.bindphone.BindPhoneInputActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.modules.bindphone.BindPhoneConfirmActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:launchMode="singleTop" android:name="com.vmos.pro.wxapi.WXPayEntryActivity"/>
+        <activity android:exported="true" android:launchMode="singleTop" android:name="com.vmos.pro.utils.pay.QQPayCallbackActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="qwallet1109614118"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.vmos.pro.activities.AboutUsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.SettingActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/change_pwd" android:name="com.vmos.pro.modules.user.changepwd.ChangePwdAct" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTask" android:name="com.vmos.pro.modules.mydownload.MyDownloadActivity2" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.modules.market.detail.AppDetailAct" android:screenOrientation="portrait"/>
+        <activity android:label="@string/comments" android:name="com.vmos.pro.modules.market.comment.AppPostCommentAct" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.modules.market.detail.img.ImagePagerActivity" android:screenOrientation="portrait"/>
+        <activity android:launchMode="singleTop" android:name="com.vmos.pro.modules.bbs2.detail.BbsDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.modules.bbs2.BbsLinkWebViewActivity" android:screenOrientation="portrait"/>
+        <service android:name="com.vmos.pro.modules.download.DownloadService"/>
+        <activity android:name="com.vmos.pro.modules.post.PostVoteActivity" android:screenOrientation="portrait"/>
+        <provider android:authorities="vmospro_downloads" android:name="com.vmos.pro.modules.download.DownloadProvider"/>
+        <receiver android:name="com.vmos.utillibrary.base.ShortcutCallback"/>
+        <activity android:name="com.vmos.pro.modules.user.points2vip.GetFreeVipActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.cancelaccount.CancelAccountActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.vmos.pro.activities.renderer.ShortcutTransferActivity" android:screenOrientation="portrait" android:theme="@style/AppThemeTranslucent"/>
+        <activity android:name="com.vmos.pro.modules.bbs2.search.SearchBbsActivity" android:screenOrientation="portrait" android:windowSoftInputMode="adjustResize"/>
+        <activity android:launchMode="singleTask" android:name="com.vmos.pro.modules.bbs2.detail.CopyContentActivity" android:screenOrientation="portrait" android:theme="@style/TranslucentTheme"/>
+        <activity android:name="com.vmos.pro.activities.creationcenter.CreationCenterActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.creationcenter.PublishWorkActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.creationcenter.WorkManagerActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.creationcenter.EarningsDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.creationcenter.BuyRecordActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.vip.JoinVipPaymentActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.community.OfficialNoticeListActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.community.CommunityPostsSearchActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.cloudphone.CloudPhoneDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.vmos.pro.activities.operationevent.OperationEventActivity" android:screenOrientation="portrait"/>
+        <provider android:authorities="com.vmos.provider.dataReceiveProvider" android:enabled="true" android:exported="true" android:name="com.vmos.pro.provider.VmosDataReceivedProvider"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:launchMode="singleTop" android:name="com.yalantis.ucrop.UCropActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <service android:enabled="true" android:name="com.vmos.pro.service.VmProviderService" android:process=":server"/>
+        <meta-data android:name="VOLC_ACCOUNT_ID" android:value="2100318219"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:exported="false" android:name="com.alipay.sdk.app.H5PayActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:exported="false" android:name="com.alipay.sdk.app.H5AuthActivity" android:theme="@android:style/Theme.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:exported="true" android:launchMode="singleInstance" android:name="com.alipay.sdk.app.PayResultActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.alipay.sdk.app.AlipayResultActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:exported="false" android:name="com.alipay.sdk.app.H5OpenAuthActivity" android:screenOrientation="behind" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:configChanges="keyboardHidden|navigation|orientation|screenSize" android:exported="false" android:name="com.alipay.sdk.app.APayEntranceActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.vmos.assistant.ui.AssistantMainActivity"/>
+        <activity android:name="com.vmos.assistant.ui.ActivationPrepareActivity"/>
+        <activity android:name="com.vmos.assistant.ui.AboutActivity"/>
+        <service android:enabled="true" android:exported="false" android:foregroundServiceType="connectedDevice" android:name="com.vmos.assistant.service.WirelessDebugPairService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.vmos.assistant.service.ReceivePairCodeInputService"/>
+        <activity android:configChanges="orientation|screenSize" android:hardwareAccelerated="true" android:name="com.lxj.androidktx.base.WebActivity" android:theme="@style/_FullScreenTheme"/>
+        <activity android:launchMode="singleTop" android:name="com.lxj.androidktx.qrcode.QrCodeActivity" android:theme="@style/_FullScreenTheme"/>
+        <activity android:launchMode="singleTop" android:name="com.lxj.androidktx.picker.PickerEmptyActivity" android:theme="@style/_TranslucentTheme"/>
+        <activity android:name="com.lxj.androidktx.base.FragmentWrapperActivity" android:screenOrientation="portrait"/>
+        <activity android:name="com.lxj.androidktx.picker.KTXCameraActivity" android:screenOrientation="portrait" android:theme="@style/_FullScreenTheme"/>
+        <service android:enabled="true" android:exported="true" android:label="自动打开无线调试" android:name="com.vmos.adbshellhelperlib.accessibility.CoreAccessibilityService" android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService"/>
+            </intent-filter>
+            <meta-data android:name="android.accessibilityservice" android:resource="@xml/accessibility_service_config"/>
+        </service>
+        <meta-data android:name="android.notch_support" android:value="true"/>
+        <activity android:name="com.lxj.xpopup.util.XPermission$PermissionActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <provider android:authorities="com.vmos.pro.luckProvider" android:exported="false" android:grantUriPermissions="true" android:name="com.luck.picture.lib.basic.PictureFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/ps_file_paths"/>
+        </provider>
+        <service android:enabled="true" android:foregroundServiceType="location" android:name="com.luck.picture.lib.service.ForegroundService"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.luck.picture.lib.basic.PictureSelectorSupporterActivity" android:theme="@style/Base.Theme.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.luck.picture.lib.basic.PictureSelectorTransparentActivity" android:theme="@style/Picture.Theme.Translucent"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.yalantis.ucrop.UCropMultipleActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:name="com.luck.lib.camerax.PictureCameraActivity" android:theme="@style/Base.Theme.NoActionBar"/>
+        <provider android:authorities="com.vmos.pro.therouter.TheRouteContentProvider" android:exported="false" android:name="com.therouter.InnerTheRouterContentProvider"/>
+        <provider android:authorities="com.vmos.pro.CodeLocatorProvider" android:exported="true" android:name="com.bytedance.tools.codelocator.CodeLocatorProvider"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:name="com.blankj.utilcode.util.UtilsTransActivity4MainProcess" android:theme="@style/ActivityTranslucent" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:multiprocess="true" android:name="com.blankj.utilcode.util.UtilsTransActivity" android:theme="@style/ActivityTranslucent" android:windowSoftInputMode="stateAlwaysHidden"/>
+        <provider android:authorities="com.vmos.pro.utilcode.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="com.blankj.utilcode.util.UtilsFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/util_code_provider_paths"/>
+        </provider>
+        <service android:exported="false" android:name="com.blankj.utilcode.util.MessengerUtils$ServerService">
+            <intent-filter>
+                <action android:name="com.vmos.pro.messenger"/>
+            </intent-filter>
+        </service>
+        <activity android:name="com.zhihu.matisse.ui.MatisseActivity"/>
+        <activity android:name="com.zhihu.matisse.internal.ui.AlbumPreviewActivity"/>
+        <activity android:name="com.zhihu.matisse.internal.ui.SelectedPreviewActivity"/>
+        <meta-data android:name="com.bumptech.glide.integration.okhttp3.OkHttpGlideModule" android:value="GlideModule"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+        <provider android:authorities="com.vmos.pro.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
+            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
+            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
+        </provider>
+        <service android:enabled="false" android:exported="false" android:name="androidx.camera.core.impl.MetadataHolderService">
+            <meta-data android:name="androidx.camera.core.impl.MetadataHolderService.DEFAULT_CONFIG_PROVIDER" android:value="androidx.camera.camera2.Camera2Config$DefaultProvider"/>
+        </service>
+        <meta-data android:name="com.bumptech.glide.integration.webp.WebpGlideModule" android:value="GlideModule"/>
+        <provider android:authorities="com.vmos.pro.vmos.provider" android:exported="false" android:multiprocess="false" android:name="com.vmos.server.VMOSServerProvider" android:process=":server"/>
+        <provider android:authorities="com.vmos.pro.fileprovider" android:exported="false" android:grantUriPermissions="true" android:name="com.vmos.provider.VmosFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS01" android:process=":vms01">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS02" android:process=":vms02">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS03" android:process=":vms03">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS04" android:process=":vms04">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS05" android:process=":vms05">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS06" android:process=":vms06">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS07" android:process=":vms07">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS08" android:process=":vms08">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS09" android:process=":vms09">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS0a" android:process=":vms0a">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS0b" android:process=":vms0b">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS0c" android:process=":vms0c">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS0d" android:process=":vms0d">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS0e" android:process=":vms0e">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS0f" android:process=":vms0f">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS10" android:process=":vms10">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS11" android:process=":vms11">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS12" android:process=":vms12">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS13" android:process=":vms13">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS14" android:process=":vms14">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS15" android:process=":vms15">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS16" android:process=":vms16">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS17" android:process=":vms17">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS18" android:process=":vms18">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS19" android:process=":vms19">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS1a" android:process=":vms1a">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS1b" android:process=":vms1b">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS1c" android:process=":vms1c">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS1d" android:process=":vms1d">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS1e" android:process=":vms1e">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS1f" android:process=":vms1f">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS20" android:process=":vms20">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS21" android:process=":vms21">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS22" android:process=":vms22">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS23" android:process=":vms23">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS24" android:process=":vms24">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS25" android:process=":vms25">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS26" android:process=":vms26">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS27" android:process=":vms27">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS28" android:process=":vms28">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS29" android:process=":vms29">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS2a" android:process=":vms2a">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS2b" android:process=":vms2b">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS2c" android:process=":vms2c">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS2d" android:process=":vms2d">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS2e" android:process=":vms2e">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS2f" android:process=":vms2f">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS30" android:process=":vms30">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS31" android:process=":vms31">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS32" android:process=":vms32">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS33" android:process=":vms33">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS34" android:process=":vms34">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS35" android:process=":vms35">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS36" android:process=":vms36">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS37" android:process=":vms37">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS38" android:process=":vms38">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS39" android:process=":vms39">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS3a" android:process=":vms3a">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS3b" android:process=":vms3b">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS3c" android:process=":vms3c">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS3d" android:process=":vms3d">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS3e" android:process=":vms3e">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS3f" android:process=":vms3f">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS40" android:process=":vms40">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS41" android:process=":vms41">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS42" android:process=":vms42">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS43" android:process=":vms43">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS44" android:process=":vms44">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS45" android:process=":vms45">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS46" android:process=":vms46">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS47" android:process=":vms47">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS48" android:process=":vms48">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS49" android:process=":vms49">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS4a" android:process=":vms4a">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS4b" android:process=":vms4b">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS4c" android:process=":vms4c">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS4d" android:process=":vms4d">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS4e" android:process=":vms4e">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS4f" android:process=":vms4f">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS50" android:process=":vms50">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS51" android:process=":vms51">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS52" android:process=":vms52">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS53" android:process=":vms53">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS54" android:process=":vms54">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS55" android:process=":vms55">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS56" android:process=":vms56">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS57" android:process=":vms57">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS58" android:process=":vms58">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS59" android:process=":vms59">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS5a" android:process=":vms5a">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS5b" android:process=":vms5b">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS5c" android:process=":vms5c">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS5d" android:process=":vms5d">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS5e" android:process=":vms5e">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS5f" android:process=":vms5f">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS60" android:process=":vms60">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS61" android:process=":vms61">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS62" android:process=":vms62">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS63" android:process=":vms63">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.VMOSEngineServiceFactory$VMS64" android:process=":vms64">
+            <intent-filter>
+                <action android:name="com.vmos.core.ENGINE_SERVICE"/>
+            </intent-filter>
+        </service>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS1" android:process=":m1"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS2" android:process=":m2"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS3" android:process=":m3"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS4" android:process=":m4"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS5" android:process=":m5"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS6" android:process=":m6"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS7" android:process=":m7"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS8" android:process=":m8"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS9" android:process=":m9"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS10" android:process=":m10"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS11" android:process=":m11"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS12" android:process=":m12"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS13" android:process=":m13"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS14" android:process=":m14"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS15" android:process=":m15"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS16" android:process=":m16"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS17" android:process=":m17"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS18" android:process=":m18"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS19" android:process=":m19"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS20" android:process=":m20"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS21" android:process=":m21"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS22" android:process=":m22"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS23" android:process=":m23"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS24" android:process=":m24"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS25" android:process=":m25"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS26" android:process=":m26"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS27" android:process=":m27"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS28" android:process=":m28"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS29" android:process=":m29"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS30" android:process=":m30"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS31" android:process=":m31"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS32" android:process=":m32"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS33" android:process=":m33"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS34" android:process=":m34"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS35" android:process=":m35"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS36" android:process=":m36"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS37" android:process=":m37"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS38" android:process=":m38"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS39" android:process=":m39"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS40" android:process=":m40"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS41" android:process=":m41"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS42" android:process=":m42"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS43" android:process=":m43"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS44" android:process=":m44"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS45" android:process=":m45"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS46" android:process=":m46"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS47" android:process=":m47"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS48" android:process=":m48"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS49" android:process=":m49"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS50" android:process=":m50"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS51" android:process=":m51"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS52" android:process=":m52"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS53" android:process=":m53"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS54" android:process=":m54"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS55" android:process=":m55"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS56" android:process=":m56"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS57" android:process=":m57"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS58" android:process=":m58"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS59" android:process=":m59"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS60" android:process=":m60"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS61" android:process=":m61"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS62" android:process=":m62"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS63" android:process=":m63"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS64" android:process=":m64"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS65" android:process=":m65"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS66" android:process=":m66"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS67" android:process=":m67"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS68" android:process=":m68"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS69" android:process=":m69"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS70" android:process=":m70"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS71" android:process=":m71"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS72" android:process=":m72"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS73" android:process=":m73"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS74" android:process=":m74"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS75" android:process=":m75"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS76" android:process=":m76"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS77" android:process=":m77"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS78" android:process=":m78"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS79" android:process=":m79"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS80" android:process=":m80"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS81" android:process=":m81"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS82" android:process=":m82"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS83" android:process=":m83"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS84" android:process=":m84"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS85" android:process=":m85"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS86" android:process=":m86"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS87" android:process=":m87"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS88" android:process=":m88"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS89" android:process=":m89"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS90" android:process=":m90"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS91" android:process=":m91"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS92" android:process=":m92"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS93" android:process=":m93"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS94" android:process=":m94"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS95" android:process=":m95"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS96" android:process=":m96"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS97" android:process=":m97"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS98" android:process=":m98"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS99" android:process=":m99"/>
+        <service android:exported="false" android:name="com.vmos.core.hwservice.HWServiceFactory$HWS100" android:process=":m100"/>
+        <service android:name="com.vmos.exsocket.engine.ExEngineService"/>
+        <service android:exported="true" android:name="com.vmos.exsocket.sample.rom.SampleRomService">
+            <intent-filter>
+                <action android:name="com.vmos.exsocket.rom.SampleRomService"/>
+                <action android:name="com.vmos.exsocket.rom.TOOL_WIDGET_CLICK"/>
+                <action android:name="com.vmos.exsocket.rom.TUTORIAL_CLICK"/>
+                <action android:name="com.vmos.exsocket.rom.IMPORT_CLICK"/>
+                <action android:name="com.vmos.exsocket.rom.FILE_TRANS_CLICK"/>
+                <action android:name="com.vmos.exsocket.rom.VMSETTING_CLICK"/>
+                <action android:name="com.vmos.exsocket.rom.CUSTOM_CLICK"/>
+            </intent-filter>
+        </service>
+        <provider android:authorities="com.vmos.pro.EasyFloatInitializer" android:exported="false" android:multiprocess="true" android:name="com.lzf.easyfloat.EasyFloatInitializer"/>
+        <provider android:authorities="com.vmos.pro.restrictionbypass" android:enabled="true" android:exported="false" android:name="org.chickenhook.restrictionbypass.BypassProvider"/>
+        <service android:name="com.liulishuo.filedownloader.services.FileDownloadService$SharedMainProcessService"/>
+        <service android:name="com.liulishuo.filedownloader.services.FileDownloadService$SeparateProcessService" android:process=":filedownloader"/>
+        <provider android:authorities="com.vmos.pro.com.liulishuo.okdownload" android:exported="false" android:name="com.liulishuo.okdownload.OkDownloadProvider"/>
+        <provider android:authorities="com.vmos.pro.AgentWebFileProvider" android:exported="false" android:grantUriPermissions="true" android:name="com.just.agentweb.AgentWebFileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/web_files_public"/>
+        </provider>
+        <activity android:configChanges="keyboardHidden|orientation|screenSize" android:exported="false" android:launchMode="standard" android:name="com.just.agentweb.AgentActionFragment" android:theme="@style/actionActivity" android:windowSoftInputMode="stateAlwaysHidden"/>
+    </application>
+</manifest>

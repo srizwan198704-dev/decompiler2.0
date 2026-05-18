@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#fff3f3f5" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/work_item_layout" android:background="@drawable/work_manager_item_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_left_vm_layout_normal" android:layout_marginTop="8.0dip" android:layout_marginRight="@dimen/margin_left_vm_layout_normal">
+        <ImageView android:id="@id/iv_icon" android:layout_width="56.0dip" android:layout_height="56.0dip" android:layout_marginLeft="@dimen/margin_left_vm_layout_normal" android:layout_marginTop="@dimen/margin_left_vm_layout_normal" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="8.0dip" android:layout_toRightOf="@id/iv_icon" android:layout_alignTop="@id/iv_icon">
+            <TextView android:textSize="14.0sp" android:textColor="#ff17181a" android:id="@id/tv_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" />
+            <TextView android:textSize="10.0sp" android:textColor="#ff8d9199" android:id="@id/tv_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" />
+        </LinearLayout>
+        <View android:id="@id/line" android:background="#fff3f3f5" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="@dimen/margin_left_vm_layout_normal" android:layout_below="@id/iv_icon" />
+        <RelativeLayout android:paddingBottom="18.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="18.0dip" android:layout_below="@id/line">
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+                <TextView android:textSize="10.0sp" android:textColor="#ff8d9199" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/earning_down_number" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff393c40" android:id="@id/bottom_tv_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/margin_left_vm_layout_normal" android:layout_alignParentLeft="true">
+                <TextView android:textSize="10.0sp" android:textColor="#ff8d9199" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/earning_today" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff393c40" android:id="@id/bottom_tv_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/margin_left_vm_layout_normal" android:layout_alignParentRight="true">
+                <TextView android:textSize="10.0sp" android:textColor="#ff8d9199" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/earning_like" />
+                <TextView android:textSize="16.0sp" android:textColor="#ff393c40" android:id="@id/bottom_tv_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

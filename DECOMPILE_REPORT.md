@@ -1,28 +1,28 @@
 # APK Decompilation Report
 
 ## Decompilation Date
-Fri May 15 09:32:50 UTC 2026
+Mon May 18 09:23:29 UTC 2026
 
 ## Original APK
 - **File Name**: input_app.apk
-- **File Size**: 48M
+- **File Size**: 43M
 
 ## Decompilation Results
 - **Output Directory**: decompiled_app/
-- **Total Files**: 50436
-- **Total Directories**: 816
+- **Total Files**: 37496
+- **Total Directories**: 1372
 
 ## Main Directories
 - .
 - ..
 - META-INF
 - assets
-- kotlin
 - lib
 - original
 - res
 - smali
 - smali_classes2
+- smali_classes3
 
 ## Notes
 - Decompiled using APKTool v2.9.3

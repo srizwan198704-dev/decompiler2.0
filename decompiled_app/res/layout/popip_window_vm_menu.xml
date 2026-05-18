@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:background="#f2ffffff" android:paddingLeft="40.0dip" android:paddingRight="40.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingHorizontal="40.0dip">
+        <androidx.constraintlayout.widget.ConstraintLayout android:id="@id/cl_vm_list_menu_check_all_vm_update" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:paddingVertical="20.0dip">
+            <TextView android:textSize="12.0sp" android:textColor="#ff5c5e66" android:gravity="center" android:id="@id/tv_check" android:background="?selectableItemBackgroundBorderless" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/set_vmos_vm_update" android:drawableTop="@drawable/ic_set_update_ico" android:drawablePadding="3.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_vm_list_update_red_dot" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="8.0dip" app:layout_constraintEnd_toEndOf="@id/tv_check" app:layout_constraintTop_toTopOf="@id/tv_check" app:srcCompat="@drawable/shape_red_ico_bg" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView android:textSize="12.0sp" android:textColor="#ff5c5e66" android:gravity="center" android:id="@id/tv_vm_list_menu_close_all_vm" android:background="?selectableItemBackgroundBorderless" android:paddingTop="20.0dip" android:paddingBottom="20.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/close_all" android:drawableTop="@mipmap/ic_float_power_off" android:drawablePadding="3.0dip" android:layout_weight="1.0" android:paddingVertical="20.0dip" />
+    </LinearLayout>
+    <View android:id="@id/v_outside" android:background="#00000000" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

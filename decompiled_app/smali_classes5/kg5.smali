@@ -1,0 +1,227 @@
+.class public Lkg5;
+.super Lh30;
+
+
+# static fields
+.field public static final ˋ:B = -0x4t
+
+.field public static final ˎ:B = 0xft
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Lh30;-><init>()V
+
+    return-void
+.end method
+
+.method public static ˋ([B)V
+    .locals 2
+
+    array-length v0, p0
+
+    const/16 v1, 0x20
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x3
+
+    aget-byte v0, p0, v0
+
+    const/16 v1, 0xf
+
+    invoke-static {v0, v1}, Lkg5;->ˎ(BB)V
+
+    const/4 v0, 0x7
+
+    aget-byte v0, p0, v0
+
+    invoke-static {v0, v1}, Lkg5;->ˎ(BB)V
+
+    const/16 v0, 0xb
+
+    aget-byte v0, p0, v0
+
+    invoke-static {v0, v1}, Lkg5;->ˎ(BB)V
+
+    aget-byte v0, p0, v1
+
+    invoke-static {v0, v1}, Lkg5;->ˎ(BB)V
+
+    const/4 v0, 0x4
+
+    aget-byte v0, p0, v0
+
+    const/4 v1, -0x4
+
+    invoke-static {v0, v1}, Lkg5;->ˎ(BB)V
+
+    const/16 v0, 0x8
+
+    aget-byte v0, p0, v0
+
+    invoke-static {v0, v1}, Lkg5;->ˎ(BB)V
+
+    const/16 v0, 0xc
+
+    aget-byte p0, p0, v0
+
+    invoke-static {p0, v1}, Lkg5;->ˎ(BB)V
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Poly1305 key must be 256 bits."
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static ˎ(BB)V
+    .locals 0
+
+    not-int p1, p1
+
+    and-int/2addr p0, p1
+
+    if-nez p0, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string p1, "Invalid format for r portion of Poly1305 key."
+
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public static ˏ([B)V
+    .locals 3
+
+    array-length v0, p0
+
+    const/16 v1, 0x20
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x3
+
+    aget-byte v1, p0, v0
+
+    const/16 v2, 0xf
+
+    and-int/2addr v1, v2
+
+    int-to-byte v1, v1
+
+    aput-byte v1, p0, v0
+
+    const/4 v0, 0x7
+
+    aget-byte v1, p0, v0
+
+    and-int/2addr v1, v2
+
+    int-to-byte v1, v1
+
+    aput-byte v1, p0, v0
+
+    const/16 v0, 0xb
+
+    aget-byte v1, p0, v0
+
+    and-int/2addr v1, v2
+
+    int-to-byte v1, v1
+
+    aput-byte v1, p0, v0
+
+    aget-byte v0, p0, v2
+
+    and-int/2addr v0, v2
+
+    int-to-byte v0, v0
+
+    aput-byte v0, p0, v2
+
+    const/4 v0, 0x4
+
+    aget-byte v1, p0, v0
+
+    and-int/lit8 v1, v1, -0x4
+
+    int-to-byte v1, v1
+
+    aput-byte v1, p0, v0
+
+    const/16 v0, 0x8
+
+    aget-byte v1, p0, v0
+
+    and-int/lit8 v1, v1, -0x4
+
+    int-to-byte v1, v1
+
+    aput-byte v1, p0, v0
+
+    const/16 v0, 0xc
+
+    aget-byte v1, p0, v0
+
+    and-int/lit8 v1, v1, -0x4
+
+    int-to-byte v1, v1
+
+    aput-byte v1, p0, v0
+
+    return-void
+
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Poly1305 key must be 256 bits."
+
+    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+
+# virtual methods
+.method public ˊ(Lqn3;)V
+    .locals 2
+
+    new-instance v0, Lqn3;
+
+    invoke-virtual {p1}, Lqn3;->ॱ()Ljava/security/SecureRandom;
+
+    move-result-object p1
+
+    const/16 v1, 0x100
+
+    invoke-direct {v0, p1, v1}, Lqn3;-><init>(Ljava/security/SecureRandom;I)V
+
+    invoke-super {p0, v0}, Lh30;->ˊ(Lqn3;)V
+
+    return-void
+.end method
+
+.method public ॱ()[B
+    .locals 1
+
+    invoke-super {p0}, Lh30;->ॱ()[B
+
+    move-result-object v0
+
+    invoke-static {v0}, Lkg5;->ˏ([B)V
+
+    return-object v0
+.end method

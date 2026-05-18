@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/sl_main_menu_vm" android:id="@id/vm_list_page" android:title="@string/home_page" />
+    <item android:icon="@drawable/sl_main_menu_bbs" android:id="@id/vm_list_bbs" android:visible="true" android:title="@string/community" />
+    <item android:icon="@drawable/s1_main_menu_market" android:id="@id/vm_list_market" android:title="@string/market" />
+    <item android:icon="@drawable/sl_main_menu_profile" android:id="@id/profile_page" android:title="@string/my" />
+</menu>

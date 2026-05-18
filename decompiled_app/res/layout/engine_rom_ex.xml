@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="#ff0000ff" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <LinearLayout android:id="@id/first" android:background="#ff0000ff" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:id="@id/engin_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="start engin!" />
+            <Button android:id="@id/engin_unsol_none" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="notify rom!" />
+            <Button android:id="@id/engin_unsol_ack" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="query rom!" />
+            <Button android:id="@id/engin_read_pkg_list" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="read pkg fr rom!" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/second" android:background="#ff0000ff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/first">
+            <Button android:id="@id/engin_register_listener" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="register_listener" />
+            <Button android:id="@id/engin_unregister_listener" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="unregister_listener" />
+            <Button android:id="@id/engin_xpand_bar" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="xpand_bar" />
+        </LinearLayout>
+        <LinearLayout android:id="@id/third" android:background="#ff0000ff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/second">
+            <Button android:id="@id/engin_install" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="install" />
+            <Button android:id="@id/engin_query_type" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="image" />
+            <Button android:id="@id/engin_query_media" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="media" />
+            <Button android:id="@id/engin_query_apk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="apk" />
+            <Button android:id="@id/engin_query_like" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LIKE" />
+        </LinearLayout>
+        <LinearLayout android:background="#ff0000ff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/third">
+            <Button android:id="@id/engin_set_prop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="prop" />
+            <Button android:id="@id/engin_scan" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="scan" />
+            <Button android:id="@id/engin_uninstall" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="uninstall" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <Button android:id="@id/rom_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="start rom!" />
+        <Button android:id="@id/rom_ack" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ack" />
+        <Button android:id="@id/rom_install_start" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="installing" />
+        <Button android:id="@id/rom_heart" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ping" />
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <Button android:id="@id/rom_transfer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="filetras" />
+        <Button android:id="@id/rom_settings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="set" />
+    </LinearLayout>
+</LinearLayout>

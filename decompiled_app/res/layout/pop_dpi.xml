@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/work_manager_pop_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:textColor="@color/black_1" android:id="@id/work_pop_1" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/default_rom_setting" android:drawableLeft="@mipmap/select_type_publish" android:drawablePadding="8.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/black_1" android:id="@id/work_pop_2" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="720*1280 dpi:320" android:drawableLeft="@mipmap/select_not_type_publish" android:drawablePadding="8.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/black_1" android:id="@id/work_pop_3" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="540*960 dpi:240" android:drawableLeft="@mipmap/select_not_type_publish" android:drawablePadding="8.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff111188" android:id="@id/work_pop_4" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="1080*1920 dpi:480" android:drawableLeft="@mipmap/select_not_type_publish" android:drawablePadding="8.0dip" />
+</LinearLayout>

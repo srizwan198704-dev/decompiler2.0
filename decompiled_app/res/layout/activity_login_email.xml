@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/cl_action_bar" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:background="@mipmap/register_email_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/ll_close" android:layout_width="wrap_content" android:layout_height="44.0dip" android:layout_marginLeft="8.0dip">
+                    <ImageView android:layout_gravity="center_vertical" android:background="@drawable/ic_common_back" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/black_title_color" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/login4" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="32.0dip" android:layout_marginTop="54.0dip" android:layout_marginRight="32.0dip">
+                <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:src="@mipmap/logo_register_email" />
+                <FrameLayout android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="32.0dip">
+                    <EditText android:textSize="14.0dip" android:textColor="#ff5c5e66" android:textColorHint="#ffc8c9cc" android:id="@id/edit_email" android:background="@drawable/bg_edit_normal" android:paddingLeft="16.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:hint="@string/register_email" android:maxLines="1" android:maxLength="30" android:inputType="text" />
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <View android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="1.0" />
+                        <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_clear" android:background="@mipmap/input_close" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" />
+                        <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_down" android:background="@mipmap/input_down" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" />
+                    </LinearLayout>
+                </FrameLayout>
+                <TextView android:textSize="12.0dip" android:textColor="#ffff6666" android:gravity="center_vertical" android:id="@id/tv_notips" android:layout_width="fill_parent" android:layout_height="32.0dip" android:layout_marginLeft="16.0dip" android:maxLines="1" />
+                <FrameLayout android:layout_width="fill_parent" android:layout_height="40.0dip">
+                    <EditText android:textSize="14.0dip" android:textColor="#ff5c5e66" android:textColorHint="#ffc8c9cc" android:id="@id/edit_pwd" android:background="@drawable/bg_edit_normal" android:paddingLeft="16.0dip" android:layout_width="fill_parent" android:layout_height="40.0dip" android:hint="@string/password" android:maxLines="1" android:maxLength="20" android:inputType="textVisiblePassword" />
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <View android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_weight="1.0" />
+                        <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_showpwd" android:background="@mipmap/show_pwd" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" />
+                        <ImageView android:layout_gravity="center_vertical" android:id="@id/iv_clearpwd" android:background="@mipmap/input_close" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="16.0dip" />
+                    </LinearLayout>
+                </FrameLayout>
+                <TextView android:textSize="12.0dip" android:textColor="#ff8d9199" android:gravity="center_vertical" android:id="@id/tv_pwdtips" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="16.0dip" android:layout_marginTop="7.0dip" android:text="@string/login10" android:maxLines="2" />
+                <TextView android:textSize="14.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/tv_next" android:background="@drawable/btn_operator_normal" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginTop="26.0dip" android:text="@string/login4" />
+                <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="25.0dip">
+                    <CheckBox android:textSize="12.0dip" android:textColor="#ff5c5e66" android:layout_gravity="center_horizontal" android:id="@id/cb_agree" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="false" android:button="@drawable/checkbox_style" android:text="@string/register5" android:layout_marginEnd="3.0dip" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ff47b2f8" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_terms_of_service" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/login_reigster_terms_of_service" />
+                </LinearLayout>
+                <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="24.0dip">
+                    <TextView android:textSize="12.0dip" android:textColor="#ff5c5e66" android:gravity="center" android:layout_gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_marginRight="3.0dip" android:text="@string/login_reigster_and" android:layout_marginHorizontal="3.0dip" />
+                    <TextView android:textSize="12.0dip" android:textColor="#ff47b2f8" android:gravity="center" android:layout_gravity="center" android:id="@id/tv_login_reigster_privacy_policy" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/login_reigster_privacy_policy" />
+                </LinearLayout>
+            </LinearLayout>
+            <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="40.0dip">
+                <TextView android:textSize="12.0sp" android:textColor="#ff47b2f8" android:gravity="center_vertical" android:id="@id/tv_register" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="32.0dip" android:text="@string/email_register" />
+                <TextView android:textSize="12.0sp" android:textColor="#ff47b2f8" android:gravity="center_vertical" android:id="@id/tv_forget_pwd" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="32.0dip" android:text="@string/forget_the_pwd" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/grey_1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/recovery_title_layout" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_width="55.0dip" android:layout_height="55.0dip" android:src="@mipmap/ico_dialog_title" />
+        <TextView android:textSize="26.0sp" android:textColor="@color/black_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="31.0dip" android:layout_marginBottom="69.0dip" android:text="@string/backups_state_2" />
+        <TextView android:textSize="15.0sp" android:textColor="@color/text_color_blue_selector" android:gravity="center" android:id="@id/backups_error_restart" android:background="@drawable/but_select_blue_bg" android:paddingTop="14.0dip" android:paddingBottom="14.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="54.0dip" android:layout_marginRight="54.0dip" android:text="@string/backups_but_18" />
+        <TextView android:textSize="15.0sp" android:textColor="@color/text_color_blue_selector" android:gravity="center" android:id="@id/backups_error_celan" android:background="@drawable/but_select_blue_bg" android:paddingTop="14.0dip" android:paddingBottom="14.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="54.0dip" android:layout_marginRight="54.0dip" android:text="@string/backups_but_21" />
+    </LinearLayout>
+</LinearLayout>

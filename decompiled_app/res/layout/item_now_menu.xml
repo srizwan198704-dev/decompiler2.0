@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@drawable/item_menu_background" android:layout_width="70.0dip" android:layout_height="70.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="12.0sp" android:textColor="@color/boldblack" android:gravity="center" android:id="@id/tv_item" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/common_screenshot" android:drawableTop="@mipmap/ic_float_screenshot" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <ImageView android:id="@id/iv_item" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginTop="5.0dip" android:src="@drawable/ic_shortcut_subtract" android:adjustViewBounds="true" android:layout_marginEnd="5.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.Group android:id="@id/group" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" app:constraint_referenced_ids="iv_item,tv_item" />
+</androidx.constraintlayout.widget.ConstraintLayout>

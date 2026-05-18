@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingTop="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/iv_user_img" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_centerVertical="true" />
+        <TextView android:textSize="12.0sp" android:textColor="#ff5c5e66" android:id="@id/tv_user_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_toRightOf="@id/iv_user_img" />
+        <TextView android:textSize="10.0sp" android:textColor="#ff8d9199" android:id="@id/tv_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="18:36" android:layout_toRightOf="@id/iv_user_img" android:layout_below="@id/tv_user_name" />
+        <RelativeLayout android:background="@drawable/bg_vote_num_tag" android:paddingTop="1.0dip" android:layout_width="wrap_content" android:layout_height="24.0dip" android:minWidth="58.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <TextView android:textSize="10.0sp" android:textColor="#ff35c775" android:id="@id/tv_vote_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:includeFontPadding="false" android:layout_centerHorizontal="true" android:lineSpacingExtra="0.0dip" />
+            <TextView android:textSize="8.0sp" android:textColor="#ff35c775" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vote_notify10" android:includeFontPadding="false" android:layout_below="@id/tv_vote_num" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="#ff5c5e66" android:id="@id/tv_title" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" />
+    <com.vmos.pro.modules.widget.PointProcessBar android:id="@id/bar_vote_status" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="15.0dip" android:layout_marginStart="24.0dip" android:layout_marginEnd="24.0dip" />
+    <TextView android:textSize="12.0sp" android:textColor="#ff5c5e66" android:id="@id/tv_content" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+    <TextView android:textSize="12.0sp" android:textColor="#ff8d9199" android:id="@id/tv_notify" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" />
+    <com.vmos.pro.modules.widget.MyVoteGroup android:orientation="vertical" android:id="@id/ll_content" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="4.0dip" android:layout_marginBottom="20.0dip" />
+</LinearLayout>

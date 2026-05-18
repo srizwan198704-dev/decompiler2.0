@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/set_title_layout" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:background="@color/set_colorAccent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dip" android:paddingStart="20.0dip" android:paddingEnd="20.0dip">
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/black" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/info_base" />
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_base" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="14.0sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_vendor" />
+                    <TextView android:textColor="#ff5c5e66" android:id="@id/tv_vendor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                    <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_model" />
+                    <TextView android:textColor="#ff5c5e66" android:id="@id/tv_phone_model" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+            </LinearLayout>
+            <View android:background="#fff3f3f5" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="24.0dip" />
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/black" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:text="@string/info_gpu_msg" />
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_gpu" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_gpu_vendor" />
+                    <TextView android:id="@id/tv_gpu_vendor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                    <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_gpu_model" />
+                    <TextView android:textColor="#ff5c5e66" android:id="@id/tv_gpu_model" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="25.0dip" android:layout_marginTop="15.0dip">
+                    <TextView android:textSize="14.0sp" android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_kind" android:layout_centerVertical="true" />
+                    <RadioGroup android:orientation="horizontal" android:id="@id/rg_gpu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true">
+                        <RadioButton android:textSize="14.0sp" android:textColor="#ff5c5e66" android:id="@id/rb_gpu_first" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:button="@drawable/checkbox_style" android:text="@string/real_phone" android:layout_marginEnd="10.0dip" />
+                        <RadioButton android:textSize="14.0sp" android:textColor="#ff5c5e66" android:id="@id/rb_gpu_second" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/checkbox_style" android:text="@string/high_frame_rate" />
+                    </RadioGroup>
+                </RelativeLayout>
+            </LinearLayout>
+            <View android:background="#fff3f3f5" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="24.0dip" />
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/black" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:text="@string/info_wifi" />
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_wifi" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_wifi_name" />
+                    <TextView android:textColor="#ff5c5e66" android:id="@id/tv_wifi_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                    <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_wifi_bbsid" />
+                    <TextView android:textColor="#ff5c5e66" android:id="@id/tv_wifi_bbs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                    <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_wifi_mac" />
+                    <TextView android:textColor="#ff5c5e66" android:id="@id/tv_wifi_mac" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+            </LinearLayout>
+            <View android:background="#fff3f3f5" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="24.0dip" />
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/black" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dip" android:text="@string/info_device" />
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_device" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_device_number" />
+                    <TextView android:textColor="#ff5c5e66" android:id="@id/tv_device_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                    <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_device_android_id" />
+                    <TextView android:textColor="#ff5c5e66" android:id="@id/tv_device_android_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                    <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IMEI" />
+                    <TextView android:id="@id/tv_device_imei" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+            </LinearLayout>
+            <View android:background="#fff3f3f5" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="24.0dip" />
+            <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/black" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:text="@string/info_sim" />
+            <Switch android:textSize="14.0sp" android:textColor="@color/black" android:id="@id/sw_sim_status" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="15.0dip" android:thumb="@drawable/shape_switch_thumb" android:text="@string/sim_state" android:layout_weight="1.0" android:track="@drawable/shape_switch_track_selector" />
+            <LinearLayout android:orientation="vertical" android:id="@id/ll_sim_country" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_sim_country" />
+                    <TextView android:textColor="#ff5c5e66" android:id="@id/tv_sim_country" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="China" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                    <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_sim_operator" />
+                    <TextView android:textColor="#ff5c5e66" android:id="@id/tv_sim_operator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="China Mobile" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+            </LinearLayout>
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_sim_kind" />
+                <TextView android:textColor="#ff5c5e66" android:id="@id/tv_sim_kind" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GSM" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_sim_phone" />
+                <TextView android:textColor="#ff5c5e66" android:id="@id/tv_sim_phone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\ 13800000000" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip">
+                <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/info_sim_number" />
+                <TextView android:textColor="#ff5c5e66" android:id="@id/tv_sim_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="326548E4856DS1265478" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_marginBottom="100.0dip">
+                <TextView android:textColor="@color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="IMSI" />
+                <TextView android:textColor="#ff5c5e66" android:id="@id/tv_sim_imsi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="\ 460001234567890" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,164 @@
+.class public Lnc8;
+.super Lp1;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "<K:",
+        "Ljava/lang/Object;",
+        "A:",
+        "Ljava/lang/Object;",
+        ">",
+        "Lp1<",
+        "TK;TA;>;"
+    }
+.end annotation
+
+
+# instance fields
+.field public final ˋॱ:Lkz3;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkz3<",
+            "TA;>;"
+        }
+    .end annotation
+.end field
+
+.field public final ˏॱ:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TA;"
+        }
+    .end annotation
+.end field
+
+
+# direct methods
+.method public constructor <init>(La04;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "La04<",
+            "TA;>;)V"
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0, p1, v0}, Lnc8;-><init>(La04;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(La04;Ljava/lang/Object;)V
+    .locals 1
+    .param p2    # Ljava/lang/Object;
+        .annotation build Landroidx/annotation/Nullable;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "La04<",
+            "TA;>;TA;)V"
+        }
+    .end annotation
+
+    invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-direct {p0, v0}, Lp1;-><init>(Ljava/util/List;)V
+
+    new-instance v0, Lkz3;
+
+    invoke-direct {v0}, Lkz3;-><init>()V
+
+    iput-object v0, p0, Lnc8;->ˋॱ:Lkz3;
+
+    invoke-virtual {p0, p1}, Lp1;->ˏॱ(La04;)V
+
+    iput-object p2, p0, Lnc8;->ˏॱ:Ljava/lang/Object;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public ʻ()Ljava/lang/Object;
+    .locals 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TA;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lp1;->ˏ:La04;
+
+    iget-object v4, p0, Lnc8;->ˏॱ:Ljava/lang/Object;
+
+    invoke-virtual {p0}, Lp1;->ॱॱ()F
+
+    move-result v5
+
+    invoke-virtual {p0}, Lp1;->ॱॱ()F
+
+    move-result v6
+
+    invoke-virtual {p0}, Lp1;->ॱॱ()F
+
+    move-result v7
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    move-object v3, v4
+
+    invoke-virtual/range {v0 .. v7}, La04;->ˊ(FFLjava/lang/Object;Ljava/lang/Object;FFF)Ljava/lang/Object;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public ʼ(Lbp3;F)Ljava/lang/Object;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lbp3<",
+            "TK;>;F)TA;"
+        }
+    .end annotation
+
+    invoke-virtual {p0}, Lnc8;->ʻ()Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public ʽ()V
+    .locals 1
+
+    iget-object v0, p0, Lp1;->ˏ:La04;
+
+    if-eqz v0, :cond_0
+
+    invoke-super {p0}, Lp1;->ʽ()V
+
+    :cond_0
+    return-void
+.end method
+
+.method public ˋ()F
+    .locals 1
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    return v0
+.end method

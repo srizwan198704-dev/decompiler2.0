@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/backups_rom_title_layout" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_weight="1.0" android:layout_marginHorizontal="20.0dip">
+        <ImageView android:layout_width="256.0dip" android:layout_height="256.0dip" android:src="@mipmap/img_backups_succeed" />
+        <TextView android:textSize="20.0sp" android:textColor="@android:color/black" android:gravity="center" android:id="@id/tv_buckups_rom_succeed_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/backup_successful" android:layout_marginVertical="10.0dip" />
+        <TextView android:textSize="14.0sp" android:textColor="#ff5c5e66" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/prompt_recovery" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" />
+        <TextView android:textSize="14.0sp" android:textColor="#ff5c5e66" android:gravity="center" android:id="@id/tv_buckups_rom_succeed_archive" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/backup_file_path" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:layout_gravity="center" android:id="@id/but_buckups_rom_succeed_ok" android:background="@drawable/btn_bg" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="10.0dip" android:text="@string/os_backups_17" android:layout_marginHorizontal="20.0dip" />
+        <TextView android:textSize="14.0sp" android:textColor="#ff8d9199" android:gravity="center" android:layout_gravity="center" android:id="@id/but_buckups_rom_succeed_recovery" android:background="@drawable/img_back_bg" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="20.0dip" android:text="@string/check_the_backup" android:layout_marginHorizontal="20.0dip" />
+    </LinearLayout>
+</LinearLayout>

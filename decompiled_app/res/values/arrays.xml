@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cloud_titles">
+        <item>云虚拟机</item>
+        <item>本地虚拟机</item>
+    </string-array>
+    <string-array name="file_title">
+        <item>Search</item>
+        <item>App</item>
+        <item>Picture</item>
+        <item>Media</item>
+        <item>File</item>
+    </string-array>
+    <string-array name="record_title">
+        <item>Imported</item>
+        <item>Exported</item>
+    </string-array>
+    <string-array name="titles">
+        <item>功能型</item>
+        <item>美化型</item>
+    </string-array>
+    <string-array name="vote_item_hint">
+        <item>Option one</item>
+        <item>Option two</item>
+        <item>Option three</item>
+        <item>Option four</item>
+        <item>Option five</item>
+        <item>Option six</item>
+        <item>Option seven</item>
+        <item>Option eight</item>
+        <item>Option nine</item>
+        <item>Option ten</item>
+    </string-array>
+</resources>

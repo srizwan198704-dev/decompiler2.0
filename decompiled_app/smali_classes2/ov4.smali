@@ -1,0 +1,10 @@
+.class public interface abstract Lov4;
+.super Ljava/lang/Object;
+
+
+# virtual methods
+.method public abstract onDenied()V
+.end method
+
+.method public abstract onGranted()V
+.end method

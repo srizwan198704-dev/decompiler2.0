@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:textColor="#ff8d9199" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="什么时候应该投诉应用工具?" />
+    <TextView android:textSize="10.0sp" android:textColor="#ff8d9199" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/complain_tool_condition" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff8d9199" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24.0dip" android:text="投诉内容" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip">
+        <EditText android:textSize="14.0sp" android:textColor="#ff5c5e66" android:gravity="center|left|top" android:id="@id/et_complain_desc" android:background="@drawable/upload_apk_desc_bg" android:paddingTop="8.0dip" android:paddingBottom="27.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="71.0dip" android:paddingStart="8.0dip" android:paddingEnd="8.0dip" />
+        <TextView android:textSize="10.0sp" android:textColor="#ff8d9199" android:id="@id/tv_complain_desc_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:text="0/50" android:layout_alignBottom="@id/et_complain_desc" android:layout_marginEnd="8.0dip" android:layout_alignEnd="@id/et_complain_desc" />
+    </RelativeLayout>
+</merge>

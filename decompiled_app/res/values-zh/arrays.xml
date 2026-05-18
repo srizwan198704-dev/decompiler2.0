@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="file_title">
+        <item>搜索</item>
+        <item>应用</item>
+        <item>图片</item>
+        <item>媒体</item>
+        <item>文件</item>
+    </string-array>
+    <string-array name="record_title">
+        <item>我导入的</item>
+        <item>我导出的</item>
+    </string-array>
+    <string-array name="titles">
+        <item>功能型</item>
+        <item>美化型</item>
+    </string-array>
+    <string-array name="vote_item_hint">
+        <item>选项一</item>
+        <item>选项二</item>
+        <item>选项三</item>
+        <item>选项四</item>
+        <item>选项五</item>
+        <item>选项六</item>
+        <item>选项七</item>
+        <item>选项八</item>
+        <item>选项九</item>
+        <item>选项十</item>
+    </string-array>
+</resources>

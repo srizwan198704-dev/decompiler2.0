@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:id="@id/top_bar" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="44.0dip">
+        <ImageView android:id="@id/iv_back" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ic_common_back" android:layout_centerVertical="true" />
+        <TextView android:textSize="18.0dip" android:textColor="@android:color/black" android:id="@id/tv_wv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/grade_1" android:singleLine="true" android:layout_toRightOf="@id/iv_back" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:id="@id/v_line" android:background="#fff8f8fa" android:layout_width="fill_parent" android:layout_height="8.0dip" android:layout_below="@id/top_bar" />
+    <RelativeLayout android:id="@id/rl_data_view" android:background="#fff8f8fa" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/v_line">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ScrollView android:id="@id/sv_content" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <EditText android:textSize="14.0dip" android:textColorHint="#ffc8c9cc" android:id="@id/et_title" android:background="@android:color/transparent" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:layout_width="fill_parent" android:layout_height="44.0dip" android:hint="@string/bbs_title" android:singleLine="true" android:maxLength="20" android:layout_centerHorizontal="true" />
+                    <View android:background="#fff8f8fa" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                    <EditText android:textSize="14.0dip" android:textColorHint="#ffc8c9cc" android:id="@id/et_desc" android:background="@android:color/transparent" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:layout_width="fill_parent" android:layout_height="44.0dip" android:hint="@string/vote_notify" android:singleLine="true" android:layout_centerHorizontal="true" />
+                    <View android:background="#fff8f8fa" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                    <LinearLayout android:orientation="vertical" android:id="@id/ll_item_root" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+                    <RelativeLayout android:id="@id/rl_add" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                        <TextView android:textSize="14.0sp" android:textColor="#ff47b2f8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:text="@string/vote_notify2" android:layout_centerVertical="true" />
+                        <ImageView android:id="@id/iv_add_item" android:paddingLeft="24.0dip" android:paddingRight="24.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@mipmap/ic_vote_add" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                    <View android:background="#fff8f8fa" android:layout_width="fill_parent" android:layout_height="8.0dip" android:layout_below="@id/top_bar" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                        <TextView android:textSize="14.0sp" android:textColor="#ff5c5e66" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:text="@string/vote_notify3" android:layout_weight="1.0" android:layout_centerVertical="true" />
+                        <ImageView android:id="@id/iv_select_rm" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@mipmap/ic_vote_select_rm" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                        <TextView android:textSize="14.0sp" android:textColor="#ff5c5e66" android:id="@id/tv_select_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" />
+                        <ImageView android:id="@id/iv_select_add" android:paddingLeft="15.0dip" android:paddingRight="22.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@mipmap/ic_vote_select_add" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                    </LinearLayout>
+                    <View android:background="#fff8f8fa" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                        <TextView android:textSize="14.0sp" android:textColor="#ff5c5e66" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:text="@string/vote_notify4" android:layout_weight="1.0" android:layout_centerVertical="true" />
+                        <ImageView android:id="@id/iv_day_rm" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@mipmap/ic_vote_select_rm" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                        <TextView android:textSize="14.0sp" android:textColor="#ff5c5e66" android:id="@id/tv_day_num" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" />
+                        <ImageView android:id="@id/iv_day_add" android:paddingLeft="15.0dip" android:paddingRight="22.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@mipmap/ic_vote_select_add" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                        <TextView android:textSize="14.0sp" android:textColor="#ff5c5e66" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vote_notify14" android:layout_marginStart="24.0dip" />
+                        <Space android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+                        <Switch android:id="@id/sw_show_vote_result" android:layout_width="60.0dip" android:layout_height="fill_parent" android:thumb="@drawable/shape_switch_thumb" android:track="@drawable/shape_switch_track_selector" android:layout_marginEnd="22.0dip" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                        <TextView android:textSize="14.0sp" android:textColor="#ff5c5e66" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vote_notify15" android:layout_marginStart="24.0dip" />
+                        <Space android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+                        <Switch android:id="@id/sw_show_vote_schedule" android:layout_width="60.0dip" android:layout_height="fill_parent" android:thumb="@drawable/shape_switch_thumb" android:track="@drawable/shape_switch_track_selector" android:layout_marginEnd="22.0dip" />
+                    </LinearLayout>
+                    <View android:background="#fff8f8fa" android:layout_width="fill_parent" android:layout_height="17.0dip" />
+                    <FrameLayout android:background="#fff8f8fa" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textColor="@color/white" android:gravity="center" android:id="@id/tv_post" android:background="@drawable/bg_post_vote_btn" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_marginLeft="24.0dip" android:layout_marginRight="24.0dip" android:text="@string/vote_notify6" android:layout_alignParentBottom="true" />
+                    </FrameLayout>
+                    <View android:background="#fff8f8fa" android:layout_width="fill_parent" android:layout_height="170.0dip" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

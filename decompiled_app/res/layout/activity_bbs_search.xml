@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:id="@id/top_search_layout" android:background="@drawable/bg_bbs_top_search_edit" android:layout_width="0.0dip" android:layout_height="35.0dip" android:layout_marginTop="6.0dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:id="@id/search_back" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ic_common_back" />
+        <EditText android:textSize="14.0sp" android:gravity="start|center" android:id="@id/search_edit" android:background="@null" android:focusable="true" android:layout_width="0.0dip" android:layout_height="fill_parent" android:hint="@string/bbs_search_text_msg" android:layout_weight="1.0" android:inputType="text" android:imeOptions="actionSearch" />
+        <ImageView android:id="@id/search_clear" android:visibility="gone" android:layout_width="34.0dip" android:layout_height="fill_parent" android:src="@mipmap/input_close" android:scaleType="center" />
+        <ImageView android:id="@id/search_submit" android:layout_width="34.0dip" android:layout_height="fill_parent" android:src="@drawable/ic_search" android:scaleType="center" />
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/search_content" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="10.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/top_search_layout" />
+    <LinearLayout android:orientation="vertical" android:id="@id/search_content_layout" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="20.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/top_search_layout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

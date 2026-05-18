@@ -1,0 +1,34 @@
+.class public interface abstract Lq73$ᐨ;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lq73;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "\u1428"
+.end annotation
+
+
+# static fields
+.field public static final ˊ:I = 0x65
+
+.field public static final ˋ:I = 0x1
+
+.field public static final ˎ:I = 0x2
+
+.field public static final ˏ:I = 0x3
+
+.field public static final ॱ:I = 0x64
+
+.field public static final ॱॱ:I = 0x4
+
+.field public static final ᐝ:I = 0x5
+
+
+# virtual methods
+.method public abstract ॱ(II)V
+.end method

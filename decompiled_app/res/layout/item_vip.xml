@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ll_item" android:background="@drawable/bg_normal_order" android:layout_width="102.0dip" android:layout_height="134.0dip" android:layout_marginLeft="4.0dip" android:layout_marginRight="4.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="right" android:id="@id/iv_choose" android:background="@mipmap/icon_pay_selected" android:visibility="invisible" android:layout_width="20.0dip" android:layout_height="20.0dip" />
+    <TextView android:textSize="14.0dip" android:textStyle="bold" android:textColor="#ff5c5e66" android:layout_gravity="center_horizontal" android:id="@id/tv_days" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="30.0dip" android:textStyle="bold" android:textColor="#ff47b2f8" android:ellipsize="end" android:id="@id/tv_current_price" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_centerInParent="true" />
+        <TextView android:id="@id/tv_current_price_unit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip" android:text="￥" android:layout_alignBottom="@id/tv_current_price" android:layout_toStartOf="@id/tv_current_price" />
+    </RelativeLayout>
+    <TextView android:textSize="8.0dip" android:textColor="#ff8d9199" android:gravity="center" android:id="@id/tv_old_price" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <TextView android:textSize="12.0dip" android:textColor="#ffffffff" android:gravity="center" android:id="@id/tv_flag" android:background="@drawable/order_bottom_bg" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="24.0dip" android:text="@string/in_the_activity" />
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="file_title">
+        <item>Поиск</item>
+        <item>Приложения</item>
+        <item>Изображения</item>
+        <item>Медиафайлы</item>
+        <item>Файлы</item>
+    </string-array>
+    <string-array name="record_title">
+        <item>Импортированные мною</item>
+        <item>Экспортированные мною</item>
+    </string-array>
+    <string-array name="titles">
+        <item>Функциональный</item>
+        <item>Декоративный</item>
+    </string-array>
+    <string-array name="vote_item_hint">
+        <item>Вариант 1</item>
+        <item>Вариант 2</item>
+        <item>Вариант 3</item>
+        <item>Вариант 4</item>
+        <item>Вариант 5</item>
+        <item>Вариант 6</item>
+        <item>Вариант 7</item>
+        <item>Вариант 8</item>
+        <item>Вариант 9</item>
+        <item>Вариант 10</item>
+    </string-array>
+</resources>

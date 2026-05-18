@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="#ff111111" android:gravity="center_vertical" android:layout_gravity="top" android:id="@id/tvField" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20.0dip" />
+    <com.lxj.androidktx.widget.ShapeEditText android:textSize="14.0sp" android:textColor="#ff444444" android:textColorHint="#ff999999" android:gravity="end|center|top" android:id="@id/etValue" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+</merge>

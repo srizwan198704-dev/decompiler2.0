@@ -1,0 +1,71 @@
+.class public final Lde/robv/android/xposed/SELinuxHelper;
+.super Ljava/lang/Object;
+
+
+# static fields
+.field private static sIsSELinuxEnabled:Z
+
+.field private static sServiceAppDataFile:Lde/robv/android/xposed/services/BaseService;
+
+
+# direct methods
+.method public static constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lde/robv/android/xposed/services/DirectAccessService;
+
+    invoke-direct {v0}, Lde/robv/android/xposed/services/DirectAccessService;-><init>()V
+
+    sput-object v0, Lde/robv/android/xposed/SELinuxHelper;->sServiceAppDataFile:Lde/robv/android/xposed/services/BaseService;
+
+    return-void
+.end method
+
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public static getAppDataFileService()Lde/robv/android/xposed/services/BaseService;
+    .locals 1
+
+    sget-object v0, Lde/robv/android/xposed/SELinuxHelper;->sServiceAppDataFile:Lde/robv/android/xposed/services/BaseService;
+
+    if-eqz v0, :cond_0
+
+    return-object v0
+
+    :cond_0
+    new-instance v0, Lde/robv/android/xposed/services/DirectAccessService;
+
+    invoke-direct {v0}, Lde/robv/android/xposed/services/DirectAccessService;-><init>()V
+
+    return-object v0
+.end method
+
+.method public static getContext()Ljava/lang/String;
+    .locals 1
+
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public static isSELinuxEnabled()Z
+    .locals 1
+
+    sget-boolean v0, Lde/robv/android/xposed/SELinuxHelper;->sIsSELinuxEnabled:Z
+
+    return v0
+.end method
+
+.method public static isSELinuxEnforced()Z
+    .locals 1
+
+    sget-boolean v0, Lde/robv/android/xposed/SELinuxHelper;->sIsSELinuxEnabled:Z
+
+    return v0
+.end method

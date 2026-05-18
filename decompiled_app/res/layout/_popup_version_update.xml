@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" app:cardCornerRadius="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.lxj.androidktx.widget.ShapeTextView android:textSize="17.0sp" android:textStyle="bold" android:textColor="#ff555555" android:gravity="center" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="有新版本更新啦！" app:stv_bottomLineColor="#ffeeeeee" app:stv_lineSize="0.5dip" />
+        <androidx.core.widget.NestedScrollView android:layout_width="fill_parent" android:layout_height="150.0dip">
+            <com.lxj.androidktx.widget.ShapeTextView android:textSize="15.0sp" android:textColor="#ff333333" android:id="@id/tv_info" android:paddingLeft="25.0dip" android:paddingTop="15.0dip" android:paddingRight="25.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </androidx.core.widget.NestedScrollView>
+        <com.lxj.androidktx.widget.ShapeLinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="46.0dip" app:sll_lineSize="0.6dip" app:sll_topLineColor="#ffeeeeee">
+            <com.lxj.androidktx.widget.ShapeTextView android:textSize="14.0sp" android:textColor="#ff4c536d" android:gravity="center" android:id="@id/tv_cancel" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="取消" android:layout_weight="1.0" app:stv_enableRipple="true" app:stv_solid="#ffffffff" />
+            <View android:id="@id/vv" android:background="#ffeeeeee" android:layout_width="0.6dip" android:layout_height="fill_parent" />
+            <com.lxj.androidktx.widget.ShapeTextView android:textSize="14.0sp" android:textColor="#ff3070ff" android:gravity="center" android:id="@id/tv_ok" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="安装" android:layout_weight="1.0" app:stv_enableRipple="true" app:stv_solid="#ffffffff" />
+        </com.lxj.androidktx.widget.ShapeLinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

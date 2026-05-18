@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/parent_view" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View android:id="@id/status_bar_view" android:layout_width="fill_parent" android:layout_height="0.100000024dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <View android:id="@id/search_view_bg" android:background="@drawable/bg_bbs_top_search_edit" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_marginTop="10.0dip" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/status_bar_view" />
+    <ImageView android:id="@id/img_btn_search" android:visibility="visible" android:layout_width="24.0dip" android:layout_height="24.0dip" android:src="@mipmap/icon_search" android:layout_marginStart="8.0dip" app:layout_constraintBottom_toBottomOf="@id/search_view_bg" app:layout_constraintStart_toStartOf="@id/search_view_bg" app:layout_constraintTop_toTopOf="@id/search_view_bg" />
+    <TextView android:textSize="12.0sp" android:textColor="#ffc8c9cc" android:id="@id/tv_search" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bbs_search_text_msg" android:layout_marginStart="10.0dip" app:layout_constraintBottom_toBottomOf="@id/search_view_bg" app:layout_constraintStart_toEndOf="@id/img_btn_search" app:layout_constraintTop_toTopOf="@id/search_view_bg" />
+    <com.youth.banner.Banner android:id="@id/image_banner" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="152.0dip" android:layout_marginTop="8.0dip" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/search_view_bg" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/image_banner">
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout android:id="@id/refreshLayout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.scwang.smart.refresh.header.MaterialHeader android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/community_message_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:overScrollMode="never" />
+            <com.scwang.smart.refresh.footer.ClassicsFooter android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

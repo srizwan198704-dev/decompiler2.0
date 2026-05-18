@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rl_error" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/top_bar" android:elevation="12.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ImageView android:id="@id/iv_network_err" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/img_network_err" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="14.0sp" android:textColor="#ff8d9199" android:id="@id/tv_network_err" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/check_the_network" android:layout_below="@id/iv_network_err" android:layout_centerHorizontal="true" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/tv_restart" android:background="@drawable/bg_common_gradient_22" android:layout_width="120.0dip" android:layout_height="44.0dip" android:layout_marginTop="44.0dip" android:text="@string/click_retry" android:layout_below="@id/tv_network_err" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</RelativeLayout>

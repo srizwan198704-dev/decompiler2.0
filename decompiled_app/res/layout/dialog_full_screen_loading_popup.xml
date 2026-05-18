@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat android:gravity="center" android:orientation="vertical" android:id="@id/ll_loading" android:background="@color/white" android:padding="24.0dip" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.legacy.widget.Space android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <com.airbnb.lottie.LottieAnimationView android:id="@id/lav_loading" android:layout_width="100.0dip" android:layout_height="100.0dip" />
+    <androidx.appcompat.widget.AppCompatTextView android:textSize="12.0sp" android:textColor="@color/t2_color" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/entering_the_cloud" />
+    <androidx.appcompat.widget.AppCompatImageView android:id="@id/iv_model" android:layout_width="64.0dip" android:layout_height="20.0dip" android:layout_marginTop="24.0dip" />
+    <androidx.appcompat.widget.AppCompatTextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/t1_color" android:id="@id/tv_pad_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" />
+    <androidx.appcompat.widget.AppCompatTextView android:textSize="14.0sp" android:textColor="@color/t1_color" android:id="@id/tv_pad_code" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" />
+    <androidx.legacy.widget.Space android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <androidx.appcompat.widget.AppCompatTextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/b1_color" android:layout_gravity="bottom|center" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/easy_to_use_and_not_expensive" />
+</androidx.appcompat.widget.LinearLayoutCompat>

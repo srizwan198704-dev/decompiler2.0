@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/bg_bbs_list_vote" android:layout_width="fill_parent" android:layout_height="48.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:background="@drawable/bg_bbs_list_vote" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <ProgressBar android:scrollbarStyle="outsideOverlay" android:layout_gravity="center_vertical" android:id="@id/pb" android:padding="1.0dip" android:visibility="gone" android:scrollbars="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:max="100" android:progressDrawable="@drawable/bg_vote_pg1" android:layout_weight="1.0" style="?android:progressBarStyleHorizontal" />
+        <TextView android:textSize="14.0sp" android:textColor="#ff8d9199" android:gravity="center_vertical" android:id="@id/tv_content" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="44.0dip" android:layout_marginRight="30.0dip" android:text="ddd涨支持大ddd涨支持大ddd涨" android:singleLine="true" />
+        <ImageView android:id="@id/cb" android:layout_width="22.0dip" android:layout_height="22.0dip" android:layout_marginRight="8.0dip" android:src="@drawable/mydownload_check" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <TextView android:textSize="12.0sp" android:textColor="#ff8d9199" android:id="@id/tv_total_num" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

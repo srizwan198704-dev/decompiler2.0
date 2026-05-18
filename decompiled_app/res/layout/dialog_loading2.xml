@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vmos.commonuilibrary.InterceptKetEventLayout android:gravity="center" android:orientation="vertical" android:id="@id/ll_stopping_recovery_root" android:background="@color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/iv_wait" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/ic_page_loading" />
+        <TextView android:textSize="16.0sp" android:textColor="#ff47b2f8" android:layout_gravity="center_horizontal" android:id="@id/tv_loading_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/loading" />
+    </LinearLayout>
+</com.vmos.commonuilibrary.InterceptKetEventLayout>

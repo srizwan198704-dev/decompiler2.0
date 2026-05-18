@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/rl_layout" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RadioButton android:id="@id/item_rbtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginStart="20.0dip" />
+    <TextView android:textSize="22.0sp" android:textColor="#ff000000" android:id="@id/item_tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_marginBottom="5.0dip" android:text="黑鲨卡机动画" android:layout_marginStart="20.0dip" android:layout_toEndOf="@id/item_rbtn" />
+    <TextView android:textSize="16.0sp" android:textColor="#ff888888" android:id="@id/item_tv_path" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="15.0dip" android:text="\ 222222222222222" android:layout_below="@id/item_tv_title" android:layout_marginEnd="20.0dip" android:layout_toStartOf="@id/item_tv_del" android:layout_alignStart="@id/item_tv_title" />
+    <TextView android:textSize="20.0sp" android:textColor="@color/set_dialog_title8" android:gravity="center" android:id="@id/item_tv_del" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/set_vmos_resolution_2" android:layout_centerVertical="true" android:paddingStart="10.0dip" android:paddingEnd="24.0dip" android:layout_alignParentEnd="true" />
+</RelativeLayout>

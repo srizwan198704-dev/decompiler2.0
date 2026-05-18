@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@id/cl_action_bar" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/iv_back" android:background="?selectableItemBackground" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_common_back" android:layout_marginStart="8.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ff17181a" android:id="@id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="@id/iv_back" app:layout_constraintStart_toEndOf="@id/iv_back" app:layout_constraintTop_toTopOf="@id/iv_back" />
+    <TextView android:textSize="@dimen/sp_12" android:textStyle="bold" android:textColor="#ff47b2f8" android:id="@id/end_text" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/cloud_vm_card" android:layout_marginEnd="16.0dip" app:layout_constraintBottom_toBottomOf="@id/iv_back" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@id/iv_back" />
+</androidx.constraintlayout.widget.ConstraintLayout>

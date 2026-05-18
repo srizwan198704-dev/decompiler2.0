@@ -1,0 +1,16 @@
+[
+  {
+    "path": "/webViewActivity",
+    "className": "com.vmos.pro.ui.protocol.WebViewActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  },
+  {
+    "path": "/assistant/AssistantMainActivity",
+    "className": "com.vmos.assistant.ui.AssistantMainActivity",
+    "action": "",
+    "description": "",
+    "params": {}
+  }
+]

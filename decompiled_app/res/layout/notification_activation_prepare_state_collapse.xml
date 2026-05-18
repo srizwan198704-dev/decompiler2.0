@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingTop="@dimen/notification_activation_pre_item_gap" android:paddingBottom="@dimen/notification_activation_pre_item_gap" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:text="@string/activation_pre_wifi_connect_item_info" android:layout_centerVertical="true" android:layout_alignParentStart="true" style="@style/notification_activation_pre_item_info_tv" />
+        <ImageView android:id="@id/iv_wifi_connect_success" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/icon_success" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+        <TextView android:textColor="@color/text_color_3" android:id="@id/tv_wifi_connect_not_complete" android:text="@string/no_complete" android:layout_centerVertical="true" android:layout_alignParentEnd="true" style="@style/notification_activation_pre_item_info_tv" />
+    </RelativeLayout>
+    <RelativeLayout android:paddingTop="@dimen/notification_activation_pre_item_gap" android:paddingBottom="@dimen/notification_activation_pre_item_gap" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:text="@string/activation_pre_open_developer_item_info" android:layout_centerVertical="true" android:layout_alignParentStart="true" style="@style/notification_activation_pre_item_info_tv" />
+        <ImageView android:id="@id/iv_open_developer_success" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/icon_success" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+        <TextView android:textColor="@color/text_color_3" android:id="@id/tv_open_developer_not_complete" android:text="@string/no_complete" android:layout_centerVertical="true" android:layout_alignParentEnd="true" style="@style/notification_activation_pre_item_info_tv" />
+    </RelativeLayout>
+</LinearLayout>

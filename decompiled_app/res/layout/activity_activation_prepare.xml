@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/include_title" android:layout_width="0.0dip" android:layout_height="wrap_content" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toTopOf="parent" layout="@layout/as_layout_title_2" />
+    <ScrollView android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_marginTop="10.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toBottomOf="@id/include_title">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="24.0dip" android:layout_marginEnd="24.0dip">
+            <androidx.constraintlayout.widget.ConstraintLayout style="@style/activation_pre_item">
+                <TextView android:id="@id/tv_wifi_item_info" android:text="@string/activation_pre_wifi_connect_item_info" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/activation_pre_item_info_tv" />
+                <ImageView android:id="@id/iv_wifi_connect_success" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/icon_success" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout android:id="@id/ll_goto_wifi_connect" android:visibility="visible" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_wifi_item_info" style="@style/activation_pre_item_btn_ll">
+                    <TextView android:text="@string/goto_connect" style="@style/activation_pre_item_btn_tv" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/right_arrow_white" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_marginTop="@dimen/activation_pre_item_gap" style="@style/activation_pre_item">
+                <TextView android:id="@id/tv_open_developer_item_info" android:text="@string/activation_pre_open_developer_item_info" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/activation_pre_item_info_tv" />
+                <ImageView android:id="@id/iv_open_developer_success" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/icon_success" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toTopOf="parent" />
+                <ImageView android:id="@id/iv_open_developer_helper" android:padding="6.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/icon_question_mark" android:layout_marginStart="10.0dip" app:layout_constraintBottom_toBottomOf="@id/tv_open_developer_item_info" app:layout_constraintLeft_toRightOf="@id/tv_open_developer_item_info" app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout android:id="@id/ll_goto_open_developer" android:visibility="visible" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_open_developer_item_info" style="@style/activation_pre_item_btn_ll">
+                    <TextView android:text="@string/goto_open" style="@style/activation_pre_item_btn_tv" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/right_arrow_white" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_marginTop="@dimen/activation_pre_item_gap" style="@style/activation_pre_item">
+                <TextView android:id="@id/tv_open_wd_item_info" android:text="@string/activation_pre_open_wd_item_info" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/activation_pre_item_info_tv" />
+                <ImageView android:id="@id/iv_open_wd_success" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/icon_success" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout android:id="@id/ll_goto_open_wd" android:visibility="visible" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_open_wd_item_info" style="@style/activation_pre_item_btn_ll">
+                    <TextView android:text="@string/goto_open_2" style="@style/activation_pre_item_btn_tv" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/right_arrow_white" />
+                </LinearLayout>
+                <TextView android:textSize="12.0sp" android:textStyle="bold" android:textColor="@color/black" android:id="@id/tv_another_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" android:text="@string/exist_wifi_adb" app:layout_constraintBottom_toTopOf="@id/tv_another_content" app:layout_constraintTop_toBottomOf="@id/ll_goto_open_wd" />
+                <TextView android:id="@id/tv_another_content" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/huawei_activation_content" app:layout_constraintTop_toBottomOf="@id/tv_another_title" style="@style/activation_pre_item_info_tv" />
+                <TextView android:textSize="12.0sp" android:textColor="#ff02a7f0" android:id="@id/tv_another_link" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="@string/huawei_activation" app:layout_constraintTop_toBottomOf="@id/tv_another_content" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout android:layout_marginTop="@dimen/activation_pre_item_gap" style="@style/activation_pre_item">
+                <TextView android:id="@id/tv_wd_pair_item_info_1" android:text="@string/activation_pre_wd_pair_item_info_1" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toTopOf="parent" style="@style/activation_pre_item_info_tv" />
+                <TextView android:id="@id/tv_wd_pair_item_info_2" android:layout_marginTop="20.0dip" android:text="@string/activation_pre_wd_pair_item_info_2" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_wd_pair_item_info_1" style="@style/activation_pre_item_info_tv" />
+                <LinearLayout android:id="@id/ll_goto_wd_pair" android:visibility="visible" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toBottomOf="@id/tv_wd_pair_item_info_2" style="@style/activation_pre_item_btn_ll">
+                    <TextView android:text="@string/goto_wd_pair" style="@style/activation_pre_item_btn_tv" />
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@mipmap/right_arrow_white" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+    <include android:id="@id/include_loading_view_prepare" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toBottomOf="@id/include_title" layout="@layout/as_layout_loading_view_2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

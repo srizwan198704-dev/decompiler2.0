@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:id="@id/top_bar" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="44.0dip" app:layout_constraintTop_toTopOf="parent">
+        <ImageView android:id="@id/iv_back" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ic_common_back" android:layout_centerVertical="true" android:paddingStart="8.0dip" />
+        <TextView android:textSize="18.0sp" android:textColor="@android:color/black" android:id="@id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/bbs_message_reply_detail" android:singleLine="true" android:layout_centerVertical="true" android:layout_toEndOf="@id/iv_back" />
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/recycler_view" android:layout_width="fill_parent" android:layout_height="0.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toBottomOf="@id/top_bar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

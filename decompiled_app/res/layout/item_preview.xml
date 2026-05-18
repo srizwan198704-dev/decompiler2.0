@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/v_left_m" android:layout_width="8.0dip" android:layout_height="fill_parent" />
+    <ImageView android:id="@id/iv" android:layout_width="140.0dip" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <View android:id="@id/v_right_m" android:layout_width="8.0dip" android:layout_height="fill_parent" />
+</LinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector android:height="32.0dip" android:width="32.0dip" android:viewportWidth="32.0" android:viewportHeight="32.0"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:aapt="http://schemas.android.com/aapt">
+    <path android:fillColor="@drawable/$sic_file_icon__0" android:pathData="M8,0L24,0A8,8 0,0 1,32 8L32,24A8,8 0,0 1,24 32L8,32A8,8 0,0 1,0 24L0,8A8,8 0,0 1,8 0z" />
+    <path android:fillColor="@drawable/$sic_file_icon__1" android:pathData="M17.778,7.111V11.556C17.778,12.538 18.574,13.334 19.556,13.334H24V24C24,24.982 23.204,25.778 22.222,25.778H9.778C8.796,25.778 8,24.982 8,24V8.889C8,7.907 8.796,7.111 9.778,7.111H17.778ZM19.556,7.111L19.556,11.556L24,11.556V11.556L19.556,7.111Z" android:fillType="evenOdd" />
+</vector>

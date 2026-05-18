@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/file_dialog_item_file_title_layout" />
+    <androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="22.0sp" android:textColor="@color/search_1" android:layout_gravity="center" android:id="@id/item_fragment_file_hint" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_hint_1" android:lineSpacingMultiplier="1.1" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/file_body_recycler" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <include layout="@layout/file_dialog_bottom_select_file_layout" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

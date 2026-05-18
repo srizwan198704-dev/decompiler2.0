@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lxj.androidktx.widget.ImmersionLinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/fakeTitleBar" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="24.0pt" />
+    <com.lxj.androidktx.widget.TitleBar android:id="@id/titleBar" android:layout_width="fill_parent" android:layout_height="42.0pt" app:leftImagePadding="10.0pt" app:leftImageSrc="@mipmap/_ktx_ic_back" app:rightImagePadding="12.0pt" xmlns:app="http://schemas.android.com/apk/res-auto" />
+    <View android:id="@id/titleDivider" android:background="#fff1f1f1" android:layout_width="fill_parent" android:layout_height="1.0pt" />
+    <FrameLayout android:id="@id/flBody" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</com.lxj.androidktx.widget.ImmersionLinearLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="20.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/img_loading" android:layout_width="50.0dip" android:layout_height="50.0dip" android:src="@mipmap/icon_loading" />
+    <TextView android:textSize="16.0sp" android:textColor="@color/white" android:id="@id/tv_stop_backups" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/recovery_vm2" />
+</LinearLayout>

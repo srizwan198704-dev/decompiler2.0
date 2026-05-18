@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:maxLevel="1">
+        <shape android:shape="rectangle">
+            <gradient android:startColor="@color/chang_xiang_start_color" android:endColor="@color/chang_xiang_end_color" android:angle="270.0" android:type="linear" android:centerColor="@color/chang_xiang_center_color" />
+        </shape>
+    </item>
+    <item android:maxLevel="2">
+        <shape android:shape="rectangle">
+            <gradient android:startColor="@color/zun_xiang_start_color" android:endColor="@color/zun_xiang_end_color" android:angle="270.0" android:type="linear" android:centerColor="@color/zun_xiang_center_color" />
+        </shape>
+    </item>
+    <item android:maxLevel="3">
+        <shape android:shape="rectangle">
+            <gradient android:startColor="@color/qi_jian_start_color" android:endColor="@color/qi_jian_end_color" android:angle="270.0" />
+        </shape>
+    </item>
+    <item android:maxLevel="4">
+        <shape android:shape="rectangle">
+            <gradient android:startColor="@color/zhi_zun_start_color" android:endColor="@color/zhi_zun_end_color" android:angle="270.0" android:type="linear" android:centerColor="@color/zhi_zun_center_color" />
+        </shape>
+    </item>
+</level-list>

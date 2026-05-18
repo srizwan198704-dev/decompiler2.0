@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/rom_down_btn" android:background="@drawable/btn_bg" android:layout_width="312.0dip" android:layout_height="44.0dip" android:layout_centerHorizontal="true">
+        <TextView android:textColor="@color/white" android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/download_rom" android:drawableLeft="@mipmap/rom_icon_down" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</RelativeLayout>

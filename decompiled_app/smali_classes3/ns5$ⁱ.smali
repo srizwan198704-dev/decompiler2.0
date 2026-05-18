@@ -1,0 +1,123 @@
+.class public final Lns5$ⁱ;
+.super Ljava/lang/Object;
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lns5;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x19
+    name = "\u2071"
+.end annotation
+
+
+# static fields
+.field public static final abc_action_bar_home_description:I = 0x7f110005
+
+.field public static final abc_action_bar_up_description:I = 0x7f110006
+
+.field public static final abc_action_menu_overflow_description:I = 0x7f110007
+
+.field public static final abc_action_mode_done:I = 0x7f110008
+
+.field public static final abc_activity_chooser_view_see_all:I = 0x7f110009
+
+.field public static final abc_activitychooserview_choose_application:I = 0x7f11000a
+
+.field public static final abc_capital_off:I = 0x7f11000b
+
+.field public static final abc_capital_on:I = 0x7f11000c
+
+.field public static final abc_menu_alt_shortcut_label:I = 0x7f11000d
+
+.field public static final abc_menu_ctrl_shortcut_label:I = 0x7f11000e
+
+.field public static final abc_menu_delete_shortcut_label:I = 0x7f11000f
+
+.field public static final abc_menu_enter_shortcut_label:I = 0x7f110010
+
+.field public static final abc_menu_function_shortcut_label:I = 0x7f110011
+
+.field public static final abc_menu_meta_shortcut_label:I = 0x7f110012
+
+.field public static final abc_menu_shift_shortcut_label:I = 0x7f110013
+
+.field public static final abc_menu_space_shortcut_label:I = 0x7f110014
+
+.field public static final abc_menu_sym_shortcut_label:I = 0x7f110015
+
+.field public static final abc_prepend_shortcut_label:I = 0x7f110016
+
+.field public static final abc_search_hint:I = 0x7f110017
+
+.field public static final abc_searchview_description_clear:I = 0x7f110018
+
+.field public static final abc_searchview_description_query:I = 0x7f110019
+
+.field public static final abc_searchview_description_search:I = 0x7f11001a
+
+.field public static final abc_searchview_description_submit:I = 0x7f11001b
+
+.field public static final abc_searchview_description_voice:I = 0x7f11001c
+
+.field public static final abc_shareactionprovider_share_with:I = 0x7f11001d
+
+.field public static final abc_shareactionprovider_share_with_application:I = 0x7f11001e
+
+.field public static final abc_toolbar_collapse_description:I = 0x7f11001f
+
+.field public static final adb_pair_method_code_title:I = 0x7f11003c
+
+.field public static final adb_pairing_device_dialog_title:I = 0x7f11003d
+
+.field public static final adb_wireless_settings:I = 0x7f11003e
+
+.field public static final appbar_scrolling_view_behavior:I = 0x7f110099
+
+.field public static final bottom_sheet_behavior:I = 0x7f110130
+
+.field public static final character_counter_content_description:I = 0x7f11019b
+
+.field public static final character_counter_pattern:I = 0x7f11019d
+
+.field public static final description:I = 0x7f1102ab
+
+.field public static final development_settings_title:I = 0x7f1102ba
+
+.field public static final enable_adb_wireless_summary:I = 0x7f11030c
+
+.field public static final fab_transformation_scrim_behavior:I = 0x7f110330
+
+.field public static final fab_transformation_sheet_behavior:I = 0x7f110331
+
+.field public static final hide_bottom_view_on_scroll_behavior:I = 0x7f110398
+
+.field public static final keep_screen_on:I = 0x7f11041d
+
+.field public static final mtrl_chip_close_icon_content_description:I = 0x7f1104ae
+
+.field public static final password_toggle_content_description:I = 0x7f110547
+
+.field public static final path_password_eye:I = 0x7f110548
+
+.field public static final path_password_eye_mask_strike_through:I = 0x7f110549
+
+.field public static final path_password_eye_mask_visible:I = 0x7f11054a
+
+.field public static final path_password_strike_through:I = 0x7f11054b
+
+.field public static final search_menu_title:I = 0x7f1106d7
+
+.field public static final status_bar_notification_info_overflow:I = 0x7f1107ad
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 0
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method

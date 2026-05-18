@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardBackgroundColor="@color/white" app:cardCornerRadius="16.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.vmos.filedialog.view.UploadSelectView android:orientation="vertical" android:id="@id/select_upload_root" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <com.vmos.filedialog.view.UploadAppEdit android:orientation="vertical" android:id="@id/edit_upload_root" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="26.0dip" android:layout_marginBottom="16.0dip" android:layout_marginStart="16.0dip" android:layout_marginEnd="16.0dip" />
+        <com.vmos.filedialog.view.UploadAppResult android:orientation="vertical" android:id="@id/result_upload_root" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <View android:background="#fff3f3f5" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+        <com.vmos.filedialog.view.UploadButton android:textSize="14.0sp" android:gravity="center" android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/btn_upload_fragment_app" android:background="@drawable/upload_btn_selector" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_margin="16.0dip" android:layout_alignParentBottom="true" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
