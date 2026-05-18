@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <View android:id="@id/top" android:background="?android:dividerVertical" android:layout_width="fill_parent" android:layout_height="1.0dip" />
-    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
-        <ru.maximoff.apktool.view.Editor android:id="@id/editor" android:background="@color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent" />
-    </RelativeLayout>
-</LinearLayout>
