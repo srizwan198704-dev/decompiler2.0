@@ -1,0 +1,394 @@
+name: VMOS
+
+on:
+  workflow_dispatch:
+    inputs:
+      decompiled_folder:
+        description: 'Decompiled folder name'
+        required: true
+        default: 'decompiled_app'
+
+jobs:
+  recompile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openjdk-17-jre-headless zipalign wget unzip python3
+
+      - name: Setup Android SDK
+        run: |
+          wget -q https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O cmdline-tools.zip
+          sudo mkdir -p /opt/android-sdk/cmdline-tools
+          sudo unzip -q cmdline-tools.zip -d /opt/android-sdk/cmdline-tools
+          sudo mv /opt/android-sdk/cmdline-tools/cmdline-tools /opt/android-sdk/cmdline-tools/latest
+          export ANDROID_SDK_ROOT=/opt/android-sdk
+          export PATH="$PATH:/opt/android-sdk/cmdline-tools/latest/bin"
+          yes | sdkmanager --licenses > /dev/null 2>&1 || true
+          sdkmanager "build-tools;34.0.0"
+          sudo ln -sf /opt/android-sdk/build-tools/34.0.0/aapt2 /usr/local/bin/aapt2
+          sudo ln -sf /opt/android-sdk/build-tools/34.0.0/apksigner /usr/local/bin/apksigner
+          sudo ln -sf /opt/android-sdk/build-tools/34.0.0/zipalign /usr/local/bin/zipalign
+          echo "/opt/android-sdk/build-tools/34.0.0" >> $GITHUB_PATH
+          echo "ANDROID_SDK_ROOT=/opt/android-sdk" >> $GITHUB_ENV
+          aapt2 version
+          apksigner version
+
+      - name: Setup APKTool
+        run: |
+          sudo wget -q https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool \
+            -O /usr/local/bin/apktool
+          sudo wget -q https://github.com/iBotPeaches/Apktool/releases/download/v2.10.0/apktool_2.10.0.jar \
+            -O /usr/local/bin/apktool.jar
+          sudo chmod +x /usr/local/bin/apktool /usr/local/bin/apktool.jar
+          apktool --version
+
+      # ─────────────────────────────────────────────
+      # STEP 1 – Detect old package name
+      # ─────────────────────────────────────────────
+      - name: Detect Old Package Name
+        run: |
+          DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
+          OLD_PACKAGE=""
+          if [ -f "$DECOMPILED_DIR/AndroidManifest.xml" ]; then
+            OLD_PACKAGE=$(grep -oP 'package="\K[^"]+' "$DECOMPILED_DIR/AndroidManifest.xml" | head -1)
+          fi
+          if [ -z "$OLD_PACKAGE" ]; then
+            OLD_PACKAGE="com.whatsapp.w4b"
+          fi
+          echo "OLD_PACKAGE=$OLD_PACKAGE" >> $GITHUB_ENV
+          OLD_PATH=$(echo "$OLD_PACKAGE" | tr '.' '/')
+          echo "OLD_PATH=$OLD_PATH" >> $GITHUB_ENV
+          NEW_PATH=$(echo "com.konasl.nagad" | tr '.' '/')
+          echo "NEW_PATH=$NEW_PATH" >> $GITHUB_ENV
+          echo "Detected old package : $OLD_PACKAGE"
+          echo "Old slash-path       : $OLD_PATH"
+          echo "New slash-path       : $NEW_PATH"
+
+      # ─────────────────────────────────────────────
+      # STEP 2 – AndroidManifest.xml – package rename ONLY
+      # শুধুমাত্র AndroidManifest.xml-এ package attribute rename হবে
+      # ─────────────────────────────────────────────
+      - name: Rename Package in AndroidManifest.xml
+        run: |
+          MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
+          OLD="${{ env.OLD_PACKAGE }}"
+          NEW="com.konasl.nagad"
+          cp "$MANIFEST" "$MANIFEST.bak"
+
+          cat > /tmp/fix_manifest_pkg.py << 'PYEOF'
+          import re, sys, xml.etree.ElementTree as ET
+
+          old  = sys.argv[1]
+          new  = sys.argv[2]
+          path = sys.argv[3]
+
+          with open(path, "r", encoding="utf-8") as f:
+              content = f.read()
+
+          escaped = re.escape(old)
+          # Avoid double-replacing if new starts with old
+          if new.startswith(old):
+              suffix  = re.escape(new[len(old):])
+              pattern = escaped + r'(?!' + suffix + r')'
+          else:
+              pattern = escaped
+
+          count  = len(re.findall(pattern, content))
+          result = re.sub(pattern, new, content)
+
+          with open(path, "w", encoding="utf-8") as f:
+              f.write(result)
+
+          print(f"Replaced {count} occurrences: {old} -> {new}")
+
+          try:
+              ET.parse(path)
+              print("XML validation: OK")
+          except ET.ParseError as e:
+              print(f"XML ERROR: {e}")
+              sys.exit(1)
+          PYEOF
+
+          python3 /tmp/fix_manifest_pkg.py "$OLD" "$NEW" "$MANIFEST"
+          echo "=== First 5 lines after rename ==="
+          head -5 "$MANIFEST"
+
+      # ─────────────────────────────────────────────
+      # STEP 3 – Fix / remove requiredSplitTypes
+      # ─────────────────────────────────────────────
+      - name: Fix requiredSplitTypes in AndroidManifest.xml
+        run: |
+          MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
+
+          cat > /tmp/fix_split.py << 'PYEOF'
+          import sys, re
+
+          path = sys.argv[1]
+          with open(path, "r", encoding="utf-8") as f:
+              content = f.read()
+
+          has_rst  = 'requiredSplitTypes' in content
+          has_isr  = 'android:isSplitRequired="true"' in content
+
+          if has_rst and not has_isr:
+              content = re.sub(r'\s+android:requiredSplitTypes="[^"]*"', '', content)
+              content = re.sub(r'\s+requiredSplitTypes="[^"]*"',         '', content)
+              print("Removed requiredSplitTypes")
+          else:
+              print("No requiredSplitTypes fix needed")
+
+          with open(path, "w", encoding="utf-8") as f:
+              f.write(content)
+          PYEOF
+
+          python3 /tmp/fix_split.py "$MANIFEST"
+          grep -n "requiredSplitTypes\|isSplitRequired" "$MANIFEST" || echo "Attributes cleanly removed"
+
+      # ─────────────────────────────────────────────
+      # STEP 4 – Fix android:authorities (FileProvider)
+      # Crash reason: ContentProvider authority must match new package
+      # ─────────────────────────────────────────────
+      - name: Fix FileProvider authorities in AndroidManifest.xml
+        run: |
+          MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
+          OLD="${{ env.OLD_PACKAGE }}"
+          NEW="com.konasl.nagad"
+
+          cat > /tmp/fix_authorities.py << 'PYEOF'
+          import sys, re
+
+          old  = sys.argv[1]
+          new  = sys.argv[2]
+          path = sys.argv[3]
+
+          with open(path, "r", encoding="utf-8") as f:
+              content = f.read()
+
+          # Replace package name inside android:authorities="..." attributes
+          def replace_in_authorities(m):
+              return m.group(0).replace(old, new)
+
+          pattern = re.compile(r'android:authorities="[^"]*' + re.escape(old) + r'[^"]*"')
+          new_content, n = re.subn(pattern, replace_in_authorities, content)
+
+          with open(path, "w", encoding="utf-8") as f:
+              f.write(new_content)
+
+          print(f"Fixed {n} authority attribute(s)")
+          PYEOF
+
+          python3 /tmp/fix_authorities.py "$OLD" "$NEW" "$MANIFEST"
+          echo "=== authorities after fix ==="
+          grep -n "authorities" "$MANIFEST" || echo "No authorities found"
+
+      # ─────────────────────────────────────────────
+      # STEP 5 – Fix android:name for Application/Activity
+      # Some apps use explicit class refs like com.old.pkg.MyActivity
+      # ─────────────────────────────────────────────
+      - name: Fix android:name component references in AndroidManifest.xml
+        run: |
+          MANIFEST="${{ github.event.inputs.decompiled_folder }}/AndroidManifest.xml"
+          OLD="${{ env.OLD_PACKAGE }}"
+          NEW="com.konasl.nagad"
+
+          # Replace dotted form in android:name values
+          sed -i "s|android:name=\"${OLD}\.|android:name=\"${NEW}.|g" "$MANIFEST"
+          sed -i "s|android:name=\"${OLD}\"|android:name=\"${NEW}\"|g" "$MANIFEST"
+          echo "Fixed android:name references"
+
+      # ─────────────────────────────────────────────
+      # STEP 6 – SKIPPED: XML / properties files rename
+      # সমস্ত অন্যান্য XML ও properties ফাইল অপরিবর্তিত থাকবে
+      # ─────────────────────────────────────────────
+      - name: Skip XML and Properties rename (keeping original package)
+        run: |
+          echo "SKIPPED: XML/properties files outside AndroidManifest.xml are kept with original package name."
+
+      # ─────────────────────────────────────────────
+      # STEP 7 – SKIPPED: apktool.yml rename
+      # apktool.yml অপরিবর্তিত থাকবে
+      # ─────────────────────────────────────────────
+      - name: Skip apktool.yml rename (keeping original package)
+        run: |
+          echo "SKIPPED: apktool.yml is kept with original package name."
+
+      # ─────────────────────────────────────────────
+      # STEP 8 – SKIPPED: Smali slash-path rename
+      # Smali ফাইল অপরিবর্তিত থাকবে
+      # ─────────────────────────────────────────────
+      - name: Skip smali slash-path rename (keeping original package)
+        run: |
+          echo "SKIPPED: smali slash-path renaming is disabled. Original package paths remain."
+
+      # ─────────────────────────────────────────────
+      # STEP 9 – SKIPPED: Smali dotted string literals rename
+      # ─────────────────────────────────────────────
+      - name: Skip smali string literal rename (keeping original package)
+        run: |
+          echo "SKIPPED: smali dotted string literal renaming is disabled. Original package names remain."
+
+      # ─────────────────────────────────────────────
+      # STEP 10 – SKIPPED: Smali all remaining dotted refs rename
+      # ─────────────────────────────────────────────
+      - name: Skip all remaining smali dotted refs rename (keeping original package)
+        run: |
+          echo "SKIPPED: All smali dotted reference renaming is disabled. Original package names remain."
+
+      # ─────────────────────────────────────────────
+      # STEP 11 – SKIPPED: Smali directory structure rename
+      # ─────────────────────────────────────────────
+      - name: Skip smali directory structure rename (keeping original package)
+        run: |
+          echo "SKIPPED: smali directory structure renaming is disabled. Original folder structure remains."
+
+      # ─────────────────────────────────────────────
+      # STEP 12 – SKIPPED: assets / raw text file rename
+      # ─────────────────────────────────────────────
+      - name: Skip assets and raw resource file rename (keeping original package)
+        run: |
+          echo "SKIPPED: assets/raw file renaming is disabled. Original package names remain in assets."
+
+      # ─────────────────────────────────────────────
+      # STEP 13 – Verification
+      # শুধু AndroidManifest.xml চেক হবে
+      # ─────────────────────────────────────────────
+      - name: Verify AndroidManifest.xml package rename only
+        run: |
+          DECOMPILED_DIR="${{ github.event.inputs.decompiled_folder }}"
+          OLD="${{ env.OLD_PACKAGE }}"
+          NEW="com.konasl.nagad"
+          echo "=== AndroidManifest.xml: new package occurrences ==="
+          grep -c "$NEW" "$DECOMPILED_DIR/AndroidManifest.xml" || echo "0"
+          echo "=== AndroidManifest.xml: old package occurrences (should ideally be 0) ==="
+          grep -c "$OLD" "$DECOMPILED_DIR/AndroidManifest.xml" || echo "0 (good)"
+          echo "=== FileProvider authority check ==="
+          grep -n "authorities" "$DECOMPILED_DIR/AndroidManifest.xml" || echo "No FileProvider"
+          echo "=== requiredSplitTypes check ==="
+          grep -n "requiredSplitTypes" "$DECOMPILED_DIR/AndroidManifest.xml" || echo "Cleanly removed (good)"
+          echo ""
+          echo "=== NOTE: smali, XML, assets, apktool.yml kept with original package ($OLD) ==="
+
+      # ─────────────────────────────────────────────
+      # STEP 14 – Recompile
+      # ─────────────────────────────────────────────
+      - name: Recompile APK
+        run: |
+          DIR="${{ github.event.inputs.decompiled_folder }}"
+
+          echo "=== Attempt 1: default ==="
+          if apktool b "$DIR" -o recompiled_unsigned.apk -f 2>&1; then
+            echo "Build success (attempt 1)"
+          else
+            echo "=== Attempt 2: with aapt2 ==="
+            if apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 2>&1; then
+              echo "Build success (attempt 2)"
+            else
+              echo "=== Attempt 3: aapt2 + no-crunch ==="
+              apktool b "$DIR" -o recompiled_unsigned.apk -f --use-aapt2 --no-crunch 2>&1 || true
+            fi
+          fi
+
+          if [ ! -f recompiled_unsigned.apk ]; then
+            echo "ERROR: APK not created!"
+            exit 1
+          fi
+          ls -lh recompiled_unsigned.apk
+
+      # ─────────────────────────────────────────────
+      # STEP 15 – Verify APK structure
+      # ─────────────────────────────────────────────
+      - name: Verify APK structure
+        run: |
+          aapt2 dump badging recompiled_unsigned.apk | head -10 || \
+            echo "Warning: aapt2 dump failed (may still be installable)"
+
+          # Check package name in built APK
+          BUILT_PKG=$(aapt2 dump badging recompiled_unsigned.apk 2>/dev/null \
+            | grep "^package:" | grep -oP "name='\K[^']+") || true
+          echo "Built APK package: $BUILT_PKG"
+          if [ "$BUILT_PKG" != "com.konasl.nagad" ]; then
+            echo "WARNING: Built APK package ($BUILT_PKG) != expected (com.konasl.nagad)"
+          else
+            echo "Package name: CORRECT"
+          fi
+
+      # ─────────────────────────────────────────────
+      # STEP 16 – Generate Keystore
+      # ─────────────────────────────────────────────
+      - name: Generate Keystore
+        run: |
+          keytool -genkey -v \
+            -keystore my.keystore \
+            -alias w4baes \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000 \
+            -storepass w4baes123 \
+            -keypass w4baes123 \
+            -dname "CN=W4BAES,OU=Dev,O=W4BAES,L=Dhaka,ST=Dhaka,C=BD" \
+            -noprompt
+          echo "Keystore generated"
+
+      # ─────────────────────────────────────────────
+      # STEP 17 – Zipalign
+      # ─────────────────────────────────────────────
+      - name: Zipalign APK
+        run: |
+          zipalign -v -p 4 recompiled_unsigned.apk aligned.apk
+          echo "Zipalign done"
+          zipalign -c -v 4 aligned.apk \
+            && echo "Alignment check: PASSED" \
+            || echo "Alignment check: FAILED"
+
+      # ─────────────────────────────────────────────
+      # STEP 18 – Sign
+      # ─────────────────────────────────────────────
+      - name: Sign APK with apksigner
+        run: |
+          apksigner sign \
+            --ks my.keystore \
+            --ks-pass pass:w4baes123 \
+            --key-pass pass:w4baes123 \
+            --ks-key-alias w4baes \
+            --out signed_app.apk \
+            aligned.apk
+          echo "Signing done"
+          apksigner verify --verbose signed_app.apk \
+            && echo "Signature verify: PASSED" \
+            || echo "Signature verify: FAILED"
+          ls -lh signed_app.apk
+
+      # ─────────────────────────────────────────────
+      # STEP 19 – Upload artifact
+      # ─────────────────────────────────────────────
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: w4baes-apk
+          path: signed_app.apk
+          retention-days: 90
+
+      # ─────────────────────────────────────────────
+      # STEP 20 – Create Release
+      # ─────────────────────────────────────────────
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: w4baes-v1.0.${{ github.run_number }}
+          name: W4BAES v1.0.${{ github.run_number }}
+          body: |
+            ✅ Manifest Package : com.konasl.nagad
+            📦 Original Package : ${{ env.OLD_PACKAGE }}
+            🔧 Build            : #${{ github.run_number }}
+            🔑 Signed with apksigner (v2/v3 scheme)
+            ℹ️  Note: Only AndroidManifest.xml package renamed. smali/xml/assets/apktool.yml kept original.
+          files: signed_app.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
